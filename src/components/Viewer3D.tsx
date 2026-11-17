@@ -338,7 +338,7 @@ export default function Viewer3D(props: ViewerProps) {
     <Canvas key={String(props.perspective)} orthographic={!props.perspective}
       camera={{ position: [400,-620,400], near: 0.1, far: 3800, ...(props.perspective ? { fov: 38 } : {}) }}
       dpr={[1, props.compact ? 1.25 : 1.7]} frameloop="demand"
-      gl={{ antialias: !props.compact, alpha: true }} aria-label="Interactive TE-01 assembly model"
+      gl={{ antialias: !props.compact, alpha: true }}
       fallback={<p>WebGL rendering is unavailable.</p>}>
       <Scene props={props} callout={callout} scale={scale} onHover={setHover} />
     </Canvas>

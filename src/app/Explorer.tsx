@@ -123,7 +123,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
         })} />
       <section className="viewer panel" aria-label="Assembly viewport" ref={viewport} data-expanded={expanded}>
         <div className="viewer-top"><div><Box size={16} /><h2>TE-01 Digital Twin</h2></div><span className="model-status"><i /> {cadStatus === 'cad' ? 'CAD SCHEMATIC' : 'SCHEMATIC GEOMETRY'}</span></div>
-        <div className="viewport-tabs" aria-label="Model layers">
+        <div className="viewport-tabs" role="group" aria-label="Model layers">
           {layers.map(value => <button key={value} type="button" aria-pressed={layer === value} onClick={() => setLayer(value)}>{value}</button>)}
         </div>
         <div className="viewport-content">
@@ -131,7 +131,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           {failure ? fallback : <GraphicsBoundary fallback={fallback}>
             <Suspense fallback={<div className="viewer-loading">Loading assembly geometry…</div>}><Viewer3D {...viewerProps} /></Suspense>
           </GraphicsBoundary>}
-          <div className="viewport-tools" aria-label="Viewer controls">
+          <div className="viewport-tools" role="group" aria-label="Viewer controls">
             <button type="button" className="icon-button" title="Fit model" aria-label="Fit model" onClick={() => focusCamera(preset)}><Crosshair size={17} /></button>
             <button type="button" className="icon-button" title="Wireframe" aria-label="Wireframe" aria-pressed={wireframe} onClick={() => setWireframe(!wireframe)}><Grid2X2 size={16} /></button>
             <button type="button" className="icon-button" title="Show baseplate dimensions" aria-label="Show baseplate dimensions" aria-pressed={dimensioning}
@@ -168,10 +168,10 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
             : `Select ${points.length ? 'the second point' : 'two surface points'}`}</div>}
           {dimensioning && <div className="dimension-readout">Baseplate target · 300 × 200 mm</div>}
           {telemetry && <div className="diagnostic-readout">SIMULATION · {Math.round(telemetry.speedRpm ?? 0)} rpm · {telemetry.motorTemperature?.toFixed(1) ?? '—'} °C</div>}
-          <div className="camera-presets" aria-label="Camera presets">
+          <div className="camera-presets" role="group" aria-label="Camera presets">
             {presets.map(value => <button key={value} aria-pressed={preset === value} type="button" onClick={() => focusCamera(value)}>{value}</button>)}
           </div>
-          <div className="axes" aria-label="Machine axes, X shaft, Y transverse, Z up"><b>Z</b><i /><b>Y</b><i /><b>X</b><i /></div>
+          <div className="axes" role="group" aria-label="Machine axes, X shaft, Y transverse, Z up"><b>Z</b><i /><b>Y</b><i /><b>X</b><i /></div>
         </div>
         <ExplodeSlider amount={amount} change={change} running={Boolean(animation)} toggle={toggleAnimation} reset={reset} />
         <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Arrow keys to pan'}</div>
@@ -181,7 +181,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
         if (hidden.has(part.id)) setHidden(previous => new Set([...previous].filter(id => id !== part.id)))
       }} />
     </div>
-    <div className="system-cards" aria-label="Assembly design targets">
+    <div className="system-cards" role="group" aria-label="Assembly design targets">
       <div><Layers /><span>Canonical assemblies</span><strong>{String(assemblies.length).padStart(2, '0')}</strong></div>
       <div><Box /><span>Component records</span><strong>{parts.length}</strong></div>
       <div><Crosshair /><span>Rotor speed target</span><strong>300–3,000 <small>rpm</small></strong></div>
