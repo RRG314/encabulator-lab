@@ -32,10 +32,9 @@
     "limits": "Verify flatness and deflection under combined static and dynamic loads.",
     "safetyFlags": [],
     "maintenance": "Check for distortion, looseness and damage at the mounting points.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-001.step",
     "diagramRefs": [
-      "#/component/TE-001",
-      "#/engineering"
+      "models/te01-drawings/TE-001.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -70,10 +69,9 @@
     "limits": "Measure mounted mass, compression, stiffness and damping before selection.",
     "safetyFlags": [],
     "maintenance": "Inspect loaded height, damage and aging.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-002.step",
     "diagramRefs": [
-      "#/component/TE-002",
-      "#/engineering"
+      "models/te01-drawings/TE-002.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -116,10 +114,9 @@
       "Rotating load path"
     ],
     "maintenance": "Review motor temperature history and inspect connection strain relief.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-003.step",
     "diagramRefs": [
-      "#/component/TE-003",
-      "#/engineering"
+      "models/te01-drawings/TE-003.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -157,10 +154,9 @@
     "limits": "Verify controller limits and separate hardware enable behavior.",
     "safetyFlags": [],
     "maintenance": "Review recorded faults and inspect terminals after de-energizing.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-004.step",
     "diagramRefs": [
-      "#/component/TE-004",
-      "#/engineering"
+      "models/te01-drawings/TE-004.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -208,10 +204,9 @@
       "Rotating load path"
     ],
     "maintenance": "Inspect journals and retention features during isolated service.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-005.step",
     "diagramRefs": [
-      "#/component/TE-005",
-      "#/engineering"
+      "models/te01-drawings/TE-005.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -251,10 +246,9 @@
       "Rotating load path"
     ],
     "maintenance": "Trend temperature and vibration and inspect seals during isolated service.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-006.step",
     "diagramRefs": [
-      "#/component/TE-006",
-      "#/engineering"
+      "models/te01-drawings/TE-006.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -295,10 +289,9 @@
     "limits": "Check housing stiffness, alignment and outer-ring retention.",
     "safetyFlags": [],
     "maintenance": "Check movement, mounting preload and alignment after any removal.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-007.step",
     "diagramRefs": [
-      "#/component/TE-007",
-      "#/engineering"
+      "models/te01-drawings/TE-007.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -340,10 +333,9 @@
       "Rotating load path"
     ],
     "maintenance": "Inspect seating surfaces and retention after isolated disassembly.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-008.step",
     "diagramRefs": [
-      "#/component/TE-008",
-      "#/engineering"
+      "models/te01-drawings/TE-008.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -381,10 +373,9 @@
       "Rotating load path"
     ],
     "maintenance": "Inspect for root damage and fretting with the drive isolated. Balance the installed set after replacement.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-009.step",
     "diagramRefs": [
-      "#/component/TE-009",
-      "#/engineering"
+      "models/te01-drawings/TE-009.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -420,10 +411,9 @@
       "Rotating load path"
     ],
     "maintenance": "Check witness marks and replace locking hardware per the selected component specification.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-010.step",
     "diagramRefs": [
-      "#/component/TE-010",
-      "#/engineering"
+      "models/te01-drawings/TE-010.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -459,10 +449,9 @@
     "limits": "Measure stiffness, damping and run-up transmissibility.",
     "safetyFlags": [],
     "maintenance": "Inspect compression, alignment drift and signs of contact.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-011.step",
     "diagramRefs": [
-      "#/component/TE-011",
-      "#/engineering"
+      "models/te01-drawings/TE-011.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -500,10 +489,9 @@
     "limits": "Verify operating point against fan curve and measured duct loss.",
     "safetyFlags": [],
     "maintenance": "Inspect fan guard and dust accumulation with power isolated.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-012.step",
     "diagramRefs": [
-      "#/component/TE-012",
-      "#/engineering"
+      "models/te01-drawings/TE-012.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -539,10 +527,9 @@
     "limits": "Measure restriction with clean and loaded filter states.",
     "safetyFlags": [],
     "maintenance": "Track pressure loss and clean or replace filter media as qualified.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-013.step",
     "diagramRefs": [
-      "#/component/TE-013",
-      "#/engineering"
+      "models/te01-drawings/TE-013.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -585,10 +572,9 @@
       "Safety-related interface"
     ],
     "maintenance": "Inspect windows, seams, fasteners and interlock alignment before service release.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-014.step",
     "diagramRefs": [
-      "#/component/TE-014",
-      "#/engineering"
+      "models/te01-drawings/TE-014.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -621,10 +607,9 @@
     "limits": "Verify clearance and characterize pressure loss and flow distribution.",
     "safetyFlags": [],
     "maintenance": "Inspect seating, wear and contamination with the drive isolated.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-015.step",
     "diagramRefs": [
-      "#/component/TE-015",
-      "#/engineering"
+      "models/te01-drawings/TE-015.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -676,10 +661,9 @@
     "limits": "Verify logic levels, timing, watchdog and independent motor inhibit.",
     "safetyFlags": [],
     "maintenance": "Review fault history and verify firmware revision and configuration.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-016.step",
     "diagramRefs": [
-      "#/component/TE-016",
-      "#/engineering"
+      "models/te01-drawings/TE-016.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -716,10 +700,9 @@
     "limits": "Verify sensitivity, bandwidth, anti-alias filtering and saturation detection.",
     "safetyFlags": [],
     "maintenance": "Inspect mounting rigidity and verify channel calibration.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-017.step",
     "diagramRefs": [
-      "#/component/TE-017",
-      "#/engineering"
+      "models/te01-drawings/TE-017.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -756,10 +739,9 @@
     "limits": "Check pulses per revolution, edge jitter and dropout detection.",
     "safetyFlags": [],
     "maintenance": "Inspect pickup clearance, alignment and pulse stability.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-018.step",
     "diagramRefs": [
-      "#/component/TE-018",
-      "#/engineering"
+      "models/te01-drawings/TE-018.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -794,10 +776,9 @@
     "limits": "Calibrate response and verify thermal lag and channel assignment.",
     "safetyFlags": [],
     "maintenance": "Check attachment, lead damage and calibration drift.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-019.step",
     "diagramRefs": [
-      "#/component/TE-019",
-      "#/engineering"
+      "models/te01-drawings/TE-019.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -835,10 +816,9 @@
     "limits": "Verify scale, offset, bandwidth and fault isolation.",
     "safetyFlags": [],
     "maintenance": "Review zero offset and inspect measurement connection integrity.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-020.step",
     "diagramRefs": [
-      "#/component/TE-020",
-      "#/engineering"
+      "models/te01-drawings/TE-020.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -876,10 +856,9 @@
       "Safety-related interface"
     ],
     "maintenance": "Function-test at commissioning and at the interval established by risk assessment.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-021.step",
     "diagramRefs": [
-      "#/component/TE-021",
-      "#/engineering"
+      "models/te01-drawings/TE-021.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -916,10 +895,9 @@
       "Safety-related interface"
     ],
     "maintenance": "Inspect connectors and ventilation and review supply fault history.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-022.step",
     "diagramRefs": [
-      "#/component/TE-022",
-      "#/engineering"
+      "models/te01-drawings/TE-022.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -958,10 +936,9 @@
       "Safety-related interface"
     ],
     "maintenance": "Verify fuse labeling and isolate supply before inspection.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-023.step",
     "diagramRefs": [
-      "#/component/TE-023",
-      "#/engineering"
+      "models/te01-drawings/TE-023.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -999,10 +976,9 @@
       "Safety-related interface"
     ],
     "maintenance": "Inspect actuator alignment and verify open-guard response.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-024.step",
     "diagramRefs": [
-      "#/component/TE-024",
-      "#/engineering"
+      "models/te01-drawings/TE-024.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -1043,10 +1019,9 @@
     "limits": "Verify ingress, service access and component temperatures.",
     "safetyFlags": [],
     "maintenance": "Inspect vents, cover and strain relief.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-025.step",
     "diagramRefs": [
-      "#/component/TE-025",
-      "#/engineering"
+      "models/te01-drawings/TE-025.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -1082,10 +1057,9 @@
     "limits": "Check continuity, voltage drop, EMC and wire strain.",
     "safetyFlags": [],
     "maintenance": "Inspect rubbing, retention and connector seating after isolation.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-026.step",
     "diagramRefs": [
-      "#/component/TE-026",
-      "#/engineering"
+      "models/te01-drawings/TE-026.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -1107,7 +1081,7 @@
     "quantity": 1,
     "massKg": null,
     "dimensionsMm": null,
-    "mounting": "Executes on TE-016. The highlighted module denotes logical ownership.",
+    "mounting": "Executes on the TE-016 measurement controller.",
     "matingPartIds": [],
     "fastenerIds": [],
     "sensors": [],
@@ -1164,10 +1138,9 @@
       "Rotating load path"
     ],
     "maintenance": "Inspect and calibrate per the selected transducer instructions.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-028.step",
     "diagramRefs": [
-      "#/component/TE-028",
-      "#/engineering"
+      "models/te01-drawings/TE-028.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -1204,10 +1177,9 @@
     "limits": "Verify preload, thread engagement and locking for each joint.",
     "safetyFlags": [],
     "maintenance": "Inspect witness marks and check joints against the released torque schedule.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-029.step",
     "diagramRefs": [
-      "#/component/TE-029",
-      "#/engineering"
+      "models/te01-drawings/TE-029.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",
@@ -1243,10 +1215,9 @@
       "Rotating load path"
     ],
     "maintenance": "Inspect alignment, hub position and elastomer condition.",
-    "cadAssetPath": null,
+    "cadAssetPath": "models/te01-parts/TE-030.step",
     "diagramRefs": [
-      "#/component/TE-030",
-      "#/engineering"
+      "models/te01-drawings/TE-030.svg"
     ],
     "testEvidence": [],
     "sourcing": "Candidate definition; supplier and part number pending.",

@@ -2,7 +2,7 @@
   "ge-1962": {
     "code": "GE-62",
     "slug": "ge-1962",
-    "revision": "0.3",
+    "revision": "0.4",
     "assetFolder": "models/archive/ge-1962",
     "mesh": "models/archive/ge-1962/assembly.glb",
     "boundsMm": [
@@ -18,7 +18,8 @@
     "rotating": [
       "GE-006",
       "GE-008",
-      "GE-009"
+      "GE-009",
+      "GE-021"
     ],
     "inputParts": [],
     "guard": [
@@ -47,8 +48,12 @@
         "path": "models/archive/ge-1962/drawings/exploded.svg"
       },
       {
-        "name": "Editable FreeCAD assembly",
+        "name": "FreeCAD assembled model",
         "path": "models/archive/ge-1962/assembly.FCStd"
+      },
+      {
+        "name": "FreeCAD exploded assembly",
+        "path": "models/archive/ge-1962/exploded.FCStd"
       },
       {
         "name": "CAD-derived GLB",
@@ -667,6 +672,1606 @@
         ],
         "stage": 2,
         "rotation": 0
+      },
+      {
+        "key": "GE-021:1",
+        "partId": "GE-021",
+        "origin": [
+          -5,
+          0,
+          96
+        ],
+        "offset": [
+          -45,
+          -182,
+          31
+        ],
+        "stage": 3,
+        "rotation": 0.0
+      },
+      {
+        "key": "GE-021:2",
+        "partId": "GE-021",
+        "origin": [
+          -5,
+          0,
+          96
+        ],
+        "offset": [
+          -45,
+          -182,
+          31
+        ],
+        "stage": 3,
+        "rotation": 1.0471975511965976
+      },
+      {
+        "key": "GE-021:3",
+        "partId": "GE-021",
+        "origin": [
+          -5,
+          0,
+          96
+        ],
+        "offset": [
+          -45,
+          -182,
+          31
+        ],
+        "stage": 3,
+        "rotation": 2.0943951023931953
+      },
+      {
+        "key": "GE-021:4",
+        "partId": "GE-021",
+        "origin": [
+          -5,
+          0,
+          96
+        ],
+        "offset": [
+          -45,
+          -182,
+          31
+        ],
+        "stage": 3,
+        "rotation": 3.141592653589793
+      },
+      {
+        "key": "GE-021:5",
+        "partId": "GE-021",
+        "origin": [
+          -5,
+          0,
+          96
+        ],
+        "offset": [
+          -45,
+          -182,
+          31
+        ],
+        "stage": 3,
+        "rotation": 4.1887902047863905
+      },
+      {
+        "key": "GE-021:6",
+        "partId": "GE-021",
+        "origin": [
+          -5,
+          0,
+          96
+        ],
+        "offset": [
+          -45,
+          -182,
+          31
+        ],
+        "stage": 3,
+        "rotation": 5.235987755982989
+      },
+      {
+        "key": "GE-022:1",
+        "partId": "GE-022",
+        "origin": [
+          -138,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:2",
+        "partId": "GE-022",
+        "origin": [
+          -132,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:3",
+        "partId": "GE-022",
+        "origin": [
+          -126,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:4",
+        "partId": "GE-022",
+        "origin": [
+          -120,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:5",
+        "partId": "GE-022",
+        "origin": [
+          -114,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:6",
+        "partId": "GE-022",
+        "origin": [
+          -108,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:7",
+        "partId": "GE-022",
+        "origin": [
+          -102,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:8",
+        "partId": "GE-022",
+        "origin": [
+          -96,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:9",
+        "partId": "GE-022",
+        "origin": [
+          -90,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:10",
+        "partId": "GE-022",
+        "origin": [
+          -84,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:11",
+        "partId": "GE-022",
+        "origin": [
+          -78,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:12",
+        "partId": "GE-022",
+        "origin": [
+          -72,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:13",
+        "partId": "GE-022",
+        "origin": [
+          -66,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:14",
+        "partId": "GE-022",
+        "origin": [
+          -60,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:15",
+        "partId": "GE-022",
+        "origin": [
+          -54,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:16",
+        "partId": "GE-022",
+        "origin": [
+          -48,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:17",
+        "partId": "GE-022",
+        "origin": [
+          -42,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:18",
+        "partId": "GE-022",
+        "origin": [
+          -36,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:19",
+        "partId": "GE-022",
+        "origin": [
+          -30,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:20",
+        "partId": "GE-022",
+        "origin": [
+          -24,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:21",
+        "partId": "GE-022",
+        "origin": [
+          -18,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:22",
+        "partId": "GE-022",
+        "origin": [
+          -12,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:23",
+        "partId": "GE-022",
+        "origin": [
+          -6,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:24",
+        "partId": "GE-022",
+        "origin": [
+          0,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:25",
+        "partId": "GE-022",
+        "origin": [
+          6,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:26",
+        "partId": "GE-022",
+        "origin": [
+          12,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:27",
+        "partId": "GE-022",
+        "origin": [
+          18,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:28",
+        "partId": "GE-022",
+        "origin": [
+          24,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:29",
+        "partId": "GE-022",
+        "origin": [
+          30,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:30",
+        "partId": "GE-022",
+        "origin": [
+          36,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:31",
+        "partId": "GE-022",
+        "origin": [
+          42,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:32",
+        "partId": "GE-022",
+        "origin": [
+          48,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:33",
+        "partId": "GE-022",
+        "origin": [
+          54,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:34",
+        "partId": "GE-022",
+        "origin": [
+          60,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:35",
+        "partId": "GE-022",
+        "origin": [
+          66,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:36",
+        "partId": "GE-022",
+        "origin": [
+          72,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:37",
+        "partId": "GE-022",
+        "origin": [
+          78,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:38",
+        "partId": "GE-022",
+        "origin": [
+          84,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:39",
+        "partId": "GE-022",
+        "origin": [
+          90,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:40",
+        "partId": "GE-022",
+        "origin": [
+          96,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:41",
+        "partId": "GE-022",
+        "origin": [
+          102,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:42",
+        "partId": "GE-022",
+        "origin": [
+          108,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:43",
+        "partId": "GE-022",
+        "origin": [
+          114,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:44",
+        "partId": "GE-022",
+        "origin": [
+          120,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:45",
+        "partId": "GE-022",
+        "origin": [
+          126,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:46",
+        "partId": "GE-022",
+        "origin": [
+          132,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-022:47",
+        "partId": "GE-022",
+        "origin": [
+          138,
+          0,
+          153
+        ],
+        "offset": [
+          0,
+          69,
+          154
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:1",
+        "partId": "GE-023",
+        "origin": [
+          -138,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:2",
+        "partId": "GE-023",
+        "origin": [
+          -132,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:3",
+        "partId": "GE-023",
+        "origin": [
+          -126,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:4",
+        "partId": "GE-023",
+        "origin": [
+          -120,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:5",
+        "partId": "GE-023",
+        "origin": [
+          -114,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:6",
+        "partId": "GE-023",
+        "origin": [
+          -108,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:7",
+        "partId": "GE-023",
+        "origin": [
+          -102,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:8",
+        "partId": "GE-023",
+        "origin": [
+          -96,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:9",
+        "partId": "GE-023",
+        "origin": [
+          -90,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:10",
+        "partId": "GE-023",
+        "origin": [
+          -84,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:11",
+        "partId": "GE-023",
+        "origin": [
+          -78,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:12",
+        "partId": "GE-023",
+        "origin": [
+          -72,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:13",
+        "partId": "GE-023",
+        "origin": [
+          -66,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:14",
+        "partId": "GE-023",
+        "origin": [
+          -60,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:15",
+        "partId": "GE-023",
+        "origin": [
+          -54,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:16",
+        "partId": "GE-023",
+        "origin": [
+          -48,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:17",
+        "partId": "GE-023",
+        "origin": [
+          -42,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:18",
+        "partId": "GE-023",
+        "origin": [
+          -36,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:19",
+        "partId": "GE-023",
+        "origin": [
+          -30,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:20",
+        "partId": "GE-023",
+        "origin": [
+          -24,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:21",
+        "partId": "GE-023",
+        "origin": [
+          -18,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:22",
+        "partId": "GE-023",
+        "origin": [
+          -12,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:23",
+        "partId": "GE-023",
+        "origin": [
+          -6,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:24",
+        "partId": "GE-023",
+        "origin": [
+          0,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:25",
+        "partId": "GE-023",
+        "origin": [
+          6,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:26",
+        "partId": "GE-023",
+        "origin": [
+          12,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:27",
+        "partId": "GE-023",
+        "origin": [
+          18,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:28",
+        "partId": "GE-023",
+        "origin": [
+          24,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:29",
+        "partId": "GE-023",
+        "origin": [
+          30,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:30",
+        "partId": "GE-023",
+        "origin": [
+          36,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:31",
+        "partId": "GE-023",
+        "origin": [
+          42,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:32",
+        "partId": "GE-023",
+        "origin": [
+          48,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:33",
+        "partId": "GE-023",
+        "origin": [
+          54,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:34",
+        "partId": "GE-023",
+        "origin": [
+          60,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:35",
+        "partId": "GE-023",
+        "origin": [
+          66,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:36",
+        "partId": "GE-023",
+        "origin": [
+          72,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:37",
+        "partId": "GE-023",
+        "origin": [
+          78,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:38",
+        "partId": "GE-023",
+        "origin": [
+          84,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:39",
+        "partId": "GE-023",
+        "origin": [
+          90,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:40",
+        "partId": "GE-023",
+        "origin": [
+          96,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:41",
+        "partId": "GE-023",
+        "origin": [
+          102,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:42",
+        "partId": "GE-023",
+        "origin": [
+          108,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:43",
+        "partId": "GE-023",
+        "origin": [
+          114,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:44",
+        "partId": "GE-023",
+        "origin": [
+          120,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:45",
+        "partId": "GE-023",
+        "origin": [
+          126,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:46",
+        "partId": "GE-023",
+        "origin": [
+          132,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "GE-023:47",
+        "partId": "GE-023",
+        "origin": [
+          138,
+          -6,
+          155
+        ],
+        "offset": [
+          0,
+          -66,
+          176
+        ],
+        "stage": 2,
+        "rotation": 0
       }
     ],
     "parts": [
@@ -674,7 +2279,7 @@
         "id": "GE-001",
         "name": "Prefabulated Amulite baseplate",
         "assemblyId": "GE-A1",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Scalloped front edge. Upper plane establishes datum A.",
         "function": "Scalloped front edge. Upper plane establishes datum A.",
         "material": "Enamel-coated aluminum candidate",
@@ -715,7 +2320,7 @@
         "id": "GE-002",
         "name": "Logarithmic case",
         "assemblyId": "GE-A1",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Removable cylindrical shell, Ø132 mm nominal.",
         "function": "Removable cylindrical shell, Ø132 mm nominal.",
         "material": "Enamel-coated aluminum candidate",
@@ -761,7 +2366,7 @@
         "id": "GE-003",
         "name": "Dual-meter fascia",
         "assemblyId": "GE-A1",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Two Ø24.2 mm openings at 34 mm pitch.",
         "function": "Two Ø24.2 mm openings at 34 mm pitch.",
         "material": "Machined aluminum candidate",
@@ -804,7 +2409,7 @@
         "id": "GE-004",
         "name": "Inrush and realization panel meter",
         "assemblyId": "GE-A2",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Meter bodies aligned to the casing apertures.",
         "function": "Meter bodies aligned to the casing apertures.",
         "material": "Insulating polymer candidate",
@@ -847,7 +2452,7 @@
         "id": "GE-005",
         "name": "Coaxial bearing pedestal",
         "assemblyId": "GE-A3",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Two coaxial supports within the shell.",
         "function": "Two coaxial supports within the shell.",
         "material": "Steel candidate",
@@ -890,7 +2495,7 @@
         "id": "GE-006",
         "name": "Rotor spindle",
         "assemblyId": "GE-A3",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Ø16 mm journal along datum X.",
         "function": "Ø16 mm journal along datum X.",
         "material": "Steel candidate",
@@ -933,7 +2538,7 @@
         "id": "GE-007",
         "name": "Semi-boloid stator carrier",
         "assemblyId": "GE-A3",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Stator ring between the bearing planes.",
         "function": "Stator ring between the bearing planes.",
         "material": "Cast aluminum candidate",
@@ -946,7 +2551,8 @@
         },
         "mounting": "Stator ring between the bearing planes.",
         "matingPartIds": [
-          "GE-005"
+          "GE-005",
+          "GE-022"
         ],
         "fastenerIds": [],
         "sensors": [],
@@ -974,7 +2580,7 @@
         "id": "GE-008",
         "name": "Rotor sleeve",
         "assemblyId": "GE-A3",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Radial clearance to stator and spindle.",
         "function": "Radial clearance to stator and spindle.",
         "material": "Machined aluminum candidate",
@@ -987,7 +2593,8 @@
         },
         "mounting": "Radial clearance to stator and spindle.",
         "matingPartIds": [
-          "GE-006"
+          "GE-006",
+          "GE-021"
         ],
         "fastenerIds": [],
         "sensors": [],
@@ -1015,7 +2622,7 @@
         "id": "GE-009",
         "name": "Pentametric fan",
         "assemblyId": "GE-A3",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Five external blades visible in figure 1. The text separately describes six marzel-vanes.",
         "function": "Five external blades visible in figure 1. The text separately describes six marzel-vanes.",
         "material": "Enamel-coated aluminum candidate",
@@ -1056,7 +2663,7 @@
         "id": "GE-010",
         "name": "Meter excitation and load board",
         "assemblyId": "GE-A2",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Low-voltage demonstration circuit beneath the meter plane.",
         "function": "Low-voltage demonstration circuit beneath the meter plane.",
         "material": "FR-4 laminate candidate",
@@ -1098,7 +2705,7 @@
         "id": "GE-011",
         "name": "Input protection module",
         "assemblyId": "GE-A2",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Isolated reference feed at the board input.",
         "function": "Isolated reference feed at the board input.",
         "material": "Insulating polymer candidate",
@@ -1139,7 +2746,7 @@
         "id": "GE-012",
         "name": "Perforated fan-end grille",
         "assemblyId": "GE-A1",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Circular end grille with perforated perimeter.",
         "function": "Circular end grille with perforated perimeter.",
         "material": "Steel candidate",
@@ -1180,7 +2787,7 @@
         "id": "GE-013",
         "name": "Rear end closure",
         "assemblyId": "GE-A1",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Concentric shell closure and shaft opening.",
         "function": "Concentric shell closure and shaft opening.",
         "material": "Enamel-coated aluminum candidate",
@@ -1221,7 +2828,7 @@
         "id": "GE-014",
         "name": "Upper tremie rail",
         "assemblyId": "GE-A3",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "External rail above the shell crown.",
         "function": "External rail above the shell crown.",
         "material": "Steel candidate",
@@ -1263,7 +2870,7 @@
         "id": "GE-015",
         "name": "Tremie return loop",
         "assemblyId": "GE-A3",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Repeated takeoff toward the crown.",
         "function": "Repeated takeoff toward the crown.",
         "material": "Copper alloy candidate",
@@ -1304,7 +2911,7 @@
         "id": "GE-016",
         "name": "Twin mounting stanchions",
         "assemblyId": "GE-A1",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Two exposed stand-offs under the shell.",
         "function": "Two exposed stand-offs under the shell.",
         "material": "Steel candidate",
@@ -1347,7 +2954,7 @@
         "id": "GE-017",
         "name": "Analog meter dial",
         "assemblyId": "GE-A2",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Two light readout faces visible in figure 1.",
         "function": "Two light readout faces visible in figure 1.",
         "material": "Enamel-coated aluminum candidate",
@@ -1389,7 +2996,7 @@
         "id": "GE-018",
         "name": "Panel indicator bezel",
         "assemblyId": "GE-A2",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Three visible pilot positions. Electrical assignments remain open.",
         "function": "Three visible pilot positions. Electrical assignments remain open.",
         "material": "Anodized aluminum candidate",
@@ -1430,7 +3037,7 @@
         "id": "GE-019",
         "name": "Nameplate strip",
         "assemblyId": "GE-A1",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Side identification strip located from figure 1.",
         "function": "Side identification strip located from figure 1.",
         "material": "Steel candidate",
@@ -1471,7 +3078,7 @@
         "id": "GE-020",
         "name": "Meter scale and pointer",
         "assemblyId": "GE-A2",
-        "revision": "0.3",
+        "revision": "0.4",
         "description": "Nominal analog scale marks and pointer. Calibration remains open.",
         "function": "Nominal analog scale marks and pointer. Calibration remains open.",
         "material": "Insulating polymer candidate",
@@ -1505,6 +3112,130 @@
         "evidence": "calculation",
         "proposedSpecification": "Insulating polymer candidate",
         "sourceAssembly": "GE-A2",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
+      },
+      {
+        "id": "GE-021",
+        "name": "Internal gyro-controlled marzel-vane",
+        "assemblyId": "GE-A3",
+        "revision": "0.4",
+        "description": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal.",
+        "function": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal.",
+        "material": "Machined aluminum candidate",
+        "quantity": 6,
+        "massKg": 0.0033334613177432013,
+        "dimensionsMm": {
+          "length": 52.0,
+          "width": 6.0,
+          "height": 4.117
+        },
+        "mounting": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal.",
+        "matingPartIds": [
+          "GE-008"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the internal gyro-controlled marzel-vane and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/ge-1962/parts/GE-021.step",
+        "diagramRefs": [
+          "models/archive/ge-1962/drawings/GE-021.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Machined aluminum candidate",
+        "sourceAssembly": "GE-A3",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
+      },
+      {
+        "id": "GE-022",
+        "name": "Grouting brush insert",
+        "assemblyId": "GE-A3",
+        "revision": "0.4",
+        "description": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement.",
+        "function": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement.",
+        "material": "Copper alloy candidate",
+        "quantity": 47,
+        "massKg": 0.00030400563790257716,
+        "dimensionsMm": {
+          "length": 2.4,
+          "width": 2.4,
+          "height": 8.0
+        },
+        "mounting": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement.",
+        "matingPartIds": [
+          "GE-007",
+          "GE-023"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the grouting brush insert and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/ge-1962/parts/GE-022.step",
+        "diagramRefs": [
+          "models/archive/ge-1962/drawings/GE-022.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Copper alloy candidate",
+        "sourceAssembly": "GE-A3",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
+      },
+      {
+        "id": "GE-023",
+        "name": "Internal tremie feed stub",
+        "assemblyId": "GE-A3",
+        "revision": "0.4",
+        "description": "One nominal feed stub per brush. Manifold routing and service connection remain open.",
+        "function": "One nominal feed stub per brush. Manifold routing and service connection remain open.",
+        "material": "Steel candidate",
+        "quantity": 47,
+        "massKg": 0.0001348367639929922,
+        "dimensionsMm": {
+          "length": 1.8,
+          "width": 9.0,
+          "height": 1.8
+        },
+        "mounting": "One nominal feed stub per brush. Manifold routing and service connection remain open.",
+        "matingPartIds": [
+          "GE-022"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the internal tremie feed stub and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/ge-1962/parts/GE-023.step",
+        "diagramRefs": [
+          "models/archive/ge-1962/drawings/GE-023.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Steel candidate",
+        "sourceAssembly": "GE-A3",
         "verification": "Solid geometry verified. Physical qualification pending.",
         "kind": "physical"
       }
@@ -1554,7 +3285,10 @@
           "GE-008",
           "GE-009",
           "GE-014",
-          "GE-015"
+          "GE-015",
+          "GE-021",
+          "GE-022",
+          "GE-023"
         ]
       }
     ],
@@ -1691,6 +3425,27 @@
         "from": "GE-020",
         "to": "GE-017",
         "label": "Nominal analog scale marks and pointer. Calibration remains open."
+      },
+      {
+        "id": "GE-IF-021",
+        "kind": "mechanical",
+        "from": "GE-021",
+        "to": "GE-008",
+        "label": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal."
+      },
+      {
+        "id": "GE-IF-022",
+        "kind": "mechanical",
+        "from": "GE-022",
+        "to": "GE-007",
+        "label": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement."
+      },
+      {
+        "id": "GE-IF-023",
+        "kind": "mechanical",
+        "from": "GE-023",
+        "to": "GE-022",
+        "label": "One nominal feed stub per brush. Manifold routing and service connection remain open."
       }
     ],
     "service": {
@@ -1913,19 +3668,56 @@
           8.975
         ],
         "classification": "Nominal B-rep reconstruction"
+      },
+      "GE-021": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "Small retaining tool pending",
+        "originSource": "G62B",
+        "envelopeMm": [
+          52.0,
+          6.0,
+          4.117
+        ],
+        "classification": "Nominal B-rep reconstruction"
+      },
+      "GE-022": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "Insulated pick",
+        "originSource": "G62B",
+        "envelopeMm": [
+          2.4,
+          2.4,
+          8.0
+        ],
+        "classification": "Nominal B-rep reconstruction"
+      },
+      "GE-023": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "Capillary tube tool",
+        "originSource": "G62B",
+        "envelopeMm": [
+          1.8,
+          9.0,
+          1.8
+        ],
+        "classification": "Nominal B-rep reconstruction"
       }
     }
   },
   "magneto-2022": {
     "code": "MT-22",
     "slug": "magneto-2022",
-    "revision": "0.1",
+    "revision": "0.2",
     "assetFolder": "models/archive/magneto-2022",
     "mesh": "models/archive/magneto-2022/assembly.glb",
     "boundsMm": [
-      352,
-      190,
-      167
+      352.0,
+      190.0,
+      167.651
+    ],
+    "baseMm": [
+      352.0,
+      190.0
     ],
     "shaftHeight": 98,
     "rotating": [
@@ -1935,7 +3727,8 @@
       "MT-006",
       "MT-007",
       "MT-010",
-      "MT-011"
+      "MT-011",
+      "MT-012"
     ],
     "inputParts": [
       "MT-003",
@@ -1961,8 +3754,12 @@
         "path": "models/archive/magneto-2022/drawings/exploded.svg"
       },
       {
-        "name": "Editable FreeCAD assembly",
+        "name": "FreeCAD assembled model",
         "path": "models/archive/magneto-2022/assembly.FCStd"
+      },
+      {
+        "name": "FreeCAD exploded assembly",
+        "path": "models/archive/magneto-2022/exploded.FCStd"
       },
       {
         "name": "CAD-derived GLB",
@@ -2853,6 +4650,326 @@
         ],
         "stage": 3,
         "rotation": 0
+      },
+      {
+        "key": "MT-012:1",
+        "partId": "MT-012",
+        "origin": [
+          -74,
+          48.0,
+          98.0
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:2",
+        "partId": "MT-012",
+        "origin": [
+          -74,
+          14.832815729997478,
+          143.65071278216737
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:3",
+        "partId": "MT-012",
+        "origin": [
+          -74,
+          -38.83281572999747,
+          126.21369211003872
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:4",
+        "partId": "MT-012",
+        "origin": [
+          -74,
+          -38.83281572999748,
+          69.7863078899613
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:5",
+        "partId": "MT-012",
+        "origin": [
+          -74,
+          14.832815729997467,
+          52.349287217832625
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:6",
+        "partId": "MT-012",
+        "origin": [
+          -18,
+          48.0,
+          98.0
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:7",
+        "partId": "MT-012",
+        "origin": [
+          -18,
+          14.832815729997478,
+          143.65071278216737
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:8",
+        "partId": "MT-012",
+        "origin": [
+          -18,
+          -38.83281572999747,
+          126.21369211003872
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:9",
+        "partId": "MT-012",
+        "origin": [
+          -18,
+          -38.83281572999748,
+          69.7863078899613
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:10",
+        "partId": "MT-012",
+        "origin": [
+          -18,
+          14.832815729997467,
+          52.349287217832625
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:11",
+        "partId": "MT-012",
+        "origin": [
+          38,
+          48.0,
+          98.0
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:12",
+        "partId": "MT-012",
+        "origin": [
+          38,
+          14.832815729997478,
+          143.65071278216737
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:13",
+        "partId": "MT-012",
+        "origin": [
+          38,
+          -38.83281572999747,
+          126.21369211003872
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:14",
+        "partId": "MT-012",
+        "origin": [
+          38,
+          -38.83281572999748,
+          69.7863078899613
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:15",
+        "partId": "MT-012",
+        "origin": [
+          38,
+          14.832815729997467,
+          52.349287217832625
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:16",
+        "partId": "MT-012",
+        "origin": [
+          94,
+          48.0,
+          98.0
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:17",
+        "partId": "MT-012",
+        "origin": [
+          94,
+          14.832815729997478,
+          143.65071278216737
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:18",
+        "partId": "MT-012",
+        "origin": [
+          94,
+          -38.83281572999747,
+          126.21369211003872
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:19",
+        "partId": "MT-012",
+        "origin": [
+          94,
+          -38.83281572999748,
+          69.7863078899613
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
+      },
+      {
+        "key": "MT-012:20",
+        "partId": "MT-012",
+        "origin": [
+          94,
+          14.832815729997467,
+          52.349287217832625
+        ],
+        "offset": [
+          15,
+          -211,
+          145
+        ],
+        "stage": 3,
+        "rotation": 0
       }
     ],
     "parts": [
@@ -2860,7 +4977,7 @@
         "id": "MT-001",
         "name": "Fixture base rail",
         "assemblyId": "MT-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Shaft frame mounting datum",
         "function": "Shaft frame mounting datum",
         "material": "Machined aluminum candidate",
@@ -2902,7 +5019,7 @@
         "id": "MT-002",
         "name": "Outboard shaft support",
         "assemblyId": "MT-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Common X-axis support bores",
         "function": "Common X-axis support bores",
         "material": "Cast aluminum candidate",
@@ -2944,7 +5061,7 @@
         "id": "MT-003",
         "name": "Through input shaft",
         "assemblyId": "MT-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Input shaft within the separate carrier sleeve",
         "function": "Input shaft within the separate carrier sleeve",
         "material": "Steel candidate",
@@ -2987,7 +5104,7 @@
         "id": "MT-004",
         "name": "Lobed magnetic carrier",
         "assemblyId": "MT-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Indexed sleeve bore and five satellite pivot holes",
         "function": "Indexed sleeve bore and five satellite pivot holes",
         "material": "Machined aluminum candidate",
@@ -3030,7 +5147,7 @@
         "id": "MT-005",
         "name": "Satellite magnet disk",
         "assemblyId": "MT-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Representative eight magnet recesses per machined disk",
         "function": "Representative eight magnet recesses per machined disk",
         "material": "Anodized aluminum candidate",
@@ -3043,7 +5160,8 @@
         },
         "mounting": "Representative eight magnet recesses per machined disk",
         "matingPartIds": [
-          "MT-004"
+          "MT-004",
+          "MT-012"
         ],
         "fastenerIds": [],
         "sensors": [],
@@ -3071,7 +5189,7 @@
         "id": "MT-006",
         "name": "Satellite pivot",
         "assemblyId": "MT-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Pivot engagement in carrier and disk bores",
         "function": "Pivot engagement in carrier and disk bores",
         "material": "Steel candidate",
@@ -3112,7 +5230,7 @@
         "id": "MT-007",
         "name": "Outboard indicator disk",
         "assemblyId": "MT-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Paired disks on the carrier sleeve",
         "function": "Paired disks on the carrier sleeve",
         "material": "Red nylon candidate",
@@ -3153,7 +5271,7 @@
         "id": "MT-008",
         "name": "Optical sensor stand",
         "assemblyId": "MT-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Independent of shaft frame. Sensor bracket datum",
         "function": "Independent of shaft frame. Sensor bracket datum",
         "material": "Anodized aluminum candidate",
@@ -3195,7 +5313,7 @@
         "id": "MT-009",
         "name": "Optical pickup",
         "assemblyId": "MT-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Service alignment to outboard indicator disk",
         "function": "Service alignment to outboard indicator disk",
         "material": "Insulating polymer candidate",
@@ -3236,7 +5354,7 @@
         "id": "MT-010",
         "name": "Carrier torque sleeve",
         "assemblyId": "MT-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Independent coaxial output with 0.3 mm radial clearance to the input shaft",
         "function": "Independent coaxial output with 0.3 mm radial clearance to the input shaft",
         "material": "Steel candidate",
@@ -3279,7 +5397,7 @@
         "id": "MT-011",
         "name": "Input magnetic coupling disk",
         "assemblyId": "MT-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Nominal input-side induction face. Pole properties remain open.",
         "function": "Nominal input-side induction face. Pole properties remain open.",
         "material": "Aluminum alloy candidate",
@@ -3315,6 +5433,47 @@
         "sourceAssembly": "MT-A2",
         "verification": "Solid geometry verified. Physical qualification pending.",
         "kind": "physical"
+      },
+      {
+        "id": "MT-012",
+        "name": "Satellite magnet insert set",
+        "assemblyId": "MT-A2",
+        "revision": "0.2",
+        "description": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified.",
+        "function": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified.",
+        "material": "Plated magnet insert candidate",
+        "quantity": 20,
+        "massKg": 0.007498805734930238,
+        "dimensionsMm": {
+          "length": 7.0,
+          "width": 25.6,
+          "height": 25.6
+        },
+        "mounting": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified.",
+        "matingPartIds": [
+          "MT-005"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the satellite magnet insert set and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/magneto-2022/parts/MT-012.step",
+        "diagramRefs": [
+          "models/archive/magneto-2022/drawings/MT-012.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Plated magnet insert candidate",
+        "sourceAssembly": "MT-A2",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
       }
     ],
     "assemblies": [
@@ -3341,7 +5500,8 @@
           "MT-005",
           "MT-006",
           "MT-010",
-          "MT-011"
+          "MT-011",
+          "MT-012"
         ]
       },
       {
@@ -3427,6 +5587,13 @@
         "from": "MT-011",
         "to": "MT-003",
         "label": "Nominal input-side induction face. Pole properties remain open."
+      },
+      {
+        "id": "MT-IF-012",
+        "kind": "mechanical",
+        "from": "MT-012",
+        "to": "MT-005",
+        "label": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified."
       }
     ],
     "service": {
@@ -3550,19 +5717,34 @@
           72.0
         ],
         "classification": "Nominal B-rep reconstruction"
+      },
+      "MT-012": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "Nonmagnetic pick",
+        "originSource": "A22",
+        "envelopeMm": [
+          7.0,
+          25.6,
+          25.6
+        ],
+        "classification": "Nominal B-rep reconstruction"
       }
     }
   },
   "micro-2016": {
     "code": "MI-16",
     "slug": "micro-2016",
-    "revision": "0.1",
+    "revision": "0.2",
     "assetFolder": "models/archive/micro-2016",
     "mesh": "models/archive/micro-2016/assembly.glb",
     "boundsMm": [
-      272,
-      158,
-      215
+      272.0,
+      168.0,
+      206.0
+    ],
+    "baseMm": [
+      272.0,
+      158.0
     ],
     "shaftHeight": 0,
     "rotating": [],
@@ -3589,8 +5771,12 @@
         "path": "models/archive/micro-2016/drawings/exploded.svg"
       },
       {
-        "name": "Editable FreeCAD assembly",
+        "name": "FreeCAD assembled model",
         "path": "models/archive/micro-2016/assembly.FCStd"
+      },
+      {
+        "name": "FreeCAD exploded assembly",
+        "path": "models/archive/micro-2016/exploded.FCStd"
       },
       {
         "name": "CAD-derived GLB",
@@ -3809,6 +5995,38 @@
         ],
         "stage": 2,
         "rotation": 0
+      },
+      {
+        "key": "MI-011:1",
+        "partId": "MI-011",
+        "origin": [
+          -105,
+          84,
+          60
+        ],
+        "offset": [
+          -52,
+          118,
+          -3
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "MI-011:2",
+        "partId": "MI-011",
+        "origin": [
+          105,
+          84,
+          60
+        ],
+        "offset": [
+          -52,
+          118,
+          -3
+        ],
+        "stage": 2,
+        "rotation": 0
       }
     ],
     "parts": [
@@ -3816,7 +6034,7 @@
         "id": "MI-001",
         "name": "Portable enclosure tray",
         "assemblyId": "MI-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Equipment floor, nominal carry-case envelope",
         "function": "Equipment floor, nominal carry-case envelope",
         "material": "Cast aluminum candidate",
@@ -3859,7 +6077,7 @@
         "id": "MI-002",
         "name": "Hinged lid",
         "assemblyId": "MI-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Lid in service pose about rear hinge datum",
         "function": "Lid in service pose about rear hinge datum",
         "material": "Machined aluminum candidate",
@@ -3901,7 +6119,7 @@
         "id": "MI-003",
         "name": "Hinge knuckle",
         "assemblyId": "MI-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Twin X-axis parallel hinge supports",
         "function": "Twin X-axis parallel hinge supports",
         "material": "Steel candidate",
@@ -3914,7 +6132,8 @@
         },
         "mounting": "Twin X-axis parallel hinge supports",
         "matingPartIds": [
-          "MI-001"
+          "MI-001",
+          "MI-011"
         ],
         "fastenerIds": [],
         "sensors": [],
@@ -3942,7 +6161,7 @@
         "id": "MI-004",
         "name": "Lid backplane",
         "assemblyId": "MI-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Stand-off plane 5 mm forward of lid",
         "function": "Stand-off plane 5 mm forward of lid",
         "material": "FR-4 laminate candidate",
@@ -3985,7 +6204,7 @@
         "id": "MI-005",
         "name": "Interface terminal strip",
         "assemblyId": "MI-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Numbered terminal positions. Pin assignment pending",
         "function": "Numbered terminal positions. Pin assignment pending",
         "material": "Insulating polymer candidate",
@@ -4027,7 +6246,7 @@
         "id": "MI-006",
         "name": "Lid relay module",
         "assemblyId": "MI-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Dual relay envelopes on shared backplane",
         "function": "Dual relay envelopes on shared backplane",
         "material": "Anodized aluminum candidate",
@@ -4068,7 +6287,7 @@
         "id": "MI-007",
         "name": "Control compartment plate",
         "assemblyId": "MI-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Removable floor insert and equipment datum",
         "function": "Removable floor insert and equipment datum",
         "material": "Machined aluminum candidate",
@@ -4111,7 +6330,7 @@
         "id": "MI-008",
         "name": "Instrument input module",
         "assemblyId": "MI-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Charge-assay fixture. Low-voltage input definition",
         "function": "Charge-assay fixture. Low-voltage input definition",
         "material": "FR-4 laminate candidate",
@@ -4152,7 +6371,7 @@
         "id": "MI-009",
         "name": "Shielded discharge module",
         "assemblyId": "MI-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Resistance network heat-transfer interface",
         "function": "Resistance network heat-transfer interface",
         "material": "Anodized aluminum candidate",
@@ -4193,7 +6412,7 @@
         "id": "MI-010",
         "name": "Lid services harness",
         "assemblyId": "MI-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Flexible service loop between lid and tray",
         "function": "Flexible service loop between lid and tray",
         "material": "Red nylon candidate",
@@ -4229,6 +6448,47 @@
         "sourceAssembly": "MI-A2",
         "verification": "Solid geometry verified. Physical qualification pending.",
         "kind": "physical"
+      },
+      {
+        "id": "MI-011",
+        "name": "Hinge pin",
+        "assemblyId": "MI-A1",
+        "revision": "0.2",
+        "description": "Ø4.6 mm candidate pin in each nominal hinge knuckle.",
+        "function": "Ø4.6 mm candidate pin in each nominal hinge knuckle.",
+        "material": "Steel candidate",
+        "quantity": 2,
+        "massKg": 0.004044239767208193,
+        "dimensionsMm": {
+          "length": 31.0,
+          "width": 4.6,
+          "height": 4.6
+        },
+        "mounting": "Ø4.6 mm candidate pin in each nominal hinge knuckle.",
+        "matingPartIds": [
+          "MI-003"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the hinge pin and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/micro-2016/parts/MI-011.step",
+        "diagramRefs": [
+          "models/archive/micro-2016/drawings/MI-011.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Steel candidate",
+        "sourceAssembly": "MI-A1",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
       }
     ],
     "assemblies": [
@@ -4241,7 +6501,8 @@
         "partIds": [
           "MI-001",
           "MI-002",
-          "MI-003"
+          "MI-003",
+          "MI-011"
         ]
       },
       {
@@ -4333,6 +6594,13 @@
         "from": "MI-010",
         "to": "MI-005",
         "label": "Flexible service loop between lid and tray"
+      },
+      {
+        "id": "MI-IF-011",
+        "kind": "mechanical",
+        "from": "MI-011",
+        "to": "MI-003",
+        "label": "Ø4.6 mm candidate pin in each nominal hinge knuckle."
       }
     ],
     "service": {
@@ -4445,19 +6713,34 @@
           79.7
         ],
         "classification": "Nominal B-rep reconstruction"
+      },
+      "MI-011": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "Pin punch candidate",
+        "originSource": null,
+        "envelopeMm": [
+          31.0,
+          4.6,
+          4.6
+        ],
+        "classification": "Nominal B-rep reconstruction"
       }
     }
   },
   "electro-2021": {
     "code": "ET-21",
     "slug": "electro-2021",
-    "revision": "0.1",
+    "revision": "0.2",
     "assetFolder": "models/archive/electro-2021",
     "mesh": "models/archive/electro-2021/assembly.glb",
     "boundsMm": [
-      266,
-      202,
-      92
+      266.0,
+      201.5,
+      92.0
+    ],
+    "baseMm": [
+      266.0,
+      191.0
     ],
     "shaftHeight": 0,
     "rotating": [],
@@ -4485,8 +6768,12 @@
         "path": "models/archive/electro-2021/drawings/exploded.svg"
       },
       {
-        "name": "Editable FreeCAD assembly",
+        "name": "FreeCAD assembled model",
         "path": "models/archive/electro-2021/assembly.FCStd"
+      },
+      {
+        "name": "FreeCAD exploded assembly",
+        "path": "models/archive/electro-2021/exploded.FCStd"
       },
       {
         "name": "CAD-derived GLB",
@@ -4721,6 +7008,134 @@
         ],
         "stage": 2,
         "rotation": 0
+      },
+      {
+        "key": "ET-010:1",
+        "partId": "ET-010",
+        "origin": [
+          -119,
+          -81,
+          90
+        ],
+        "offset": [
+          0,
+          -28,
+          142
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "ET-010:2",
+        "partId": "ET-010",
+        "origin": [
+          -119,
+          81,
+          90
+        ],
+        "offset": [
+          0,
+          -28,
+          142
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "ET-010:3",
+        "partId": "ET-010",
+        "origin": [
+          119,
+          -81,
+          90
+        ],
+        "offset": [
+          0,
+          -28,
+          142
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "ET-010:4",
+        "partId": "ET-010",
+        "origin": [
+          119,
+          81,
+          90
+        ],
+        "offset": [
+          0,
+          -28,
+          142
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "ET-011:1",
+        "partId": "ET-011",
+        "origin": [
+          -119,
+          -81,
+          45.75
+        ],
+        "offset": [
+          39,
+          245,
+          56
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "ET-011:2",
+        "partId": "ET-011",
+        "origin": [
+          -119,
+          81,
+          45.75
+        ],
+        "offset": [
+          39,
+          245,
+          56
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "ET-011:3",
+        "partId": "ET-011",
+        "origin": [
+          119,
+          -81,
+          45.75
+        ],
+        "offset": [
+          39,
+          245,
+          56
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "ET-011:4",
+        "partId": "ET-011",
+        "origin": [
+          119,
+          81,
+          45.75
+        ],
+        "offset": [
+          39,
+          245,
+          56
+        ],
+        "stage": 2,
+        "rotation": 0
       }
     ],
     "parts": [
@@ -4728,7 +7143,7 @@
         "id": "ET-001",
         "name": "Measurement chassis",
         "assemblyId": "ET-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Instrument datum at bottom of chassis",
         "function": "Instrument datum at bottom of chassis",
         "material": "Cast aluminum candidate",
@@ -4743,7 +7158,8 @@
         "matingPartIds": [
           "ET-002",
           "ET-003",
-          "ET-006"
+          "ET-006",
+          "ET-011"
         ],
         "fastenerIds": [],
         "sensors": [],
@@ -4771,7 +7187,7 @@
         "id": "ET-002",
         "name": "Removable chassis cover",
         "assemblyId": "ET-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Upper chassis rim. Retained at four corners",
         "function": "Upper chassis rim. Retained at four corners",
         "material": "Machined aluminum candidate",
@@ -4784,7 +7200,8 @@
         },
         "mounting": "Upper chassis rim. Retained at four corners",
         "matingPartIds": [
-          "ET-001"
+          "ET-001",
+          "ET-010"
         ],
         "fastenerIds": [],
         "sensors": [],
@@ -4812,7 +7229,7 @@
         "id": "ET-003",
         "name": "Instrument fascia",
         "assemblyId": "ET-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Panel openings aligned to display and coax ports",
         "function": "Panel openings aligned to display and coax ports",
         "material": "Coated aluminum candidate",
@@ -4855,7 +7272,7 @@
         "id": "ET-004",
         "name": "Readout module",
         "assemblyId": "ET-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Recessed front readout opening",
         "function": "Recessed front readout opening",
         "material": "Anodized aluminum candidate",
@@ -4896,7 +7313,7 @@
         "id": "ET-005",
         "name": "Coaxial acquisition port",
         "assemblyId": "ET-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Four nominal feed-throughs",
         "function": "Four nominal feed-throughs",
         "material": "Copper alloy candidate",
@@ -4937,7 +7354,7 @@
         "id": "ET-006",
         "name": "Acquisition printed circuit board",
         "assemblyId": "ET-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Candidate board outline, four mounting holes",
         "function": "Candidate board outline, four mounting holes",
         "material": "FR-4 laminate candidate",
@@ -4981,7 +7398,7 @@
         "id": "ET-007",
         "name": "Spurving resonator package",
         "assemblyId": "ET-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Two mounted stages on shared acquisition board",
         "function": "Two mounted stages on shared acquisition board",
         "material": "Anodized aluminum candidate",
@@ -5022,7 +7439,7 @@
         "id": "ET-008",
         "name": "Panametric phase noise depositer",
         "assemblyId": "ET-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Output processing footprint",
         "function": "Output processing footprint",
         "material": "Insulating polymer candidate",
@@ -5063,7 +7480,7 @@
         "id": "ET-009",
         "name": "Quantized entanglement realizer footprint",
         "assemblyId": "ET-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Inspectable unpopulated pad field",
         "function": "Inspectable unpopulated pad field",
         "material": "Copper alloy candidate",
@@ -5099,6 +7516,88 @@
         "sourceAssembly": "ET-A3",
         "verification": "Solid geometry verified. Physical qualification pending.",
         "kind": "physical"
+      },
+      {
+        "id": "ET-010",
+        "name": "Cover fastener",
+        "assemblyId": "ET-A1",
+        "revision": "0.2",
+        "description": "Four candidate fasteners through the cover holes. Head and retention details are project geometry.",
+        "function": "Four candidate fasteners through the cover holes. Head and retention details are project geometry.",
+        "material": "Steel candidate",
+        "quantity": 4,
+        "massKg": 0.0007550118938537644,
+        "dimensionsMm": {
+          "length": 6.0,
+          "width": 6.0,
+          "height": 8.0
+        },
+        "mounting": "Four candidate fasteners through the cover holes. Head and retention details are project geometry.",
+        "matingPartIds": [
+          "ET-002"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the cover fastener and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/electro-2021/parts/ET-010.step",
+        "diagramRefs": [
+          "models/archive/electro-2021/drawings/ET-010.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Steel candidate",
+        "sourceAssembly": "ET-A1",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
+      },
+      {
+        "id": "ET-011",
+        "name": "Cover mounting pillar",
+        "assemblyId": "ET-A1",
+        "revision": "0.2",
+        "description": "Candidate cover supports between tray floor and lid underside.",
+        "function": "Candidate cover supports between tray floor and lid underside.",
+        "material": "Cast aluminum candidate",
+        "quantity": 4,
+        "massKg": 0.012379280917856268,
+        "dimensionsMm": {
+          "length": 9.0,
+          "width": 9.0,
+          "height": 82.5
+        },
+        "mounting": "Candidate cover supports between tray floor and lid underside.",
+        "matingPartIds": [
+          "ET-001"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the cover mounting pillar and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/electro-2021/parts/ET-011.step",
+        "diagramRefs": [
+          "models/archive/electro-2021/drawings/ET-011.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Cast aluminum candidate",
+        "sourceAssembly": "ET-A1",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
       }
     ],
     "assemblies": [
@@ -5111,7 +7610,9 @@
         "partIds": [
           "ET-001",
           "ET-002",
-          "ET-003"
+          "ET-003",
+          "ET-010",
+          "ET-011"
         ]
       },
       {
@@ -5195,6 +7696,20 @@
         "from": "ET-009",
         "to": "ET-006",
         "label": "Inspectable unpopulated pad field"
+      },
+      {
+        "id": "ET-IF-010",
+        "kind": "mechanical",
+        "from": "ET-010",
+        "to": "ET-002",
+        "label": "Four candidate fasteners through the cover holes. Head and retention details are project geometry."
+      },
+      {
+        "id": "ET-IF-011",
+        "kind": "mechanical",
+        "from": "ET-011",
+        "to": "ET-001",
+        "label": "Candidate cover supports between tray floor and lid underside."
       }
     ],
     "service": {
@@ -5296,19 +7811,45 @@
           0.2
         ],
         "classification": "Nominal B-rep reconstruction"
+      },
+      "ET-010": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "PH1 screwdriver candidate",
+        "originSource": null,
+        "envelopeMm": [
+          6.0,
+          6.0,
+          8.0
+        ],
+        "classification": "Nominal B-rep reconstruction"
+      },
+      "ET-011": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "Small spanner candidate",
+        "originSource": null,
+        "envelopeMm": [
+          9.0,
+          9.0,
+          82.5
+        ],
+        "classification": "Nominal B-rep reconstruction"
       }
     }
   },
   "chrysler": {
     "code": "CH-88",
     "slug": "chrysler",
-    "revision": "0.1",
+    "revision": "0.2",
     "assetFolder": "models/archive/chrysler",
     "mesh": "models/archive/chrysler/assembly.glb",
     "boundsMm": [
-      346,
-      285,
-      238
+      346.0,
+      285.0,
+      243.0
+    ],
+    "baseMm": [
+      346.0,
+      285.0
     ],
     "shaftHeight": 125,
     "rotating": [
@@ -5346,8 +7887,12 @@
         "path": "models/archive/chrysler/drawings/exploded.svg"
       },
       {
-        "name": "Editable FreeCAD assembly",
+        "name": "FreeCAD assembled model",
         "path": "models/archive/chrysler/assembly.FCStd"
+      },
+      {
+        "name": "FreeCAD exploded assembly",
+        "path": "models/archive/chrysler/exploded.FCStd"
       },
       {
         "name": "CAD-derived GLB",
@@ -5566,6 +8111,166 @@
         ],
         "stage": 2,
         "rotation": 0
+      },
+      {
+        "key": "CH-013:1",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          98.0,
+          125.0
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:2",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          79.28366544874486,
+          182.60295472466237
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:3",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          30.28366544874485,
+          218.20353859692506
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:4",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          -30.283665448744838,
+          218.20353859692506
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:5",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          -79.28366544874484,
+          182.60295472466237
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:6",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          -98.0,
+          125.00000000000001
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:7",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          -79.28366544874486,
+          67.39704527533765
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:8",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          -30.283665448744863,
+          31.796461403074957
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:9",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          30.283665448744827,
+          31.796461403074943
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
+      },
+      {
+        "key": "CH-013:10",
+        "partId": "CH-013",
+        "origin": [
+          0.5,
+          79.28366544874484,
+          67.3970452753376
+        ],
+        "offset": [
+          -63,
+          185,
+          205
+        ],
+        "stage": 2,
+        "rotation": 0
       }
     ],
     "parts": [
@@ -5573,7 +8278,7 @@
         "id": "CH-001",
         "name": "Bench mounting tray",
         "assemblyId": "CH-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Datum A at the nominal service fixture",
         "function": "Datum A at the nominal service fixture",
         "material": "Machined aluminum candidate",
@@ -5616,7 +8321,7 @@
         "id": "CH-002",
         "name": "Ribbed bell casting",
         "assemblyId": "CH-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Open wide flange toward positive X",
         "function": "Open wide flange toward positive X",
         "material": "Cast aluminum candidate",
@@ -5660,7 +8365,7 @@
         "id": "CH-003",
         "name": "Bell flange",
         "assemblyId": "CH-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Nominal ten-position service split",
         "function": "Nominal ten-position service split",
         "material": "Steel candidate",
@@ -5674,7 +8379,8 @@
         "mounting": "Nominal ten-position service split",
         "matingPartIds": [
           "CH-002",
-          "CH-012"
+          "CH-012",
+          "CH-013"
         ],
         "fastenerIds": [],
         "sensors": [],
@@ -5702,7 +8408,7 @@
         "id": "CH-004",
         "name": "End case",
         "assemblyId": "CH-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Rear opposed end case and output journal",
         "function": "Rear opposed end case and output journal",
         "material": "Cast aluminum candidate",
@@ -5745,7 +8451,7 @@
         "id": "CH-005",
         "name": "Drive input shaft",
         "assemblyId": "CH-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Coaxial input datum within the drive element",
         "function": "Coaxial input datum within the drive element",
         "material": "Steel candidate",
@@ -5786,7 +8492,7 @@
         "id": "CH-006",
         "name": "Drive impeller",
         "assemblyId": "CH-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Input member of fluid-coupling analogue",
         "function": "Input member of fluid-coupling analogue",
         "material": "Aluminum alloy candidate",
@@ -5828,7 +8534,7 @@
         "id": "CH-007",
         "name": "Driven turbine",
         "assemblyId": "CH-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Output member opposite the impeller with unsteady-fluid clearance",
         "function": "Output member opposite the impeller with unsteady-fluid clearance",
         "material": "Machined aluminum candidate",
@@ -5869,7 +8575,7 @@
         "id": "CH-008",
         "name": "Driven hub and shaft",
         "assemblyId": "CH-A2",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Coaxial shaft to the outboard output datum",
         "function": "Coaxial shaft to the outboard output datum",
         "material": "Steel candidate",
@@ -5911,7 +8617,7 @@
         "id": "CH-009",
         "name": "Output seal carrier",
         "assemblyId": "CH-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Seal reference inside nominal end-case opening",
         "function": "Seal reference inside nominal end-case opening",
         "material": "Anodized aluminum candidate",
@@ -5952,7 +8658,7 @@
         "id": "CH-010",
         "name": "Service cover",
         "assemblyId": "CH-A3",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Dark removable service end plate",
         "function": "Dark removable service end plate",
         "material": "Coated aluminum candidate",
@@ -5993,7 +8699,7 @@
         "id": "CH-011",
         "name": "Lower case stand",
         "assemblyId": "CH-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Load path from the case to fixture over lower mounting plane",
         "function": "Load path from the case to fixture over lower mounting plane",
         "material": "Machined aluminum candidate",
@@ -6034,7 +8740,7 @@
         "id": "CH-012",
         "name": "Case transition ring",
         "assemblyId": "CH-A1",
-        "revision": "0.1",
+        "revision": "0.2",
         "description": "Annular locating step between bell flange and end case",
         "function": "Annular locating step between bell flange and end case",
         "material": "Cast aluminum candidate",
@@ -6070,6 +8776,47 @@
         "sourceAssembly": "CH-A1",
         "verification": "Solid geometry verified. Physical qualification pending.",
         "kind": "physical"
+      },
+      {
+        "id": "CH-013",
+        "name": "Bell-flange fastener",
+        "assemblyId": "CH-A1",
+        "revision": "0.2",
+        "description": "Nominal retaining hardware at the ten modeled flange holes.",
+        "function": "Nominal retaining hardware at the ten modeled flange holes.",
+        "material": "Steel candidate",
+        "quantity": 10,
+        "massKg": 0.007255229024418541,
+        "dimensionsMm": {
+          "length": 17.0,
+          "width": 11.0,
+          "height": 11.0
+        },
+        "mounting": "Nominal retaining hardware at the ten modeled flange holes.",
+        "matingPartIds": [
+          "CH-003"
+        ],
+        "fastenerIds": [],
+        "sensors": [],
+        "ports": [],
+        "equations": [],
+        "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+        "safetyFlags": [
+          "Isolate before access"
+        ],
+        "maintenance": "Inspect the bell-flange fastener and its mating datum for movement, abrasion or damage before reassembly.",
+        "cadAssetPath": "models/archive/chrysler/parts/CH-013.step",
+        "diagramRefs": [
+          "models/archive/chrysler/drawings/CH-013.svg"
+        ],
+        "testEvidence": [],
+        "sourcing": "Project-defined reconstruction",
+        "readiness": "Preliminary",
+        "evidence": "calculation",
+        "proposedSpecification": "Steel candidate",
+        "sourceAssembly": "CH-A1",
+        "verification": "Solid geometry verified. Physical qualification pending.",
+        "kind": "physical"
       }
     ],
     "assemblies": [
@@ -6085,7 +8832,8 @@
           "CH-003",
           "CH-004",
           "CH-011",
-          "CH-012"
+          "CH-012",
+          "CH-013"
         ]
       },
       {
@@ -6190,6 +8938,13 @@
         "from": "CH-012",
         "to": "CH-003",
         "label": "Annular locating step between bell flange and end case"
+      },
+      {
+        "id": "CH-IF-013",
+        "kind": "mechanical",
+        "from": "CH-013",
+        "to": "CH-003",
+        "label": "Nominal retaining hardware at the ten modeled flange holes."
       }
     ],
     "service": {
@@ -6322,6 +9077,17 @@
           19.0,
           126.0,
           126.0
+        ],
+        "classification": "Nominal B-rep reconstruction"
+      },
+      "CH-013": {
+        "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+        "tool": "13 mm socket candidate",
+        "originSource": null,
+        "envelopeMm": [
+          17.0,
+          11.0,
+          11.0
         ],
         "classification": "Nominal B-rep reconstruction"
       }

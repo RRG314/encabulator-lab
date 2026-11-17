@@ -9,7 +9,16 @@ test('distinguishes the TE-01 bench from the photographed GE configuration',asyn
   await expect(page.getByRole('heading',{name:'General Electric Turboencabulator GE-62'})).toBeVisible()
   await expect(page.getByRole('link',{name:/1962 catalog photograph/})).toHaveAttribute('href',/GE_Turboencabulator_pg_1/)
   await expect(page.getByText('CAD SCHEMATIC',{exact:true})).toBeVisible({timeout:15000})
+  await expect(page.getByText('137 / 137 CAD instances')).toBeVisible()
   await expect(page.getByRole('heading',{name:'Pentametric fan',level:3})).toBeVisible()
+  const drawings=page.getByRole('navigation',{name:'Assembly drawings'})
+  for(const [name,filename] of [['Assembled drawing','assembled.svg'],['Exploded drawing','exploded.svg']]) {
+    const href=await drawings.getByRole('link',{name}).getAttribute('href')
+    expect(href).toContain(`/ge-1962/drawings/${filename}`)
+    const result=await page.request.get(new URL(href!,page.url()).href)
+    expect(result.ok()).toBe(true)
+    expect(await result.text()).toContain('Revision 0.4')
+  }
   await page.getByRole('button',{name:'Show baseplate dimensions'}).click()
   await expect(page.getByText('Nominal CAD baseplate · 364 × 202.39 mm')).toBeVisible()
   await expect(page.getByRole('link',{name:'Dimension audit'})).toHaveAttribute('href',/GE62_DIMENSION_AUDIT\.md$/)

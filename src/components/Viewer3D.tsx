@@ -199,19 +199,21 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
     matrices.forEach((matrix, i) => ref.current!.setMatrixAt(i, transform ? transform.clone().multiply(matrix) : matrix))
     ref.current.instanceMatrix.needsUpdate = true
   }
+  const me=options.machine.key==='me01'
+  const extraAngle=me && ['ME-006','ME-030'].includes(id)?secondaryAngle:me&&id==='ME-018'?fanAngle:angle
+  const spins=rotating.includes(id)||extraAngle!==angle
+  const replay=options.speedRpm!==undefined || options.primaryAngleRad!==undefined
+    || options.secondaryRpm!==undefined || options.fanRpm!==undefined
+  const moving=replay&&!options.reducedMotion&&options.fraction===0
+  const spinning=moving&&spins
+  const variablePitch=me&&id==='ME-013'&&options.fraction===0&&options.bladePitch!==undefined
+  const reciprocal=moving&&options.machine.key==='re01'&&['RE-031','RE-032','RE-034'].includes(id)
   useLayoutEffect(() => {
     if (!ref.current) return
     matrices.forEach((matrix, i) => ref.current!.setMatrixAt(i, matrix))
     ref.current.instanceMatrix.needsUpdate = true
     ref.current.computeBoundingSphere()
-  }, [geometry, matrices])
-  const me=options.machine.key==='me01'
-  const extraAngle=me && ['ME-006','ME-030'].includes(id)?secondaryAngle:me&&id==='ME-018'?fanAngle:angle
-  const spins=rotating.includes(id)||extraAngle!==angle
-  const spinning=!options.reducedMotion&&options.fraction===0&&spins
-  const variablePitch=me&&id==='ME-013'&&options.bladePitch!==undefined
-  const reciprocal=options.machine.key==='re01' && ['RE-031','RE-032','RE-034'].includes(id)
-    && !options.reducedMotion && options.fraction===0
+  }, [geometry, matrices, reciprocal, spinning, variablePitch])
   useFrame(() => {
     if (reciprocal && ref.current) {
       const [x,y,z]=items[0].origin

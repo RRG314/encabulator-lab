@@ -24,6 +24,7 @@ export const finishes = {
   blue: { color: '#457e93', metalness: 0.2, roughness: 0.44 },
   sensor: { color: '#73bab9', metalness: 0.23, roughness: 0.43 },
   enamel: { color: '#e1dfd6', metalness: 0.08, roughness: 0.43 },
+  magnet: { color: '#c4c2bc', metalness: 0.62, roughness: 0.34 },
 } as const
 
 type Piece = [Finish, BufferGeometry]
@@ -280,7 +281,6 @@ export function makeGeometries(lowDetail = false) {
     'TE-024': [box('frame',[13,7,8]),box('amber',[5,4,3],[0,-4.5,2.5]),box('steel',[2,8,1],[4,0,4.6])],
     'TE-025': enclosure(),
     'TE-026': harness(),
-    'TE-027': [box('blue',[7,7,1.4]),box('black',[5.2,5.2,1],[0,0,1]), ...[-1,1].map(x => box('gold',[0.6,6.2,0.4],[x*3.5,0,0.6]))],
     'TE-028': [ring('blue',9,4,8),ring('steel',10,4,1.2,[3.5,0,0])],
     'TE-029': [cylinder('steel',2.6,2.3,'z',[0,0,1.5],6),cylinder('black',1,0.3,'z',[0,0,2.68],6),cylinder('steel',1.3,5,'z',[0,0,-2],12)],
     'TE-030': [

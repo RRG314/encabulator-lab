@@ -10,9 +10,9 @@ def investigate(shapes):
     checks = []
     def add(name, expected, observed, passed, unit=None):
         checks.append(dict(check=name,expected=expected,observed=observed,status='PASS' if passed else 'FAIL',unit=unit))
-    records = registry()
+    records = {id for id, record in registry().items() if record.get('kind') != 'logical'}
     rows = placements()
-    add('Registry coverage',len(records),len(set(shapes)&set(records)),set(shapes)==set(records))
+    add('Physical registry coverage',len(records),len(set(shapes)&records),set(shapes)==records)
     add('Unique instance keys',len(rows),len({row['key'] for row in rows}),len(rows)==len({row['key'] for row in rows}))
     unknown = sorted({finish for pieces in shapes.values() for finish,_ in pieces} - MATERIALS.keys())
     add('Finish assignments',[],unknown,not unknown)

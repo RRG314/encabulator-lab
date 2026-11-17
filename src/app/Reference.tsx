@@ -47,6 +47,8 @@ const teReports = [
   ['DGS travel calculation · JSON','dgs-travel-study.json','Reference geometric travel between the hub pin and stops.'],
   ['Part solids · STEP and STL','te01-part-solids.zip','Individual component references in local coordinates.'],
   ['Assembly GLB','te01.glb','Tessellated solid model in Y-up glTF coordinates and metres.'],
+  ['Assembly drawing','te01-drawings/TE01-ASSEMBLY.svg','Overall assembly and CAD reference envelope.'],
+  ['Separated assembly drawing','te01-drawings/TE01-EXPLODED.svg','Full separation using the assembly layout.'],
   ['Drawing review set · PDF','te01-drawings.pdf','Orthographic and isometric views with schematic dimensions and revision marking.'],
   ['Drawing review set · SVG','te01-drawings-svg.zip','Editable vector drawings for component and assembly review.'],
   ['Geometric verification · JSON','validation.json','B-rep checks, observed dimensions and assembly contacts.'],
@@ -119,7 +121,8 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
   const detail=machine.service[part.id]
   const dimensions=dimensionText(part,detail)
   const links=linksFor(part.id)
-  const host=part.kind==='logical'&&machine.key==='me01'?links.find(link=>link.from===part.id)?.to:undefined
+  const host=part.kind==='logical'?links.map(link=>link.from===part.id?link.to:link.from)
+    .find(id=>partById.get(id)?.kind==='physical'):undefined
   const source=detail?.source ? sourceTrace.terms[detail.source as keyof typeof sourceTrace.terms] : undefined
   const archivalSource=detail?.originSource ? sourceById.get(detail.originSource) : undefined
   return <>
@@ -159,7 +162,7 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
           <dt>Installation and removal</dt><dd><a href={machine.href('engineering/service')}>Assembly and service sequence</a>. Released procedure pending.</dd>
           <dt>CAD reference</dt><dd>{part.kind === 'logical' ? 'Controller computation' : <a href={assetUrl(part.cadAssetPath ?? 'models/te01-part-solids.zip')} download>{part.id} · CAD download</a>}</dd>
           <dt>Revision history</dt><dd><a href={machine.href('engineering/revisions')}>{part.revision} · Revision record</a></dd>
-          {machine.key!=='te01' && part.kind!=='logical' && <><dt>Technical drawing</dt><dd><a href={assetUrl(part.diagramRefs[0])} download>Dimensioned schematic SVG</a></dd></>}
+          {part.kind!=='logical' && <><dt>Technical drawing</dt><dd><a href={assetUrl(part.diagramRefs[0])} download>Dimensioned schematic SVG</a></dd></>}
           {archivalSource && <><dt>Reconstruction evidence</dt><dd><a href={archivalSource.url}>{archivalSource.id} · {archivalSource.title}</a>. {archivalSource.relevance}</dd></>}
           {source && <><dt>Terminology source</dt><dd><a href={sourceTrace.url}>Rockwell transcript, p. {sourceTrace.page}, ¶{source.paragraph}</a></dd></>}
         </dl>

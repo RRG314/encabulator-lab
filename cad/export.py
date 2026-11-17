@@ -33,12 +33,12 @@ def main():
     envelopes={}
     masses={}
     for id,pieces in shapes.items():
-        b=compound(shape for _,shape in pieces).BoundBox
+        b=compound(shape for _,shape in pieces).optimalBoundingBox(False,False)
         envelopes[id]=[round(b.XLength,3),round(b.YLength,3),round(b.ZLength,3)]
         masses[id]=sum(shape.Volume*density[finish]*1e-9 for finish,shape in pieces)
     (ROOT/'data/te01-envelopes.json').write_text(json.dumps(envelopes,indent=2)+'\n')
-    report['estimatedMassKg']=round(sum(masses[row['partId']] for row in layout if row['partId']!='TE-027'),3)
-    report['massBasis']='Schematic sum of component volumes with generic finish densities. Includes representative mounting hardware, excluding software marker.'
+    report['estimatedMassKg']=round(sum(masses[row['partId']] for row in layout),3)
+    report['massBasis']='Schematic sum of component volumes with generic finish densities. Includes representative mounting hardware.'
     (out/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
     for check in report['checks']:
         print(check['status'],check['check'])
@@ -65,20 +65,19 @@ def main():
             step_document.recompute()
             Part.export(objects, str(out/f'te01-{label}.step'))
             App.closeDocument(step_document.Name)
-        # Standalone local solids for geometric exchange; logic is a reference marker.
+        part_dir=out/'te01-parts'
+        part_dir.mkdir(exist_ok=True)
         with zipfile.ZipFile(out_cad/'te01-part-solids.zip','w',compression=zipfile.ZIP_DEFLATED) as archive:
             for name,pieces in shapes.items():
-                if name == 'TE-027':
-                    continue
                 body = compound(shape for _,shape in pieces)
-                step = out_cad/f'{name}.step'
+                step = part_dir/f'{name}.step'
                 stl = out_cad/f'{name}.stl'
                 body.exportStep(str(step))
                 mesh = MeshPart.meshFromShape(Shape=body, LinearDeflection=0.2, AngularDeflection=0.25, Relative=False)
                 mesh.write(str(stl))
                 for path in (step,stl):
                     archive.write(path,path.name)
-                    path.unlink()
+                stl.unlink()
         (out_cad/'te01-part-solids.zip').replace(out/'te01-part-solids.zip')
         variant = compound(shape for _,shape in cartridge())
         variant.exportStep(str(out/'te01-dgs-travel-study.step'))

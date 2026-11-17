@@ -13,12 +13,12 @@ describe('technical reference', () => {
     expect(parts.every(part=>part.mounting && part.maintenance && part.verification && part.diagramRefs.length)).toBe(true)
   })
 
-  it('includes each registry ID in the generated GLB', () => {
+  it('includes each physical registry ID in the generated GLB', () => {
     const file=readFileSync(new URL('../public/models/te01.glb',import.meta.url))
     expect(file.toString('utf8',0,4)).toBe('glTF')
     expect(file.readUInt32LE(8)).toBe(file.byteLength)
     const mesh=JSON.parse(file.toString('utf8',20,20+file.readUInt32LE(12))) as {meshes:{name:string}[]}
-    expect(mesh.meshes.map(row=>row.name).sort()).toEqual(parts.map(part=>part.id))
+    expect(mesh.meshes.map(row=>row.name).sort()).toEqual(parts.filter(part=>part.kind!=='logical').map(part=>part.id))
   })
 
   it('evaluates all parameter presets at baseline and range bounds', () => {

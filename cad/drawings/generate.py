@@ -9,7 +9,6 @@ from ..parameters import ROOT, D
 from ..te01_master_assembly import registry
 
 VIEWS = [('TOP / XY',V(0,0,1)),('FRONT / XZ',V(0,-1,0)),('END / YZ',V(1,0,0)),('ISOMETRIC',V(0.58,-1,0.68))]
-CUSTOM = ['TE-001','TE-005','TE-007','TE-008','TE-009','TE-010','TE-011','TE-013','TE-014','TE-015','TE-025']
 DETAIL_NOTES = {
     'TE-001': f'DATUM A  •  TOP PLANE Z = 0    /    FOOT DATUM PATTERN {2*D.foot_x:g} × {2*D.foot_y:g} mm',
     'TE-005': f'BORE INTERFACE  •  Ø{D.shaft_diameter:g} NOMINAL JOURNAL    /    AXIAL LOCATION AND FIT PENDING',
@@ -55,7 +54,7 @@ def projected_silhouette(solid, direction):
 
 def sheet(identifier, title, solid, note, material, model="TE-01", edge_only=False, revision="0.1", nominal=False):
     art = []
-    b = solid.optimalBoundingBox(False,False) if nominal else solid.BoundBox
+    b = solid.optimalBoundingBox(False,False)
     basis = 'Nominal CAD · Historical scale unverified' if nominal else 'Schematic reference'
     extents = [(b.XMin,b.XMax,b.YMin,b.YMax), (b.XMin,b.XMax,b.ZMin,b.ZMax), (b.YMin,b.YMax,b.ZMin,b.ZMax)]
     for i,(label,direction) in enumerate(VIEWS):
@@ -97,18 +96,22 @@ def drawings(shapes, assembled, exploded):
     records = registry()
     sheets = [('TE01-ASSEMBLY','Assembly',compound(assembled),'DATUM A  •  TOP BASEPLATE    /    SHAFT +X, UP +Z','Registry candidates'),
               ('TE01-EXPLODED','Exploded assembly',compound(exploded),'SERVICE RELATIONSHIP STUDY  •  SEPARATION OFFSETS ARE SCHEMATIC','Registry candidates')]
-    for id in CUSTOM:
+    for id in shapes:
         part = records[id]
         sheets.append((id,part['name'],compound(shape for _,shape in shapes[id]),DETAIL_NOTES.get(id,'GEOMETRIC REFERENCE  •  INTERFACE AND TOLERANCE RELEASE PENDING'),part['material'] or 'Selection pending'))
     for owner in ['ABA','SBA','HMA','DGS','PFA','LCA','CGM','UPD','CSC']:
         from ..te01_master_assembly import world_shapes
         selected = [shape for item,shape in world_shapes(shapes) if records[item['partId']]['assemblyId']==owner]
         if not selected:
-            selected = [shape for _,shape in shapes['TE-027']]
+            continue
         sheets.append((f'TE01-{owner}',f'{owner} Subassembly',compound(selected),'SUBASSEMBLY DATUMS AND MOUNTING INTERFACES SUBJECT TO REVIEW','Registry candidates'))
     published = ROOT/'public/models'
+    published_sheets=published/'te01-drawings'
+    published_sheets.mkdir(exist_ok=True)
     with ZipFile(published/'te01-drawings-svg.zip','w',ZIP_DEFLATED) as archive:
         for identifier,title,solid,note,material in sheets:
             file = Path(path/f'{identifier}.svg')
-            file.write_text(sheet(identifier,title,solid,note,material)+'\n')
+            contents=sheet(identifier,title,solid,note,material,edge_only=True)+'\n'
+            file.write_text(contents)
+            (published_sheets/file.name).write_text(contents)
             archive.write(file,file.name)

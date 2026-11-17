@@ -7,11 +7,12 @@ import { explodePosition, journalStations, placements, shaftHeight } from '../sr
 
 const geometry = makeGeometries()
 describe('schematic model', () => {
-  it('assigns separate geometry to every registry part and preserves BOM quantities', () => {
-    expect(Object.keys(geometry).sort()).toEqual(parts.map(part => part.id))
+  it('assigns geometry to every physical part and preserves BOM quantities', () => {
+    const physical = parts.filter(part => part.kind !== 'logical')
+    expect(Object.keys(geometry).sort()).toEqual(physical.map(part => part.id))
     expect(new Set(placements.map(placement => placement.key)).size).toBe(placements.length)
     const compact = makeGeometries(true)
-    for (const part of parts) {
+    for (const part of physical) {
       expect(compact[part.id].length).toBeGreaterThan(0)
       const instances = placements.filter(placement => placement.partId === part.id)
       expect(instances.length).toBeGreaterThan(0)

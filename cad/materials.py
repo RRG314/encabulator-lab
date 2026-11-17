@@ -14,4 +14,5 @@ MATERIALS = {
     'blue': ('Instrument finish', (0.17, 0.35, 0.44), 0.14, 0.48, 1.0, None),
     'sensor': ('Instrumentation marker', (0.28, 0.60, 0.59), 0.15, 0.42, 1.0, None),
     'enamel': ('Enamel-coated aluminum candidate', (0.84, 0.83, 0.77), 0.11, 0.36, 1.0, 2700),
+    'magnet': ('Plated magnet insert candidate', (0.65, 0.65, 0.63), 0.61, 0.34, 1.0, 7400),
 }

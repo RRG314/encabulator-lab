@@ -598,22 +598,6 @@
       "rotation": 0
     },
     {
-      "key": "TE-027:1",
-      "partId": "TE-027",
-      "origin": [
-        -26,
-        -77,
-        8.2
-      ],
-      "offset": [
-        40,
-        -93,
-        51.8
-      ],
-      "stage": 2,
-      "rotation": 0
-    },
-    {
       "key": "TE-028:1",
       "partId": "TE-028",
       "origin": [

@@ -35,7 +35,7 @@ describe('independent machine parity',()=>{
   for (const machine of Object.values(machines)) {
     it(`${machine.code} has independent linked records, native solids, downloads, draws and original GLB mesh coverage`,()=>{
       expect(integrityErrors(machine.registry)).toEqual([])
-      const parts=new Set(machine.registry.parts.filter(p=>machine.key!=='me01'||p.kind!=='logical').map(p=>p.id))
+      const parts=new Set(machine.registry.parts.filter(p=>p.kind!=='logical').map(p=>p.id))
       const glb=readFileSync(dir(`public/${machine.mesh}`))
       expect(glb.toString('utf8',0,4)).toBe('glTF')
       expect(glb.readUInt32LE(8)).toBe(glb.byteLength)
@@ -49,7 +49,7 @@ describe('independent machine parity',()=>{
       const checks={
         nativeSources: existsSync(dir(machine.key==='te01'?'cad/te01_master_assembly.py':`cad/models/${machine.key}/master_assembly.py`)),
         poseIdentity: new Set(machine.placements.map(p=>p.key)).size===doc.nodes.length,
-        serviceCoverage: machine.registry.parts.every(p=>!!machine.service[p.id]?.tool && ((p.kind==='logical'&&machine.key==='me01')||!!machine.service[p.id]?.envelopeMm?.length)),
+        serviceCoverage: machine.registry.parts.every(p=>!!machine.service[p.id]?.tool && (p.kind==='logical'||!!machine.service[p.id]?.envelopeMm?.length)),
         assembledAndSeparated: machine.placements.some(p=>p.offset.some(value=>value!==0))&&doc.nodes.length>parts.size,
         exportsAndDrawings: expected.every(file=>existsSync(dir(`public/${machine.assetFolder}/${file}`))),
         geometryChecks: shape.checks.every(check=>check.status!=='FAIL'),

@@ -1,7 +1,7 @@
 {
   "code": "GE-62",
   "slug": "ge-1962",
-  "revision": "0.3",
+  "revision": "0.4",
   "assetFolder": "models/archive/ge-1962",
   "mesh": "models/archive/ge-1962/assembly.glb",
   "boundsMm": [
@@ -17,7 +17,8 @@
   "rotating": [
     "GE-006",
     "GE-008",
-    "GE-009"
+    "GE-009",
+    "GE-021"
   ],
   "inputParts": [],
   "guard": [
@@ -46,8 +47,12 @@
       "path": "models/archive/ge-1962/drawings/exploded.svg"
     },
     {
-      "name": "Editable FreeCAD assembly",
+      "name": "FreeCAD assembled model",
       "path": "models/archive/ge-1962/assembly.FCStd"
+    },
+    {
+      "name": "FreeCAD exploded assembly",
+      "path": "models/archive/ge-1962/exploded.FCStd"
     },
     {
       "name": "CAD-derived GLB",
@@ -666,6 +671,1606 @@
       ],
       "stage": 2,
       "rotation": 0
+    },
+    {
+      "key": "GE-021:1",
+      "partId": "GE-021",
+      "origin": [
+        -5,
+        0,
+        96
+      ],
+      "offset": [
+        -45,
+        -182,
+        31
+      ],
+      "stage": 3,
+      "rotation": 0.0
+    },
+    {
+      "key": "GE-021:2",
+      "partId": "GE-021",
+      "origin": [
+        -5,
+        0,
+        96
+      ],
+      "offset": [
+        -45,
+        -182,
+        31
+      ],
+      "stage": 3,
+      "rotation": 1.0471975511965976
+    },
+    {
+      "key": "GE-021:3",
+      "partId": "GE-021",
+      "origin": [
+        -5,
+        0,
+        96
+      ],
+      "offset": [
+        -45,
+        -182,
+        31
+      ],
+      "stage": 3,
+      "rotation": 2.0943951023931953
+    },
+    {
+      "key": "GE-021:4",
+      "partId": "GE-021",
+      "origin": [
+        -5,
+        0,
+        96
+      ],
+      "offset": [
+        -45,
+        -182,
+        31
+      ],
+      "stage": 3,
+      "rotation": 3.141592653589793
+    },
+    {
+      "key": "GE-021:5",
+      "partId": "GE-021",
+      "origin": [
+        -5,
+        0,
+        96
+      ],
+      "offset": [
+        -45,
+        -182,
+        31
+      ],
+      "stage": 3,
+      "rotation": 4.1887902047863905
+    },
+    {
+      "key": "GE-021:6",
+      "partId": "GE-021",
+      "origin": [
+        -5,
+        0,
+        96
+      ],
+      "offset": [
+        -45,
+        -182,
+        31
+      ],
+      "stage": 3,
+      "rotation": 5.235987755982989
+    },
+    {
+      "key": "GE-022:1",
+      "partId": "GE-022",
+      "origin": [
+        -138,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:2",
+      "partId": "GE-022",
+      "origin": [
+        -132,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:3",
+      "partId": "GE-022",
+      "origin": [
+        -126,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:4",
+      "partId": "GE-022",
+      "origin": [
+        -120,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:5",
+      "partId": "GE-022",
+      "origin": [
+        -114,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:6",
+      "partId": "GE-022",
+      "origin": [
+        -108,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:7",
+      "partId": "GE-022",
+      "origin": [
+        -102,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:8",
+      "partId": "GE-022",
+      "origin": [
+        -96,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:9",
+      "partId": "GE-022",
+      "origin": [
+        -90,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:10",
+      "partId": "GE-022",
+      "origin": [
+        -84,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:11",
+      "partId": "GE-022",
+      "origin": [
+        -78,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:12",
+      "partId": "GE-022",
+      "origin": [
+        -72,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:13",
+      "partId": "GE-022",
+      "origin": [
+        -66,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:14",
+      "partId": "GE-022",
+      "origin": [
+        -60,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:15",
+      "partId": "GE-022",
+      "origin": [
+        -54,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:16",
+      "partId": "GE-022",
+      "origin": [
+        -48,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:17",
+      "partId": "GE-022",
+      "origin": [
+        -42,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:18",
+      "partId": "GE-022",
+      "origin": [
+        -36,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:19",
+      "partId": "GE-022",
+      "origin": [
+        -30,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:20",
+      "partId": "GE-022",
+      "origin": [
+        -24,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:21",
+      "partId": "GE-022",
+      "origin": [
+        -18,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:22",
+      "partId": "GE-022",
+      "origin": [
+        -12,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:23",
+      "partId": "GE-022",
+      "origin": [
+        -6,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:24",
+      "partId": "GE-022",
+      "origin": [
+        0,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:25",
+      "partId": "GE-022",
+      "origin": [
+        6,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:26",
+      "partId": "GE-022",
+      "origin": [
+        12,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:27",
+      "partId": "GE-022",
+      "origin": [
+        18,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:28",
+      "partId": "GE-022",
+      "origin": [
+        24,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:29",
+      "partId": "GE-022",
+      "origin": [
+        30,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:30",
+      "partId": "GE-022",
+      "origin": [
+        36,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:31",
+      "partId": "GE-022",
+      "origin": [
+        42,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:32",
+      "partId": "GE-022",
+      "origin": [
+        48,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:33",
+      "partId": "GE-022",
+      "origin": [
+        54,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:34",
+      "partId": "GE-022",
+      "origin": [
+        60,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:35",
+      "partId": "GE-022",
+      "origin": [
+        66,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:36",
+      "partId": "GE-022",
+      "origin": [
+        72,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:37",
+      "partId": "GE-022",
+      "origin": [
+        78,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:38",
+      "partId": "GE-022",
+      "origin": [
+        84,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:39",
+      "partId": "GE-022",
+      "origin": [
+        90,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:40",
+      "partId": "GE-022",
+      "origin": [
+        96,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:41",
+      "partId": "GE-022",
+      "origin": [
+        102,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:42",
+      "partId": "GE-022",
+      "origin": [
+        108,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:43",
+      "partId": "GE-022",
+      "origin": [
+        114,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:44",
+      "partId": "GE-022",
+      "origin": [
+        120,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:45",
+      "partId": "GE-022",
+      "origin": [
+        126,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:46",
+      "partId": "GE-022",
+      "origin": [
+        132,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-022:47",
+      "partId": "GE-022",
+      "origin": [
+        138,
+        0,
+        153
+      ],
+      "offset": [
+        0,
+        69,
+        154
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:1",
+      "partId": "GE-023",
+      "origin": [
+        -138,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:2",
+      "partId": "GE-023",
+      "origin": [
+        -132,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:3",
+      "partId": "GE-023",
+      "origin": [
+        -126,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:4",
+      "partId": "GE-023",
+      "origin": [
+        -120,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:5",
+      "partId": "GE-023",
+      "origin": [
+        -114,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:6",
+      "partId": "GE-023",
+      "origin": [
+        -108,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:7",
+      "partId": "GE-023",
+      "origin": [
+        -102,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:8",
+      "partId": "GE-023",
+      "origin": [
+        -96,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:9",
+      "partId": "GE-023",
+      "origin": [
+        -90,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:10",
+      "partId": "GE-023",
+      "origin": [
+        -84,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:11",
+      "partId": "GE-023",
+      "origin": [
+        -78,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:12",
+      "partId": "GE-023",
+      "origin": [
+        -72,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:13",
+      "partId": "GE-023",
+      "origin": [
+        -66,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:14",
+      "partId": "GE-023",
+      "origin": [
+        -60,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:15",
+      "partId": "GE-023",
+      "origin": [
+        -54,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:16",
+      "partId": "GE-023",
+      "origin": [
+        -48,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:17",
+      "partId": "GE-023",
+      "origin": [
+        -42,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:18",
+      "partId": "GE-023",
+      "origin": [
+        -36,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:19",
+      "partId": "GE-023",
+      "origin": [
+        -30,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:20",
+      "partId": "GE-023",
+      "origin": [
+        -24,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:21",
+      "partId": "GE-023",
+      "origin": [
+        -18,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:22",
+      "partId": "GE-023",
+      "origin": [
+        -12,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:23",
+      "partId": "GE-023",
+      "origin": [
+        -6,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:24",
+      "partId": "GE-023",
+      "origin": [
+        0,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:25",
+      "partId": "GE-023",
+      "origin": [
+        6,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:26",
+      "partId": "GE-023",
+      "origin": [
+        12,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:27",
+      "partId": "GE-023",
+      "origin": [
+        18,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:28",
+      "partId": "GE-023",
+      "origin": [
+        24,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:29",
+      "partId": "GE-023",
+      "origin": [
+        30,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:30",
+      "partId": "GE-023",
+      "origin": [
+        36,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:31",
+      "partId": "GE-023",
+      "origin": [
+        42,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:32",
+      "partId": "GE-023",
+      "origin": [
+        48,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:33",
+      "partId": "GE-023",
+      "origin": [
+        54,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:34",
+      "partId": "GE-023",
+      "origin": [
+        60,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:35",
+      "partId": "GE-023",
+      "origin": [
+        66,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:36",
+      "partId": "GE-023",
+      "origin": [
+        72,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:37",
+      "partId": "GE-023",
+      "origin": [
+        78,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:38",
+      "partId": "GE-023",
+      "origin": [
+        84,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:39",
+      "partId": "GE-023",
+      "origin": [
+        90,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:40",
+      "partId": "GE-023",
+      "origin": [
+        96,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:41",
+      "partId": "GE-023",
+      "origin": [
+        102,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:42",
+      "partId": "GE-023",
+      "origin": [
+        108,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:43",
+      "partId": "GE-023",
+      "origin": [
+        114,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:44",
+      "partId": "GE-023",
+      "origin": [
+        120,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:45",
+      "partId": "GE-023",
+      "origin": [
+        126,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:46",
+      "partId": "GE-023",
+      "origin": [
+        132,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-023:47",
+      "partId": "GE-023",
+      "origin": [
+        138,
+        -6,
+        155
+      ],
+      "offset": [
+        0,
+        -66,
+        176
+      ],
+      "stage": 2,
+      "rotation": 0
     }
   ],
   "parts": [
@@ -673,7 +2278,7 @@
       "id": "GE-001",
       "name": "Prefabulated Amulite baseplate",
       "assemblyId": "GE-A1",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Scalloped front edge. Upper plane establishes datum A.",
       "function": "Scalloped front edge. Upper plane establishes datum A.",
       "material": "Enamel-coated aluminum candidate",
@@ -714,7 +2319,7 @@
       "id": "GE-002",
       "name": "Logarithmic case",
       "assemblyId": "GE-A1",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Removable cylindrical shell, Ø132 mm nominal.",
       "function": "Removable cylindrical shell, Ø132 mm nominal.",
       "material": "Enamel-coated aluminum candidate",
@@ -760,7 +2365,7 @@
       "id": "GE-003",
       "name": "Dual-meter fascia",
       "assemblyId": "GE-A1",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Two Ø24.2 mm openings at 34 mm pitch.",
       "function": "Two Ø24.2 mm openings at 34 mm pitch.",
       "material": "Machined aluminum candidate",
@@ -803,7 +2408,7 @@
       "id": "GE-004",
       "name": "Inrush and realization panel meter",
       "assemblyId": "GE-A2",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Meter bodies aligned to the casing apertures.",
       "function": "Meter bodies aligned to the casing apertures.",
       "material": "Insulating polymer candidate",
@@ -846,7 +2451,7 @@
       "id": "GE-005",
       "name": "Coaxial bearing pedestal",
       "assemblyId": "GE-A3",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Two coaxial supports within the shell.",
       "function": "Two coaxial supports within the shell.",
       "material": "Steel candidate",
@@ -889,7 +2494,7 @@
       "id": "GE-006",
       "name": "Rotor spindle",
       "assemblyId": "GE-A3",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Ø16 mm journal along datum X.",
       "function": "Ø16 mm journal along datum X.",
       "material": "Steel candidate",
@@ -932,7 +2537,7 @@
       "id": "GE-007",
       "name": "Semi-boloid stator carrier",
       "assemblyId": "GE-A3",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Stator ring between the bearing planes.",
       "function": "Stator ring between the bearing planes.",
       "material": "Cast aluminum candidate",
@@ -945,7 +2550,8 @@
       },
       "mounting": "Stator ring between the bearing planes.",
       "matingPartIds": [
-        "GE-005"
+        "GE-005",
+        "GE-022"
       ],
       "fastenerIds": [],
       "sensors": [],
@@ -973,7 +2579,7 @@
       "id": "GE-008",
       "name": "Rotor sleeve",
       "assemblyId": "GE-A3",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Radial clearance to stator and spindle.",
       "function": "Radial clearance to stator and spindle.",
       "material": "Machined aluminum candidate",
@@ -986,7 +2592,8 @@
       },
       "mounting": "Radial clearance to stator and spindle.",
       "matingPartIds": [
-        "GE-006"
+        "GE-006",
+        "GE-021"
       ],
       "fastenerIds": [],
       "sensors": [],
@@ -1014,7 +2621,7 @@
       "id": "GE-009",
       "name": "Pentametric fan",
       "assemblyId": "GE-A3",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Five external blades visible in figure 1. The text separately describes six marzel-vanes.",
       "function": "Five external blades visible in figure 1. The text separately describes six marzel-vanes.",
       "material": "Enamel-coated aluminum candidate",
@@ -1055,7 +2662,7 @@
       "id": "GE-010",
       "name": "Meter excitation and load board",
       "assemblyId": "GE-A2",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Low-voltage demonstration circuit beneath the meter plane.",
       "function": "Low-voltage demonstration circuit beneath the meter plane.",
       "material": "FR-4 laminate candidate",
@@ -1097,7 +2704,7 @@
       "id": "GE-011",
       "name": "Input protection module",
       "assemblyId": "GE-A2",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Isolated reference feed at the board input.",
       "function": "Isolated reference feed at the board input.",
       "material": "Insulating polymer candidate",
@@ -1138,7 +2745,7 @@
       "id": "GE-012",
       "name": "Perforated fan-end grille",
       "assemblyId": "GE-A1",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Circular end grille with perforated perimeter.",
       "function": "Circular end grille with perforated perimeter.",
       "material": "Steel candidate",
@@ -1179,7 +2786,7 @@
       "id": "GE-013",
       "name": "Rear end closure",
       "assemblyId": "GE-A1",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Concentric shell closure and shaft opening.",
       "function": "Concentric shell closure and shaft opening.",
       "material": "Enamel-coated aluminum candidate",
@@ -1220,7 +2827,7 @@
       "id": "GE-014",
       "name": "Upper tremie rail",
       "assemblyId": "GE-A3",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "External rail above the shell crown.",
       "function": "External rail above the shell crown.",
       "material": "Steel candidate",
@@ -1262,7 +2869,7 @@
       "id": "GE-015",
       "name": "Tremie return loop",
       "assemblyId": "GE-A3",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Repeated takeoff toward the crown.",
       "function": "Repeated takeoff toward the crown.",
       "material": "Copper alloy candidate",
@@ -1303,7 +2910,7 @@
       "id": "GE-016",
       "name": "Twin mounting stanchions",
       "assemblyId": "GE-A1",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Two exposed stand-offs under the shell.",
       "function": "Two exposed stand-offs under the shell.",
       "material": "Steel candidate",
@@ -1346,7 +2953,7 @@
       "id": "GE-017",
       "name": "Analog meter dial",
       "assemblyId": "GE-A2",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Two light readout faces visible in figure 1.",
       "function": "Two light readout faces visible in figure 1.",
       "material": "Enamel-coated aluminum candidate",
@@ -1388,7 +2995,7 @@
       "id": "GE-018",
       "name": "Panel indicator bezel",
       "assemblyId": "GE-A2",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Three visible pilot positions. Electrical assignments remain open.",
       "function": "Three visible pilot positions. Electrical assignments remain open.",
       "material": "Anodized aluminum candidate",
@@ -1429,7 +3036,7 @@
       "id": "GE-019",
       "name": "Nameplate strip",
       "assemblyId": "GE-A1",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Side identification strip located from figure 1.",
       "function": "Side identification strip located from figure 1.",
       "material": "Steel candidate",
@@ -1470,7 +3077,7 @@
       "id": "GE-020",
       "name": "Meter scale and pointer",
       "assemblyId": "GE-A2",
-      "revision": "0.3",
+      "revision": "0.4",
       "description": "Nominal analog scale marks and pointer. Calibration remains open.",
       "function": "Nominal analog scale marks and pointer. Calibration remains open.",
       "material": "Insulating polymer candidate",
@@ -1504,6 +3111,130 @@
       "evidence": "calculation",
       "proposedSpecification": "Insulating polymer candidate",
       "sourceAssembly": "GE-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-021",
+      "name": "Internal gyro-controlled marzel-vane",
+      "assemblyId": "GE-A3",
+      "revision": "0.4",
+      "description": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal.",
+      "function": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal.",
+      "material": "Machined aluminum candidate",
+      "quantity": 6,
+      "massKg": 0.0033334613177432013,
+      "dimensionsMm": {
+        "length": 52.0,
+        "width": 6.0,
+        "height": 4.117
+      },
+      "mounting": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal.",
+      "matingPartIds": [
+        "GE-008"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the internal gyro-controlled marzel-vane and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-021.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-021.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "GE-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-022",
+      "name": "Grouting brush insert",
+      "assemblyId": "GE-A3",
+      "revision": "0.4",
+      "description": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement.",
+      "function": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement.",
+      "material": "Copper alloy candidate",
+      "quantity": 47,
+      "massKg": 0.00030400563790257716,
+      "dimensionsMm": {
+        "length": 2.4,
+        "width": 2.4,
+        "height": 8.0
+      },
+      "mounting": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement.",
+      "matingPartIds": [
+        "GE-007",
+        "GE-023"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the grouting brush insert and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-022.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-022.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Copper alloy candidate",
+      "sourceAssembly": "GE-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-023",
+      "name": "Internal tremie feed stub",
+      "assemblyId": "GE-A3",
+      "revision": "0.4",
+      "description": "One nominal feed stub per brush. Manifold routing and service connection remain open.",
+      "function": "One nominal feed stub per brush. Manifold routing and service connection remain open.",
+      "material": "Steel candidate",
+      "quantity": 47,
+      "massKg": 0.0001348367639929922,
+      "dimensionsMm": {
+        "length": 1.8,
+        "width": 9.0,
+        "height": 1.8
+      },
+      "mounting": "One nominal feed stub per brush. Manifold routing and service connection remain open.",
+      "matingPartIds": [
+        "GE-022"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the internal tremie feed stub and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-023.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-023.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "GE-A3",
       "verification": "Solid geometry verified. Physical qualification pending.",
       "kind": "physical"
     }
@@ -1553,7 +3284,10 @@
         "GE-008",
         "GE-009",
         "GE-014",
-        "GE-015"
+        "GE-015",
+        "GE-021",
+        "GE-022",
+        "GE-023"
       ]
     }
   ],
@@ -1690,6 +3424,27 @@
       "from": "GE-020",
       "to": "GE-017",
       "label": "Nominal analog scale marks and pointer. Calibration remains open."
+    },
+    {
+      "id": "GE-IF-021",
+      "kind": "mechanical",
+      "from": "GE-021",
+      "to": "GE-008",
+      "label": "Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal."
+    },
+    {
+      "id": "GE-IF-022",
+      "kind": "mechanical",
+      "from": "GE-022",
+      "to": "GE-007",
+      "label": "Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement."
+    },
+    {
+      "id": "GE-IF-023",
+      "kind": "mechanical",
+      "from": "GE-023",
+      "to": "GE-022",
+      "label": "One nominal feed stub per brush. Manifold routing and service connection remain open."
     }
   ],
   "service": {
@@ -1910,6 +3665,39 @@
         13.957,
         0.4,
         8.975
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-021": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Small retaining tool pending",
+      "originSource": "G62B",
+      "envelopeMm": [
+        52.0,
+        6.0,
+        4.117
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-022": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Insulated pick",
+      "originSource": "G62B",
+      "envelopeMm": [
+        2.4,
+        2.4,
+        8.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-023": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Capillary tube tool",
+      "originSource": "G62B",
+      "envelopeMm": [
+        1.8,
+        9.0,
+        1.8
       ],
       "classification": "Nominal B-rep reconstruction"
     }

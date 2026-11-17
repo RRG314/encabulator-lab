@@ -46,7 +46,7 @@ def envelope(shape):
 def export(slug, entry):
     code, axis, groups, build = entry
     nominal=slug=='ge-1962'
-    revision='0.3' if nominal else '0.1'
+    revision='0.4' if nominal else '0.2'
     sheet_options=dict(model=code,edge_only=True,revision=revision,nominal=nominal)
     items = build()
     prefix = code.split('-')[0]
@@ -66,7 +66,7 @@ def export(slug, entry):
         shapes[id]=[(item.finish,item.shape)]
         for j, pos in enumerate(item.stations,1):
             layout.append(dict(key=f'{id}:{j}',partId=id,origin=list(pos),offset=list(item.offset),
-                stage=0 if item.cover else 3 if item.rotates else 2,rotation=0))
+                stage=0 if item.cover else 3 if item.rotates else 2,rotation=item.angles[j-1] if item.angles else 0))
         if item.host:
             links.append(dict(id=f'{prefix}-IF-{i:03}',kind='mechanical',
                 **{'from':id,'to':id_for(item.host)},label=item.interface))
@@ -142,17 +142,18 @@ def export(slug, entry):
         max_error=max(errors.values())
         checks.append(dict(check='STEP envelope round-trip across both assemblies and every part',
             expected='Maximum error ≤ 0.02 mm',observed=round(max_error,6),unit='mm',status='PASS' if max_error<=.02 else 'FAIL'))
-    document=App.newDocument(f'{prefix}Assembly')
-    for name,shape in states[0]:
-        obj=document.addObject('Part::Feature',name.replace('-','_').replace(':','_'))
-        obj.Label=f'{name} · {by_id[name.split(":")[0]].name}'
-        obj.Shape=shape
-    document.recompute()
-    target=out/'assembly.FCStd'
-    target.unlink(missing_ok=True)
-    document.saveAs(str(target))
-    App.closeDocument(document.Name)
-    add_asset(assets,out,'Editable FreeCAD assembly','assembly.FCStd')
+    for filename,state in zip(('assembly.FCStd','exploded.FCStd'),states):
+        document=App.newDocument(f'{prefix}Assembly')
+        for name,shape in state:
+            obj=document.addObject('Part::Feature',name.replace('-','_').replace(':','_'))
+            obj.Label=f'{name} · {by_id[name.split(":")[0]].name}'
+            obj.Shape=shape
+        document.recompute()
+        target=out/filename
+        target.unlink(missing_ok=True)
+        document.saveAs(str(target))
+        App.closeDocument(document.Name)
+        add_asset(assets,out,'FreeCAD exploded assembly' if filename=='exploded.FCStd' else 'FreeCAD assembled model',filename)
     write_glb(out/'assembly.glb',shapes,layout)
     add_asset(assets,out,'CAD-derived GLB','assembly.glb')
     with TemporaryDirectory() as tmp, ZipFile(out/'solids.zip','w',ZIP_DEFLATED) as archive:

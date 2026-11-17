@@ -14,14 +14,14 @@ BUILDERS = [
     m.retainer, m.isolator, s.fan, s.duct, m.guard, m.spiral, lambda: s.pcb(21,24,8),
     lambda: s.pcb(8,8,3), s.tachometer, s.probe, lambda: s.pcb(15,19,4)+[('blue',box(5,16,4,(-4,0,3)))],
     s.stop, s.supply, s.fuse, s.interlock, s.enclosure, s.harness,
-    lambda: [('blue',box(7,7,1.4)),('black',box(5.2,5.2,1,(0,0,1)))], s.torque, m.fastener, m.coupling,
+    None, s.torque, m.fastener, m.coupling,
 ]
 
 def registry():
     return {p['id']:p for p in json.loads((ROOT/'data/parts.json').read_text())}
 
 def components():
-    return {f'TE-{i:03}': build() for i, build in enumerate(BUILDERS, 1)}
+    return {f'TE-{i:03}': build() for i, build in enumerate(BUILDERS, 1) if build is not None}
 
 def transform(row, fraction=0):
     point = [a + fraction*b for a,b in zip(row['origin'],row['offset'])]
@@ -60,8 +60,6 @@ def machine_document(shapes, fraction=0):
 def world_shapes(shapes, fraction=0):
     items = []
     for row in placements():
-        if row['partId']=='TE-027':
-            continue  # Logical marker has no solid envelope in interference checks.
         pieces = [shape for _,shape in shapes[row['partId']]]
         shape = compound(pieces)
         shape.Placement = transform(row, fraction)

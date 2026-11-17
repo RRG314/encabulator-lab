@@ -15,7 +15,11 @@ describe('canonical registry', () => {
     expect(integrityErrors()).toEqual([])
   })
 
-  it('keeps unverified physical attributes and CAD assets unassigned', () => {
-    expect(parts.every(part => part.massKg === null && part.cadAssetPath === null && part.testEvidence.length === 0)).toBe(true)
+  it('links schematic files to physical parts and leaves physical test evidence unassigned', () => {
+    for (const part of parts) {
+      expect(part.massKg).toBeNull()
+      expect(part.testEvidence).toEqual([])
+      expect(part.cadAssetPath).toBe(part.kind === 'logical' ? null : `models/te01-parts/${part.id}.step`)
+    }
   })
 })

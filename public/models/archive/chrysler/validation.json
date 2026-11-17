@@ -1,18 +1,18 @@
 {
   "code": "CH-88",
-  "revision": "0.1",
+  "revision": "0.2",
   "checks": [
     {
       "check": "Valid positive-volume part definitions",
       "status": "PASS",
-      "expected": 12,
-      "observed": 12
+      "expected": 13,
+      "observed": 13
     },
     {
       "check": "Unique instance placements",
       "status": "PASS",
-      "expected": 12,
-      "observed": 12
+      "expected": 22,
+      "observed": 22
     },
     {
       "check": "Assembled finite-volume contacts",
@@ -29,6 +29,6 @@
       "unit": "mm³"
     }
   ],
-  "estimatedMassKg": 12.149168117019999,
+  "estimatedMassKg": 12.221720407264185,
   "fabricationRelease": false
 }

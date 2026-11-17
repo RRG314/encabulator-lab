@@ -53,9 +53,9 @@ Use `scripts/freecad.sh --mode all` for TE-01, `scripts/freecad-re01.sh` for RE-
 
 ## Verification and deployment
 
-Run `npm run lint`, `npm run typecheck`, `npm test`, `npm run test:browser`, and `npm run build`. Install Chromium for Playwright with `npx playwright install --only-shell chromium`. `TE01_WRITE_NUMERICAL=1 npm test` refreshes numerical evidence.
+Run `npm run lint`, `npm run typecheck`, `npm test`, `npm run test:browser`, and `npm run build`. Install Chromium for Playwright with `npx playwright install --only-shell chromium`. `TE01_WRITE_NUMERICAL=1 npm test` refreshes numerical evidence. Use `python -m cad.conformance` in the FreeCAD-enabled environment to reopen the neutral and native CAD and verify the drawing projections. [CAD and drawing conformance review](engineering/ASSEMBLY_CONFORMANCE.md)
 
-GitHub Actions publishes the validated static build to Pages. The workflow uses the configured repository base path and checks all three machine assets after deployment. Hash routes support browser reload and direct machine links. No repository secrets or backend are needed. Set `PAGES_BASE_PATH=/turbo-encabulator/` to reproduce the hosted build locally.
+GitHub Actions publishes the validated static build to Pages. The workflow uses the configured repository base path and checks the assembled and exploded drawings for all eight mechanical models after deployment. Hash routes support browser reload and direct machine links. No repository secrets or backend are needed. Set `PAGES_BASE_PATH=/turbo-encabulator/` to reproduce the hosted build locally.
 
 ## Research and contributions
 

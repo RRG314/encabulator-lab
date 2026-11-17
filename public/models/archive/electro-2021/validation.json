@@ -1,18 +1,18 @@
 {
   "code": "ET-21",
-  "revision": "0.1",
+  "revision": "0.2",
   "checks": [
     {
       "check": "Valid positive-volume part definitions",
       "status": "PASS",
-      "expected": 9,
-      "observed": 9
+      "expected": 11,
+      "observed": 11
     },
     {
       "check": "Unique instance placements",
       "status": "PASS",
-      "expected": 13,
-      "observed": 13
+      "expected": 21,
+      "observed": 21
     },
     {
       "check": "Assembled finite-volume contacts",
@@ -29,6 +29,6 @@
       "unit": "mm³"
     }
   ],
-  "estimatedMassKg": 2.091085153953669,
+  "estimatedMassKg": 2.143622325200509,
   "fabricationRelease": false
 }

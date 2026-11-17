@@ -78,6 +78,12 @@ jobs:
           index="$(curl -fsSL --retry 7 --retry-all-errors "$site/")"
           case "$index" in *"Turbo Encabulator TE-01"*) ;; *) exit 1 ;; esac
           curl -fsSL --retry 5 --retry-all-errors "$site/models/validation.json" > /tmp/te01-geometry.json
+          curl -fsSL --retry 5 --retry-all-errors "$site/models/assembly-conformance.json" > /tmp/assembly-conformance.json
+          node -e "const r=require('/tmp/assembly-conformance.json'); if (r.models.length!==8 || r.models.some(m=>m.componentSheets!==m.physicalDefinitions)) process.exit(1)"
+          for model in TE01 RE01 ME01; do
+            case "$model" in TE01) root="$site/models/te01-drawings" ;; RE01) root="$site/models/re01/drawings" ;; ME01) root="$site/models/me01/drawings" ;; esac
+            for pose in ASSEMBLY EXPLODED; do curl -fsSL --retry 3 "$root/$model-$pose.svg" -o /dev/null; done
+          done
           curl -fsSL --retry 5 --retry-all-errors "$site/models/re01/validation.json" > /tmp/re01-geometry.json
           curl -fsSL --retry 3 --range 0-3 "$site/models/re01/re01.glb" -o /tmp/re01-glb
           curl -fsSL --retry 5 --retry-all-errors "$site/models/me01/validation.json" > /tmp/me01-geometry.json
@@ -88,6 +94,7 @@ jobs:
           node -e "const r=require('/tmp/te01-geometry.json'); if(r.checks.some(c=>c.status==='FAIL')) process.exit(1)"
           for model in ge-1962 chrysler micro-2016 electro-2021 magneto-2022; do
             root="$site/models/archive/$model"
+            for pose in assembled exploded; do curl -fsSL --retry 3 "$root/drawings/$pose.svg" -o /dev/null; done
             curl -fsSL --retry 5 --retry-all-errors "$root/manifest.json" -o /tmp/archive-manifest.json
             curl -fsSL --retry 3 --range 0-3 "$root/assembly.glb" -o /tmp/archive.glb
             python3 -c 'from pathlib import Path; import json; assert json.loads(Path("/tmp/archive-manifest.json").read_text())["placements"]; assert Path("/tmp/archive.glb").open("rb").read(4)==b"glTF"'

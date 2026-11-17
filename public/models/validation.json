@@ -27,16 +27,16 @@
   },
   "checks": [
     {
-      "check": "Registry coverage",
-      "expected": 30,
-      "observed": 30,
+      "check": "Physical registry coverage",
+      "expected": 29,
+      "observed": 29,
       "status": "PASS",
       "unit": null
     },
     {
       "check": "Unique instance keys",
-      "expected": 60,
-      "observed": 60,
+      "expected": 59,
+      "observed": 59,
       "status": "PASS",
       "unit": null
     },
@@ -273,11 +273,10 @@
     "TE-024": 804.0,
     "TE-025": 18807.377,
     "TE-026": 4031.5608,
-    "TE-027": 95.64,
     "TE-028": 1950.30072,
     "TE-029": 62.20053,
     "TE-030": 5179.35531
   },
   "estimatedMassKg": 2.145,
-  "massBasis": "Schematic sum of component volumes with generic finish densities. Includes representative mounting hardware, excluding software marker."
+  "massBasis": "Schematic sum of component volumes with generic finish densities. Includes representative mounting hardware."
 }

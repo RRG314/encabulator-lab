@@ -2,6 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } fro
 import type { ReactNode } from 'react'
 import { Box, Camera, Crosshair, Eye, Grid2X2, Layers, Maximize, Move, Ruler, ScanLine, Settings2 } from 'lucide-react'
 import { useAssembly, useMachine } from '../machines/context'
+import { assetUrl } from '../machines/profiles'
 import { BenchControls, useBench } from '../components/BenchControls'
 import type { AssemblyId } from '../schemas/part'
 import { PartsTree } from '../components/PartsTree'
@@ -75,6 +76,7 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
   const compact = useMedia('(max-width: 730px), (pointer: coarse)')
   const reducedMotion = useMedia('(prefers-reduced-motion: reduce)')
   const part = partById.get(selected) ?? parts[0]
+  const physical=parts.filter(item=>item.kind!=='logical')
   const visible = useMemo(() => new Set(parts.filter(item => !hidden.has(item.id)
     && (!assembly || item.assemblyId === assembly) && (!isolatePart || item.id === part.id) && (cutaway!=='Guard off' || !machine.guard.includes(item.id))).map(item => item.id)),
     [assembly, hidden, isolatePart, part.id, parts, cutaway, machine.guard])
@@ -212,9 +214,15 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
             <option value="all">Complete machine</option><option value="selected" disabled={part.kind==='logical'}>Selected physical part</option>{assemblies.map(item=><option key={item.id} value={item.id}>{item.shortName}</option>)}
           </select></label>
           <button type="button" className="text-button" onClick={reset}>Restore all components</button>
-          <small>{[...visible].filter(id=>machine.key!=='me01'||partById.get(id)?.kind!=='logical').length} / {parts.filter(item=>machine.key!=='me01'||item.kind!=='logical').length} records visible</small>
+          <small>{physical.filter(item=>visible.has(item.id)).length} / {physical.length} records visible</small>
+          <small>{machine.placements.filter(item=>visible.has(item.partId)).length} / {machine.placements.length} CAD instances</small>
         </div>
         <ExplodeSlider amount={amount} change={change} running={Boolean(animation)} toggle={toggleAnimation} reset={reset} />
+        <nav className="assembly-actions" aria-label="Assembly drawings">
+          <a href={assetUrl(machine.drawings[0])} target="_blank" rel="noopener">Assembled drawing</a>
+          <a href={assetUrl(machine.drawings[1])} target="_blank" rel="noopener">Exploded drawing</a>
+          <a href={assetUrl('models/assembly-conformance.json')} target="_blank" rel="noopener">CAD verification</a>
+        </nav>
         {controls?.(reset)}
         <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Arrow keys to pan'}</div>
       </section>

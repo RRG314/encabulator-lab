@@ -6,7 +6,7 @@ import { chromium } from '@playwright/test'
 
 const model=process.argv[2]??'te01'
 if (!['te01','re01','me01'].includes(model)) throw new TypeError('Specify te01, re01 or me01')
-const drawings = new URL(model==='te01'?'../cad/drawings/':`../public/models/${model}/drawings/`, import.meta.url)
+const drawings = new URL(model==='te01'?'../public/models/te01-drawings/':`../public/models/${model}/drawings/`, import.meta.url)
 const names = (await readdir(drawings)).filter(name => name.endsWith('.svg')).sort()
 const first = [`${model.toUpperCase()}-ASSEMBLY.svg`, `${model.toUpperCase()}-EXPLODED.svg`]
 const order = [...first, ...names.filter(name => !first.includes(name))]

@@ -1,13 +1,17 @@
 {
   "code": "MI-16",
   "slug": "micro-2016",
-  "revision": "0.1",
+  "revision": "0.2",
   "assetFolder": "models/archive/micro-2016",
   "mesh": "models/archive/micro-2016/assembly.glb",
   "boundsMm": [
-    272,
-    158,
-    215
+    272.0,
+    168.0,
+    206.0
+  ],
+  "baseMm": [
+    272.0,
+    158.0
   ],
   "shaftHeight": 0,
   "rotating": [],
@@ -34,8 +38,12 @@
       "path": "models/archive/micro-2016/drawings/exploded.svg"
     },
     {
-      "name": "Editable FreeCAD assembly",
+      "name": "FreeCAD assembled model",
       "path": "models/archive/micro-2016/assembly.FCStd"
+    },
+    {
+      "name": "FreeCAD exploded assembly",
+      "path": "models/archive/micro-2016/exploded.FCStd"
     },
     {
       "name": "CAD-derived GLB",
@@ -254,6 +262,38 @@
       ],
       "stage": 2,
       "rotation": 0
+    },
+    {
+      "key": "MI-011:1",
+      "partId": "MI-011",
+      "origin": [
+        -105,
+        84,
+        60
+      ],
+      "offset": [
+        -52,
+        118,
+        -3
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-011:2",
+      "partId": "MI-011",
+      "origin": [
+        105,
+        84,
+        60
+      ],
+      "offset": [
+        -52,
+        118,
+        -3
+      ],
+      "stage": 2,
+      "rotation": 0
     }
   ],
   "parts": [
@@ -261,7 +301,7 @@
       "id": "MI-001",
       "name": "Portable enclosure tray",
       "assemblyId": "MI-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Equipment floor, nominal carry-case envelope",
       "function": "Equipment floor, nominal carry-case envelope",
       "material": "Cast aluminum candidate",
@@ -304,7 +344,7 @@
       "id": "MI-002",
       "name": "Hinged lid",
       "assemblyId": "MI-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Lid in service pose about rear hinge datum",
       "function": "Lid in service pose about rear hinge datum",
       "material": "Machined aluminum candidate",
@@ -346,7 +386,7 @@
       "id": "MI-003",
       "name": "Hinge knuckle",
       "assemblyId": "MI-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Twin X-axis parallel hinge supports",
       "function": "Twin X-axis parallel hinge supports",
       "material": "Steel candidate",
@@ -359,7 +399,8 @@
       },
       "mounting": "Twin X-axis parallel hinge supports",
       "matingPartIds": [
-        "MI-001"
+        "MI-001",
+        "MI-011"
       ],
       "fastenerIds": [],
       "sensors": [],
@@ -387,7 +428,7 @@
       "id": "MI-004",
       "name": "Lid backplane",
       "assemblyId": "MI-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Stand-off plane 5 mm forward of lid",
       "function": "Stand-off plane 5 mm forward of lid",
       "material": "FR-4 laminate candidate",
@@ -430,7 +471,7 @@
       "id": "MI-005",
       "name": "Interface terminal strip",
       "assemblyId": "MI-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Numbered terminal positions. Pin assignment pending",
       "function": "Numbered terminal positions. Pin assignment pending",
       "material": "Insulating polymer candidate",
@@ -472,7 +513,7 @@
       "id": "MI-006",
       "name": "Lid relay module",
       "assemblyId": "MI-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Dual relay envelopes on shared backplane",
       "function": "Dual relay envelopes on shared backplane",
       "material": "Anodized aluminum candidate",
@@ -513,7 +554,7 @@
       "id": "MI-007",
       "name": "Control compartment plate",
       "assemblyId": "MI-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Removable floor insert and equipment datum",
       "function": "Removable floor insert and equipment datum",
       "material": "Machined aluminum candidate",
@@ -556,7 +597,7 @@
       "id": "MI-008",
       "name": "Instrument input module",
       "assemblyId": "MI-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Charge-assay fixture. Low-voltage input definition",
       "function": "Charge-assay fixture. Low-voltage input definition",
       "material": "FR-4 laminate candidate",
@@ -597,7 +638,7 @@
       "id": "MI-009",
       "name": "Shielded discharge module",
       "assemblyId": "MI-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Resistance network heat-transfer interface",
       "function": "Resistance network heat-transfer interface",
       "material": "Anodized aluminum candidate",
@@ -638,7 +679,7 @@
       "id": "MI-010",
       "name": "Lid services harness",
       "assemblyId": "MI-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Flexible service loop between lid and tray",
       "function": "Flexible service loop between lid and tray",
       "material": "Red nylon candidate",
@@ -674,6 +715,47 @@
       "sourceAssembly": "MI-A2",
       "verification": "Solid geometry verified. Physical qualification pending.",
       "kind": "physical"
+    },
+    {
+      "id": "MI-011",
+      "name": "Hinge pin",
+      "assemblyId": "MI-A1",
+      "revision": "0.2",
+      "description": "Ø4.6 mm candidate pin in each nominal hinge knuckle.",
+      "function": "Ø4.6 mm candidate pin in each nominal hinge knuckle.",
+      "material": "Steel candidate",
+      "quantity": 2,
+      "massKg": 0.004044239767208193,
+      "dimensionsMm": {
+        "length": 31.0,
+        "width": 4.6,
+        "height": 4.6
+      },
+      "mounting": "Ø4.6 mm candidate pin in each nominal hinge knuckle.",
+      "matingPartIds": [
+        "MI-003"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the hinge pin and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-011.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-011.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "MI-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
     }
   ],
   "assemblies": [
@@ -686,7 +768,8 @@
       "partIds": [
         "MI-001",
         "MI-002",
-        "MI-003"
+        "MI-003",
+        "MI-011"
       ]
     },
     {
@@ -778,6 +861,13 @@
       "from": "MI-010",
       "to": "MI-005",
       "label": "Flexible service loop between lid and tray"
+    },
+    {
+      "id": "MI-IF-011",
+      "kind": "mechanical",
+      "from": "MI-011",
+      "to": "MI-003",
+      "label": "Ø4.6 mm candidate pin in each nominal hinge knuckle."
     }
   ],
   "service": {
@@ -888,6 +978,17 @@
         22.4,
         27.2,
         79.7
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-011": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Pin punch candidate",
+      "originSource": null,
+      "envelopeMm": [
+        31.0,
+        4.6,
+        4.6
       ],
       "classification": "Nominal B-rep reconstruction"
     }

@@ -1,18 +1,18 @@
 {
   "code": "MT-22",
-  "revision": "0.1",
+  "revision": "0.2",
   "checks": [
     {
       "check": "Valid positive-volume part definitions",
       "status": "PASS",
-      "expected": 11,
-      "observed": 11
+      "expected": 12,
+      "observed": 12
     },
     {
       "check": "Unique instance placements",
       "status": "PASS",
-      "expected": 54,
-      "observed": 54
+      "expected": 74,
+      "observed": 74
     },
     {
       "check": "Assembled finite-volume contacts",
@@ -29,6 +29,6 @@
       "unit": "mm³"
     }
   ],
-  "estimatedMassKg": 3.6463567472488463,
+  "estimatedMassKg": 3.7963328619474512,
   "fabricationRelease": false
 }

@@ -1,18 +1,18 @@
 {
   "code": "MI-16",
-  "revision": "0.1",
+  "revision": "0.2",
   "checks": [
     {
       "check": "Valid positive-volume part definitions",
       "status": "PASS",
-      "expected": 10,
-      "observed": 10
+      "expected": 11,
+      "observed": 11
     },
     {
       "check": "Unique instance placements",
       "status": "PASS",
-      "expected": 12,
-      "observed": 12
+      "expected": 14,
+      "observed": 14
     },
     {
       "check": "Assembled finite-volume contacts",
@@ -29,6 +29,6 @@
       "unit": "mm³"
     }
   ],
-  "estimatedMassKg": 2.1629808004065714,
+  "estimatedMassKg": 2.171069279940988,
   "fabricationRelease": false
 }

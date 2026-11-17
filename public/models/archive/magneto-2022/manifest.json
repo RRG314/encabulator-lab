@@ -1,13 +1,17 @@
 {
   "code": "MT-22",
   "slug": "magneto-2022",
-  "revision": "0.1",
+  "revision": "0.2",
   "assetFolder": "models/archive/magneto-2022",
   "mesh": "models/archive/magneto-2022/assembly.glb",
   "boundsMm": [
-    352,
-    190,
-    167
+    352.0,
+    190.0,
+    167.651
+  ],
+  "baseMm": [
+    352.0,
+    190.0
   ],
   "shaftHeight": 98,
   "rotating": [
@@ -17,7 +21,8 @@
     "MT-006",
     "MT-007",
     "MT-010",
-    "MT-011"
+    "MT-011",
+    "MT-012"
   ],
   "inputParts": [
     "MT-003",
@@ -43,8 +48,12 @@
       "path": "models/archive/magneto-2022/drawings/exploded.svg"
     },
     {
-      "name": "Editable FreeCAD assembly",
+      "name": "FreeCAD assembled model",
       "path": "models/archive/magneto-2022/assembly.FCStd"
+    },
+    {
+      "name": "FreeCAD exploded assembly",
+      "path": "models/archive/magneto-2022/exploded.FCStd"
     },
     {
       "name": "CAD-derived GLB",
@@ -935,6 +944,326 @@
       ],
       "stage": 3,
       "rotation": 0
+    },
+    {
+      "key": "MT-012:1",
+      "partId": "MT-012",
+      "origin": [
+        -74,
+        48.0,
+        98.0
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:2",
+      "partId": "MT-012",
+      "origin": [
+        -74,
+        14.832815729997478,
+        143.65071278216737
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:3",
+      "partId": "MT-012",
+      "origin": [
+        -74,
+        -38.83281572999747,
+        126.21369211003872
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:4",
+      "partId": "MT-012",
+      "origin": [
+        -74,
+        -38.83281572999748,
+        69.7863078899613
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:5",
+      "partId": "MT-012",
+      "origin": [
+        -74,
+        14.832815729997467,
+        52.349287217832625
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:6",
+      "partId": "MT-012",
+      "origin": [
+        -18,
+        48.0,
+        98.0
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:7",
+      "partId": "MT-012",
+      "origin": [
+        -18,
+        14.832815729997478,
+        143.65071278216737
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:8",
+      "partId": "MT-012",
+      "origin": [
+        -18,
+        -38.83281572999747,
+        126.21369211003872
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:9",
+      "partId": "MT-012",
+      "origin": [
+        -18,
+        -38.83281572999748,
+        69.7863078899613
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:10",
+      "partId": "MT-012",
+      "origin": [
+        -18,
+        14.832815729997467,
+        52.349287217832625
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:11",
+      "partId": "MT-012",
+      "origin": [
+        38,
+        48.0,
+        98.0
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:12",
+      "partId": "MT-012",
+      "origin": [
+        38,
+        14.832815729997478,
+        143.65071278216737
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:13",
+      "partId": "MT-012",
+      "origin": [
+        38,
+        -38.83281572999747,
+        126.21369211003872
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:14",
+      "partId": "MT-012",
+      "origin": [
+        38,
+        -38.83281572999748,
+        69.7863078899613
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:15",
+      "partId": "MT-012",
+      "origin": [
+        38,
+        14.832815729997467,
+        52.349287217832625
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:16",
+      "partId": "MT-012",
+      "origin": [
+        94,
+        48.0,
+        98.0
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:17",
+      "partId": "MT-012",
+      "origin": [
+        94,
+        14.832815729997478,
+        143.65071278216737
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:18",
+      "partId": "MT-012",
+      "origin": [
+        94,
+        -38.83281572999747,
+        126.21369211003872
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:19",
+      "partId": "MT-012",
+      "origin": [
+        94,
+        -38.83281572999748,
+        69.7863078899613
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "MT-012:20",
+      "partId": "MT-012",
+      "origin": [
+        94,
+        14.832815729997467,
+        52.349287217832625
+      ],
+      "offset": [
+        15,
+        -211,
+        145
+      ],
+      "stage": 3,
+      "rotation": 0
     }
   ],
   "parts": [
@@ -942,7 +1271,7 @@
       "id": "MT-001",
       "name": "Fixture base rail",
       "assemblyId": "MT-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Shaft frame mounting datum",
       "function": "Shaft frame mounting datum",
       "material": "Machined aluminum candidate",
@@ -984,7 +1313,7 @@
       "id": "MT-002",
       "name": "Outboard shaft support",
       "assemblyId": "MT-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Common X-axis support bores",
       "function": "Common X-axis support bores",
       "material": "Cast aluminum candidate",
@@ -1026,7 +1355,7 @@
       "id": "MT-003",
       "name": "Through input shaft",
       "assemblyId": "MT-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Input shaft within the separate carrier sleeve",
       "function": "Input shaft within the separate carrier sleeve",
       "material": "Steel candidate",
@@ -1069,7 +1398,7 @@
       "id": "MT-004",
       "name": "Lobed magnetic carrier",
       "assemblyId": "MT-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Indexed sleeve bore and five satellite pivot holes",
       "function": "Indexed sleeve bore and five satellite pivot holes",
       "material": "Machined aluminum candidate",
@@ -1112,7 +1441,7 @@
       "id": "MT-005",
       "name": "Satellite magnet disk",
       "assemblyId": "MT-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Representative eight magnet recesses per machined disk",
       "function": "Representative eight magnet recesses per machined disk",
       "material": "Anodized aluminum candidate",
@@ -1125,7 +1454,8 @@
       },
       "mounting": "Representative eight magnet recesses per machined disk",
       "matingPartIds": [
-        "MT-004"
+        "MT-004",
+        "MT-012"
       ],
       "fastenerIds": [],
       "sensors": [],
@@ -1153,7 +1483,7 @@
       "id": "MT-006",
       "name": "Satellite pivot",
       "assemblyId": "MT-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Pivot engagement in carrier and disk bores",
       "function": "Pivot engagement in carrier and disk bores",
       "material": "Steel candidate",
@@ -1194,7 +1524,7 @@
       "id": "MT-007",
       "name": "Outboard indicator disk",
       "assemblyId": "MT-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Paired disks on the carrier sleeve",
       "function": "Paired disks on the carrier sleeve",
       "material": "Red nylon candidate",
@@ -1235,7 +1565,7 @@
       "id": "MT-008",
       "name": "Optical sensor stand",
       "assemblyId": "MT-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Independent of shaft frame. Sensor bracket datum",
       "function": "Independent of shaft frame. Sensor bracket datum",
       "material": "Anodized aluminum candidate",
@@ -1277,7 +1607,7 @@
       "id": "MT-009",
       "name": "Optical pickup",
       "assemblyId": "MT-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Service alignment to outboard indicator disk",
       "function": "Service alignment to outboard indicator disk",
       "material": "Insulating polymer candidate",
@@ -1318,7 +1648,7 @@
       "id": "MT-010",
       "name": "Carrier torque sleeve",
       "assemblyId": "MT-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Independent coaxial output with 0.3 mm radial clearance to the input shaft",
       "function": "Independent coaxial output with 0.3 mm radial clearance to the input shaft",
       "material": "Steel candidate",
@@ -1361,7 +1691,7 @@
       "id": "MT-011",
       "name": "Input magnetic coupling disk",
       "assemblyId": "MT-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Nominal input-side induction face. Pole properties remain open.",
       "function": "Nominal input-side induction face. Pole properties remain open.",
       "material": "Aluminum alloy candidate",
@@ -1397,6 +1727,47 @@
       "sourceAssembly": "MT-A2",
       "verification": "Solid geometry verified. Physical qualification pending.",
       "kind": "physical"
+    },
+    {
+      "id": "MT-012",
+      "name": "Satellite magnet insert set",
+      "assemblyId": "MT-A2",
+      "revision": "0.2",
+      "description": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified.",
+      "function": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified.",
+      "material": "Plated magnet insert candidate",
+      "quantity": 20,
+      "massKg": 0.007498805734930238,
+      "dimensionsMm": {
+        "length": 7.0,
+        "width": 25.6,
+        "height": 25.6
+      },
+      "mounting": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified.",
+      "matingPartIds": [
+        "MT-005"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the satellite magnet insert set and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/magneto-2022/parts/MT-012.step",
+      "diagramRefs": [
+        "models/archive/magneto-2022/drawings/MT-012.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Plated magnet insert candidate",
+      "sourceAssembly": "MT-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
     }
   ],
   "assemblies": [
@@ -1423,7 +1794,8 @@
         "MT-005",
         "MT-006",
         "MT-010",
-        "MT-011"
+        "MT-011",
+        "MT-012"
       ]
     },
     {
@@ -1509,6 +1881,13 @@
       "from": "MT-011",
       "to": "MT-003",
       "label": "Nominal input-side induction face. Pole properties remain open."
+    },
+    {
+      "id": "MT-IF-012",
+      "kind": "mechanical",
+      "from": "MT-012",
+      "to": "MT-005",
+      "label": "Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified."
     }
   ],
   "service": {
@@ -1630,6 +2009,17 @@
         10.0,
         72.0,
         72.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MT-012": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Nonmagnetic pick",
+      "originSource": "A22",
+      "envelopeMm": [
+        7.0,
+        25.6,
+        25.6
       ],
       "classification": "Nominal B-rep reconstruction"
     }

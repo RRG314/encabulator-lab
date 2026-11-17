@@ -44,11 +44,12 @@ class Item:
     rotates: bool = False
     cover: bool = False
     input_drive: bool = False
+    angles: tuple = ()
 
 
-def item(name, group, finish, shape, xyz, offset, host, interface, service, source='', *, rotates=False, cover=False, multiple=False, input_drive=False):
+def item(name, group, finish, shape, xyz, offset, host, interface, service, source='', *, rotates=False, cover=False, multiple=False, input_drive=False, angles=()):
     return Item(name, group, finish, shape, tuple(xyz) if multiple else (xyz,), offset, host,
-                interface, service, source, rotates, cover, input_drive)
+                interface, service, source, rotates, cover, input_drive, angles)
 
 
 def plate_with_holes(size, holes, diameter, axis=(0, 0, 1)):
@@ -113,6 +114,8 @@ def ge_instrument():
         mark.rotate(V(),V(0,1,0),angle)
         dial_marks.append(mark)
     z=GE62_SHAFT_HEIGHT_MM
+    vane=annulus(31,27.05,52).common(box(52,6,5,(0,0,29)))
+    brush_stations=[-138+6*index for index in range(47)]
     return [
         item('Prefabulated Amulite baseplate',0,'enamel',base,(0,0,bottom),(0,0,-45),0,'Scalloped front edge. Upper plane establishes datum A.','6 mm hex key candidate','G62A'),
         item('Logarithmic case',0,'enamel',case,(0,0,z),(0,270,170),16,'Removable cylindrical shell, Ø132 mm nominal.','PH2 screwdriver candidate','G62A',cover=True),
@@ -134,6 +137,15 @@ def ge_instrument():
         item('Panel indicator bezel',1,'blue',annulus(4,2,3,(0,1,0)),[(66,-73.5,z+h) for h in (-5,5,15)],(54,-185,-5),3,'Three visible pilot positions. Electrical assignments remain open.','Panel retaining-ring spanner','G62A',multiple=True),
         item('Nameplate strip',0,'steel',box(70,2,9),(-70,-67,z-4),(0,-141,-35),2,'Side identification strip located from figure 1.','PH1 screwdriver candidate','G62A',cover=True),
         item('Meter scale and pointer',1,'black',Part.makeCompound(dial_marks),[(x,-76,z+4) for x in meter_x],(119,-160,110),17,'Nominal analog scale marks and pointer. Calibration remains open.','Optical loupe','G62A',multiple=True),
+        item('Internal gyro-controlled marzel-vane',2,'plate',vane,[(-5,0,z)]*6,(-45,-182,31),8,
+             'Six separately placed inserts in the rotor-to-stator annulus. Profiles and fits are nominal.','Small retaining tool pending','G62B',
+             multiple=True,rotates=True,angles=tuple(tau*index/6 for index in range(6))),
+        item('Grouting brush insert',2,'gold',cylinder(1.2,8,axis=(0,0,1)),
+             [(x,0,z+57) for x in brush_stations],(0,69,154),7,
+             'Page 802 specifies 47 brushes. Candidate insert size and axial pitch provide a nominal internal arrangement.','Insulated pick','G62B',multiple=True),
+        item('Internal tremie feed stub',2,'steel',annulus(.9,.45,9,(0,1,0)),
+             [(x,-6,z+59) for x in brush_stations],(0,-66,176),22,
+             'One nominal feed stub per brush. Manifold routing and service connection remain open.','Capillary tube tool','G62B',multiple=True),
     ]
 
 
@@ -158,19 +170,23 @@ def magneto():
     for i in range(8):
         a=tau*i/8
         satellite=satellite.cut(cylinder(2.5,9,(0,10.4*cos(a),10.4*sin(a))))
+    pucks=Part.makeCompound([cylinder(2.4,7,(0,10.4*cos(i*tau/8),10.4*sin(i*tau/8))) for i in range(8)])
+    disk_stations=[(x+10,48*cos(i*tau/5),z+48*sin(i*tau/5)) for x in stations for i in range(5)]
     supports=box(16,40,z,(0,0,-z/2)).fuse(cylinder(20,16)).cut(cylinder(7,24))
     return [
         item('Fixture base rail',0,'plate',plate_with_holes((352,190,9),[(x,y,0) for x in (-157,157) for y in (-80,80)],6.6),(0,0,-4.5),(0,0,-35),0,'Shaft frame mounting datum','5 mm hex key candidate','A22'),
         item('Outboard shaft support',0,'cast',supports,[(-149,0,z),(149,0,z)],(0,-62,35),1,'Common X-axis support bores','Dial indicator and 4 mm hex key','A22',multiple=True),
         item('Through input shaft',1,'steel',cylinder(6.8,325),(0,0,z),(-235,0,47),2,'Input shaft within the separate carrier sleeve','Soft-jaw fixture','A22',rotates=True,input_drive=True),
         item('Lobed magnetic carrier',1,'plate',carrier(),[(x,0,z) for x in stations],(0,48,112),10,'Indexed sleeve bore and five satellite pivot holes','4 mm hex key candidate','A22',rotates=True,multiple=True),
-        item('Satellite magnet disk',1,'blue',satellite,[(x+10,48*cos(i*tau/5),z+48*sin(i*tau/5)) for x in stations for i in range(5)],(15,-80,128),4,'Representative eight magnet recesses per machined disk','Nonmagnetic pick and soft-jaw arbor','A22',rotates=True,multiple=True),
+        item('Satellite magnet disk',1,'blue',satellite,disk_stations,(15,-80,128),4,'Representative eight magnet recesses per machined disk','Nonmagnetic pick and soft-jaw arbor','A22',rotates=True,multiple=True),
         item('Satellite pivot',1,'steel',cylinder(2.9,18),[(x+5,48*cos(i*tau/5),z+48*sin(i*tau/5)) for x in stations for i in range(5)],(28,128,50),4,'Pivot engagement in carrier and disk bores','2.5 mm hex key candidate',rotates=True,multiple=True),
         item('Outboard indicator disk',2,'red',annulus(42,9.5,8),[(x,0,z) for x in (112,128)],(67,74,15),10,'Paired disks on the carrier sleeve','3 mm hex key candidate','A22',rotates=True,multiple=True),
         item('Optical sensor stand',2,'blue',box(15,25,103),(121,76,51.5),(60,78,-24),1,'Independent of shaft frame. Sensor bracket datum','PH1 screwdriver candidate','A22'),
         item('Optical pickup',2,'black',box(24,28,12),(121,75,109.5),(64,90,38),8,'Service alignment to outboard indicator disk','2.5 mm hex key candidate'),
         item('Carrier torque sleeve',1,'steel',annulus(9.3,7.1,238),(16,0,z),(163,-100,15),3,'Independent coaxial output with 0.3 mm radial clearance to the input shaft','Soft-jaw fixture',rotates=True),
         item('Input magnetic coupling disk',1,'amber',annulus(36,6.8,10),(-114,0,z),(-79,-92,75),3,'Nominal input-side induction face. Pole properties remain open.','3 mm hex key candidate',rotates=True,input_drive=True),
+        item('Satellite magnet insert set',1,'magnet',pucks,disk_stations,(15,-211,145),5,
+             'Eight nominal inserts in each reconstructed disk. Original magnet layout and polarity remain unverified.','Nonmagnetic pick','A22',rotates=True,multiple=True),
     ]
 
 
@@ -189,6 +205,8 @@ def micro():
         item('Instrument input module',2,'board',plate_with_holes((75,54,16),[(x,y,0) for x in (-31,31) for y in (-20,20)],3),(57,-8,25),(73,-90,29),7,'Charge-assay fixture. Low-voltage input definition','PH1 screwdriver candidate'),
         item('Shielded discharge module',2,'blue',box(64,54,26),(-56,-8,28),(-75,-84,42),7,'Resistance network heat-transfer interface','3 mm hex key candidate'),
         item('Lid services harness',1,'red',Part.makeCompound([cylinder(2.2,79,(i,0,18),(0,0,1)).fuse(cylinder(2.2,26,(i,-12,-20),(0,1,0))) for i in range(-9,10,6)]),(81,61,70),(55,-90,58),5,'Flexible service loop between lid and tray','Continuity meter and terminal driver','P16'),
+        item('Hinge pin',0,'steel',cylinder(2.3,31),[(-105,84,60),(105,84,60)],(-52,118,-3),3,
+             'Ø4.6 mm candidate pin in each nominal hinge knuckle.','Pin punch candidate',multiple=True),
     ]
 
 
@@ -200,6 +218,8 @@ def electro():
     enclosure=tube((266,191,87),3,2).cut(box(94,26,51,(-57,-96,9.5)))
     for x,_,z in ports:
         enclosure=enclosure.cut(cylinder(5.3,26,(x,-96,z+.5),(0,1,0)))
+    corners=[(x,y) for x in (-119,119) for y in (-81,81)]
+    screw=cylinder(1.45,6,(0,0,-3),(0,0,1)).fuse(cylinder(3,2,(0,0,1),(0,0,1)))
     return [
         item('Measurement chassis',0,'cast',enclosure,(0,0,43.5),(0,0,-26),0,'Instrument datum at bottom of chassis','PH2 screwdriver candidate','B21'),
         item('Removable chassis cover',0,'plate',plate_with_holes((265,190,3),[(x,y,0) for x in (-119,119) for y in (-81,81)],3.2),(0,0,88.5),(0,30,98),1,'Upper chassis rim. Retained at four corners','PH2 screwdriver candidate','B21',cover=True),
@@ -210,6 +230,10 @@ def electro():
         item('Spurving resonator package',2,'blue',Part.makeCompound([box(30,20,8),box(3,24,2,(-10,0,-4)),box(3,24,2,(10,0,-4))]),[(-24,5,21.9),(25,5,21.9)],(-35,-25,104),6,'Two mounted stages on shared acquisition board','ESD-rated placement tool','K21',multiple=True),
         item('Panametric phase noise depositer',2,'black',box(26,22,6),(73,25,19.8),(66,10,90),6,'Output processing footprint','ESD-rated placement tool','K21'),
         item('Quantized entanglement realizer footprint',2,'gold',Part.makeCompound([box(2,6,.2,(x,y,0)) for x in (-9,-3,3,9) for y in (-9,9)]),(71,-32,16.9),(55,-60,85),6,'Inspectable unpopulated pad field','Optical microscope','B21'),
+        item('Cover fastener',0,'steel',screw,[(x,y,90) for x,y in corners],(0,-28,142),2,
+             'Four candidate fasteners through the cover holes. Head and retention details are project geometry.','PH1 screwdriver candidate',multiple=True),
+        item('Cover mounting pillar',0,'cast',annulus(4.5,1.6,82.5,(0,0,1)),[(x,y,45.75) for x,y in corners],(39,245,56),1,
+             'Candidate cover supports between tray floor and lid underside.','Small spanner candidate',multiple=True),
     ]
 
 
@@ -239,6 +263,7 @@ def chrysler():
         pump=pump.fuse(b)
         turbine=turbine.fuse(c)
     case=box(116,144,130).cut(box(109,132,116,(6,0,0))).cut(cylinder(24,130))
+    fastener=cylinder(3.65,13).fuse(cylinder(5.5,4,(8.5,0,0)))
     return [
         item('Bench mounting tray',0,'plate',plate_with_holes((346,285,12),[(x,y,0) for x in (-155,155) for y in (-123,123)],9),(0,0,-6),(0,0,-28),0,'Datum A at the nominal service fixture','6 mm hex key candidate'),
         item('Ribbed bell casting',0,'cast',bell,(-58,0,axis),(-185,140,205),1,'Open wide flange toward positive X','13 mm socket candidate','CHV',cover=True),
@@ -252,6 +277,8 @@ def chrysler():
         item('Service cover',2,'frame',annulus(57,12.5,8),(-115,0,axis),(-107,60,70),2,'Dark removable service end plate','10 mm socket candidate','CHV',cover=True),
         item('Lower case stand',0,'plate',box(104,142,60),(86,0,30),(34,105,-18),1,'Load path from the case to fixture over lower mounting plane','6 mm hex key candidate'),
         item('Case transition ring',0,'cast',annulus(63,54,19),(16.5,0,axis),(45,139,103),3,'Annular locating step between bell flange and end case','13 mm socket candidate'),
+        item('Bell-flange fastener',0,'steel',fastener,[(.5,98*cos(i*tau/10),axis+98*sin(i*tau/10)) for i in range(10)],
+             (-63,185,205),3,'Nominal retaining hardware at the ten modeled flange holes.','13 mm socket candidate',multiple=True),
     ]
 
 

@@ -1,13 +1,17 @@
 {
   "code": "ET-21",
   "slug": "electro-2021",
-  "revision": "0.1",
+  "revision": "0.2",
   "assetFolder": "models/archive/electro-2021",
   "mesh": "models/archive/electro-2021/assembly.glb",
   "boundsMm": [
-    266,
-    202,
-    92
+    266.0,
+    201.5,
+    92.0
+  ],
+  "baseMm": [
+    266.0,
+    191.0
   ],
   "shaftHeight": 0,
   "rotating": [],
@@ -35,8 +39,12 @@
       "path": "models/archive/electro-2021/drawings/exploded.svg"
     },
     {
-      "name": "Editable FreeCAD assembly",
+      "name": "FreeCAD assembled model",
       "path": "models/archive/electro-2021/assembly.FCStd"
+    },
+    {
+      "name": "FreeCAD exploded assembly",
+      "path": "models/archive/electro-2021/exploded.FCStd"
     },
     {
       "name": "CAD-derived GLB",
@@ -271,6 +279,134 @@
       ],
       "stage": 2,
       "rotation": 0
+    },
+    {
+      "key": "ET-010:1",
+      "partId": "ET-010",
+      "origin": [
+        -119,
+        -81,
+        90
+      ],
+      "offset": [
+        0,
+        -28,
+        142
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "ET-010:2",
+      "partId": "ET-010",
+      "origin": [
+        -119,
+        81,
+        90
+      ],
+      "offset": [
+        0,
+        -28,
+        142
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "ET-010:3",
+      "partId": "ET-010",
+      "origin": [
+        119,
+        -81,
+        90
+      ],
+      "offset": [
+        0,
+        -28,
+        142
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "ET-010:4",
+      "partId": "ET-010",
+      "origin": [
+        119,
+        81,
+        90
+      ],
+      "offset": [
+        0,
+        -28,
+        142
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "ET-011:1",
+      "partId": "ET-011",
+      "origin": [
+        -119,
+        -81,
+        45.75
+      ],
+      "offset": [
+        39,
+        245,
+        56
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "ET-011:2",
+      "partId": "ET-011",
+      "origin": [
+        -119,
+        81,
+        45.75
+      ],
+      "offset": [
+        39,
+        245,
+        56
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "ET-011:3",
+      "partId": "ET-011",
+      "origin": [
+        119,
+        -81,
+        45.75
+      ],
+      "offset": [
+        39,
+        245,
+        56
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "ET-011:4",
+      "partId": "ET-011",
+      "origin": [
+        119,
+        81,
+        45.75
+      ],
+      "offset": [
+        39,
+        245,
+        56
+      ],
+      "stage": 2,
+      "rotation": 0
     }
   ],
   "parts": [
@@ -278,7 +414,7 @@
       "id": "ET-001",
       "name": "Measurement chassis",
       "assemblyId": "ET-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Instrument datum at bottom of chassis",
       "function": "Instrument datum at bottom of chassis",
       "material": "Cast aluminum candidate",
@@ -293,7 +429,8 @@
       "matingPartIds": [
         "ET-002",
         "ET-003",
-        "ET-006"
+        "ET-006",
+        "ET-011"
       ],
       "fastenerIds": [],
       "sensors": [],
@@ -321,7 +458,7 @@
       "id": "ET-002",
       "name": "Removable chassis cover",
       "assemblyId": "ET-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Upper chassis rim. Retained at four corners",
       "function": "Upper chassis rim. Retained at four corners",
       "material": "Machined aluminum candidate",
@@ -334,7 +471,8 @@
       },
       "mounting": "Upper chassis rim. Retained at four corners",
       "matingPartIds": [
-        "ET-001"
+        "ET-001",
+        "ET-010"
       ],
       "fastenerIds": [],
       "sensors": [],
@@ -362,7 +500,7 @@
       "id": "ET-003",
       "name": "Instrument fascia",
       "assemblyId": "ET-A1",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Panel openings aligned to display and coax ports",
       "function": "Panel openings aligned to display and coax ports",
       "material": "Coated aluminum candidate",
@@ -405,7 +543,7 @@
       "id": "ET-004",
       "name": "Readout module",
       "assemblyId": "ET-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Recessed front readout opening",
       "function": "Recessed front readout opening",
       "material": "Anodized aluminum candidate",
@@ -446,7 +584,7 @@
       "id": "ET-005",
       "name": "Coaxial acquisition port",
       "assemblyId": "ET-A2",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Four nominal feed-throughs",
       "function": "Four nominal feed-throughs",
       "material": "Copper alloy candidate",
@@ -487,7 +625,7 @@
       "id": "ET-006",
       "name": "Acquisition printed circuit board",
       "assemblyId": "ET-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Candidate board outline, four mounting holes",
       "function": "Candidate board outline, four mounting holes",
       "material": "FR-4 laminate candidate",
@@ -531,7 +669,7 @@
       "id": "ET-007",
       "name": "Spurving resonator package",
       "assemblyId": "ET-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Two mounted stages on shared acquisition board",
       "function": "Two mounted stages on shared acquisition board",
       "material": "Anodized aluminum candidate",
@@ -572,7 +710,7 @@
       "id": "ET-008",
       "name": "Panametric phase noise depositer",
       "assemblyId": "ET-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Output processing footprint",
       "function": "Output processing footprint",
       "material": "Insulating polymer candidate",
@@ -613,7 +751,7 @@
       "id": "ET-009",
       "name": "Quantized entanglement realizer footprint",
       "assemblyId": "ET-A3",
-      "revision": "0.1",
+      "revision": "0.2",
       "description": "Inspectable unpopulated pad field",
       "function": "Inspectable unpopulated pad field",
       "material": "Copper alloy candidate",
@@ -649,6 +787,88 @@
       "sourceAssembly": "ET-A3",
       "verification": "Solid geometry verified. Physical qualification pending.",
       "kind": "physical"
+    },
+    {
+      "id": "ET-010",
+      "name": "Cover fastener",
+      "assemblyId": "ET-A1",
+      "revision": "0.2",
+      "description": "Four candidate fasteners through the cover holes. Head and retention details are project geometry.",
+      "function": "Four candidate fasteners through the cover holes. Head and retention details are project geometry.",
+      "material": "Steel candidate",
+      "quantity": 4,
+      "massKg": 0.0007550118938537644,
+      "dimensionsMm": {
+        "length": 6.0,
+        "width": 6.0,
+        "height": 8.0
+      },
+      "mounting": "Four candidate fasteners through the cover holes. Head and retention details are project geometry.",
+      "matingPartIds": [
+        "ET-002"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the cover fastener and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/electro-2021/parts/ET-010.step",
+      "diagramRefs": [
+        "models/archive/electro-2021/drawings/ET-010.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "ET-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "ET-011",
+      "name": "Cover mounting pillar",
+      "assemblyId": "ET-A1",
+      "revision": "0.2",
+      "description": "Candidate cover supports between tray floor and lid underside.",
+      "function": "Candidate cover supports between tray floor and lid underside.",
+      "material": "Cast aluminum candidate",
+      "quantity": 4,
+      "massKg": 0.012379280917856268,
+      "dimensionsMm": {
+        "length": 9.0,
+        "width": 9.0,
+        "height": 82.5
+      },
+      "mounting": "Candidate cover supports between tray floor and lid underside.",
+      "matingPartIds": [
+        "ET-001"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the cover mounting pillar and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/electro-2021/parts/ET-011.step",
+      "diagramRefs": [
+        "models/archive/electro-2021/drawings/ET-011.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Cast aluminum candidate",
+      "sourceAssembly": "ET-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
     }
   ],
   "assemblies": [
@@ -661,7 +881,9 @@
       "partIds": [
         "ET-001",
         "ET-002",
-        "ET-003"
+        "ET-003",
+        "ET-010",
+        "ET-011"
       ]
     },
     {
@@ -745,6 +967,20 @@
       "from": "ET-009",
       "to": "ET-006",
       "label": "Inspectable unpopulated pad field"
+    },
+    {
+      "id": "ET-IF-010",
+      "kind": "mechanical",
+      "from": "ET-010",
+      "to": "ET-002",
+      "label": "Four candidate fasteners through the cover holes. Head and retention details are project geometry."
+    },
+    {
+      "id": "ET-IF-011",
+      "kind": "mechanical",
+      "from": "ET-011",
+      "to": "ET-001",
+      "label": "Candidate cover supports between tray floor and lid underside."
     }
   ],
   "service": {
@@ -844,6 +1080,28 @@
         20.0,
         24.0,
         0.2
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "ET-010": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH1 screwdriver candidate",
+      "originSource": null,
+      "envelopeMm": [
+        6.0,
+        6.0,
+        8.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "ET-011": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Small spanner candidate",
+      "originSource": null,
+      "envelopeMm": [
+        9.0,
+        9.0,
+        82.5
       ],
       "classification": "Nominal B-rep reconstruction"
     }

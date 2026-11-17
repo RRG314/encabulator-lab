@@ -61,6 +61,7 @@ export function archiveProfile(entry:ArchiveEntry, model:ArchiveCad):DisplayProf
     isoDirection:entry.id==='ge-1962'?[-.7,-1,.52]:undefined,
     shaftY:model.placements.find(row=>model.rotating.includes(row.partId))?.origin[1],
     baseMm:model.baseMm??[x,y], boundsMm:model.boundsMm, mesh:model.mesh, assetFolder:model.assetFolder,
+    drawings:[model.assetFolder+'/drawings/assembled.svg',model.assetFolder+'/drawings/exploded.svg'],
     defaultPart:model.defaultPart, voltage:null, speed:null, guard:model.guard, rotating:model.rotating, inputParts:model.inputParts,
     motor:'', fan:'', harness:'', fanAt:[0,0,0], sensorAt:[0,0,0], wireAt:[0,0,0],
     service:model.service, href:path=>archiveHref(entry.id,path==='explorer'?'assembly':path),

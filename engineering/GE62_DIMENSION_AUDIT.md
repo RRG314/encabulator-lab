@@ -18,6 +18,8 @@ Both sides of the exposed near base edge provide a vertical comparison against t
 
 The 322 mm shell length excludes the end closures. Shell length, meter pitch, hidden interfaces, mounting hole locations, and the remaining dimensions are nominal project geometry. The handbook weight entry supplies no reliable scale for the photographed assembly.
 
+Revision 0.4 retains the exterior geometry. Page 802 specifies six internal marzel-vanes and forty-seven grouting brushes with tremie feeds. The internal register now includes each vane and brush and one feed stub for each brush. Profiles, spacing, materials and feed routing use nominal geometry because the handbook gives no corresponding drawings or fits.
+
 ## CAD and drawing checks
 
 The assembled and separated SVG sheets, per-part dimensions, and viewer footprint are generated from FreeCAD solid envelopes. The baseplate footprint and overall assembly envelope are separate records. All GE-62 sheets carry the current CAD revision and identify the dimensions as nominal. The exporter reloads both assembly STEP files and each component STEP file and compares their envelopes against the source solids to within 0.02 mm. Automated tests also compare the stamped SVG envelopes and revision identifiers against the register.

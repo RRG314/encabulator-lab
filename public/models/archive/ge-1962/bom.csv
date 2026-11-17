@@ -19,3 +19,6 @@ GE-017,Analog meter dial,2,GE-A2,Enamel-coated aluminum candidate,0.001404838553
 GE-018,Panel indicator bezel,3,GE-A2,Anodized aluminum candidate,0.00030536280592892786,G62A
 GE-019,Nameplate strip,1,GE-A1,Steel candidate,0.009891,G62A
 GE-020,Meter scale and pointer,2,GE-A2,Insulating polymer candidate,4.045000000000004e-06,G62A
+GE-021,Internal gyro-controlled marzel-vane,6,GE-A3,Machined aluminum candidate,0.0033334613177432013,G62B
+GE-022,Grouting brush insert,47,GE-A3,Copper alloy candidate,0.00030400563790257716,G62B
+GE-023,Internal tremie feed stub,47,GE-A3,Steel candidate,0.0001348367639929922,G62B

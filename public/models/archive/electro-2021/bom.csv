@@ -8,3 +8,5 @@ ET-006,Acquisition printed circuit board,1,ET-A3,FR-4 laminate candidate,0.06266
 ET-007,Spurving resonator package,2,ET-A3,Anodized aluminum candidate,0.0137376,K21
 ET-008,Panametric phase noise depositer,1,ET-A3,Insulating polymer candidate,0.00429,K21
 ET-009,Quantized entanglement realizer footprint,1,ET-A3,Copper alloy candidate,0.00016127999999999997,B21
+ET-010,Cover fastener,4,ET-A1,Steel candidate,0.0007550118938537644,
+ET-011,Cover mounting pillar,4,ET-A1,Cast aluminum candidate,0.012379280917856268,
