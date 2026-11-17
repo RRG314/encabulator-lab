@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight, Box, ClipboardCheck, Download, FileText, Search } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { assemblies, assemblyById, linksFor, partById, parts } from '../data'
@@ -140,6 +140,49 @@ function DownloadPage() {
   </div>
 }
 
+interface ReportData {
+  geometry: { checks: { check:string, expected:unknown, observed:unknown, status:string, unit:string | null }[] }
+  numerical: { readings: { condition:string, expected:number, observed:number, absoluteError:number, tolerance:number, status:string }[] }
+}
+
+function ValidationResults() {
+  const [data,setData] = useState<ReportData | null>(null)
+  const [error,setError] = useState(false)
+  useEffect(() => {
+    const controller = new AbortController()
+    const load = async (name:string) => {
+      const response = await fetch(asset(name),{signal:controller.signal})
+      if (!response.ok) throw new Error('Verification report unavailable')
+      return response.json()
+    }
+    void Promise.all([load('validation.json'),load('numerical-validation.json')])
+      .then(([geometry,numerical]) => setData({geometry,numerical}))
+      .catch(() => { if (!controller.signal.aborted) setError(true) })
+    return () => controller.abort()
+  }, [])
+  if (error) return <p role="status">Verification reports are unavailable.</p>
+  if (!data) return <p role="status">Loading verification results…</p>
+  const observation = (value:unknown):string =>
+    Array.isArray(value) && value.some(item => typeof item === 'object')
+      ? `${value.length} entries in the report` : typeof value === 'string' ? value : JSON.stringify(value)
+  return <div className="doc-report">
+    <h3>OpenCascade geometry results</h3>
+    <div className="table-scroll"><table>
+      <thead><tr><th scope="col">Check</th><th scope="col">Expected</th><th scope="col">Observed</th><th scope="col">Status</th></tr></thead>
+      <tbody>{data.geometry.checks.map(row => <tr key={row.check}><td>{row.check}</td><td>{observation(row.expected)}</td>
+        <td>{observation(row.observed)}{row.unit && typeof row.observed==='number' ? ` ${row.unit}` : ''}</td><td>{row.status}</td></tr>)}</tbody>
+    </table></div>
+    <h3>Numerical reference cases</h3>
+    <div className="table-scroll"><table>
+      <thead><tr><th scope="col">Condition</th><th scope="col">Expected</th><th scope="col">Observed</th><th scope="col">Absolute error</th>
+        <th scope="col">Tolerance</th><th scope="col">Status</th></tr></thead>
+      <tbody>{data.numerical.readings.map(row => <tr key={row.condition}><td>{row.condition}</td>
+        {[row.expected,row.observed,row.absoluteError,row.tolerance].map((value,i) => <td key={i} className="mono">{Number(value.toPrecision(5))}</td>)}
+        <td>{row.status}</td></tr>)}</tbody>
+    </table></div>
+  </div>
+}
+
 function Calculations() {
   const [force,setForce] = useState(baseline.forceN)
   const [rpm,setRpm] = useState(baseline.rpm)
@@ -184,8 +227,8 @@ export default function Reference({ section }: { section?: string }) {
       <article className="panel article-panel doc-prose">
         <Markdown remarkPlugins={[remarkGfm]} components={{h1:props=><h2>{props.children}</h2>,
           table:props=><div className="table-scroll"><table>{props.children}</table></div>}}>{content}</Markdown>
-        {slug === 'validation' && <div className="document-tabs"><a href={asset('validation.json')} download><ClipboardCheck size={14} /> Geometry results</a>
-          <a href={asset('numerical-validation.json')} download><ClipboardCheck size={14} /> Numerical results</a></div>}
+        {slug === 'validation' && <><ValidationResults /><div className="document-tabs"><a href={asset('validation.json')} download><ClipboardCheck size={14} /> Geometry results</a>
+          <a href={asset('numerical-validation.json')} download><ClipboardCheck size={14} /> Numerical results</a></div></>}
         {slug === 'overview' && <div className="document-tabs"><a href="#/explorer"><Box size={14} /> Open model <ArrowRight size={14} /></a>
           <a href="#/diagnostics">Diagnostic replay <ArrowRight size={14} /></a></div>}
       </article>}
