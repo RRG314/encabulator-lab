@@ -22,7 +22,7 @@ The five historical CAD reconstructions cover General Electric GE-62, Chrysler C
 | **[Retro Encabulator RE-01](https://rrg314.github.io/encabulator-lab/#/re01/explorer)** | 48 V class industrial control architecture, 12 mm journals, six pitched marzelvanes, a compliant coupling and guided water-loop load. | [Technical manual](engineering/re01/MASTER_SPEC.md) · [Assembly hierarchy](engineering/re01/ASSEMBLY_HIERARCHY.md) · [CAD](cad/models/re01/) · [Downloads](https://rrg314.github.io/encabulator-lab/#/re01/engineering/downloads) |
 | **[Metachronic Encabulator ME-01](https://rrg314.github.io/encabulator-lab/#/me01/explorer)** | 36 V class dual-shaft assembly with variable pitch, active radial stabilization, regenerative power management, and 21 scientific subsystem studies. | [Master specification](engineering/me01/MASTER_SPEC.md) · [Operating equations](engineering/me01/OPERATING_MODEL.md) · [CAD](cad/models/me01/) · [Downloads](https://rrg314.github.io/encabulator-lab/#/me01/engineering/downloads) |
 
-[ME-01 host installation laboratory](https://rrg314.github.io/encabulator-lab/#/me01/installation) · [Interchangeability study](engineering/INTERCHANGEABILITY.md) · [RE-01 source traceability](engineering/re01/SOURCE_TRACEABILITY.md)
+[Engineering evidence by configuration](engineering/TECHNICAL_EVIDENCE.md) · [ME-01 engineering publications and data](engineering/me01/README.md) · [ME-01 host installation laboratory](https://rrg314.github.io/encabulator-lab/#/me01/installation) · [Interchangeability study](engineering/INTERCHANGEABILITY.md) · [RE-01 source traceability](engineering/re01/SOURCE_TRACEABILITY.md)
 
 ## Assembly illustrations
 
@@ -59,7 +59,7 @@ Use `scripts/freecad.sh --mode all` for TE-01, `scripts/freecad-re01.sh` for RE-
 
 ## Verification and deployment
 
-Run `npm run lint`, `npm run typecheck`, `npm test`, `npm run test:browser`, and `npm run build`. Install Chromium for Playwright with `npx playwright install --only-shell chromium`. `TE01_WRITE_NUMERICAL=1 npm test` refreshes numerical evidence. Use `python -m cad.conformance` in the FreeCAD-enabled environment to reopen the neutral and native CAD and verify the drawing projections. [CAD and drawing conformance review](engineering/ASSEMBLY_CONFORMANCE.md)
+Run `npm run lint`, `npm run typecheck`, `npm test`, `npm run test:browser`, and `npm run build`. Install Chromium for Playwright with `npx playwright install --only-shell chromium`. `TE01_WRITE_NUMERICAL=1 npm test` refreshes numerical evidence. The [ME-01 benchmark protocol](engineering/me01/BENCHMARKS.md) gives the focused command for its trajectory CSV and reference cases. Use `python -m cad.conformance` in the FreeCAD-enabled environment to reopen the neutral and native CAD and verify the drawing projections. [CAD and drawing conformance review](engineering/ASSEMBLY_CONFORMANCE.md)
 
 GitHub Actions publishes the validated static build to Pages. The workflow uses the configured repository base path and checks the assembled and exploded drawings for all eight mechanical models after deployment. Hash routes support browser reload and direct machine links. No repository secrets or backend are needed. Set `PAGES_BASE_PATH=/encabulator-lab/` to reproduce the hosted build locally.
 

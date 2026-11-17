@@ -19,6 +19,8 @@ import revisions from '../../docs/engineering/revisions.md?raw'
 import physics from '../../docs/science/models.md?raw'
 import meSpec from '../../engineering/me01/MASTER_SPEC.md?raw'
 import mePhysics from '../../engineering/me01/OPERATING_MODEL.md?raw'
+import meInputs from '../../engineering/me01/MODEL_INPUTS.md?raw'
+import meBenchmarks from '../../engineering/me01/BENCHMARKS.md?raw'
 import meService from '../../engineering/me01/ARCHITECTURE_AND_SERVICE.md?raw'
 import meValidation from '../../engineering/me01/VERIFICATION.md?raw'
 import reSpec from '../../engineering/re01/MASTER_SPEC.md?raw'
@@ -30,9 +32,10 @@ import reService from '../../engineering/re01/SERVICE_AND_CONTROLS.md?raw'
 import reSources from '../../engineering/re01/SOURCE_TRACEABILITY.md?raw'
 import references from '../../engineering/REFERENCES.md?raw'
 import interchangeability from '../../engineering/INTERCHANGEABILITY.md?raw'
+import evidenceIndex from '../../engineering/TECHNICAL_EVIDENCE.md?raw'
 import sourceTrace from '../../data/re01/source-traceability.json'
 import { sourceById } from "../machines/archive"
-import { baseline, screening } from '../simulation/calculations'
+import { shaftCases, screening } from '../simulation/calculations'
 
 const teBom = new URL('../../docs/engineering/bom.csv',import.meta.url).href
 
@@ -58,7 +61,7 @@ const specification = masterSpec.split('## 9. Interactive 3D encyclopedia')[0]
 const teDocuments = [
   ['overview','System overview',overview],['specification','Specification',specification],['mechanical','Mechanical',mechanical],
   ['electrical','Electrical',electrical],['thermal','Thermal',thermal],['service','Assembly & service',sequence],
-  ['safety','Safety',safety],['geometry','Geometry',geometry],['physics','Model equations',physics],['references','References',references],
+  ['safety','Safety',safety],['geometry','Geometry',geometry],['physics','Model equations',physics],['evidence','Technical evidence',evidenceIndex],['references','References',references],
   ['validation','Verification',validation],['revisions','Revisions',revisions],['calculations','Calculations',''],['downloads','Downloads',''],
 ]
 
@@ -66,7 +69,7 @@ const reDocuments = [
   ['overview','Technical manual',reSpec],['specification','Master specification',reSpec],['hierarchy','Assembly hierarchy',reHierarchy],
   ['mechanical','Mechanical design',reDesign],['electrical','Electrical & control',reService],['thermal','Thermal & flow',reDesign],
   ['service','Service & calibration',reService],['safety','Safety',safety],['geometry','Geometry & manufacturing',reDesign],
-  ['physics','Model equations',reDesign],['references','References',references],['traceability','Source traceability',reSources],
+  ['physics','Model equations',reDesign],['evidence','Technical evidence',evidenceIndex],['references','References',references],['traceability','Source traceability',reSources],
   ['interchangeability','Interchangeability',interchangeability],['validation','Verification',reValidation],['revisions','Revisions',reStatus],
   ['calculations','Calculations',''],['downloads','Downloads',''],
 ]
@@ -89,7 +92,8 @@ const reReports = [
 
 const meDocuments = [
   ['overview','Technical manual',meSpec],['mechanical','Mechanical design',meService],['electrical','Electrical & control',meService],
-  ['physics','Model equations',mePhysics],['thermal','Thermal & fluid',mePhysics],['service','Service & commissioning',meService],
+  ['physics','Model equations',mePhysics],['inputs','Model inputs',meInputs],['benchmarks','Benchmark results',meBenchmarks],
+  ['thermal','Thermal & fluid',mePhysics],['service','Service & commissioning',meService],['evidence','Technical evidence',evidenceIndex],
   ['geometry','Geometry & verification',meValidation],['references','References',references],
   ['validation','Verification',meValidation],['calculations','Calculations',''],['downloads','Downloads',''],
 ]
@@ -108,6 +112,8 @@ const meReports = [
   ['Separated assembly drawing','drawings/ME01-EXPLODED.svg','Orthographic and isometric separated sheet.'],
   ['Geometry validation','validation.json','OpenCascade checks and contact findings.'],
   ['Numerical validation','numerical-validation.json','Physics, controller and verification results.'],
+  ['Benchmark report · JSON','benchmarks.json','Nominal snapshots, installation comparisons, and calculated shaft screening.'],
+  ['Nominal trajectory · CSV','nominal-trajectory.csv','Nine-second dynamometer run with units in the column headers.'],
 ]
 
 function PageHeader({ type,title,description }: { type:string,title:string,description?:string }) {
@@ -280,8 +286,7 @@ function ValidationResults() {
 
 function Calculations() {
   const machine=useMachine()
-  const assumption=useMemo(()=>machine.key==='me01'?{...baseline,diameterM:.013,spanM:.263,fromLeftM:.1315,forceN:63,torqueNm:.47,rotorMassKg:.64,rotorRadiusM:.070,bearingRatingN:1800,bearingLoadN:78,rpm:1450}:machine.key==='re01'?{...baseline,diameterM:.012,spanM:.164,fromLeftM:.082,forceN:44,
-    torqueNm:.34,rotorMassKg:.34,rotorRadiusM:.063,bearingRatingN:1500,bearingLoadN:50,rpm:1550}:baseline,[machine.key])
+  const assumption=shaftCases[machine.key]
   const [force,setForce] = useState(assumption.forceN)
   const [rpm,setRpm] = useState(assumption.rpm)
   const output = useMemo(()=>screening({...assumption,forceN:force,rpm}),[assumption,force,rpm])
@@ -304,7 +309,8 @@ function Calculations() {
     ['Initial motor torque screen',output.motorTorque,'N·m','τ = (J₁ + J₂)Ω̇ + τload'],
   ]
   return <article className="panel article-panel doc-prose">
-    <h2>Shaft and support screening</h2><p>Illustrative assumptions and closed-form results. The model represents a round, simply supported shaft with a centered load. The calculation excludes fatigue, stress concentration, support compliance and material design allowables.</p>
+    <h2>Shaft and support screening</h2><p>Illustrative assumptions and closed-form results for a simply supported round shaft with a centered load. The stiffness and frequency estimates use the solid shaft and disk approximation. The calculation excludes fatigue, stress concentration, support compliance and material design allowables.</p>
+    {machine.key==='me01' && <p>The coupled operating model uses a separate compliant coupling and assumed effective inertias. <a href={machine.href('engineering/benchmarks')}>ME-01 benchmark results</a></p>}
     <div className="calc-inputs"><label>Transverse load · {force} N<input type="range" min="1" max="100" value={force} onChange={e=>setForce(Number(e.target.value))} /></label>
       <label>Constant speed · {rpm} rpm<input type="range" min="300" max={machine.speed[1]} step="25" value={rpm} onChange={e=>setRpm(Number(e.target.value))} /></label></div>
     <p>Assumed basis · {assumption.diameterM*1000} mm shaft, {assumption.spanM*1000} mm span, 200 GPa elastic modulus, 77 GPa shear modulus, {assumption.rotorMassKg} kg rotor, {assumption.bearingRatingN} N bearing rating and {assumption.bearingLoadN} N equivalent bearing load.</p>
@@ -329,7 +335,12 @@ export default function Reference({ section }: { section?: string }) {
           table:props=><div className="table-scroll"><table>{props.children}</table></div>}}>{content}</Markdown>
         {slug === 'validation' && <><ValidationResults /><div className="document-tabs"><a href={assetUrl(`${machine.assetFolder}/validation.json`)} download><ClipboardCheck size={14} /> Geometry results</a>
           <a href={assetUrl(`${machine.assetFolder}/numerical-validation.json`)} download><ClipboardCheck size={14} /> Numerical results</a></div></>}
+        {slug === 'benchmarks' && <div className="document-tabs">
+          <a href={assetUrl(`${machine.assetFolder}/benchmarks.json`)} download><Download size={14} /> Download benchmark JSON</a>
+          <a href={assetUrl(`${machine.assetFolder}/nominal-trajectory.csv`)} download><Download size={14} /> Download nominal trajectory CSV</a>
+        </div>}
         {slug === 'overview' && <div className="document-tabs"><a href={machine.href('explorer')}><Box size={14} /> Open model <ArrowRight size={14} /></a>
+          <a href={machine.href('engineering/evidence')}>Technical evidence <ArrowRight size={14} /></a>
           <a href={machine.href('diagnostics')}>Diagnostic replay <ArrowRight size={14} /></a></div>}
       </article>}
     {slug === 'overview' && machine.key==='me01' && <div className="document-tabs"><a href={machine.href('systems')}>Scientific Subsystem Register</a></div>}

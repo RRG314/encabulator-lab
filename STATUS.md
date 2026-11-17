@@ -23,3 +23,5 @@ The Maryland, SANS and Macquarie records have browser-based process studies. Oth
 ## Metachronic configuration
 
 ME-01 includes 52 register entries in 35 assemblies. The physical placement tree contains 41 solid part definitions and 48 instances. The 11 computational records use controller and instrumentation interfaces. The subsystem register provides 21 independent studies and the coupled laboratory uses both shaft states, active radial forces, pitch, fluid delivery, temperature, and regenerative electrical power. The geometry report lists 23 assembled contact dispositions requiring review.
+
+The ME-01 evidence set includes a nine-second nominal trajectory, six installation comparisons, numerical acceptance checks and a separate ideal-shaft screen. CAD-derived axial inertia and effective solver inertia are reported separately. Calibrated inertia, load, clearance and thermal measurements remain qualification inputs. [ME-01 model inputs](engineering/me01/MODEL_INPUTS.md) · [Benchmarks](engineering/me01/BENCHMARKS.md) · [Verification protocol](engineering/me01/VERIFICATION.md)

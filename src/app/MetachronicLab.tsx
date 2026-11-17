@@ -42,7 +42,8 @@ export default function MetachronicLab({view,initialHost}:{view:(telemetry:Displ
     ['Relative phase',fmt(a.phaseRad,'rad')],['Coupling torque',fmt(a.torque,'N·m')],['Vibration',fmt(a.vibration,'µm')],
     ['Radial actuation',fmt(a.actuator,'N')],['Pressure / flow',`${fmt(a.pressure/1000,'kPa')} · ${fmt(a.flow*1e6,'mL/s')}`],
     ['Motor / bearing',`${a.motor.toFixed(1)} / ${a.bearing.toFixed(1)} °C`],['Drive + radial input',fmt(a.busPower,'W')],
-    ['DC-link voltage',fmt(a.busV,'V')],['Recovered power',fmt(a.regenW,'W')],['Energy residual',fmt(a.audit,'J')],
+    ['Drive supply current',fmt(a.current,'A')],['DC-link voltage',fmt(a.busV,'V')],
+    ['Recovered to DC link',fmt(a.regenW,'W')],['Energy residual',fmt(a.audit,'J')],
   ]
   type Reading=typeof a
   const charts:Record<string,{unit:string,tracks:[keyof Reading,string][]}>={
@@ -57,7 +58,7 @@ export default function MetachronicLab({view,initialHost}:{view:(telemetry:Displ
   return <>
     <header className="page-header"><div><div className="eyebrow">{machine.name} {machine.code} / COUPLED STATE MODEL</div>
       <h1>Polychronous Operating Laboratory</h1><p>Dual-shaft response, hydrocoptic loading, signed DC power and orthogonal stabilization.</p></div></header>
-    <div className="document-tabs"><a href={machine.href('systems')}>Scientific subsystem register</a><a href={machine.href('engineering/physics')}>Model equations</a><a href={machine.href('installation')}>Host installation laboratory</a></div>
+    <div className="document-tabs"><a href={machine.href('systems')}>Scientific subsystem register</a><a href={machine.href('engineering/physics')}>Model equations</a><a href={machine.href('engineering/benchmarks')}>Benchmark results</a><a href={machine.href('installation')}>Host installation laboratory</a></div>
     <div className="panel bench-transport">
       <div className="timeline">
         <button type="button" className="primary-button" onClick={()=>{
@@ -97,7 +98,7 @@ export default function MetachronicLab({view,initialHost}:{view:(telemetry:Displ
         <section className="panel study-readings">
           <div className="panel-title"><Activity size={16}/><h2>Operating record</h2><span className="data-tag">Simulation</span></div>
           <dl>{cards.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-          <p>{a.fault? `Active condition · ${a.fault}`:'The test introduces the selected fault at 3 s and commands regenerative deceleration at 6 s.'}</p>
+          <p>{a.fault? `Active condition · ${a.fault}`:'Fault scenarios start at 3 s. Enabled regenerative deceleration requests 52% of the initial speed request at 6 s.'}</p>
         </section>
         <TestFixture fixture="shaft" name={hosts[options.host].label} source="ME-01 output sleeve" load="External shaft load"
           activity={Math.abs(a.torque)/options.torque} phase={a.phase2}/>

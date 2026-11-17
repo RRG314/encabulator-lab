@@ -75,6 +75,54 @@
       "status": "PASS"
     },
     {
+      "condition": "Coupling relation maximum absolute residual (N·m)",
+      "expected": 0,
+      "observed": 1.27675647831893e-15,
+      "absoluteError": 1.27675647831893e-15,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "condition": "Nominal recovered DC energy at 9 s (J)",
+      "expected": 4.275,
+      "observed": 4.274999999999978,
+      "absoluteError": 2.220446049250313e-14,
+      "tolerance": 1e-8,
+      "status": "PASS"
+    },
+    {
+      "condition": "DC-link voltage with regeneration disabled (V)",
+      "expected": 36,
+      "observed": 36,
+      "absoluteError": 0,
+      "tolerance": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "condition": "Centered 63 N shaft load, left reaction (N)",
+      "expected": 31.5,
+      "observed": 31.499999999999996,
+      "absoluteError": 3.552713678800501e-15,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Centered 63 N shaft load, right reaction (N)",
+      "expected": 31.5,
+      "observed": 31.499999999999996,
+      "absoluteError": 3.552713678800501e-15,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Centered shaft-load deflection (µm)",
+      "expected": 85.1516865,
+      "observed": 85.15168649967278,
+      "absoluteError": 3.2721914067224134e-10,
+      "tolerance": 0.000001,
+      "status": "PASS"
+    },
+    {
       "condition": "Guard open: disabled drive input (A)",
       "expected": 0,
       "observed": 0,

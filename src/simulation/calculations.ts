@@ -15,6 +15,14 @@ export const baseline: ShaftCase = {
   fasteners:4, fastenerAreaM2:5.03e-6, accelerationRadS2:50, loadTorqueNm:.06,
 }
 
+export const shaftCases = {
+  te01: baseline,
+  re01: {...baseline,diameterM:.012,spanM:.164,fromLeftM:.082,forceN:44,torqueNm:.34,
+    rotorMassKg:.34,rotorRadiusM:.063,bearingRatingN:1500,bearingLoadN:50,rpm:1550},
+  me01: {...baseline,diameterM:.013,spanM:.263,fromLeftM:.1315,forceN:63,torqueNm:.47,
+    rotorMassKg:.64,rotorRadiusM:.070,bearingRatingN:1800,bearingLoadN:78,rpm:1450},
+} satisfies Record<string,ShaftCase>
+
 export function screening(p:ShaftCase) {
   const {diameterM:d,spanM:L,forceN:F,fromLeftM:a,torqueNm:T,modulusPa:E,shearModulusPa:G} = p
   const b=L-a

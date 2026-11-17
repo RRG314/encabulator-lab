@@ -1,0 +1,30 @@
+import { expect, test } from '@playwright/test'
+
+test('opens the ME-01 technical dossier and its numerical downloads', async ({ page, request }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('./#/me01/engineering')
+  await expect(page.getByRole('heading', { name: 'Metachronic Encabulator ME-01', level: 2 })).toBeVisible()
+  const documents=page.getByRole('navigation',{ name:'Engineering documents' })
+  await documents.getByRole('link',{name:'Model inputs',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'CAD mass properties and simulation inertia'})).toBeVisible()
+  await documents.getByRole('link',{name:'Benchmark results',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'B1 · Nominal dynamometer run with deceleration'})).toBeVisible()
+  const csv=await page.getByRole('link',{name:'Download nominal trajectory CSV'}).getAttribute('href')
+  const json=await page.getByRole('link',{name:'Download benchmark JSON'}).getAttribute('href')
+  expect(csv).toBeTruthy()
+  expect(json).toBeTruthy()
+  const [csvResponse,jsonResponse]=await Promise.all([
+    request.get(new URL(csv!,page.url()).href),request.get(new URL(json!,page.url()).href),
+  ])
+  expect(csvResponse.ok()).toBe(true)
+  expect(jsonResponse.ok()).toBe(true)
+  const rows=(await csvResponse.text()).trim().split('\n')
+  expect(rows[0]).toMatch(/^time_s,primary_speed_rpm,secondary_speed_rpm,/)
+  expect(rows).toHaveLength(349)
+  expect((await jsonResponse.json()).integration).toMatchObject({ stepS:.002,endS:9,samples:348 })
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390)
+  await documents.getByRole('link',{name:'Verification',exact:true}).click()
+  await expect(page.getByRole('cell',{name:'Nominal recovered DC energy at 9 s (J)',exact:true})).toBeVisible()
+  await documents.getByRole('link',{name:'Technical evidence',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'Nominal archive reconstructions'})).toBeVisible()
+})

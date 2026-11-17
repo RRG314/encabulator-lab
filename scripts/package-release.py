@@ -10,7 +10,7 @@ from zipfile import ZipFile
 ROOT=Path(__file__).resolve().parents[1]
 COMMON=(
     'LICENSE','CITATION.cff','engineering/REFERENCES.md',
-    'engineering/INTERCHANGEABILITY.md','public/models/parity.json',
+    'engineering/TECHNICAL_EVIDENCE.md','engineering/INTERCHANGEABILITY.md','public/models/parity.json',
 )
 MACHINE_PATHS={
     'TE-01':('docs/engineering','docs/science','cad/models/te01',
