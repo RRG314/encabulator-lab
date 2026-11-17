@@ -1,35 +1,39 @@
 import { useEffect, useState } from 'react'
 import { Activity, Play, Square, RotateCcw } from 'lucide-react'
 import { useMachine } from '../machines/context'
-import { benchProfiles, benchReading, benchStep, initialBench } from '../simulation/automation'
-import type { BenchCommand } from '../simulation/automation'
+import { benchProfiles, benchReading, benchStep, fixtureTorque, initialBench, loadFixtures, reduction } from '../simulation/automation'
+import type { BenchCommand, LoadFixture } from '../simulation/automation'
+import { TestFixture } from './TestFixture'
 
 export function useBench() {
   const machine=useMachine()
   const [requested,setRequested]=useState<BenchCommand>(()=>({run:false,rpm:machine.key==='re01'?1550:1450,
-    voltage:machine.voltage,fan:.72,fault:'None',pressureHeadKPa:18,loadNm:benchProfiles[machine.key].load}))
+    voltage:machine.voltage,fan:.72,fault:'None',pressureHeadKPa:18,loadNm:benchProfiles[machine.key].load,load:'brake'}))
   const [sample,setSample]=useState(initialBench)
+  const [timeScale,setTimeScale]=useState(1)
   const clocked=requested.run || sample.w>0.25 || (requested.fault!=='None' && !sample.latch)
   const key=machine.key
   useEffect(()=>{
     if (!clocked) return
     const timer=window.setInterval(()=>setSample(state=>{
       let next=state
-      for(let i=0;i<10;i++) next=benchStep(key,next,requested)
+      for(let i=0;i<10;i++) next=benchStep(key,next,requested,.005*timeScale)
       return next
     }),50)
     return ()=>window.clearInterval(timer)
-  },[clocked,key,requested])
+  },[clocked,key,requested,timeScale])
   const reset=()=>{
     setRequested(command=>({...command,run:false,fault:'None'}))
     setSample(initialBench)
   }
-  return { requested, setRequested, reset, reading:benchReading(key,sample,requested), state:sample }
+  return { requested, setRequested, reset, reading:benchReading(key,sample,requested), state:sample,timeScale,setTimeScale }
 }
 
-export function BenchControls({bench,onStart}:{bench:ReturnType<typeof useBench>,onStart:()=>void}) {
+export function BenchControls({bench,onStart,lab=false}:{bench:ReturnType<typeof useBench>,onStart:()=>void,lab?:boolean}) {
   const machine=useMachine()
   const {reading,requested,setRequested,reset,state}=bench
+  const fixture=requested.load??'brake'
+  const isFluid=machine.key==='re01'
   return <section className="bench-console" aria-label="Interactive dynamometer">
     <header><Activity size={15}/><h3>{machine.key==='re01'?'Reciprocating Fluid-Loop Test':'Ventilated Rotor Load Test'}</h3>
       <span className="data-tag">Simulation</span></header>
@@ -47,7 +51,25 @@ export function BenchControls({bench,onStart}:{bench:ReturnType<typeof useBench>
         max={machine.speed[1]} step="50" value={requested.rpm} onChange={e=>setRequested(c=>({...c,rpm:Number(e.target.value)}))}/></label>
       {machine.key==='re01' && <label>Loop head <b>{requested.pressureHeadKPa} kPa</b><input aria-label="Loop head" type="range" min="0" max="75"
         value={requested.pressureHeadKPa} onChange={e=>setRequested(c=>({...c,pressureHeadKPa:Number(e.target.value)}))}/></label>}
+      {lab&&<>
+        <label>Connected test fixture <select value={fixture} onChange={event=>setRequested(c=>({...c,load:event.target.value as LoadFixture}))}>
+          {Object.entries(loadFixtures).map(([id,item])=><option key={id} value={id}>{item.label}</option>)}
+        </select></label>
+        <label>Load torque at 1,500 rpm <b>{requested.loadNm.toFixed(3)} N·m</b><input aria-label="Reference load torque" type="range" min="0" max=".16" step=".002"
+          value={requested.loadNm} onChange={event=>setRequested(c=>({...c,loadNm:+event.target.value}))}/></label>
+        <label>Cooling fan demand <b>{Math.round(requested.fan*100)}%</b><input aria-label="Cooling fan demand" type="range" min="0" max="1" step=".02"
+          value={requested.fan} onChange={event=>setRequested(c=>({...c,fan:+event.target.value}))}/></label>
+        <label>Simulation speed <select value={bench.timeScale} onChange={event=>bench.setTimeScale(+event.target.value)}>
+          <option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1">1×</option>
+        </select></label>
+      </>}
     </div>
+    {lab&&<div className="fixture-grid">
+      <TestFixture fixture="shaft" name={loadFixtures[fixture].label} source={machine.code} load="Shaft load" phase={state.shaftAngle}
+        activity={fixtureTorque(fixture,state.w,requested.loadNm)/.16}/>
+      {isFluid&&<TestFixture fixture="fluid" name="Closed water-loop rig" source="Crank-driven pump" load="Back-pressure vessel"
+        activity={reading.waterFlow/3e-6} phase={state.shaftAngle/reduction} flowPhase={state.fluidVolume*2e7}/>}
+    </div>}
     <dl className="bench-readings">
       <div><dt>Controller state</dt><dd><span role="status">{state.mode}{state.latch?` · ${state.latch}`:''}</span></dd></div>
       <div><dt>Shaft speed</dt><dd>{Math.round(reading.rpm)} rpm</dd></div>

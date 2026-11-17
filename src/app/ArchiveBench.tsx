@@ -4,8 +4,18 @@ import { Plot } from '../components/SimulationPanel'
 import type { ArchiveStudy } from '../machines/archive'
 import { archiveStudies, runArchiveStudy } from '../simulation/archive'
 import type { ArchiveFrame } from '../simulation/archive'
+import { TestFixture } from '../components/TestFixture'
 
-export default function ArchiveBench({kind,model}:{kind:ArchiveStudy;model?:(frame:ArchiveFrame)=>ReactNode}) {
+const fixtures={
+  reactive:{fixture:'electrical',name:'Series RLC instrument circuit',load:'Isolated AC load'},
+  charge:{fixture:'electrical',name:'Capacitor charge and discharge rig',load:'External RC load'},
+  resonators:{fixture:'electrical',name:'Swept-frequency test circuit',load:'Resonator stages'},
+  magnetic:{fixture:'shaft',name:'Magnetic shaft coupling stand',load:'Resistive dynamometer'},
+  hydraulic:{fixture:'shaft',name:'Fluid-coupling dynamometer',load:'Loaded turbine shaft'},
+  blink:{fixture:'electrical',name:'Mini Encabulator input and LED circuit',load:'LED output'},
+} as const
+
+export default function ArchiveBench({kind,model}:{kind:ArchiveStudy;model?:(frame:ArchiveFrame,fixture:ReactNode)=>ReactNode}) {
   const config=archiveStudies[kind]
   const defaults=()=>config.inputs.map(input=>input.initial)
   const [values,setValues]=useState(defaults)
@@ -13,12 +23,16 @@ export default function ArchiveBench({kind,model}:{kind:ArchiveStudy;model?:(fra
   const [running,setRunning]=useState(false)
   const [cursor,setCursor]=useState(0)
   const [rate,setRate]=useState(1)
-  const [motion,setMotion]=useState(false)
+  const [motion,setMotion]=useState(Boolean(model))
   const field=useId()
   const study=useMemo(()=>runArchiveStudy(kind,values,fault),[kind,values,fault])
   const last=study.frames.length-1
   const finished=cursor>=last
   const frame=study.frames[cursor]
+  const rig=fixtures[kind as keyof typeof fixtures]
+  const amplitude=kind==='blink'?frame.values[1]:kind==='charge'?(frame.values[0]??0)/24:kind==='resonators'?(frame.values[0]??0)/20:
+    kind==='reactive'?Math.abs(frame.values[1]??0)/4:Math.abs(frame.values[1]??0)/(kind==='magnetic'?115:1600)
+  const fixture=rig&&<TestFixture {...rig} activity={amplitude} phase={frame.shaftPhaseRad??frame.time*12}/>
   useEffect(()=>{
     if(!running||finished)return
     const timer=setInterval(()=>setCursor(previous=>Math.min(last,previous+1)),50/rate)
@@ -34,6 +48,8 @@ export default function ArchiveBench({kind,model}:{kind:ArchiveStudy;model?:(fra
     setTimeout(()=>URL.revokeObjectURL(url),0)
   }
   return <>
+    {model&&<div className="panel bench-transport">{transport()}</div>}
+    {motion&&model?.(frame,fixture)}
     <div className="study-layout">
       <aside className="panel study-parameters" aria-label="Operating parameters">
         <div className="panel-title"><h2>Input assumptions</h2></div>
@@ -47,7 +63,7 @@ export default function ArchiveBench({kind,model}:{kind:ArchiveStudy;model?:(fra
           </label>)}
           <label className="inline-control">Inject operating disturbance<input type="checkbox" checked={fault} onChange={event=>setFault(event.target.checked)}/></label>
           <label className="inline-control">Replay rate<select value={rate} onChange={event=>setRate(+event.target.value)}>
-            <option value=".5">0.5×</option><option value="1">1×</option><option value="2">2×</option>
+            <option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1">1×</option><option value="2">2×</option>
           </select></label>
           <p>{config.assumptions}</p>
         </div>
@@ -57,25 +73,29 @@ export default function ArchiveBench({kind,model}:{kind:ArchiveStudy;model?:(fra
           <div className="panel-title"><h2>{config.title}</h2><span className="data-tag">Numerical study</span></div>
           <div className="study-equation">{config.equation}</div>
           <ol className="signal-path" aria-label="Functional signal path">{config.stages.map(stage=><li key={stage}>{stage}</li>)}</ol>
-          <div className="timeline">
-            <label htmlFor={field}>Time</label><input id={field} type="range" min="0" max={last} step="1" value={cursor} aria-valuetext={frame.time.toFixed(2)+' seconds'} onChange={event=>{setRunning(false);setCursor(+event.target.value)}}/>
-            <output htmlFor={field}>{frame.time.toFixed(2)} s</output>
-          </div>
-          <div className="archive-actions">
-            <button type="button" className="secondary-button" onClick={()=>{if(finished)setCursor(0);setRunning(!(running&&!finished))}}>
-              {running&&!finished?'Pause':cursor===0||finished?'Start':'Resume'}
-            </button>
-            <button type="button" className="secondary-button" disabled={finished} onClick={()=>{setRunning(false);setCursor(cursor+1)}}>Single step</button>
-            <button type="button" className="secondary-button" onClick={()=>{setRunning(false);setCursor(0);setValues(defaults());setFault(false);setRate(1)}}>Reset</button>
-            <button type="button" className="secondary-button" onClick={save}>Download samples</button>
-            {model&&<button type="button" className="secondary-button" aria-pressed={motion} onClick={()=>setMotion(!motion)}>Motion replay</button>}
-          </div>
+          {!model&&transport()}
           <p role="status">{frame.status}</p>
           <dl>{study.names.map((name,i)=><div key={name}><dt>{name}</dt><dd>{frame.values[i].toFixed(3)} {study.unit}</dd></div>)}</dl>
         </section>
+        {!motion&&fixture}
         <Plot data={study.chart} provenance="calculated"/>
       </div>
     </div>
-    {motion&&model?.(frame)}
   </>
+
+  function transport(){return <>
+    <div className="timeline">
+      <label htmlFor={field}>Time</label><input id={field} type="range" min="0" max={last} step="1" value={cursor} aria-valuetext={frame.time.toFixed(2)+' seconds'} onChange={event=>{setRunning(false);setCursor(+event.target.value)}}/>
+      <output htmlFor={field}>{frame.time.toFixed(2)} s</output>
+    </div>
+    <div className="archive-actions">
+      <button type="button" className="primary-button" onClick={()=>{if(finished)setCursor(0);setRunning(!(running&&!finished))}}>
+        {running&&!finished?'Pause':cursor===0||finished?'Start':'Resume'}
+      </button>
+      <button type="button" className="secondary-button" disabled={finished} onClick={()=>{setRunning(false);setCursor(cursor+1)}}>Single step</button>
+      <button type="button" className="secondary-button" onClick={()=>{setRunning(false);setCursor(0);setValues(defaults());setFault(false);setRate(1)}}>Reset</button>
+      <button type="button" className="secondary-button" onClick={save}>Download samples</button>
+      {model&&<button type="button" className="secondary-button" aria-pressed={motion} onClick={()=>setMotion(!motion)}>Live assembly</button>}
+    </div>
+  </>}
 }

@@ -14,9 +14,10 @@ def baseplate():
     holes = [cyl(r,D.base_thickness+2,(x,y,0),'z') for x,y,r in patterns]
     counterbores = [cyl(3,1.5,(x,y,D.base_thickness/2-0.35),'z') for x,y,_ in patterns[:4]]
     channels=[box(236,1.1,.55,(0,y,2.9)) for y in (-95,-91,91,95)]
-    return [('plate',blank.cut(compound(holes+counterbores+channels))),
-            ('frame',chamfered(43,11,.35,(102,-79,2.91),1.2)),
-            ('amber',compound(box(18,0.45,1.3,(x*124,-D.base_width/2-0.225,-0.4)) for x in (-1,1)))]
+    badge = chamfered(43,11,.35,(102,-79,D.base_thickness/2-.175),1.2)
+    marks = [box(18,.45,1.3,(x*124,-D.base_width/2+.225,-.4)) for x in (-1,1)]
+    return [('plate',blank.cut(compound(holes+counterbores+channels+[badge,*marks]))),
+            ('frame',badge), ('amber',compound(marks))]
 
 def feet():
     return [('rubber', Part.makeCone(10,8.5,9,V(0,0,-4.5)).cut(cyl(1.4,5,(0,0,4),'z'))),('steel',ring(5,1.4,1,(0,0,5),'z'))]

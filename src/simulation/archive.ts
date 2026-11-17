@@ -38,6 +38,10 @@ export const archiveStudies:Record<ArchiveStudy,Study> = {
     assumptions:'Normalized command r and process y. Model τ = 0.85 s. Fresh readings arrive every 0.1 s. A selected sensor interruption lasts from 4 s to 7 s. The output transitions to 0 while readings are stale.',
     inputs:[input('Process demand','1',.1,1,.05,.7),input('Freshness window','s',.1,1.5,.05,.35)],
     stages:['Process sensor','Freshness evaluation','Command gate','First-order process']},
+  blink:{title:'Debounced LED control',equation:'τ = RC = 10 ms; f = 0.5 Hz + 4.5 Hz · ADC/1023',
+    assumptions:'Course schematic values R = 10 kΩ and C = 1 μF. A 10-bit potentiometer code sets the LED rate. The 0.5–5 Hz range and 60% debounce threshold are simulation settings.',
+    inputs:[input('Potentiometer position','%',0,100,1,30),input('Button held','0/1',0,1,1,1)],
+    stages:['External pushbutton','Debounce RC network','ATTiny85 timer','LED output']},
 }
 
 export type ArchiveFrame = {time:number; values:number[]; status:string; rpm?:number; shaftPhaseRad?:number; inputAngleRad?:number}
@@ -50,6 +54,7 @@ const channelMeta:Record<ArchiveStudy,{title:string;unit:string;names:string[]}>
   routing:{title:'Delivered and offered traffic',unit:'Mbit/s',names:['Delivered','Offered']},
   markov:{title:'State occupancy',unit:'1',names:['Inlet','First state','Second state','Output']},
   interlock:{title:'Process tracking',unit:'1',names:['Process state','Gated command']},
+  blink:{title:'Button and LED logic',unit:'1',names:['Debounced input','LED state']},
 }
 
 export function runArchiveStudy(study:ArchiveStudy, parameters:number[], fault=false) {
@@ -121,6 +126,15 @@ export function runArchiveStudy(study:ArchiveStudy, parameters:number[], fault=f
         const command=t<9&&permitted?a:0
         values=[process,command]
         process=command+(process-command)*Math.exp(-dt/.85)
+        break
+      }
+      case 'blink':{
+        const command=Number(live&&b>=.5)
+        process=command+(process-command)*Math.exp(-dt/.01)
+        const high=process>=.6
+        if(high)angle+=dt*(.5+4.5*Math.round(1023*a/100)/1023)
+        else angle=0
+        values=[process,Number(high&&angle%1<.5)]
         break
       }
     }

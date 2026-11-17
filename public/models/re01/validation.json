@@ -246,7 +246,7 @@
       "unit": "mm³"
     }
   ],
-  "estimatedMassKg": 12.769,
+  "estimatedMassKg": 12.764,
   "massBasis": "Computed from schematic volumes and generic finish densities. Includes modeled instance counts, including representative hardware.",
   "vaneCalculation": {
     "massKg": 0.09169722817744519,

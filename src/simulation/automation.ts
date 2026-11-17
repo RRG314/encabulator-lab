@@ -13,17 +13,27 @@ export const benchProfiles = {
 }
 export interface BenchState {
   t:number, w:number, motor:number, housing:number, inlet:number, curtailed:number,
+  shaftAngle:number, fanAngle:number, fluidVolume:number,
   current:number, torque:number, waterFlow:number, pressure:number, heat:number,
   latch:string, mode:'Standby'|'Accelerating'|'Tracking'|'Coasting'|'Fault-latched'
 }
 export interface BenchCommand {
-  run:boolean, rpm:number, voltage:number, fan:number, fault:Fault, pressureHeadKPa:number, loadNm:number
+  run:boolean, rpm:number, voltage:number, fan:number, fault:Fault, pressureHeadKPa:number, loadNm:number, load?:LoadFixture
 }
 export const initialBench: BenchState = {t:0,w:0,motor:22,housing:22,inlet:0,curtailed:0,current:0,
+  shaftAngle:0,fanAngle:0,fluidVolume:0,
   torque:0,waterFlow:0,pressure:0,heat:0,latch:'',mode:'Standby'}
 export const crankRadiusMm=12
 export const connectingRodMm=68
 export const reduction=20
+
+export const loadFixtures = {
+  brake:{label:'Dynamometer brake', response:(ratio:number)=>Math.tanh(ratio*20)},
+  blower:{label:'Centrifugal blower', response:(ratio:number)=>ratio**2},
+  generator:{label:'Generator and load bank', response:(ratio:number)=>Math.min(1.5,ratio)},
+} as const
+export type LoadFixture = keyof typeof loadFixtures
+export const fixtureTorque=(fixture:LoadFixture, w:number, demand:number)=>demand*loadFixtures[fixture].response(w/rpmToRad(1500))
 
 export function crankPosition(angle:number, r=crankRadiusMm, l=connectingRodMm) {
   const pinX = r*Math.cos(angle)
@@ -57,7 +67,8 @@ export function benchStep(machine:MachineKey, state:BenchState, c:BenchCommand, 
   const powered=c.run && !latch
   const coolant=flow(c.fan,d.freeFlow,d.head,d.duct,0,d.aero)
   const pump=machine==='re01' ? pumpPoint(state.w,c.pressureHeadKPa) : {q:0,pressure:0,work:0,torque:0}
-  const resist=d.viscous*state.w+d.aero*state.w**2+(c.loadNm+pump.torque)*Math.tanh(state.w/3)
+  const load=c.load?fixtureTorque(c.load,state.w,c.loadNm):c.loadNm*Math.tanh(state.w/3)
+  const resist=d.viscous*state.w+d.aero*state.w**2+load+pump.torque*Math.tanh(state.w/3)
   const nowTarget=rpmToRad(clamp(c.rpm,0,d.speedLimit))
   const requested=clamp((resist+d.inertia*(nowTarget-state.w)*2.6)/d.kt,0,d.limit)
   const duty=powered ? (d.kt*state.w+d.resistance*requested)/Math.max(c.voltage,1) : 0
@@ -67,6 +78,9 @@ export function benchStep(machine:MachineKey, state:BenchState, c:BenchCommand, 
   const housing=state.housing+dt*(elec.controllerLoss+.27*(state.motor-state.housing)-(.35+21*coolant.q)*(state.housing-22))/(d.capacity*.7)
   const nextPump=machine==='re01'?pumpPoint(w,c.pressureHeadKPa):pump
   return {t:state.t+dt,w,motor,housing,latch,current:elec.busCurrent,torque:elec.torque,waterFlow:nextPump.q,pressure:nextPump.pressure,
+    shaftAngle:state.shaftAngle+dt*(state.w+w)/2,
+    fanAngle:state.fanAngle+dt*rpmToRad(c.fan*2300),
+    fluidVolume:state.fluidVolume+dt*nextPump.q,
     heat:elec.copperLoss+elec.controllerLoss,
     inlet:state.inlet+dt*elec.busPower,curtailed:state.curtailed+dt*(elec.copperLoss+elec.controllerLoss+resist*state.w),
     mode:latch?'Fault-latched':powered?(Math.abs(rpm-c.rpm)<30?'Tracking':'Accelerating'):rpm>2?'Coasting':'Standby'}

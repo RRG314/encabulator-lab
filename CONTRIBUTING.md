@@ -2,6 +2,12 @@
 
 Use a branch from the current default branch. Keep Turbo Encabulator TE-01 and Retro Encabulator RE-01 identities stable. File a technical issue for design proposals and include the model code, part ID or study name, revision, evidence, and the expected result.
 
+## Contribute a configuration
+
+Start with the [configuration submission form](https://github.com/RRG314/turbo-encabulator/issues/new?template=encabulator-configuration.yml). Submissions can add a build, identify an existing variant, or supply a missing original drawing or schematic. Give the maker, date, page or timestamp, and a public link. Identify which values come from a source, a measurement, or an engineering estimate.
+
+A registry pull request adds the configuration to `data/archive/records.json` and its citations to `data/archive/sources.json`. Use a stable ID and check existing aliases before adding a distinct configuration. Put the references displayed alongside the model in `data/archive/evidence.json`. For new interactive assemblies, provide licensed native CAD, part IDs, units and datums, STEP exports, the full set of canonical station transforms and an exploded endpoint. Follow the shared `cad/models/archive` export pipeline and regenerate with `python -m cad.conformance`. Documentary records can be added before geometry is available.
+
 ## Change a machine
 
 - Keep parts, assemblies, interfaces and instance keys linked. Add a new identity for an independently selectable component.
@@ -22,4 +28,4 @@ npm run build
 python3 scripts/audit-publication.py
 ```
 
-Give the expected calculations and actual observations in pull requests. State any unresolved contacts or physical evidence gates. The deployment workflow validates both machine routes and available reports.
+Give the expected calculations and actual observations in pull requests. State any unresolved contacts or physical evidence gates. The deployment workflow checks the hosted drawing routes and source and CAD reports.

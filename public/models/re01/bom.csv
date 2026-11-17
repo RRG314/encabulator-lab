@@ -1,5 +1,5 @@
 part_id,component,assembly,quantity,material_basis,schematic_unit_mass_kg,tool_candidate
-RE-001,Prefabulated amulite baseplate,RE-100,1,Generic aluminum plate,4.598704,5 mm hex key · candidate M6 bed hardware
+RE-001,Prefabulated amulite baseplate,RE-100,1,Generic aluminum plate,4.593844,5 mm hex key · candidate M6 bed hardware
 RE-002,Slotted support channel,RE-100,2,Generic coated steel,0.554826,5 mm hex key · candidate M6 rail hardware
 RE-003,Isolation foot and bonded insert,RE-100,4,Elastomer and steel,0.019444,13 mm spanner · candidate foot locknut
 RE-004,Bed socket screw and washer,RE-100,4,"Steel, grade open",0.003777,5 mm hex key · candidate M6 socket head

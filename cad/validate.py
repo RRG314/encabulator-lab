@@ -2,6 +2,7 @@
 from dataclasses import asdict
 from itertools import combinations
 from .assemblies.layout import placements
+from .components.primitives import compound
 from .materials import MATERIALS
 from .parameters import D
 from .te01_master_assembly import registry, world_shapes
@@ -25,10 +26,10 @@ def investigate(shapes):
     add('Journal coaxiality',0,center_error,center_error < 1e-9,'mm')
     gap = D.guard_aperture-(D.hub_radius+D.vane_span)
     add('Conservative rotor to guard aperture clearance','> 0',gap,gap>0,'mm')
-    b = shapes['TE-001'][0][1].BoundBox
+    b = compound(shape for _,shape in shapes['TE-001']).optimalBoundingBox(False,False)
     observed = [b.XLength,b.YLength,b.ZLength]
     expected = [D.base_length,D.base_width,D.base_thickness]
-    add('Baseplate machined envelope',expected,observed,max(abs(q-p) for p,q in zip(expected,observed)) < 1e-7,'mm')
+    add('Complete baseplate envelope',expected,observed,max(abs(q-p) for p,q in zip(expected,observed)) < 1e-7,'mm')
     assembled = world_shapes(shapes)
     # Finite intersections are reported as open design issues, without an implicit contact whitelist.
     contacts = []

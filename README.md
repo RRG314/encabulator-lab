@@ -1,6 +1,6 @@
 # Encabulator Systems
 
-[Historical technical archive](https://rrg314.github.io/turbo-encabulator/#/archive) · [Assembly comparison](https://rrg314.github.io/turbo-encabulator/#/comparison) · [ME-01 host installation laboratory](https://rrg314.github.io/turbo-encabulator/#/me01/installation)
+[Historical technical archive](https://rrg314.github.io/turbo-encabulator/#/archive) · [Assembly comparison](https://rrg314.github.io/turbo-encabulator/#/comparison) · [ME-01 host installation laboratory](https://rrg314.github.io/turbo-encabulator/#/me01/installation) · [Contribute a configuration](https://github.com/RRG314/turbo-encabulator/issues/new?template=encabulator-configuration.yml)
 
 **Integrated Electromechanical Systems Engineering**
 
@@ -40,6 +40,8 @@ Vite prints the local URL. WebGL 2 enables the CAD views. The parts hierarchy an
 ## Layout and regeneration
 
 The [historical register](data/archive/records.json) indexes source configurations separately from project CAD and numerical studies. The [source register](data/archive/sources.json) records publishers, dates, access and evidence scope. GE-62, CH-88, MI-16, ET-21 and MT-22 export from the shared [FreeCAD archive pipeline](cad/models/archive/). Generate the complete set with `python -m cad.models.archive.export` using a Python environment that can import FreeCAD and TechDraw. Pass a record ID to regenerate one configuration.
+
+The site’s configuration selector opens project CAD, historical reconstructions and source records. CAD workbenches pair the model with original references and a table of checked requirements where the sources supply them. The operating test benches animate the assembly and its modeled load. [Source comparison and operating fixtures](engineering/SOURCE_COMPARISON.md)
 
 | Path | Role |
 |---|---|

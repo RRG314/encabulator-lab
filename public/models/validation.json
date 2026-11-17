@@ -69,7 +69,7 @@
       "unit": "mm"
     },
     {
-      "check": "Baseplate machined envelope",
+      "check": "Complete baseplate envelope",
       "expected": [
         300,
         200,
@@ -247,7 +247,7 @@
     }
   ],
   "volumeMm3ByPart": {
-    "TE-001": 358541.93411,
+    "TE-001": 358356.33211,
     "TE-002": 2478.43386,
     "TE-003": 78253.07528,
     "TE-004": 1685.52358,
@@ -277,6 +277,6 @@
     "TE-029": 62.20053,
     "TE-030": 5179.35531
   },
-  "estimatedMassKg": 2.145,
+  "estimatedMassKg": 2.144,
   "massBasis": "Schematic sum of component volumes with generic finish densities. Includes representative mounting hardware."
 }

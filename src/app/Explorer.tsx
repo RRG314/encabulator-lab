@@ -1,12 +1,13 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { Box, Camera, Crosshair, Eye, Grid2X2, Layers, Maximize, Move, Ruler, ScanLine, Settings2 } from 'lucide-react'
+import { Box, Camera, Crosshair, Eye, Grid2X2, Maximize, Move, Ruler, ScanLine, Settings2 } from 'lucide-react'
 import { useAssembly, useMachine } from '../machines/context'
 import { assetUrl } from '../machines/profiles'
 import { BenchControls, useBench } from '../components/BenchControls'
 import type { AssemblyId } from '../schemas/part'
 import { PartsTree } from '../components/PartsTree'
 import { PartInspector } from '../components/PartInspector'
+import { SourceEvidence } from '../components/SourceEvidence'
 import { ExplodeSlider } from '../components/ExplodeSlider'
 import { GraphicsBoundary, supportsWebGL, ViewerFallback } from '../components/ViewerFallback'
 import type { Cutaway, Layer, Preset, ViewBookmark, ViewerProps } from '../components/Viewer3D'
@@ -27,23 +28,24 @@ function useMedia(query: string) {
   return matches
 }
 
-type AssemblyTelemetry = Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm' | 'secondaryRpm' | 'bladePitch' | 'fanRpm' | 'shaftPhaseRad' | 'primaryAngleRad' | 'inputAngleRad'>
+type AssemblyTelemetry = Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm' | 'secondaryRpm' | 'bladePitch' | 'fanRpm' | 'shaftPhaseRad' | 'primaryAngleRad' | 'secondaryAngleRad' | 'fanAngleRad' | 'inputAngleRad' | 'signalLevels'>
 type Selection = {selected:string;onSelect:(id:string)=>void}
 
-export function Explorer({ selected, onSelect, telemetry }: Selection & {telemetry?:AssemblyTelemetry}) {
+export function Explorer({ selected, onSelect, telemetry, lab=false }: Selection & {telemetry?:AssemblyTelemetry;lab?:boolean}) {
   const machine=useMachine()
   const bench=useBench()
   const simulated=bench.reading
   const live=bench.requested.run||simulated.rpm>=1
-  return <AssemblyWorkbench selected={selected} onSelect={onSelect} telemetry={telemetry} liveTelemetry={live?{
-    speedRpm:simulated.rpm,fanRunning:simulated.flow>0,motorTemperature:simulated.motor,vibrationUm:simulated.vibrationUm}:undefined}
+  return <AssemblyWorkbench selected={selected} onSelect={onSelect} telemetry={telemetry} lab={lab} liveTelemetry={live?{
+    speedRpm:simulated.rpm,primaryAngleRad:bench.state.shaftAngle,fanAngleRad:bench.state.fanAngle,fanRpm:bench.requested.fan*2300,
+    fanRunning:simulated.flow>0,motorTemperature:simulated.motor,vibrationUm:simulated.vibrationUm}:undefined}
     controls={telemetry?undefined:reset=>machine.key==='me01'?
       <div className="assembly-actions"><a className="primary-button" href={machine.href('simulation')}>Operate coupled test rig</a>
-        <a href={machine.href('systems')}>Scientific subsystem register</a></div>:<BenchControls bench={bench} onStart={reset} />} />
+        <a href={machine.href('systems')}>Scientific subsystem register</a></div>:<BenchControls bench={bench} onStart={reset} lab={lab} />} />
 }
 
-export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,controls }:Selection & {
-  telemetry?:AssemblyTelemetry;liveTelemetry?:AssemblyTelemetry;controls?:(reset:()=>void)=>ReactNode
+export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,controls,lab=false }:Selection & {
+  telemetry?:AssemblyTelemetry;liveTelemetry?:AssemblyTelemetry;controls?:(reset:()=>void)=>ReactNode;lab?:boolean
 }) {
   const machine=useAssembly()
   const { assemblies,partById,parts }=machine.registry
@@ -76,7 +78,6 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
   const compact = useMedia('(max-width: 730px), (pointer: coarse)')
   const reducedMotion = useMedia('(prefers-reduced-motion: reduce)')
   const part = partById.get(selected) ?? parts[0]
-  const physical=parts.filter(item=>item.kind!=='logical')
   const visible = useMemo(() => new Set(parts.filter(item => !hidden.has(item.id)
     && (!assembly || item.assemblyId === assembly) && (!isolatePart || item.id === part.id) && (cutaway!=='Guard off' || !machine.guard.includes(item.id))).map(item => item.id)),
     [assembly, hidden, isolatePart, part.id, parts, cutaway, machine.guard])
@@ -137,19 +138,19 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
   }
   const fallback = <ViewerFallback {...viewerProps} />
   return <>
-    <header className="page-header">
+    {!lab&&<header className="page-header">
       <div><div className="eyebrow">ASSEMBLY &amp; KINEMATICS / {machine.code}</div><h1>{machine.name} <span>{machine.code}</span></h1>
         <p>{machine.description ?? (machine.configuration ? `${machine.configuration} Configuration.` : 'Industrial control, rotor dynamics and reciprocating fluid delivery.')}</p></div>
       <div className="revision-mark"><span><i /> Preliminary design</span><small>REV {part.revision}</small></div>
-    </header>
-    {machine.key==='te01' && <nav className="document-tabs turbo-references" aria-label="Historical Turbo Encabulator configurations">
+    </header>}
+    {!lab && machine.key==='te01' && <nav className="document-tabs turbo-references" aria-label="Historical Turbo Encabulator configurations">
       <span>Historical references</span>
       <a href="#/archive/quick-1944">Quick · 1944 publication</a>
       <a href="#/archive/ge-1962/assembly">General Electric · 1962 catalog model</a>
       <a href="#/archive/haggart">Bud Haggart · studio presentation</a>
       <a href="#/archive/chrysler/assembly">Chrysler · filmed transmission</a>
     </nav>}
-    <div className="workspace">
+    <div className="workspace assembly-workspace">
       <PartsTree selected={part.id} onSelect={select} scope={assembly} onScope={id => { setAssembly(id); setIsolatePart(false) }}
         hidden={hidden} toggleHidden={id => setHidden(previous => {
           const next = new Set(previous)
@@ -170,6 +171,8 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
           {machine.key!=='te01' && cadStatus==='schematic' && !failure && <div className="cad-loading">Loading {machine.name} CAD…</div>}
           <div className="viewport-tools"  role="group" aria-label="Viewer controls">
             <button type="button" className="icon-button" title="Fit model" aria-label="Fit model" onClick={() => focusCamera(preset)}><Crosshair size={17} /></button>
+            <button type="button" className="icon-button" title="X-ray enclosure" aria-label="X-ray enclosure" aria-pressed={opacity<1}
+              onClick={()=>setOpacity(value=>value<1?1:.24)}><Eye size={17}/></button>
             <button type="button" className="icon-button" title="Wireframe" aria-label="Wireframe" aria-pressed={wireframe} onClick={() => setWireframe(!wireframe)}><Grid2X2 size={16} /></button>
             <button type="button" className="icon-button" title="Show baseplate dimensions" aria-label="Show baseplate dimensions" aria-pressed={dimensioning}
               onClick={() => { setDimensioning(!dimensioning); if (amount) change(0) }}><Ruler size={16} /></button>
@@ -203,7 +206,7 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
             ? `Schematic distance · ${Math.hypot(...points[0].map((value,i) => value-points[1][i])).toFixed(1)} mm`
             : `Select ${points.length ? 'the second point' : 'two surface points'}`}</div>}
           {dimensioning && <div className="dimension-readout">Nominal CAD baseplate · {machine.baseMm.map(value=>Number(value.toFixed(2))).join(' × ')} mm</div>}
-          {telemetry && <div className="diagnostic-readout">SIMULATION · {Math.round(telemetry.speedRpm ?? 0)} rpm · {telemetry.motorTemperature?.toFixed(1) ?? '—'} °C</div>}
+          {telemetry && <div className="diagnostic-readout">{telemetry.speedRpm===undefined?'SIMULATION · Electrical signal activity':`SIMULATION · ${Math.round(telemetry.speedRpm)} rpm · ${telemetry.motorTemperature?.toFixed(1) ?? '—'} °C`}</div>}
           <div className="camera-presets" role="group" aria-label="Camera presets">
             {presets.map(value => <button key={value} aria-pressed={preset === value} type="button" onClick={() => focusCamera(value)}>{value}</button>)}
           </div>
@@ -214,8 +217,6 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
             <option value="all">Complete machine</option><option value="selected" disabled={part.kind==='logical'}>Selected physical part</option>{assemblies.map(item=><option key={item.id} value={item.id}>{item.shortName}</option>)}
           </select></label>
           <button type="button" className="text-button" onClick={reset}>Restore all components</button>
-          <small>{physical.filter(item=>visible.has(item.id)).length} / {physical.length} records visible</small>
-          <small>{machine.placements.filter(item=>visible.has(item.partId)).length} / {machine.placements.length} CAD instances</small>
         </div>
         <ExplodeSlider amount={amount} change={change} running={Boolean(animation)} toggle={toggleAnimation} reset={reset} />
         <nav className="assembly-actions" aria-label="Assembly drawings">
@@ -223,9 +224,10 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
           <a href={assetUrl(machine.drawings[1])} target="_blank" rel="noopener">Exploded drawing</a>
           <a href={assetUrl('models/assembly-conformance.json')} target="_blank" rel="noopener">CAD verification</a>
         </nav>
-        {controls?.(reset)}
+        {controls?.(()=>change(0))}
         <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Arrow keys to pan'}</div>
       </section>
+      <SourceEvidence key={machine.key} id={machine.key} drawing={machine.drawings[amount===100&&explodeScope==='all'?1:0]} />
       <PartInspector part={part} onFocus={()=>{
         if(!visible.has(part.id)) select(part.id)
         setCameraFocus(part.id); setRecalled(null); setCameraTick(tick=>tick+1)
@@ -233,12 +235,6 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
         setIsolatePart(!isolatePart); setAssembly(null)
         if (hidden.has(part.id)) setHidden(previous => new Set([...previous].filter(id => id !== part.id)))
       }} />
-    </div>
-    <div className="system-cards" role="group" aria-label="Assembly design targets">
-      <div><Layers /><span>Canonical assemblies</span><strong>{String(assemblies.length).padStart(2, '0')}</strong></div>
-      <div><Box /><span>Component records</span><strong>{parts.length}</strong></div>
-      {machine.speed && <div><Crosshair /><span>Rotor speed target</span><strong>{machine.speed.map(value=>value.toLocaleString('en-US')).join('–')} <small>rpm</small></strong></div>}
-      {machine.voltage!==null && <div><Ruler /><span>Supply target</span><strong>{machine.voltage} <small>V DC</small></strong></div>}
     </div>
   </>
 }

@@ -1,0 +1,35 @@
+name: Encabulator configuration or source
+description: Submit a build, an original reference, or a correction to an existing configuration.
+title: "[Configuration] "
+body:
+  - type: input
+    id: identity
+    attributes:
+      label: Configuration name and designation
+      description: Give the name used by the maker or publisher and the model number when available.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Maker, date and primary sources
+      description: Link original drawings, schematics, builder logs, public repository revisions or attributable photographs. Identify the exact page, figure or timestamp.
+    validations:
+      required: true
+  - type: textarea
+    id: geometry
+    attributes:
+      label: CAD and technical evidence
+      description: Give dimensions with units, part identifiers, coordinate datums, and assembly relationships. Link native CAD, neutral STEP and an exploded arrangement if available. Identify measurements and estimates separately.
+  - type: input
+    id: rights
+    attributes:
+      label: Attribution and reuse
+      description: Give the license or permission for any third-party material. Source links are welcome when files must remain at their original host.
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Public submission
+      options:
+        - label: The linked materials are public, and the submission contains no private or proprietary information.
+          required: true

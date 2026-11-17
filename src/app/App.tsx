@@ -1,7 +1,8 @@
 import { Archive as ArchiveIcon, BookOpen, Box, ClipboardList, Component, FlaskConical, GitCompareArrows } from 'lucide-react'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { MachineContext } from '../machines/context'
-import { machineRoute, machines, readRoute } from '../machines/profiles'
+import { archive, archiveById, archiveCad, archiveHref, workbenchHref } from '../machines/archive'
+import { isMachineKey, machineRoute, machines, readRoute } from '../machines/profiles'
 import type { MachineKey } from '../machines/profiles'
 import { Explorer } from './Explorer'
 
@@ -24,6 +25,11 @@ const nav = [
   { path: 'archive', name: 'Archive', Icon: ArchiveIcon },
 ]
 const currentRoute = () => readRoute(location.hash)
+const modelGroups = [
+  {label:'Project CAD',records:archive.filter(record=>record.kind==='Project assembly')},
+  {label:'Archive CAD models',records:archive.filter(record=>archiveCad[record.id])},
+  {label:'Source records and studies',records:archive.filter(record=>!workbenchHref(record))},
+]
 function remembered(model: MachineKey) {
   try { return sessionStorage.getItem(`${model}.selected`) ?? machines[model].defaultPart }
   catch { return machines[model].defaultPart }
@@ -34,6 +40,14 @@ export default function App() {
   const {model,page,param,view,detail}=route
   const machine=machines[model]
   const href=(path:string)=>machineRoute(model,path)
+  const archived=page==='archive'&&param?archiveById.get(param):undefined
+  const active=archived?.id??(page==='archive'?'':model)
+  const archivedLinks:Record<string,string|undefined> = archived ? {
+    explorer:workbenchHref(archived),engineering:archiveHref(archived.id),
+    simulation:archived.study?archiveHref(archived.id,'study'):undefined,
+    bom:archiveCad[archived.id]?archiveHref(archived.id,'bom'):undefined,
+    comparison:'#/comparison',archive:'#/archive',
+  } : {}
   useEffect(() => {
     const change = () => {
       setRoute(currentRoute())
@@ -56,17 +70,30 @@ export default function App() {
         <a className="brand" href={href('explorer')}><div className="brand-mark"><Component size={23} strokeWidth={1.65} /></div>
           <span>Encabulator Systems</span></a>
         <nav aria-label="Primary navigation">
-          {nav.map(({ path, name, Icon }) => <a key={path} href={path==='archive'?'#/archive':href(path)}
-            aria-current={page === path || (page === 'component' && path === 'bom') || (page === 'diagnostics' && path === 'simulation') ? 'page' : undefined}><Icon size={15} /><span>{name}</span></a>)}
+          {nav.map(({ path, name, Icon }) => {
+            const destination=archived?archivedLinks[path]:path==='archive'?'#/archive':href(path)
+            return destination&&<a key={path} href={destination}
+              aria-current={destination===location.hash||page===path&&!archived||(page==='component'&&path==='bom')||(page==='diagnostics'&&path==='simulation')?'page':undefined}><Icon size={15} /><span>{name}</span></a>
+          })}
         </nav>
       </div>
     </header>
     <div className="machine-bar">
-      <nav aria-label="Machine model">
-        {Object.values(machines).map(item=><a key={item.key} aria-current={item.key===model?'page':undefined}
-          href={machineRoute(item.key,['component','systems','archive'].includes(page)?'explorer':[page,param].filter(Boolean).join('/'))}>
-          <strong>{item.code}</strong><span>{item.name}</span>
-        </a>)}
+      <nav aria-label="Configuration navigation">
+        <label>View configuration <select value={active} onChange={event=>{
+          const record=archiveById.get(event.target.value)
+          if(!record)return
+          const stayInLab=page==='simulation'||page==='diagnostics'||view==='study'
+          const lab=isMachineKey(record.id)?machineRoute(record.id,'simulation'):
+            record.study?archiveHref(record.id,'study'):undefined
+          location.hash=(stayInLab?lab:undefined)??workbenchHref(record)??archiveHref(record.id)
+        }}>
+          <option value="" disabled>Choose a configuration</option>
+          {modelGroups.map(({label,records})=>
+            <optgroup key={label} label={label}>{records.map(record=>
+              <option key={record.id} value={record.id}>{record.name} · {record.code}</option>)}</optgroup>)}
+        </select></label>
+        <a href={archiveHref()}>Search the archive</a>
       </nav>
     </div>
     <main className="shell" id="main" tabIndex={-1}>
@@ -79,9 +106,9 @@ export default function App() {
           : page === 'installation' ? <Installation />
           : part && page === 'component' ? <PartRecord part={part} onSelect={select} />
           : page === 'systems' && model==='me01' ? <ScientificSystems id={param} key={param} />
-          : (page === 'simulation'||page==='diagnostics') && model==='me01' ? <MetachronicLab
-              view={telemetry=><Explorer selected={selected[model]} onSelect={select} telemetry={telemetry} />} />
-          : page === 'simulation' ? <SimulationPanel key={`${model}:${page}`} />
+          : (page === 'simulation'||page==='diagnostics') && model==='me01' ? <MetachronicLab key={param} initialHost={param}
+              view={telemetry=><Explorer selected={selected[model]} onSelect={select} telemetry={telemetry} lab/>} />
+          : page === 'simulation' ? <SimulationPanel key={`${model}:${page}`} lab={<Explorer selected={selected[model]} onSelect={select} lab/>} />
           : page === 'diagnostics' ? <SimulationPanel key={`${model}:${page}`} initial="integrated"
             diagnostic={telemetry => <Explorer selected={selected[model]} onSelect={select} telemetry={telemetry} />} />
           : <header className="page-header"><div><h1>Record unavailable</h1><a href={href('explorer')}>Return to assembly</a></div></header>}

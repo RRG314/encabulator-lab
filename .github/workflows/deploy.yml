@@ -80,6 +80,9 @@ jobs:
           curl -fsSL --retry 5 --retry-all-errors "$site/models/validation.json" > /tmp/te01-geometry.json
           curl -fsSL --retry 5 --retry-all-errors "$site/models/assembly-conformance.json" > /tmp/assembly-conformance.json
           node -e "const r=require('/tmp/assembly-conformance.json'); if (r.models.length!==8 || r.models.some(m=>m.componentSheets!==m.physicalDefinitions)) process.exit(1)"
+          curl -fsSL --retry 5 --retry-all-errors "$site/models/source-conformance.json" > /tmp/source-conformance.json
+          node -e "const r=require('/tmp/source-conformance.json'); if (r.configurations.length!==4 || r.configurations.some(m=>m.checks.some(c=>c.status==='OPEN'))) process.exit(1)"
+          for page in 801 802; do curl -fsSL --retry 3 "$site/reference/ge-1962/hbk-8359-p$page.jpg" -o /dev/null; done
           for model in TE01 RE01 ME01; do
             case "$model" in TE01) root="$site/models/te01-drawings" ;; RE01) root="$site/models/re01/drawings" ;; ME01) root="$site/models/me01/drawings" ;; esac
             for pose in ASSEMBLY EXPLODED; do curl -fsSL --retry 3 "$root/$model-$pose.svg" -o /dev/null; done

@@ -48,7 +48,8 @@ def records():
     rail_y=(-50,50)
     corner=[(x,y,0) for x in (-222,222) for y in (-157,157)]
     bed=bore_grid(chamfered(D.length,D.width,D.plate,chamfer=11),corner+[(x,y,0) for x in (-203,-117,-J,J,192) for y in rail_y],3.3,D.plate+4)
-    add(1,1,'Prefabulated amulite baseplate','Machined foundation and common top-plane datum. Corner holes transfer load to resilient pads.','Generic aluminum plate','5 mm hex key · candidate M6 bed hardware',[('plate',bed),strip('cast',[box(450,1,2,(0,y,-2)) for y in (-175,175)])],one(0,0,-5),None,'Deck bending or joint slip','amulite')
+    edge_inlays=[box(450,1,2,(0,y,-2)) for y in (-D.width/2+.5,D.width/2-.5)]
+    add(1,1,'Prefabulated amulite baseplate','Machined foundation and common top-plane datum. Corner holes transfer load to resilient pads.','Generic aluminum plate','5 mm hex key · candidate M6 bed hardware',[('plate',bed.cut(compound(edge_inlays))),strip('cast',edge_inlays)],one(0,0,-5),None,'Deck bending or joint slip','amulite')
     rail=bore_grid(box(427,25,14),[(x,y,0) for x in (-203,-117,-J,J,192) for y in (-7,7)],3.3,20)
     add(2,1,'Slotted support channel','Rail shoulders register the pedestal and drive footprints. Parallel rows allow adjustment before clamp-up.','Generic coated steel','5 mm hex key · candidate M6 rail hardware',[('cast',rail),strip('steel',[box(427,2,2,(0,y,7.8)) for y in (-7,7)])],each(*[(0,y,7) for y in rail_y]),1,'Rail bow or inadequate clamping')
     add(3,1,'Isolation foot and bonded insert','Elastomer body decouples the deck from the bench. The steel insert carries the bench attachment.','Elastomer and steel','13 mm spanner · candidate foot locknut',[('rubber', Part.makeCone(19,15,14,V(0,0,-7))),('steel',ring(11,3.4,2,(0,0,8),'z'))],each(*[(x,y,-18) for x,y,_ in corner]),1,'Compression set or uneven load')

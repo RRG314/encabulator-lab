@@ -4,6 +4,8 @@ import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { archiveById, archiveCad, archiveProfile } from '../src/machines/archive'
 import { machines } from '../src/machines/profiles'
+import evidence from '../data/archive/evidence.json'
+import sourceChecks from '../public/models/source-conformance.json'
 
 type GlbDocument = {
   nodes: { name: string; mesh: number; extras: { partId: string }; translation: number[]; rotation: number[] }[]
@@ -74,5 +76,21 @@ describe('drawing and mesh coverage', () => {
     expect(new Set(layout.filter(row => row.partId === 'GE-021').map(row => row.rotation)).size).toBe(6)
     expect(layout.filter(row => row.partId === 'GE-022')).toHaveLength(47)
     expect(layout.filter(row => row.partId === 'GE-023')).toHaveLength(47)
+  })
+
+  it('registers reference evidence for every interactive assembly and verifies stated dimensions and quantities', () => {
+    expect(profiles.every(profile=>Object.hasOwn(evidence,profile.key))).toBe(true)
+    for(const [id,entry] of Object.entries(evidence)) {
+      const record=archiveById.get(id)
+      expect(record).toBeDefined()
+      for(const reference of entry.references){
+        if('source' in reference)expect(record!.sourceIds).toContain(reference.source)
+        if('localImage' in reference)expect(existsSync(asset(reference.localImage!))).toBe(true)
+      }
+    }
+    for(const model of sourceChecks.configurations){
+      expect(model.checks.length).toBeGreaterThanOrEqual(5)
+      expect(model.checks.filter(check=>check.status==='OPEN')).toEqual([])
+    }
   })
 })

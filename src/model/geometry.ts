@@ -83,10 +83,10 @@ function baseplate(): Piece[] {
   const outline = polygon([[-150,-94],[-144,-100],[144,-100],[150,-94],[150,94],[144,100],[-144,100],[-150,94]])
   for (const x of [-134, 134]) for (const y of [-84, 84]) outline.holes.push(circle(x, y, 3.1))
   return [
-    ['plate', extrude(outline, 5.2, 0.4)],
+    ['plate', extrude(outline, 6)],
     ...[-1, 1].flatMap(side => [
-      box('black', [248, 0.6, 1.2], [0, side * 100.45, 0.5]),
-      box('amber', [22, 0.8, 1.4], [side * 124, -100.5, -1]),
+      box('black', [236, 0.6, 0.05], [0, side * 94, 2.97]),
+      box('amber', [18, 0.45, 1.3], [side * 124, -99.775, -0.4]),
     ]),
   ]
 }

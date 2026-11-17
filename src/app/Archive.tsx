@@ -1,12 +1,20 @@
 import { useMemo, useState } from 'react'
 import { Archive as ArchiveIcon, ArrowUpRight, FileText, Search } from 'lucide-react'
-import { archive, archiveById, archiveCad, archiveHref, archiveProfile, downloadUrl, sourceById, sources, workbenchHref } from '../machines/archive'
+import { archive, archiveById, archiveCad, archiveHref, archiveProfile, contributeConfigurationUrl, downloadUrl, sourceById, sources, workbenchHref } from '../machines/archive'
 import type { ArchiveCad, ArchiveEntry } from '../machines/archive'
 import { assetUrl, isMachineKey, machineRoute } from '../machines/profiles'
 import { AssemblyContext } from '../machines/context'
 import { AssemblyWorkbench } from './Explorer'
 import { Catalog, PartRecord } from './Reference'
 import ArchiveBench from './ArchiveBench'
+import { SourceEvidence } from '../components/SourceEvidence'
+import type { ArchiveFrame } from '../simulation/archive'
+
+function archivedSignals(kind:ArchiveEntry['study'],frame:ArchiveFrame):Record<string,number>|undefined {
+  if(kind==='charge')return {'MI-005':frame.values[1]/24,'MI-006':frame.values[1]/24,'MI-009':frame.values[0]/24,'MI-010':frame.values[0]/24}
+  if(kind==='resonators')return {'ET-004':frame.values[0]/20,'ET-007':frame.values[0]/20,'ET-008':frame.values[0]/20}
+  return undefined
+}
 
 function ArchiveIndex(){
   const [query,setQuery]=useState('')
@@ -21,7 +29,9 @@ function ArchiveIndex(){
   })
   return <>
     <header className="page-header"><div><div className="eyebrow">CONFIGURATION CONTROL / HISTORICAL REGISTRY</div>
-      <h1>Encabulator Technical Archive</h1><p>Source configurations, engineering reconstructions and reproducible operating studies.</p></div></header>
+      <h1>Encabulator Technical Archive</h1><p>Original references, model drawings, built configurations and operating studies.</p></div>
+      <a className="primary-button" href={contributeConfigurationUrl}>Contribute a configuration <ArrowUpRight size={15}/></a>
+    </header>
     <section className="panel archive-index" aria-label="Historical configuration index">
       <div className="archive-filters">
         <label><Search size={16}/> Search archive<input type="search" value={query} onChange={event=>setQuery(event.target.value)} placeholder="Machine, organization, or component"/></label>
@@ -29,7 +39,7 @@ function ArchiveIndex(){
         <Filter label="Record class" value={kind} options={archive.map(record=>record.kind).sort()} change={setKind}/>
         <Filter label="Publication period" value={period} options={archive.map(record=>record.period)} change={setPeriod}/>
       </div>
-      <div className="panel-title"><ArchiveIcon size={17}/><h2>Configuration register</h2><span className="count">{records.length}</span><a href={archiveHref('sources')}>Source register</a></div>
+      <div className="panel-title"><ArchiveIcon size={17}/><h2>Configuration register</h2><a href={archiveHref('sources')}>Source register</a></div>
       <div className="table-scroll"><table><thead><tr><th scope="col">Designation</th><th scope="col">Configuration</th><th scope="col">Period</th><th scope="col">Record class</th></tr></thead>
         <tbody>{records.map(record=><tr key={record.id}>
           <th scope="row">{record.code}</th><td><a href={archiveHref(record.id)}>{record.name} <ArrowUpRight size={13}/></a><small>{record.origin}</small></td><td>{record.period}</td><td>{record.kind}</td>
@@ -93,6 +103,7 @@ function RecordSummary({record,model}:{record:ArchiveEntry;model?:ArchiveCad}){
       {model&&<section className="panel article-panel doc-prose"><h2>Data and CAD publications</h2>
         <ul className="archive-downloads">{model.assets.map(file=><li key={file.path}><a href={downloadUrl(file)} download>{file.name}</a></li>)}</ul>
       </section>}
+      {!model&&<SourceEvidence key={record.id} id={record.id}/>}
       {record.id==='ge-1962'&&model&&<section className="panel article-panel full-reference doc-prose">
         <h2>Nominal dimensions and evidence</h2>
         <p>HBK-8359 supplies an unscaled perspective photograph. Page 802 lists dimension drawings and external wiring as furnished on delivery. Historical millimetre dimensions remain unverified.</p>
@@ -144,8 +155,11 @@ function ArchiveRecord({record,view,detail}:{record:ArchiveEntry;view?:string;de
     <header className="page-header"><div><div className="eyebrow">{record.kind.toUpperCase()} / {record.code}</div>
       <h1>{record.name}</h1><p>{view==='study'?record.operation:record.configuration}</p></div></header>
     {links}
-    {view==='study'&&record.study?<ArchiveBench key={record.study} kind={record.study} model={profile?.rotating.length?frame=>
-      <AssemblyContext.Provider value={profile}><AssemblyWorkbench selected={selected} onSelect={select} telemetry={{speedRpm:frame.rpm,primaryAngleRad:frame.shaftPhaseRad,inputAngleRad:frame.inputAngleRad}}/></AssemblyContext.Provider>:undefined}/>:
+    {view==='study'&&record.study?<div className={profile?undefined:'source-study'}><ArchiveBench key={record.study} kind={record.study} model={profile?(frame,fixture)=>
+      <AssemblyContext.Provider value={profile}><AssemblyWorkbench lab selected={selected} onSelect={select}
+        controls={()=>fixture}
+        telemetry={{speedRpm:frame.rpm,primaryAngleRad:frame.shaftPhaseRad,inputAngleRad:frame.inputAngleRad,signalLevels:archivedSignals(record.study,frame)}}/></AssemblyContext.Provider>:undefined}/>
+      {!profile&&<SourceEvidence id={record.id}/>}</div>:
       view==='engineering'&&model?<Publications entry={record} model={model} service={detail==='service'}/>:<RecordSummary record={record} model={model}/>}
   </>
 }

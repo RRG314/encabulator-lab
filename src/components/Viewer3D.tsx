@@ -53,7 +53,10 @@ export type ViewerProps = {
   fanRpm?:number
   shaftPhaseRad?:number
   primaryAngleRad?:number
+  secondaryAngleRad?:number
+  fanAngleRad?:number
   inputAngleRad?:number
+  signalLevels?: Readonly<Record<string,number>>
   linkedDirection?:Vec3
   onOrientation?: (direction:Vec3)=>void
   motorTemperature?: number
@@ -172,8 +175,8 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
   const highlight = id === options.selected
   const finishStyle = finishes[finish]
   const glass = finish === 'glass'
-  const opacity = glass ? finishes.glass.opacity : options.opacity
-  const { motor, rotating, shaftHeight, shaftY=0 } = options.machine
+  const { motor, rotating, guard, shaftHeight, shaftY=0, key } = options.machine
+  const opacity = glass ? Math.min(finishes.glass.opacity,options.opacity) : guard.includes(id)?options.opacity:1
   const material = useMemo(() => {
     const mat = new MeshStandardMaterial({
       ...finishStyle, wireframe: options.wireframe, transparent: opacity < 1,
@@ -185,12 +188,8 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
       mat.emissive.setHex(0x095e96)
       mat.emissiveIntensity = finish === 'amber' ? 0.19 : 0.13
     }
-    if (id === motor && options.motorTemperature !== undefined && !highlight) {
-      mat.emissive.setHex(0xff5b23)
-      mat.emissiveIntensity = Math.max(0, Math.min(0.45, (options.motorTemperature - 30) / 150))
-    }
     return mat
-  }, [finish, finishStyle, glass, highlight, opacity, options.wireframe, plane, id, motor, options.motorTemperature])
+  }, [finish, finishStyle, glass, highlight, opacity, options.wireframe, plane])
   useEffect(() => () => material.dispose(), [material])
   const distance = fractionFor(id,options)
   const matrices = useMemo(() => items.map(item => placementMatrix(item, distance)), [items, distance])
@@ -199,12 +198,18 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
     matrices.forEach((matrix, i) => ref.current!.setMatrixAt(i, transform ? transform.clone().multiply(matrix) : matrix))
     ref.current.instanceMatrix.needsUpdate = true
   }
-  const me=options.machine.key==='me01'
-  const extraAngle=me && ['ME-006','ME-030'].includes(id)?secondaryAngle:me&&id==='ME-018'?fanAngle:angle
-  const spins=rotating.includes(id)||extraAngle!==angle
+  const me=key==='me01'
+  const fan=(key==='te01'&&id==='TE-012'&&(finish==='plate'||finish==='cast'))||id==='RE-013'||id==='ME-018'
+  const secondary=me&&['ME-006','ME-030'].includes(id)
+  const explicit=fan?options.fanAngleRad:secondary?options.secondaryAngleRad:
+    options.machine.inputParts?.includes(id)?options.inputAngleRad:options.primaryAngleRad
+  const sampleAngle=fan?fanAngle:secondary?secondaryAngle:angle
+  const axisY=fan?items[0].origin[1]:shaftY
+  const axisZ=fan?items[0].origin[2]:shaftHeight
+  const spins=rotating.includes(id)||secondary||fan
   const replay=options.speedRpm!==undefined || options.primaryAngleRad!==undefined
     || options.secondaryRpm!==undefined || options.fanRpm!==undefined
-  const moving=replay&&!options.reducedMotion&&options.fraction===0
+  const moving=replay&&options.fraction===0&&(!options.reducedMotion||explicit!==undefined)
   const spinning=moving&&spins
   const variablePitch=me&&id==='ME-013'&&options.fraction===0&&options.bladePitch!==undefined
   const reciprocal=moving&&options.machine.key==='re01'&&['RE-031','RE-032','RE-034'].includes(id)
@@ -215,21 +220,27 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
     ref.current.computeBoundingSphere()
   }, [geometry, matrices, reciprocal, spinning, variablePitch])
   useFrame(() => {
+    const signal=options.signalLevels?.[id]
+    if (!glass&&(signal!==undefined||!highlight&&id===motor)) {
+      material.emissive.setHex(signal===undefined?0xff5b23:0x37beed)
+      material.emissiveIntensity=signal===undefined?Math.max(0,Math.min(.45,((options.motorTemperature??20)-30)/150)):
+        Math.max(0,Math.min(.8,signal*.8))
+    }
     if (reciprocal && ref.current) {
       const [x,y,z]=items[0].origin
-      const joint=crankPosition(crank.current)
+      const phase=options.primaryAngleRad===undefined?crank.current:options.primaryAngleRad/reduction
+      const joint=crankPosition(phase)
       const transform=new Matrix4()
-      if (id==='RE-032') transform.makeRotationZ(crank.current).setPosition(x,y,z)
+      if (id==='RE-032') transform.makeRotationZ(phase).setPosition(x,y,z)
       else if (id==='RE-031') transform.makeRotationZ(joint.armAngle).setPosition(-23+(joint.pinX+joint.sliderX)/2,y+joint.pinY/2,z)
       else transform.makeTranslation(x+joint.sliderX-80,y,z)
       ref.current.setMatrixAt(0,transform)
       ref.current.instanceMatrix.needsUpdate=true
     }
     if(spinning || variablePitch) {
-      const rotation=options.machine.inputParts?.includes(id)?options.inputAngleRad:options.primaryAngleRad
-      const transform=spinning?new Matrix4().makeTranslation(0,shaftY,shaftHeight)
-        .multiply(new Matrix4().makeRotationX(rotation??extraAngle.current))
-        .multiply(new Matrix4().makeTranslation(0,-shaftY,-shaftHeight)):undefined
+      const transform=spinning?new Matrix4().makeTranslation(0,axisY,axisZ)
+        .multiply(new Matrix4().makeRotationX(explicit??sampleAngle.current))
+        .multiply(new Matrix4().makeTranslation(0,-axisY,-axisZ)):undefined
       if(variablePitch && ref.current) {
         const pitch=new Matrix4().makeRotationZ(((options.bladePitch??14)-14)*Math.PI/180)
         matrices.forEach((matrix,i)=>{
@@ -247,8 +258,8 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
     else options.onSelect(id)
   }
   return <instancedMesh ref={ref} args={[undefined, undefined, items.length]} geometry={geometry} material={material}
-    castShadow={!glass&&!options.compact&&options.opacity>.98} receiveShadow={!glass&&!options.compact}
-    frustumCulled={!spinning&&!reciprocal} renderOrder={glass ? 2 : 0}
+    castShadow={!glass&&!options.compact&&opacity>.98} receiveShadow={!glass&&!options.compact}
+    frustumCulled={!spinning&&!reciprocal} renderOrder={opacity<1 ? 2 : 0}
     onClick={glass ? undefined : select}
     onPointerOver={glass ? undefined : event => {
       if (plane && plane.distanceToPoint(event.point) < 0) return
@@ -360,12 +371,13 @@ function Scene({ props, callout, scale, onHover }: {
   const anchor = calloutPart && explodePosition(calloutPart, fractionFor(props.selected,props))
   const target: Vec3 | undefined = anchor && [anchor[0], anchor[1], anchor[2] + (props.selected === machine.defaultPart ? 18 : 0)]
   useFrame((_, delta) => {
-    if (props.primaryAngleRad===undefined && (props.speedRpm || props.secondaryRpm || props.fanRpm) && props.fraction === 0 && !props.reducedMotion) {
+    if ((props.primaryAngleRad===undefined && (props.speedRpm || props.secondaryRpm) || props.fanAngleRad===undefined&&props.fanRpm)
+      && props.fraction === 0 && !props.reducedMotion) {
       const deltaAngle=(props.speedRpm??0)*(Math.PI/30)*Math.min(delta,.05)
       angle.current = (angle.current+deltaAngle)%(2*Math.PI)
       crank.current = (crank.current+deltaAngle/reduction)%(2*Math.PI)
       secondaryAngle.current=(angle.current-(props.shaftPhaseRad ?? 0))%(2*Math.PI)
-      fanAngle.current=(fanAngle.current+(props.fanRpm??0)*(Math.PI/30)*Math.min(delta,.05))%(2*Math.PI)
+      if(props.fanAngleRad===undefined)fanAngle.current=(fanAngle.current+(props.fanRpm??0)*(Math.PI/30)*Math.min(delta,.05))%(2*Math.PI)
       invalidate()
     }
   })

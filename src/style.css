@@ -89,7 +89,6 @@ h1, h2, h3, h4, p { margin: 0; }
 .tree-assembly li.current i { background: var(--amber); border-color: var(--amber); }
 .tree-assembly .hide-part { border: none; background: transparent; flex: 0 0 23px; width: 23px; height: 28px; opacity: 0.78; }
 .empty-tree { color: var(--muted); padding: 12px; line-height: 1.4; }
-.tree-footer { margin-top: auto; border-top: 1px solid var(--line-soft); padding: 10px 14px; font: 400 10px var(--mono); color: var(--muted); }
 .viewer { overflow: hidden; display: flex; flex-direction: column; }
 .viewer-top { justify-content: space-between; gap: 5px; }
 .viewer-top > div { display: flex; align-items: center; gap: 8px; }
@@ -170,12 +169,6 @@ input[type=range], input[type=checkbox] { accent-color: var(--amber); }
 .primary-button svg:last-child { margin-left: auto; }
 .secondary-button { color: var(--secondary); background: #22272d; border: 1px solid var(--line); }
 .secondary-button:hover, .secondary-button[aria-pressed=true] { color: var(--amber); border-color: #88623e; }
-.system-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 14px; }
-.system-cards > div { display: grid; grid-template-columns: 25px 1fr; column-gap: 11px; align-items: center; background: #1b1f24; border: 1px solid var(--line); border-radius: 7px; padding: 12px; }
-.system-cards svg { grid-row: span 2; color: var(--amber); width: 17px; margin-left: 3px; }
-.system-cards span { color: var(--muted); font-size: 12px; }
-.system-cards strong { font: 500 clamp(15px,1.8vw,21px) var(--mono); color: var(--text); white-space: nowrap; }
-.system-cards strong small { font-size: 11px; color: var(--secondary); }
 .site-footer { display: flex; justify-content: space-between; gap: 10px; background: #191c20; border-top: 1px solid var(--line); color: var(--muted); padding: 12px clamp(18px, 3.25vw, 54px); font: 400 10px var(--mono); }
 @media (max-width: 1220px) {
   .header-class { display: none; }
@@ -217,7 +210,6 @@ input[type=range], input[type=checkbox] { accent-color: var(--amber); }
   .inspector dl { width: 100%; }
   .inspector-actions { width: 100%; padding-top: 6px; }
   .part-code { width: 100%; }
-  .system-cards { grid-template-columns: repeat(2,1fr); gap: 8px; }
 }
 @media (max-width: 365px) {
   .masthead nav a { font-size: 11.5px; }

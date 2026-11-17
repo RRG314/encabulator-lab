@@ -139,4 +139,14 @@ describe('bounded model-specific studies',()=>{
       expect(study.nominal.at(-1)?.secondaryRpm).not.toBe(study.alternative.at(-1)?.secondaryRpm)
     }
   })
+  it('runs the Mini exercise LED from the debounced button and potentiometer',()=>{
+    const inactive=runArchiveStudy('blink',[30,0]).frames
+    expect(inactive.every(frame=>frame.values[1]===0)).toBe(true)
+    const low=runArchiveStudy('blink',[0,1]).frames.map(frame=>frame.values[1])
+    const high=runArchiveStudy('blink',[100,1]).frames.map(frame=>frame.values[1])
+    const transitions=(signal:number[])=>signal.filter((value,i)=>i>0&&value!==signal[i-1]).length
+    expect(transitions(low)).toBeGreaterThan(2)
+    expect(transitions(high)).toBeGreaterThan(transitions(low)*4)
+    expect(high.at(-1)).toBe(0)
+  })
 })

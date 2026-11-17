@@ -6,8 +6,9 @@ import type { ViewerProps } from '../components/Viewer3D'
 import { dynamicFaults, hosts, me01Simulation, defaultOptions } from '../simulation/metachronic/plant'
 import type { Options } from '../simulation/metachronic/plant'
 import { useMachine } from '../machines/context'
+import { TestFixture } from '../components/TestFixture'
 
-type DisplayTelemetry=Pick<ViewerProps,'speedRpm'|'secondaryRpm'|'shaftPhaseRad'|'bladePitch'|'fanRpm'|'fanRunning'|'motorTemperature'|'vibrationUm'>
+type DisplayTelemetry=Pick<ViewerProps,'speedRpm'|'secondaryRpm'|'primaryAngleRad'|'secondaryAngleRad'|'fanAngleRad'|'bladePitch'|'fanRpm'|'fanRunning'|'motorTemperature'|'vibrationUm'>
 type Num = { [K in keyof Options]: Options[K] extends number ? K : never }[keyof Options]
 const parameters: [Num,string,string,number,number,number][] = [
   ['rpm','Primary speed request','rpm',300,2200,25],['torque','Torque ceiling','N·m',.1,.65,.01],
@@ -20,20 +21,21 @@ const parameters: [Num,string,string,number,number,number][] = [
 ]
 const fmt=(n:number,unit:string)=>`${Number(n.toPrecision(4))} ${unit}`
 
-export default function MetachronicLab({view}:{view:(telemetry:DisplayTelemetry)=>ReactNode}) {
+export default function MetachronicLab({view,initialHost}:{view:(telemetry:DisplayTelemetry)=>ReactNode;initialHost?:string}) {
   const machine=useMachine()
-  const [options,setOptions]=useState(defaultOptions)
+  const [options,setOptions]=useState(()=>initialHost&&Object.hasOwn(hosts,initialHost)?{...defaultOptions,host:initialHost as Options['host']}:defaultOptions)
   const [time,setTime]=useState(0)
   const [running,setRunning]=useState(false)
-  const [showModel,setShowModel]=useState(false)
+  const [showModel,setShowModel]=useState(true)
+  const [rate,setRate]=useState(1)
   const [chart,setChart]=useState('Shaft speeds')
   const rows=useMemo(()=>me01Simulation(options),[options])
   const active=running&&time<9
   useEffect(()=>{
     if(!active)return
-    const timer=window.setInterval(()=>setTime(v=>Math.min(9,v+.05)),50)
+    const timer=window.setInterval(()=>setTime(v=>Math.min(9,v+.05*rate)),50)
     return ()=>window.clearInterval(timer)
-  },[active])
+  },[active,rate])
   const a=rows[Math.round(time/9*(rows.length-1))]
   const cards=[
     ['Controller',a.mode],['Primary / secondary',`${Math.round(a.rpm)} / ${Math.round(a.secondaryRpm)} rpm`],
@@ -56,6 +58,20 @@ export default function MetachronicLab({view}:{view:(telemetry:DisplayTelemetry)
     <header className="page-header"><div><div className="eyebrow">{machine.name} {machine.code} / COUPLED STATE MODEL</div>
       <h1>Polychronous Operating Laboratory</h1><p>Dual-shaft response, hydrocoptic loading, signed DC power and orthogonal stabilization.</p></div></header>
     <div className="document-tabs"><a href={machine.href('systems')}>Scientific subsystem register</a><a href={machine.href('engineering/physics')}>Model equations</a><a href={machine.href('installation')}>Host installation laboratory</a></div>
+    <div className="panel bench-transport">
+      <div className="timeline">
+        <button type="button" className="primary-button" onClick={()=>{
+          if(!active&&time>=9)setTime(0)
+          setRunning(!active)
+        }}>{active?<Pause size={15}/>:<Play size={15}/>} {active?'Pause':'Run test'}</button>
+        <label htmlFor="me-time">Time</label><input id="me-time" type="range" min="0" max="9" step=".025" value={time}
+          onChange={event=>{setTime(Number(event.target.value));setRunning(false)}}/><output htmlFor="me-time">{time.toFixed(2)} s</output>
+        <button type="button" className="secondary-button" aria-pressed={showModel} onClick={()=>setShowModel(!showModel)}>Live assembly</button>
+      </div>
+    </div>
+    {showModel && <div className="diagnostic-model">{view({speedRpm:a.rpm,secondaryRpm:a.secondaryRpm,primaryAngleRad:a.phase2+a.phaseRad,secondaryAngleRad:a.phase2,
+      bladePitch:a.pitch,fanRpm:a.cooling>0?1700*options.fan:0,fanRunning:a.cooling>0,motorTemperature:a.motor,vibrationUm:a.vibration,
+      fanAngleRad:Math.min(a.t,options.fault==='Cooling failure'?3:9)*1700*options.fan*Math.PI/30})}</div>}
     <div className="study-layout">
       <aside className="panel study-parameters">
         <div className="panel-title"><FlaskConical size={16}/><h2>Test conditions</h2></div>
@@ -65,6 +81,9 @@ export default function MetachronicLab({view}:{view:(telemetry:DisplayTelemetry)
           <label>Fault scenario<select value={options.fault} onChange={e=>{setOptions(o=>({...o,fault:e.target.value as Options['fault']}));setTime(0)}}>
             {dynamicFaults.map(fault=><option key={fault}>{fault}</option>)}</select></label>
           <label>Regenerative deceleration<input type="checkbox" checked={options.regen} onChange={e=>setOptions(o=>({...o,regen:e.target.checked}))}/></label>
+          <label>Replay rate<select value={rate} onChange={event=>setRate(+event.target.value)}>
+            <option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1">1×</option>
+          </select></label>
           <details open><summary>Drive, vane and fluid parameters</summary>
             <div className="me-parameters">
               {parameters.map(([key,label,unit,min,max,step])=><label key={key}>{label} <output>{fmt(options[key],unit)}</output>
@@ -77,25 +96,16 @@ export default function MetachronicLab({view}:{view:(telemetry:DisplayTelemetry)
       <div className="study-results">
         <section className="panel study-readings">
           <div className="panel-title"><Activity size={16}/><h2>Operating record</h2><span className="data-tag">Simulation</span></div>
-          <div className="timeline">
-            <button type="button" className="icon-button" aria-label={active?'Pause run':'Start run'} onClick={()=>{
-              if(!active&&time>=9)setTime(0)
-              setRunning(!active)
-            }}>{active?<Pause size={15}/>:<Play size={15}/>}</button>
-            <label htmlFor="me-time">Time</label><input id="me-time" type="range" min="0" max="9" step=".025" value={time}
-              onChange={event=>{setTime(Number(event.target.value));setRunning(false)}}/><output htmlFor="me-time">{time.toFixed(2)} s</output>
-            <button type="button" className="secondary-button" aria-pressed={showModel} onClick={()=>setShowModel(!showModel)}>Motion replay</button>
-          </div>
           <dl>{cards.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
           <p>{a.fault? `Active condition · ${a.fault}`:'The test introduces the selected fault at 3 s and commands regenerative deceleration at 6 s.'}</p>
         </section>
+        <TestFixture fixture="shaft" name={hosts[options.host].label} source="ME-01 output sleeve" load="External shaft load"
+          activity={Math.abs(a.torque)/options.torque} phase={a.phase2}/>
         <div className="document-tabs" role="group" aria-label="Time-series channels">{Object.keys(charts).map(key=><button key={key} type="button"
           aria-pressed={chart===key} onClick={()=>setChart(key)}>{key}</button>)}</div>
         <Plot provenance="simulation" data={{title:chart,x:rows.map(row=>row.t),xLabel:'Time (s)',unit:selected.unit,
           series:selected.tracks.map(([key,name],i)=>({name,data:rows.map(row=>Number(row[key])*(key==='flow'?1e6:1)),color:i?'#9a5a1a':'#225b89'}))}}/>
       </div>
     </div>
-    {showModel && <div className="diagnostic-model">{view({speedRpm:a.rpm,secondaryRpm:a.secondaryRpm,shaftPhaseRad:a.phaseRad,
-      bladePitch:a.pitch,fanRpm:a.cooling>0?1700*options.fan:0,fanRunning:a.cooling>0,motorTemperature:a.motor,vibrationUm:a.vibration})}</div>}
   </>
 }

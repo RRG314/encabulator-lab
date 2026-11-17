@@ -1,0 +1,156 @@
+{
+  "configurations": [
+    {
+      "id": "te01",
+      "checks": [
+        {
+          "feature": "Baseplate",
+          "target": "300 \u00d7 200 \u00d7 6 mm",
+          "actual": "300 \u00d7 200 \u00d7 6 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Main shaft diameter",
+          "target": "8 mm",
+          "actual": "8 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Radial bearings",
+          "target": "2",
+          "actual": "2",
+          "status": "PASS"
+        },
+        {
+          "feature": "Rotor vanes",
+          "target": "6",
+          "actual": "6",
+          "status": "PASS"
+        },
+        {
+          "feature": "Assembly envelope limit",
+          "target": "300 \u00d7 200 \u00d7 200 mm",
+          "actual": "300 \u00d7 200 \u00d7 126 mm",
+          "status": "WITHIN"
+        }
+      ]
+    },
+    {
+      "id": "re01",
+      "checks": [
+        {
+          "feature": "Baseplate",
+          "target": "488 \u00d7 350 \u00d7 10 mm",
+          "actual": "488 \u00d7 350 \u00d7 10 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Bearing bore \u00d7 outside \u00d7 width",
+          "target": "12 \u00d7 28 \u00d7 8 mm",
+          "actual": "12 \u00d7 28 \u00d7 8 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Rotor vanes",
+          "target": "6",
+          "actual": "6",
+          "status": "PASS"
+        },
+        {
+          "feature": "Crank throw",
+          "target": "12 mm",
+          "actual": "12 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Nominal stroke",
+          "target": "24 mm",
+          "actual": "24 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Connecting rod centres",
+          "target": "68 mm",
+          "actual": "68 mm",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "me01",
+      "checks": [
+        {
+          "feature": "Foundation",
+          "target": "620 \u00d7 412 \u00d7 12 mm",
+          "actual": "620 \u00d7 412 \u00d7 12 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Main axis height",
+          "target": "108 mm",
+          "actual": "108 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Primary journal diameter",
+          "target": "13 mm",
+          "actual": "13 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Sleeve body diameter",
+          "target": "24 mm",
+          "actual": "24 mm",
+          "status": "PASS"
+        },
+        {
+          "feature": "Rotor vanes",
+          "target": "6",
+          "actual": "6",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "ge-1962",
+      "checks": [
+        {
+          "feature": "Coaxial bearing supports",
+          "target": "2",
+          "actual": "2",
+          "status": "PASS"
+        },
+        {
+          "feature": "External fan blades",
+          "target": "5",
+          "actual": "5",
+          "status": "PASS"
+        },
+        {
+          "feature": "Internal marzel-vanes",
+          "target": "6",
+          "actual": "6",
+          "status": "PASS"
+        },
+        {
+          "feature": "Grouting brushes",
+          "target": "47",
+          "actual": "47",
+          "status": "PASS"
+        },
+        {
+          "feature": "Individual feed locations",
+          "target": "47",
+          "actual": "47",
+          "status": "PASS"
+        },
+        {
+          "feature": "Panel meters",
+          "target": "2",
+          "actual": "2",
+          "status": "PASS"
+        }
+      ]
+    }
+  ]
+}

@@ -129,13 +129,14 @@ function StudyControls({ id, diagnostic }: { id:SimulationId, diagnostic?: (tele
   </>
 }
 
-export default function SimulationPanel({ initial, diagnostic }: { initial?:SimulationId, diagnostic?: (telemetry:Telemetry) => ReactNode }) {
+export default function SimulationPanel({ initial, diagnostic, lab }: { initial?:SimulationId, diagnostic?: (telemetry:Telemetry) => ReactNode;lab?:ReactNode }) {
   const machine=useMachine()
   const [active,setActive] = useState<SimulationId>(() => initial ?? 'rotor')
   return <>
     <header className="page-header"><div><div className="eyebrow">{machine.name} {machine.code} / {diagnostic ? 'OPERATING STATE' : 'MODEL STUDIES'}</div>
       <h1>{diagnostic ? 'Diagnostic replay' : 'Dynamic Test Bench'}</h1>
-      <p>{diagnostic ? 'Review the simulated plant state on the assembly.' : 'Deterministic parameter studies and reproducible response plots.'}</p></div></header>
+      <p>{diagnostic ? 'Review the simulated plant state on the assembly.' : 'Operate the assembly under adjustable loads, then inspect its calculated response.'}</p></div></header>
+    {lab}
     {!diagnostic && <nav className="document-tabs" aria-label="Simulation studies">
       {simulationProfiles[machine.key].map(model => <button key={model.id} type="button" aria-pressed={active === model.id}
         onClick={() => setActive(model.id)}>{model.name}</button>)}

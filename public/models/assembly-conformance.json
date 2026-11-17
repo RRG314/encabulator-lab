@@ -27,7 +27,7 @@
           "drawing": "PASS"
         }
       },
-      "artifactsSha256": "e44fd2b38b0fced4c7c4cabae1658b80276d2415f6759ea70d4fa4d255159e4d",
+      "artifactsSha256": "83659f437c04e8ccea01cdc6317a3d7e9bf97ce397dfc98f52c33adf7cee2abf",
       "files": [
         "models/te01-assembled.FCStd",
         "models/te01-assembled.step",
@@ -118,7 +118,7 @@
           "drawing": "PASS"
         }
       },
-      "artifactsSha256": "7885a142c2fc1a225bd25425772238d77e6efa2f850d2cfe6f30144336f84dd0",
+      "artifactsSha256": "9fb0e3a402b9f79b4a98f0c469e9db7cc65017b1f729fb7f52308dc4deb3f71d",
       "files": [
         "models/re01/drawings/RE-001.svg",
         "models/re01/drawings/RE-002.svg",

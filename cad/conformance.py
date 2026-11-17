@@ -15,6 +15,7 @@ from cad.models.archive.configurations import CONFIGURATIONS
 from cad.models.me01.master_assembly import records as me_records
 from cad.models.re01.master_assembly import records as re_records
 from cad.shared.placement import placed
+from cad.source_requirements import measurements
 from cad.te01_master_assembly import components as te_components
 
 
@@ -131,6 +132,7 @@ def check_model(code, shapes, records, layout, mesh, sets, solid_bundle, drawing
 
 def main():
     results = []
+    source_checks = []
     for key, shapes in [('te01', te_components()),
                         ('re01', {p.id: p.finish_parts for p in re_records()}),
                         ('me01', {p.id: p.finish_parts for p in me_records() if p.finish_parts})]:
@@ -142,8 +144,10 @@ def main():
                 for label, file, id in [('assembled', 'assembled', 'ASSEMBLY'), ('exploded', 'exploded', 'EXPLODED')]]
         solids = folder / {'te01': 'te01-part-solids.zip', 're01': 'part-solids.zip', 'me01': 'solids.zip'}[key]
         drawings = folder / ('drawings.zip' if archive else 'te01-drawings-svg.zip')
+        layout = read_json(registry / 'model-layout.json')['placements']
         results.append(check_model(f'{key[:2].upper()}-01', shapes, read_json(registry / 'parts.json'),
-                                   read_json(registry / 'model-layout.json')['placements'], folder / f'{key}.glb', sets, solids, drawings))
+                                   layout, folder / f'{key}.glb', sets, solids, drawings))
+        source_checks.append(dict(id=key, checks=measurements(key, shapes, layout)))
         print(results[-1]['code'], 'component and assembly files verified', flush=True)
 
     for slug, (code, _, _, builder) in CONFIGURATIONS.items():
@@ -154,12 +158,16 @@ def main():
                 for pose, native in [('assembled', 'assembly.FCStd'), ('exploded', 'exploded.FCStd')]]
         results.append(check_model(code, shapes, manifest['parts'], manifest['placements'], folder / 'assembly.glb', sets,
                                    folder / 'solids.zip', folder / 'drawings.zip', nominal=code == 'GE-62'))
+        checks = measurements(slug, shapes, manifest['placements'])
+        if checks:
+            source_checks.append(dict(id=slug, checks=checks))
         print(code, 'component and assembly files verified', flush=True)
 
     report = dict(scope='Conformance to project CAD and drawing sets', positionToleranceMm=POSITION_TOLERANCE,
                   relativeVolumeTolerance=VOLUME_RELATIVE_TOLERANCE, minimumVolumeToleranceMm3=.03,
                   fabricationRelease=False, models=results)
     (MODELS / 'assembly-conformance.json').write_text(json.dumps(report, indent=2) + '\n')
+    (MODELS / 'source-conformance.json').write_text(json.dumps(dict(configurations=source_checks), indent=2) + '\n')
 
 
 if __name__ == '__main__':

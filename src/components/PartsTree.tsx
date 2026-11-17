@@ -56,6 +56,5 @@ export function PartsTree({ selected, onSelect, scope, onScope, hidden, toggleHi
         </div>
       })}
     </div>
-    <footer className="tree-footer">{count} component records</footer>
   </aside>
 }

@@ -30,6 +30,7 @@ export default function Installation(){
             {Object.entries(hosts).map(([id,value])=><option key={id} value={id}>{value.label}</option>)}</select></label>
           <label>Speed request <output>{rpm} rpm</output><input aria-label="Installation speed request" type="range" min="300" max="2200" step="25" value={rpm} onChange={event=>setRpm(+event.target.value)}/></label>
           <button type="button" className="secondary-button" aria-pressed={model} onClick={()=>setModel(!model)}>Installation reference geometry</button>
+          <a className="primary-button" href={machineRoute('me01',`simulation/${host}`)}>Run this load with the live assembly</a>
         </div>
       </aside>
       <div className="study-results">

@@ -17,9 +17,9 @@ const source = z.strictObject({
 })
 const archiveSchema = z.strictObject({
   id, code:text, name:text, family:text, period:text, origin:text, aliases:z.array(text),
-  kind:z.enum(['CAD reconstruction','Computational analogue','Publication','Presentation','Research lead','Project assembly']),
+  kind:z.enum(['CAD reconstruction','Computational analogue','Publication','Presentation','Research lead','Project assembly','Community build','Educational hardware']),
   sourceIds:z.array(text), related:z.array(id), configuration:text, operation:text, gap:text,
-  study:z.enum(['reactive','charge','resonators','magnetic','routing','markov','interlock','hydraulic']).optional(),
+  study:z.enum(['reactive','charge','resonators','magnetic','routing','markov','interlock','hydraulic','blink']).optional(),
   components:z.array(z.tuple([text,text,text])),
 })
 const asset = z.strictObject({name:text,path:z.string().regex(/^models\/archive\/[a-z0-9/_.-]+$/i)})
@@ -42,6 +42,7 @@ export type ArchiveCad = z.infer<typeof cad>
 export const sourceById = new Map(sources.map(item=>[item.id,item]))
 export const archiveById = new Map(archive.map(item=>[item.id,item]))
 export const archiveCad = z.record(id,cad).parse(cadJson)
+export const contributeConfigurationUrl='https://github.com/RRG314/turbo-encabulator/issues/new?template=encabulator-configuration.yml'
 
 export function archiveHref(key?:string,view?:string,part?:string) {
   return ['#/archive',key,view,part].filter(Boolean).join('/')

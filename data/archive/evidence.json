@@ -1,0 +1,68 @@
+{
+  "te01": {
+    "references": [
+      {"label":"TE-01 master specification","kind":"Authoritative project specification","href":"https://github.com/RRG314/turbo-encabulator/blob/main/docs/engineering/TE01_MASTER_SPEC.md"},
+      {"label":"J. H. Quick · 1944","kind":"Historical text","source":"Q44"}
+    ],
+    "matches":"The TE-01 master specification establishes the baseplate, shaft diameter, bearing and vane counts, and target envelope.",
+    "limits":"The rotor diameter and final fits remain open in the master specification. TE-01 is a project design with its own dimensions."
+  },
+  "re01": {
+    "references": [
+      {"label":"RE-01 technical manual","kind":"Authoritative project specification","href":"https://github.com/RRG314/turbo-encabulator/blob/main/engineering/re01/MASTER_SPEC.md"},
+      {"label":"Rockwell production transcript","kind":"Historical transcript","source":"R97"}
+    ],
+    "matches":"The project manual defines the foundation, journals and crank-slider. The Rockwell transcript supplies component terminology.",
+    "limits":"The Rockwell reference supplies no manufacturing dimensions for the filmed equipment. It has a separate historical archive entry."
+  },
+  "me01": {
+    "references": [
+      {"label":"ME-01 master specification","kind":"Authoritative project specification","href":"https://github.com/RRG314/turbo-encabulator/blob/main/engineering/me01/MASTER_SPEC.md"}
+    ],
+    "matches":"The master specification defines the foundation, the two coaxial shafts, the rotor and guard radii, and the coupling length parameter.",
+    "limits":"ME-01 originates in this repository. Hardware qualification, final tolerances, and installation interfaces remain open."
+  },
+  "ge-1962":{
+    "references":[
+      {"label":"HBK-8359 p. 801 · catalog photograph","kind":"Original catalog photograph · Figure 1","source":"G62A","localImage":"reference/ge-1962/hbk-8359-p801.jpg","alt":"General Electric handbook page 801 with a perspective photograph of the Turboencabulator"},
+      {"label":"HBK-8359 p. 802 · specifications","kind":"Original handbook · Operation and ratings","source":"G62B","localImage":"reference/ge-1962/hbk-8359-p802.jpg","alt":"General Electric handbook page 802 with the operation description and dimensional and wiring availability notes"}
+    ],
+    "matches":"Figure 1 shows the scalloped base, two exterior supports, cylindrical case, exposed fan, crown rail and meters. Page 802 specifies two aligned bearings, six internal vanes, forty-seven brushes with individual feeds, and two meters.",
+    "limits":"The surviving handbook lists the dimension drawing and external wiring as supplied on delivery. The CAD dimensions, hidden contours, brush spacing and feed routing remain nominal."
+  },
+  "chrysler":{
+    "references":[{"label":"Chrysler service presentation","kind":"Original filmed presentation","source":"CHV","preview":"https://www.youtube-nocookie.com/embed/MXW0bx_Ooq4"},
+      {"label":"A604 / 41TE exploded parts drawing","kind":"Candidate comparison · model identity unconfirmed","source":"CHD","preview":"https://static1.squarespace.com/static/68ad16a04269bd5dde064171/t/68aea5170e1fcc66e52eebbb/1756275991738/Chrysler-jeep-A604-40TE-41TE-41AE.pdf#page=1"}],
+    "matches":"The film shows the transmission demonstrator and its visible housing. The reconstruction follows the visible bell outline, ribbing and service split.",
+    "limits":"A604 / 41TE is a comparison candidate. The film does not establish the casting number. Internal fluid geometry, flange hardware, dimensions and fits are nominal."
+  },
+  "micro-2016":{
+    "references":[{"label":"PATH enclosure presentation","kind":"Original publisher video","source":"P16","preview":"https://www.youtube-nocookie.com/embed/u4ILnWpi8XY"}],
+    "matches":"The presentation shows an open hinged enclosure, lid terminals and lid-to-tray cabling.",
+    "limits":"Enclosure dimensions, hinge pin specification, wiring pinout and internal equipment positions remain estimated."
+  },
+  "electro-2021":{
+    "references":[{"label":"Instrument · Figure 2","kind":"Firsthand instrument photograph","source":"B21","imagePreview":"https://www.signalintegrityjournal.com/ext/resources/2021/06/22/rc-upload-1624418237814-3.png","alt":"Keysight Electro Turbo Encabulator instrument shown in Figure 2"},
+      {"label":"Acquisition PCB · Figure 3","kind":"Firsthand board photograph","source":"B21","imagePreview":"https://www.signalintegrityjournal.com/ext/resources/2021/06/22/rc-upload-1624418237814-5.png","alt":"Acquisition board with the unpopulated pad field in the lower right"},
+      {"label":"Keysight technical presentation","kind":"Original publisher presentation","source":"K21"}],
+    "matches":"The instrument images show bench packaging and an unpopulated pad field. The publisher identifies two spurving resonators in the acquisition path.",
+    "limits":"A dimensioned chassis drawing, PCB layout file, netlist and component values remain unavailable. Geometry and circuit parameters are project estimates."
+  },
+  "magneto-2022":{
+    "references":[{"label":"AlphaPhoenix build demonstration","kind":"Original builder demonstration","source":"A22","preview":"https://www.youtube-nocookie.com/embed/lBOB9SSdDfU"}],
+    "matches":"The builder shows lobed carriers, satellite magnet disks, end disks and supports.",
+    "limits":"The CAD represents the visible carrier arrangement and includes 160 insert solids in its modeled set. Exact total hardware allocation, polarity, grading and spacings require a build drawing."
+  },
+  "crypto-2019":{
+    "references":[{"label":"University of Maryland · functional diagram","kind":"Original functional schematic · page 1","source":"U19","preview":"https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/Cryptoencabulator_Data_Sheet.pdf#page=1"}],
+    "matches":"Figure 1 supplies the layered signal flow and feedback paths used as the reference for the operating study.",
+    "limits":"The document gives no mechanical dimensions or numerical transition matrix. The operating study uses project-defined states and probabilities."
+  },
+  "mini-2022":{
+    "references":[{"label":"Illinois · PCB design exercise","kind":"Original electrical schematic and PCB layout instructions","source":"IL22","preview":"https://courses.grainger.illinois.edu/ece445zjui/documents/pcb_exercise_doc.pdf#page=7"},
+      {"label":"ECE 445 course CAD repository","kind":"Original course CAD and soldering references","source":"ILCAD"},
+      {"label":"Student KiCad board and schematic","kind":"Original example board · native design files","source":"AP22","imagePreview":"https://user-images.githubusercontent.com/71608252/189489474-38a0d6bc-4feb-42c6-83e3-54d99dd3b8f1.png","alt":"Author’s KiCad preview of the example Mini Encabulator circuit board"}],
+    "matches":"The illustrated schematic defines the ATTiny85 circuit. The course gives a 1.575 × 1.26 in (40.005 × 32.004 mm) mounting pattern with 3.2 mm holes and specifies the debounce network.",
+    "limits":"The course delegates the board outline and component placement. The published student example has a 0.635 mm gap at one Edge.Cuts corner, so the native file remains the reference for that revision."
+  }
+}

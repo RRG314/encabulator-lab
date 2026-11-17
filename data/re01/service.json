@@ -6,7 +6,7 @@
     "massBasis": "Calculated from schematic component volumes and generic material densities.",
     "envelopeMm": [
       488.0,
-      351.0,
+      350.0,
       10.0
     ],
     "classification": "Custom design reference"
