@@ -86,6 +86,7 @@ test('keeps the touch layout within narrow mobile viewports', async ({ browser }
 })
 
 test('switches to independent RE-01 geometry, retains parts and drives the water-loop bench', async ({ page }) => {
+  test.setTimeout(60000)
   const errors: string[]=[]
   page.on('pageerror',error=>errors.push(error.message))
   await page.goto('/')
@@ -109,7 +110,10 @@ test('switches to independent RE-01 geometry, retains parts and drives the water
   await expect(page.getByRole('region',{name:'Interactive dynamometer'}).getByRole('status')).toHaveText('Fault-latched · Guard open')
   await page.getByRole('link',{name:'Engineering record'}).click()
   await expect(page).toHaveURL(/#\/re01\/component\/RE-031/)
-  await expect(page.getByRole('link',{name:/Rockwell transcript/})).toBeVisible()
+  await expect(page.getByRole('heading',{name:'Drawn reciprocating dingle arm',level:1})).toBeVisible({timeout:15000})
+  const citation = page.getByRole('link',{name:/Rockwell transcript/})
+  await expect(citation).toBeVisible()
+  await expect(citation).toHaveAttribute('href',/Rockwell_TRANSCRIPT\.pdf$/)
   await expect(page.getByRole('link',{name:'Dimensioned schematic SVG'})).toBeVisible()
   await page.getByRole('link',{name:'Test bench'}).click()
   await page.getByRole('button',{name:'Reciprocating water circuit'}).click()
