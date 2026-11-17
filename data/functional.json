@@ -1,0 +1,103 @@
+[
+  {
+    "id": "TE-100",
+    "name": "Structural assembly",
+    "assemblies": [
+      "ABA"
+    ],
+    "interfaces": [
+      "TE-007",
+      "TE-011",
+      "TE-025"
+    ]
+  },
+  {
+    "id": "TE-200",
+    "name": "Rotational assembly",
+    "assemblies": [
+      "HMA"
+    ],
+    "interfaces": [
+      "TE-005",
+      "TE-014",
+      "TE-030"
+    ]
+  },
+  {
+    "id": "TE-300",
+    "name": "Spurving bearing assembly",
+    "assemblies": [
+      "SBA"
+    ],
+    "interfaces": [
+      "TE-017",
+      "TE-019"
+    ]
+  },
+  {
+    "id": "TE-400",
+    "name": "Differential Girdle Spring",
+    "assemblies": [
+      "DGS"
+    ],
+    "interfaces": [
+      "TE-028",
+      "TE-030"
+    ]
+  },
+  {
+    "id": "TE-500",
+    "name": "Panametric thermal assembly",
+    "assemblies": [
+      "PFA"
+    ],
+    "interfaces": [
+      "TE-004",
+      "TE-019"
+    ]
+  },
+  {
+    "id": "TE-600",
+    "name": "Electrical drive assembly",
+    "assemblies": [
+      "CSC"
+    ],
+    "interfaces": [
+      "TE-018",
+      "TE-020"
+    ]
+  },
+  {
+    "id": "TE-700",
+    "name": "Cardinal Gram-Meter",
+    "assemblies": [
+      "CGM"
+    ],
+    "interfaces": [
+      "TE-016"
+    ]
+  },
+  {
+    "id": "TE-800",
+    "name": "Unilateral Phase Detractor",
+    "assemblies": [
+      "UPD"
+    ],
+    "interfaces": [
+      "TE-016",
+      "TE-018"
+    ]
+  },
+  {
+    "id": "TE-900",
+    "name": "Logarithmic casing",
+    "assemblies": [
+      "LCA"
+    ],
+    "interfaces": [
+      "TE-025",
+      "TE-026",
+      "TE-029"
+    ]
+  }
+]

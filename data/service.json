@@ -1,0 +1,92 @@
+{
+  "TE-001": {
+    "failureMode": "Datum distortion or joint movement"
+  },
+  "TE-002": {
+    "failureMode": "Compression set or isolation resonance"
+  },
+  "TE-003": {
+    "failureMode": "Stall, winding overheating or connector fault"
+  },
+  "TE-004": {
+    "failureMode": "Current limit failure or thermal shutdown"
+  },
+  "TE-005": {
+    "failureMode": "Bending, fatigue or journal surface damage"
+  },
+  "TE-006": {
+    "failureMode": "Wear, seizure or incorrect fit"
+  },
+  "TE-007": {
+    "failureMode": "Housing misalignment or outer ring migration"
+  },
+  "TE-008": {
+    "failureMode": "Hub slip or crack at a vane seat"
+  },
+  "TE-009": {
+    "failureMode": "Fatigue, loss of retention or imbalance"
+  },
+  "TE-010": {
+    "failureMode": "Axial migration or preload loss"
+  },
+  "TE-011": {
+    "failureMode": "Compression set or motor misalignment"
+  },
+  "TE-012": {
+    "failureMode": "Fan stall or obstructed grille"
+  },
+  "TE-013": {
+    "failureMode": "Filter loading or duct bypass"
+  },
+  "TE-014": {
+    "failureMode": "Panel fracture, access gap or joint failure"
+  },
+  "TE-015": {
+    "failureMode": "Insert movement or excess restriction"
+  },
+  "TE-016": {
+    "failureMode": "Watchdog reset or stale measurements"
+  },
+  "TE-017": {
+    "failureMode": "Saturation, aliasing or a loose mount"
+  },
+  "TE-018": {
+    "failureMode": "Timing jitter, missed pulses or target movement"
+  },
+  "TE-019": {
+    "failureMode": "Detached probe or calibration drift"
+  },
+  "TE-020": {
+    "failureMode": "Offset, common-mode overload or loss of isolation"
+  },
+  "TE-021": {
+    "failureMode": "Contact fault or latch failure"
+  },
+  "TE-022": {
+    "failureMode": "Overload, short-circuit or thermal derating"
+  },
+  "TE-023": {
+    "failureMode": "Incorrect interruption rating or open fuse"
+  },
+  "TE-024": {
+    "failureMode": "Misadjustment or wiring fault"
+  },
+  "TE-025": {
+    "failureMode": "Vent blockage or strain-relief failure"
+  },
+  "TE-026": {
+    "failureMode": "Chafing, loose connectors or poor continuity"
+  },
+  "TE-027": {
+    "failureMode": "Spectral ambiguity, unsynchronized input or invalid phase"
+  },
+  "TE-028": {
+    "failureMode": "Calibration drift or coupling overload"
+  },
+  "TE-029": {
+    "failureMode": "Preload loss, shear or thread pullout"
+  },
+  "TE-030": {
+    "failureMode": "Clamping slip, elastomer wear or misalignment"
+  }
+}
