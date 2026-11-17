@@ -1,0 +1,515 @@
+[
+  {
+    "id": "rotor",
+    "name": "Rotor spin-up",
+    "equation": "J dΩ/dt = τmotor − τload − bΩ − kΩ|Ω|",
+    "assumptions": "Constant commanded torque, fixed external load and ideal bearings. Drag coefficients are assumed.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "inertia",
+        "label": "Inertia",
+        "unit": "kg·m²",
+        "min": 0.001,
+        "max": 0.03,
+        "step": 0.001,
+        "default": 0.004
+      },
+      {
+        "id": "torque",
+        "label": "Motor torque",
+        "unit": "N·m",
+        "min": 0.02,
+        "max": 0.4,
+        "step": 0.01,
+        "default": 0.16
+      },
+      {
+        "id": "drag",
+        "label": "Viscous drag",
+        "unit": "N·m·s",
+        "min": 0.0001,
+        "max": 0.003,
+        "step": 0.0001,
+        "default": 0.0005
+      },
+      {
+        "id": "aero",
+        "label": "Quadratic drag",
+        "unit": "µN·m·s²",
+        "min": 0,
+        "max": 8,
+        "step": 0.1,
+        "default": 1.1
+      },
+      {
+        "id": "load",
+        "label": "External load",
+        "unit": "N·m",
+        "min": 0,
+        "max": 0.15,
+        "step": 0.005,
+        "default": 0.03
+      }
+    ]
+  },
+  {
+    "id": "unbalance",
+    "name": "Unbalance force",
+    "equation": "Fᵤ = mᵤ rᵤ Ω²",
+    "assumptions": "A point imbalance rotates with the shaft. Reported values are radial force amplitudes.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "mass",
+        "label": "Eccentric mass",
+        "unit": "g",
+        "min": 0,
+        "max": 10,
+        "step": 0.1,
+        "default": 1
+      },
+      {
+        "id": "radius",
+        "label": "Eccentric radius",
+        "unit": "mm",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "id": "rpm",
+        "label": "Evaluation speed",
+        "unit": "rpm",
+        "min": 0,
+        "max": 4000,
+        "step": 25,
+        "default": 1500
+      }
+    ]
+  },
+  {
+    "id": "vibration",
+    "name": "Vibration",
+    "equation": "M ÿ + C ẏ + Ky = U Ω² cos Ωt",
+    "assumptions": "Single transverse mode, fixed speed, linear support stiffness and viscous damping.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "mass",
+        "label": "Modal mass",
+        "unit": "kg",
+        "min": 0.2,
+        "max": 3,
+        "step": 0.05,
+        "default": 0.45
+      },
+      {
+        "id": "stiffness",
+        "label": "Stiffness",
+        "unit": "N/m",
+        "min": 1000,
+        "max": 40000,
+        "step": 250,
+        "default": 15000
+      },
+      {
+        "id": "damping",
+        "label": "Damping",
+        "unit": "N·s/m",
+        "min": 2,
+        "max": 80,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "id": "rpm",
+        "label": "Excitation speed",
+        "unit": "rpm",
+        "min": 0,
+        "max": 4000,
+        "step": 25,
+        "default": 1500
+      },
+      {
+        "id": "unbalance",
+        "label": "Residual unbalance",
+        "unit": "g·mm",
+        "min": 0,
+        "max": 40,
+        "step": 0.5,
+        "default": 5
+      }
+    ]
+  },
+  {
+    "id": "torsion",
+    "name": "Torsional response",
+    "equation": "τcoupling = k(θ₁ − θ₂) + c(Ω₁ − Ω₂)",
+    "assumptions": "Two free inertias with a stepped motor torque. Coupling stiffness and damping are comparison parameters.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "j1",
+        "label": "Motor inertia",
+        "unit": "kg·m²",
+        "min": 0.001,
+        "max": 0.02,
+        "step": 0.001,
+        "default": 0.004
+      },
+      {
+        "id": "j2",
+        "label": "Rotor inertia",
+        "unit": "kg·m²",
+        "min": 0.001,
+        "max": 0.03,
+        "step": 0.001,
+        "default": 0.009
+      },
+      {
+        "id": "stiffness",
+        "label": "Stiffness",
+        "unit": "N·m/rad",
+        "min": 0.1,
+        "max": 30,
+        "step": 0.1,
+        "default": 3
+      },
+      {
+        "id": "damping",
+        "label": "Damping",
+        "unit": "N·m·s/rad",
+        "min": 0,
+        "max": 0.3,
+        "step": 0.005,
+        "default": 0.025
+      },
+      {
+        "id": "torque",
+        "label": "Motor torque",
+        "unit": "N·m",
+        "min": 0,
+        "max": 0.6,
+        "step": 0.01,
+        "default": 0.16
+      }
+    ]
+  },
+  {
+    "id": "electrical",
+    "name": "Electrical drive",
+    "equation": "I = clamp[(D Vdc − Kₑ Ω) / R]  ·  τ = Kₜ I",
+    "assumptions": "Averaged one-quadrant equivalent. Switching ripple, inductive transients and regeneration are outside this model.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "voltage",
+        "label": "Bus voltage",
+        "unit": "V",
+        "min": 6,
+        "max": 30,
+        "step": 0.5,
+        "default": 24
+      },
+      {
+        "id": "rpm",
+        "label": "Speed",
+        "unit": "rpm",
+        "min": 0,
+        "max": 4000,
+        "step": 25,
+        "default": 1500
+      },
+      {
+        "id": "duty",
+        "label": "Drive duty",
+        "unit": "%",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 65
+      },
+      {
+        "id": "resistance",
+        "label": "Equivalent resistance",
+        "unit": "Ω",
+        "min": 0.5,
+        "max": 8,
+        "step": 0.1,
+        "default": 2.2
+      },
+      {
+        "id": "kt",
+        "label": "Torque constant",
+        "unit": "N·m/A",
+        "min": 0.01,
+        "max": 0.14,
+        "step": 0.005,
+        "default": 0.05
+      }
+    ]
+  },
+  {
+    "id": "thermal",
+    "name": "Thermal response",
+    "equation": "Cₜₕ dT/dt = P_loss − G(T − Tₐ)",
+    "assumptions": "Two independent lumped nodes at ambient initial conditions. Controller capacity and conductance are assumed fractions of motor values.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "ambient",
+        "label": "Ambient",
+        "unit": "°C",
+        "min": 5,
+        "max": 45,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "id": "capacity",
+        "label": "Motor thermal capacity",
+        "unit": "J/K",
+        "min": 10,
+        "max": 180,
+        "step": 1,
+        "default": 54
+      },
+      {
+        "id": "conductance",
+        "label": "Still-air conductance",
+        "unit": "W/K",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.05,
+        "default": 0.35
+      },
+      {
+        "id": "motor",
+        "label": "Motor losses",
+        "unit": "W",
+        "min": 0,
+        "max": 40,
+        "step": 0.5,
+        "default": 12
+      },
+      {
+        "id": "controller",
+        "label": "Controller losses",
+        "unit": "W",
+        "min": 0,
+        "max": 15,
+        "step": 0.5,
+        "default": 3
+      },
+      {
+        "id": "fan",
+        "label": "Fan command",
+        "unit": "%",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 55
+      }
+    ]
+  },
+  {
+    "id": "phase",
+    "name": "Phase estimation",
+    "equation": "Δφ = arg Σ(X Y*)  ·  γ² = |Σ(X Y*)|² / (Σ|X|² Σ|Y|²)",
+    "assumptions": "Paired Hann-windowed DFT coefficients at a known tone. Windows with missing samples are rejected. Coherence is a signal-quality indicator.",
+    "provenance": "synthetic",
+    "inputs": [
+      {
+        "id": "freq",
+        "label": "Tone frequency",
+        "unit": "Hz",
+        "min": 5,
+        "max": 45,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "id": "sample",
+        "label": "Sample rate",
+        "unit": "Hz",
+        "min": 100,
+        "max": 800,
+        "step": 25,
+        "default": 400
+      },
+      {
+        "id": "offset",
+        "label": "Injected phase difference",
+        "unit": "°",
+        "min": -180,
+        "max": 180,
+        "step": 1,
+        "default": 38
+      },
+      {
+        "id": "noise",
+        "label": "Noise amplitude",
+        "unit": "normalized",
+        "min": 0,
+        "max": 3,
+        "step": 0.05,
+        "default": 0.2
+      }
+    ]
+  },
+  {
+    "id": "ac",
+    "name": "AC phase compensation",
+    "equation": "Qnet = QRL − V² Ω C  ·  PF = P / √(P² + Qnet²)",
+    "assumptions": "Defined single-frequency circuit with a series RL branch and a parallel shunt capacitor. Values describe an isolated analytical example.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "voltage",
+        "label": "Source RMS voltage",
+        "unit": "V",
+        "min": 2,
+        "max": 24,
+        "step": 1,
+        "default": 12
+      },
+      {
+        "id": "resistance",
+        "label": "Series resistance",
+        "unit": "Ω",
+        "min": 3,
+        "max": 30,
+        "step": 1,
+        "default": 12
+      },
+      {
+        "id": "inductance",
+        "label": "Series inductance",
+        "unit": "mH",
+        "min": 1,
+        "max": 80,
+        "step": 1,
+        "default": 25
+      },
+      {
+        "id": "freq",
+        "label": "Frequency",
+        "unit": "Hz",
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "default": 50
+      },
+      {
+        "id": "capacitance",
+        "label": "Shunt capacitance",
+        "unit": "µF",
+        "min": 0,
+        "max": 200,
+        "step": 1,
+        "default": 30
+      }
+    ]
+  },
+  {
+    "id": "flow",
+    "name": "Cooling airflow",
+    "equation": "Δpfan = Δpsystem  ·  Pfluid = Q Δp",
+    "assumptions": "Illustrative quadratic fan and system curves. Rotor drag is a separate assumed quadratic loss. Flow and pressure await fan-curve and duct measurements.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "duty",
+        "label": "Fan command",
+        "unit": "%",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 75
+      },
+      {
+        "id": "freeFlow",
+        "label": "Free delivery",
+        "unit": "L/s",
+        "min": 3,
+        "max": 30,
+        "step": 0.5,
+        "default": 15
+      },
+      {
+        "id": "head",
+        "label": "Shutoff pressure",
+        "unit": "Pa",
+        "min": 10,
+        "max": 160,
+        "step": 1,
+        "default": 65
+      },
+      {
+        "id": "restriction",
+        "label": "System loss",
+        "unit": "MPa·s²/m⁶",
+        "min": 0.1,
+        "max": 3,
+        "step": 0.05,
+        "default": 0.8
+      },
+      {
+        "id": "rpm",
+        "label": "Rotor speed",
+        "unit": "rpm",
+        "min": 0,
+        "max": 4000,
+        "step": 25,
+        "default": 1500
+      }
+    ]
+  },
+  {
+    "id": "integrated",
+    "name": "Integrated plant",
+    "equation": "JΩ̇ = Kₜ I − τloss  ·  C Ṫ = Ploss − G(Q)(T − Tₐ)",
+    "assumptions": "Shared drive, speed, cooling and temperature states. A modeled inhibit removes drive torque at the selected fault event.",
+    "provenance": "simulation",
+    "inputs": [
+      {
+        "id": "voltage",
+        "label": "Bus voltage",
+        "unit": "V",
+        "min": 12,
+        "max": 30,
+        "step": 0.5,
+        "default": 24
+      },
+      {
+        "id": "rpm",
+        "label": "Speed request",
+        "unit": "rpm",
+        "min": 300,
+        "max": 3800,
+        "step": 25,
+        "default": 2000
+      },
+      {
+        "id": "load",
+        "label": "External torque",
+        "unit": "N·m",
+        "min": 0,
+        "max": 0.12,
+        "step": 0.005,
+        "default": 0.015
+      },
+      {
+        "id": "fan",
+        "label": "Fan command",
+        "unit": "%",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 70
+      }
+    ]
+  }
+]

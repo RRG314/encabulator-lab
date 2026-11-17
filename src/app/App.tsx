@@ -1,7 +1,12 @@
 import { BookOpen, Box, CircuitBoard, ClipboardList, Component, FlaskConical } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { partById } from '../data'
 import { Explorer } from './Explorer'
+
+const Reference = lazy(() => import('./Reference'))
+const Catalog = lazy(() => import('./Reference').then(module => ({default:module.Catalog})))
+const PartRecord = lazy(() => import('./Reference').then(module => ({default:module.PartRecord})))
+const SimulationPanel = lazy(() => import('../components/SimulationPanel'))
 
 const nav = [
   { path: 'explorer', name: 'Explorer', Icon: Box },
@@ -34,16 +39,22 @@ export default function App() {
           <span>Turbo Encabulator<small>TE-01</small></span></a>
         <nav aria-label="Primary navigation">
           {nav.map(({ path, name, Icon }) => <a key={path} href={`#/${path}`}
-            aria-current={page === path || (page === 'component' && path === 'bom') ? 'page' : undefined}><Icon size={15} /><span>{name}</span></a>)}
+            aria-current={page === path || (page === 'component' && path === 'bom') || (page === 'diagnostics' && path === 'simulation') ? 'page' : undefined}><Icon size={15} /><span>{name}</span></a>)}
         </nav>
         <div className="header-class"><CircuitBoard size={15} /><span>TECHNICAL REFERENCE</span></div>
       </div>
     </header>
     <main className="shell" id="main" tabIndex={-1}>
-      {page === 'explorer' ? <Explorer selected={selected} onSelect={select} />
-        : part ? <article className="page-header"><div><div className="eyebrow">{part.id} / REV {part.revision}</div>
-          <h1>{part.name}</h1><p>{part.description}</p><a href="#/explorer" onClick={() => select(part.id)}>Locate in explorer</a></div></article>
-          : <header className="page-header"><h1>{nav.find(item => item.path === page)?.name ?? 'Record unavailable'}</h1></header>}
+      <Suspense fallback={<div className="viewer-loading">Loading technical record…</div>}>
+        {page === 'explorer' ? <Explorer selected={selected} onSelect={select} />
+          : page === 'engineering' ? <Reference section={param} />
+          : page === 'bom' ? <Catalog />
+          : part && page === 'component' ? <PartRecord part={part} onSelect={select} />
+          : page === 'simulation' ? <SimulationPanel key={page} />
+          : page === 'diagnostics' ? <SimulationPanel key={page} initial="integrated"
+            diagnostic={telemetry => <Explorer selected={selected} onSelect={select} telemetry={telemetry} />} />
+          : <header className="page-header"><div><h1>Record unavailable</h1><a href="#/explorer">Return to assembly</a></div></header>}
+      </Suspense>
     </main>
     <footer className="site-footer"><span>TE-01 Engineering Reference</span><span>SI units · Revision 0.1</span></footer>
   </>
