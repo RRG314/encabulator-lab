@@ -23,6 +23,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - run: python3 scripts/audit-publication.py
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
@@ -75,4 +76,8 @@ jobs:
           index="$(curl -fsSL --retry 7 --retry-all-errors "$site/")"
           case "$index" in *"Turbo Encabulator TE-01"*) ;; *) exit 1 ;; esac
           curl -fsSL --retry 5 --retry-all-errors "$site/models/validation.json" > /tmp/te01-geometry.json
+          curl -fsSL --retry 5 --retry-all-errors "$site/models/re01/validation.json" > /tmp/re01-geometry.json
+          curl -fsSL --retry 3 --range 0-3 "$site/models/re01/re01.glb" -o /tmp/re01-glb
+          python3 -c 'from pathlib import Path; assert Path("/tmp/re01-glb").open("rb").read(4) == b"glTF"'
+          node -e "const re=require('/tmp/re01-geometry.json'); if(re.checks.some(c=>c.status==='FAIL')) process.exit(1)"
           node -e "const r=require('/tmp/te01-geometry.json'); if(r.checks.some(c=>c.status==='FAIL')) process.exit(1)"

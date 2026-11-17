@@ -1,0 +1,387 @@
+[
+  {
+    "id": "RE-IF-002",
+    "kind": "mechanical",
+    "from": "RE-002",
+    "to": "RE-001",
+    "label": "Slotted support channel — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-003",
+    "kind": "mechanical",
+    "from": "RE-003",
+    "to": "RE-001",
+    "label": "Isolation foot and bonded insert — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-004",
+    "kind": "mechanical",
+    "from": "RE-004",
+    "to": "RE-001",
+    "label": "Bed socket screw and washer — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-005",
+    "kind": "mechanical",
+    "from": "RE-005",
+    "to": "RE-002",
+    "label": "Ambifacient lunar waneshaft — Slotted support channel interface"
+  },
+  {
+    "id": "RE-IF-006",
+    "kind": "mechanical",
+    "from": "RE-006",
+    "to": "RE-005",
+    "label": "Waneshaft retaining collar — Ambifacient lunar waneshaft interface"
+  },
+  {
+    "id": "RE-IF-007",
+    "kind": "mechanical",
+    "from": "RE-007",
+    "to": "RE-005",
+    "label": "Indexed marzelvane carrier — Ambifacient lunar waneshaft interface"
+  },
+  {
+    "id": "RE-IF-008",
+    "kind": "mechanical",
+    "from": "RE-008",
+    "to": "RE-007",
+    "label": "Hydrocoptic marzelvane — Indexed marzelvane carrier interface"
+  },
+  {
+    "id": "RE-IF-009",
+    "kind": "mechanical",
+    "from": "RE-009",
+    "to": "RE-007",
+    "label": "Rotor balance and keeper ring — Indexed marzelvane carrier interface"
+  },
+  {
+    "id": "RE-IF-010",
+    "kind": "mechanical",
+    "from": "RE-010",
+    "to": "RE-005",
+    "label": "Spurving bearing cartridge — Ambifacient lunar waneshaft interface"
+  },
+  {
+    "id": "RE-IF-011",
+    "kind": "mechanical",
+    "from": "RE-011",
+    "to": "RE-002",
+    "label": "Line-bored pedestal and adjustment shoe — Slotted support channel interface"
+  },
+  {
+    "id": "RE-IF-012",
+    "kind": "mechanical",
+    "from": "RE-012",
+    "to": "RE-011",
+    "label": "Journal cap and labyrinth shoulder — Line-bored pedestal and adjustment shoe interface"
+  },
+  {
+    "id": "RE-IF-013",
+    "kind": "mechanical",
+    "from": "RE-013",
+    "to": "RE-014",
+    "label": "Panametric fan impeller — Fan shroud and slotted grille interface"
+  },
+  {
+    "id": "RE-IF-014",
+    "kind": "mechanical",
+    "from": "RE-014",
+    "to": "RE-015",
+    "label": "Fan shroud and slotted grille — Service filter cassette interface"
+  },
+  {
+    "id": "RE-IF-015",
+    "kind": "mechanical",
+    "from": "RE-015",
+    "to": "RE-001",
+    "label": "Service filter cassette — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-016",
+    "kind": "mechanical",
+    "from": "RE-016",
+    "to": "RE-001",
+    "label": "Malleable logarithmic casing frame — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-017",
+    "kind": "mechanical",
+    "from": "RE-017",
+    "to": "RE-016",
+    "label": "Inspection roof and polycarbonate insert — Malleable logarithmic casing frame interface"
+  },
+  {
+    "id": "RE-IF-018",
+    "kind": "mechanical",
+    "from": "RE-018",
+    "to": "RE-016",
+    "label": "Guard access door and latch — Malleable logarithmic casing frame interface"
+  },
+  {
+    "id": "RE-IF-019",
+    "kind": "power",
+    "from": "RE-019",
+    "to": "RE-021",
+    "label": "Lotus-o-deltoid winding pack — Fin-ribbed industrial motor housing interface"
+  },
+  {
+    "id": "RE-IF-020",
+    "kind": "mechanical",
+    "from": "RE-020",
+    "to": "RE-021",
+    "label": "Panendermic semi-boloid laminated stator — Fin-ribbed industrial motor housing interface"
+  },
+  {
+    "id": "RE-IF-021",
+    "kind": "mechanical",
+    "from": "RE-021",
+    "to": "RE-002",
+    "label": "Fin-ribbed industrial motor housing — Slotted support channel interface"
+  },
+  {
+    "id": "RE-IF-022",
+    "kind": "mechanical",
+    "from": "RE-022",
+    "to": "RE-021",
+    "label": "Permanent-magnet motor rotor — Fin-ribbed industrial motor housing interface"
+  },
+  {
+    "id": "RE-IF-023",
+    "kind": "mechanical",
+    "from": "RE-023",
+    "to": "RE-022",
+    "label": "Differential girdle spring input hub — Permanent-magnet motor rotor interface"
+  },
+  {
+    "id": "RE-IF-024",
+    "kind": "mechanical",
+    "from": "RE-024",
+    "to": "RE-023",
+    "label": "Differential coupling damper cartridge — Differential girdle spring input hub interface"
+  },
+  {
+    "id": "RE-IF-025",
+    "kind": "mechanical",
+    "from": "RE-025",
+    "to": "RE-005",
+    "label": "Differential output flange and travel stops — Ambifacient lunar waneshaft interface"
+  },
+  {
+    "id": "RE-IF-026",
+    "kind": "power",
+    "from": "RE-026",
+    "to": "RE-019",
+    "label": "Motor termination block — Lotus-o-deltoid winding pack interface"
+  },
+  {
+    "id": "RE-IF-027",
+    "kind": "signal",
+    "from": "RE-027",
+    "to": "RE-035",
+    "label": "Cardinal gram-meter acquisition module — Raised control wiring tray interface"
+  },
+  {
+    "id": "RE-IF-028",
+    "kind": "signal",
+    "from": "RE-028",
+    "to": "RE-011",
+    "label": "Bearing vibration and temperature pickups — Line-bored pedestal and adjustment shoe interface"
+  },
+  {
+    "id": "RE-IF-029",
+    "kind": "mechanical",
+    "from": "RE-029",
+    "to": "RE-012",
+    "label": "Incremental shaft reference pickup — Journal cap and labyrinth shoulder interface"
+  },
+  {
+    "id": "RE-IF-030",
+    "kind": "signal",
+    "from": "RE-030",
+    "to": "RE-027",
+    "label": "Unilateral phase detractor module — Cardinal gram-meter acquisition module interface"
+  },
+  {
+    "id": "RE-IF-031",
+    "kind": "mechanical",
+    "from": "RE-031",
+    "to": "RE-032",
+    "label": "Drawn reciprocating dingle arm — Eccentric crank and replaceable pin interface"
+  },
+  {
+    "id": "RE-IF-032",
+    "kind": "mechanical",
+    "from": "RE-032",
+    "to": "RE-002",
+    "label": "Eccentric crank and replaceable pin — Slotted support channel interface"
+  },
+  {
+    "id": "RE-IF-033",
+    "kind": "mechanical",
+    "from": "RE-033",
+    "to": "RE-001",
+    "label": "Guided slider and end stops — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-034",
+    "kind": "mechanical",
+    "from": "RE-034",
+    "to": "RE-033",
+    "label": "Crosshead and piston load interface — Guided slider and end stops interface"
+  },
+  {
+    "id": "RE-IF-035",
+    "kind": "mechanical",
+    "from": "RE-035",
+    "to": "RE-001",
+    "label": "Raised control wiring tray — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-036",
+    "kind": "airflow",
+    "from": "RE-036",
+    "to": "RE-037",
+    "label": "Non-reversible tremie pipe manifold — Directional check valve and inspection plug interface"
+  },
+  {
+    "id": "RE-IF-037",
+    "kind": "airflow",
+    "from": "RE-037",
+    "to": "RE-034",
+    "label": "Directional check valve and inspection plug — Crosshead and piston load interface interface"
+  },
+  {
+    "id": "RE-IF-038",
+    "kind": "mechanical",
+    "from": "RE-038",
+    "to": "RE-036",
+    "label": "Loop outlet and pressure sample station — Non-reversible tremie pipe manifold interface"
+  },
+  {
+    "id": "RE-IF-039",
+    "kind": "power",
+    "from": "RE-039",
+    "to": "RE-044",
+    "label": "Brushless drive and finned cold plate — Protected DC supply module interface"
+  },
+  {
+    "id": "RE-IF-040",
+    "kind": "power",
+    "from": "RE-040",
+    "to": "RE-039",
+    "label": "DC distribution, fuse and disconnect — Brushless drive and finned cold plate interface"
+  },
+  {
+    "id": "RE-IF-041",
+    "kind": "mechanical",
+    "from": "RE-041",
+    "to": "RE-035",
+    "label": "Industrial motor-control cabinet — Raised control wiring tray interface"
+  },
+  {
+    "id": "RE-IF-042",
+    "kind": "mechanical",
+    "from": "RE-042",
+    "to": "RE-041",
+    "label": "Cabinet service door and inspection window — Industrial motor-control cabinet interface"
+  },
+  {
+    "id": "RE-IF-043",
+    "kind": "signal",
+    "from": "RE-043",
+    "to": "RE-041",
+    "label": "Industrial controller and I/O slice rack — Industrial motor-control cabinet interface"
+  },
+  {
+    "id": "RE-IF-044",
+    "kind": "power",
+    "from": "RE-044",
+    "to": "RE-001",
+    "label": "Protected DC supply module — Prefabulated amulite baseplate interface"
+  },
+  {
+    "id": "RE-IF-045",
+    "kind": "signal",
+    "from": "RE-045",
+    "to": "RE-040",
+    "label": "Latching emergency-stop operator — DC distribution, fuse and disconnect interface"
+  },
+  {
+    "id": "RE-IF-046",
+    "kind": "signal",
+    "from": "RE-046",
+    "to": "RE-043",
+    "label": "Keyed field harness and strain relief — Industrial controller and I/O slice rack interface"
+  },
+  {
+    "id": "RE-IF-047",
+    "kind": "signal",
+    "from": "RE-047",
+    "to": "RE-018",
+    "label": "Positive guard interlock and plunger — Guard access door and latch interface"
+  },
+  {
+    "id": "RE-IF-048",
+    "kind": "mechanical",
+    "from": "RE-048",
+    "to": "RE-033",
+    "label": "Reciprocating mechanism service guard — Guided slider and end stops interface"
+  },
+  {
+    "id": "RE-IF-049",
+    "kind": "mechanical",
+    "from": "RE-049",
+    "to": "RE-015",
+    "label": "Curved exhaust transition — Service filter cassette interface"
+  },
+  {
+    "id": "RE-IF-S01",
+    "kind": "signal",
+    "from": "RE-043",
+    "to": "RE-039",
+    "label": "Drive setpoint and watchdog"
+  },
+  {
+    "id": "RE-IF-S02",
+    "kind": "signal",
+    "from": "RE-028",
+    "to": "RE-027",
+    "label": "Calibrated bearing signals"
+  },
+  {
+    "id": "RE-IF-S03",
+    "kind": "signal",
+    "from": "RE-047",
+    "to": "RE-045",
+    "label": "Guard and stop permissives"
+  },
+  {
+    "id": "RE-IF-S04",
+    "kind": "power",
+    "from": "RE-039",
+    "to": "RE-026",
+    "label": "Three-phase drive output"
+  },
+  {
+    "id": "RE-IF-S05",
+    "kind": "power",
+    "from": "RE-043",
+    "to": "RE-040",
+    "label": "Protected control power"
+  },
+  {
+    "id": "RE-IF-S06",
+    "kind": "signal",
+    "from": "RE-029",
+    "to": "RE-027",
+    "label": "Synchronous tachometer edge"
+  },
+  {
+    "id": "RE-IF-S07",
+    "kind": "signal",
+    "from": "RE-046",
+    "to": "RE-027",
+    "label": "Field signal connector"
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "revision": "0.1",
+  "basis": "Deterministic model and closed-form reference",
+  "readings": [
+    {
+      "condition": "Closed-form crank-slider stroke (mm)",
+      "expected": 24,
+      "observed": 24,
+      "absoluteError": 0,
+      "tolerance": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "condition": "Analytical slider velocity at 0.8 rad (mm/s)",
+      "expected": -9.675228972838568,
+      "observed": -9.675228973312063,
+      "absoluteError": 4.734950209694944e-10,
+      "tolerance": 1e-7,
+      "status": "PASS"
+    },
+    {
+      "condition": "Analytical slider acceleration at 0.8 rad (mm/s²)",
+      "expected": -8.315021606097872,
+      "observed": -8.315021606224414,
+      "absoluteError": 1.2654233216835564e-10,
+      "tolerance": 1e-7,
+      "status": "PASS"
+    },
+    {
+      "condition": "Zero-speed pump delivery (m³/s)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Fluid power identity (W)",
+      "expected": 0.026248586266500618,
+      "observed": 0.026248586266500618,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "10 s speed setpoint tracking (rpm)",
+      "expected": 1550,
+      "observed": 1549.9999999212832,
+      "absoluteError": 7.871676643844694e-8,
+      "tolerance": 0.0001,
+      "status": "PASS"
+    },
+    {
+      "condition": "Timestep sensitivity 5 ms against 2.5 ms, final speed (rpm)",
+      "expected": 1549.999999915337,
+      "observed": 1549.9999999212832,
+      "absoluteError": 5.946276360191405e-9,
+      "tolerance": 0.01,
+      "status": "PASS"
+    },
+    {
+      "condition": "Drive accounting residual (J), 5 ms integration",
+      "expected": 0,
+      "observed": -0.17180324169925143,
+      "absoluteError": 0.17180324169925143,
+      "tolerance": 0.8,
+      "status": "PASS"
+    },
+    {
+      "condition": "Fault Tachometer dropout: drive current after latch (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Fault IMU saturation: drive current after latch (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Fault Overtemperature: drive current after latch (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Fault Guard open: drive current after latch (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Fault Overspeed: drive current after latch (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Fault Communications loss: drive current after latch (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    }
+  ]
+}

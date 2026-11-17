@@ -1,0 +1,50 @@
+part_id,component,assembly,quantity,material_basis,schematic_unit_mass_kg,tool_candidate
+RE-001,Prefabulated amulite baseplate,RE-100,1,Generic aluminum plate,4.598704,5 mm hex key · candidate M6 bed hardware
+RE-002,Slotted support channel,RE-100,2,Generic coated steel,0.554826,5 mm hex key · candidate M6 rail hardware
+RE-003,Isolation foot and bonded insert,RE-100,4,Elastomer and steel,0.019444,13 mm spanner · candidate foot locknut
+RE-004,Bed socket screw and washer,RE-100,4,"Steel, grade open",0.003777,5 mm hex key · candidate M6 socket head
+RE-005,Ambifacient lunar waneshaft,RE-200,1,Machined steel,0.332832,Dial indicator · 0.01 mm graduation candidate
+RE-006,Waneshaft retaining collar,RE-200,2,Steel,0.012502,3 mm hex key · candidate M4 clamp
+RE-007,Indexed marzelvane carrier,RE-300,1,Generic aluminum billet,0.556858,4 mm hex key · candidate M5 keeper screw
+RE-008,Hydrocoptic marzelvane,RE-300,6,Generic aluminum billet,0.091697,3 mm hex key · candidate M4 blade keeper
+RE-009,Rotor balance and keeper ring,RE-300,2,Aluminum and steel,0.012771,4 mm hex key · candidate M5 ring screws
+RE-010,Spurving bearing cartridge,RE-400,2,Bearing steel and seal elastomer,0.01488,Bearing puller · Ø28 mm envelope
+RE-011,Line-bored pedestal and adjustment shoe,RE-400,2,Ductile iron candidate,0.338158,6 mm hex key · candidate M8 pedestal hardware
+RE-012,Journal cap and labyrinth shoulder,RE-400,2,Generic steel,0.011204,4 mm hex key · candidate M5 end cap
+RE-013,Panametric fan impeller,RE-500,1,Aluminum and molded polymer,0.034039,3 mm hex key · candidate hub fixing
+RE-014,Fan shroud and slotted grille,RE-500,1,Coated aluminum and steel,0.29115,4 mm hex key · candidate M5 grille screws
+RE-015,Service filter cassette,RE-500,1,Stainless frame and filter media,0.194019,PH2 screwdriver · candidate quarter-turn retainer
+RE-016,Malleable logarithmic casing frame,RE-600,1,Coated steel and aluminum,0.24508,5 mm hex key · candidate M6 guard joints
+RE-017,Inspection roof and polycarbonate insert,RE-600,1,Polycarbonate candidate and coated frame,0.103823,4 mm hex key · candidate M5 cover screws
+RE-018,Guard access door and latch,RE-600,1,Transparent polymer and anodized aluminum,0.065959,4 mm hex key · candidate hinge fasteners
+RE-019,Lotus-o-deltoid winding pack,RE-700,1,Copper and slot insulation,0.067916,Milliohm meter · four-wire range required
+RE-020,Panendermic semi-boloid laminated stator,RE-800,1,Electrical steel candidate,0.282214,Internal bore gauge · nominal Ø44 mm bore
+RE-021,Fin-ribbed industrial motor housing,RE-1400,1,Coated cast aluminum,0.300888,5 mm hex key · candidate terminal cover screws
+RE-022,Permanent-magnet motor rotor,RE-1400,1,Steel stack and magnet candidate,0.410968,Nonmagnetic fixture · method pending
+RE-023,Differential girdle spring input hub,RE-900,1,Steel and elastomer,0.033252,4 mm hex key · candidate M5 radial clamp
+RE-024,Differential coupling damper cartridge,RE-900,1,Elastomer and steel,0.005834,Snap-ring pliers · nominal 34 mm ring envelope
+RE-025,Differential output flange and travel stops,RE-900,1,Machined steel,0.094177,4 mm hex key · candidate M5 clamp screw
+RE-026,Motor termination block,RE-700,1,Glass-filled polymer and brass,0.006245,2.5 mm insulated slotted driver · terminal design candidate
+RE-027,Cardinal gram-meter acquisition module,RE-1000,1,Metal enclosure and PCB,0.169163,PH2 screwdriver · candidate cover
+RE-028,Bearing vibration and temperature pickups,RE-1000,2,Aluminum probe bodies,0.002166,10 mm spanner · candidate M6 sensor flats
+RE-029,Incremental shaft reference pickup,RE-1000,1,Metal housing and polymer insulator,0.019306,2.5 mm hex key · candidate M3 sensor clamp
+RE-030,Unilateral phase detractor module,RE-1100,1,Shielded PCB enclosure,0.043583,PH2 screwdriver · candidate shield cover
+RE-031,Drawn reciprocating dingle arm,RE-1200,1,Steel or aluminum candidate,0.02477,10 mm spanner · candidate 6 mm pivot hardware
+RE-032,Eccentric crank and replaceable pin,RE-1200,1,Steel,0.048301,5 mm hex key · candidate crank retainer
+RE-033,Guided slider and end stops,RE-1200,1,Coated steel and polymer wear strips,0.086352,4 mm hex key · candidate rail bolts
+RE-034,Crosshead and piston load interface,RE-1200,1,Bronze slide and steel fitting,0.056002,10 mm spanner · candidate pivot nut
+RE-035,Raised control wiring tray,RE-1500,1,Coated sheet steel,0.181758,5 mm hex key · candidate M6 tray bolts
+RE-036,Non-reversible tremie pipe manifold,RE-1300,1,Copper alloy candidate,0.049867,17 mm open-end spanner · candidate union flats
+RE-037,Directional check valve and inspection plug,RE-1300,1,Bronze body and stainless poppet,0.071275,19 mm spanner · candidate union cap
+RE-038,Loop outlet and pressure sample station,RE-1300,1,Bronze and stainless steel,0.063605,17 mm spanner · candidate tubing compression nut
+RE-039,Brushless drive and finned cold plate,RE-1400,1,Finned aluminum and PCB,0.294742,4 mm hex key · candidate M5 cold-plate mounting
+RE-040,"DC distribution, fuse and disconnect",RE-1400,1,"Insulated polymer, copper terminals",0.121594,3 mm insulated slotted driver · terminal design candidate
+RE-041,Industrial motor-control cabinet,RE-1500,1,Powder-coated steel,0.581031,5 mm hex key · candidate M6 cabinet mounting
+RE-042,Cabinet service door and inspection window,RE-1500,1,Powder-coated steel and safety glazing candidate,0.129674,Triangular service key · profile pending
+RE-043,Industrial controller and I/O slice rack,RE-1500,1,Insulated housings and copper contacts,0.140083,2.5 mm insulated slotted driver · candidate spring terminal
+RE-044,Protected DC supply module,RE-1500,1,Coated steel and copper,0.315265,PH2 screwdriver · candidate cover screws
+RE-045,Latching emergency-stop operator,RE-1500,1,Steel and polymer,0.048465,22 mm panel locknut spanner · candidate body
+RE-046,Keyed field harness and strain relief,RE-1500,1,Copper conductors and polymer jackets,0.023857,Multimeter · continuity and isolation functions
+RE-047,Positive guard interlock and plunger,RE-600,1,Insulated actuator and metal bracket,0.006239,3 mm hex key · candidate switch mount
+RE-048,Reciprocating mechanism service guard,RE-1200,1,Coated steel and clear polymer,0.054236,4 mm hex key · candidate guard fasteners
+RE-049,Curved exhaust transition,RE-500,1,Sheet aluminum,0.079663,4 mm hex key · candidate duct flange screws

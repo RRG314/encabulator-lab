@@ -1,0 +1,31 @@
+{
+  "revision": "0.1",
+  "basis": "Digital assets, registries and configurations",
+  "configurations": [
+    {
+      "configuration": "TE-01",
+      "checks": {
+        "nativeSources": true,
+        "poseIdentity": true,
+        "serviceCoverage": true,
+        "assembledAndSeparated": true,
+        "exportsAndDrawings": true,
+        "geometryChecks": true,
+        "studyCoverage": true
+      }
+    },
+    {
+      "configuration": "RE-01",
+      "checks": {
+        "nativeSources": true,
+        "poseIdentity": true,
+        "serviceCoverage": true,
+        "assembledAndSeparated": true,
+        "exportsAndDrawings": true,
+        "geometryChecks": true,
+        "studyCoverage": true
+      }
+    }
+  ],
+  "scope": "Browser interactions are tested separately. Manufacturing release remains open."
+}

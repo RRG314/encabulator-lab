@@ -1,0 +1,2062 @@
+[
+  {
+    "id": "RE-001",
+    "name": "Prefabulated amulite baseplate",
+    "assemblyId": "RE-100",
+    "revision": "0.1",
+    "description": "Machined foundation and common top-plane datum. Corner holes transfer load to resilient pads.",
+    "function": "Machined foundation and common top-plane datum. Corner holes transfer load to resilient pads.",
+    "material": "Generic aluminum plate",
+    "quantity": 1,
+    "massKg": 4.598704,
+    "dimensionsMm": {
+      "length": 488,
+      "width": 350,
+      "thickness": 10
+    },
+    "mounting": "CAD datum relative to the Z = 0 foundation plane.",
+    "matingPartIds": [
+      "RE-002",
+      "RE-003",
+      "RE-004",
+      "RE-015",
+      "RE-016",
+      "RE-033",
+      "RE-035"
+    ],
+    "fastenerIds": [
+      "RE-004"
+    ],
+    "sensors": [],
+    "ports": [
+      "Protected DC supply module — Prefabulated amulite baseplate interface"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for deck bending or joint slip. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-001.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-001.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Generic aluminum plate",
+    "sourceAssembly": "RE-100",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-002",
+    "name": "Slotted support channel",
+    "assemblyId": "RE-100",
+    "revision": "0.1",
+    "description": "Rail shoulders register the pedestal and drive footprints. Parallel rows allow adjustment before clamp-up.",
+    "function": "Rail shoulders register the pedestal and drive footprints. Parallel rows allow adjustment before clamp-up.",
+    "material": "Generic coated steel",
+    "quantity": 2,
+    "massKg": 0.554826,
+    "dimensionsMm": {
+      "length": 427.0,
+      "width": 25.0,
+      "height": 15.8
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [
+      "RE-001",
+      "RE-005",
+      "RE-011",
+      "RE-021",
+      "RE-032"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for rail bow or inadequate clamping. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-002.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-002.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Generic coated steel",
+    "sourceAssembly": "RE-100",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-003",
+    "name": "Isolation foot and bonded insert",
+    "assemblyId": "RE-100",
+    "revision": "0.1",
+    "description": "Elastomer body decouples the deck from the bench. The steel insert carries the bench attachment.",
+    "function": "Elastomer body decouples the deck from the bench. The steel insert carries the bench attachment.",
+    "material": "Elastomer and steel",
+    "quantity": 4,
+    "massKg": 0.019444,
+    "dimensionsMm": {
+      "length": 38.0,
+      "width": 38.0,
+      "height": 16.0
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [
+      "RE-001"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for compression set or uneven load. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-003.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-003.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Elastomer and steel",
+    "sourceAssembly": "RE-100",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-004",
+    "name": "Bed socket screw and washer",
+    "assemblyId": "RE-100",
+    "revision": "0.1",
+    "description": "Representative socket fastener and load-spreading washer at deck and guard joints.",
+    "function": "Representative socket fastener and load-spreading washer at deck and guard joints.",
+    "material": "Steel, grade open",
+    "quantity": 4,
+    "massKg": 0.003777,
+    "dimensionsMm": {
+      "length": 12.8,
+      "width": 12.8,
+      "height": 11.5
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [
+      "RE-001"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for thread pullout or loss of preload. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-004.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-004.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Steel, grade open",
+    "sourceAssembly": "RE-100",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-005",
+    "name": "Ambifacient lunar waneshaft",
+    "assemblyId": "RE-200",
+    "revision": "0.1",
+    "description": "Shouldered X-axis shaft transmits torque from the coupling to the rotor, with separate bearing journals.",
+    "function": "Shouldered X-axis shaft transmits torque from the coupling to the rotor, with separate bearing journals.",
+    "material": "Machined steel",
+    "quantity": 1,
+    "massKg": 0.332832,
+    "dimensionsMm": {
+      "length": 280.0,
+      "width": 16.0,
+      "height": 16.0,
+      "journalDiameter": 12
+    },
+    "mounting": "CAD datum relative to Slotted support channel.",
+    "matingPartIds": [
+      "RE-002",
+      "RE-006",
+      "RE-007",
+      "RE-010",
+      "RE-025"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "σ = 32M/(πd³)",
+      "τ = 16T/(πd³)"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for fatigue at shoulder or runout. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-005.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-005.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Machined steel",
+    "sourceAssembly": "RE-200",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-006",
+    "name": "Waneshaft retaining collar",
+    "assemblyId": "RE-200",
+    "revision": "0.1",
+    "description": "Split-style axial setting collar, shown with a radial clamp fastener.",
+    "function": "Split-style axial setting collar, shown with a radial clamp fastener.",
+    "material": "Steel",
+    "quantity": 2,
+    "massKg": 0.012502,
+    "dimensionsMm": {
+      "length": 6.0,
+      "width": 22.0,
+      "height": 23.0
+    },
+    "mounting": "CAD datum relative to Ambifacient lunar waneshaft.",
+    "matingPartIds": [
+      "RE-005"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for axial creep or clamp loosening. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-006.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-006.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Steel",
+    "sourceAssembly": "RE-200",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-007",
+    "name": "Indexed marzelvane carrier",
+    "assemblyId": "RE-300",
+    "revision": "0.1",
+    "description": "Six milled root pockets locate the radial blade pattern. Machined end rings carry the keeper hardware.",
+    "function": "Six milled root pockets locate the radial blade pattern. Machined end rings carry the keeper hardware.",
+    "material": "Generic aluminum billet",
+    "quantity": 1,
+    "massKg": 0.556858,
+    "dimensionsMm": {
+      "length": 54.0,
+      "width": 48.0,
+      "height": 48.0
+    },
+    "mounting": "CAD datum relative to Ambifacient lunar waneshaft.",
+    "matingPartIds": [
+      "RE-005",
+      "RE-008",
+      "RE-009"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "F = mrΩ²"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for fretting, imbalance or hub slip. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-007.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-007.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Generic aluminum billet",
+    "sourceAssembly": "RE-300",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-008",
+    "name": "Hydrocoptic marzelvane",
+    "assemblyId": "RE-300",
+    "revision": "0.1",
+    "description": "Six pitched blades move room-temperature air through the guarded stage. Root tabs locate against the carrier pockets.",
+    "function": "Six pitched blades move room-temperature air through the guarded stage. Root tabs locate against the carrier pockets.",
+    "material": "Generic aluminum billet",
+    "quantity": 6,
+    "massKg": 0.091697,
+    "dimensionsMm": {
+      "length": 49.434,
+      "width": 17.896,
+      "height": 43.0
+    },
+    "mounting": "CAD datum relative to Indexed marzelvane carrier.",
+    "matingPartIds": [
+      "RE-007"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "F = mrΩ²"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for root fatigue or loss of retention. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-008.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-008.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Generic aluminum billet",
+    "sourceAssembly": "RE-300",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-009",
+    "name": "Rotor balance and keeper ring",
+    "assemblyId": "RE-300",
+    "revision": "0.1",
+    "description": "Perforated face ring provides controlled correction locations and a removable axial keeper.",
+    "function": "Perforated face ring provides controlled correction locations and a removable axial keeper.",
+    "material": "Aluminum and steel",
+    "quantity": 2,
+    "massKg": 0.012771,
+    "dimensionsMm": {
+      "length": 3.0,
+      "width": 50.0,
+      "height": 50.0
+    },
+    "mounting": "CAD datum relative to Indexed marzelvane carrier.",
+    "matingPartIds": [
+      "RE-007"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for keeper migration or incorrectly matched balance correction. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-009.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-009.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Aluminum and steel",
+    "sourceAssembly": "RE-300",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-010",
+    "name": "Spurving bearing cartridge",
+    "assemblyId": "RE-400",
+    "revision": "0.1",
+    "description": "Two sealed radial ball bearing envelopes at the nominal 12 mm journals. The candidate envelope is 12 × 28 × 8 mm.",
+    "function": "Two sealed radial ball bearing envelopes at the nominal 12 mm journals. The candidate envelope is 12 × 28 × 8 mm.",
+    "material": "Bearing steel and seal elastomer",
+    "quantity": 2,
+    "massKg": 0.01488,
+    "dimensionsMm": {
+      "length": 8.0,
+      "width": 28.0,
+      "height": 28.0,
+      "bore": 12,
+      "outerDiameter": 28,
+      "axialWidth": 8
+    },
+    "mounting": "CAD datum relative to Ambifacient lunar waneshaft.",
+    "matingPartIds": [
+      "RE-005"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "L₁₀ = (C/P)³ × 10⁶ rev"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for contamination, spalling or overheated fit. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-010.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-010.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Bearing steel and seal elastomer",
+    "sourceAssembly": "RE-400",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-011",
+    "name": "Line-bored pedestal and adjustment shoe",
+    "assemblyId": "RE-400",
+    "revision": "0.1",
+    "description": "Split service carrier supports the bearing outer ring. Side gussets and a broad shoe transfer the load to the base.",
+    "function": "Split service carrier supports the bearing outer ring. Side gussets and a broad shoe transfer the load to the base.",
+    "material": "Ductile iron candidate",
+    "quantity": 2,
+    "massKg": 0.338158,
+    "dimensionsMm": {
+      "length": 44.0,
+      "width": 83.0,
+      "height": 93.0
+    },
+    "mounting": "CAD datum relative to Slotted support channel.",
+    "matingPartIds": [
+      "RE-002",
+      "RE-012"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Bearing vibration and temperature pickups — Line-bored pedestal and adjustment shoe interface"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for bore skew or pedestal flexure. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-011.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-011.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Ductile iron candidate",
+    "sourceAssembly": "RE-400",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-012",
+    "name": "Journal cap and labyrinth shoulder",
+    "assemblyId": "RE-400",
+    "revision": "0.1",
+    "description": "Separate annular cover shields the journal seal and locates its service face.",
+    "function": "Separate annular cover shields the journal seal and locates its service face.",
+    "material": "Generic steel",
+    "quantity": 2,
+    "massKg": 0.011204,
+    "dimensionsMm": {
+      "length": 4.9,
+      "width": 40.0,
+      "height": 40.0
+    },
+    "mounting": "CAD datum relative to Line-bored pedestal and adjustment shoe.",
+    "matingPartIds": [
+      "RE-011",
+      "RE-029"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for seal drag or contaminated running gap. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-012.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-012.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Generic steel",
+    "sourceAssembly": "RE-400",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-013",
+    "name": "Panametric fan impeller",
+    "assemblyId": "RE-500",
+    "revision": "0.1",
+    "description": "Independent fan impeller draws cooling air through the filter and exhaust cylinder.",
+    "function": "Independent fan impeller draws cooling air through the filter and exhaust cylinder.",
+    "material": "Aluminum and molded polymer",
+    "quantity": 1,
+    "massKg": 0.034039,
+    "dimensionsMm": {
+      "length": 20.0,
+      "width": 66.967,
+      "height": 66.292
+    },
+    "mounting": "CAD datum relative to Fan shroud and slotted grille.",
+    "matingPartIds": [
+      "RE-014"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for impeller rubbing or fan stall. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-013.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-013.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Aluminum and molded polymer",
+    "sourceAssembly": "RE-500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-014",
+    "name": "Fan shroud and slotted grille",
+    "assemblyId": "RE-500",
+    "revision": "0.1",
+    "description": "Circular bellmouth and bolted frame provide inspection access. Concentric grille rings block direct access.",
+    "function": "Circular bellmouth and bolted frame provide inspection access. Concentric grille rings block direct access.",
+    "material": "Coated aluminum and steel",
+    "quantity": 1,
+    "massKg": 0.29115,
+    "dimensionsMm": {
+      "length": 43.8,
+      "width": 94.0,
+      "height": 94.0
+    },
+    "mounting": "CAD datum relative to Service filter cassette.",
+    "matingPartIds": [
+      "RE-013",
+      "RE-015"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for guard fatigue or restricted inlet. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-014.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-014.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated aluminum and steel",
+    "sourceAssembly": "RE-500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-015",
+    "name": "Service filter cassette",
+    "assemblyId": "RE-500",
+    "revision": "0.1",
+    "description": "Replaceable pleated medium and slotted face distribute flow to the intake opening.",
+    "function": "Replaceable pleated medium and slotted face distribute flow to the intake opening.",
+    "material": "Stainless frame and filter media",
+    "quantity": 1,
+    "massKg": 0.194019,
+    "dimensionsMm": {
+      "length": 12.0,
+      "width": 89.0,
+      "height": 89.0
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [
+      "RE-014",
+      "RE-001",
+      "RE-049"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for filter blockage or bypass. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-015.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-015.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Stainless frame and filter media",
+    "sourceAssembly": "RE-500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-016",
+    "name": "Malleable logarithmic casing frame",
+    "assemblyId": "RE-600",
+    "revision": "0.1",
+    "description": "Bolted end frames and corner rails surround the rotor’s swept envelope. Chamfered flanges locate the service covers.",
+    "function": "Bolted end frames and corner rails surround the rotor’s swept envelope. Chamfered flanges locate the service covers.",
+    "material": "Coated steel and aluminum",
+    "quantity": 1,
+    "massKg": 0.24508,
+    "dimensionsMm": {
+      "length": 116.0,
+      "width": 150.0,
+      "height": 158.5
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [
+      "RE-001",
+      "RE-017",
+      "RE-018"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for frame fracture or lost coverage. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-016.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-016.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel and aluminum",
+    "sourceAssembly": "RE-600",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-017",
+    "name": "Inspection roof and polycarbonate insert",
+    "assemblyId": "RE-600",
+    "revision": "0.1",
+    "description": "Top roof carries the transparent inspection panel, rounded retention lips and a lifting handle.",
+    "function": "Top roof carries the transparent inspection panel, rounded retention lips and a lifting handle.",
+    "material": "Polycarbonate candidate and coated frame",
+    "quantity": 1,
+    "massKg": 0.103823,
+    "dimensionsMm": {
+      "length": 100.0,
+      "width": 141.0,
+      "height": 13.5
+    },
+    "mounting": "CAD datum relative to Malleable logarithmic casing frame.",
+    "matingPartIds": [
+      "RE-016"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for crazing, loose retainers or damaged handle. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-017.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-017.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Polycarbonate candidate and coated frame",
+    "sourceAssembly": "RE-600",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-018",
+    "name": "Guard access door and latch",
+    "assemblyId": "RE-600",
+    "revision": "0.1",
+    "description": "Front inspection door with a separate transparent insert, hinge barrels and positive latch.",
+    "function": "Front inspection door with a separate transparent insert, hinge barrels and positive latch.",
+    "material": "Transparent polymer and anodized aluminum",
+    "quantity": 1,
+    "massKg": 0.065959,
+    "dimensionsMm": {
+      "length": 100.5,
+      "width": 10.0,
+      "height": 137.0
+    },
+    "mounting": "CAD datum relative to Malleable logarithmic casing frame.",
+    "matingPartIds": [
+      "RE-016"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Positive guard interlock and plunger — Guard access door and latch interface"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for hinge play or failed interlock actuation. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-018.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-018.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Transparent polymer and anodized aluminum",
+    "sourceAssembly": "RE-600",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-019",
+    "name": "Lotus-o-deltoid winding pack",
+    "assemblyId": "RE-700",
+    "revision": "0.1",
+    "description": "Twelve slot groups and end turns illustrate a proposed grouped winding. Connection, insulation class and electromagnetic constants remain open.",
+    "function": "Twelve slot groups and end turns illustrate a proposed grouped winding. Connection, insulation class and electromagnetic constants remain open.",
+    "material": "Copper and slot insulation",
+    "quantity": 1,
+    "massKg": 0.067916,
+    "dimensionsMm": {
+      "length": 40.0,
+      "width": 60.6,
+      "height": 60.6
+    },
+    "mounting": "CAD datum relative to Fin-ribbed industrial motor housing.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Lotus-o-deltoid winding pack — Fin-ribbed industrial motor housing interface",
+      "Motor termination block — Lotus-o-deltoid winding pack interface"
+    ],
+    "equations": [
+      "V = Ri + L di/dt + kₑΩ"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for interturn fault or insulation breakdown. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-019.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-019.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Copper and slot insulation",
+    "sourceAssembly": "RE-700",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-020",
+    "name": "Panendermic semi-boloid laminated stator",
+    "assemblyId": "RE-800",
+    "revision": "0.1",
+    "description": "Equal angular slot pitch and an explicitly cut radial slot keep the magnetic stack separable from the winding.",
+    "function": "Equal angular slot pitch and an explicitly cut radial slot keep the magnetic stack separable from the winding.",
+    "material": "Electrical steel candidate",
+    "quantity": 1,
+    "massKg": 0.282214,
+    "dimensionsMm": {
+      "length": 40.0,
+      "width": 70.0,
+      "height": 70.0
+    },
+    "mounting": "CAD datum relative to Fin-ribbed industrial motor housing.",
+    "matingPartIds": [
+      "RE-021"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for slot damage or loss of lamination retention. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-020.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-020.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Electrical steel candidate",
+    "sourceAssembly": "RE-800",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-021",
+    "name": "Fin-ribbed industrial motor housing",
+    "assemblyId": "RE-1400",
+    "revision": "0.1",
+    "description": "Motor cover, annular end flanges and heat-dissipation fins surround the model stator. Inspection sector exposes the winding package.",
+    "function": "Motor cover, annular end flanges and heat-dissipation fins surround the model stator. Inspection sector exposes the winding package.",
+    "material": "Coated cast aluminum",
+    "quantity": 1,
+    "massKg": 0.300888,
+    "dimensionsMm": {
+      "length": 63.0,
+      "width": 86.843,
+      "height": 89.0
+    },
+    "mounting": "CAD datum relative to Slotted support channel.",
+    "matingPartIds": [
+      "RE-020",
+      "RE-002",
+      "RE-022"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Lotus-o-deltoid winding pack — Fin-ribbed industrial motor housing interface"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for motor mount distortion or cooling obstruction. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-021.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-021.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated cast aluminum",
+    "sourceAssembly": "RE-1400",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-022",
+    "name": "Permanent-magnet motor rotor",
+    "assemblyId": "RE-1400",
+    "revision": "0.1",
+    "description": "Cylindrical motor rotor carries a longitudinal pattern of bars and a single supported output shaft interface.",
+    "function": "Cylindrical motor rotor carries a longitudinal pattern of bars and a single supported output shaft interface.",
+    "material": "Steel stack and magnet candidate",
+    "quantity": 1,
+    "massKg": 0.410968,
+    "dimensionsMm": {
+      "length": 69.0,
+      "width": 41.6,
+      "height": 41.6
+    },
+    "mounting": "CAD datum relative to Fin-ribbed industrial motor housing.",
+    "matingPartIds": [
+      "RE-021",
+      "RE-023"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for rotor eccentricity or magnet retention fault. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-022.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-022.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Steel stack and magnet candidate",
+    "sourceAssembly": "RE-1400",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-023",
+    "name": "Differential girdle spring input hub",
+    "assemblyId": "RE-900",
+    "revision": "0.1",
+    "description": "Input coupling flange transmits motor torque into the compliant elements.",
+    "function": "Input coupling flange transmits motor torque into the compliant elements.",
+    "material": "Steel and elastomer",
+    "quantity": 1,
+    "massKg": 0.033252,
+    "dimensionsMm": {
+      "length": 15.0,
+      "width": 42.0,
+      "height": 42.0
+    },
+    "mounting": "CAD datum relative to Permanent-magnet motor rotor.",
+    "matingPartIds": [
+      "RE-022",
+      "RE-024"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for clamp slip or excessive coupling travel. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-023.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-023.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Steel and elastomer",
+    "sourceAssembly": "RE-900",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-024",
+    "name": "Differential coupling damper cartridge",
+    "assemblyId": "RE-900",
+    "revision": "0.1",
+    "description": "Eight elastomer sectors and a drive ring carry small relative torsional motion. Stop clearance and stiffness are separate qualification items.",
+    "function": "Eight elastomer sectors and a drive ring carry small relative torsional motion. Stop clearance and stiffness are separate qualification items.",
+    "material": "Elastomer and steel",
+    "quantity": 1,
+    "massKg": 0.005834,
+    "dimensionsMm": {
+      "length": 9.0,
+      "width": 40.0,
+      "height": 40.0
+    },
+    "mounting": "CAD datum relative to Differential girdle spring input hub.",
+    "matingPartIds": [
+      "RE-023"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "τ = kΔθ + cΔω"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for elastomer shear or engagement of the travel stop. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-024.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-024.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Elastomer and steel",
+    "sourceAssembly": "RE-900",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-025",
+    "name": "Differential output flange and travel stops",
+    "assemblyId": "RE-900",
+    "revision": "0.1",
+    "description": "Indexed coupling output aligns with the waneshaft, with clearance holes for concept stop pins.",
+    "function": "Indexed coupling output aligns with the waneshaft, with clearance holes for concept stop pins.",
+    "material": "Machined steel",
+    "quantity": 1,
+    "massKg": 0.094177,
+    "dimensionsMm": {
+      "length": 10.0,
+      "width": 42.0,
+      "height": 42.0
+    },
+    "mounting": "CAD datum relative to Ambifacient lunar waneshaft.",
+    "matingPartIds": [
+      "RE-005"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for impact at travel stops or loosening. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-025.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-025.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Machined steel",
+    "sourceAssembly": "RE-900",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-026",
+    "name": "Motor termination block",
+    "assemblyId": "RE-700",
+    "revision": "0.1",
+    "description": "Insulated terminals represent the electrical connection between winding group and drive. External connector pinout awaits component selection.",
+    "function": "Insulated terminals represent the electrical connection between winding group and drive. External connector pinout awaits component selection.",
+    "material": "Glass-filled polymer and brass",
+    "quantity": 1,
+    "massKg": 0.006245,
+    "dimensionsMm": {
+      "length": 29.65,
+      "width": 11.0,
+      "height": 11.65
+    },
+    "mounting": "CAD datum relative to Lotus-o-deltoid winding pack.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Motor termination block — Lotus-o-deltoid winding pack interface",
+      "Three-phase drive output"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for loose conductor or insulation failure. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-026.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-026.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Glass-filled polymer and brass",
+    "sourceAssembly": "RE-700",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-027",
+    "name": "Cardinal gram-meter acquisition module",
+    "assemblyId": "RE-1000",
+    "revision": "0.1",
+    "description": "Enclosed timebase and signal conditioner combine speed, vibration and temperature channels.",
+    "function": "Enclosed timebase and signal conditioner combine speed, vibration and temperature channels.",
+    "material": "Metal enclosure and PCB",
+    "quantity": 1,
+    "massKg": 0.169163,
+    "dimensionsMm": {
+      "length": 53.0,
+      "width": 34.0,
+      "height": 26.0
+    },
+    "mounting": "CAD datum relative to Raised control wiring tray.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [
+      "RE-028",
+      "RE-029"
+    ],
+    "ports": [
+      "Cardinal gram-meter acquisition module — Raised control wiring tray interface",
+      "Unilateral phase detractor module — Cardinal gram-meter acquisition module interface",
+      "Calibrated bearing signals",
+      "Synchronous tachometer edge",
+      "Field signal connector"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for stale timebase or signal saturation. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-027.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-027.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Metal enclosure and PCB",
+    "sourceAssembly": "RE-1000",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-028",
+    "name": "Bearing vibration and temperature pickups",
+    "assemblyId": "RE-1000",
+    "revision": "0.1",
+    "description": "Matched shaft-support pickups represent accelerometer and temperature measurement points.",
+    "function": "Matched shaft-support pickups represent accelerometer and temperature measurement points.",
+    "material": "Aluminum probe bodies",
+    "quantity": 2,
+    "massKg": 0.002166,
+    "dimensionsMm": {
+      "length": 10.0,
+      "width": 8.66,
+      "height": 17.0
+    },
+    "mounting": "CAD datum relative to Line-bored pedestal and adjustment shoe.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Bearing vibration and temperature pickups — Line-bored pedestal and adjustment shoe interface",
+      "Calibrated bearing signals"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for sensor loosening, drift or thermal lag. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-028.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-028.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Aluminum probe bodies",
+    "sourceAssembly": "RE-1000",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-029",
+    "name": "Incremental shaft reference pickup",
+    "assemblyId": "RE-1000",
+    "revision": "0.1",
+    "description": "Fixed pulse pickup faces a separate rotating timing feature on the shaft.",
+    "function": "Fixed pulse pickup faces a separate rotating timing feature on the shaft.",
+    "material": "Metal housing and polymer insulator",
+    "quantity": 1,
+    "massKg": 0.019306,
+    "dimensionsMm": {
+      "length": 20.0,
+      "width": 18.0,
+      "height": 23.0
+    },
+    "mounting": "CAD datum relative to Journal cap and labyrinth shoulder.",
+    "matingPartIds": [
+      "RE-012"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Synchronous tachometer edge"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for lost index, clearance error or timing jitter. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-029.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-029.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Metal housing and polymer insulator",
+    "sourceAssembly": "RE-1000",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-030",
+    "name": "Unilateral phase detractor module",
+    "assemblyId": "RE-1100",
+    "revision": "0.1",
+    "description": "Isolated signal front end and computation module compare paired waveforms at a defined tone.",
+    "function": "Isolated signal front end and computation module compare paired waveforms at a defined tone.",
+    "material": "Shielded PCB enclosure",
+    "quantity": 1,
+    "massKg": 0.043583,
+    "dimensionsMm": {
+      "length": 46.0,
+      "width": 31.0,
+      "height": 17.0
+    },
+    "mounting": "CAD datum relative to Cardinal gram-meter acquisition module.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Unilateral phase detractor module — Cardinal gram-meter acquisition module interface"
+    ],
+    "equations": [
+      "Δφ = arg Σ(XY*)"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for invalid coherence or common-mode overload. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-030.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-030.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Shielded PCB enclosure",
+    "sourceAssembly": "RE-1100",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-031",
+    "name": "Drawn reciprocating dingle arm",
+    "assemblyId": "RE-1200",
+    "revision": "0.1",
+    "description": "Separate connecting link couples the demonstration eccentric to its guided slider. Motion is shown inside the service guard.",
+    "function": "Separate connecting link couples the demonstration eccentric to its guided slider. Motion is shown inside the service guard.",
+    "material": "Steel or aluminum candidate",
+    "quantity": 1,
+    "massKg": 0.02477,
+    "dimensionsMm": {
+      "length": 84.0,
+      "width": 16.0,
+      "height": 5.0
+    },
+    "mounting": "CAD datum relative to Eccentric crank and replaceable pin.",
+    "matingPartIds": [
+      "RE-032"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "x = r cosθ + √(L² − r²sin²θ)"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for pivot wear or fatigue. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-031.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-031.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Steel or aluminum candidate",
+    "sourceAssembly": "RE-1200",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-032",
+    "name": "Eccentric crank and replaceable pin",
+    "assemblyId": "RE-1200",
+    "revision": "0.1",
+    "description": "Adjustable offset converts a reduced-rate drive into a guided reciprocation, with a removable pin.",
+    "function": "Adjustable offset converts a reduced-rate drive into a guided reciprocation, with a removable pin.",
+    "material": "Steel",
+    "quantity": 1,
+    "massKg": 0.048301,
+    "dimensionsMm": {
+      "length": 46.0,
+      "width": 46.0,
+      "height": 18.0
+    },
+    "mounting": "CAD datum relative to Slotted support channel.",
+    "matingPartIds": [
+      "RE-031",
+      "RE-002"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for pin loosening or excessive bearing load. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-032.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-032.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Steel",
+    "sourceAssembly": "RE-1200",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-033",
+    "name": "Guided slider and end stops",
+    "assemblyId": "RE-1200",
+    "revision": "0.1",
+    "description": "Paired rails guide straight-line motion of the reciprocating mechanism. The stops remain outside the study stroke.",
+    "function": "Paired rails guide straight-line motion of the reciprocating mechanism. The stops remain outside the study stroke.",
+    "material": "Coated steel and polymer wear strips",
+    "quantity": 1,
+    "massKg": 0.086352,
+    "dimensionsMm": {
+      "length": 118.0,
+      "width": 28.0,
+      "height": 15.0
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [
+      "RE-001",
+      "RE-034",
+      "RE-048"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for binding or misadjusted stop. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-033.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-033.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel and polymer wear strips",
+    "sourceAssembly": "RE-1200",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-034",
+    "name": "Crosshead and piston load interface",
+    "assemblyId": "RE-1200",
+    "revision": "0.1",
+    "description": "Guided block transfers stroke to the positive-displacement demonstration pump.",
+    "function": "Guided block transfers stroke to the positive-displacement demonstration pump.",
+    "material": "Bronze slide and steel fitting",
+    "quantity": 1,
+    "massKg": 0.056002,
+    "dimensionsMm": {
+      "length": 39.5,
+      "width": 26.0,
+      "height": 13.0
+    },
+    "mounting": "CAD datum relative to Guided slider and end stops.",
+    "matingPartIds": [
+      "RE-033"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for scoring or loss of linear alignment. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-034.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-034.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Bronze slide and steel fitting",
+    "sourceAssembly": "RE-1200",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-035",
+    "name": "Raised control wiring tray",
+    "assemblyId": "RE-1500",
+    "revision": "0.1",
+    "description": "Drainable mounting tray supports phase and acquisition units under the separate control cabinet.",
+    "function": "Drainable mounting tray supports phase and acquisition units under the separate control cabinet.",
+    "material": "Coated sheet steel",
+    "quantity": 1,
+    "massKg": 0.181758,
+    "dimensionsMm": {
+      "length": 174.0,
+      "width": 57.0,
+      "height": 14.0
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [
+      "RE-001",
+      "RE-041"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Cardinal gram-meter acquisition module — Raised control wiring tray interface"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for cracked mounting flange or insufficient separation. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-035.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-035.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated sheet steel",
+    "sourceAssembly": "RE-1500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-036",
+    "name": "Non-reversible tremie pipe manifold",
+    "assemblyId": "RE-1300",
+    "revision": "0.1",
+    "description": "Low-head water-loop manifold carries flow through a separate check-valve body. Elbow volume is hollow.",
+    "function": "Low-head water-loop manifold carries flow through a separate check-valve body. Elbow volume is hollow.",
+    "material": "Copper alloy candidate",
+    "quantity": 1,
+    "massKg": 0.049867,
+    "dimensionsMm": {
+      "length": 35.0,
+      "width": 31.0,
+      "height": 16.0
+    },
+    "mounting": "CAD datum relative to Directional check valve and inspection plug.",
+    "matingPartIds": [
+      "RE-038"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "Δp = (f L/D + ΣK) ρv²/2"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for union leakage or air accumulation. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-036.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-036.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Copper alloy candidate",
+    "sourceAssembly": "RE-1300",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-037",
+    "name": "Directional check valve and inspection plug",
+    "assemblyId": "RE-1300",
+    "revision": "0.1",
+    "description": "Internal poppet seat allows one direction of circulation through the demonstration loop. Pressure qualification and sealing are pending.",
+    "function": "Internal poppet seat allows one direction of circulation through the demonstration loop. Pressure qualification and sealing are pending.",
+    "material": "Bronze body and stainless poppet",
+    "quantity": 1,
+    "massKg": 0.071275,
+    "dimensionsMm": {
+      "length": 26.0,
+      "width": 24.0,
+      "height": 24.5
+    },
+    "mounting": "CAD datum relative to Crosshead and piston load interface.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for backflow or poppet fouling. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-037.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-037.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Bronze body and stainless poppet",
+    "sourceAssembly": "RE-1300",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-038",
+    "name": "Loop outlet and pressure sample station",
+    "assemblyId": "RE-1300",
+    "revision": "0.1",
+    "description": "Open-bore outlet stage with a radial sensor boss and mounting foot.",
+    "function": "Open-bore outlet stage with a radial sensor boss and mounting foot.",
+    "material": "Bronze and stainless steel",
+    "quantity": 1,
+    "massKg": 0.063605,
+    "dimensionsMm": {
+      "length": 34.0,
+      "width": 18.0,
+      "height": 27.0
+    },
+    "mounting": "CAD datum relative to Non-reversible tremie pipe manifold.",
+    "matingPartIds": [
+      "RE-036"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for pressure tap blockage or poor sealing. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-038.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-038.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Bronze and stainless steel",
+    "sourceAssembly": "RE-1300",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-039",
+    "name": "Brushless drive and finned cold plate",
+    "assemblyId": "RE-1400",
+    "revision": "0.1",
+    "description": "Current-limited drive accepts a supervisory setpoint through an isolated command boundary.",
+    "function": "Current-limited drive accepts a supervisory setpoint through an isolated command boundary.",
+    "material": "Finned aluminum and PCB",
+    "quantity": 1,
+    "massKg": 0.294742,
+    "dimensionsMm": {
+      "length": 69.0,
+      "width": 47.0,
+      "height": 34.0
+    },
+    "mounting": "CAD datum relative to Protected DC supply module.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Brushless drive and finned cold plate — Protected DC supply module interface",
+      "DC distribution, fuse and disconnect — Brushless drive and finned cold plate interface",
+      "Drive setpoint and watchdog",
+      "Three-phase drive output"
+    ],
+    "equations": [
+      "Vdc Idc = Pconv + Ploss"
+    ],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for overcurrent, thermal trip or command timeout. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-039.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-039.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Finned aluminum and PCB",
+    "sourceAssembly": "RE-1400",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-040",
+    "name": "DC distribution, fuse and disconnect",
+    "assemblyId": "RE-1400",
+    "revision": "0.1",
+    "description": "Rail-mounted low-voltage disconnect and fused distribution blocks represent the protected input.",
+    "function": "Rail-mounted low-voltage disconnect and fused distribution blocks represent the protected input.",
+    "material": "Insulated polymer, copper terminals",
+    "quantity": 1,
+    "massKg": 0.121594,
+    "dimensionsMm": {
+      "length": 46.0,
+      "width": 43.0,
+      "height": 39.0
+    },
+    "mounting": "CAD datum relative to Brushless drive and finned cold plate.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "DC distribution, fuse and disconnect — Brushless drive and finned cold plate interface",
+      "Latching emergency-stop operator — DC distribution, fuse and disconnect interface",
+      "Protected control power"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for poor interruption capacity or loose termination. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-040.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-040.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Insulated polymer, copper terminals",
+    "sourceAssembly": "RE-1400",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-041",
+    "name": "Industrial motor-control cabinet",
+    "assemblyId": "RE-1500",
+    "revision": "0.1",
+    "description": "Distinct vertical cabinet with open service recess, embossed cooling vents, DIN rails and load-side cable glands.",
+    "function": "Distinct vertical cabinet with open service recess, embossed cooling vents, DIN rails and load-side cable glands.",
+    "material": "Powder-coated steel",
+    "quantity": 1,
+    "massKg": 0.581031,
+    "dimensionsMm": {
+      "length": 126.0,
+      "width": 49.9,
+      "height": 159.0
+    },
+    "mounting": "CAD datum relative to Raised control wiring tray.",
+    "matingPartIds": [
+      "RE-035",
+      "RE-042"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Industrial controller and I/O slice rack — Industrial motor-control cabinet interface"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for door misalignment or poor airflow. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-041.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-041.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Powder-coated steel",
+    "sourceAssembly": "RE-1500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-042",
+    "name": "Cabinet service door and inspection window",
+    "assemblyId": "RE-1500",
+    "revision": "0.1",
+    "description": "Framed cabinet access door carries a viewing panel, lock handle and external hinge barrels.",
+    "function": "Framed cabinet access door carries a viewing panel, lock handle and external hinge barrels.",
+    "material": "Powder-coated steel and safety glazing candidate",
+    "quantity": 1,
+    "massKg": 0.129674,
+    "dimensionsMm": {
+      "length": 120.5,
+      "width": 13.5,
+      "height": 151.0
+    },
+    "mounting": "CAD datum relative to Industrial motor-control cabinet.",
+    "matingPartIds": [
+      "RE-041"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for latch damage or detached hinge. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-042.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-042.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Powder-coated steel and safety glazing candidate",
+    "sourceAssembly": "RE-1500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-043",
+    "name": "Industrial controller and I/O slice rack",
+    "assemblyId": "RE-1500",
+    "revision": "0.1",
+    "description": "Dedicated controller and pluggable slices show separated power, safety and monitored sensor channels.",
+    "function": "Dedicated controller and pluggable slices show separated power, safety and monitored sensor channels.",
+    "material": "Insulated housings and copper contacts",
+    "quantity": 1,
+    "massKg": 0.140083,
+    "dimensionsMm": {
+      "length": 92.0,
+      "width": 17.3,
+      "height": 37.0
+    },
+    "mounting": "CAD datum relative to Industrial motor-control cabinet.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Industrial controller and I/O slice rack — Industrial motor-control cabinet interface",
+      "Keyed field harness and strain relief — Industrial controller and I/O slice rack interface",
+      "Drive setpoint and watchdog",
+      "Protected control power"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for controller watchdog or channel fault. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-043.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-043.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Insulated housings and copper contacts",
+    "sourceAssembly": "RE-1500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-044",
+    "name": "Protected DC supply module",
+    "assemblyId": "RE-1500",
+    "revision": "0.1",
+    "description": "Rectangular supply with ventilated cover and segregated terminal guard. The 48 V DC design boundary is an assumption.",
+    "function": "Rectangular supply with ventilated cover and segregated terminal guard. The 48 V DC design boundary is an assumption.",
+    "material": "Coated steel and copper",
+    "quantity": 1,
+    "massKg": 0.315265,
+    "dimensionsMm": {
+      "length": 80.0,
+      "width": 48.0,
+      "height": 30.85
+    },
+    "mounting": "CAD datum relative to Prefabulated amulite baseplate.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Brushless drive and finned cold plate — Protected DC supply module interface",
+      "Protected DC supply module — Prefabulated amulite baseplate interface"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for overload or restricted cooling. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-044.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-044.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel and copper",
+    "sourceAssembly": "RE-1500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-045",
+    "name": "Latching emergency-stop operator",
+    "assemblyId": "RE-1500",
+    "revision": "0.1",
+    "description": "Prominent red actuator represents an independent stop-chain input. Safety ratings and reset implementation are open.",
+    "function": "Prominent red actuator represents an independent stop-chain input. Safety ratings and reset implementation are open.",
+    "material": "Steel and polymer",
+    "quantity": 1,
+    "massKg": 0.048465,
+    "dimensionsMm": {
+      "length": 26.0,
+      "width": 26.0,
+      "height": 29.5
+    },
+    "mounting": "CAD datum relative to DC distribution, fuse and disconnect.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Latching emergency-stop operator — DC distribution, fuse and disconnect interface",
+      "Guard and stop permissives"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for faulted contacts or unintended restart. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-045.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-045.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Steel and polymer",
+    "sourceAssembly": "RE-1500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-046",
+    "name": "Keyed field harness and strain relief",
+    "assemblyId": "RE-1500",
+    "revision": "0.1",
+    "description": "Visible power and instrumentation bundles leave separate cabinet glands and terminate at local modules.",
+    "function": "Visible power and instrumentation bundles leave separate cabinet glands and terminate at local modules.",
+    "material": "Copper conductors and polymer jackets",
+    "quantity": 1,
+    "massKg": 0.023857,
+    "dimensionsMm": {
+      "length": 344.2,
+      "width": 176.2,
+      "height": 93.2
+    },
+    "mounting": "CAD datum relative to Industrial controller and I/O slice rack.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Keyed field harness and strain relief — Industrial controller and I/O slice rack interface",
+      "Field signal connector"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for chafe, broken shield or wrong connector mate. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-046.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-046.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Copper conductors and polymer jackets",
+    "sourceAssembly": "RE-1500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-047",
+    "name": "Positive guard interlock and plunger",
+    "assemblyId": "RE-600",
+    "revision": "0.1",
+    "description": "Independent guard-state switch reads access-door closure before enabling the modeled drive.",
+    "function": "Independent guard-state switch reads access-door closure before enabling the modeled drive.",
+    "material": "Insulated actuator and metal bracket",
+    "quantity": 1,
+    "massKg": 0.006239,
+    "dimensionsMm": {
+      "length": 25.0,
+      "width": 14.5,
+      "height": 13.0
+    },
+    "mounting": "CAD datum relative to Guard access door and latch.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Positive guard interlock and plunger — Guard access door and latch interface",
+      "Guard and stop permissives"
+    ],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for misadjusted engagement or wiring fault. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-047.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-047.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Vendor and part number open.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Insulated actuator and metal bracket",
+    "sourceAssembly": "RE-600",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-048",
+    "name": "Reciprocating mechanism service guard",
+    "assemblyId": "RE-1200",
+    "revision": "0.1",
+    "description": "Transparent cover and perforated side ribs separate the moving crank-slider from access.",
+    "function": "Transparent cover and perforated side ribs separate the moving crank-slider from access.",
+    "material": "Coated steel and clear polymer",
+    "quantity": 1,
+    "massKg": 0.054236,
+    "dimensionsMm": {
+      "length": 153.0,
+      "width": 44.7,
+      "height": 10.0
+    },
+    "mounting": "CAD datum relative to Guided slider and end stops.",
+    "matingPartIds": [
+      "RE-033"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [
+      "Isolation and clearance review"
+    ],
+    "maintenance": "Inspect for loose guard or failed clearance to slider. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-048.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-048.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel and clear polymer",
+    "sourceAssembly": "RE-1200",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  },
+  {
+    "id": "RE-049",
+    "name": "Curved exhaust transition",
+    "assemblyId": "RE-500",
+    "revision": "0.1",
+    "description": "Open taper connects the filtered independent fan to an axial outlet. Its flow-area transition is represented explicitly.",
+    "function": "Open taper connects the filtered independent fan to an axial outlet. Its flow-area transition is represented explicitly.",
+    "material": "Sheet aluminum",
+    "quantity": 1,
+    "massKg": 0.079663,
+    "dimensionsMm": {
+      "length": 31.5,
+      "width": 86.0,
+      "height": 86.0
+    },
+    "mounting": "CAD datum relative to Service filter cassette.",
+    "matingPartIds": [
+      "RE-015"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Published dimensions and material values are design inputs. Operational limits are pending qualification.",
+    "safetyFlags": [],
+    "maintenance": "Inspect for leakage or unstable inlet flow. Record condition and any deviation from the reviewed interface before reassembly.",
+    "cadAssetPath": "models/re01/parts/RE-049.step",
+    "diagramRefs": [
+      "models/re01/drawings/RE-049.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Custom part concept.",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Sheet aluminum",
+    "sourceAssembly": "RE-500",
+    "verification": "Digital geometry reviewed. Physical qualification pending.",
+    "kind": "physical"
+  }
+]

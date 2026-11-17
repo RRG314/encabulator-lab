@@ -9,7 +9,7 @@ text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d
 <text x="26" y="36" style="font-size:19px;font-weight:bold">TE-008 / Marzelvane hub</text>
 <text x="26" y="59">TE-01 · Revision 0.1 · Schematic reference · Fabrication release pending</text>
 <path d="M380 75V466 M12 278H748 M12 466H748" fill="none" stroke="#9daebc"/>
-<text class="label" x="30" y="89">TOP / XY</text><g transform="translate(190.0 177.0) scale(3.6176470588235294)"><g   fill="none"
+<text class="label" x="30" y="89">TOP / XY</text><g transform="translate(190.0 177.0) scale(3.6193636516536687)"><g   fill="none"
    stroke="rgb(0, 0, 0)"
    stroke-linecap="butt"
    stroke-linejoin="miter"
@@ -43,7 +43,7 @@ text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d
 <path id= "19" d=" M 16.2 12.3722 L 16.2 12.5583 " />
 <path id= "20" d=" M -16.2 12.5583 L 16.2 12.5583 " />
 <path d="M-19, 0 L-19, -1.9034  L-19, -3.78286  L-19, -5.61474  L-19, -7.37602  L-19, -9.04455  L-19, -10.5993  L-19, -12.0208  L-19, -13.2911  L-19, -14.3943  L-19, -15.3165  L-19, -16.046  L-19, -16.5738  L-19, -16.8931  L-19, -17 " /><path d="M-19, 17 L-19, 16.8931  L-19, 16.5738  L-19, 16.046  L-19, 15.3165  L-19, 14.3943  L-19, 13.2911  L-19, 12.0208  L-19, 10.5993  L-19, 9.04455  L-19, 7.37602  L-19, 5.61474  L-19, 3.78286  L-19, 1.9034  L-19, 4.21885e-15 " /><path d="M-21, 0 L-21, -1.9034  L-21, -3.78286  L-21, -5.61474  L-21, -7.37602  L-21, -9.04455  L-21, -10.5993  L-21, -12.0208  L-21, -13.2911  L-21, -14.3943  L-21, -15.3165  L-21, -16.046  L-21, -16.5738  L-21, -16.8931  L-21, -17 " /><path d="M-21, 17 L-21, 16.8931  L-21, 16.5738  L-21, 16.046  L-21, 15.3165  L-21, 14.3943  L-21, 13.2911  L-21, 12.0208  L-21, 10.5993  L-21, 9.04455  L-21, 7.37602  L-21, 5.61474  L-21, 3.78286  L-21, 1.9034  L-21, 4.21885e-15 " /><path d="M21, 0 L21, -1.9034  L21, -3.78286  L21, -5.61474  L21, -7.37602  L21, -9.04455  L21, -10.5993  L21, -12.0208  L21, -13.2911  L21, -14.3943  L21, -15.3165  L21, -16.046  L21, -16.5738  L21, -16.8931  L21, -17 " /><path d="M21, 17 L21, 16.8931  L21, 16.5738  L21, 16.046  L21, 15.3165  L21, 14.3943  L21, 13.2911  L21, 12.0208  L21, 10.5993  L21, 9.04455  L21, 7.37602  L21, 5.61474  L21, 3.78286  L21, 1.9034  L21, 4.21885e-15 " /><path d="M19, 0 L19, -1.9034  L19, -3.78286  L19, -5.61474  L19, -7.37602  L19, -9.04455  L19, -10.5993  L19, -12.0208  L19, -13.2911  L19, -14.3943  L19, -15.3165  L19, -16.046  L19, -16.5738  L19, -16.8931  L19, -17 " /><path d="M19, 17 L19, 16.8931  L19, 16.5738  L19, 16.046  L19, 15.3165  L19, 14.3943  L19, 13.2911  L19, 12.0208  L19, 10.5993  L19, 9.04455  L19, 7.37602  L19, 5.61474  L19, 3.78286  L19, 1.9034  L19, 4.21885e-15 " /></g>
-</g><path class="dim" d="M114.02941176470588 243.5v12 M265.97058823529414 243.5v12 M114.02941176470588 249.5H265.97058823529414"/><text text-anchor="middle" class="value" x="190" y="263.5">42.00 mm REF</text><text class="label" x="395" y="89">FRONT / XZ</text><g transform="translate(555.0 177.0) scale(3.6176470588235294)"><g   fill="none"
+</g><path class="dim" d="M113.99336331527296 243.5v12 M266.006636684727 243.5v12 M113.99336331527296 249.5H266.006636684727"/><text text-anchor="middle" class="value" x="190" y="263.5">42.00 mm REF</text><text class="label" x="395" y="89">FRONT / XZ</text><g transform="translate(555.0 177.0583780032765) scale(3.621081059016264)"><g   fill="none"
    stroke="rgb(0, 0, 0)"
    stroke-linecap="butt"
    stroke-linejoin="miter"
@@ -75,7 +75,7 @@ text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d
 <path d="M-19, 17 L-19, 16.5738  L-19, 15.3165  L-19, 13.2911  L-19, 10.5993  L-19, 7.37602  L-19, 3.78286  L-19, 8.88178e-16  L-19, -3.78286  L-19, -7.37602  L-19, -10.5993  L-19, -13.2911  L-19, -15.3165  L-19, -16.5738  L-19, -17 " /><path id= "20" d=" M -21 17 L -19 17 " />
 <path d="M-21, 17 L-21, 16.5738  L-21, 15.3165  L-21, 13.2911  L-21, 10.5993  L-21, 7.37602  L-21, 3.78286  L-21, 8.88178e-16  L-21, -3.78286  L-21, -7.37602  L-21, -10.5993  L-21, -13.2911  L-21, -15.3165  L-21, -16.5738  L-21, -17 " /><path d="M21, 17 L21, 16.5738  L21, 15.3165  L21, 13.2911  L21, 10.5993  L21, 7.37602  L21, 3.78286  L21, 8.88178e-16  L21, -3.78286  L21, -7.37602  L21, -10.5993  L21, -13.2911  L21, -15.3165  L21, -16.5738  L21, -17 " /><path id= "23" d=" M 19 17 L 21 17 " />
 <path d="M19, 17 L19, 16.5738  L19, 15.3165  L19, 13.2911  L19, 10.5993  L19, 7.37602  L19, 3.78286  L19, 8.88178e-16  L19, -3.78286  L19, -7.37602  L19, -10.5993  L19, -13.2911  L19, -15.3165  L19, -16.5738  L19, -17 " /></g>
-</g><path class="dim" d="M479.02941176470586 243.5v12 M630.9705882352941 243.5v12 M479.02941176470586 249.5H630.9705882352941"/><text text-anchor="middle" class="value" x="555" y="263.5">42.00 mm REF</text><text class="label" x="30" y="289">END / YZ</text><g transform="translate(190.0 377.0) scale(3.6176470588235294)"><g   fill="none"
+</g><path class="dim" d="M478.95729776065843 243.5v12 M631.0427022393416 243.5v12 M478.95729776065843 249.5H631.0427022393416"/><text text-anchor="middle" class="value" x="555" y="263.5">42.00 mm REF</text><text class="label" x="30" y="289">END / YZ</text><g transform="translate(190.0 377.0583780032765) scale(3.621081059016264)"><g   fill="none"
    stroke="rgb(0, 0, 0)"
    stroke-linecap="butt"
    stroke-linejoin="miter"
@@ -83,7 +83,7 @@ text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d
    transform="scale(1, -1)"
   >
 <circle cx ="0" cy ="0" r ="17" /><circle cx ="0" cy ="0" r ="4" /></g>
-</g><path class="dim" d="M128.5 443.5v12 M251.5 443.5v12 M128.5 449.5H251.5"/><text text-anchor="middle" class="value" x="190" y="463.5">34.00 mm REF</text><text class="label" x="395" y="289">ISOMETRIC</text><g transform="translate(555.0 377.0) scale(2.823341665363303)"><g   fill="none"
+</g><path class="dim" d="M128.47081792188763 443.5v12 M251.52918207811237 443.5v12 M128.47081792188763 449.5H251.52918207811237"/><text text-anchor="middle" class="value" x="190" y="463.5">33.98 mm REF</text><text class="label" x="395" y="289">ISOMETRIC</text><g transform="translate(555.0 377.0) scale(2.823341665363303)"><g   fill="none"
    stroke="rgb(0, 0, 0)"
    stroke-linecap="butt"
    stroke-linejoin="miter"
@@ -146,6 +146,6 @@ text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d
 </g>
 </g>
 <text x="26" y="483">GEOMETRIC REFERENCE  •  INTERFACE AND TOLERANCE RELEASE PENDING</text>
-<text x="26" y="501">Reference envelope (X × Y × Z) 42.00 × 34.00 × 34.00 mm · Views fit to sheet</text>
+<text x="26" y="501">Reference envelope (X × Y × Z) 42.00 × 33.98 × 33.97 mm · Views fit to sheet</text>
 <text x="26" y="518">Material / Aluminum candidate · Dimensional and geometric tolerances pending</text>
 </svg>

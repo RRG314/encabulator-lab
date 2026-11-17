@@ -28,6 +28,17 @@ def main():
     layout = placements()
     (ROOT/'data/model-layout.json').write_text(json.dumps(dict(shaftHeight=D.shaft_z,journalStations=[-D.bearing_span/2,D.bearing_span/2],placements=layout),indent=2)+'\n')
     report = investigate(shapes)
+    density={'plate':2700,'steel':7850,'cast':3650,'blue':2700,'frame':1800,'amber':1200,
+             'gold':8500,'black':1250,'glass':1200,'board':1780,'rubber':1100,'red':1260,'sensor':2000}
+    envelopes={}
+    masses={}
+    for id,pieces in shapes.items():
+        b=compound(shape for _,shape in pieces).BoundBox
+        envelopes[id]=[round(b.XLength,3),round(b.YLength,3),round(b.ZLength,3)]
+        masses[id]=sum(shape.Volume*density[finish]*1e-9 for finish,shape in pieces)
+    (ROOT/'data/te01-envelopes.json').write_text(json.dumps(envelopes,indent=2)+'\n')
+    report['estimatedMassKg']=round(sum(masses[row['partId']] for row in layout if row['partId']!='TE-027'),3)
+    report['massBasis']='Schematic sum of component volumes with generic finish densities. Includes representative mounting hardware, excluding software marker.'
     (out/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
     for check in report['checks']:
         print(check['status'],check['check'])

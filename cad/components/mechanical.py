@@ -3,6 +3,7 @@ import math
 import Part
 from .primitives import V, along_x, beveled_rect, box, compound, cyl, flange, prism, ring
 from ..parameters import D
+from ..shared.details import chamfered, hexhead
 
 def baseplate():
     blank = prism(beveled_rect(D.base_length/2,D.base_width/2,6),D.base_thickness)
@@ -12,7 +13,9 @@ def baseplate():
     patterns.extend((x*D.guard_half_length,y*49,1.45) for x in (-1,1) for y in (-1,1))
     holes = [cyl(r,D.base_thickness+2,(x,y,0),'z') for x,y,r in patterns]
     counterbores = [cyl(3,1.5,(x,y,D.base_thickness/2-0.35),'z') for x,y,_ in patterns[:4]]
-    return [('plate',blank.cut(compound(holes+counterbores))),
+    channels=[box(236,1.1,.55,(0,y,2.9)) for y in (-95,-91,91,95)]
+    return [('plate',blank.cut(compound(holes+counterbores+channels))),
+            ('frame',chamfered(43,11,.35,(102,-79,2.91),1.2)),
             ('amber',compound(box(18,0.45,1.3,(x*124,-D.base_width/2-0.225,-0.4)) for x in (-1,1)))]
 
 def feet():
@@ -23,9 +26,12 @@ def motor():
     caps = compound(cyl(17.4,3,(x*(D.motor_body_length/2-1.5),0,0)) for x in (-1,1))
     fins = compound(along_x(box(38,2.25,4.4,(0,0,20.1)),i*30) for i in range(12))
     feet = compound(box(44,11,6,(0,y*14.5,-22.5)) for y in (-1,1))
-    return [('cast',case),('plate',caps),('frame',fins),('cast',feet),
+    end_bolts=compound(along_x(hexhead(2.4,1.4,socket=1.1).rotated(V(),V(0,1,0),90).translated(V(x*28.8,0,13.3)),45+i*90)
+                       for x in (-1,1) for i in range(4))
+    ring_fins=compound(ring(18.3,16.8,.75,(x,0,0)) for x in (-25.4,-23.7,23.7,25.4))
+    return [('cast',case),('plate',caps),('frame',fins),('cast',feet),('steel',end_bolts),('cast',ring_fins),
             ('steel',cyl(D.shaft_diameter/2,10,(D.motor_body_length/2+5,0,0))),
-            ('black',box(13,9,7,(-11,-10,17))),('gold',box(14,7,0.7,(5,-4,19.4)))]
+            ('black',chamfered(13,9,7,(-11,-10,17),1.6)),('gold',chamfered(14,7,0.7,(5,-4,19.4),1.15))]
 
 def shaft():
     return [('steel', cyl(D.shaft_diameter/2,D.shaft_length))]
@@ -61,7 +67,8 @@ def vane():
                (chord/2,half*0.1),(chord/2-3,half*0.7),(-chord/2+3,half)]
     shell = prism(profile,D.vane_span-2.5,(D.vane_span-2.5)/2).rotated(V(),V(0,0,1),D.vane_pitch)
     root = box(chord-4,D.vane_thickness+0.4,2,(0,0,-1))
-    return [('amber',shell),('cast',root)]
+    bolts=compound(hexhead(1.65,.7,(x,0,-.32),.75) for x in (-11,11))
+    return [('amber',shell),('cast',root),('steel',bolts)]
 
 def retainer():
     return [('cast',ring(10.5,D.shaft_diameter/2,4)),('steel',ring(8.4,D.shaft_diameter/2,0.6,(2.3,0,0)))]
@@ -76,7 +83,7 @@ def isolator():
 def guard():
     frame = []
     for x in (-D.guard_half_length,D.guard_half_length):
-        frame.append(flange(106,106,3,D.guard_aperture,x))
+        frame.append(flange(106,106,3,D.guard_aperture,x,True))
         for y in (-49,49):
             frame.append(box(8,8,5,(x,y,-D.shaft_z+2.5)).cut(cyl(1.45,7,(x,y,-D.shaft_z+2.5),'z')))
     for y in (-51,51):
@@ -84,8 +91,11 @@ def guard():
             frame.append(box(73,4,4,(0,y,z)))
     glass = [box(67,1.4,96,(0,y*51,0)) for y in (-1,1)]
     glass.append(box(67,96,1.4,(0,0,51)))
-    return [('plate',compound(frame)),('glass',compound(glass)),
-            ('frame',box(67,96,1.4,(0,0,-51))),('amber',box(52,1,2,(0,-53.5,50)))]
+    front_bolts=compound(hexhead(1.7,1.3,socket=.75).rotated(V(),V(1,0,0),90).translated(V(x,-52.4,z))
+                        for x in (-31,31) for z in (-41,-27,27,41))
+    ticks=compound(box(3.5,1.25,3,(x,-54,48.8)) for x in range(-21,22,7))
+    return [('plate',compound(frame)),('glass',compound(glass)),('steel',front_bolts),
+            ('frame',box(67,96,1.4,(0,0,-51))),('amber',box(52,1,2,(0,-53.5,50))),('gold',ticks)]
 
 def spiral():
     points = []

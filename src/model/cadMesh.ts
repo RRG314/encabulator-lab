@@ -2,10 +2,11 @@ import { Mesh } from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { finishes } from './geometry'
 import type { Finish, makeGeometries } from './geometry'
-import { placements } from './layout'
+import type { MachineProfile } from '../machines/profiles'
+import { assetUrl } from '../machines/profiles'
 
-export async function loadCadMeshes() {
-  const model = await new GLTFLoader().loadAsync(`${import.meta.env.BASE_URL}models/te01.glb`)
+export async function loadCadMeshes(machine: MachineProfile) {
+  const model = await new GLTFLoader().loadAsync(assetUrl(machine.mesh))
   const result: ReturnType<typeof makeGeometries> = {}
   for (const node of model.scene.children) {
     const id = node.userData.partId as string | undefined
@@ -28,7 +29,7 @@ export async function loadCadMeshes() {
       child.material.dispose()
     }
   })
-  if (placements.some(item => !result[item.partId])) {
+  if (machine.placements.some(item => !result[item.partId])) {
     disposeMeshes(result)
     throw new Error('Incomplete solid-to-mesh registry')
   }

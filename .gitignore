@@ -5,3 +5,11 @@ test-results/
 .DS_Store
 __pycache__/
 cad/exports/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.FCBak
+playwright/.auth/
+*.local

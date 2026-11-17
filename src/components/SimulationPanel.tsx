@@ -1,7 +1,8 @@
 import { Activity, AlertTriangle, FlaskConical, Play, Pause, RotateCcw } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import { simulations } from '../schemas/simulation'
+import { simulationProfiles } from '../schemas/simulation'
+import { useMachine } from '../machines/context'
 import type { SimulationId } from '../schemas/simulation'
 import { faults } from '../simulation/plant'
 import type { Fault } from '../simulation/plant'
@@ -44,10 +45,10 @@ function Plot({ data, provenance }: { data: Chart, provenance:string }) {
           start = false
           return point
         }).join('')
-        return <path key={item.name} d={d} style={{stroke:item.color ?? '#f1aa60',strokeWidth:2.1}} vectorEffect="non-scaling-stroke" />
+        return <path key={item.name} d={d} style={{stroke:item.color ?? '#1f638e',strokeWidth:2.1}} vectorEffect="non-scaling-stroke" />
       })}
     </svg>
-    <div className="plot-legend">{data.series.map(item => <span key={item.name}><i style={{background:item.color ?? '#f1aa60'}} />{item.name}</span>)}</div>
+    <div className="plot-legend">{data.series.map(item => <span key={item.name}><i style={{background:item.color ?? '#1f638e'}} />{item.name}</span>)}</div>
     <details className="plot-data"><summary>Sampled values</summary>
       <div className="table-scroll"><table><thead><tr><th scope="col">{data.xLabel}</th>{data.series.map(item => <th scope="col" key={item.name}>{item.name} ({data.unit})</th>)}</tr></thead>
         <tbody>{data.x.map((v,i) => ({v,i})).filter(({i}) => i % Math.max(1,Math.floor(data.x.length/10)) === 0 || i === data.x.length-1)
@@ -60,14 +61,15 @@ function Plot({ data, provenance }: { data: Chart, provenance:string }) {
 type Telemetry = Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm'>
 
 function StudyControls({ id, diagnostic }: { id:SimulationId, diagnostic?: (telemetry:Telemetry) => ReactNode }) {
-  const model = simulations.find(item => item.id === id)!
+  const machine=useMachine()
+  const model = simulationProfiles[machine.key].find(item => item.id === id)!
   const defaults = () => Object.fromEntries(model.inputs.map(input => [input.id,input.default]))
   const [params,setParams] = useState(defaults)
   const [fault,setFault] = useState<Fault>('None')
   const [dropout,setDropout] = useState(false)
   const [playing,setPlaying] = useState(false)
   const [moment,setMoment] = useState(0)
-  const results = useMemo(() => study(id,params,fault,dropout),[id,params,fault,dropout])
+  const results = useMemo(() => study(id,params,fault,dropout,machine.key),[id,params,fault,dropout,machine.key])
   useEffect(() => {
     if (!playing) return
     const trigger = setInterval(() => setMoment(t => Math.min(10,t+0.1)), 100)
@@ -117,7 +119,7 @@ function StudyControls({ id, diagnostic }: { id:SimulationId, diagnostic?: (tele
             ['Airflow',`${(reading.flow*1000).toFixed(1)} L/s`],['Phase',reading.phaseQualified ? 'Eligible' : 'Inhibited'],
           ].map(([key,value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
           {reading.inhibited && <p role="status"><AlertTriangle size={14} /> {reading.reason || 'Fault latched'} · drive inhibited</p>}
-          {!diagnostic && <a className="replay-link" href="#/diagnostics">Open 3D diagnostic replay</a>}
+          {!diagnostic && <a className="replay-link" href={machine.href('diagnostics')}>Open 3D diagnostic replay</a>}
         </section>}
         {!diagnostic && results.charts.map(data => <Plot key={data.title} data={data} provenance={model.provenance} />)}
       </div>
@@ -128,13 +130,14 @@ function StudyControls({ id, diagnostic }: { id:SimulationId, diagnostic?: (tele
 }
 
 export default function SimulationPanel({ initial, diagnostic }: { initial?:SimulationId, diagnostic?: (telemetry:Telemetry) => ReactNode }) {
+  const machine=useMachine()
   const [active,setActive] = useState<SimulationId>(() => initial ?? 'rotor')
   return <>
-    <header className="page-header"><div><div className="eyebrow">TE-01 / {diagnostic ? 'OPERATING STATE' : 'MODEL STUDIES'}</div>
-      <h1>{diagnostic ? 'Diagnostic replay' : 'Simulation laboratory'}</h1>
+    <header className="page-header"><div><div className="eyebrow">{machine.name} {machine.code} / {diagnostic ? 'OPERATING STATE' : 'MODEL STUDIES'}</div>
+      <h1>{diagnostic ? 'Diagnostic replay' : 'Dynamic Test Bench'}</h1>
       <p>{diagnostic ? 'Review the simulated plant state on the assembly.' : 'Deterministic parameter studies and reproducible response plots.'}</p></div></header>
     {!diagnostic && <nav className="document-tabs" aria-label="Simulation studies">
-      {simulations.map(model => <button key={model.id} type="button" aria-pressed={active === model.id}
+      {simulationProfiles[machine.key].map(model => <button key={model.id} type="button" aria-pressed={active === model.id}
         onClick={() => setActive(model.id)}>{model.name}</button>)}
     </nav>}
     <StudyControls key={active} id={active} diagnostic={diagnostic} />

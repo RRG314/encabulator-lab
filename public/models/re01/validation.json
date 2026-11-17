@@ -1,0 +1,263 @@
+{
+  "revision": "0.1",
+  "fabricationRelease": false,
+  "basis": "OpenCascade design geometry",
+  "dimensions": {
+    "length": 488,
+    "width": 350,
+    "plate": 10,
+    "axis_z": 84,
+    "journal_span": 164,
+    "journal_d": 12,
+    "rotor_root": 23,
+    "rotor_tip": 63,
+    "guard_r": 70,
+    "blade_chord": 52,
+    "blade_pitch_deg": 16,
+    "crank_r": 12,
+    "rod_length": 68,
+    "stator_bore": 22,
+    "stator_outer": 35,
+    "stator_slots": 12,
+    "stator_slot_width": 5,
+    "stator_slot_depth": 8,
+    "bearing_outer": 28,
+    "bearing_width": 8,
+    "fan_x": 169
+  },
+  "checks": [
+    {
+      "check": "Valid, closed positive-volume component solids",
+      "expected": [],
+      "observed": [],
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Patterned six-vane angular indexes",
+      "expected": 6,
+      "observed": 6,
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Unique instance identities",
+      "expected": 67,
+      "observed": 67,
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Shaft and journal coaxiality",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS",
+      "unit": "mm"
+    },
+    {
+      "check": "Exploded endpoint envelope overlaps",
+      "expected": [],
+      "observed": [],
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Conservative radial swept-envelope clearance",
+      "expected": "> 0",
+      "observed": 6.873,
+      "status": "PASS",
+      "unit": "mm"
+    },
+    {
+      "check": "Crank-slider real closure margin",
+      "expected": "> 0",
+      "observed": 56,
+      "status": "PASS",
+      "unit": "mm"
+    },
+    {
+      "check": "Rotor, bearing and frame key collision pairs",
+      "expected": [],
+      "observed": [],
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Assembled joint and packaging dispositions",
+      "expected": "Review each finite-volume contact",
+      "observed": [
+        {
+          "a": "RE-001:1",
+          "b": "RE-003:1",
+          "volumeMm3": 343.816
+        },
+        {
+          "a": "RE-001:1",
+          "b": "RE-003:2",
+          "volumeMm3": 343.816
+        },
+        {
+          "a": "RE-001:1",
+          "b": "RE-003:3",
+          "volumeMm3": 343.816
+        },
+        {
+          "a": "RE-001:1",
+          "b": "RE-003:4",
+          "volumeMm3": 343.816
+        },
+        {
+          "a": "RE-002:1",
+          "b": "RE-011:1",
+          "volumeMm3": 76.221
+        },
+        {
+          "a": "RE-002:1",
+          "b": "RE-011:2",
+          "volumeMm3": 76.221
+        },
+        {
+          "a": "RE-002:2",
+          "b": "RE-011:1",
+          "volumeMm3": 76.221
+        },
+        {
+          "a": "RE-002:2",
+          "b": "RE-011:2",
+          "volumeMm3": 76.221
+        },
+        {
+          "a": "RE-005:1",
+          "b": "RE-029:1",
+          "volumeMm3": 14.484
+        },
+        {
+          "a": "RE-010:2",
+          "b": "RE-046:1",
+          "volumeMm3": 47.539
+        },
+        {
+          "a": "RE-011:1",
+          "b": "RE-028:1",
+          "volumeMm3": 227.332
+        },
+        {
+          "a": "RE-011:2",
+          "b": "RE-028:2",
+          "volumeMm3": 227.332
+        },
+        {
+          "a": "RE-011:2",
+          "b": "RE-046:1",
+          "volumeMm3": 113.659
+        },
+        {
+          "a": "RE-016:1",
+          "b": "RE-018:1",
+          "volumeMm3": 411.0
+        },
+        {
+          "a": "RE-016:1",
+          "b": "RE-046:1",
+          "volumeMm3": 47.795
+        },
+        {
+          "a": "RE-019:1",
+          "b": "RE-020:1",
+          "volumeMm3": 689.128
+        },
+        {
+          "a": "RE-023:1",
+          "b": "RE-024:1",
+          "volumeMm3": 157.463
+        },
+        {
+          "a": "RE-024:1",
+          "b": "RE-025:1",
+          "volumeMm3": 173.402
+        },
+        {
+          "a": "RE-026:1",
+          "b": "RE-046:1",
+          "volumeMm3": 44.578
+        },
+        {
+          "a": "RE-027:1",
+          "b": "RE-046:1",
+          "volumeMm3": 225.504
+        },
+        {
+          "a": "RE-028:2",
+          "b": "RE-046:1",
+          "volumeMm3": 34.318
+        },
+        {
+          "a": "RE-030:1",
+          "b": "RE-041:1",
+          "volumeMm3": 15.0
+        },
+        {
+          "a": "RE-031:1",
+          "b": "RE-032:1",
+          "volumeMm3": 60.481
+        },
+        {
+          "a": "RE-031:1",
+          "b": "RE-033:1",
+          "volumeMm3": 99.566
+        },
+        {
+          "a": "RE-031:1",
+          "b": "RE-034:1",
+          "volumeMm3": 360.0
+        },
+        {
+          "a": "RE-032:1",
+          "b": "RE-033:1",
+          "volumeMm3": 374.155
+        },
+        {
+          "a": "RE-035:1",
+          "b": "RE-042:1",
+          "volumeMm3": 118.0
+        },
+        {
+          "a": "RE-035:1",
+          "b": "RE-046:1",
+          "volumeMm3": 32.624
+        },
+        {
+          "a": "RE-039:1",
+          "b": "RE-044:1",
+          "volumeMm3": 1651.546
+        },
+        {
+          "a": "RE-039:1",
+          "b": "RE-046:1",
+          "volumeMm3": 11.719
+        },
+        {
+          "a": "RE-040:1",
+          "b": "RE-046:1",
+          "volumeMm3": 222.893
+        }
+      ],
+      "status": "REVIEW",
+      "unit": "mm³"
+    }
+  ],
+  "estimatedMassKg": 12.769,
+  "massBasis": "Computed from schematic volumes and generic finish densities. Includes modeled instance counts, including representative hardware.",
+  "vaneCalculation": {
+    "massKg": 0.09169722817744519,
+    "localCenterMm": [
+      -0.8142681563170093,
+      -0.12982325890126123,
+      18.133629354612946
+    ],
+    "perVaneInertiaAboutShaftKgM2": 0.00017127117497578188,
+    "radiusMm": 63,
+    "pitchDeg": 16,
+    "basis": "Computed from schematic volumes and generic finish densities. Includes modeled instance counts, including representative hardware."
+  }
+}

@@ -1,0 +1,186 @@
+[
+  {
+    "id": "RE-100",
+    "name": "Prefabulated Amulite Structural Assembly",
+    "shortName": "Bed & mounts",
+    "order": 1,
+    "description": "Prefabulated Amulite Structural Assembly",
+    "partIds": [
+      "RE-001",
+      "RE-002",
+      "RE-003",
+      "RE-004"
+    ]
+  },
+  {
+    "id": "RE-200",
+    "name": "Ambifacient Lunar Waneshaft Assembly",
+    "shortName": "Waneshaft",
+    "order": 2,
+    "description": "Ambifacient Lunar Waneshaft Assembly",
+    "partIds": [
+      "RE-005",
+      "RE-006"
+    ]
+  },
+  {
+    "id": "RE-300",
+    "name": "Hydrocoptic Marzelvane Assembly",
+    "shortName": "Six-vane rotor",
+    "order": 3,
+    "description": "Hydrocoptic Marzelvane Assembly",
+    "partIds": [
+      "RE-007",
+      "RE-008",
+      "RE-009"
+    ]
+  },
+  {
+    "id": "RE-400",
+    "name": "Spurving Bearing Assembly",
+    "shortName": "Journal supports",
+    "order": 4,
+    "description": "Spurving Bearing Assembly",
+    "partIds": [
+      "RE-010",
+      "RE-011",
+      "RE-012"
+    ]
+  },
+  {
+    "id": "RE-500",
+    "name": "Panametric Fan and Fluid System",
+    "shortName": "Cooling circuit",
+    "order": 5,
+    "description": "Panametric Fan and Fluid System",
+    "partIds": [
+      "RE-013",
+      "RE-014",
+      "RE-015",
+      "RE-049"
+    ]
+  },
+  {
+    "id": "RE-600",
+    "name": "Logarithmic Casing",
+    "shortName": "Guard & access",
+    "order": 6,
+    "description": "Logarithmic Casing",
+    "partIds": [
+      "RE-016",
+      "RE-017",
+      "RE-018",
+      "RE-047"
+    ]
+  },
+  {
+    "id": "RE-700",
+    "name": "Lotus-o-Deltoid Electrical Assembly",
+    "shortName": "Winding & terminals",
+    "order": 7,
+    "description": "Lotus-o-Deltoid Electrical Assembly",
+    "partIds": [
+      "RE-019",
+      "RE-026"
+    ]
+  },
+  {
+    "id": "RE-800",
+    "name": "Panendermic Semi-Boloid Stator Assembly",
+    "shortName": "Slotted stator",
+    "order": 8,
+    "description": "Panendermic Semi-Boloid Stator Assembly",
+    "partIds": [
+      "RE-020"
+    ]
+  },
+  {
+    "id": "RE-900",
+    "name": "Differential Girdle Spring",
+    "shortName": "Torsional coupling",
+    "order": 9,
+    "description": "Differential Girdle Spring",
+    "partIds": [
+      "RE-023",
+      "RE-024",
+      "RE-025"
+    ]
+  },
+  {
+    "id": "RE-1000",
+    "name": "Cardinal Gram-Meter Instrumentation",
+    "shortName": "Instrumentation",
+    "order": 10,
+    "description": "Cardinal Gram-Meter Instrumentation",
+    "partIds": [
+      "RE-027",
+      "RE-028",
+      "RE-029"
+    ]
+  },
+  {
+    "id": "RE-1100",
+    "name": "Unilateral Phase Detractor",
+    "shortName": "Phase acquisition",
+    "order": 11,
+    "description": "Unilateral Phase Detractor",
+    "partIds": [
+      "RE-030"
+    ]
+  },
+  {
+    "id": "RE-1200",
+    "name": "Drawn Reciprocating Dingle Arm",
+    "shortName": "Crank-slider",
+    "order": 12,
+    "description": "Drawn Reciprocating Dingle Arm",
+    "partIds": [
+      "RE-031",
+      "RE-032",
+      "RE-033",
+      "RE-034",
+      "RE-048"
+    ]
+  },
+  {
+    "id": "RE-1300",
+    "name": "Non-Reversible Tremie Pipe",
+    "shortName": "Check-valve loop",
+    "order": 13,
+    "description": "Non-Reversible Tremie Pipe",
+    "partIds": [
+      "RE-036",
+      "RE-037",
+      "RE-038"
+    ]
+  },
+  {
+    "id": "RE-1400",
+    "name": "Industrial Motor and Drive",
+    "shortName": "Motor & power",
+    "order": 14,
+    "description": "Industrial Motor and Drive",
+    "partIds": [
+      "RE-021",
+      "RE-022",
+      "RE-039",
+      "RE-040"
+    ]
+  },
+  {
+    "id": "RE-1500",
+    "name": "Industrial Automation and Control",
+    "shortName": "Control cabinet",
+    "order": 15,
+    "description": "Industrial Automation and Control",
+    "partIds": [
+      "RE-035",
+      "RE-041",
+      "RE-042",
+      "RE-043",
+      "RE-044",
+      "RE-045",
+      "RE-046"
+    ]
+  }
+]

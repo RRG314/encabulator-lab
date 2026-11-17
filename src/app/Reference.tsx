@@ -2,8 +2,9 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Box, ClipboardCheck, Download, Fil
 import { useEffect, useMemo, useState } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { assemblies, assemblyById, linksFor, partById, parts } from '../data'
-import { functionalGroups, service } from '../schemas/reference'
+import { useMachine } from '../machines/context'
+import { assetUrl, dimensionText } from '../machines/profiles'
+import { functionalGroups } from '../schemas/reference'
 import type { Part } from '../schemas/part'
 import overview from '../../docs/engineering/overview.md?raw'
 import masterSpec from '../../docs/engineering/TE01_MASTER_SPEC.md?raw'
@@ -16,11 +17,21 @@ import geometry from '../../docs/engineering/geometry.md?raw'
 import validation from '../../docs/engineering/verification-matrix.md?raw'
 import revisions from '../../docs/engineering/revisions.md?raw'
 import physics from '../../docs/science/models.md?raw'
+import reSpec from '../../engineering/re01/MASTER_SPEC.md?raw'
+import reHierarchy from '../../engineering/re01/ASSEMBLY_HIERARCHY.md?raw'
+import reDesign from '../../engineering/re01/DESIGN_DECISIONS.md?raw'
+import reValidation from '../../engineering/re01/VALIDATION_MATRIX.md?raw'
+import reStatus from '../../engineering/re01/IMPLEMENTATION_STATUS.md?raw'
+import reService from '../../engineering/re01/SERVICE_AND_CONTROLS.md?raw'
+import reSources from '../../engineering/re01/SOURCE_TRACEABILITY.md?raw'
+import references from '../../engineering/REFERENCES.md?raw'
+import interchangeability from '../../engineering/INTERCHANGEABILITY.md?raw'
+import sourceTrace from '../../data/re01/source-traceability.json'
 import { baseline, screening } from '../simulation/calculations'
 
-const asset = (name:string) => `${import.meta.env.BASE_URL}models/${name}`
-const bomUrl = new URL('../../docs/engineering/bom.csv',import.meta.url).href
-const reports = [
+const teBom = new URL('../../docs/engineering/bom.csv',import.meta.url).href
+
+const teReports = [
   ['FreeCAD assembly','te01-assembled.FCStd','Schematic engineering assembly with an editable body hierarchy.'],
   ['FreeCAD exploded assembly','te01-exploded.FCStd','Exploded transform endpoints and assembly sequence metadata.'],
   ['STEP assembly','te01-assembled.step','Neutral solid geometry at the assembled datum.'],
@@ -37,24 +48,52 @@ const reports = [
   ['Numerical verification · JSON','numerical-validation.json','Analytical comparisons and numerical residuals.'],
 ]
 const specification = masterSpec.split('## 9. Interactive 3D encyclopedia')[0]
-const documents = [
+const teDocuments = [
   ['overview','System overview',overview],['specification','Specification',specification],['mechanical','Mechanical',mechanical],
   ['electrical','Electrical',electrical],['thermal','Thermal',thermal],['service','Assembly & service',sequence],
-  ['safety','Safety',safety],['geometry','Geometry',geometry],['physics','Technical references',physics],
+  ['safety','Safety',safety],['geometry','Geometry',geometry],['physics','Model equations',physics],['references','References',references],
   ['validation','Verification',validation],['revisions','Revisions',revisions],['calculations','Calculations',''],['downloads','Downloads',''],
 ]
 
+const reDocuments = [
+  ['overview','Technical manual',reSpec],['specification','Master specification',reSpec],['hierarchy','Assembly hierarchy',reHierarchy],
+  ['mechanical','Mechanical design',reDesign],['electrical','Electrical & control',reService],['thermal','Thermal & flow',reDesign],
+  ['service','Service & calibration',reService],['safety','Safety',safety],['geometry','Geometry & manufacturing',reDesign],
+  ['physics','Model equations',reDesign],['references','References',references],['traceability','Source traceability',reSources],
+  ['interchangeability','Interchangeability',interchangeability],['validation','Verification',reValidation],['revisions','Revisions',reStatus],
+  ['calculations','Calculations',''],['downloads','Downloads',''],
+]
+const reReports = [
+  ['FreeCAD assembled model','re01-assembled.FCStd','Independent Retro Encabulator assembly hierarchy.'],
+  ['FreeCAD separated model','re01-exploded.FCStd','Dimension-aware separated transforms.'],
+  ['STEP assembly','re01-assembled.step','Assembled neutral solids.'],
+  ['STEP separated model','re01-exploded.step','Separated neutral solids.'],
+  ['STEP longitudinal section','re01-longitudinal.step','Longitudinal CAD section.'],
+  ['STEP transverse section','re01-transverse.step','Transverse CAD section.'],
+  ['Part STEP/STL package','part-solids.zip','Standalone local solids for each part identifier.'],
+  ['CAD assembly GLB','re01.glb','Browser-compatible mesh with persistent instance identifiers.'],
+  ['Drawing set · 66 SVG sheets','drawings.zip','49 component sheets, 15 subsystem sheets and two overall configurations.'],
+  ['Master assembly drawing','drawings/RE01-ASSEMBLY.svg','Assembled orthographic and isometric views.'],
+  ['Separated assembly drawing','drawings/RE01-EXPLODED.svg','Separated orthographic and isometric views.'],
+  ['OpenCascade verification','validation.json','Measured CAD geometry and review dispositions.'],
+  ['Numerical verification','numerical-validation.json','Reference cases for the water loop, linkage and controller.'],
+]
+
 function PageHeader({ type,title,description }: { type:string,title:string,description?:string }) {
-  return <header className="page-header"><div><div className="eyebrow">TE-01 / {type}</div><h1>{title}</h1><p>{description}</p></div></header>
+  const machine=useMachine()
+  return <header className="page-header"><div><div className="eyebrow">{machine.name} {machine.code} / {type}</div><h1>{title}</h1><p>{description}</p></div></header>
 }
 
 export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>void }) {
-  const dimensions = part.dimensionsMm ? Object.entries(part.dimensionsMm).map(([key,value]) =>
-    `${key.replace(/[A-Z]/g,letter=>` ${letter.toLowerCase()}`)} ${value} mm`).join(' · ') : 'Pending engineering selection'
-  const links = linksFor(part.id)
+  const machine=useMachine()
+  const { assemblyById,partById,linksFor }=machine.registry
+  const detail=machine.service[part.id]
+  const dimensions=dimensionText(part,detail)
+  const links=linksFor(part.id)
+  const source=detail?.source ? sourceTrace.terms[detail.source as keyof typeof sourceTrace.terms] : undefined
   return <>
     <PageHeader type={`COMPONENT RECORD / ${part.id}`} title={part.name} description={part.description} />
-    <div className="document-tabs"><a href="#/bom"><ArrowLeft size={14} /> Parts catalog</a><a href="#/explorer" onClick={() => onSelect(part.id)}><Box size={14} /> Locate in explorer</a></div>
+    <div className="document-tabs"><a href={machine.href('bom')}><ArrowLeft size={14} /> Component register</a><a href={machine.href('explorer')} onClick={() => onSelect(part.id)}><Box size={14} /> Locate in assembly</a></div>
     <article className="reference-grid">
       <section className="panel article-panel">
         <h2>Design definition</h2>
@@ -66,7 +105,9 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
           <dt>Candidate specification</dt><dd>{part.proposedSpecification}</dd>
           <dt>Material</dt><dd>{part.material ?? 'Selection pending'}</dd>
           <dt>Nominal dimensions</dt><dd>{dimensions}</dd>
-          <dt>Mass and tolerances</dt><dd>Pending measurement and release</dd>
+          <dt>Mass</dt><dd>{part.massKg===null?'Pending selection':`${part.massKg} kg · calculated per unit`}</dd>
+          <dt>Tolerances</dt><dd>Pending release</dd>
+          <dt>Candidate service tool</dt><dd>{detail?.tool ?? 'Selection pending'}</dd>
           <dt>Mounting</dt><dd>{part.mounting}</dd>
           <dt>Sourcing</dt><dd>{part.sourcing}</dd>
         </dl>
@@ -77,65 +118,78 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
           <dt>Evidence basis</dt><dd>{part.evidence} · {part.readiness}</dd>
           <dt>Verification</dt><dd>{part.verification}. Physical evidence pending.</dd>
           <dt>Operating constraints</dt><dd>{part.limits}</dd>
-          <dt>Failure modes</dt><dd>{service[part.id]?.failureMode}</dd>
+          <dt>Failure modes</dt><dd>{detail?.failureMode}</dd>
           <dt>Inspection and maintenance</dt><dd>{part.maintenance}</dd>
-          <dt>Installation and removal</dt><dd><a href="#/engineering/service">Assembly and service sequence</a>. Released procedure pending.</dd>
-          <dt>CAD reference</dt><dd>{part.kind === 'logical' ? 'Controller reference marker' : <a href={asset('te01-part-solids.zip')} download>{part.id} · STEP and STL archive</a>}</dd>
-          <dt>Revision history</dt><dd><a href="#/engineering/revisions">0.1 · Baseline definition</a></dd>
+          <dt>Installation and removal</dt><dd><a href={machine.href('engineering/service')}>Assembly and service sequence</a>. Released procedure pending.</dd>
+          <dt>CAD reference</dt><dd>{part.kind === 'logical' ? 'Controller reference marker' : <a href={assetUrl(part.cadAssetPath ?? 'models/te01-part-solids.zip')} download>{part.id} · CAD download</a>}</dd>
+          <dt>Revision history</dt><dd><a href={machine.href('engineering/revisions')}>0.1 · Baseline definition</a></dd>
+          {machine.key==='re01' && <><dt>Technical drawing</dt><dd><a href={assetUrl(part.diagramRefs[0])} download>Dimensioned schematic SVG</a></dd></>}
+          {source && <><dt>Terminology source</dt><dd><a href={sourceTrace.url}>Rockwell transcript, p. {sourceTrace.page}, ¶{source.paragraph}</a></dd></>}
         </dl>
-        {part.equations.length > 0 && <><h3>Governing relations</h3><ul className="equation-list">{part.equations.map(eq => <li key={eq}>{eq}</li>)}</ul><a href="#/simulation">Related simulations</a></>}
+        {part.equations.length > 0 && <><h3>Governing relations</h3><ul className="equation-list">{part.equations.map(eq => <li key={eq}>{eq}</li>)}</ul><a href={machine.href('simulation')}>Related simulations</a></>}
       </section>
       <section className="panel article-panel full-reference">
         <h2>Interface register</h2>
         <div className="table-scroll"><table><thead><tr><th scope="col">Type</th><th scope="col">Related part</th><th scope="col">Interface</th></tr></thead>
           <tbody>{links.map(link => { const id=link.to===part.id ? link.from : link.to; return <tr key={link.id}>
-            <td>{link.kind}</td><td><a href={`#/component/${id}`}>{id} · {partById.get(id)?.name}</a></td><td>{link.label}</td></tr> })}</tbody>
+            <td>{link.kind}</td><td><a href={machine.href(`component/${id}`)}>{id} · {partById.get(id)?.name}</a></td><td>{link.label}</td></tr> })}</tbody>
         </table></div>
-        {part.safetyFlags.length > 0 && <p><a href="#/engineering/safety">Safety classification</a> · {part.safetyFlags.join(' · ')}</p>}
+        {part.safetyFlags.length > 0 && <p><a href={machine.href('engineering/safety')}>Safety classification</a> · {part.safetyFlags.join(' · ')}</p>}
       </section>
     </article>
   </>
 }
 
 export function Catalog() {
+  const machine=useMachine()
+  const {parts,assemblies}=machine.registry
+  const bomUrl=machine.key==='te01'?teBom:assetUrl('models/re01/bom.csv')
   const [query, setQuery] = useState('')
   const [group, setGroup] = useState('')
   const rows = parts.filter(part => (!group || part.assemblyId === group) &&
     `${part.id} ${part.name} ${part.proposedSpecification}`.toLowerCase().includes(query.trim().toLowerCase()))
   return <>
-    <PageHeader type="CANONICAL REGISTRY" title="Parts catalog" description="Preliminary bill of materials and engineering records." />
+    <PageHeader type="CANONICAL REGISTRY" title="Component Register" description="Preliminary bill of materials and engineering records." />
     <div className="catalog-toolbar">
       <label className="tree-search"><Search size={15} /><input type="search" aria-label="Search parts catalog" placeholder="Part ID, name or specification"
         value={query} onChange={event => setQuery(event.target.value)} /></label>
       <label>Assembly <select value={group} onChange={event => setGroup(event.target.value)}><option value="">All assemblies</option>
         {assemblies.map(a => <option key={a.id} value={a.id}>{a.shortName}</option>)}</select></label>
-      <a className="secondary-button" href={bomUrl} download="TE01_BOM.csv"><Download size={14} /> Download BOM</a>
+      <a className="secondary-button" href={bomUrl} download={`${machine.code}-BOM.csv`}><Download size={14} /> Download BOM</a>
     </div>
     <div className="panel table-scroll"><table className="catalog-table"><thead><tr>
       <th scope="col">Part ID</th><th scope="col">Component</th><th scope="col">Qty</th><th scope="col">Assembly</th>
       <th scope="col">Candidate specification</th><th scope="col">Verification</th></tr></thead>
       <tbody>{rows.map(part => <tr key={part.id}><td className="mono">{part.id}</td>
-        <td><a href={`#/component/${part.id}`}>{part.name} <ArrowUpRight size={12} /></a></td>
+        <td><a href={machine.href(`component/${part.id}`)}>{part.name} <ArrowUpRight size={12} /></a></td>
         <td>{part.quantity}</td><td>{part.assemblyId}</td><td>{part.proposedSpecification}</td><td>{part.verification}</td></tr>)}
       </tbody></table>{rows.length===0 && <p className="empty-tree">No component matches this search.</p>}</div>
   </>
 }
 
 function FunctionalRegister() {
+  const machine=useMachine()
+  const {assemblies,assemblyById,partById}=machine.registry
+  const groups=machine.key==='te01'?functionalGroups:assemblies.map(a=>({id:a.id,name:a.name,assemblies:[a.id],interfaces:[]}))
+
   return <div className="reference-grid functional-list">
-    {functionalGroups.map(group => <section className="panel article-panel" key={group.id}>
+    {groups.map(group => <section className="panel article-panel" key={group.id}>
       <div className="eyebrow">{group.id}</div><h3>{group.name}</h3>
       <p>{group.assemblies.map(id=>assemblyById.get(id)?.name).join(' · ')}</p>
       <div className="ref-links">{[...new Set([...group.assemblies.flatMap(id=>assemblyById.get(id)?.partIds ?? []),...group.interfaces])].map(id=>
-        <a key={id} href={`#/component/${id}`} title={partById.get(id)?.name}>{id}</a>)}</div>
+        <a key={id} href={machine.href(`component/${id}`)} title={partById.get(id)?.name}>{id}</a>)}</div>
     </section>)}
   </div>
 }
 
 function DownloadPage() {
+  const machine=useMachine()
+  const bomUrl=machine.key==='te01'?teBom:assetUrl('models/re01/bom.csv')
+  const reports=machine.key==='te01'?teReports:reReports
+
   return <div className="download-list">
-    <a className="panel download-row" href={bomUrl} download="TE01_BOM.csv"><FileText size={19} /><div><b>Preliminary BOM · CSV</b><p>Canonical parts, quantities, candidate specifications and validation obligations.</p></div><Download size={17} /></a>
-    {reports.map(([name,file,description]) => <a className="panel download-row" key={file} href={asset(file)} download>
+    <a className="panel download-row" href={bomUrl} download={`${machine.code}-BOM.csv`}><FileText size={19} /><div><b>Preliminary BOM · CSV</b><p>Canonical parts, quantities, candidate specifications and validation obligations.</p></div><Download size={17} /></a>
+    {reports.map(([name,file,description]) => <a className="panel download-row" key={file} href={assetUrl(`${machine.assetFolder}/${file}`)} download>
       <FileText size={19} /><div><b>{name}</b><p>{description}</p></div><Download size={17} /></a>)}
   </div>
 }
@@ -146,12 +200,13 @@ interface ReportData {
 }
 
 function ValidationResults() {
+  const {assetFolder}=useMachine()
   const [data,setData] = useState<ReportData | null>(null)
   const [error,setError] = useState(false)
   useEffect(() => {
     const controller = new AbortController()
     const load = async (name:string) => {
-      const response = await fetch(asset(name),{signal:controller.signal})
+      const response = await fetch(assetUrl(`${assetFolder}/${name}`),{signal:controller.signal})
       if (!response.ok) throw new Error('Verification report unavailable')
       return response.json()
     }
@@ -159,7 +214,7 @@ function ValidationResults() {
       .then(([geometry,numerical]) => setData({geometry,numerical}))
       .catch(() => { if (!controller.signal.aborted) setError(true) })
     return () => controller.abort()
-  }, [])
+  }, [assetFolder])
   if (error) return <p role="status">Verification reports are unavailable.</p>
   if (!data) return <p role="status">Loading verification results…</p>
   const observation = (value:unknown):string =>
@@ -184,9 +239,12 @@ function ValidationResults() {
 }
 
 function Calculations() {
-  const [force,setForce] = useState(baseline.forceN)
-  const [rpm,setRpm] = useState(baseline.rpm)
-  const output = useMemo(()=>screening({...baseline,forceN:force,rpm}),[force,rpm])
+  const machine=useMachine()
+  const assumption=useMemo(()=>machine.key==='re01'?{...baseline,diameterM:.012,spanM:.164,fromLeftM:.082,forceN:44,
+    torqueNm:.34,rotorMassKg:.34,rotorRadiusM:.063,bearingRatingN:1500,bearingLoadN:50,rpm:1550}:baseline,[machine.key])
+  const [force,setForce] = useState(assumption.forceN)
+  const [rpm,setRpm] = useState(assumption.rpm)
+  const output = useMemo(()=>screening({...assumption,forceN:force,rpm}),[assumption,force,rpm])
   const rows: [string,number,string,string][] = [
     ['Bearing reactions',output.left,'N (left)','Rₐ = Fb/L'],
     ['Bearing reactions',output.right,'N (right)','Rᵦ = Fa/L'],
@@ -208,8 +266,8 @@ function Calculations() {
   return <article className="panel article-panel doc-prose">
     <h2>Shaft and support screening</h2><p>Illustrative assumptions and closed-form results. The model represents a round, simply supported shaft with a centered load. The calculation excludes fatigue, stress concentration, support compliance and material design allowables.</p>
     <div className="calc-inputs"><label>Transverse load · {force} N<input type="range" min="1" max="100" value={force} onChange={e=>setForce(Number(e.target.value))} /></label>
-      <label>Constant speed · {rpm} rpm<input type="range" min="300" max="3000" step="25" value={rpm} onChange={e=>setRpm(Number(e.target.value))} /></label></div>
-    <p>Assumed basis · 8 mm shaft, 96 mm span, 200 GPa elastic modulus, 77 GPa shear modulus, 0.16 kg rotor, 1,000 N bearing rating and 35 N equivalent bearing load.</p>
+      <label>Constant speed · {rpm} rpm<input type="range" min="300" max={machine.speed[1]} step="25" value={rpm} onChange={e=>setRpm(Number(e.target.value))} /></label></div>
+    <p>Assumed basis · {assumption.diameterM*1000} mm shaft, {assumption.spanM*1000} mm span, 200 GPa elastic modulus, 77 GPa shear modulus, {assumption.rotorMassKg} kg rotor, {assumption.bearingRatingN} N bearing rating and {assumption.bearingLoadN} N equivalent bearing load.</p>
     <div className="table-scroll"><table><thead><tr><th scope="col">Screen</th><th scope="col">Governing relation</th><th scope="col">Calculated value</th></tr></thead>
       <tbody>{rows.map(([name,value,unit,eq])=><tr key={eq}><td>{name}</td><td className="mono">{eq}</td><td>{Number(value.toPrecision(4))} {unit}</td></tr>)}</tbody>
     </table></div>
@@ -217,20 +275,22 @@ function Calculations() {
 }
 
 export default function Reference({ section }: { section?: string }) {
+  const machine=useMachine()
+  const documents=machine.key==='te01'?teDocuments:reDocuments
   const doc = documents.find(item => item[0] === section) ?? documents[0]
   const [slug, title, content] = doc
   return <>
     <PageHeader type="ENGINEERING REFERENCE" title={title} description="Design basis, interfaces, drawings and verification evidence." />
     <nav className="document-tabs" aria-label="Engineering documents">{documents.map(([key,label])=>
-      <a key={key} href={`#/engineering/${key}`} aria-current={slug===key?'page':undefined}>{label}</a>)}</nav>
+      <a key={key} href={machine.href(`engineering/${key}`)} aria-current={slug===key?'page':undefined}>{label}</a>)}</nav>
     {slug === 'downloads' ? <DownloadPage /> : slug === 'calculations' ? <Calculations /> :
       <article className="panel article-panel doc-prose">
         <Markdown remarkPlugins={[remarkGfm]} components={{h1:props=><h2>{props.children}</h2>,
           table:props=><div className="table-scroll"><table>{props.children}</table></div>}}>{content}</Markdown>
-        {slug === 'validation' && <><ValidationResults /><div className="document-tabs"><a href={asset('validation.json')} download><ClipboardCheck size={14} /> Geometry results</a>
-          <a href={asset('numerical-validation.json')} download><ClipboardCheck size={14} /> Numerical results</a></div></>}
-        {slug === 'overview' && <div className="document-tabs"><a href="#/explorer"><Box size={14} /> Open model <ArrowRight size={14} /></a>
-          <a href="#/diagnostics">Diagnostic replay <ArrowRight size={14} /></a></div>}
+        {slug === 'validation' && <><ValidationResults /><div className="document-tabs"><a href={assetUrl(`${machine.assetFolder}/validation.json`)} download><ClipboardCheck size={14} /> Geometry results</a>
+          <a href={assetUrl(`${machine.assetFolder}/numerical-validation.json`)} download><ClipboardCheck size={14} /> Numerical results</a></div></>}
+        {slug === 'overview' && <div className="document-tabs"><a href={machine.href('explorer')}><Box size={14} /> Open model <ArrowRight size={14} /></a>
+          <a href={machine.href('diagnostics')}>Diagnostic replay <ArrowRight size={14} /></a></div>}
       </article>}
     {slug === 'overview' && <FunctionalRegister />}
   </>

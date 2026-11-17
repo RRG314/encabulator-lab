@@ -7,3 +7,9 @@
 - Implemented preliminary FreeCAD/OpenCascade geometry, neutral exports and 22 drawing review sheets.
 - Added ten deterministic studies, diagnostic fault replay and published digital verification results.
 - Configured GitHub Pages deployment.
+
+## 0.2.0
+
+- Added the independently parametrized Retro Encabulator RE-01, its registry, reference solids and operating studies.
+- Preserved the Turbo Encabulator TE-01 and enhanced its CAD, service metadata and operating console.
+- Added machine comparison, source traceability, light workbench finishes and contribution tooling.

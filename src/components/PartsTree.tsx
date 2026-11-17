@@ -1,12 +1,14 @@
 import { Box, ChevronDown, ChevronRight, Eye, EyeOff, Layers, Search, X } from 'lucide-react'
 import { useState } from 'react'
-import { assemblies, partById } from '../data'
+import { useMachine } from '../machines/context'
 import type { AssemblyId } from '../schemas/part'
 
 export function PartsTree({ selected, onSelect, scope, onScope, hidden, toggleHidden }: {
   selected: string, onSelect: (id: string) => void, scope: AssemblyId | null,
   onScope: (id: AssemblyId | null) => void, hidden: ReadonlySet<string>, toggleHidden: (id: string) => void,
 }) {
+  const machine=useMachine()
+  const {assemblies,partById}=machine.registry
   const [query, setQuery] = useState('')
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
   const normalized = query.trim().toLowerCase()
@@ -16,7 +18,7 @@ export function PartsTree({ selected, onSelect, scope, onScope, hidden, toggleHi
   }
   const count = assemblies.reduce((total, assembly) => total + assembly.partIds.filter(matches).length, 0)
   return <aside className="tree panel" aria-label="Assembly hierarchy">
-    <div className="panel-title"><Layers size={16} /><h2>Assembly tree</h2><span className="count">09</span></div>
+    <div className="panel-title"><Layers size={16} /><h2>Assembly hierarchy</h2><span className="count">{String(assemblies.length).padStart(2,'0')}</span></div>
     <div className="tree-search">
       <Search size={15} /><input type="search" aria-label="Search components" placeholder="Find a part or ID…" value={query}
         onChange={event => setQuery(event.target.value)} />
@@ -24,13 +26,13 @@ export function PartsTree({ selected, onSelect, scope, onScope, hidden, toggleHi
     </div>
     <div className="tree-body">
       <button className={scope ? 'tree-root' : 'tree-root active'} type="button" onClick={() => onScope(null)}>
-        <Box size={16} /><span>TE-01 Assembly</span><small>ROOT</small>
+        <Box size={16} /><span>{machine.code} · Complete assembly</span>
       </button>
       {count === 0 && <p className="empty-tree">No component matches this search.</p>}
       {assemblies.map(assembly => {
         const ids = assembly.partIds.filter(matches)
         if (!ids.length && normalized) return null
-        const open = normalized ? true : expanded[assembly.id] ?? (assembly.id === 'HMA' || assembly.partIds.includes(selected))
+        const open = normalized ? true : expanded[assembly.id] ?? (assembly.id === 'HMA' || assembly.id === 'RE-300' || assembly.partIds.includes(selected))
         return <div className="tree-assembly" key={assembly.id}>
           <div className={scope === assembly.id ? 'tree-group scoped' : 'tree-group'}>
             <button type="button" aria-expanded={open}

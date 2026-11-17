@@ -3,14 +3,20 @@ import assemblyRows from '../data/assemblies.json'
 import linkRows from '../data/connections.json'
 import { assembliesSchema, connectionsSchema, partsSchema } from './schemas/part'
 
-export const parts = partsSchema.parse(partRows)
-export const assemblies = assembliesSchema.parse(assemblyRows)
-export const connections = connectionsSchema.parse(linkRows)
-export const partById = new Map(parts.map(part => [part.id, part]))
-export const assemblyById = new Map(assemblies.map(assembly => [assembly.id, assembly]))
-export const linksFor = (id: string) => connections.filter(link => link.from === id || link.to === id)
+export function registry(partInput: unknown, assemblyInput: unknown, linkInput: unknown) {
+  const parts = partsSchema.parse(partInput)
+  const assemblies = assembliesSchema.parse(assemblyInput)
+  const connections = connectionsSchema.parse(linkInput)
+  return { parts, assemblies, connections, partById: new Map(parts.map(part => [part.id, part])),
+    assemblyById: new Map(assemblies.map(assembly => [assembly.id, assembly])),
+    linksFor: (id: string) => connections.filter(link => link.from === id || link.to === id) }
+}
 
-export function integrityErrors(): string[] {
+export const teRegistry = registry(partRows, assemblyRows, linkRows)
+export const { parts, assemblies, connections, partById, assemblyById, linksFor } = teRegistry
+
+export function integrityErrors(dataset = teRegistry): string[] {
+  const { parts, assemblies, connections, partById, linksFor } = dataset
   const errors: string[] = []
   const checkUnique = (ids: string[], label: string) => {
     if (new Set(ids).size !== ids.length) errors.push(`Duplicate ${label}`)

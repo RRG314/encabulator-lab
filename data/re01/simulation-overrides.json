@@ -1,0 +1,12 @@
+{
+  "rotor": {"inertia": 0.006, "torque": 0.32, "drag": 0.0007, "aero": 1.6, "load": 0.035},
+  "unbalance": {"mass": 2, "radius": 35, "rpm": 1550},
+  "vibration": {"mass": 1.45, "stiffness": 33000, "damping": 35, "rpm": 1550, "unbalance": 6},
+  "torsion": {"j1": 0.006, "j2": 0.015, "stiffness": 6, "damping": 0.05, "torque": 0.3},
+  "electrical": {"voltage": 48, "rpm": 1550, "duty": 72, "resistance": 3.1, "kt": 0.112},
+  "thermal": {"capacity": 140, "conductance": 0.70, "motor": 22, "controller": 5, "fan": 72},
+  "phase": {"freq": 26, "sample": 500, "offset": 32},
+  "ac": {"inductance": 36, "capacitance": 52},
+  "flow": {"freeFlow": 27, "head": 95, "restriction": 0.315, "rpm": 1550},
+  "integrated": {"voltage": 48, "rpm": 1550, "load": 0.035, "fan": 72}
+}

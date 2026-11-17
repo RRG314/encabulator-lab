@@ -1,5 +1,7 @@
 import type { SimulationId } from '../schemas/simulation'
 import { rpmToRad } from './numerics'
+import { automate, crankKinematics, pumpPoint, reduction } from './automation'
+import type { MachineKey } from '../machines/profiles'
 import { syntheticPhase } from './phase'
 import { acPhase, drive, flow, plant } from './plant'
 import type { Fault } from './plant'
@@ -15,7 +17,7 @@ const fmt = (n:number, units = '', precision = 2) => `${n.toFixed(precision)}${u
 const series = (name:string,data:Series['data'],color?:string):Series => ({name,data,color})
 const range = (max:number) => Array.from({length:121},(_,i) => max*i/120)
 
-export function study(id:SimulationId, p:Record<string,number>, fault:Fault, dropout:boolean):Study {
+export function study(id:SimulationId, p:Record<string,number>, fault:Fault, dropout:boolean, machine:MachineKey='te01'):Study {
   switch (id) {
     case 'rotor': {
       const points = rotor({inertia:p.inertia,torque:p.torque,drag:p.drag,aero:p.aero*1e-6,load:p.load})
@@ -92,15 +94,40 @@ export function study(id:SimulationId, p:Record<string,number>, fault:Fault, dro
           chart('Operating pressure','Fan command (%)','Pa',duty,series('Pressure rise',duty.map(v=>model(v/100).pressure)))]}
     }
     case 'integrated': {
-      const points=plant(p.voltage,p.rpm,p.load,p.fan/100,fault)
+      const re=machine==='re01'
+      const retro=re?automate({run:true,rpm:p.rpm,voltage:p.voltage,fan:p.fan/100,fault,pressureHeadKPa:p.head,loadNm:p.load}):null
+      const points=retro??plant(p.voltage,p.rpm,p.load,p.fan/100,fault)
       const last=points.at(-1)!
       return {telemetry:points,readings:[['End state',last.inhibited ? 'Drive inhibited' : 'Drive enabled'],['End speed',fmt(last.rpm,'rpm',0)],
-        ['Motor temperature',fmt(last.motor,'°C')],['Energy residual',fmt(last.auditJ,'J',6)]],
+        ['Motor temperature',fmt(last.motor,'°C')],['Energy residual',fmt(last.auditJ,'J',6)],
+        ...(retro?[["Water delivery",fmt(retro.at(-1)!.waterFlow*60000,'L/min',3)] as [string,string]]:[])],
         charts:[chart('Shaft speed','Time (s)','rpm',points.map(v=>v.t),series('Calculated rotor speed',points.map(v=>v.rpm))),
           chart('DC current','Time (s)','A',points.map(v=>v.t),series('Bus current',points.map(v=>v.current))),
           chart('Thermal response','Time (s)','°C',points.map(v=>v.t),series('Motor',points.map(v=>v.motor)),
-            series('Controller',points.map(v=>v.controller),'#8ec8e1'))],
+            series('Housing/controller',points.map(v=>v.controller),'#427a96')),
+          ...(retro?[chart('Water delivery','Time (s)','L/min',retro.map(v=>v.t),series('Cycle average',retro.map(v=>v.waterFlow*60000)))]:[])],
         note:'Fault injection begins at simulation time 3 s. The energy residual compares integrated DC input, dissipated and exported work, and stored rotational energy.'}
+    }
+    case 'crank': {
+      const omega=rpmToRad(p.rpm)/reduction
+      const cycle=range(2*Math.PI)
+      const time=cycle.map(angle=>angle/omega)
+      const samples=cycle.map(angle=>crankKinematics(angle,omega))
+      const pump=pumpPoint(rpmToRad(p.rpm),p.head)
+      return {readings:[['Nominal stroke','24 mm'],['Flow',fmt(pump.q*60000,'L/min',3)],['Delivery pressure',fmt(pump.pressure/1000,'kPa')],
+        ['Fluid power',fmt(pump.work,'W',4)],['Pressure load',fmt(pump.pistonForceN,'N',3)]],
+        charts:[chart('Crosshead stroke','Time (s)','mm',time,series('Displacement',samples.map(point=>point.positionMm))),
+          chart('Crosshead velocity','Time (s)','mm/s',time,series('Velocity',samples.map(point=>point.velocityMmS))),
+          chart('Crosshead acceleration','Time (s)','mm/s²',time,series('Acceleration',samples.map(point=>point.accelerationMmS2)))]}
+    }
+    case 'winding': {
+      const tau=p.l/1000/p.r
+      const settled=(p.voltage-.112*rpmToRad(p.rpm))/p.r
+      const t=range(6*tau)
+      return {readings:[['Time constant',fmt(tau*1000,'ms')],['Steady winding current',fmt(settled,'A')],
+        ['Steady winding loss',fmt(settled**2*p.r,'W')]],
+        charts:[chart('Inductive current response','Time (ms)','A',t.map(value=>value*1000),
+          series('Equivalent winding current',t.map(value=>-settled*Math.expm1(-value/tau))))]}
     }
   }
 }

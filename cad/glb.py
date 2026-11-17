@@ -11,7 +11,7 @@ def vector(value):
 
 def write_glb(path, components, placements, fraction=0):
     data = bytearray()
-    document = {'asset':{'version':'2.0','generator':'TE-01 FreeCAD/OpenCascade tessellation'},'scene':0,
+    document = {'asset':{'version':'2.0','generator':'FreeCAD/OpenCascade encabulator tessellation'},'scene':0,
                 'scenes':[{'nodes':[]}], 'nodes':[], 'meshes':[], 'materials':[],
                 'bufferViews':[], 'accessors':[], 'buffers':[]}
     for title, rgb, metal, rough, alpha, _ in MATERIALS.values():

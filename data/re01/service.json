@@ -1,0 +1,590 @@
+{
+  "RE-001": {
+    "failureMode": "Deck bending or joint slip",
+    "tool": "5 mm hex key · candidate M6 bed hardware",
+    "source": "amulite",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      488.0,
+      351.0,
+      10.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-002": {
+    "failureMode": "Rail bow or inadequate clamping",
+    "tool": "5 mm hex key · candidate M6 rail hardware",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      427.0,
+      25.0,
+      15.8
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-003": {
+    "failureMode": "Compression set or uneven load",
+    "tool": "13 mm spanner · candidate foot locknut",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      38.0,
+      38.0,
+      16.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-004": {
+    "failureMode": "Thread pullout or loss of preload",
+    "tool": "5 mm hex key · candidate M6 socket head",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      12.8,
+      12.8,
+      11.5
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-005": {
+    "failureMode": "Fatigue at shoulder or runout",
+    "tool": "Dial indicator · 0.01 mm graduation candidate",
+    "source": "waneshaft",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      280.0,
+      16.0,
+      16.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-006": {
+    "failureMode": "Axial creep or clamp loosening",
+    "tool": "3 mm hex key · candidate M4 clamp",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      6.0,
+      22.0,
+      23.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-007": {
+    "failureMode": "Fretting, imbalance or hub slip",
+    "tool": "4 mm hex key · candidate M5 keeper screw",
+    "source": "marzlevanes",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      54.0,
+      48.0,
+      48.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-008": {
+    "failureMode": "Root fatigue or loss of retention",
+    "tool": "3 mm hex key · candidate M4 blade keeper",
+    "source": "marzlevanes",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      49.434,
+      17.896,
+      43.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-009": {
+    "failureMode": "Keeper migration or incorrectly matched balance correction",
+    "tool": "4 mm hex key · candidate M5 ring screws",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      3.0,
+      50.0,
+      50.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-010": {
+    "failureMode": "Contamination, spalling or overheated fit",
+    "tool": "Bearing puller · Ø28 mm envelope",
+    "source": "bearings",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      8.0,
+      28.0,
+      28.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-011": {
+    "failureMode": "Bore skew or pedestal flexure",
+    "tool": "6 mm hex key · candidate M8 pedestal hardware",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      44.0,
+      83.0,
+      93.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-012": {
+    "failureMode": "Seal drag or contaminated running gap",
+    "tool": "4 mm hex key · candidate M5 end cap",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      4.9,
+      40.0,
+      40.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-013": {
+    "failureMode": "Impeller rubbing or fan stall",
+    "tool": "3 mm hex key · candidate hub fixing",
+    "source": "fan",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      20.0,
+      66.967,
+      66.292
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-014": {
+    "failureMode": "Guard fatigue or restricted inlet",
+    "tool": "4 mm hex key · candidate M5 grille screws",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      43.8,
+      94.0,
+      94.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-015": {
+    "failureMode": "Filter blockage or bypass",
+    "tool": "PH2 screwdriver · candidate quarter-turn retainer",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      12.0,
+      89.0,
+      89.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-016": {
+    "failureMode": "Frame fracture or lost coverage",
+    "tool": "5 mm hex key · candidate M6 guard joints",
+    "source": "casing",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      116.0,
+      150.0,
+      158.5
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-017": {
+    "failureMode": "Crazing, loose retainers or damaged handle",
+    "tool": "4 mm hex key · candidate M5 cover screws",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      100.0,
+      141.0,
+      13.5
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-018": {
+    "failureMode": "Hinge play or failed interlock actuation",
+    "tool": "4 mm hex key · candidate hinge fasteners",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      100.5,
+      10.0,
+      137.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-019": {
+    "failureMode": "Interturn fault or insulation breakdown",
+    "tool": "Milliohm meter · four-wire range required",
+    "source": "winding",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      40.0,
+      60.6,
+      60.6
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-020": {
+    "failureMode": "Slot damage or loss of lamination retention",
+    "tool": "Internal bore gauge · nominal Ø44 mm bore",
+    "source": "stator",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      40.0,
+      70.0,
+      70.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-021": {
+    "failureMode": "Motor mount distortion or cooling obstruction",
+    "tool": "5 mm hex key · candidate terminal cover screws",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      63.0,
+      86.843,
+      89.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-022": {
+    "failureMode": "Rotor eccentricity or magnet retention fault",
+    "tool": "Nonmagnetic fixture · method pending",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      69.0,
+      41.6,
+      41.6
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-023": {
+    "failureMode": "Clamp slip or excessive coupling travel",
+    "tool": "4 mm hex key · candidate M5 radial clamp",
+    "source": "spring",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      15.0,
+      42.0,
+      42.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-024": {
+    "failureMode": "Elastomer shear or engagement of the travel stop",
+    "tool": "Snap-ring pliers · nominal 34 mm ring envelope",
+    "source": "spring",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      9.0,
+      40.0,
+      40.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-025": {
+    "failureMode": "Impact at travel stops or loosening",
+    "tool": "4 mm hex key · candidate M5 clamp screw",
+    "source": "spring",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      10.0,
+      42.0,
+      42.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-026": {
+    "failureMode": "Loose conductor or insulation failure",
+    "tool": "2.5 mm insulated slotted driver · terminal design candidate",
+    "source": "winding",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      29.65,
+      11.0,
+      11.65
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-027": {
+    "failureMode": "Stale timebase or signal saturation",
+    "tool": "PH2 screwdriver · candidate cover",
+    "source": "grammeters",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      53.0,
+      34.0,
+      26.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-028": {
+    "failureMode": "Sensor loosening, drift or thermal lag",
+    "tool": "10 mm spanner · candidate M6 sensor flats",
+    "source": "grammeters",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      10.0,
+      8.66,
+      17.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-029": {
+    "failureMode": "Lost index, clearance error or timing jitter",
+    "tool": "2.5 mm hex key · candidate M3 sensor clamp",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      20.0,
+      18.0,
+      23.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-030": {
+    "failureMode": "Invalid coherence or common-mode overload",
+    "tool": "PH2 screwdriver · candidate shield cover",
+    "source": "phase",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      46.0,
+      31.0,
+      17.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-031": {
+    "failureMode": "Pivot wear or fatigue",
+    "tool": "10 mm spanner · candidate 6 mm pivot hardware",
+    "source": "dingle",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      84.0,
+      16.0,
+      5.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-032": {
+    "failureMode": "Pin loosening or excessive bearing load",
+    "tool": "5 mm hex key · candidate crank retainer",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      46.0,
+      46.0,
+      18.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-033": {
+    "failureMode": "Binding or misadjusted stop",
+    "tool": "4 mm hex key · candidate rail bolts",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      118.0,
+      28.0,
+      15.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-034": {
+    "failureMode": "Scoring or loss of linear alignment",
+    "tool": "10 mm spanner · candidate pivot nut",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      39.5,
+      26.0,
+      13.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-035": {
+    "failureMode": "Cracked mounting flange or insufficient separation",
+    "tool": "5 mm hex key · candidate M6 tray bolts",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      174.0,
+      57.0,
+      14.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-036": {
+    "failureMode": "Union leakage or air accumulation",
+    "tool": "17 mm open-end spanner · candidate union flats",
+    "source": "tremi",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      35.0,
+      31.0,
+      16.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-037": {
+    "failureMode": "Backflow or poppet fouling",
+    "tool": "19 mm spanner · candidate union cap",
+    "source": "tremi",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      26.0,
+      24.0,
+      24.5
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-038": {
+    "failureMode": "Pressure tap blockage or poor sealing",
+    "tool": "17 mm spanner · candidate tubing compression nut",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      34.0,
+      18.0,
+      27.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-039": {
+    "failureMode": "Overcurrent, thermal trip or command timeout",
+    "tool": "4 mm hex key · candidate M5 cold-plate mounting",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      69.0,
+      47.0,
+      34.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-040": {
+    "failureMode": "Poor interruption capacity or loose termination",
+    "tool": "3 mm insulated slotted driver · terminal design candidate",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      46.0,
+      43.0,
+      39.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-041": {
+    "failureMode": "Door misalignment or poor airflow",
+    "tool": "5 mm hex key · candidate M6 cabinet mounting",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      126.0,
+      49.9,
+      159.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-042": {
+    "failureMode": "Latch damage or detached hinge",
+    "tool": "Triangular service key · profile pending",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      120.5,
+      13.5,
+      151.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-043": {
+    "failureMode": "Controller watchdog or channel fault",
+    "tool": "2.5 mm insulated slotted driver · candidate spring terminal",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      92.0,
+      17.3,
+      37.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-044": {
+    "failureMode": "Overload or restricted cooling",
+    "tool": "PH2 screwdriver · candidate cover screws",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      80.0,
+      48.0,
+      30.85
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-045": {
+    "failureMode": "Faulted contacts or unintended restart",
+    "tool": "22 mm panel locknut spanner · candidate body",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      26.0,
+      26.0,
+      29.5
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-046": {
+    "failureMode": "Chafe, broken shield or wrong connector mate",
+    "tool": "Multimeter · continuity and isolation functions",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      344.2,
+      176.2,
+      93.2
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-047": {
+    "failureMode": "Misadjusted engagement or wiring fault",
+    "tool": "3 mm hex key · candidate switch mount",
+    "source": "automation",
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      25.0,
+      14.5,
+      13.0
+    ],
+    "classification": "Catalog envelope candidate"
+  },
+  "RE-048": {
+    "failureMode": "Loose guard or failed clearance to slider",
+    "tool": "4 mm hex key · candidate guard fasteners",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      153.0,
+      44.7,
+      10.0
+    ],
+    "classification": "Custom design reference"
+  },
+  "RE-049": {
+    "failureMode": "Leakage or unstable inlet flow",
+    "tool": "4 mm hex key · candidate duct flange screws",
+    "source": null,
+    "massBasis": "Calculated from schematic component volumes and generic material densities.",
+    "envelopeMm": [
+      31.5,
+      86.0,
+      86.0
+    ],
+    "classification": "Custom design reference"
+  }
+}

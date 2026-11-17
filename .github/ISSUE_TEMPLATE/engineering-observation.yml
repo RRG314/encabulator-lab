@@ -1,0 +1,27 @@
+name: Engineering observation
+description: Report a geometry, reference, numerical, or documentation discrepancy.
+title: "[Engineering] "
+body:
+  - type: dropdown
+    id: model
+    attributes:
+      label: Machine
+      options:
+        - Turbo Encabulator TE-01
+        - Retro Encabulator RE-01
+        - Shared workbench
+    validations:
+      required: true
+  - type: input
+    id: identity
+    attributes:
+      label: Part, assembly, or study and revision
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Expected result, observed result and reproducible steps
+      description: Include units and a public reference where available. Remove personal details, credentials and private project content.
+    validations:
+      required: true

@@ -1,6 +1,7 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Box, Camera, Crosshair, Eye, Grid2X2, Layers, Maximize, Move, Ruler, ScanLine, Settings2 } from 'lucide-react'
-import { assemblies, partById, parts } from '../data'
+import { useMachine } from '../machines/context'
+import { BenchControls, useBench } from '../components/BenchControls'
 import type { AssemblyId } from '../schemas/part'
 import { PartsTree } from '../components/PartsTree'
 import { PartInspector } from '../components/PartInspector'
@@ -26,11 +27,16 @@ function useMedia(query: string) {
 
 export function Explorer({ selected, onSelect, telemetry }: { selected: string, onSelect: (id: string) => void,
   telemetry?: Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm'> }) {
+  const machine=useMachine()
+  const { assemblies,partById,parts }=machine.registry
+  const bench=useBench()
+  const [explodeScope,setExplodeScope]=useState('all')
   const [amount, setAmount] = useState(0)
   const [layer, setLayer] = useState<Layer>('Model')
   const [preset, setPreset] = useState<Preset>('Iso')
   const snapshot = useRef<ViewBookmark>(null)
   const [recalled, setRecalled] = useState<ViewBookmark | null>(null)
+  const [cameraFocus,setCameraFocus]=useState<string|null>(null)
   const [cameraTick, setCameraTick] = useState(0)
   const [cutaway, setCutaway] = useState<Cutaway>('Full')
   const [wireframe, setWireframe] = useState(false)
@@ -45,7 +51,6 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
   const [isolatePart, setIsolatePart] = useState(false)
   const [hidden, setHidden] = useState<Set<string>>(new Set())
   const [cadStatus, setCadStatus] = useState<'schematic' | 'cad'>('schematic')
-  const [cadPreference, setCadPreference] = useState<boolean | null>(null)
   const [failure, setFailure] = useState(() => !supportsWebGL())
   const [animation, setAnimation] = useState<{ from: number, to: number } | null>(null)
   const [notice, setNotice] = useState('')
@@ -55,17 +60,19 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
   const reducedMotion = useMedia('(prefers-reduced-motion: reduce)')
   const part = partById.get(selected) ?? parts[0]
   const visible = useMemo(() => new Set(parts.filter(item => !hidden.has(item.id)
-    && (!assembly || item.assemblyId === assembly) && (!isolatePart || item.id === part.id)).map(item => item.id)),
-    [assembly, hidden, isolatePart, part.id])
+    && (!assembly || item.assemblyId === assembly) && (!isolatePart || item.id === part.id) && (cutaway!=='Guard off' || !machine.guard.includes(item.id))).map(item => item.id)),
+    [assembly, hidden, isolatePart, part.id, parts, cutaway, machine.guard])
   const select = (id: string) => {
     if (assembly && partById.get(id)?.assemblyId !== assembly) setAssembly(null)
+    if (cutaway==='Guard off' && machine.guard.includes(id)) setCutaway('Full')
+    if (hidden.has(id)) setHidden(previous=>new Set([...previous].filter(key=>key!==id)))
     onSelect(id)
   }
   const onFailure = useCallback(() => setFailure(true), [])
   const change = (distance: number) => { setAnimation(null); setAmount(distance) }
-  const focusCamera = (value: Preset) => { setPreset(value); setRecalled(null); setCameraTick(tick => tick + 1) }
+  const focusCamera = (value: Preset) => { setPreset(value); setCameraFocus(null); setRecalled(null); setCameraTick(tick => tick + 1) }
   const reset = () => {
-    change(0); setAssembly(null); setIsolatePart(false); setHidden(new Set()); setCutaway('Full')
+    change(0); setExplodeScope('all'); setAssembly(null); setIsolatePart(false); setHidden(new Set()); setCutaway('Full')
     setLayer('Model'); setWireframe(false); setOpacity(1); setDimensioning(false); setMeasuring(false); setPoints([]); focusCamera('Iso')
   }
   const toggleAnimation = () => {
@@ -101,16 +108,22 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
       catch { setExpanded(true) }
     }
   }
+  const scopedParts=useMemo(()=>explodeScope==='all'?null:new Set(machine.registry.assemblyById.get(explodeScope)?.partIds ?? []),
+    [explodeScope,machine.registry])
+  const simulated=bench.reading
   const viewerProps: ViewerProps = {
+    machine, explosionParts:scopedParts,
     selected: part.id, onSelect: select, visible, fraction: amount / 100, isolate: Boolean(assembly || isolatePart),
-    cutaway, layer, preset, cameraTick, snapshot, recalled, measure: measuring ? position => setPoints(prev => prev.length < 2 ? [...prev,position] : [position]) : null, wireframe, opacity, perspective, labels, reducedMotion, compact,
-    onFailure, dimensioning, cadDetail: cadPreference ?? !compact, onCadStatus: setCadStatus, ...telemetry,
+    cutaway, layer, preset, cameraTick, cameraFocus, snapshot, recalled, measure: measuring ? position => setPoints(prev => prev.length < 2 ? [...prev,position] : [position]) : null, wireframe, opacity, perspective, labels, reducedMotion, compact,
+    onFailure, dimensioning, cadDetail: true, onCadStatus: setCadStatus,
+    ...(telemetry ?? ((!bench.requested.run&&simulated.rpm<1)?{}:{speedRpm:simulated.rpm,
+      fanRunning:simulated.flow>0,motorTemperature:simulated.motor,vibrationUm:simulated.vibrationUm})),
   }
   const fallback = <ViewerFallback {...viewerProps} />
   return <>
     <header className="page-header">
-      <div><div className="eyebrow">TE-01 / ASSEMBLY DOCUMENTATION</div><h1>Assembly Explorer</h1>
-        <p>Interactive engineering model and component reference.</p></div>
+      <div><div className="eyebrow">ASSEMBLY &amp; KINEMATICS / {machine.code}</div><h1>{machine.name} <span>{machine.code}</span></h1>
+        <p>{machine.key==='re01'?'Industrial control, rotor dynamics and reciprocating fluid delivery.':'Instrumented rotor, vibration isolation and phase estimation.'}</p></div>
       <div className="revision-mark"><span><i /> Preliminary design</span><small>REV 0.1</small></div>
     </header>
     <div className="workspace">
@@ -122,16 +135,17 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           return next
         })} />
       <section className="viewer panel" aria-label="Assembly viewport" ref={viewport} data-expanded={expanded}>
-        <div className="viewer-top"><div><Box size={16} /><h2>TE-01 Digital Twin</h2></div><span className="model-status"><i /> {cadStatus === 'cad' ? 'CAD SCHEMATIC' : 'SCHEMATIC GEOMETRY'}</span></div>
+        <div className="viewer-top"><div><Box size={16} /><h2>Assembly &amp; Kinematics</h2></div><span className="model-status"><i /> {cadStatus === 'cad' ? 'CAD SCHEMATIC' : machine.key==='re01'?'LOADING CAD':'SCHEMATIC GEOMETRY'}</span></div>
         <div className="viewport-tabs" role="group" aria-label="Model layers">
           {layers.map(value => <button key={value} type="button" aria-pressed={layer === value} onClick={() => setLayer(value)}>{value}</button>)}
         </div>
         <div className="viewport-content">
-          <div className="viewport-caption" aria-hidden="true">{assembly ? `${assembly} / ISOLATED` : isolatePart ? `${part.id} / ISOLATED` : `TE-01 / ${amount > 0 ? 'EXPLODED' : 'ASSEMBLED'}`}</div>
+          <div className="viewport-caption" aria-hidden="true">{assembly ? `${assembly} / ISOLATED` : isolatePart ? `${part.id} / ISOLATED` : `${machine.code} / ${amount > 0 ? 'EXPLODED' : 'ASSEMBLED'}`}</div>
           {failure ? fallback : <GraphicsBoundary fallback={fallback}>
             <Suspense fallback={<div className="viewer-loading">Loading assembly geometry…</div>}><Viewer3D {...viewerProps} /></Suspense>
           </GraphicsBoundary>}
-          <div className="viewport-tools" role="group" aria-label="Viewer controls">
+          {machine.key==='re01' && cadStatus==='schematic' && !failure && <div className="cad-loading">Loading Retro Encabulator CAD…</div>}
+          <div className="viewport-tools"  role="group" aria-label="Viewer controls">
             <button type="button" className="icon-button" title="Fit model" aria-label="Fit model" onClick={() => focusCamera(preset)}><Crosshair size={17} /></button>
             <button type="button" className="icon-button" title="Wireframe" aria-label="Wireframe" aria-pressed={wireframe} onClick={() => setWireframe(!wireframe)}><Grid2X2 size={16} /></button>
             <button type="button" className="icon-button" title="Show baseplate dimensions" aria-label="Show baseplate dimensions" aria-pressed={dimensioning}
@@ -147,18 +161,17 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
             </label>
             <label><Eye size={15} /> X-ray opacity<input type="range" min="0.2" max="1" step="0.05" value={opacity} onChange={event => setOpacity(Number(event.target.value))} /></label>
             <label><Camera size={15} /> Perspective<input type="checkbox" checked={perspective} onChange={event => setPerspective(event.target.checked)} /></label>
-            <label><Layers size={15} /> CAD mesh<input type="checkbox" checked={viewerProps.cadDetail} onChange={event => setCadPreference(event.target.checked)} /></label>
             <label><Box size={15} /> Callouts<input type="checkbox" checked={labels} onChange={event => setLabels(event.target.checked)} /></label>
             <label><Ruler size={15} /> Point measurement<input type="checkbox" checked={measuring} onChange={event => { setMeasuring(event.target.checked); setPoints([]) }} /></label>
             <div className="bookmark"><button type="button" onClick={() => {
               if (!snapshot.current) return
-              localStorage.setItem('te01.camera',JSON.stringify(snapshot.current)); setNotice('Camera position saved')
+              localStorage.setItem(`${machine.key}.camera`,JSON.stringify(snapshot.current)); setNotice('Camera position saved')
             }}>Save view</button>
               <button type="button" onClick={() => {
                 try {
-                  const saved = JSON.parse(localStorage.getItem('te01.camera') ?? 'null') as ViewBookmark | null
+                  const saved = JSON.parse(localStorage.getItem(`${machine.key}.camera`) ?? 'null') as ViewBookmark | null
                   if (!saved || ![...saved.position,...saved.target,saved.zoom].every(Number.isFinite)) return
-                  setPerspective(saved.perspective); setRecalled(saved); setCameraTick(tick => tick+1); setNotice('Camera position recalled')
+                  setPerspective(saved.perspective); setCameraFocus(null); setRecalled(saved); setCameraTick(tick => tick+1); setNotice('Camera position recalled')
                 } catch { setNotice('Camera position unavailable') }
               }}>Recall view</button></div>
             <span className="sr-only" role="status">{notice}</span>
@@ -166,17 +179,28 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           {measuring && <div className="measurement-readout" aria-live="polite">{points.length === 2
             ? `Schematic distance · ${Math.hypot(...points[0].map((value,i) => value-points[1][i])).toFixed(1)} mm`
             : `Select ${points.length ? 'the second point' : 'two surface points'}`}</div>}
-          {dimensioning && <div className="dimension-readout">Baseplate target · 300 × 200 mm</div>}
+          {dimensioning && <div className="dimension-readout">Baseplate target · {machine.baseMm.join(' × ')} mm</div>}
           {telemetry && <div className="diagnostic-readout">SIMULATION · {Math.round(telemetry.speedRpm ?? 0)} rpm · {telemetry.motorTemperature?.toFixed(1) ?? '—'} °C</div>}
           <div className="camera-presets" role="group" aria-label="Camera presets">
             {presets.map(value => <button key={value} aria-pressed={preset === value} type="button" onClick={() => focusCamera(value)}>{value}</button>)}
           </div>
           <div className="axes" role="group" aria-label="Machine axes, X shaft, Y transverse, Z up"><b>Z</b><i /><b>Y</b><i /><b>X</b><i /></div>
         </div>
+        <div className="assembly-actions">
+          <label>Separation scope <select value={explodeScope} onChange={event=>setExplodeScope(event.target.value)}>
+            <option value="all">Complete machine</option>{assemblies.map(item=><option key={item.id} value={item.id}>{item.shortName}</option>)}
+          </select></label>
+          <button type="button" className="text-button" onClick={reset}>Restore all components</button>
+          <small>{visible.size} / {parts.length} records visible</small>
+        </div>
         <ExplodeSlider amount={amount} change={change} running={Boolean(animation)} toggle={toggleAnimation} reset={reset} />
+        {!telemetry && <BenchControls bench={bench} onStart={reset} />}
         <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Arrow keys to pan'}</div>
       </section>
-      <PartInspector part={part} isolated={isolatePart} onIsolate={() => {
+      <PartInspector part={part} onFocus={()=>{
+        if(!visible.has(part.id)) select(part.id)
+        setCameraFocus(part.id); setRecalled(null); setCameraTick(tick=>tick+1)
+      }} isolated={isolatePart} onIsolate={() => {
         setIsolatePart(!isolatePart); setAssembly(null)
         if (hidden.has(part.id)) setHidden(previous => new Set([...previous].filter(id => id !== part.id)))
       }} />
@@ -184,8 +208,8 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
     <div className="system-cards" role="group" aria-label="Assembly design targets">
       <div><Layers /><span>Canonical assemblies</span><strong>{String(assemblies.length).padStart(2, '0')}</strong></div>
       <div><Box /><span>Component records</span><strong>{parts.length}</strong></div>
-      <div><Crosshair /><span>Rotor speed target</span><strong>300–3,000 <small>rpm</small></strong></div>
-      <div><Ruler /><span>Supply target</span><strong>24 <small>V DC</small></strong></div>
+      <div><Crosshair /><span>Rotor speed target</span><strong>{machine.speed.map(value=>value.toLocaleString('en-US')).join('–')} <small>rpm</small></strong></div>
+      <div><Ruler /><span>Supply target</span><strong>{machine.voltage} <small>V DC</small></strong></div>
     </div>
   </>
 }
