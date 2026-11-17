@@ -88,7 +88,7 @@ test('compares three registered assemblies with shared orientation and separatio
 
 test('switches between a historical CAD assembly and an original schematic record',async({page})=>{
   await page.setViewportSize({width:390,height:844})
-  await page.goto('./')
+  await page.goto('./#/explorer')
   const switcher=page.getByRole('combobox',{name:'View configuration'})
   await switcher.selectOption('magneto-2022')
   await expect(page.getByRole('heading',{name:'Magneto-Turboencabulator MT-22',level:1})).toBeVisible()

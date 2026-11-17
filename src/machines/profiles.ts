@@ -90,7 +90,9 @@ export function isMachineKey(value:string):value is MachineKey {
   return Object.hasOwn(machines,value)
 }
 export function readRoute(hash: string) {
-  const segments=hash.replace(/^#\/?/, '').split('/')
+  const path=hash.replace(/^#\/?/, '')
+  if(!path)return { model:'me01' as const, page:'home', param:undefined, view:undefined, detail:undefined }
+  const segments=path.split('/')
   const model: MachineKey = segments[0] === 're01' ? 're01' : segments[0]==='me01'?'me01':'te01'
   if (segments[0] === model) segments.shift()
   const [page,param,view,detail]=segments

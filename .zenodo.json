@@ -1,0 +1,11 @@
+{
+  "title": "Encabulator Lab",
+  "version": "0.1.0",
+  "description": "Encabulator Lab is the software and engineering archive for the Encabulation Systems Inc portal. It includes historical source records, interactive and explodable CAD assemblies, engineering drawings, and simulated electromechanical operating studies. The repository records the scope of source evidence and the verification status of each configuration.",
+  "upload_type": "software",
+  "creators": [{ "name": "Encabulator Lab contributors" }],
+  "license": "mit",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": ["electromechanical systems", "computer-aided design", "digital twin", "rotordynamics", "technical archive"]
+}

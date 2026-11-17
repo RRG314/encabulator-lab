@@ -1,14 +1,14 @@
 # Encabulator Lab
 
-An open engineering archive with **25 configurations, 35 sources, and eight explodable CAD assemblies**. Inspect original references beside reconstructed geometry, operate the models under simulated loads, and contribute new configurations or source material.
+**Encabulation Systems Inc** is the research and engineering portal for Encabulator Lab. The project includes **25 configurations, 35 sources, and eight explodable CAD assemblies**. Inspect original references beside reconstructed geometry, operate the models under simulated loads, and contribute new configurations or source material.
 
 [![Build and Pages](https://github.com/RRG314/encabulator-lab/actions/workflows/deploy.yml/badge.svg)](https://github.com/RRG314/encabulator-lab/actions/workflows/deploy.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-536975)](LICENSE)
 
-**[Open Encabulator Lab](https://rrg314.github.io/encabulator-lab/)** · [Technical archive](https://rrg314.github.io/encabulator-lab/#/archive) · [Assembly comparison](https://rrg314.github.io/encabulator-lab/#/comparison) · [Contribute a configuration](https://github.com/RRG314/encabulator-lab/issues/new?template=encabulator-configuration.yml)
+**[Open the Encabulation Systems Inc portal](https://rrg314.github.io/encabulator-lab/)** · [Technical archive](https://rrg314.github.io/encabulator-lab/#/archive) · [Assembly comparison](https://rrg314.github.io/encabulator-lab/#/comparison) · [Contribute a configuration](https://github.com/RRG314/encabulator-lab/issues/new?template=encabulator-configuration.yml)
 
 ## Inspect and operate a model
 
-1. Choose a model in **View configuration**. Use the assembly slider to separate components, the eye button for X-ray, and the source panel to compare evidence with the CAD.
+1. On the landing page, rotate or explode the interactive ME-01 Metachronic Encabulator. Select a part, then open the full workbench to keep it selected. In the workbench, use **View configuration** to switch machines or open the source comparison to review the reference evidence.
 2. Open **Test bench** and start a run. The [TE-01](https://rrg314.github.io/encabulator-lab/#/simulation) and [RE-01](https://rrg314.github.io/encabulator-lab/#/re01/simulation) benches accept brake, blower, and generator loads. RE-01 adds a crank-driven water loop. The [ME-01 laboratory](https://rrg314.github.io/encabulator-lab/#/me01/simulation) animates two shafts, variable vane pitch, and independent cooling under selectable host loads.
 3. Open **Engineering** for drawings, component records, and CAD files. Historical configurations without verified geometry retain their sources and, where available, an operating study.
 
@@ -67,4 +67,4 @@ GitHub Actions publishes the validated static build to Pages. The workflow uses 
 
 Start with the [contribution guide](CONTRIBUTING.md), [citation metadata](CITATION.cff), and [publication policy](SECURITY.md). The [engineering status](STATUS.md) records what has been verified and what remains open. Geometry and test-bench results describe preliminary digital studies. Material qualification, measured performance, containment, and manufacturing release remain open.
 
-[Version 0.3.0 draft notes](docs/releases/0.3.0.md) · [Changelog](CHANGELOG.md)
+The first planned public release is **v0.1.0**. The project uses Semantic Versioning for software releases and separate revision numbers for CAD and drawings. [Semantic Versioning](https://semver.org/) · [Draft release notes](docs/releases/0.1.0.md) · [Changelog](CHANGELOG.md) · [Zenodo archiving](docs/releases/ARCHIVING.md)

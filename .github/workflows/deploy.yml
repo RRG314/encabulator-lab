@@ -75,8 +75,8 @@ jobs:
           SITE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           site="${SITE_URL%/}"
-          index="$(curl -fsSL --retry 7 --retry-all-errors "$site/")"
-          case "$index" in *"<title>Encabulator Lab | Turbo Encabulator TE-01</title>"*) ;; *) exit 1 ;; esac
+          index="$(curl -fsSL --retry 7 --retry-all-errors "$site/?revision=${GITHUB_SHA}")"
+          case "$index" in *"<title>Encabulation Systems Inc | Research and engineering</title>"*) ;; *) exit 1 ;; esac
           curl -fsSL --retry 5 --retry-all-errors "$site/models/validation.json" > /tmp/te01-geometry.json
           curl -fsSL --retry 5 --retry-all-errors "$site/models/assembly-conformance.json" > /tmp/assembly-conformance.json
           node -e "const r=require('/tmp/assembly-conformance.json'); if (r.models.length!==8 || r.models.some(m=>m.componentSheets!==m.physicalDefinitions)) process.exit(1)"

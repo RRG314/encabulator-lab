@@ -58,6 +58,7 @@ export type ViewerProps = {
   inputAngleRad?:number
   signalLevels?: Readonly<Record<string,number>>
   linkedDirection?:Vec3
+  autoOrbit?: boolean
   onOrientation?: (direction:Vec3)=>void
   motorTemperature?: number
   fanRunning?: boolean
@@ -71,7 +72,7 @@ const presets: Record<Preset, Vec3> = {
   Iso: homeDirection, Front: [0, -1, 0], Side: [1, 0, 0], Top: [0, -0.0001, 1],
 }
 
-function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, visible, isolate, cameraTick, reducedMotion, geometries, scale, snapshot, recalled, perspective, linkedDirection, onOrientation }: ViewerProps & {
+function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, visible, isolate, cameraTick, reducedMotion, geometries, scale, snapshot, recalled, perspective, linkedDirection, onOrientation, autoOrbit }: ViewerProps & {
   geometries: ReturnType<typeof makeGeometries>, scale: RefObject<HTMLDivElement | null>
 }) {
   const { camera, gl, size, invalidate } = useThree()
@@ -102,6 +103,11 @@ function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, vis
       controls.disconnect()
     }
   }, [camera, controls, gl, invalidate, machine, onOrientation])
+  useEffect(() => {
+    controls.autoRotate = !!autoOrbit && !reducedMotion
+    controls.autoRotateSpeed = 0.42
+    invalidate()
+  }, [autoOrbit, controls, invalidate, reducedMotion])
   const initial = useRef(true)
   useLayoutEffect(() => {
     initial.current = true
@@ -145,8 +151,9 @@ function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, vis
     initial.current = false
     invalidate()
   }, [camera, controls, fraction, geometries, invalidate, preset, size, visible, cameraTick, isolate, recalled, perspective, machine, explosionParts, cameraFocus, linkedDirection])
-  useFrame(() => {
-    controls.update()
+  useFrame((_, delta) => {
+    controls.update(Math.min(delta, 0.05))
+    if (controls.autoRotate) invalidate()
     snapshot.current = { position:camera.position.toArray(), target:controls.target.toArray(),
       zoom:camera.type === 'OrthographicCamera' ? (camera as OrthographicCamera).zoom : 1, perspective }
     if (scale.current) {

@@ -1,4 +1,5 @@
 import { lazy, Suspense, useCallback, useMemo, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 import { archive, archiveCad, archiveProfile } from '../machines/archive'
 import { machineRoute, machines } from '../machines/profiles'
 import type { DisplayProfile } from '../machines/profiles'
@@ -13,32 +14,38 @@ const candidates:DisplayProfile[]=[
 ]
 const presets:Preset[]=['Iso','Front','Side','Top']
 
-export function InspectionViewport({machine,fraction,preset,cameraTick,linkedDirection,onOrientation}:{
+export function InspectionViewport({machine,fraction,preset,cameraTick,linkedDirection,onOrientation,selectedPart,onSelectPart,
+  autoOrbit=false,reducedMotion=true,opacity=1,labels=false,poster,children}:{
   machine:DisplayProfile;fraction:number;preset:Preset;cameraTick:number;linkedDirection?:Vec3;onOrientation?:(direction:Vec3)=>void
+  selectedPart?:string;onSelectPart?:(id:string)=>void;autoOrbit?:boolean;reducedMotion?:boolean;opacity?:number;labels?:boolean;poster?:string;children?:ReactNode
 }){
   const visible=useMemo(()=>new Set(machine.placements.map(p=>p.partId)),[machine])
-  const [selected,setSelected]=useState(machine.defaultPart)
+  const [localSelection,setLocalSelection]=useState(machine.defaultPart)
+  const selected=selectedPart??localSelection
   const [failed,setFailed]=useState(()=>!supportsWebGL())
   const [status,setStatus]=useState<'schematic'|'cad'>('schematic')
   const onFailure=useCallback(()=>setFailed(true),[])
   const snapshot=useRef<ViewBookmark|null>(null)
   const props:ViewerProps={
-    machine,fraction,preset,cameraTick,linkedDirection,onOrientation,visible,selected,onSelect:setSelected,
+    machine,fraction,preset,cameraTick,linkedDirection,onOrientation,visible,selected,onSelect:onSelectPart??setLocalSelection,autoOrbit,
     explosionParts:null,isolate:false,cutaway:'Full',layer:'Model',cameraFocus:null,snapshot,recalled:null,measure:null,
-    wireframe:false,opacity:1,perspective:false,labels:false,reducedMotion:true,compact:true,
+    wireframe:false,opacity,perspective:false,labels,reducedMotion,compact:true,
     cadDetail:true,onCadStatus:setStatus,onFailure,dimensioning:false,
   }
   const part=machine.registry.partById.get(selected)
   const fallback=<ViewerFallback {...props}/>
   return <section className="panel comparison-model">
     <div className="panel-title"><h3>{machine.name} {machine.code}</h3><span className="data-tag">{status==='cad'?'CAD schematic':failed?'Station diagram':'Loading'}</span></div>
-    <div className="viewport-content">{failed?fallback:<GraphicsBoundary fallback={fallback}>
+    <div className="viewport-content">
+      {poster&&status!=='cad'&&!failed&&<img src={poster} alt="" className="viewport-poster"/>}
+      {failed?fallback:<GraphicsBoundary fallback={fallback}>
       <Suspense fallback={<p className="viewer-loading">Loading assembly geometry…</p>}><Viewer3D {...props}/></Suspense>
     </GraphicsBoundary>}</div>
     <div className="comparison-record">
       {part&&<a href={machine.href('component/'+part.id)}>{part.id} · {part.name}</a>}
       <a href={machine.href('explorer')}>Assembly workbench</a>
     </div>
+    {children}
   </section>
 }
 

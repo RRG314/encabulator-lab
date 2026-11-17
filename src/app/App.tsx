@@ -1,11 +1,13 @@
-import { Archive as ArchiveIcon, BookOpen, Box, ClipboardList, Component, FlaskConical, GitCompareArrows } from 'lucide-react'
+import { Archive as ArchiveIcon, BookOpen, Box, ClipboardList, FlaskConical, GitCompareArrows } from 'lucide-react'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { MachineContext } from '../machines/context'
 import { archive, archiveById, archiveCad, archiveHref, workbenchHref } from '../machines/archive'
 import { isMachineKey, machineRoute, machines, readRoute } from '../machines/profiles'
 import type { MachineKey } from '../machines/profiles'
 import { Explorer } from './Explorer'
+import { LabWordmark } from '../components/LabWordmark'
 
+const Home = lazy(() => import('./Home'))
 const Reference = lazy(() => import('./Reference'))
 const Catalog = lazy(() => import('./Reference').then(module => ({default:module.Catalog})))
 const PartRecord = lazy(() => import('./Reference').then(module => ({default:module.PartRecord})))
@@ -57,18 +59,21 @@ export default function App() {
     window.addEventListener('hashchange', change)
     return () => window.removeEventListener('hashchange', change)
   }, [])
-  useEffect(()=>{ document.title=page==='archive'?'Technical Archive | Encabulator Lab':`${machine.name} ${machine.code} | Encabulator Lab` },[machine,page])
-  const select = (id: string) => {
-    setSelected(previous=>({...previous,[model]:id}))
-    try { sessionStorage.setItem(`${model}.selected`,id) } catch { /* The current tab still retains selection. */ }
+  useEffect(()=>{
+    document.title=page==='home'?'Encabulation Systems Inc | Research and engineering':page==='archive'?
+      'Technical archive | Encabulation Systems Inc':`${machine.name} ${machine.code} | Encabulation Systems Inc`
+  },[machine,page])
+  const selectFor = (key: MachineKey, id: string) => {
+    setSelected(previous=>({...previous,[key]:id}))
+    try { sessionStorage.setItem(`${key}.selected`,id) } catch { /* The current tab still retains selection. */ }
   }
-  const part=machine.registry.partById.get(param)
+  const select = (id: string) => selectFor(model,id)
+  const part=param?machine.registry.partById.get(param):undefined
   return <MachineContext.Provider value={machine}>
     <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); document.getElementById('main')?.focus() }}>Skip to content</a>
     <header className="masthead">
       <div className="masthead-inner">
-        <a className="brand" href={href('explorer')}><div className="brand-mark"><Component size={23} strokeWidth={1.65} /></div>
-          <span>Encabulator Lab</span></a>
+        <a className="brand" href="#/" aria-current={page==='home'?'page':undefined}><LabWordmark/></a>
         <nav aria-label="Primary navigation">
           {nav.map(({ path, name, Icon }) => {
             const destination=archived?archivedLinks[path]:path==='archive'?'#/archive':href(path)
@@ -78,7 +83,7 @@ export default function App() {
         </nav>
       </div>
     </header>
-    <div className="machine-bar">
+    {page!=='home'&&<div className="machine-bar">
       <nav aria-label="Configuration navigation">
         <label>View configuration <select value={active} onChange={event=>{
           const record=archiveById.get(event.target.value)
@@ -95,10 +100,11 @@ export default function App() {
         </select></label>
         <a href={archiveHref()}>Search the archive</a>
       </nav>
-    </div>
-    <main className="shell" id="main" tabIndex={-1}>
+    </div>}
+    <main className={page==='home'?'shell portal-shell':'shell'} id="main" tabIndex={-1}>
       <Suspense fallback={<div className="viewer-loading">Loading technical record…</div>}>
-        {page === 'archive' ? <Archive id={param} view={view} detail={detail} />
+        {page === 'home' ? <Home selected={selected.me01} onSelect={id=>selectFor('me01',id)} />
+          : page === 'archive' ? <Archive id={param} view={view} detail={detail} />
           : page === 'explorer' ? <Explorer key={model} selected={selected[model]} onSelect={select} />
           : page === 'engineering' ? <Reference key={model} section={param} />
           : page === 'bom' ? <Catalog key={model} />
@@ -114,6 +120,6 @@ export default function App() {
           : <header className="page-header"><div><h1>Record unavailable</h1><a href={href('explorer')}>Return to assembly</a></div></header>}
       </Suspense>
     </main>
-    <footer className="site-footer"><span>Encabulator Lab · SI units</span><a href="https://github.com/RRG314/encabulator-lab">Source and contributions</a></footer>
+    <footer className="site-footer"><span>Encabulation Systems Inc</span><a href="https://github.com/RRG314/encabulator-lab">Encabulator Lab repository</a></footer>
   </MachineContext.Provider>
 }
