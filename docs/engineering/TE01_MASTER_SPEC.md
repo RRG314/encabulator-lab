@@ -114,7 +114,7 @@ Use fan curve and duct pressure-loss measurements; an initial rotor drag approxi
 Use GitHub Pages with Vite + TypeScript + React + React Three Fiber/Three.js, static JSON data, and locally served GLB assets. No backend or paid hosting required for version 1. Use URL hash routing or configure static fallback for GitHub Pages. Provide responsive mobile UI, keyboard controls, WebGL fallback, and lightweight LOD models.
 
 ```
-turbo-encabulator/
+encabulator-lab/
   README.md
   LICENSE
   CONTRIBUTING.md

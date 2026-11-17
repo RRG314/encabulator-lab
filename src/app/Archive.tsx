@@ -138,7 +138,7 @@ function ArchiveRecord({record,view,detail}:{record:ArchiveEntry;view?:string;de
     <a href={archiveHref(record.id)} aria-current={!view?'page':undefined}>Technical record</a>
     {record.id==='ge-1962'&&<>
       <a href={sourceById.get('G62A')!.url}>1962 catalog photograph · Figure 1</a>
-      <a href="https://github.com/RRG314/turbo-encabulator/blob/main/engineering/GE62_DIMENSION_AUDIT.md">Dimension audit</a>
+      <a href="https://github.com/RRG314/encabulator-lab/blob/main/engineering/GE62_DIMENSION_AUDIT.md">Dimension audit</a>
     </>}
     {assembly&&<a href={assembly} aria-current={view==='assembly'?'page':undefined}>Assembly workbench</a>}
     {testBench&&<a href={testBench} aria-current={view==='study'?'page':undefined}>Operating study</a>}

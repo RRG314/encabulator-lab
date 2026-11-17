@@ -9,6 +9,13 @@ body:
       options:
         - Turbo Encabulator TE-01
         - Retro Encabulator RE-01
+        - Metachronic Encabulator ME-01
+        - General Electric Turboencabulator GE-62
+        - Chrysler Turbo Encabulator CH-88
+        - Micro Encabulator MI-16
+        - Electro Turbo Encabulator ET-21
+        - Magneto-Turboencabulator MT-22
+        - Other archive configuration
         - Shared workbench
     validations:
       required: true

@@ -16,4 +16,4 @@
 | Non-reversible tremie pipe | One-direction fluid path and service fittings |
 | Drawn reciprocating dingle arm | Crank-slider link and output interface |
 
-ME-01 scientific subsystem definitions, equations and links are published in the [subsystem register](https://rrg314.github.io/turbo-encabulator/#/me01/systems).
+ME-01 scientific subsystem definitions, equations and links are published in the [subsystem register](https://rrg314.github.io/encabulator-lab/#/me01/systems).

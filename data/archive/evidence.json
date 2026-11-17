@@ -1,7 +1,7 @@
 {
   "te01": {
     "references": [
-      {"label":"TE-01 master specification","kind":"Authoritative project specification","href":"https://github.com/RRG314/turbo-encabulator/blob/main/docs/engineering/TE01_MASTER_SPEC.md"},
+      {"label":"TE-01 master specification","kind":"Authoritative project specification","href":"https://github.com/RRG314/encabulator-lab/blob/main/docs/engineering/TE01_MASTER_SPEC.md"},
       {"label":"J. H. Quick · 1944","kind":"Historical text","source":"Q44"}
     ],
     "matches":"The TE-01 master specification establishes the baseplate, shaft diameter, bearing and vane counts, and target envelope.",
@@ -9,7 +9,7 @@
   },
   "re01": {
     "references": [
-      {"label":"RE-01 technical manual","kind":"Authoritative project specification","href":"https://github.com/RRG314/turbo-encabulator/blob/main/engineering/re01/MASTER_SPEC.md"},
+      {"label":"RE-01 technical manual","kind":"Authoritative project specification","href":"https://github.com/RRG314/encabulator-lab/blob/main/engineering/re01/MASTER_SPEC.md"},
       {"label":"Rockwell production transcript","kind":"Historical transcript","source":"R97"}
     ],
     "matches":"The project manual defines the foundation, journals and crank-slider. The Rockwell transcript supplies component terminology.",
@@ -17,7 +17,7 @@
   },
   "me01": {
     "references": [
-      {"label":"ME-01 master specification","kind":"Authoritative project specification","href":"https://github.com/RRG314/turbo-encabulator/blob/main/engineering/me01/MASTER_SPEC.md"}
+      {"label":"ME-01 master specification","kind":"Authoritative project specification","href":"https://github.com/RRG314/encabulator-lab/blob/main/engineering/me01/MASTER_SPEC.md"}
     ],
     "matches":"The master specification defines the foundation, the two coaxial shafts, the rotor and guard radii, and the coupling length parameter.",
     "limits":"ME-01 originates in this repository. Hardware qualification, final tolerances, and installation interfaces remain open."

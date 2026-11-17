@@ -57,7 +57,7 @@ export default function App() {
     window.addEventListener('hashchange', change)
     return () => window.removeEventListener('hashchange', change)
   }, [])
-  useEffect(()=>{ document.title=page==='archive'?'Technical Archive | Encabulator Systems':`${machine.name} ${machine.code} | Encabulator Systems` },[machine,page])
+  useEffect(()=>{ document.title=page==='archive'?'Technical Archive | Encabulator Lab':`${machine.name} ${machine.code} | Encabulator Lab` },[machine,page])
   const select = (id: string) => {
     setSelected(previous=>({...previous,[model]:id}))
     try { sessionStorage.setItem(`${model}.selected`,id) } catch { /* The current tab still retains selection. */ }
@@ -68,7 +68,7 @@ export default function App() {
     <header className="masthead">
       <div className="masthead-inner">
         <a className="brand" href={href('explorer')}><div className="brand-mark"><Component size={23} strokeWidth={1.65} /></div>
-          <span>Encabulator Systems</span></a>
+          <span>Encabulator Lab</span></a>
         <nav aria-label="Primary navigation">
           {nav.map(({ path, name, Icon }) => {
             const destination=archived?archivedLinks[path]:path==='archive'?'#/archive':href(path)
@@ -114,6 +114,6 @@ export default function App() {
           : <header className="page-header"><div><h1>Record unavailable</h1><a href={href('explorer')}>Return to assembly</a></div></header>}
       </Suspense>
     </main>
-    <footer className="site-footer"><span>Encabulator Systems · SI units</span><a href="https://github.com/RRG314/turbo-encabulator">Source and contributions</a></footer>
+    <footer className="site-footer"><span>Encabulator Lab · SI units</span><a href="https://github.com/RRG314/encabulator-lab">Source and contributions</a></footer>
   </MachineContext.Provider>
 }

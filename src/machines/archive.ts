@@ -42,7 +42,7 @@ export type ArchiveCad = z.infer<typeof cad>
 export const sourceById = new Map(sources.map(item=>[item.id,item]))
 export const archiveById = new Map(archive.map(item=>[item.id,item]))
 export const archiveCad = z.record(id,cad).parse(cadJson)
-export const contributeConfigurationUrl='https://github.com/RRG314/turbo-encabulator/issues/new?template=encabulator-configuration.yml'
+export const contributeConfigurationUrl='https://github.com/RRG314/encabulator-lab/issues/new?template=encabulator-configuration.yml'
 
 export function archiveHref(key?:string,view?:string,part?:string) {
   return ['#/archive',key,view,part].filter(Boolean).join('/')

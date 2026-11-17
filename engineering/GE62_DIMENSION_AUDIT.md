@@ -26,4 +26,4 @@ The assembled and separated SVG sheets, per-part dimensions, and viewer footprin
 
 These checks establish agreement across project files. Historical scale, tolerances, installation fits and swept service clearances remain unverified. A dimensioned drawing with a traceable original reference or a measured surviving artifact would be required to verify absolute size.
 
-[Live assembly](https://rrg314.github.io/turbo-encabulator/#/archive/ge-1962/assembly) · [Assembled drawing](https://rrg314.github.io/turbo-encabulator/models/archive/ge-1962/drawings/assembled.svg) · [CAD validation report](https://rrg314.github.io/turbo-encabulator/models/archive/ge-1962/validation.json)
+[Live assembly](https://rrg314.github.io/encabulator-lab/#/archive/ge-1962/assembly) · [Assembled drawing](https://rrg314.github.io/encabulator-lab/models/archive/ge-1962/drawings/assembled.svg) · [CAD validation report](https://rrg314.github.io/encabulator-lab/models/archive/ge-1962/validation.json)

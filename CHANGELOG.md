@@ -19,3 +19,6 @@
 - Established the Metachronic Encabulator ME-01 Polychronous Differential Synchronization Configuration as the third equipment family.
 - Added the dual-shaft CAD assembly, 21 scientific subsystem studies, six host boundaries, and a coupled regenerative operating laboratory.
 - Published engineering plates, source traceability, stable part identifiers and three-machine verification coverage.
+- Expanded the archive to 25 configurations and 35 sources, with eight explodable assemblies and original source comparisons where available.
+- Added animated operating fixtures, adjustable loads, X-ray inspection, and configuration submissions.
+- Renamed the repository and GitHub Pages workbench to Encabulator Lab.

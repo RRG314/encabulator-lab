@@ -1,22 +1,28 @@
-# Encabulator Systems
+# Encabulator Lab
 
-[Historical technical archive](https://rrg314.github.io/turbo-encabulator/#/archive) · [Assembly comparison](https://rrg314.github.io/turbo-encabulator/#/comparison) · [ME-01 host installation laboratory](https://rrg314.github.io/turbo-encabulator/#/me01/installation) · [Contribute a configuration](https://github.com/RRG314/turbo-encabulator/issues/new?template=encabulator-configuration.yml)
+An open engineering archive with **25 configurations, 35 sources, and eight explodable CAD assemblies**. Inspect original references beside reconstructed geometry, operate the models under simulated loads, and contribute new configurations or source material.
 
-**Integrated Electromechanical Systems Engineering**
+[![Build and Pages](https://github.com/RRG314/encabulator-lab/actions/workflows/deploy.yml/badge.svg)](https://github.com/RRG314/encabulator-lab/actions/workflows/deploy.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-536975)](LICENSE)
 
-[![Build and Pages](https://github.com/RRG314/turbo-encabulator/actions/workflows/deploy.yml/badge.svg)](https://github.com/RRG314/turbo-encabulator/actions/workflows/deploy.yml) [![Release](https://img.shields.io/github/v/release/RRG314/turbo-encabulator?label=Technical%20release&color=285674)](https://github.com/RRG314/turbo-encabulator/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-536975)](LICENSE)
+**[Open Encabulator Lab](https://rrg314.github.io/encabulator-lab/)** · [Technical archive](https://rrg314.github.io/encabulator-lab/#/archive) · [Assembly comparison](https://rrg314.github.io/encabulator-lab/#/comparison) · [Contribute a configuration](https://github.com/RRG314/encabulator-lab/issues/new?template=encabulator-configuration.yml)
 
-**[Open the engineering workbench](https://rrg314.github.io/turbo-encabulator/)** · [Configuration comparison](https://rrg314.github.io/turbo-encabulator/#/comparison) · [Reference library](engineering/REFERENCES.md) · [Citation](CITATION.cff)
+## Inspect and operate a model
 
-An open electromechanical systems study with three independently parametrized FreeCAD models, traceable engineering records, and a static interactive test bench.
+1. Choose a model in **View configuration**. Use the assembly slider to separate components, the eye button for X-ray, and the source panel to compare evidence with the CAD.
+2. Open **Test bench** and start a run. The [TE-01](https://rrg314.github.io/encabulator-lab/#/simulation) and [RE-01](https://rrg314.github.io/encabulator-lab/#/re01/simulation) benches accept brake, blower, and generator loads. RE-01 adds a crank-driven water loop. The [ME-01 laboratory](https://rrg314.github.io/encabulator-lab/#/me01/simulation) animates two shafts, variable vane pitch, and independent cooling under selectable host loads.
+3. Open **Engineering** for drawings, component records, and CAD files. Historical configurations without verified geometry retain their sources and, where available, an operating study.
+
+The five historical CAD reconstructions cover General Electric GE-62, Chrysler CH-88, Micro MI-16, Electro ET-21, and Magneto MT-22. The [GE-62 workbench](https://rrg314.github.io/encabulator-lab/#/archive/ge-1962/assembly) displays the original handbook beside the model. The source review distinguishes published requirements, measured CAD dimensions, and estimates. [Source comparison and operating fixtures](engineering/SOURCE_COMPARISON.md) · [Reference library](engineering/REFERENCES.md)
+
+## Program assemblies
 
 | Configuration | Mechanical and control basis | Technical package |
 |---|---|---|
-| **[Turbo Encabulator TE-01](https://rrg314.github.io/turbo-encabulator/#/explorer)** | Instrumented six-vane rotor, 24 V class drive, two 8 mm journals, flexible coupling and independent cooling. | [Master specification](docs/engineering/TE01_MASTER_SPEC.md) · [BOM](docs/engineering/bom.csv) · [CAD](cad/models/te01/) · [Downloads](https://rrg314.github.io/turbo-encabulator/#/engineering/downloads) |
-| **[Retro Encabulator RE-01](https://rrg314.github.io/turbo-encabulator/#/re01/explorer)** | 48 V class industrial control architecture, 12 mm journals, six pitched marzelvanes, a compliant coupling and guided water-loop load. | [Technical manual](engineering/re01/MASTER_SPEC.md) · [Assembly hierarchy](engineering/re01/ASSEMBLY_HIERARCHY.md) · [CAD](cad/models/re01/) · [Downloads](https://rrg314.github.io/turbo-encabulator/#/re01/engineering/downloads) |
-| **[Metachronic Encabulator ME-01](https://rrg314.github.io/turbo-encabulator/#/me01/explorer)** | 36 V class dual-shaft assembly with variable pitch, active radial stabilization, regenerative power management, and 21 scientific subsystem studies. | [Master specification](engineering/me01/MASTER_SPEC.md) · [Operating equations](engineering/me01/OPERATING_MODEL.md) · [CAD](cad/models/me01/) · [Downloads](https://rrg314.github.io/turbo-encabulator/#/me01/engineering/downloads) |
+| **[Turbo Encabulator TE-01](https://rrg314.github.io/encabulator-lab/#/explorer)** | Instrumented six-vane rotor, 24 V class drive, two 8 mm journals, flexible coupling and independent cooling. | [Master specification](docs/engineering/TE01_MASTER_SPEC.md) · [BOM](docs/engineering/bom.csv) · [CAD](cad/models/te01/) · [Downloads](https://rrg314.github.io/encabulator-lab/#/engineering/downloads) |
+| **[Retro Encabulator RE-01](https://rrg314.github.io/encabulator-lab/#/re01/explorer)** | 48 V class industrial control architecture, 12 mm journals, six pitched marzelvanes, a compliant coupling and guided water-loop load. | [Technical manual](engineering/re01/MASTER_SPEC.md) · [Assembly hierarchy](engineering/re01/ASSEMBLY_HIERARCHY.md) · [CAD](cad/models/re01/) · [Downloads](https://rrg314.github.io/encabulator-lab/#/re01/engineering/downloads) |
+| **[Metachronic Encabulator ME-01](https://rrg314.github.io/encabulator-lab/#/me01/explorer)** | 36 V class dual-shaft assembly with variable pitch, active radial stabilization, regenerative power management, and 21 scientific subsystem studies. | [Master specification](engineering/me01/MASTER_SPEC.md) · [Operating equations](engineering/me01/OPERATING_MODEL.md) · [CAD](cad/models/me01/) · [Downloads](https://rrg314.github.io/encabulator-lab/#/me01/engineering/downloads) |
 
-All three models support 3D selection by part number, scoped separation, cutaways, measurement, and model-specific service records. The operating console simulates drive response without a server. RE-01 adds a reduced-speed crank-slider and low-head fluid circuit. Read the [interchangeability study](engineering/INTERCHANGEABILITY.md), [historical source traceability](engineering/re01/SOURCE_TRACEABILITY.md), and [model limitations](engineering/re01/VALIDATION_MATRIX.md) when using results.
+[ME-01 host installation laboratory](https://rrg314.github.io/encabulator-lab/#/me01/installation) · [Interchangeability study](engineering/INTERCHANGEABILITY.md) · [RE-01 source traceability](engineering/re01/SOURCE_TRACEABILITY.md)
 
 ## Assembly illustrations
 
@@ -41,8 +47,6 @@ Vite prints the local URL. WebGL 2 enables the CAD views. The parts hierarchy an
 
 The [historical register](data/archive/records.json) indexes source configurations separately from project CAD and numerical studies. The [source register](data/archive/sources.json) records publishers, dates, access and evidence scope. GE-62, CH-88, MI-16, ET-21 and MT-22 export from the shared [FreeCAD archive pipeline](cad/models/archive/). Generate the complete set with `python -m cad.models.archive.export` using a Python environment that can import FreeCAD and TechDraw. Pass a record ID to regenerate one configuration.
 
-The site’s configuration selector opens project CAD, historical reconstructions and source records. CAD workbenches pair the model with original references and a table of checked requirements where the sources supply them. The operating test benches animate the assembly and its modeled load. [Source comparison and operating fixtures](engineering/SOURCE_COMPARISON.md)
-
 | Path | Role |
 |---|---|
 | `data/`, `data/re01/`, `data/me01/` | Machine-specific registries, interface links, assumed simulation inputs, and generated CAD placement data |
@@ -57,8 +61,10 @@ Use `scripts/freecad.sh --mode all` for TE-01, `scripts/freecad-re01.sh` for RE-
 
 Run `npm run lint`, `npm run typecheck`, `npm test`, `npm run test:browser`, and `npm run build`. Install Chromium for Playwright with `npx playwright install --only-shell chromium`. `TE01_WRITE_NUMERICAL=1 npm test` refreshes numerical evidence. Use `python -m cad.conformance` in the FreeCAD-enabled environment to reopen the neutral and native CAD and verify the drawing projections. [CAD and drawing conformance review](engineering/ASSEMBLY_CONFORMANCE.md)
 
-GitHub Actions publishes the validated static build to Pages. The workflow uses the configured repository base path and checks the assembled and exploded drawings for all eight mechanical models after deployment. Hash routes support browser reload and direct machine links. No repository secrets or backend are needed. Set `PAGES_BASE_PATH=/turbo-encabulator/` to reproduce the hosted build locally.
+GitHub Actions publishes the validated static build to Pages. The workflow uses the configured repository base path and checks the assembled and exploded drawings for all eight mechanical models after deployment. Hash routes support browser reload and direct machine links. No repository secrets or backend are needed. Set `PAGES_BASE_PATH=/encabulator-lab/` to reproduce the hosted build locally.
 
 ## Research and contributions
 
-Start with the [contribution guide](CONTRIBUTING.md), [citation metadata](CITATION.cff), and [publication policy](SECURITY.md). The [implementation status](STATUS.md) records readiness and open decisions. Geometry, density estimates and test-bench results describe preliminary digital studies. Material specification, measured results, final protection, containment, tolerances and manufacturing release require further evidence.
+Start with the [contribution guide](CONTRIBUTING.md), [citation metadata](CITATION.cff), and [publication policy](SECURITY.md). The [engineering status](STATUS.md) records what has been verified and what remains open. Geometry and test-bench results describe preliminary digital studies. Material qualification, measured performance, containment, and manufacturing release remain open.
+
+[Version 0.3.0 draft notes](docs/releases/0.3.0.md) · [Changelog](CHANGELOG.md)
