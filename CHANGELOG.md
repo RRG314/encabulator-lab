@@ -1,8 +1,13 @@
 # Changelog
 
-## 0.1.0 · Draft
+## Unreleased
 
-First planned public release.
+- Expanded the ME-01 specification, governing equations, input tables and verification protocol.
+- Added six host-load reference cases, 22 numerical checks, a 348-sample nominal CSV and an engineering evidence index for the program designs and archive reconstructions.
+
+## 0.1.0 · 2026-11-17
+
+First public release.
 
 ### Turbo and Retro engineering program
 

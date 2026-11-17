@@ -10,8 +10,9 @@ from zipfile import ZipFile
 ROOT=Path(__file__).resolve().parents[1]
 COMMON=(
     'LICENSE','CITATION.cff','engineering/REFERENCES.md',
-    'engineering/TECHNICAL_EVIDENCE.md','engineering/INTERCHANGEABILITY.md','public/models/parity.json',
+    'engineering/INTERCHANGEABILITY.md','public/models/parity.json',
 )
+EVIDENCE_INDEX='engineering/TECHNICAL_EVIDENCE.md'
 MACHINE_PATHS={
     'TE-01':('docs/engineering','docs/science','cad/models/te01',
         *(f'data/{name}.json' for name in (
@@ -44,6 +45,9 @@ def main():
     model_files=subprocess.check_output(
         ['git','ls-tree','--name-only','-z',f'{commit}:public/models'],cwd=ROOT,text=True,
     ).split('\0')
+    common=COMMON
+    if subprocess.check_output(['git','ls-tree','--name-only',commit,'--',EVIDENCE_INDEX],cwd=ROOT):
+        common=(*COMMON,EVIDENCE_INDEX)
     te01_assets=tuple(f'public/models/{name}' for name in model_files
         if fnmatch.fnmatchcase(name,'te01*') or name in (
             'validation.json','numerical-validation.json','dgs-travel-study.json',
@@ -57,7 +61,7 @@ def main():
         try:
             subprocess.run(
                 ['git','archive','--format=zip','-5',f'--output={temporary}',commit,
-                 '--',*COMMON,*paths,*assets],
+                 '--',*common,*paths,*assets],
                 cwd=ROOT,check=True,
             )
             check_archive(temporary)
