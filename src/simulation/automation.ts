@@ -8,6 +8,8 @@ export const benchProfiles = {
     capacity:54, cooling:.35, freeFlow:.015, head:65, duct:800000, speedLimit:3100, load:.014, mass:.45, stiffness:15000, damping:22, unbalance:1.5e-6},
   re01: {inertia:.0056, viscous:.0007, aero:1.6e-6, resistance:3.1, kt:.112, limit:5,
     capacity:140, cooling:.68, freeFlow:.027, head:95, duct:315000, speedLimit:2250, load:.035, mass:1.45, stiffness:33000, damping:35, unbalance:6e-6},
+  me01: {inertia:.019, viscous:.001, aero:2.0e-6, resistance:2.55, kt:.122, limit:5,
+    capacity:118, cooling:.55, freeFlow:.032, head:120, duct:360000, speedLimit:2250, load:.023, mass:1.42, stiffness:32000, damping:27, unbalance:9e-6},
 }
 export interface BenchState {
   t:number, w:number, motor:number, housing:number, inlet:number, curtailed:number,

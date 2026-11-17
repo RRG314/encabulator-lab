@@ -9,6 +9,8 @@ const Reference = lazy(() => import('./Reference'))
 const Catalog = lazy(() => import('./Reference').then(module => ({default:module.Catalog})))
 const PartRecord = lazy(() => import('./Reference').then(module => ({default:module.PartRecord})))
 const Comparison = lazy(() => import('./Comparison'))
+const MetachronicLab = lazy(() => import('./MetachronicLab'))
+const ScientificSystems = lazy(() => import('./ScientificSystems'))
 const SimulationPanel = lazy(() => import('../components/SimulationPanel'))
 
 const nav = [
@@ -25,7 +27,7 @@ function remembered(model: MachineKey) {
 }
 export default function App() {
   const [route, setRoute] = useState(currentRoute)
-  const [selected, setSelected] = useState<Record<MachineKey,string>>(() => ({te01:remembered('te01'),re01:remembered('re01')}))
+  const [selected, setSelected] = useState<Record<MachineKey,string>>(() => ({te01:remembered('te01'),re01:remembered('re01'),me01:remembered('me01')}))
   const {model,page,param}=route
   const machine=machines[model]
   const href=(path:string)=>machineRoute(model,path)
@@ -38,7 +40,7 @@ export default function App() {
     window.addEventListener('hashchange', change)
     return () => window.removeEventListener('hashchange', change)
   }, [])
-  useEffect(()=>{ document.title=`${machine.name} ${machine.code} | Encabulator Engineering` },[machine])
+  useEffect(()=>{ document.title=`${machine.name} ${machine.code} | Encabulator Systems` },[machine])
   const select = (id: string) => {
     setSelected(previous=>({...previous,[model]:id}))
     try { sessionStorage.setItem(`${model}.selected`,id) } catch { /* The current tab still retains selection. */ }
@@ -49,7 +51,7 @@ export default function App() {
     <header className="masthead">
       <div className="masthead-inner">
         <a className="brand" href={href('explorer')}><div className="brand-mark"><Component size={23} strokeWidth={1.65} /></div>
-          <span>Encabulator Engineering</span></a>
+          <span>Encabulator Systems</span></a>
         <nav aria-label="Primary navigation">
           {nav.map(({ path, name, Icon }) => <a key={path} href={href(path)}
             aria-current={page === path || (page === 'component' && path === 'bom') || (page === 'diagnostics' && path === 'simulation') ? 'page' : undefined}><Icon size={15} /><span>{name}</span></a>)}
@@ -59,7 +61,7 @@ export default function App() {
     <div className="machine-bar">
       <nav aria-label="Machine model">
         {Object.values(machines).map(item=><a key={item.key} aria-current={item.key===model?'page':undefined}
-          href={machineRoute(item.key,page==='component'?'explorer':[page,param].filter(Boolean).join('/'))}>
+          href={machineRoute(item.key,page==='component'||page==='systems'?'explorer':[page,param].filter(Boolean).join('/'))}>
           <strong>{item.code}</strong><span>{item.name}</span>
         </a>)}
       </nav>
@@ -71,12 +73,15 @@ export default function App() {
           : page === 'bom' ? <Catalog key={model} />
           : page === 'comparison' ? <Comparison />
           : part && page === 'component' ? <PartRecord part={part} onSelect={select} />
+          : page === 'systems' && model==='me01' ? <ScientificSystems id={param} key={param} />
+          : (page === 'simulation'||page==='diagnostics') && model==='me01' ? <MetachronicLab
+              view={telemetry=><Explorer selected={selected[model]} onSelect={select} telemetry={telemetry} />} />
           : page === 'simulation' ? <SimulationPanel key={`${model}:${page}`} />
           : page === 'diagnostics' ? <SimulationPanel key={`${model}:${page}`} initial="integrated"
             diagnostic={telemetry => <Explorer selected={selected[model]} onSelect={select} telemetry={telemetry} />} />
           : <header className="page-header"><div><h1>Record unavailable</h1><a href={href('explorer')}>Return to assembly</a></div></header>}
       </Suspense>
     </main>
-    <footer className="site-footer"><span>Encabulator Engineering · SI units</span><a href="https://github.com/RRG314/turbo-encabulator">Source and contributions</a></footer>
+    <footer className="site-footer"><span>Encabulator Systems · SI units</span><a href="https://github.com/RRG314/turbo-encabulator">Source and contributions</a></footer>
   </MachineContext.Provider>
 }

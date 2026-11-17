@@ -23,9 +23,9 @@ export function PartInspector({ part, isolated, onIsolate, onFocus }: { part: Pa
       </dl>
       <section className="inspector-mount"><h4>Mounting interface</h4><p>{part.mounting}</p></section>
       <div className="inspector-actions">
-        <button className="secondary-button" type="button" onClick={onFocus}><Crosshair size={14}/> Focus component</button>
+        <button className="secondary-button" type="button" disabled={part.kind==='logical'} onClick={onFocus}><Crosshair size={14}/> Focus component</button>
         <a className="primary-button" href={machine.href(`component/${part.id}`)}><FileText size={15} />Engineering record<ArrowUpRight size={14} /></a>
-        <button className="secondary-button" type="button" onClick={onIsolate} aria-pressed={isolated}><Layers size={14} />{isolated ? 'Show assembly' : 'Isolate component'}</button>
+        <button className="secondary-button" type="button" disabled={part.kind==='logical'} onClick={onIsolate} aria-pressed={isolated}><Layers size={14} />{isolated ? 'Show assembly' : 'Isolate component'}</button>
       </div>
     </div>
   </aside>

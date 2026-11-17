@@ -1,0 +1,134 @@
+{
+  "basis": "Deterministic numerical and analytical reference cases",
+  "revision": "0.1",
+  "readings": [
+    {
+      "condition": "Linear quadrupole gradient at 16 mm (mT)",
+      "expected": 128,
+      "observed": 128,
+      "absoluteError": 0,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "condition": "Magnetic loss under doubled field",
+      "expected": 4,
+      "observed": 4,
+      "absoluteError": 0,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "condition": "Zero thermal difference entropy production (W/K)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Static dynamic stiffness (N/m)",
+      "expected": 1700,
+      "observed": 1700,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Rotation commutator on zero second angle (rad)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "condition": "Synchronous DFT coefficient",
+      "expected": 1,
+      "observed": 0.9999999999999987,
+      "absoluteError": 1.3322676295501878e-15,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Motor-drive energy residual at 9 s (J)",
+      "expected": 0,
+      "observed": -0.000003918016204806918,
+      "absoluteError": 0.000003918016204806918,
+      "tolerance": 0.2,
+      "status": "PASS"
+    },
+    {
+      "condition": "Primary rpm timestep sensitivity",
+      "expected": 754.0055449963153,
+      "observed": 754.0055386451892,
+      "absoluteError": 0.000006351126103254501,
+      "tolerance": 1.2,
+      "status": "PASS"
+    },
+    {
+      "condition": "Secondary rpm timestep sensitivity",
+      "expected": 754.004833793647,
+      "observed": 754.0048045070687,
+      "absoluteError": 0.000029286578296705557,
+      "tolerance": 1.2,
+      "status": "PASS"
+    },
+    {
+      "condition": "Guard open: disabled drive input (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Sensor failure: disabled drive input (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Phase synchronization loss: disabled drive input (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Electrical overcurrent: disabled drive input (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Thermal overload: disabled drive input (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Torsional displacement: disabled drive input (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "condition": "Controller instability: disabled drive input (A)",
+      "expected": 0,
+      "observed": 0,
+      "absoluteError": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    }
+  ]
+}

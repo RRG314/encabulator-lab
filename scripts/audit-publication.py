@@ -10,6 +10,7 @@ PATTERNS={
  'credential signature':re.compile(rb'(?:gh[pousr]_[a-zA-Z0-9]{28,}|github_pat_[A-Za-z0-9_]{45,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:[A-Z]+ )*PRIVATE KEY-----)'),
  'local user path':re.compile(rb'(?:/Users/[A-Za-z0-9_.-]+/|/home/[A-Za-z0-9_.-]+/(?:Documents|Desktop|Downloads)/|[A-Z]:\\Users\\[^\\[:space:]]+\\)'),
 }
+EDITORIAL=re.compile(rb"\b(?:assembly explorer|for entertainment purposes|AI-generated engineering|a humorous take on|a playful exploration|Advanced Retro Encabulator|ARE-02)\b",re.I)
 TEXT={'.css','.ts','.tsx','.js','.mjs','.md','.yml','.yaml','.json','.cff','.xml','.csv','.html','.txt','.svg','.py','.step','.sh'}
 BLOCKED={'.env','.npmrc','.pypirc','id_rsa','id_ed25519'}
 
@@ -43,6 +44,9 @@ def check(tree=None):
                         problems.extend(matches(f'{name}:{entry}',archive.read(entry)))
         else:
             problems.extend(matches(name,data))
+            if not tree and (name.startswith(('public/','src/','docs/engineering/','engineering/me01/')) or name in {'README.md','index.html','CITATION.cff'}):
+                if EDITORIAL.search(data):
+                    problems.append(f'{name}: out-of-standard public terminology')
     return problems
 
 if __name__=='__main__':

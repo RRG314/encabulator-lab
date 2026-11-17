@@ -8,10 +8,15 @@ import reAssemblies from '../../data/re01/assemblies.json'
 import reConnections from '../../data/re01/connections.json'
 import reLayout from '../../data/re01/model-layout.json'
 import reService from '../../data/re01/service.json'
+import meParts from '../../data/me01/parts.json'
+import meAssemblies from '../../data/me01/assemblies.json'
+import meConnections from '../../data/me01/connections.json'
+import meLayout from '../../data/me01/model-layout.json'
+import meService from '../../data/me01/service.json'
 import teService from '../../data/service.json'
 import teEnvelopes from '../../data/te01-envelopes.json'
 
-export type MachineKey = 'te01' | 're01'
+export type MachineKey = 'te01' | 're01' | 'me01'
 export interface ServiceRecord {
   failureMode: string
   tool: string
@@ -19,9 +24,12 @@ export interface ServiceRecord {
   massBasis?: string
   envelopeMm?: number[]
   classification?: string
+  variables?: string
+  centerMm?: number[]
+  centroidAxisInertiaKgM2?: number[]
 }
 export type MachineProfile = {
-  key: MachineKey, code: string, name: string, registry: ReturnType<typeof registry>,
+  key: MachineKey, code: string, name: string, configuration?:string, registry: ReturnType<typeof registry>,
   placements: Placement[], shaftHeight: number, baseMm: [number, number], boundsMm: [number, number, number],
   mesh: string, assetFolder: string, defaultPart: string, voltage: number, speed: [number, number],
   guard: readonly string[], rotating: readonly string[], motor: string, fan: string, harness: string,
@@ -57,15 +65,20 @@ export const machines: Record<MachineKey, MachineProfile> = {
     guard:['RE-017','RE-018','RE-042','RE-048'],
     rotating:['RE-005','RE-006','RE-007','RE-008','RE-009','RE-022','RE-023','RE-024','RE-025'],
     motor:'RE-021',fan:'RE-013',harness:'RE-046',fanAt:[205,0,84],sensorAt:[82,15,107],wireAt:[-150,118,55],service:reService},
+  me01: {key:'me01',code:'ME-01',name:'Metachronic Encabulator',configuration:'Polychronous Differential Synchronization',registry:registry(meParts,meAssemblies,meConnections),
+    placements:meLayout.placements as Placement[],shaftHeight:meLayout.shaftHeight,baseMm:[620,412],boundsMm:[620,412,218],
+    mesh:'models/me01/me01.glb',assetFolder:'models/me01',defaultPart:'ME-013',voltage:36,speed:[300,2200],
+    guard:['ME-004','ME-031'],rotating:['ME-005','ME-012','ME-013','ME-014'],motor:'ME-009',fan:'ME-018',harness:'ME-029',
+    fanAt:[270,0,108],sensorAt:[151,0,151],wireAt:[-235,145,60],service:meService},
 }
 
 export function machineRoute(model: MachineKey, path: string) {
-  return model === 'te01' ? `#/${path}` : `#/re01/${path}`
+  return model === 'te01' ? `#/${path}` : `#/${model}/${path}`
 }
 export function readRoute(hash: string) {
   const segments=hash.replace(/^#\/?/, '').split('/')
-  const model: MachineKey = segments[0] === 're01' ? 're01' : 'te01'
-  if (segments[0] === 're01' || segments[0] === 'te01') segments.shift()
+  const model: MachineKey = segments[0] === 're01' ? 're01' : segments[0]==='me01'?'me01':'te01'
+  if (segments[0] === model) segments.shift()
   const [page,param]=segments
   return { model, page:page || 'explorer', param }
 }

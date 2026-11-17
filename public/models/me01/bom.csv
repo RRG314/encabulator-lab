@@ -1,0 +1,53 @@
+ID,Component,Assembly,Quantity,"Mass per unit, kg",Classification,Tool
+ME-001,Amulite ribbed foundation,ME-1400,1,8.2819422,Parametric physical part,6 mm hex key · candidate bed screws
+ME-002,Machined bed channels,ME-1400,2,0.8023614,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-003,Logarithmic rotor containment frame,ME-1400,1,0.4339681,Parametric physical part,5 mm hex key · candidate guard fasteners
+ME-004,Removable guard window and roof,ME-1400,1,0.0943761,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-005,Primary isogonal waneshaft,ME-400,1,0.337616,Parametric physical part,Dial indicator · journal setup
+ME-006,Secondary concentric torque sleeve,ME-400,1,0.1773247,Parametric physical part,Bore gauge · nominal sleeve fit
+ME-007,Primary spurving bearing,ME-200,1,0.0277865,Parametric physical part,Bearing puller · provisional envelope
+ME-008,Secondary spurving bearing,ME-200,1,0.0327289,Parametric physical part,Bearing puller · provisional envelope
+ME-009,Finned polyphase drive barrel,ME-900,1,0.5557506,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-010,Panendermic semi-boloid stator,ME-900,1,0.5586852,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-011,Lotus-o-deltoid polyphase winding,ME-900,1,0.118037,Parametric physical part,Four-wire milliohm meter
+ME-012,Marzelvane differential carrier,ME-300,1,0.9141721,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-013,Recursive hydrocoptic marzelvane,ME-300,6,0.1153979,Parametric physical part,3 mm hex key · candidate keeper
+ME-014,Indexed vane actuator ring,ME-300,1,0.0222302,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-015,Ambilateral orthogonal bearing pedestal,ME-200,2,0.750474,Parametric physical part,5 mm hex key · candidate pedestal shims
+ME-016,Differential girdle coupling hub pair,ME-600,1,0.316696,Parametric physical part,5 mm hex key · candidate hub clamp
+ME-017,Harmonic attenuation inserts,ME-600,1,0.0097609,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-018,Quadrature Panametric impeller,ME-700,1,0.0379255,Parametric physical part,3 mm hex key · candidate fan hub
+ME-019,Panametric bellmouth and protective grille,ME-700,1,0.2678333,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-020,Transpanendermic distribution header,ME-100,1,0.5608259,Parametric physical part,17 mm spanner · candidate union flats
+ME-021,Non-reversible Tremie regulator,ME-1000,1,0.2634672,Parametric physical part,19 mm spanner · candidate plug
+ME-022,Primary thermal exchange core,ME-100,1,0.3516695,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-023,Polyphase regenerative controller,ME-500,1,0.1907241,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-024,DC-link energy storage enclosure,ME-500,1,0.5025036,Parametric physical part,Insulated driver · terminal size open
+ME-025,Cardinal gram-meter timing assembly,ME-800,1,0.1397132,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-026,Transverse suppression processor,ME-1100,1,0.030915,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-027,Recursive Deltoid synchronization module,ME-1200,1,0.1166018,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-028,Panametric supervisory and interlock rack,ME-1300,1,1.1282444,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-029,Field harness and coolant interconnect,ME-800,1,0.0604076,Parametric physical part,Multimeter · continuity and isolation
+ME-030,Concentric output dynamics load,ME-400,1,0.6509051,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-031,Upper enclosure inspection cassette,ME-1400,1,0.0807558,Parametric physical part,4 mm hex key · candidate cover hardware
+ME-040,Quadrupolar Flux Confinement Chamber,ME-1500,1,0.5021369,Parametric physical part,4 mm hex key · review joint fit
+ME-041,Magnetohydrodynamic Recirculation Manifold,ME-1600,1,0.3458119,Parametric physical part,4 mm hex key · review joint fit
+ME-042,Topological Soliton Retention Lattice,ME-1700,1,0.1427996,Parametric physical part,4 mm hex key · review joint fit
+ME-043,Ferrohydrodynamic Instability Governor,ME-1800,1,0.0555206,Parametric physical part,4 mm hex key · review joint fit
+ME-044,Nonreciprocal Phononic Detraction Array,ME-1900,1,0.0660116,Parametric physical part,4 mm hex key · review joint fit
+ME-045,Chronometric Hysteresis Governor,ME-2000,1,,Controller computation,Trace recorder · replay the matching study
+ME-046,Biaxial Nutation Arrestor,ME-2100,1,0.1963763,Parametric physical part,4 mm hex key · review joint fit
+ME-047,Helicoidal Flux Inverter,ME-2200,1,0.0821415,Parametric physical part,4 mm hex key · review joint fit
+ME-048,Quasiperiodic Precession Engine,ME-2300,1,,Controller computation,Trace recorder · replay the matching study
+ME-049,Anisotropic Impedance Lattice,ME-2400,1,0.1055214,Parametric physical part,4 mm hex key · review joint fit
+ME-050,Hyperboloidal Phase Conjugator,ME-2500,1,,Controller computation,Trace recorder · replay the matching study
+ME-051,Stochastic Resonance Exciter,ME-2600,1,,Controller computation,Trace recorder · replay the matching study
+ME-052,Toroidal Vorticity Separator,ME-2700,1,0.128562,Parametric physical part,4 mm hex key · review joint fit
+ME-053,Metastable Bifurcation Governor,ME-2800,1,,Controller computation,Trace recorder · replay the matching study
+ME-054,Pseudoadiabatic Entropy Compensator,ME-2900,1,,Controller computation,Trace recorder · replay the matching study
+ME-055,Gyroscopic Holonomy Resolver,ME-3000,1,,Controller computation,Trace recorder · replay the matching study
+ME-056,Non-Abelian Phase Manifold,ME-3100,1,,Controller computation,Trace recorder · replay the matching study
+ME-057,Pseudocausal Inversion Chamber,ME-3200,1,,Controller computation,Trace recorder · replay the matching study
+ME-058,Toroidal Antiprecession Coupler,ME-3300,1,0.2395903,Parametric physical part,4 mm hex key · review joint fit
+ME-059,Polychronous Eigenmode Discriminator,ME-3400,1,,Controller computation,Trace recorder · replay the matching study
+ME-060,Recursive Bifurcation Stabilizer,ME-3500,1,,Controller computation,Trace recorder · replay the matching study

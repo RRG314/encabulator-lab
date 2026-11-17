@@ -172,4 +172,4 @@ turbo-encabulator/
 3. No fabrication-ready designation without engineering checks and drawings.
 4. Every component in the exploded view maps to a canonical registry ID.
 5. Geometry, diagrams, parts catalog, and simulations use the same units and coordinate system.
-6. Do not insert jokes, winks, disclaimers about satire, or commentary about generative tools in the public site. Maintain technical precision instead.
+6. Use technical nomenclature and traceable evidence in public documentation.

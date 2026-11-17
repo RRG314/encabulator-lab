@@ -41,7 +41,7 @@ export function PartsTree({ selected, onSelect, scope, onScope, hidden, toggleHi
               <small>{ids.length}</small>
             </button>
             <button type="button" className="icon-button scope-button" aria-label={`Isolate ${assembly.shortName}`}
-              aria-pressed={scope === assembly.id} onClick={() => onScope(scope === assembly.id ? null : assembly.id)}
+              aria-pressed={scope === assembly.id} disabled={assembly.partIds.every(id=>partById.get(id)?.kind==='logical')} onClick={() => onScope(scope === assembly.id ? null : assembly.id)}
               title={`Isolate ${assembly.shortName}`}><Layers size={13} /></button>
           </div>
           {open && <ul>{ids.map(id => {
@@ -50,7 +50,7 @@ export function PartsTree({ selected, onSelect, scope, onScope, hidden, toggleHi
               <button className="tree-part" type="button" aria-current={selected === id ? 'true' : undefined}
                 onClick={() => onSelect(id)}><i /><span>{part.name}</span><small>{part.quantity === 1 ? '' : `×${part.quantity}`}</small></button>
               <button type="button" className="icon-button hide-part" aria-label={`${hidden.has(id) ? 'Show' : 'Hide'} ${part.name}`}
-                onClick={() => toggleHidden(id)}>{hidden.has(id) ? <EyeOff size={13} /> : <Eye size={13} />}</button>
+                disabled={part.kind==='logical'} onClick={() => toggleHidden(id)}>{hidden.has(id) ? <EyeOff size={13} /> : <Eye size={13} />}</button>
             </li>
           })}</ul>}
         </div>

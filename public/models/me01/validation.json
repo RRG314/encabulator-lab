@@ -1,0 +1,224 @@
+{
+  "revision": "0.1",
+  "basis": "ME-01 OpenCascade assembly, calculated design geometry",
+  "estimatedMassKg": 21.9261,
+  "fabricationRelease": false,
+  "dimensions": {
+    "length": 620,
+    "width": 412,
+    "plate": 12,
+    "shaft_z": 108,
+    "shaft_diameter": 13,
+    "primary_length": 280,
+    "secondary_diameter": 24,
+    "secondary_length": 196,
+    "journal_span": 263,
+    "bearing_outer": 37,
+    "bearing_width": 10,
+    "vane_root": 27,
+    "vane_radius": 70,
+    "vane_chord": 55,
+    "vane_pitch": 14,
+    "cover_radius": 78,
+    "cover_width": 170,
+    "motor_length": 66,
+    "coupling_length": 25,
+    "fan_diameter": 75,
+    "motor_x": -224,
+    "fan_x": 260
+  },
+  "checks": [
+    {
+      "check": "Closed positive-volume solid registration",
+      "expected": [],
+      "observed": [],
+      "unit": null,
+      "status": "PASS"
+    },
+    {
+      "check": "Concentric load path centers in Y/Z",
+      "expected": [
+        0,
+        108
+      ],
+      "observed": [
+        [
+          0,
+          108
+        ],
+        [
+          0,
+          108
+        ],
+        [
+          0,
+          108
+        ],
+        [
+          0,
+          108
+        ]
+      ],
+      "unit": "mm",
+      "status": "PASS"
+    },
+    {
+      "check": "Uniform vane indexing and instance quantity",
+      "expected": 6,
+      "observed": 6,
+      "unit": null,
+      "status": "PASS"
+    },
+    {
+      "check": "Conservative guard radial clearance",
+      "expected": "> 0",
+      "observed": 7.821655761909,
+      "unit": "mm",
+      "status": "PASS"
+    },
+    {
+      "check": "Exploded endpoint envelope overlaps",
+      "expected": [],
+      "observed": [],
+      "unit": null,
+      "status": "PASS"
+    },
+    {
+      "check": "Critical bearing and blade-envelope solid interference",
+      "expected": [],
+      "observed": [],
+      "unit": null,
+      "status": "PASS"
+    },
+    {
+      "check": "Assembled interface dispositions",
+      "expected": "Engineering review of every finite-volume intersection",
+      "observed": [
+        {
+          "a": "ME-003:1",
+          "b": "ME-015:1",
+          "overlapMm3": 1258.506
+        },
+        {
+          "a": "ME-003:1",
+          "b": "ME-044:1",
+          "overlapMm3": 596.586
+        },
+        {
+          "a": "ME-006:1",
+          "b": "ME-016:1",
+          "overlapMm3": 2303.416
+        },
+        {
+          "a": "ME-009:1",
+          "b": "ME-011:1",
+          "overlapMm3": 0.227
+        },
+        {
+          "a": "ME-009:1",
+          "b": "ME-029:1",
+          "overlapMm3": 233.103
+        },
+        {
+          "a": "ME-010:1",
+          "b": "ME-029:1",
+          "overlapMm3": 643.872
+        },
+        {
+          "a": "ME-012:1",
+          "b": "ME-013:1",
+          "overlapMm3": 56.549
+        },
+        {
+          "a": "ME-012:1",
+          "b": "ME-013:2",
+          "overlapMm3": 56.549
+        },
+        {
+          "a": "ME-012:1",
+          "b": "ME-013:3",
+          "overlapMm3": 56.549
+        },
+        {
+          "a": "ME-012:1",
+          "b": "ME-013:4",
+          "overlapMm3": 56.549
+        },
+        {
+          "a": "ME-012:1",
+          "b": "ME-013:5",
+          "overlapMm3": 56.549
+        },
+        {
+          "a": "ME-012:1",
+          "b": "ME-013:6",
+          "overlapMm3": 56.549
+        },
+        {
+          "a": "ME-012:1",
+          "b": "ME-014:1",
+          "overlapMm3": 8928.0
+        },
+        {
+          "a": "ME-020:1",
+          "b": "ME-029:1",
+          "overlapMm3": 224.685
+        },
+        {
+          "a": "ME-020:1",
+          "b": "ME-041:1",
+          "overlapMm3": 144.375
+        },
+        {
+          "a": "ME-021:1",
+          "b": "ME-029:1",
+          "overlapMm3": 92.287
+        },
+        {
+          "a": "ME-022:1",
+          "b": "ME-029:1",
+          "overlapMm3": 124.091
+        },
+        {
+          "a": "ME-023:1",
+          "b": "ME-029:1",
+          "overlapMm3": 54.372
+        },
+        {
+          "a": "ME-025:1",
+          "b": "ME-029:1",
+          "overlapMm3": 114.23
+        },
+        {
+          "a": "ME-026:1",
+          "b": "ME-029:1",
+          "overlapMm3": 38.682
+        },
+        {
+          "a": "ME-029:1",
+          "b": "ME-040:1",
+          "overlapMm3": 518.857
+        },
+        {
+          "a": "ME-029:1",
+          "b": "ME-041:1",
+          "overlapMm3": 54.055
+        },
+        {
+          "a": "ME-044:1",
+          "b": "ME-047:1",
+          "overlapMm3": 21.071
+        }
+      ],
+      "unit": "mm³",
+      "status": "REVIEW"
+    },
+    {
+      "check": "Parameter propagation to shaft, journal, vane and fan",
+      "expected": 5,
+      "observed": 5,
+      "unit": null,
+      "status": "PASS"
+    }
+  ]
+}

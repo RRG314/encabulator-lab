@@ -41,4 +41,4 @@ const retro=simulations.map(study=>{
   if (study.id==='integrated') inputs.push({id:'head',label:'Water loop head',unit:'kPa',min:0,max:75,step:1,default:18})
   return {...study, inputs, name:study.id==='integrated'?'Industrial automation & interlocks':study.name}
 })
-export const simulationProfiles:Record<MachineKey,StudySchema[]>={te01:simulations,re01:[...retro,...selectedStudies]}
+export const simulationProfiles:Record<MachineKey,StudySchema[]>={te01:simulations,re01:[...retro,...selectedStudies],me01:[]}

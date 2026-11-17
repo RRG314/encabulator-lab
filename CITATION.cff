@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "Cite the software version and the exact commit used to generate reported results."
-title: "Encabulator Engineering: Turbo Encabulator TE-01 and Retro Encabulator RE-01"
+title: "Encabulator Systems: Turbo TE-01, Retro RE-01, and Metachronic ME-01"
 type: software
 authors:
   - name: Encabulator Engineering contributors
-version: 0.2.0
+version: 0.3.0
 license: MIT
 repository-code: "https://github.com/RRG314/turbo-encabulator"
 url: "https://rrg314.github.io/turbo-encabulator/"

@@ -7,6 +7,7 @@ import { automate, benchProfiles, benchStep, crankKinematics, crankPosition, ini
 import { study } from '../src/simulation/studies'
 import { faults } from '../src/simulation/plant'
 import type { BenchCommand } from '../src/simulation/automation'
+import meScientific from '../data/me01/scientific.json'
 import trace from '../data/re01/source-traceability.json'
 
 const report: {condition:string,expected:number,observed:number,absoluteError:number,tolerance:number,status:string}[]=[]
@@ -34,7 +35,7 @@ describe('independent machine parity',()=>{
   for (const machine of Object.values(machines)) {
     it(`${machine.code} has independent linked records, native solids, downloads, draws and original GLB mesh coverage`,()=>{
       expect(integrityErrors(machine.registry)).toEqual([])
-      const parts=new Set(machine.registry.parts.map(p=>p.id))
+      const parts=new Set(machine.registry.parts.filter(p=>machine.key!=='me01'||p.kind!=='logical').map(p=>p.id))
       const glb=readFileSync(dir(`public/${machine.mesh}`))
       expect(glb.toString('utf8',0,4)).toBe('glTF')
       expect(glb.readUInt32LE(8)).toBe(glb.byteLength)
@@ -44,15 +45,15 @@ describe('independent machine parity',()=>{
       const shape=JSON.parse(readFileSync(dir(`public/${machine.assetFolder}/validation.json`),'utf8')) as {checks:{status:string}[]}
       const expected=machine.key==='te01'
         ? ['te01-assembled.FCStd','te01-exploded.step','te01-section-x.step','te01-part-solids.zip','te01-drawings-svg.zip']
-        : ['re01-assembled.FCStd','re01-exploded.step','re01-transverse.step','part-solids.zip','drawings.zip','bom.csv']
+        : machine.key==='me01'?['me01-assembled.FCStd','me01-exploded.step','me01-transverse.step','solids.zip','drawings.zip','bom.csv'] : ['re01-assembled.FCStd','re01-exploded.step','re01-transverse.step','part-solids.zip','drawings.zip','bom.csv']
       const checks={
-        nativeSources: existsSync(dir(machine.key==='te01'?'cad/te01_master_assembly.py':'cad/models/re01/master_assembly.py')),
+        nativeSources: existsSync(dir(machine.key==='te01'?'cad/te01_master_assembly.py':`cad/models/${machine.key}/master_assembly.py`)),
         poseIdentity: new Set(machine.placements.map(p=>p.key)).size===doc.nodes.length,
-        serviceCoverage: machine.registry.parts.every(p=>!!machine.service[p.id]?.tool&&!!machine.service[p.id]?.envelopeMm?.length),
+        serviceCoverage: machine.registry.parts.every(p=>!!machine.service[p.id]?.tool && ((p.kind==='logical'&&machine.key==='me01')||!!machine.service[p.id]?.envelopeMm?.length)),
         assembledAndSeparated: machine.placements.some(p=>p.offset.some(value=>value!==0))&&doc.nodes.length>parts.size,
         exportsAndDrawings: expected.every(file=>existsSync(dir(`public/${machine.assetFolder}/${file}`))),
         geometryChecks: shape.checks.every(check=>check.status!=='FAIL'),
-        studyCoverage: simulationProfiles[machine.key].some(x=>x.id==='integrated')&&simulationProfiles[machine.key].length>=10,
+        studyCoverage: machine.key==='me01'?existsSync(dir('src/simulation/metachronic/plant.ts')) && meScientific.length===21:simulationProfiles[machine.key].some(x=>x.id==='integrated')&&simulationProfiles[machine.key].length>=10,
       }
       if(machine.key==='re01') {
         expect(machine.registry.parts).toHaveLength(49)

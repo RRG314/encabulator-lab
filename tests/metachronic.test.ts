@@ -1,0 +1,91 @@
+import { readFileSync, existsSync, writeFileSync } from 'node:fs'
+import { afterAll, describe, expect, it } from 'vitest'
+import { integrityErrors } from '../src/data'
+import { machines, readRoute } from '../src/machines/profiles'
+import families from '../data/me01/scientific.json'
+import { controls, scientificStudy, complexTone, commutatorAngle, dynamicStiffness, entropyProduction, magneticLoss, nextHysteresis } from '../src/simulation/metachronic/physics'
+import { dynamicFaults, me01Simulation, defaultOptions, hosts } from '../src/simulation/metachronic/plant'
+import type { Options } from '../src/simulation/metachronic/plant'
+
+const evidence:{condition:string,expected:number,observed:number,absoluteError:number,tolerance:number,status:string}[]=[]
+const path=(name:string)=>new URL(`../${name}`,import.meta.url)
+function numeric(condition:string,expected:number,observed:number,tolerance:number) {
+  const absoluteError=Math.abs(observed-expected)
+  evidence.push({condition,expected,observed,absoluteError,tolerance,status:absoluteError<=tolerance?'PASS':'FAIL'})
+  expect(absoluteError,condition).toBeLessThanOrEqual(tolerance)
+}
+afterAll(()=>{
+  if(process.env.TE01_WRITE_NUMERICAL==='1') writeFileSync(path('public/models/me01/numerical-validation.json'),
+    JSON.stringify({basis:'Deterministic numerical and analytical reference cases',revision:'0.1',readings:evidence},null,2)+'\n')
+})
+describe('Metachronic model and parametric evidence',()=>{
+  it('uses the canonical route and verifies registry and CAD coverage without representing software as a solid',()=>{
+    expect(readRoute('#/me01/component/ME-040')).toEqual({model:'me01',page:'component',param:'ME-040'})
+    const me=machines.me01
+    expect(integrityErrors(me.registry)).toEqual([])
+    expect(me.registry.assemblies).toHaveLength(35)
+    const physical=me.registry.parts.filter(part=>part.kind!=='logical')
+    const logical=me.registry.parts.filter(part=>part.kind==='logical')
+    expect(families).toHaveLength(21)
+    expect(logical.length).toBeGreaterThan(0)
+    const buf=readFileSync(path(`public/${me.mesh}`))
+    expect(buf.toString('utf8',0,4)).toBe('glTF')
+    expect(buf.readUInt32LE(8)).toBe(buf.byteLength)
+    const glb=JSON.parse(buf.toString('utf8',20,20+buf.readUInt32LE(12))) as {nodes:{name:string}[],meshes:{name:string}[]}
+    expect(new Set(glb.meshes.map(item=>item.name))).toEqual(new Set(physical.map(part=>part.id)))
+    expect(glb.nodes.map(n=>n.name)).toEqual(me.placements.map(p=>p.key))
+    expect(me.placements.filter(p=>p.partId==='ME-013')).toHaveLength(6)
+    expect(physical.every(part=>!!part.massKg && !!me.service[part.id].centerMm&&existsSync(path(`public/${part.cadAssetPath}`))&&existsSync(path(`public/${part.diagramRefs[0]}`)))).toBe(true)
+    expect(logical.every(part=>part.cadAssetPath===null&&part.massKg===null&&!me.placements.some(p=>p.partId===part.id))).toBe(true)
+    const audit=JSON.parse(readFileSync(path('public/models/me01/validation.json'),'utf8')) as {checks:{status:string,check:string}[]}
+    expect(audit.checks.filter(row=>row.status==='FAIL')).toEqual([])
+  })
+  it('computes all 21 stations at nominal and boundary controls',()=>{
+    for(const family of families) {
+      const control=controls[family.number]
+      for(const value of [control.min,control.initial,control.max]) {
+        const output=scientificStudy(family.number,value)
+        expect(output.unit).toBeTruthy()
+        for(const series of output.series) expect(series.data.length===output.x.length && series.data.every(Number.isFinite)).toBe(true)
+      }
+    }
+    numeric('Linear quadrupole gradient at 16 mm (mT)',128,scientificStudy(40,8).series[0].data.at(-1)!,1e-9)
+    numeric('Magnetic loss under doubled field',4,magneticLoss(1.4,.36,.058,.6)/magneticLoss(1.4,.18,.058,.6),1e-9)
+    numeric('Zero thermal difference entropy production (W/K)',0,entropyProduction(70,310,310),1e-12)
+    numeric('Static dynamic stiffness (N/m)',1700,dynamicStiffness(.34,7,1700,0),1e-12)
+    numeric('Rotation commutator on zero second angle (rad)',0,commutatorAngle(1,0),1e-10)
+    expect(commutatorAngle(1,1)).toBeGreaterThan(.5)
+    expect(nextHysteresis(false,47,.3,40,37,.5)).toBe(false)
+    expect(nextHysteresis(false,47,.5,40,37,.5)).toBe(true)
+    expect(scientificStudy(51,.12)).toEqual(scientificStudy(51,.12))
+    const samples=Array.from({length:400},(_,i)=>Math.cos(2*Math.PI*12*.005*i))
+    numeric('Synchronous DFT coefficient',1,2*Math.hypot(...complexTone(samples,.005,12))/400,1e-12)
+  })
+})
+describe('Coupled model',()=>{
+  it('accounts for both shafts, output fluid demand, heat and nominal DC energy',()=>{
+    const run=me01Simulation(defaultOptions)
+    expect(run[0].flow).toBe(0)
+    expect(run.some(row=>row.regenW>0)).toBe(true)
+    expect(Math.max(...run.map(r=>r.busV))).toBeLessThanOrEqual(39.01)
+    expect(Math.max(...run.map(r=>r.flow))).toBeGreaterThan(0)
+    const last=run.at(-1)!
+    const smaller=me01Simulation(defaultOptions,.001).at(-1)!
+    numeric('Motor-drive energy residual at 9 s (J)',0,last.audit,.2)
+    numeric('Primary rpm timestep sensitivity',smaller.rpm,last.rpm,1.2)
+    numeric('Secondary rpm timestep sensitivity',smaller.secondaryRpm,last.secondaryRpm,1.2)
+    expect(Math.abs(last.rpm-last.secondaryRpm)).toBeLessThan(14)
+    expect(last.motor).toBeGreaterThan(defaultOptions.ambient)
+    expect(last.clearanceMicrons).toBeLessThan(92)
+  })
+  it('uses the defined host boundary and asserts the guard, sensor and electrical trips',()=>{
+    const outputs=Object.keys(hosts).map(host=>me01Simulation({...defaultOptions,host:host as Options['host']}).at(-1)!)
+    expect(new Set(outputs.map(p=>p.torque.toFixed(4))).size).toBeGreaterThan(3)
+    for(const fault of dynamicFaults.slice(1)) {
+      const row=me01Simulation({...defaultOptions,fault}).find(p=>p.t>=3.1)!
+      expect(row.fault).toBeTruthy()
+      if(row.mode==='Fault-latched')numeric(`${fault}: disabled drive input (A)`,0,row.current,1e-12)
+      else expect(row.mode).toBe('Degraded')
+    }
+  })
+})

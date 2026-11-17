@@ -1,0 +1,492 @@
+[
+  {
+    "id": "ME-IF-002",
+    "kind": "mechanical",
+    "from": "ME-002",
+    "to": "ME-001",
+    "label": "bed kinematic clamp"
+  },
+  {
+    "id": "ME-IF-003",
+    "kind": "mechanical",
+    "from": "ME-003",
+    "to": "ME-001",
+    "label": "flanged guard perimeter"
+  },
+  {
+    "id": "ME-IF-004",
+    "kind": "mechanical",
+    "from": "ME-004",
+    "to": "ME-003",
+    "label": "hinge and latch interface"
+  },
+  {
+    "id": "ME-IF-005",
+    "kind": "mechanical",
+    "from": "ME-005",
+    "to": "ME-007",
+    "label": "primary journals"
+  },
+  {
+    "id": "ME-IF-006",
+    "kind": "mechanical",
+    "from": "ME-006",
+    "to": "ME-008",
+    "label": "secondary bearing bore"
+  },
+  {
+    "id": "ME-IF-007",
+    "kind": "mechanical",
+    "from": "ME-007",
+    "to": "ME-015",
+    "label": "radial bearing bore"
+  },
+  {
+    "id": "ME-IF-008",
+    "kind": "mechanical",
+    "from": "ME-008",
+    "to": "ME-015",
+    "label": "radial bearing bore"
+  },
+  {
+    "id": "ME-IF-009",
+    "kind": "mechanical",
+    "from": "ME-009",
+    "to": "ME-002",
+    "label": "motor shoe and spline envelope"
+  },
+  {
+    "id": "ME-IF-010",
+    "kind": "mechanical",
+    "from": "ME-010",
+    "to": "ME-009",
+    "label": "motor lamination shoulder"
+  },
+  {
+    "id": "ME-IF-011",
+    "kind": "mechanical",
+    "from": "ME-011",
+    "to": "ME-010",
+    "label": "winding power and cooling"
+  },
+  {
+    "id": "ME-IF-012",
+    "kind": "mechanical",
+    "from": "ME-012",
+    "to": "ME-005",
+    "label": "carrier shaft fit"
+  },
+  {
+    "id": "ME-IF-013",
+    "kind": "mechanical",
+    "from": "ME-013",
+    "to": "ME-012",
+    "label": "radial blade pivot"
+  },
+  {
+    "id": "ME-IF-014",
+    "kind": "mechanical",
+    "from": "ME-014",
+    "to": "ME-012",
+    "label": "pitch command and index feedback"
+  },
+  {
+    "id": "ME-IF-015",
+    "kind": "mechanical",
+    "from": "ME-015",
+    "to": "ME-002",
+    "label": "orthogonal actuator reaction and pickup"
+  },
+  {
+    "id": "ME-IF-016",
+    "kind": "mechanical",
+    "from": "ME-016",
+    "to": "ME-006",
+    "label": "coaxial torque path"
+  },
+  {
+    "id": "ME-IF-017",
+    "kind": "mechanical",
+    "from": "ME-017",
+    "to": "ME-016",
+    "label": "parallel torsional damper"
+  },
+  {
+    "id": "ME-IF-018",
+    "kind": "mechanical",
+    "from": "ME-018",
+    "to": "ME-019",
+    "label": "fan demand and heat transfer"
+  },
+  {
+    "id": "ME-IF-019",
+    "kind": "mechanical",
+    "from": "ME-019",
+    "to": "ME-002",
+    "label": "fan tray and exhaust duct"
+  },
+  {
+    "id": "ME-IF-020",
+    "kind": "fluid",
+    "from": "ME-020",
+    "to": "ME-001",
+    "label": "coolant split & return"
+  },
+  {
+    "id": "ME-IF-021",
+    "kind": "fluid",
+    "from": "ME-021",
+    "to": "ME-020",
+    "label": "one-direction pressure path"
+  },
+  {
+    "id": "ME-IF-022",
+    "kind": "fluid",
+    "from": "ME-022",
+    "to": "ME-020",
+    "label": "heat removal loop"
+  },
+  {
+    "id": "ME-IF-023",
+    "kind": "signal",
+    "from": "ME-023",
+    "to": "ME-024",
+    "label": "motor torque and signed DC power"
+  },
+  {
+    "id": "ME-IF-024",
+    "kind": "signal",
+    "from": "ME-024",
+    "to": "ME-028",
+    "label": "bounded regeneration storage"
+  },
+  {
+    "id": "ME-IF-025",
+    "kind": "signal",
+    "from": "ME-025",
+    "to": "ME-028",
+    "label": "synchronized samples to ME-059"
+  },
+  {
+    "id": "ME-IF-026",
+    "kind": "signal",
+    "from": "ME-026",
+    "to": "ME-025",
+    "label": "lateral displacement and actuator current"
+  },
+  {
+    "id": "ME-IF-027",
+    "kind": "signal",
+    "from": "ME-027",
+    "to": "ME-026",
+    "label": "phase measurement and drive request"
+  },
+  {
+    "id": "ME-IF-028",
+    "kind": "signal",
+    "from": "ME-028",
+    "to": "ME-001",
+    "label": "supervisory PLC and independent inhibit"
+  },
+  {
+    "id": "ME-IF-029",
+    "kind": "signal",
+    "from": "ME-029",
+    "to": "ME-025",
+    "label": "field cable and thermal return"
+  },
+  {
+    "id": "ME-IF-030",
+    "kind": "mechanical",
+    "from": "ME-030",
+    "to": "ME-006",
+    "label": "host torque attachment"
+  },
+  {
+    "id": "ME-IF-031",
+    "kind": "mechanical",
+    "from": "ME-031",
+    "to": "ME-003",
+    "label": "top cover removability"
+  },
+  {
+    "id": "ME-IF-040",
+    "kind": "signal",
+    "from": "ME-040",
+    "to": "ME-015",
+    "label": "pickup gradient → ME-015 gain calibration"
+  },
+  {
+    "id": "ME-IF-041",
+    "kind": "fluid",
+    "from": "ME-041",
+    "to": "ME-020",
+    "label": "pressure loss → ME-020 demand"
+  },
+  {
+    "id": "ME-IF-042",
+    "kind": "mechanical",
+    "from": "ME-042",
+    "to": "ME-026",
+    "label": "localized response → ME-059 classifier"
+  },
+  {
+    "id": "ME-IF-043",
+    "kind": "fluid",
+    "from": "ME-043",
+    "to": "ME-041",
+    "label": "stability margin → ME-041 field ceiling"
+  },
+  {
+    "id": "ME-IF-044",
+    "kind": "signal",
+    "from": "ME-044",
+    "to": "ME-026",
+    "label": "directional transfer → ME-026 estimator"
+  },
+  {
+    "id": "ME-IF-045",
+    "kind": "signal",
+    "from": "ME-045",
+    "to": "ME-028",
+    "label": "fan command → ME-018 thermal loop"
+  },
+  {
+    "id": "ME-IF-046",
+    "kind": "mechanical",
+    "from": "ME-046",
+    "to": "ME-015",
+    "label": "tilt and damping demand → ME-058"
+  },
+  {
+    "id": "ME-IF-047",
+    "kind": "signal",
+    "from": "ME-047",
+    "to": "ME-040",
+    "label": "signed test field → ME-040 pickup verification"
+  },
+  {
+    "id": "ME-IF-048",
+    "kind": "signal",
+    "from": "ME-048",
+    "to": "ME-026",
+    "label": "axis-orientation demand → ME-046"
+  },
+  {
+    "id": "ME-IF-049",
+    "kind": "mechanical",
+    "from": "ME-049",
+    "to": "ME-026",
+    "label": "directional stiffness → ME-026 lateral model"
+  },
+  {
+    "id": "ME-IF-050",
+    "kind": "signal",
+    "from": "ME-050",
+    "to": "ME-026",
+    "label": "phase demand → ME-044 drive buffer"
+  },
+  {
+    "id": "ME-IF-051",
+    "kind": "signal",
+    "from": "ME-051",
+    "to": "ME-026",
+    "label": "detector calibration → ME-042 response study"
+  },
+  {
+    "id": "ME-IF-052",
+    "kind": "fluid",
+    "from": "ME-052",
+    "to": "ME-020",
+    "label": "circulation and loss → ME-020 pressure balance"
+  },
+  {
+    "id": "ME-IF-053",
+    "kind": "signal",
+    "from": "ME-053",
+    "to": "ME-028",
+    "label": "branch margin → ME-060 control gate"
+  },
+  {
+    "id": "ME-IF-054",
+    "kind": "signal",
+    "from": "ME-054",
+    "to": "ME-028",
+    "label": "entropy budget → ME-045 thermal dispatch"
+  },
+  {
+    "id": "ME-IF-055",
+    "kind": "signal",
+    "from": "ME-055",
+    "to": "ME-026",
+    "label": "orientation residual → ME-046 bias estimate"
+  },
+  {
+    "id": "ME-IF-056",
+    "kind": "signal",
+    "from": "ME-056",
+    "to": "ME-026",
+    "label": "cross-axis ordering error → ME-055 calibration"
+  },
+  {
+    "id": "ME-IF-057",
+    "kind": "signal",
+    "from": "ME-057",
+    "to": "ME-026",
+    "label": "deconvolved input → ME-059 modal filter"
+  },
+  {
+    "id": "ME-IF-058",
+    "kind": "mechanical",
+    "from": "ME-058",
+    "to": "ME-046",
+    "label": "restoring moment → ME-046 tilt equation"
+  },
+  {
+    "id": "ME-IF-059",
+    "kind": "signal",
+    "from": "ME-059",
+    "to": "ME-026",
+    "label": "resolved modes → ME-026 suppression gains"
+  },
+  {
+    "id": "ME-IF-060",
+    "kind": "signal",
+    "from": "ME-060",
+    "to": "ME-028",
+    "label": "control limit → ME-027 synchronization"
+  },
+  {
+    "id": "ME-X-001",
+    "from": "ME-005",
+    "to": "ME-016",
+    "label": "Drive-side torque",
+    "kind": "mechanical"
+  },
+  {
+    "id": "ME-X-002",
+    "from": "ME-025",
+    "to": "ME-007",
+    "label": "Primary journal telemetry",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-003",
+    "from": "ME-025",
+    "to": "ME-008",
+    "label": "Secondary journal telemetry",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-004",
+    "from": "ME-021",
+    "to": "ME-041",
+    "label": "Conductive bypass return",
+    "kind": "fluid"
+  },
+  {
+    "id": "ME-X-005",
+    "from": "ME-041",
+    "to": "ME-043",
+    "label": "Bounded field command",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-006",
+    "from": "ME-018",
+    "to": "ME-045",
+    "label": "Fan demand",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-007",
+    "from": "ME-046",
+    "to": "ME-048",
+    "label": "Axis orientation request",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-008",
+    "from": "ME-055",
+    "to": "ME-046",
+    "label": "Estimated tilt correction",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-009",
+    "from": "ME-056",
+    "to": "ME-055",
+    "label": "Attitude convention test",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-010",
+    "from": "ME-057",
+    "to": "ME-059",
+    "label": "Causal reconstructed samples",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-011",
+    "from": "ME-059",
+    "to": "ME-026",
+    "label": "Modal order selection",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-012",
+    "from": "ME-060",
+    "to": "ME-027",
+    "label": "Bounded scheduling signal",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-013",
+    "from": "ME-054",
+    "to": "ME-045",
+    "label": "Thermodynamic dispatch request",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-014",
+    "from": "ME-053",
+    "to": "ME-060",
+    "label": "Branch Margin",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-015",
+    "from": "ME-051",
+    "to": "ME-042",
+    "label": "Dither calibration",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-016",
+    "from": "ME-050",
+    "to": "ME-044",
+    "label": "Complex drive phasor",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-017",
+    "from": "ME-049",
+    "to": "ME-026",
+    "label": "Directional dynamic stiffness",
+    "kind": "signal"
+  },
+  {
+    "id": "ME-X-018",
+    "from": "ME-052",
+    "to": "ME-022",
+    "label": "Toroidal pressure and delivery",
+    "kind": "fluid"
+  },
+  {
+    "id": "ME-X-019",
+    "from": "ME-023",
+    "to": "ME-011",
+    "label": "Polyphase drive output",
+    "kind": "power"
+  }
+]

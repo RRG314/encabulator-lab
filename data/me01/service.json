@@ -1,0 +1,1022 @@
+{
+  "ME-001": {
+    "failureMode": "Deck sag or datum damage",
+    "tool": "6 mm hex key · candidate bed screws",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "Z = 0 datum",
+    "envelopeMm": [
+      620.0,
+      412.0,
+      12.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      0.0,
+      -0.0248
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.11811624613207825,
+      0.26418676081543724,
+      0.38210370295830126
+    ]
+  },
+  "ME-002": {
+    "failureMode": "Axial movement or preload loss",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "bed kinematic clamp",
+    "envelopeMm": [
+      577.0,
+      27.0,
+      14.7
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0,
+      -0.0,
+      0.2205
+    ],
+    "centroidAxisInertiaKgM2": [
+      6.460399539373691e-05,
+      0.02223200103244335,
+      0.022268812905979655
+    ]
+  },
+  "ME-003": {
+    "failureMode": "Fragment containment qualification outstanding",
+    "tool": "5 mm hex key · candidate guard fasteners",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "flanged guard perimeter",
+    "envelopeMm": [
+      130.0,
+      170.0,
+      189.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      0.0,
+      -14.625
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.004093119890756105,
+      0.003226377535574271,
+      0.003167378771959017
+    ]
+  },
+  "ME-004": {
+    "failureMode": "Warped panel or failed latch",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "hinge and latch interface",
+    "envelopeMm": [
+      104.0,
+      12.5,
+      160.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -2.9535,
+      -0.3711,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0002553820694879997,
+      0.0003766337713241965,
+      0.0001217320493395556
+    ]
+  },
+  "ME-005": {
+    "failureMode": "Shaft fatigue or combined-load deflection",
+    "tool": "Dial indicator · journal setup",
+    "classification": "Parametric physical part",
+    "variables": "J [kg·m²], torque [N·m], ω [rad/s]",
+    "interface": "primary journals",
+    "envelopeMm": [
+      280.0,
+      17.0,
+      17.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      7.065,
+      -0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      8.789205296264787e-06,
+      0.002032341147779623,
+      0.002032341147779623
+    ]
+  },
+  "ME-006": {
+    "failureMode": "Bore interference or torsional failure",
+    "tool": "Bore gauge · nominal sleeve fit",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "secondary bearing bore",
+    "envelopeMm": [
+      196.0,
+      27.2,
+      27.2
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      2.993,
+      -0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      1.713680979858137e-05,
+      0.0005484689341016414,
+      0.0005484689341016417
+    ]
+  },
+  "ME-007": {
+    "failureMode": "Spall, preload loss or overheating",
+    "tool": "Bearing puller · provisional envelope",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "radial bearing bore",
+    "envelopeMm": [
+      10.0,
+      37.0,
+      37.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.054,
+      -0.0,
+      0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      6.606170777392582e-06,
+      3.538746850703696e-06,
+      3.538746850703762e-06
+    ]
+  },
+  "ME-008": {
+    "failureMode": "Spall, preload loss or overheating",
+    "tool": "Bearing puller · provisional envelope",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "radial bearing bore",
+    "envelopeMm": [
+      10.0,
+      37.0,
+      37.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.016,
+      -0.0,
+      0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      8.230597696900666e-06,
+      4.389496205571702e-06,
+      4.389496205571784e-06
+    ]
+  },
+  "ME-009": {
+    "failureMode": "Mount migration or winding temperature excursion",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "motor shoe and spline envelope",
+    "envelopeMm": [
+      77.0,
+      105.0,
+      103.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      -21.6723
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0009713531194321513,
+      0.0007286395406547584,
+      0.0008857682610711789
+    ]
+  },
+  "ME-010": {
+    "failureMode": "Insulation failure or slot fouling",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "motor lamination shoulder",
+    "envelopeMm": [
+      57.0,
+      82.0,
+      82.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.000689824528220726,
+      0.0004963707328505635,
+      0.0004963707328505731
+    ]
+  },
+  "ME-011": {
+    "failureMode": "Interturn fault or insulation creep",
+    "tool": "Four-wire milliohm meter",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "winding power and cooling",
+    "envelopeMm": [
+      63.0,
+      73.559,
+      70.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.244,
+      -0.8784,
+      0.8296
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.00010406497980154427,
+      9.4627235010407e-05,
+      9.503421728204984e-05
+    ]
+  },
+  "ME-012": {
+    "failureMode": "Fretting or pitch indexing error",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "carrier shaft fit",
+    "envelopeMm": [
+      62.4,
+      57.6,
+      57.6
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0,
+      0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.00035356570436107437,
+      0.00045800353888228603,
+      0.00045800353888229015
+    ]
+  },
+  "ME-013": {
+    "failureMode": "Root fatigue or angle runaway",
+    "tool": "3 mm hex key · candidate keeper",
+    "classification": "Parametric physical part",
+    "variables": "Pitch β [rad], τa [N·m], ω [rad/s]",
+    "interface": "radial blade pivot",
+    "envelopeMm": [
+      52.665,
+      17.313,
+      48.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.8843,
+      -0.2878,
+      20.4934
+    ],
+    "centroidAxisInertiaKgM2": [
+      2.143965845621259e-05,
+      4.1105169299615024e-05,
+      2.3346002123464727e-05
+    ]
+  },
+  "ME-014": {
+    "failureMode": "Actuator jam or loss of position datum",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "pitch command and index feedback",
+    "envelopeMm": [
+      26.5,
+      44.837,
+      48.8
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      1.7352,
+      -0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      9.525548430787503e-06,
+      5.665523794604771e-06,
+      5.66552379460477e-06
+    ]
+  },
+  "ME-015": {
+    "failureMode": "Axis error or force saturation",
+    "tool": "5 mm hex key · candidate pedestal shims",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "orthogonal actuator reaction and pickup",
+    "envelopeMm": [
+      43.0,
+      124.0,
+      131.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      -36.2482
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.001528120069171303,
+      0.0012193302344582478,
+      0.0004059886846421671
+    ]
+  },
+  "ME-016": {
+    "failureMode": "Stop impact or clamp migration",
+    "tool": "5 mm hex key · candidate hub clamp",
+    "classification": "Parametric physical part",
+    "variables": "kθ [N·m/rad], cθ [N·m·s/rad]",
+    "interface": "coaxial torque path",
+    "envelopeMm": [
+      33.0,
+      58.0,
+      58.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      0.1173
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0001405742704056251,
+      0.0001208668566457574,
+      0.00012142856425314704
+    ]
+  },
+  "ME-017": {
+    "failureMode": "Elastomer creep or crack",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "parallel torsional damper",
+    "envelopeMm": [
+      12.0,
+      52.0,
+      52.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      5.356256930447631e-06,
+      2.735658713684943e-06,
+      2.7356587136849684e-06
+    ]
+  },
+  "ME-018": {
+    "failureMode": "Fan stall or blade crack",
+    "tool": "3 mm hex key · candidate fan hub",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "fan demand and heat transfer",
+    "envelopeMm": [
+      14.0,
+      71.891,
+      71.141
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      1.1161662237516622e-05,
+      5.96438307273383e-06,
+      5.964383072733846e-06
+    ]
+  },
+  "ME-019": {
+    "failureMode": "Grille obstruction or guard damage",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "fan tray and exhaust duct",
+    "envelopeMm": [
+      43.25,
+      101.0,
+      101.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      6.0788,
+      -0.0,
+      0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0005178605611994763,
+      0.00030619466820627794,
+      0.00030619466820628054
+    ]
+  },
+  "ME-020": {
+    "failureMode": "Manifold leakage or stuck restriction",
+    "tool": "17 mm spanner · candidate union flats",
+    "classification": "Parametric physical part",
+    "variables": "Q [m³/s]",
+    "interface": "coolant split & return",
+    "envelopeMm": [
+      98.0,
+      33.0,
+      34.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      0.0311
+    ],
+    "centroidAxisInertiaKgM2": [
+      9.813597725435763e-05,
+      0.0004154702887906569,
+      0.0004344305194748601
+    ]
+  },
+  "ME-021": {
+    "failureMode": "Reverse leakage or occluded seat",
+    "tool": "19 mm spanner · candidate plug",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "one-direction pressure path",
+    "envelopeMm": [
+      56.0,
+      32.0,
+      32.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      0.0622
+    ],
+    "centroidAxisInertiaKgM2": [
+      4.165509779586263e-05,
+      6.712868945607922e-05,
+      7.661004951802004e-05
+    ]
+  },
+  "ME-022": {
+    "failureMode": "Fouling or runaway temperature",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "heat removal loop",
+    "envelopeMm": [
+      86.0,
+      63.0,
+      26.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0279,
+      -0.0,
+      2.0648
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.00016097952882550474,
+      0.00024120229976587677,
+      0.0003585201163358786
+    ]
+  },
+  "ME-023": {
+    "failureMode": "Overvoltage or current saturation",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "motor torque and signed DC power",
+    "envelopeMm": [
+      88.0,
+      58.0,
+      28.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.101,
+      0.0,
+      4.1263
+    ],
+    "centroidAxisInertiaKgM2": [
+      8.464488900065865e-05,
+      0.00015864417359979903,
+      0.0002030463794505857
+    ]
+  },
+  "ME-024": {
+    "failureMode": "Voltage window exceeded",
+    "tool": "Insulated driver · terminal size open",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "bounded regeneration storage",
+    "envelopeMm": [
+      69.0,
+      46.0,
+      52.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0,
+      0.0,
+      20.8752
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.00014432332387795396,
+      0.0002974127492578906,
+      0.00022218218030734893
+    ]
+  },
+  "ME-025": {
+    "failureMode": "Stale clock or dropout",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "synchronized samples to ME-059",
+    "envelopeMm": [
+      65.0,
+      52.0,
+      31.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0838,
+      0.0,
+      4.0448
+    ],
+    "centroidAxisInertiaKgM2": [
+      5.6112969406660455e-05,
+      7.552565554154321e-05,
+      9.668211149135573e-05
+    ]
+  },
+  "ME-026": {
+    "failureMode": "Lost modal discrimination",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "lateral displacement and actuator current",
+    "envelopeMm": [
+      53.0,
+      49.0,
+      15.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      0.0,
+      2.4376
+    ],
+    "centroidAxisInertiaKgM2": [
+      2.692977081001257e-06,
+      3.848611031666872e-06,
+      5.813752514976872e-06
+    ]
+  },
+  "ME-027": {
+    "failureMode": "Oscillation or uncertain phase",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "phase measurement and drive request",
+    "envelopeMm": [
+      62.0,
+      51.0,
+      24.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.049,
+      0.0,
+      3.5806
+    ],
+    "centroidAxisInertiaKgM2": [
+      3.839361089050828e-05,
+      5.140340030460935e-05,
+      7.240602410687004e-05
+    ]
+  },
+  "ME-028": {
+    "failureMode": "Interlock failure or stale data",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "supervisory PLC and independent inhibit",
+    "envelopeMm": [
+      144.0,
+      61.0,
+      164.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0,
+      0.1528,
+      9.9951
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0033524678782356487,
+      0.0054956942875335315,
+      0.003068677420021622
+    ]
+  },
+  "ME-029": {
+    "failureMode": "Chafe or coolant leak",
+    "tool": "Multimeter · continuity and isolation",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "field cable and thermal return",
+    "envelopeMm": [
+      458.8,
+      267.8,
+      111.8
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -44.4164,
+      -51.2187,
+      36.5916
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0006606823534257274,
+      0.0008853973001660901,
+      0.0015289223335901829
+    ]
+  },
+  "ME-030": {
+    "failureMode": "Excessive thermal or torque demand",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "host torque attachment",
+    "envelopeMm": [
+      43.0,
+      82.0,
+      82.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0005304823044772104,
+      0.000365131331269918,
+      0.0003651313312699233
+    ]
+  },
+  "ME-031": {
+    "failureMode": "Window crazing or loose fasteners",
+    "tool": "4 mm hex key · candidate cover hardware",
+    "classification": "Parametric physical part",
+    "variables": "",
+    "interface": "top cover removability",
+    "envelopeMm": [
+      106.0,
+      170.0,
+      5.9
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0,
+      0.0,
+      0.0308
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.0002547531190602982,
+      0.00010639497431372383,
+      0.0003609845264651392
+    ]
+  },
+  "ME-040": {
+    "failureMode": "Coil saturation or thermal drift",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "G [T/m], offsets x and y [m]",
+    "interface": "pickup gradient → ME-015 gain calibration",
+    "envelopeMm": [
+      32.0,
+      67.0,
+      67.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.00037824733059251675,
+      0.00022383004358842213,
+      0.000223830043588422
+    ]
+  },
+  "ME-041": {
+    "failureMode": "Electrode polarization or leakage",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Conductivity σ [S/m], field B [T], wetted length L [m], velocity u [m/s], closure χ [1]",
+    "interface": "pressure loss → ME-020 demand",
+    "envelopeMm": [
+      68.0,
+      36.0,
+      39.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.4478,
+      0.1195,
+      0.2146
+    ],
+    "centroidAxisInertiaKgM2": [
+      5.231370731637741e-05,
+      0.00012048302075308197,
+      0.0001273514037847995
+    ]
+  },
+  "ME-042": {
+    "failureMode": "Defect depinning or flexure fatigue",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Displacement q [m], m [kg], c [N·s/m], k and a [N/m], b [N/m³]",
+    "interface": "localized response → ME-059 classifier",
+    "envelopeMm": [
+      93.0,
+      30.0,
+      15.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0036,
+      0.0,
+      5.5915
+    ],
+    "centroidAxisInertiaKgM2": [
+      8.091726944938796e-06,
+      8.481222877661117e-05,
+      8.769584297328572e-05
+    ]
+  },
+  "ME-043": {
+    "failureMode": "Fluid contamination, poor calibration or optical saturation",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Surface tension γ [N/m], wavenumber k [m⁻¹], density ρ [kg/m³], fitted magnetic coefficient α [N/(m²·T²)], field B [T]",
+    "interface": "stability margin → ME-041 field ceiling",
+    "envelopeMm": [
+      34.0,
+      31.0,
+      54.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.5168,
+      0.0,
+      20.9903
+    ],
+    "centroidAxisInertiaKgM2": [
+      1.6164474397714813e-05,
+      1.6652402806750712e-05,
+      8.875354778105715e-06
+    ]
+  },
+  "ME-044": {
+    "failureMode": "Feedback instability or saturation",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Directional gains gij [1], baseline frequency response H0 [m/N]",
+    "interface": "directional transfer → ME-026 estimator",
+    "envelopeMm": [
+      78.0,
+      29.0,
+      24.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      6.0767
+    ],
+    "centroidAxisInertiaKgM2": [
+      6.189353970181571e-06,
+      4.053364824902532e-05,
+      4.004597783233691e-05
+    ]
+  },
+  "ME-045": {
+    "failureMode": "Threshold chatter or stale temperature",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Temperatures T [°C], minimum dwell Δt [s]",
+    "interface": "fan command → ME-018 thermal loop"
+  },
+  "ME-046": {
+    "failureMode": "Stop strike or bearing stiction",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Tilt θ [rad], inertia I [kg·m²], damping C and gyroscopic skew G [N·m·s/rad], K [N·m/rad]",
+    "interface": "tilt and damping demand → ME-058",
+    "envelopeMm": [
+      21.0,
+      77.0,
+      77.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.00017729930919907667,
+      9.196500947396663e-05,
+      9.186390796809605e-05
+    ]
+  },
+  "ME-047": {
+    "failureMode": "Open winding or excessive copper loss",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Permeability μ0 [H/m], turns N [1], current I [A], length L and mean radius R [m]",
+    "interface": "signed test field → ME-040 pickup verification",
+    "envelopeMm": [
+      51.0,
+      44.0,
+      44.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0,
+      0.0013,
+      0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      2.5344293786745612e-05,
+      4.048695902261022e-05,
+      4.0486470777835096e-05
+    ]
+  },
+  "ME-048": {
+    "failureMode": "Aliasing or excessive command amplitude",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Amplitude A and B [rad], base frequency f [Hz]",
+    "interface": "axis-orientation demand → ME-046"
+  },
+  "ME-049": {
+    "failureMode": "Mode crossing or anisotropy loss",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Dynamic stiffness Z [N/m], mass M [kg], stiffness K [N/m], damping C [N·s/m]",
+    "interface": "directional stiffness → ME-026 lateral model",
+    "envelopeMm": [
+      57.0,
+      45.0,
+      23.5
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0,
+      -0.0,
+      8.0744
+    ],
+    "centroidAxisInertiaKgM2": [
+      1.434298465585052e-05,
+      3.725263405585052e-05,
+      4.107288150000002e-05
+    ]
+  },
+  "ME-050": {
+    "failureMode": "Bias or delay miscalibration",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Phasors X and Y [normalized], path transfer H [1]",
+    "interface": "phase demand → ME-044 drive buffer"
+  },
+  "ME-051": {
+    "failureMode": "Threshold masking or noise overdrive",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Normalized state x, coefficients a, b, A [s⁻¹], noise D [s⁻¹]",
+    "interface": "detector calibration → ME-042 response study"
+  },
+  "ME-052": {
+    "failureMode": "Gas entrainment or flow restriction",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Circulation Γ [m²/s], radius r [m], speed v [m/s], loss K [1]",
+    "interface": "circulation and loss → ME-020 pressure balance",
+    "envelopeMm": [
+      73.0,
+      58.0,
+      15.75
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      -0.0395,
+      0.0,
+      -0.0482
+    ],
+    "centroidAxisInertiaKgM2": [
+      4.477001477563403e-05,
+      5.226832531347539e-05,
+      9.275414507642414e-05
+    ]
+  },
+  "ME-053": {
+    "failureMode": "Branch jump or incorrect sign selection",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Normalized time and state; μ [1]",
+    "interface": "branch margin → ME-060 control gate"
+  },
+  "ME-054": {
+    "failureMode": "Wrong temperature scale or sensor offset",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Entropy rate [W/K], heat transfer Q̇ [W], absolute T [K]",
+    "interface": "entropy budget → ME-045 thermal dispatch"
+  },
+  "ME-055": {
+    "failureMode": "Frame convention or wrap error",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Loop half-angle β and geometric phase γ [rad]",
+    "interface": "orientation residual → ME-046 bias estimate"
+  },
+  "ME-056": {
+    "failureMode": "Quaternion normalization or order error",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Unit quaternions q; angular commutator [rad]",
+    "interface": "cross-axis ordering error → ME-055 calibration"
+  },
+  "ME-057": {
+    "failureMode": "Noise amplification or timing drift",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Normalized samples x, y, filter β and λ [1]",
+    "interface": "deconvolved input → ME-059 modal filter"
+  },
+  "ME-058": {
+    "failureMode": "Shear fatigue or material creep",
+    "tool": "4 mm hex key · review joint fit",
+    "classification": "Parametric physical part",
+    "variables": "Tilt ψ [rad], torque τ [N·m], kψ [N·m/rad], cψ [N·m·s/rad]",
+    "interface": "restoring moment → ME-046 tilt equation",
+    "envelopeMm": [
+      13.0,
+      62.0,
+      64.0
+    ],
+    "massBasis": "Generic material densities applied to schematic B-rep volumes.",
+    "centerMm": [
+      0.0372,
+      -0.0,
+      -0.0
+    ],
+    "centroidAxisInertiaKgM2": [
+      0.00014633038043577575,
+      7.64492511678819e-05,
+      7.644925116788349e-05
+    ]
+  },
+  "ME-059": {
+    "failureMode": "Leakage, aliasing or sensor dropout",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "Modal amplitude Ak in sample units, angular frequencies ωk [rad/s]",
+    "interface": "resolved modes → ME-026 suppression gains"
+  },
+  "ME-060": {
+    "failureMode": "Gain saturation or unresolved delay",
+    "tool": "Trace recorder · replay the matching study",
+    "classification": "Controller computation",
+    "variables": "x [1], rates μ and k [s⁻¹], saturation β [s⁻¹]",
+    "interface": "control limit → ME-027 synchronization"
+  }
+}

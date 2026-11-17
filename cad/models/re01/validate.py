@@ -2,11 +2,9 @@
 from dataclasses import asdict
 from itertools import combinations
 import math
+from cad.shared.placement import overlaps
 from .constraints import placed
 from .parameters import D
-
-def overlaps(a,b):
-    return min(min(getattr(a,k+'Max'),getattr(b,k+'Max'))-max(getattr(a,k+'Min'),getattr(b,k+'Min')) for k in 'XYZ')
 
 def validate(records, layout):
     by_id={p.id:p for p in records}

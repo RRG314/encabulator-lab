@@ -1,4 +1,4 @@
-name: Verify and deploy TE-01
+name: Verify and deploy Encabulator Systems
 
 on:
   pull_request:
@@ -78,6 +78,9 @@ jobs:
           curl -fsSL --retry 5 --retry-all-errors "$site/models/validation.json" > /tmp/te01-geometry.json
           curl -fsSL --retry 5 --retry-all-errors "$site/models/re01/validation.json" > /tmp/re01-geometry.json
           curl -fsSL --retry 3 --range 0-3 "$site/models/re01/re01.glb" -o /tmp/re01-glb
-          python3 -c 'from pathlib import Path; assert Path("/tmp/re01-glb").open("rb").read(4) == b"glTF"'
+          curl -fsSL --retry 5 --retry-all-errors "$site/models/me01/validation.json" > /tmp/me01-geometry.json
+          curl -fsSL --retry 3 --range 0-3 "$site/models/me01/me01.glb" -o /tmp/me01-glb
+          python3 -c 'from pathlib import Path; assert all(Path("/tmp/"+model+"-glb").open("rb").read(4) == b"glTF" for model in ("re01","me01"))'
+          node -e "const me=require('/tmp/me01-geometry.json'); if(me.checks.some(c=>c.status==='FAIL')) process.exit(1)"
           node -e "const re=require('/tmp/re01-geometry.json'); if(re.checks.some(c=>c.status==='FAIL')) process.exit(1)"
           node -e "const r=require('/tmp/te01-geometry.json'); if(r.checks.some(c=>c.status==='FAIL')) process.exit(1)"

@@ -13,7 +13,7 @@ import type { ViewerProps } from './Viewer3D'
 const digits = (v:number) => Number(v.toPrecision(3)).toString()
 const timeFormat = (t:number) => `${t.toFixed(2)} s`
 
-function Plot({ data, provenance }: { data: Chart, provenance:string }) {
+export function Plot({ data, provenance }: { data: Chart, provenance:string }) {
   const values = data.series.flatMap(item => item.data.filter((value): value is number => value !== null && Number.isFinite(value)))
   const low = Math.min(...values)
   const span = Math.max(...values)-low

@@ -17,6 +17,10 @@ import geometry from '../../docs/engineering/geometry.md?raw'
 import validation from '../../docs/engineering/verification-matrix.md?raw'
 import revisions from '../../docs/engineering/revisions.md?raw'
 import physics from '../../docs/science/models.md?raw'
+import meSpec from '../../engineering/me01/MASTER_SPEC.md?raw'
+import mePhysics from '../../engineering/me01/OPERATING_MODEL.md?raw'
+import meService from '../../engineering/me01/ARCHITECTURE_AND_SERVICE.md?raw'
+import meValidation from '../../engineering/me01/VERIFICATION.md?raw'
 import reSpec from '../../engineering/re01/MASTER_SPEC.md?raw'
 import reHierarchy from '../../engineering/re01/ASSEMBLY_HIERARCHY.md?raw'
 import reDesign from '../../engineering/re01/DESIGN_DECISIONS.md?raw'
@@ -73,10 +77,34 @@ const reReports = [
   ['Part STEP/STL package','part-solids.zip','Standalone local solids for each part identifier.'],
   ['CAD assembly GLB','re01.glb','Browser-compatible mesh with persistent instance identifiers.'],
   ['Drawing set · 66 SVG sheets','drawings.zip','49 component sheets, 15 subsystem sheets and two overall configurations.'],
+  ['Technical drawing set · PDF','re01-drawings.pdf','Paginated technical review sheets.'],
   ['Master assembly drawing','drawings/RE01-ASSEMBLY.svg','Assembled orthographic and isometric views.'],
   ['Separated assembly drawing','drawings/RE01-EXPLODED.svg','Separated orthographic and isometric views.'],
   ['OpenCascade verification','validation.json','Measured CAD geometry and review dispositions.'],
   ['Numerical verification','numerical-validation.json','Reference cases for the water loop, linkage and controller.'],
+]
+
+const meDocuments = [
+  ['overview','Technical manual',meSpec],['mechanical','Mechanical design',meService],['electrical','Electrical & control',meService],
+  ['physics','Model equations',mePhysics],['thermal','Thermal & fluid',mePhysics],['service','Service & commissioning',meService],
+  ['geometry','Geometry & verification',meValidation],['references','References',references],
+  ['validation','Verification',meValidation],['calculations','Calculations',''],['downloads','Downloads',''],
+]
+const meReports = [
+  ['Native assembled CAD','me01-assembled.FCStd','FreeCAD document with physical subsystem and part identifiers.'],
+  ['Native separated CAD','me01-exploded.FCStd','FreeCAD document at the separated state.'],
+  ['Assembled STEP','me01-assembled.step','Neutral OpenCascade B-reps and part names.'],
+  ['Separated STEP','me01-exploded.step','Independent part instance placements.'],
+  ['Longitudinal cutaway STEP','me01-longitudinal.step','Neutral section on the lateral datum.'],
+  ['Transverse cutaway STEP','me01-transverse.step','Cross-axis section solid reference.'],
+  ['Individual STEP/STL','solids.zip','Individual physical parts in local coordinates.'],
+  ['Assembly GLB','me01.glb','CAD-derived assembly mesh.'],
+  ['Technical drawing set · SVG','drawings.zip','Part and assembly review sheets.'],
+  ['Technical drawing set · PDF','me01-drawings.pdf','Paginated technical review sheets.'],
+  ['Dimensioned assembly','drawings/ME01-ASSEMBLY.svg','Orthographic and isometric assembly sheet.'],
+  ['Separated assembly drawing','drawings/ME01-EXPLODED.svg','Orthographic and isometric separated sheet.'],
+  ['Geometry validation','validation.json','OpenCascade checks and contact findings.'],
+  ['Numerical validation','numerical-validation.json','Physics, controller and verification results.'],
 ]
 
 function PageHeader({ type,title,description }: { type:string,title:string,description?:string }) {
@@ -90,10 +118,14 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
   const detail=machine.service[part.id]
   const dimensions=dimensionText(part,detail)
   const links=linksFor(part.id)
+  const host=part.kind==='logical'&&machine.key==='me01'?links.find(link=>link.from===part.id)?.to:undefined
   const source=detail?.source ? sourceTrace.terms[detail.source as keyof typeof sourceTrace.terms] : undefined
   return <>
     <PageHeader type={`COMPONENT RECORD / ${part.id}`} title={part.name} description={part.description} />
-    <div className="document-tabs"><a href={machine.href('bom')}><ArrowLeft size={14} /> Component register</a><a href={machine.href('explorer')} onClick={() => onSelect(part.id)}><Box size={14} /> Locate in assembly</a></div>
+    <div className="document-tabs"><a href={machine.href('bom')}><ArrowLeft size={14} /> Component register</a>
+      <a href={machine.href('explorer')} onClick={() => onSelect(host??part.id)}><Box size={14} /> {host?'Locate controller':'Locate in assembly'}</a>
+      {machine.key==='me01'&&Number(part.id.slice(3))>=40&&<a href={machine.href(`systems/${part.id}`)}>Run subsystem study</a>}
+    </div>
     <article className="reference-grid">
       <section className="panel article-panel">
         <h2>Design definition</h2>
@@ -108,6 +140,8 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
           <dt>Mass</dt><dd>{part.massKg===null?'Pending selection':`${part.massKg} kg · calculated per unit`}</dd>
           <dt>Tolerances</dt><dd>Pending release</dd>
           <dt>Candidate service tool</dt><dd>{detail?.tool ?? 'Selection pending'}</dd>
+          {detail?.centerMm&&<><dt>Calculated local centroid</dt><dd>{detail.centerMm.join(' / ')} mm (X/Y/Z)</dd></>}
+          {detail?.centroidAxisInertiaKgM2&&<><dt>Centroid-axis inertia</dt><dd>{detail.centroidAxisInertiaKgM2.map(x=>x.toExponential(3)).join(' / ')} kg·m²</dd></>}
           <dt>Mounting</dt><dd>{part.mounting}</dd>
           <dt>Sourcing</dt><dd>{part.sourcing}</dd>
         </dl>
@@ -121,9 +155,9 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
           <dt>Failure modes</dt><dd>{detail?.failureMode}</dd>
           <dt>Inspection and maintenance</dt><dd>{part.maintenance}</dd>
           <dt>Installation and removal</dt><dd><a href={machine.href('engineering/service')}>Assembly and service sequence</a>. Released procedure pending.</dd>
-          <dt>CAD reference</dt><dd>{part.kind === 'logical' ? 'Controller reference marker' : <a href={assetUrl(part.cadAssetPath ?? 'models/te01-part-solids.zip')} download>{part.id} · CAD download</a>}</dd>
+          <dt>CAD reference</dt><dd>{part.kind === 'logical' ? 'Controller computation' : <a href={assetUrl(part.cadAssetPath ?? 'models/te01-part-solids.zip')} download>{part.id} · CAD download</a>}</dd>
           <dt>Revision history</dt><dd><a href={machine.href('engineering/revisions')}>0.1 · Baseline definition</a></dd>
-          {machine.key==='re01' && <><dt>Technical drawing</dt><dd><a href={assetUrl(part.diagramRefs[0])} download>Dimensioned schematic SVG</a></dd></>}
+          {machine.key!=='te01' && part.kind!=='logical' && <><dt>Technical drawing</dt><dd><a href={assetUrl(part.diagramRefs[0])} download>Dimensioned schematic SVG</a></dd></>}
           {source && <><dt>Terminology source</dt><dd><a href={sourceTrace.url}>Rockwell transcript, p. {sourceTrace.page}, ¶{source.paragraph}</a></dd></>}
         </dl>
         {part.equations.length > 0 && <><h3>Governing relations</h3><ul className="equation-list">{part.equations.map(eq => <li key={eq}>{eq}</li>)}</ul><a href={machine.href('simulation')}>Related simulations</a></>}
@@ -143,7 +177,7 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
 export function Catalog() {
   const machine=useMachine()
   const {parts,assemblies}=machine.registry
-  const bomUrl=machine.key==='te01'?teBom:assetUrl('models/re01/bom.csv')
+  const bomUrl=machine.key==='te01'?teBom:assetUrl(`${machine.assetFolder}/bom.csv`)
   const [query, setQuery] = useState('')
   const [group, setGroup] = useState('')
   const rows = parts.filter(part => (!group || part.assemblyId === group) &&
@@ -184,8 +218,8 @@ function FunctionalRegister() {
 
 function DownloadPage() {
   const machine=useMachine()
-  const bomUrl=machine.key==='te01'?teBom:assetUrl('models/re01/bom.csv')
-  const reports=machine.key==='te01'?teReports:reReports
+  const bomUrl=machine.key==='te01'?teBom:assetUrl(`${machine.assetFolder}/bom.csv`)
+  const reports=machine.key==='te01'?teReports:machine.key==='re01'?reReports:meReports
 
   return <div className="download-list">
     <a className="panel download-row" href={bomUrl} download={`${machine.code}-BOM.csv`}><FileText size={19} /><div><b>Preliminary BOM · CSV</b><p>Canonical parts, quantities, candidate specifications and validation obligations.</p></div><Download size={17} /></a>
@@ -240,7 +274,7 @@ function ValidationResults() {
 
 function Calculations() {
   const machine=useMachine()
-  const assumption=useMemo(()=>machine.key==='re01'?{...baseline,diameterM:.012,spanM:.164,fromLeftM:.082,forceN:44,
+  const assumption=useMemo(()=>machine.key==='me01'?{...baseline,diameterM:.013,spanM:.263,fromLeftM:.1315,forceN:63,torqueNm:.47,rotorMassKg:.64,rotorRadiusM:.070,bearingRatingN:1800,bearingLoadN:78,rpm:1450}:machine.key==='re01'?{...baseline,diameterM:.012,spanM:.164,fromLeftM:.082,forceN:44,
     torqueNm:.34,rotorMassKg:.34,rotorRadiusM:.063,bearingRatingN:1500,bearingLoadN:50,rpm:1550}:baseline,[machine.key])
   const [force,setForce] = useState(assumption.forceN)
   const [rpm,setRpm] = useState(assumption.rpm)
@@ -276,7 +310,7 @@ function Calculations() {
 
 export default function Reference({ section }: { section?: string }) {
   const machine=useMachine()
-  const documents=machine.key==='te01'?teDocuments:reDocuments
+  const documents=machine.key==='te01'?teDocuments:machine.key==='re01'?reDocuments:meDocuments
   const doc = documents.find(item => item[0] === section) ?? documents[0]
   const [slug, title, content] = doc
   return <>
@@ -292,6 +326,7 @@ export default function Reference({ section }: { section?: string }) {
         {slug === 'overview' && <div className="document-tabs"><a href={machine.href('explorer')}><Box size={14} /> Open model <ArrowRight size={14} /></a>
           <a href={machine.href('diagnostics')}>Diagnostic replay <ArrowRight size={14} /></a></div>}
       </article>}
+    {slug === 'overview' && machine.key==='me01' && <div className="document-tabs"><a href={machine.href('systems')}>Scientific Subsystem Register</a></div>}
     {slug === 'overview' && <FunctionalRegister />}
   </>
 }

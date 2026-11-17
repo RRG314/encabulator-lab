@@ -12,3 +12,12 @@
 | R8 | [FreeCAD documentation, Part Workbench](https://wiki.freecad.org/Part_Workbench) | OpenCascade solid modeling, export and neutral geometry exchange. |
 
 Uncertainty and design provenance accompany individual study results. Source-derived names carry no dimensional, materials, commercial compatibility or performance authority.
+
+## Metachronic systems
+
+| ID | Source | Model relationship |
+|---|---|---|
+| R9 | [Cowley and Rosensweig, The interfacial stability of a ferromagnetic fluid](https://ntrs.nasa.gov/search.jsp?R=19680035372) | Normal-field instability and the dependence of surface restoring force on magnetic induction. |
+| R10 | [University of Wisconsin–Madison, Hartmann Flow](https://magnetohydrodynamics.physics.wisc.edu/lecture5.html) | Quasistatic Lorentz braking and current-closure assumptions. |
+| R11 | [McNamara and Wiesenfeld, Theory of stochastic resonance](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.39.4854) | Bistable stochastic excitation with periodic forcing. |
+| R12 | [Experimental Observation of Nonreciprocal Band Gaps in a Space-Time-Modulated Beam](https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.13.031001) | Reference mechanism for powered vibrational nonreciprocity. ME-01 models a distinct two-port feedback transfer. |

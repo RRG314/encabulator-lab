@@ -48,6 +48,10 @@ export type ViewerProps = {
   cadDetail: boolean
   onCadStatus: (status: 'schematic' | 'cad') => void
   speedRpm?: number
+  secondaryRpm?:number
+  bladePitch?:number
+  fanRpm?:number
+  shaftPhaseRad?:number
   motorTemperature?: number
   fanRunning?: boolean
   vibrationUm?: number
@@ -151,9 +155,9 @@ const sectionPlanes: Partial<Record<Cutaway, Plane>> = {
   Transverse: new Plane(new Vector3(-1, 0, 0), 0),
 }
 
-function ModelBatch({ id, items, finish, geometry, options, onHover, angle, crank }: {
+function ModelBatch({ id, items, finish, geometry, options, onHover, angle, crank, secondaryAngle, fanAngle }: {
   id: string, items: Placement[], finish: Finish, geometry: ReturnType<typeof makeGeometries>[string][number]['geometry'],
-  options: ViewerProps, onHover: (id: string) => void, angle: RefObject<number>, crank: RefObject<number>,
+  options: ViewerProps, onHover: (id: string) => void, angle: RefObject<number>, crank: RefObject<number>, secondaryAngle:RefObject<number>, fanAngle:RefObject<number>,
 }) {
   const ref = useRef<InstancedMesh>(null)
   const plane = sectionPlanes[options.cutaway]
@@ -193,8 +197,11 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
     ref.current.instanceMatrix.needsUpdate = true
     ref.current.computeBoundingSphere()
   }, [geometry, matrices])
-  const spinning = !options.reducedMotion && Boolean(options.speedRpm) && options.fraction === 0
-    && rotating.includes(id)
+  const me=options.machine.key==='me01'
+  const extraAngle=me && ['ME-006','ME-030'].includes(id)?secondaryAngle:me&&id==='ME-018'?fanAngle:angle
+  const spins=rotating.includes(id)||extraAngle!==angle
+  const spinning=!options.reducedMotion&&options.fraction===0&&spins
+  const variablePitch=me&&id==='ME-013'&&options.bladePitch!==undefined
   const reciprocal=options.machine.key==='re01' && ['RE-031','RE-032','RE-034'].includes(id)
     && !options.reducedMotion && options.fraction===0
   useFrame(() => {
@@ -208,9 +215,19 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
       ref.current.setMatrixAt(0,transform)
       ref.current.instanceMatrix.needsUpdate=true
     }
-    if (spinning) apply(new Matrix4().makeTranslation(0, 0, shaftHeight)
-      .multiply(new Matrix4().makeRotationX(angle.current))
-      .multiply(new Matrix4().makeTranslation(0, 0, -shaftHeight)))
+    if(spinning || variablePitch) {
+      const transform=spinning?new Matrix4().makeTranslation(0,0,shaftHeight)
+        .multiply(new Matrix4().makeRotationX(extraAngle.current))
+        .multiply(new Matrix4().makeTranslation(0,0,-shaftHeight)):undefined
+      if(variablePitch && ref.current) {
+        const pitch=new Matrix4().makeRotationZ(((options.bladePitch??14)-14)*Math.PI/180)
+        matrices.forEach((matrix,i)=>{
+          const mod=matrix.clone().multiply(pitch)
+          ref.current!.setMatrixAt(i,transform?transform.clone().multiply(mod):mod)
+        })
+        ref.current.instanceMatrix.needsUpdate=true
+      } else apply(transform)
+    }
   })
   const select = (event: ThreeEvent<MouseEvent>) => {
     if (plane && plane.distanceToPoint(event.point) < 0) return
@@ -303,7 +320,7 @@ function Scene({ props, callout, scale, onHover }: {
       loaded = meshes
       setCad(meshes)
       onCadStatus('cad')
-    }).catch(() => { if (!cancelled) { onCadStatus('schematic'); if (machine.key==='re01') onFailure() } })
+    }).catch(() => { if (!cancelled) { onCadStatus('schematic'); if (machine.key!=='te01') onFailure() } })
     return () => {
       cancelled = true
       if (loaded) disposeMeshes(loaded)
@@ -313,6 +330,8 @@ function Scene({ props, callout, scale, onHover }: {
   }, [cadDetail, onCadStatus, onFailure, machine])
   const angle = useRef(0)
   const crank = useRef(0)
+  const secondaryAngle = useRef(0)
+  const fanAngle = useRef(0)
   const { gl, invalidate } = useThree()
   useEffect(() => {
     gl.localClippingEnabled = true
@@ -330,14 +349,16 @@ function Scene({ props, callout, scale, onHover }: {
   const anchor = calloutPart && explodePosition(calloutPart, fractionFor(props.selected,props))
   const target: Vec3 | undefined = anchor && [anchor[0], anchor[1], anchor[2] + (props.selected === machine.defaultPart ? 18 : 0)]
   useFrame((_, delta) => {
-    if (props.speedRpm && props.fraction === 0 && !props.reducedMotion) {
-      const deltaAngle=props.speedRpm*(Math.PI/30)*Math.min(delta,.05)
+    if ((props.speedRpm || props.secondaryRpm || props.fanRpm) && props.fraction === 0 && !props.reducedMotion) {
+      const deltaAngle=(props.speedRpm??0)*(Math.PI/30)*Math.min(delta,.05)
       angle.current = (angle.current+deltaAngle)%(2*Math.PI)
       crank.current = (crank.current+deltaAngle/reduction)%(2*Math.PI)
+      secondaryAngle.current=(angle.current-(props.shaftPhaseRad ?? 0))%(2*Math.PI)
+      fanAngle.current=(fanAngle.current+(props.fanRpm??0)*(Math.PI/30)*Math.min(delta,.05))%(2*Math.PI)
       invalidate()
     }
   })
-  if (machine.key === 're01' && !cad) return null
+  if (machine.key !== 'te01' && !cad) return null
   return <>
     <hemisphereLight args={['#eef5ff', '#a6a198', 2.25]} />
     <directionalLight position={[-230,-320,530]} intensity={3.2} color="#fff8ec"
@@ -346,8 +367,8 @@ function Scene({ props, callout, scale, onHover }: {
       shadow-camera-top={320} shadow-camera-bottom={-320} shadow-bias={-.0004} shadow-normalBias={.42} />
     <directionalLight position={[210,130,240]} intensity={2.1} color="#badbff" />
     <directionalLight position={[200,-320,15]} intensity={0.65} color="#e2e3e8" />
-    <WorkshopGrid wide={machine.key==='re01'} />
-    {!props.compact && props.fraction===0 && <mesh position={[0,0,machine.key==='re01'?-26.2:-16.2]} receiveShadow>
+    <WorkshopGrid wide={machine.key!=='te01'} />
+    {!props.compact && props.fraction===0 && <mesh position={[0,0,machine.key!=='te01'?-26.2:-16.2]} receiveShadow>
       <planeGeometry args={[1400,1400]} /><shadowMaterial opacity={.18} depthWrite={false} />
     </mesh>}
     <CameraRig {...props} geometries={geometry} scale={scale} />
@@ -355,7 +376,7 @@ function Scene({ props, callout, scale, onHover }: {
     {Object.entries(batches).flatMap(([id, items]) => {
       if (!props.visible.has(id) || (props.cutaway === 'Guard off' && machine.guard.includes(id))) return []
       return geometry[id].map(piece => <ModelBatch key={`${id}:${piece.finish}`} id={id} items={items}
-        angle={angle} crank={crank} {...piece} options={props} onHover={onHover} />)
+        angle={angle} crank={crank} secondaryAngle={secondaryAngle} fanAngle={fanAngle} {...piece} options={props} onHover={onHover} />)
     })}
     {props.labels && target && props.visible.has(props.selected) &&
       !(machine.guard.includes(props.selected) && props.cutaway === 'Guard off') && <Projection position={target} element={callout} />}

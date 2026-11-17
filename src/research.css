@@ -105,3 +105,8 @@ tr:hover td { background: #eff4f7; }
   .machine-bar a { min-width:0; flex-direction:column; gap:2px; }
   .site-footer { flex-wrap:wrap; }
 }
+.me-parameters { display:grid; gap:9px; padding-top:9px; }
+.me-parameters output { white-space:nowrap; }
+.science-control { display:grid; gap:7px; margin:15px 0; }
+.article-panel .document-tabs { padding-top:12px; }
+#main:focus { outline:none; }

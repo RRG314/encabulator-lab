@@ -26,7 +26,7 @@ function useMedia(query: string) {
 }
 
 export function Explorer({ selected, onSelect, telemetry }: { selected: string, onSelect: (id: string) => void,
-  telemetry?: Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm'> }) {
+  telemetry?: Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm' | 'secondaryRpm' | 'bladePitch' | 'fanRpm' | 'shaftPhaseRad'> }) {
   const machine=useMachine()
   const { assemblies,partById,parts }=machine.registry
   const bench=useBench()
@@ -108,8 +108,8 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
       catch { setExpanded(true) }
     }
   }
-  const scopedParts=useMemo(()=>explodeScope==='all'?null:new Set(machine.registry.assemblyById.get(explodeScope)?.partIds ?? []),
-    [explodeScope,machine.registry])
+  const scopedParts=useMemo(()=>explodeScope==='all'?null:explodeScope==='selected'?new Set([part.id]):new Set(machine.registry.assemblyById.get(explodeScope)?.partIds ?? []),
+    [explodeScope,machine.registry,part.id])
   const simulated=bench.reading
   const viewerProps: ViewerProps = {
     machine, explosionParts:scopedParts,
@@ -123,7 +123,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
   return <>
     <header className="page-header">
       <div><div className="eyebrow">ASSEMBLY &amp; KINEMATICS / {machine.code}</div><h1>{machine.name} <span>{machine.code}</span></h1>
-        <p>{machine.key==='re01'?'Industrial control, rotor dynamics and reciprocating fluid delivery.':'Instrumented rotor, vibration isolation and phase estimation.'}</p></div>
+        <p>{machine.configuration ? `${machine.configuration} Configuration.` : machine.key==='re01'?'Industrial control, rotor dynamics and reciprocating fluid delivery.':'Instrumented rotor, vibration isolation and phase estimation.'}</p></div>
       <div className="revision-mark"><span><i /> Preliminary design</span><small>REV 0.1</small></div>
     </header>
     <div className="workspace">
@@ -135,7 +135,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           return next
         })} />
       <section className="viewer panel" aria-label="Assembly viewport" ref={viewport} data-expanded={expanded}>
-        <div className="viewer-top"><div><Box size={16} /><h2>Assembly &amp; Kinematics</h2></div><span className="model-status"><i /> {cadStatus === 'cad' ? 'CAD SCHEMATIC' : machine.key==='re01'?'LOADING CAD':'SCHEMATIC GEOMETRY'}</span></div>
+        <div className="viewer-top"><div><Box size={16} /><h2>Assembly &amp; Kinematics</h2></div><span className="model-status"><i /> {cadStatus === 'cad' ? 'CAD SCHEMATIC' : failure?'STATION DIAGRAM': machine.key!=='te01'?'LOADING CAD':'SCHEMATIC GEOMETRY'}</span></div>
         <div className="viewport-tabs" role="group" aria-label="Model layers">
           {layers.map(value => <button key={value} type="button" aria-pressed={layer === value} onClick={() => setLayer(value)}>{value}</button>)}
         </div>
@@ -144,7 +144,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           {failure ? fallback : <GraphicsBoundary fallback={fallback}>
             <Suspense fallback={<div className="viewer-loading">Loading assembly geometry…</div>}><Viewer3D {...viewerProps} /></Suspense>
           </GraphicsBoundary>}
-          {machine.key==='re01' && cadStatus==='schematic' && !failure && <div className="cad-loading">Loading Retro Encabulator CAD…</div>}
+          {machine.key!=='te01' && cadStatus==='schematic' && !failure && <div className="cad-loading">Loading {machine.name} CAD…</div>}
           <div className="viewport-tools"  role="group" aria-label="Viewer controls">
             <button type="button" className="icon-button" title="Fit model" aria-label="Fit model" onClick={() => focusCamera(preset)}><Crosshair size={17} /></button>
             <button type="button" className="icon-button" title="Wireframe" aria-label="Wireframe" aria-pressed={wireframe} onClick={() => setWireframe(!wireframe)}><Grid2X2 size={16} /></button>
@@ -188,13 +188,15 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
         </div>
         <div className="assembly-actions">
           <label>Separation scope <select value={explodeScope} onChange={event=>setExplodeScope(event.target.value)}>
-            <option value="all">Complete machine</option>{assemblies.map(item=><option key={item.id} value={item.id}>{item.shortName}</option>)}
+            <option value="all">Complete machine</option><option value="selected" disabled={part.kind==='logical'}>Selected physical part</option>{assemblies.map(item=><option key={item.id} value={item.id}>{item.shortName}</option>)}
           </select></label>
           <button type="button" className="text-button" onClick={reset}>Restore all components</button>
-          <small>{visible.size} / {parts.length} records visible</small>
+          <small>{[...visible].filter(id=>machine.key!=='me01'||partById.get(id)?.kind!=='logical').length} / {parts.filter(item=>machine.key!=='me01'||item.kind!=='logical').length} records visible</small>
         </div>
         <ExplodeSlider amount={amount} change={change} running={Boolean(animation)} toggle={toggleAnimation} reset={reset} />
-        {!telemetry && <BenchControls bench={bench} onStart={reset} />}
+        {!telemetry && (machine.key==='me01' ?
+          <div className="assembly-actions"><a className="primary-button" href={machine.href('simulation')}>Operate coupled test rig</a>
+            <a href={machine.href('systems')}>Scientific subsystem register</a></div> : <BenchControls bench={bench} onStart={reset} />)}
         <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Arrow keys to pan'}</div>
       </section>
       <PartInspector part={part} onFocus={()=>{

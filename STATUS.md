@@ -9,3 +9,7 @@
 | Fabrication | Open. No measured performance, selected supplier BOM, qualified containment, pressure rating, released pinout, or accepted prototype release. |
 
 The simulated Retro drive couples a reduced-speed crank-slider to a low-head water-loop load. The geometric package provides crank, linkage, guide, valve and manifold reference solids. Final reduction mechanism, complete swept service checks, and supplier-specific electrical details remain open.
+
+## Metachronic configuration
+
+ME-01 includes 52 register entries in 35 assemblies. The physical placement tree contains 41 solid part definitions and 48 instances. The 11 computational records use controller and instrumentation interfaces. The subsystem register provides 21 independent studies and the coupled laboratory uses both shaft states, active radial forces, pitch, fluid delivery, temperature, and regenerative electrical power. The geometry report lists 23 assembled contact dispositions requiring review.

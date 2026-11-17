@@ -1,0 +1,2216 @@
+[
+  {
+    "id": "ME-001",
+    "name": "Amulite ribbed foundation",
+    "assemblyId": "ME-1400",
+    "revision": "0.1",
+    "description": "Mounting bed carries orthogonal datum rails and separable coolant and signal circuits.",
+    "function": "Mounting bed carries orthogonal datum rails and separable coolant and signal circuits.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 8.2819422,
+    "dimensionsMm": {
+      "length": 620.0,
+      "width": 412.0,
+      "height": 12.0
+    },
+    "mounting": "Z = 0 datum",
+    "matingPartIds": [
+      "ME-002",
+      "ME-003"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "coolant split & return",
+      "supervisory PLC and independent inhibit"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect deck sag or datum damage. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-001.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-001.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-002",
+    "name": "Machined bed channels",
+    "assemblyId": "ME-1400",
+    "revision": "0.1",
+    "description": "Paired longitudinal steel rails carry sliding pedestals and the drive bracket.",
+    "function": "Paired longitudinal steel rails carry sliding pedestals and the drive bracket.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 2,
+    "massKg": 0.8023614,
+    "dimensionsMm": {
+      "length": 577.0,
+      "width": 27.0,
+      "height": 14.7
+    },
+    "mounting": "bed kinematic clamp",
+    "matingPartIds": [
+      "ME-001",
+      "ME-009",
+      "ME-015",
+      "ME-019"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect axial movement or preload loss. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-002.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-002.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-003",
+    "name": "Logarithmic rotor containment frame",
+    "assemblyId": "ME-1400",
+    "revision": "0.1",
+    "description": "Machined end flanges, triangulated corner rails and stand-offs span the six-vane rotor.",
+    "function": "Machined end flanges, triangulated corner rails and stand-offs span the six-vane rotor.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.4339681,
+    "dimensionsMm": {
+      "length": 130.0,
+      "width": 170.0,
+      "height": 189.0
+    },
+    "mounting": "flanged guard perimeter",
+    "matingPartIds": [
+      "ME-001",
+      "ME-004",
+      "ME-031"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect fragment containment qualification outstanding. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-003.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-003.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-004",
+    "name": "Removable guard window and roof",
+    "assemblyId": "ME-1400",
+    "revision": "0.1",
+    "description": "Framed observation panels provide indexed visual access and independent guarded opening.",
+    "function": "Framed observation panels provide indexed visual access and independent guarded opening.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0943761,
+    "dimensionsMm": {
+      "length": 104.0,
+      "width": 12.5,
+      "height": 160.0
+    },
+    "mounting": "hinge and latch interface",
+    "matingPartIds": [
+      "ME-003"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect warped panel or failed latch. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-004.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-004.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-005",
+    "name": "Primary isogonal waneshaft",
+    "assemblyId": "ME-400",
+    "revision": "0.1",
+    "description": "Shouldered primary shaft transfers electromagnetic torque through the first rotor and axial coupling.",
+    "function": "Shouldered primary shaft transfers electromagnetic torque through the first rotor and axial coupling.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.337616,
+    "dimensionsMm": {
+      "length": 280.0,
+      "width": 17.0,
+      "height": 17.0
+    },
+    "mounting": "primary journals",
+    "matingPartIds": [
+      "ME-007",
+      "ME-012",
+      "ME-016"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "J₁ ω̇₁ = τm − τc − τloss"
+    ],
+    "limits": "J [kg·m²], torque [N·m], ω [rad/s]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect shaft fatigue or combined-load deflection. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-005.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-005.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-006",
+    "name": "Secondary concentric torque sleeve",
+    "assemblyId": "ME-400",
+    "revision": "0.1",
+    "description": "Annular output sleeve runs on the shared axis and allows a small compliant phase offset.",
+    "function": "Annular output sleeve runs on the shared axis and allows a small compliant phase offset.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.1773247,
+    "dimensionsMm": {
+      "length": 196.0,
+      "width": 27.2,
+      "height": 27.2
+    },
+    "mounting": "secondary bearing bore",
+    "matingPartIds": [
+      "ME-008",
+      "ME-016",
+      "ME-030"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect bore interference or torsional failure. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-006.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-006.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-007",
+    "name": "Primary spurving bearing",
+    "assemblyId": "ME-200",
+    "revision": "0.1",
+    "description": "Separated inner, outer and seal rings form a preliminary coaxial journal cartridge.",
+    "function": "Separated inner, outer and seal rings form a preliminary coaxial journal cartridge.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0277865,
+    "dimensionsMm": {
+      "length": 10.0,
+      "width": 37.0,
+      "height": 37.0
+    },
+    "mounting": "radial bearing bore",
+    "matingPartIds": [
+      "ME-005",
+      "ME-015"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Primary journal telemetry"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect spall, preload loss or overheating. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-007.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-007.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-200",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-008",
+    "name": "Secondary spurving bearing",
+    "assemblyId": "ME-200",
+    "revision": "0.1",
+    "description": "Separated inner, outer and seal rings form a preliminary coaxial journal cartridge.",
+    "function": "Separated inner, outer and seal rings form a preliminary coaxial journal cartridge.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0327289,
+    "dimensionsMm": {
+      "length": 10.0,
+      "width": 37.0,
+      "height": 37.0
+    },
+    "mounting": "radial bearing bore",
+    "matingPartIds": [
+      "ME-006",
+      "ME-015"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Secondary journal telemetry"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect spall, preload loss or overheating. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-008.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-008.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-200",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-009",
+    "name": "Finned polyphase drive barrel",
+    "assemblyId": "ME-900",
+    "revision": "0.1",
+    "description": "Open inspection sector exposes the actual stator slots and winding pack. Radial fins provide surface area.",
+    "function": "Open inspection sector exposes the actual stator slots and winding pack. Radial fins provide surface area.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.5557506,
+    "dimensionsMm": {
+      "length": 77.0,
+      "width": 105.0,
+      "height": 103.0
+    },
+    "mounting": "motor shoe and spline envelope",
+    "matingPartIds": [
+      "ME-002",
+      "ME-010"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect mount migration or winding temperature excursion. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-009.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-009.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-900",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-010",
+    "name": "Panendermic semi-boloid stator",
+    "assemblyId": "ME-900",
+    "revision": "0.1",
+    "description": "Eighteen indexed radial slot cuts preserve an annular magnetic return path.",
+    "function": "Eighteen indexed radial slot cuts preserve an annular magnetic return path.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.5586852,
+    "dimensionsMm": {
+      "length": 57.0,
+      "width": 82.0,
+      "height": 82.0
+    },
+    "mounting": "motor lamination shoulder",
+    "matingPartIds": [
+      "ME-009",
+      "ME-011"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect insulation failure or slot fouling. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-010.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-010.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-900",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-011",
+    "name": "Lotus-o-deltoid polyphase winding",
+    "assemblyId": "ME-900",
+    "revision": "0.1",
+    "description": "Grouped copper slot bars and end turns provide explicit phase-path volume and a terminal boundary.",
+    "function": "Grouped copper slot bars and end turns provide explicit phase-path volume and a terminal boundary.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.118037,
+    "dimensionsMm": {
+      "length": 63.0,
+      "width": 73.559,
+      "height": 70.5
+    },
+    "mounting": "winding power and cooling",
+    "matingPartIds": [
+      "ME-010"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Polyphase drive output"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect interturn fault or insulation creep. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-011.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-011.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-900",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-012",
+    "name": "Marzelvane differential carrier",
+    "assemblyId": "ME-300",
+    "revision": "0.1",
+    "description": "Six indexed root sockets and ring keepers locate variable-pitch blade pivots.",
+    "function": "Six indexed root sockets and ring keepers locate variable-pitch blade pivots.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.9141721,
+    "dimensionsMm": {
+      "length": 62.4,
+      "width": 57.6,
+      "height": 57.6
+    },
+    "mounting": "carrier shaft fit",
+    "matingPartIds": [
+      "ME-005",
+      "ME-013",
+      "ME-014"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect fretting or pitch indexing error. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-012.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-012.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-300",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-013",
+    "name": "Recursive hydrocoptic marzelvane",
+    "assemblyId": "ME-300",
+    "revision": "0.1",
+    "description": "Indexed radial blade. Root pin establishes the local pitch axis and a trim actuator monitors deviation.",
+    "function": "Indexed radial blade. Root pin establishes the local pitch axis and a trim actuator monitors deviation.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 6,
+    "massKg": 0.1153979,
+    "dimensionsMm": {
+      "length": 52.665,
+      "width": 17.313,
+      "height": 48.0
+    },
+    "mounting": "radial blade pivot",
+    "matingPartIds": [
+      "ME-012"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "τa = k(β) ω²"
+    ],
+    "limits": "Pitch β [rad], τa [N·m], ω [rad/s]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect root fatigue or angle runaway. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-013.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-013.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-300",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-014",
+    "name": "Indexed vane actuator ring",
+    "assemblyId": "ME-300",
+    "revision": "0.1",
+    "description": "Six separate actuator pods, linkage studs and rotor-side sensing pass through a common hub interface.",
+    "function": "Six separate actuator pods, linkage studs and rotor-side sensing pass through a common hub interface.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0222302,
+    "dimensionsMm": {
+      "length": 26.5,
+      "width": 44.837,
+      "height": 48.8
+    },
+    "mounting": "pitch command and index feedback",
+    "matingPartIds": [
+      "ME-012"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect actuator jam or loss of position datum. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-014.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-014.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-300",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-015",
+    "name": "Ambilateral orthogonal bearing pedestal",
+    "assemblyId": "ME-200",
+    "revision": "0.1",
+    "description": "Two pedestal cartridges locate journal outer rings. Opposed actuator mounts establish Y and Z force axes.",
+    "function": "Two pedestal cartridges locate journal outer rings. Opposed actuator mounts establish Y and Z force axes.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 2,
+    "massKg": 0.750474,
+    "dimensionsMm": {
+      "length": 43.0,
+      "width": 124.0,
+      "height": 131.0
+    },
+    "mounting": "orthogonal actuator reaction and pickup",
+    "matingPartIds": [
+      "ME-007",
+      "ME-008",
+      "ME-002",
+      "ME-046"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "pickup gradient → ME-015 gain calibration"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect axis error or force saturation. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-015.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-015.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-200",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-016",
+    "name": "Differential girdle coupling hub pair",
+    "assemblyId": "ME-600",
+    "revision": "0.1",
+    "description": "Opposed annular hub sections transfer torque and bound relative orientation.",
+    "function": "Opposed annular hub sections transfer torque and bound relative orientation.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.316696,
+    "dimensionsMm": {
+      "length": 33.0,
+      "width": 58.0,
+      "height": 58.0
+    },
+    "mounting": "coaxial torque path",
+    "matingPartIds": [
+      "ME-006",
+      "ME-017",
+      "ME-005"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "τc=kθ Δθ + cθ Δω"
+    ],
+    "limits": "kθ [N·m/rad], cθ [N·m·s/rad]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect stop impact or clamp migration. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-016.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-016.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-600",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-017",
+    "name": "Harmonic attenuation inserts",
+    "assemblyId": "ME-600",
+    "revision": "0.1",
+    "description": "Eight discrete elastomer sections provide compliant torsional reaction between the hubs.",
+    "function": "Eight discrete elastomer sections provide compliant torsional reaction between the hubs.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0097609,
+    "dimensionsMm": {
+      "length": 12.0,
+      "width": 52.0,
+      "height": 52.0
+    },
+    "mounting": "parallel torsional damper",
+    "matingPartIds": [
+      "ME-016"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect elastomer creep or crack. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-017.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-017.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-600",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-018",
+    "name": "Quadrature Panametric impeller",
+    "assemblyId": "ME-700",
+    "revision": "0.1",
+    "description": "Independent nine-blade cooling fan stage has nominal housing clearance and a tachometer interface.",
+    "function": "Independent nine-blade cooling fan stage has nominal housing clearance and a tachometer interface.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0379255,
+    "dimensionsMm": {
+      "length": 14.0,
+      "width": 71.891,
+      "height": 71.141
+    },
+    "mounting": "fan demand and heat transfer",
+    "matingPartIds": [
+      "ME-019"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Fan demand"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect fan stall or blade crack. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-018.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-018.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-700",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-019",
+    "name": "Panametric bellmouth and protective grille",
+    "assemblyId": "ME-700",
+    "revision": "0.1",
+    "description": "Independent vented fan shroud, end flange and multiple concentric grille rings.",
+    "function": "Independent vented fan shroud, end flange and multiple concentric grille rings.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.2678333,
+    "dimensionsMm": {
+      "length": 43.25,
+      "width": 101.0,
+      "height": 101.0
+    },
+    "mounting": "fan tray and exhaust duct",
+    "matingPartIds": [
+      "ME-018",
+      "ME-002"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect grille obstruction or guard damage. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-019.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-019.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-700",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-020",
+    "name": "Transpanendermic distribution header",
+    "assemblyId": "ME-100",
+    "revision": "0.1",
+    "description": "Hollow brass chamber receives separated branch returns. Pressure taps constrain the model hydraulic energy balance.",
+    "function": "Hollow brass chamber receives separated branch returns. Pressure taps constrain the model hydraulic energy balance.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.5608259,
+    "dimensionsMm": {
+      "length": 98.0,
+      "width": 33.0,
+      "height": 34.0
+    },
+    "mounting": "coolant split & return",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "coolant split & return",
+      "one-direction pressure path",
+      "heat removal loop",
+      "pressure loss → ME-020 demand",
+      "circulation and loss → ME-020 pressure balance"
+    ],
+    "equations": [
+      "Qin = Σ Qj"
+    ],
+    "limits": "Q [m³/s]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect manifold leakage or stuck restriction. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-020.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-020.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-100",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-021",
+    "name": "Non-reversible Tremie regulator",
+    "assemblyId": "ME-1000",
+    "revision": "0.1",
+    "description": "Serviceable poppet and bypass body limits reverse flow and defines the regulated pressure boundary.",
+    "function": "Serviceable poppet and bypass body limits reverse flow and defines the regulated pressure boundary.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.2634672,
+    "dimensionsMm": {
+      "length": 56.0,
+      "width": 32.0,
+      "height": 32.0
+    },
+    "mounting": "one-direction pressure path",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "one-direction pressure path",
+      "Conductive bypass return"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect reverse leakage or occluded seat. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-021.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-021.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1000",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-022",
+    "name": "Primary thermal exchange core",
+    "assemblyId": "ME-100",
+    "revision": "0.1",
+    "description": "Finned heat exchanger places the fluid temperature field downstream of the motor-loss boundary.",
+    "function": "Finned heat exchanger places the fluid temperature field downstream of the motor-loss boundary.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.3516695,
+    "dimensionsMm": {
+      "length": 86.0,
+      "width": 63.0,
+      "height": 26.5
+    },
+    "mounting": "heat removal loop",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "heat removal loop",
+      "Toroidal pressure and delivery"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect fouling or runaway temperature. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-022.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-022.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-100",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-023",
+    "name": "Polyphase regenerative controller",
+    "assemblyId": "ME-500",
+    "revision": "0.1",
+    "description": "Finned electronics case supports a wide-area thermal interface and isolated command terminals.",
+    "function": "Finned electronics case supports a wide-area thermal interface and isolated command terminals.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.1907241,
+    "dimensionsMm": {
+      "length": 88.0,
+      "width": 58.0,
+      "height": 28.5
+    },
+    "mounting": "motor torque and signed DC power",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "motor torque and signed DC power",
+      "Polyphase drive output"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect overvoltage or current saturation. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-023.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-023.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-500",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-024",
+    "name": "DC-link energy storage enclosure",
+    "assemblyId": "ME-500",
+    "revision": "0.1",
+    "description": "Two distinct capacitor cans and a current shunt reference stored bus energy.",
+    "function": "Two distinct capacitor cans and a current shunt reference stored bus energy.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.5025036,
+    "dimensionsMm": {
+      "length": 69.0,
+      "width": 46.0,
+      "height": 52.0
+    },
+    "mounting": "bounded regeneration storage",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "motor torque and signed DC power",
+      "bounded regeneration storage"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect voltage window exceeded. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-024.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-024.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-500",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-025",
+    "name": "Cardinal gram-meter timing assembly",
+    "assemblyId": "ME-800",
+    "revision": "0.1",
+    "description": "Timestamped speed, current and pressure acquisition with individually serviceable terminal channels.",
+    "function": "Timestamped speed, current and pressure acquisition with individually serviceable terminal channels.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.1397132,
+    "dimensionsMm": {
+      "length": 65.0,
+      "width": 52.0,
+      "height": 31.5
+    },
+    "mounting": "synchronized samples to ME-059",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "synchronized samples to ME-059",
+      "lateral displacement and actuator current",
+      "field cable and thermal return",
+      "Primary journal telemetry",
+      "Secondary journal telemetry"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect stale clock or dropout. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-025.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-025.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-800",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-026",
+    "name": "Transverse suppression processor",
+    "assemblyId": "ME-1100",
+    "revision": "0.1",
+    "description": "Physical processor board evaluates two-axis shaft feedback and sends bounded radial force commands.",
+    "function": "Physical processor board evaluates two-axis shaft feedback and sends bounded radial force commands.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.030915,
+    "dimensionsMm": {
+      "length": 53.0,
+      "width": 49.0,
+      "height": 15.0
+    },
+    "mounting": "lateral displacement and actuator current",
+    "matingPartIds": [
+      "ME-042",
+      "ME-049"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "lateral displacement and actuator current",
+      "phase measurement and drive request",
+      "directional transfer → ME-026 estimator",
+      "axis-orientation demand → ME-046",
+      "phase demand → ME-044 drive buffer",
+      "detector calibration → ME-042 response study",
+      "orientation residual → ME-046 bias estimate",
+      "cross-axis ordering error → ME-055 calibration",
+      "deconvolved input → ME-059 modal filter",
+      "resolved modes → ME-026 suppression gains",
+      "Modal order selection",
+      "Directional dynamic stiffness"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect lost modal discrimination. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-026.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-026.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1100",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-027",
+    "name": "Recursive Deltoid synchronization module",
+    "assemblyId": "ME-1200",
+    "revision": "0.1",
+    "description": "Constrained phase controller sends signed speed and coupling requests through isolated I/O.",
+    "function": "Constrained phase controller sends signed speed and coupling requests through isolated I/O.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.1166018,
+    "dimensionsMm": {
+      "length": 62.0,
+      "width": 51.0,
+      "height": 24.5
+    },
+    "mounting": "phase measurement and drive request",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "phase measurement and drive request",
+      "Bounded scheduling signal"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect oscillation or uncertain phase. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-027.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-027.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1200",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-028",
+    "name": "Panametric supervisory and interlock rack",
+    "assemblyId": "ME-1300",
+    "revision": "0.1",
+    "description": "Vertical card rack with control slices, air vents and protected wiring glands.",
+    "function": "Vertical card rack with control slices, air vents and protected wiring glands.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 1.1282444,
+    "dimensionsMm": {
+      "length": 144.0,
+      "width": 61.0,
+      "height": 164.0
+    },
+    "mounting": "supervisory PLC and independent inhibit",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "bounded regeneration storage",
+      "synchronized samples to ME-059",
+      "supervisory PLC and independent inhibit",
+      "fan command → ME-018 thermal loop",
+      "branch margin → ME-060 control gate",
+      "entropy budget → ME-045 thermal dispatch",
+      "control limit → ME-027 synchronization"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect interlock failure or stale data. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-028.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-028.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1300",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-029",
+    "name": "Field harness and coolant interconnect",
+    "assemblyId": "ME-800",
+    "revision": "0.1",
+    "description": "Separate pipe, power and sensing routes connect mechanical station interfaces.",
+    "function": "Separate pipe, power and sensing routes connect mechanical station interfaces.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0604076,
+    "dimensionsMm": {
+      "length": 458.8,
+      "width": 267.8,
+      "height": 111.8
+    },
+    "mounting": "field cable and thermal return",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "field cable and thermal return"
+    ],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect chafe or coolant leak. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-029.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-029.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-800",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-030",
+    "name": "Concentric output dynamics load",
+    "assemblyId": "ME-400",
+    "revision": "0.1",
+    "description": "Instrumented annular load sleeve forms the external simulated host interface.",
+    "function": "Instrumented annular load sleeve forms the external simulated host interface.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.6509051,
+    "dimensionsMm": {
+      "length": 43.0,
+      "width": 82.0,
+      "height": 82.0
+    },
+    "mounting": "host torque attachment",
+    "matingPartIds": [
+      "ME-006"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect excessive thermal or torque demand. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-030.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-030.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-031",
+    "name": "Upper enclosure inspection cassette",
+    "assemblyId": "ME-1400",
+    "revision": "0.1",
+    "description": "Transparent section seats in a narrow frame and keeps the vane path visible in the assembled position.",
+    "function": "Transparent section seats in a narrow frame and keeps the vane path visible in the assembled position.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0807558,
+    "dimensionsMm": {
+      "length": 106.0,
+      "width": 170.0,
+      "height": 5.9
+    },
+    "mounting": "top cover removability",
+    "matingPartIds": [
+      "ME-003"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "As-designed geometry. Material certification and operational limits require qualification.",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect window crazing or loose fasteners. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-031.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-031.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-040",
+    "name": "Quadrupolar Flux Confinement Chamber",
+    "assemblyId": "ME-1500",
+    "revision": "0.1",
+    "description": "Four alternating pole shoes establish a transverse field gradient for two-axis pickup calibration.",
+    "function": "Four alternating pole shoes establish a transverse field gradient for two-axis pickup calibration.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.5021369,
+    "dimensionsMm": {
+      "length": 32.0,
+      "width": 67.0,
+      "height": 67.0
+    },
+    "mounting": "pickup gradient → ME-015 gain calibration",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "pickup gradient → ME-015 gain calibration",
+      "signed test field → ME-040 pickup verification"
+    ],
+    "equations": [
+      "Bx = G x, By = −G y"
+    ],
+    "limits": "G [T/m], offsets x and y [m]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect coil saturation or thermal drift. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-040.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-040.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1500",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-041",
+    "name": "Magnetohydrodynamic Recirculation Manifold",
+    "assemblyId": "ME-1600",
+    "revision": "0.1",
+    "description": "Electrically conductive aqueous bypass crosses the calibration field. An external pump supplies net hydraulic power.",
+    "function": "Electrically conductive aqueous bypass crosses the calibration field. An external pump supplies net hydraulic power.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.3458119,
+    "dimensionsMm": {
+      "length": 68.0,
+      "width": 36.0,
+      "height": 39.0
+    },
+    "mounting": "pressure loss → ME-020 demand",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "pressure loss → ME-020 demand",
+      "stability margin → ME-041 field ceiling",
+      "Conductive bypass return",
+      "Bounded field command"
+    ],
+    "equations": [
+      "dp_mhd = χ σ B² L u"
+    ],
+    "limits": "Conductivity σ [S/m], field B [T], wetted length L [m], velocity u [m/s], closure χ [1]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect electrode polarization or leakage. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-041.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-041.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1600",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-042",
+    "name": "Topological Soliton Retention Lattice",
+    "assemblyId": "ME-1700",
+    "revision": "0.1",
+    "description": "Coupled bistable flexure cells support a discrete domain wall between opposite displacement equilibria.",
+    "function": "Coupled bistable flexure cells support a discrete domain wall between opposite displacement equilibria.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.1427996,
+    "dimensionsMm": {
+      "length": 93.0,
+      "width": 30.0,
+      "height": 15.5
+    },
+    "mounting": "localized response → ME-059 classifier",
+    "matingPartIds": [
+      "ME-026"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Dither calibration"
+    ],
+    "equations": [
+      "m q̈i + c q̇i = k(qi−1−2qi+qi+1) + a qi − b qi³"
+    ],
+    "limits": "Displacement q [m], m [kg], c [N·s/m], k and a [N/m], b [N/m³]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect defect depinning or flexure fatigue. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-042.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-042.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1700",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-043",
+    "name": "Ferrohydrodynamic Instability Governor",
+    "assemblyId": "ME-1800",
+    "revision": "0.1",
+    "description": "Optical readout of a sealed magnetizable-fluid cell sets a conservative field-margin request for the manifold.",
+    "function": "Optical readout of a sealed magnetizable-fluid cell sets a conservative field-margin request for the manifold.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0555206,
+    "dimensionsMm": {
+      "length": 34.0,
+      "width": 31.0,
+      "height": 54.0
+    },
+    "mounting": "stability margin → ME-041 field ceiling",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "stability margin → ME-041 field ceiling",
+      "Bounded field command"
+    ],
+    "equations": [
+      "ρ ω² = ρ g k + γ k³ − α B² k²"
+    ],
+    "limits": "Surface tension γ [N/m], wavenumber k [m⁻¹], density ρ [kg/m³], fitted magnetic coefficient α [N/(m²·T²)], field B [T]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect fluid contamination, poor calibration or optical saturation. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-043.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-043.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1800",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-044",
+    "name": "Nonreciprocal Phononic Detraction Array",
+    "assemblyId": "ME-1900",
+    "revision": "0.1",
+    "description": "Two powered reciprocal transducers acquire and re-emit vibration with unequal feedback cross gains.",
+    "function": "Two powered reciprocal transducers acquire and re-emit vibration with unequal feedback cross gains.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0660116,
+    "dimensionsMm": {
+      "length": 78.0,
+      "width": 29.0,
+      "height": 24.5
+    },
+    "mounting": "directional transfer → ME-026 estimator",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "directional transfer → ME-026 estimator",
+      "Complex drive phasor"
+    ],
+    "equations": [
+      "H21 = g21 H0, H12 = g12 H0"
+    ],
+    "limits": "Directional gains gij [1], baseline frequency response H0 [m/N]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect feedback instability or saturation. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-044.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-044.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-1900",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-045",
+    "name": "Chronometric Hysteresis Governor",
+    "assemblyId": "ME-2000",
+    "revision": "0.1",
+    "description": "Asymmetric on/off thresholds and a dwell interval prevent rapid fan-state switching.",
+    "function": "Asymmetric on/off thresholds and a dwell interval prevent rapid fan-state switching.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-028 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "fan command → ME-018 thermal loop",
+      "Fan demand",
+      "Thermodynamic dispatch request"
+    ],
+    "equations": [
+      "u[k+1] = Schmitt(T[k], Ton, Toff, Δt)"
+    ],
+    "limits": "Temperatures T [°C], minimum dwell Δt [s]",
+    "safetyFlags": [],
+    "maintenance": "Inspect threshold chatter or stale temperature. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-045"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-2000",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-046",
+    "name": "Biaxial Nutation Arrestor",
+    "assemblyId": "ME-2100",
+    "revision": "0.1",
+    "description": "Orthogonal gimbal axes and viscoelastic torque feedback damp small shaft-support tilts.",
+    "function": "Orthogonal gimbal axes and viscoelastic torque feedback damp small shaft-support tilts.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.1963763,
+    "dimensionsMm": {
+      "length": 21.0,
+      "width": 77.0,
+      "height": 77.0
+    },
+    "mounting": "tilt and damping demand → ME-058",
+    "matingPartIds": [
+      "ME-015",
+      "ME-058"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Axis orientation request",
+      "Estimated tilt correction"
+    ],
+    "equations": [
+      "I θ̈ + (C + G) θ̇ + K θ = τ"
+    ],
+    "limits": "Tilt θ [rad], inertia I [kg·m²], damping C and gyroscopic skew G [N·m·s/rad], K [N·m/rad]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect stop strike or bearing stiction. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-046.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-046.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-2100",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-047",
+    "name": "Helicoidal Flux Inverter",
+    "assemblyId": "ME-2200",
+    "revision": "0.1",
+    "description": "A helical excitation winding reverses the axial test field when drive current is reversed.",
+    "function": "A helical excitation winding reverses the axial test field when drive current is reversed.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.0821415,
+    "dimensionsMm": {
+      "length": 51.0,
+      "width": 44.0,
+      "height": 44.0
+    },
+    "mounting": "signed test field → ME-040 pickup verification",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "signed test field → ME-040 pickup verification"
+    ],
+    "equations": [
+      "Bz ≈ μ0 N I / sqrt(L² + 4R²)"
+    ],
+    "limits": "Permeability μ0 [H/m], turns N [1], current I [A], length L and mean radius R [m]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect open winding or excessive copper loss. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-047.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-047.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-2200",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-048",
+    "name": "Quasiperiodic Precession Engine",
+    "assemblyId": "ME-2300",
+    "revision": "0.1",
+    "description": "Two incommensurate reference frequencies excite a small bounded gimbal-angle command.",
+    "function": "Two incommensurate reference frequencies excite a small bounded gimbal-angle command.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-026 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "axis-orientation demand → ME-046",
+      "Axis orientation request"
+    ],
+    "equations": [
+      "θr = A sin(2π f t) + B sin(2π √2 f t)"
+    ],
+    "limits": "Amplitude A and B [rad], base frequency f [Hz]",
+    "safetyFlags": [],
+    "maintenance": "Inspect aliasing or excessive command amplitude. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-048"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-2300",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-049",
+    "name": "Anisotropic Impedance Lattice",
+    "assemblyId": "ME-2400",
+    "revision": "0.1",
+    "description": "Oriented flexures create two distinct dynamic stiffnesses in the transverse load plane.",
+    "function": "Oriented flexures create two distinct dynamic stiffnesses in the transverse load plane.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.1055214,
+    "dimensionsMm": {
+      "length": 57.0,
+      "width": 45.0,
+      "height": 23.5
+    },
+    "mounting": "directional stiffness → ME-026 lateral model",
+    "matingPartIds": [
+      "ME-026"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Directional dynamic stiffness"
+    ],
+    "equations": [
+      "Zj = Kj − M ω² + i Cj ω"
+    ],
+    "limits": "Dynamic stiffness Z [N/m], mass M [kg], stiffness K [N/m], damping C [N·s/m]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect mode crossing or anisotropy loss. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-049.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-049.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-2400",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-050",
+    "name": "Hyperboloidal Phase Conjugator",
+    "assemblyId": "ME-2500",
+    "revision": "0.1",
+    "description": "Conjugates a measured complex mode and schedules the inverse-phase drive in a buffered, timed reconstruction.",
+    "function": "Conjugates a measured complex mode and schedules the inverse-phase drive in a buffered, timed reconstruction.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-026 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "phase demand → ME-044 drive buffer",
+      "Complex drive phasor"
+    ],
+    "equations": [
+      "Y[k] = H[k] conj(X[k])"
+    ],
+    "limits": "Phasors X and Y [normalized], path transfer H [1]",
+    "safetyFlags": [],
+    "maintenance": "Inspect bias or delay miscalibration. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-050"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-2500",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-051",
+    "name": "Stochastic Resonance Exciter",
+    "assemblyId": "ME-2600",
+    "revision": "0.1",
+    "description": "A seeded stochastic dither exercises the bistable detection model under a weak periodic input.",
+    "function": "A seeded stochastic dither exercises the bistable detection model under a weak periodic input.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-026 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "detector calibration → ME-042 response study",
+      "Dither calibration"
+    ],
+    "equations": [
+      "dx = (a x − b x³ + A sin ωt)dt + √(2D)dW"
+    ],
+    "limits": "Normalized state x, coefficients a, b, A [s⁻¹], noise D [s⁻¹]",
+    "safetyFlags": [],
+    "maintenance": "Inspect threshold masking or noise overdrive. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-051"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-2600",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-052",
+    "name": "Toroidal Vorticity Separator",
+    "assemblyId": "ME-2700",
+    "revision": "0.1",
+    "description": "An annular passage gives a repeatable tangential hydraulic path and sample ports.",
+    "function": "An annular passage gives a repeatable tangential hydraulic path and sample ports.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.128562,
+    "dimensionsMm": {
+      "length": 73.0,
+      "width": 58.0,
+      "height": 15.75
+    },
+    "mounting": "circulation and loss → ME-020 pressure balance",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "circulation and loss → ME-020 pressure balance",
+      "Toroidal pressure and delivery"
+    ],
+    "equations": [
+      "Γ = 2π r vθ; Δp = Kρv²/2"
+    ],
+    "limits": "Circulation Γ [m²/s], radius r [m], speed v [m/s], loss K [1]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect gas entrainment or flow restriction. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-052.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-052.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-2700",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-053",
+    "name": "Metastable Bifurcation Governor",
+    "assemblyId": "ME-2800",
+    "revision": "0.1",
+    "description": "Tracks stable branches of a saddle-node normal form and raises a boundary alert.",
+    "function": "Tracks stable branches of a saddle-node normal form and raises a boundary alert.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-028 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "branch margin → ME-060 control gate",
+      "Branch Margin"
+    ],
+    "equations": [
+      "ẋ = μ − x²"
+    ],
+    "limits": "Normalized time and state; μ [1]",
+    "safetyFlags": [],
+    "maintenance": "Inspect branch jump or incorrect sign selection. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-053"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-2800",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-054",
+    "name": "Pseudoadiabatic Entropy Compensator",
+    "assemblyId": "ME-2900",
+    "revision": "0.1",
+    "description": "Estimates irreversible heat-transfer entropy production and adjusts the heat-load schedule.",
+    "function": "Estimates irreversible heat-transfer entropy production and adjusts the heat-load schedule.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-028 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "entropy budget → ME-045 thermal dispatch",
+      "Thermodynamic dispatch request"
+    ],
+    "equations": [
+      "Ṡgen = Q̇(1/Tc − 1/Th)"
+    ],
+    "limits": "Entropy rate [W/K], heat transfer Q̇ [W], absolute T [K]",
+    "safetyFlags": [],
+    "maintenance": "Inspect wrong temperature scale or sensor offset. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-054"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-2900",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-055",
+    "name": "Gyroscopic Holonomy Resolver",
+    "assemblyId": "ME-3000",
+    "revision": "0.1",
+    "description": "Integrates a small prescribed attitude loop and compares its geometric orientation phase with encoder drift.",
+    "function": "Integrates a small prescribed attitude loop and compares its geometric orientation phase with encoder drift.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-026 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "orientation residual → ME-046 bias estimate",
+      "Estimated tilt correction",
+      "Attitude convention test"
+    ],
+    "equations": [
+      "γ = 2π(1 − cos β)"
+    ],
+    "limits": "Loop half-angle β and geometric phase γ [rad]",
+    "safetyFlags": [],
+    "maintenance": "Inspect frame convention or wrap error. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-055"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-3000",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-056",
+    "name": "Non-Abelian Phase Manifold",
+    "assemblyId": "ME-3100",
+    "revision": "0.1",
+    "description": "Compares noncommuting ordered attitude rotation updates using unit quaternions.",
+    "function": "Compares noncommuting ordered attitude rotation updates using unit quaternions.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-026 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "cross-axis ordering error → ME-055 calibration",
+      "Attitude convention test"
+    ],
+    "equations": [
+      "C = qx qy qx⁻¹ qy⁻¹"
+    ],
+    "limits": "Unit quaternions q; angular commutator [rad]",
+    "safetyFlags": [],
+    "maintenance": "Inspect quaternion normalization or order error. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-056"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-3100",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-057",
+    "name": "Pseudocausal Inversion Chamber",
+    "assemblyId": "ME-3200",
+    "revision": "0.1",
+    "description": "Uses a regularized causal inverse of the two-tap measurement path and reports the remaining residual.",
+    "function": "Uses a regularized causal inverse of the two-tap measurement path and reports the remaining residual.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-026 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "deconvolved input → ME-059 modal filter",
+      "Causal reconstructed samples"
+    ],
+    "equations": [
+      "x̂n = (yn − β x̂n−1)/(1+λ)"
+    ],
+    "limits": "Normalized samples x, y, filter β and λ [1]",
+    "safetyFlags": [],
+    "maintenance": "Inspect noise amplification or timing drift. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-057"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-3200",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-058",
+    "name": "Toroidal Antiprecession Coupler",
+    "assemblyId": "ME-3300",
+    "revision": "0.1",
+    "description": "Viscoelastic annular supports couple gimbal tilt to passive restoring torque.",
+    "function": "Viscoelastic annular supports couple gimbal tilt to passive restoring torque.",
+    "material": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "quantity": 1,
+    "massKg": 0.2395903,
+    "dimensionsMm": {
+      "length": 13.0,
+      "width": 62.0,
+      "height": 64.0
+    },
+    "mounting": "restoring moment → ME-046 tilt equation",
+    "matingPartIds": [
+      "ME-046"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "τ = −kψ ψ − cψ ψ̇"
+    ],
+    "limits": "Tilt ψ [rad], torque τ [N·m], kψ [N·m/rad], cψ [N·m·s/rad]",
+    "safetyFlags": [
+      "Guarded and isolated service"
+    ],
+    "maintenance": "Inspect shear fatigue or material creep. Review affected interfaces before return to test.",
+    "cadAssetPath": "models/me01/parts/ME-058.step",
+    "diagramRefs": [
+      "models/me01/drawings/ME-058.svg"
+    ],
+    "testEvidence": [],
+    "sourcing": "Preliminary component definition",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Coated steel, aluminum and functional inserts · schematic finish assignment",
+    "sourceAssembly": "ME-3300",
+    "verification": "Geometry review",
+    "kind": "physical"
+  },
+  {
+    "id": "ME-059",
+    "name": "Polychronous Eigenmode Discriminator",
+    "assemblyId": "ME-3400",
+    "revision": "0.1",
+    "description": "A paired DFT correlator separates shaft-order and asynchronous modes before active control.",
+    "function": "A paired DFT correlator separates shaft-order and asynchronous modes before active control.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-026 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "resolved modes → ME-026 suppression gains",
+      "Causal reconstructed samples",
+      "Modal order selection"
+    ],
+    "equations": [
+      "Ak = (2/N) abs(Σ xn exp(−iωk tn))"
+    ],
+    "limits": "Modal amplitude Ak in sample units, angular frequencies ωk [rad/s]",
+    "safetyFlags": [],
+    "maintenance": "Inspect leakage, aliasing or sensor dropout. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-059"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-3400",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  },
+  {
+    "id": "ME-060",
+    "name": "Recursive Bifurcation Stabilizer",
+    "assemblyId": "ME-3500",
+    "revision": "0.1",
+    "description": "A bounded feedback gain schedules normal-form decay as the stability margin changes.",
+    "function": "A bounded feedback gain schedules normal-form decay as the stability margin changes.",
+    "material": null,
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on the ME-028 controller boundary.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "control limit → ME-027 synchronization",
+      "Bounded scheduling signal",
+      "Branch Margin"
+    ],
+    "equations": [
+      "ẋ = (μ − k)x − βx³, k ≥ 0"
+    ],
+    "limits": "x [1], rates μ and k [s⁻¹], saturation β [s⁻¹]",
+    "safetyFlags": [],
+    "maintenance": "Inspect gain saturation or unresolved delay. Review affected interfaces before return to test.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/me01/systems/ME-060"
+    ],
+    "testEvidence": [],
+    "sourcing": "Defined numerical function",
+    "readiness": "Preliminary",
+    "evidence": "calculation",
+    "proposedSpecification": "Controller computation",
+    "sourceAssembly": "ME-3500",
+    "verification": "Deterministic numerical study",
+    "kind": "logical"
+  }
+]

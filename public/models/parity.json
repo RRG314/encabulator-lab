@@ -25,6 +25,18 @@
         "geometryChecks": true,
         "studyCoverage": true
       }
+    },
+    {
+      "configuration": "ME-01",
+      "checks": {
+        "nativeSources": true,
+        "poseIdentity": true,
+        "serviceCoverage": true,
+        "assembledAndSeparated": true,
+        "exportsAndDrawings": true,
+        "geometryChecks": true,
+        "studyCoverage": true
+      }
     }
   ],
   "scope": "Browser interactions are tested separately. Manufacturing release remains open."

@@ -1,0 +1,369 @@
+[
+  {
+    "id": "ME-100",
+    "order": 1,
+    "name": "Transpanendermic Flux Rectifier",
+    "shortName": "Transpanendermic Flux Rectifier",
+    "description": "Transpanendermic Flux Rectifier",
+    "partIds": [
+      "ME-020",
+      "ME-022"
+    ]
+  },
+  {
+    "id": "ME-200",
+    "order": 2,
+    "name": "Ambilateral Spurving Compensator",
+    "shortName": "Ambilateral Spurving Compensator",
+    "description": "Ambilateral Spurving Compensator",
+    "partIds": [
+      "ME-007",
+      "ME-008",
+      "ME-015"
+    ]
+  },
+  {
+    "id": "ME-300",
+    "order": 3,
+    "name": "Recursive Marzelvane Phasing Array",
+    "shortName": "Recursive Marzelvane Phasing Array",
+    "description": "Recursive Marzelvane Phasing Array",
+    "partIds": [
+      "ME-012",
+      "ME-013",
+      "ME-014"
+    ]
+  },
+  {
+    "id": "ME-400",
+    "order": 4,
+    "name": "Isogonal Waneshaft Precession Regulator",
+    "shortName": "Isogonal Waneshaft Precession Regulator",
+    "description": "Isogonal Waneshaft Precession Regulator",
+    "partIds": [
+      "ME-005",
+      "ME-006",
+      "ME-030"
+    ]
+  },
+  {
+    "id": "ME-500",
+    "order": 5,
+    "name": "Polyphase Unilateral Detractor",
+    "shortName": "Polyphase Unilateral Detractor",
+    "description": "Polyphase Unilateral Detractor",
+    "partIds": [
+      "ME-023",
+      "ME-024"
+    ]
+  },
+  {
+    "id": "ME-600",
+    "order": 6,
+    "name": "Differential Girdle Harmonic Attenuator",
+    "shortName": "Differential Girdle Harmonic Attenuator",
+    "description": "Differential Girdle Harmonic Attenuator",
+    "partIds": [
+      "ME-016",
+      "ME-017"
+    ]
+  },
+  {
+    "id": "ME-700",
+    "order": 7,
+    "name": "Quadrature Panametric Induction Fan",
+    "shortName": "Quadrature Panametric Induction Fan",
+    "description": "Quadrature Panametric Induction Fan",
+    "partIds": [
+      "ME-018",
+      "ME-019"
+    ]
+  },
+  {
+    "id": "ME-800",
+    "order": 8,
+    "name": "Cardinal Gram-Meter Array",
+    "shortName": "Cardinal Gram-Meter Array",
+    "description": "Cardinal Gram-Meter Array",
+    "partIds": [
+      "ME-025",
+      "ME-029"
+    ]
+  },
+  {
+    "id": "ME-900",
+    "order": 9,
+    "name": "Panendermic Semi-Boloid Stator",
+    "shortName": "Panendermic Semi-Boloid Stator",
+    "description": "Panendermic Semi-Boloid Stator",
+    "partIds": [
+      "ME-009",
+      "ME-010",
+      "ME-011"
+    ]
+  },
+  {
+    "id": "ME-1000",
+    "order": 10,
+    "name": "Non-Reversible Tremie Regulator",
+    "shortName": "Non-Reversible Tremie Regulator",
+    "description": "Non-Reversible Tremie Regulator",
+    "partIds": [
+      "ME-021"
+    ]
+  },
+  {
+    "id": "ME-1100",
+    "order": 11,
+    "name": "Transverse Fumbling Suppression Matrix",
+    "shortName": "Transverse Fumbling Suppression Matrix",
+    "description": "Transverse Fumbling Suppression Matrix",
+    "partIds": [
+      "ME-026"
+    ]
+  },
+  {
+    "id": "ME-1200",
+    "order": 12,
+    "name": "Recursive Deltoid Synchronizer",
+    "shortName": "Recursive Deltoid Synchronizer",
+    "description": "Recursive Deltoid Synchronizer",
+    "partIds": [
+      "ME-027"
+    ]
+  },
+  {
+    "id": "ME-1300",
+    "order": 13,
+    "name": "Panametric Supervisory Controller",
+    "shortName": "Panametric Supervisory Controller",
+    "description": "Panametric Supervisory Controller",
+    "partIds": [
+      "ME-028"
+    ]
+  },
+  {
+    "id": "ME-1400",
+    "order": 14,
+    "name": "Logarithmic Casing and Structural System",
+    "shortName": "Logarithmic Casing and Structural System",
+    "description": "Logarithmic Casing and Structural System",
+    "partIds": [
+      "ME-001",
+      "ME-002",
+      "ME-003",
+      "ME-004",
+      "ME-031"
+    ]
+  },
+  {
+    "id": "ME-1500",
+    "order": 15,
+    "name": "Quadrupolar Flux Confinement Chamber",
+    "shortName": "Quadrupolar Flux Confinement Chamber",
+    "description": "Quadrupolar Flux Confinement Chamber",
+    "partIds": [
+      "ME-040"
+    ]
+  },
+  {
+    "id": "ME-1600",
+    "order": 16,
+    "name": "Magnetohydrodynamic Recirculation Manifold",
+    "shortName": "Magnetohydrodynamic Recirculation Manifold",
+    "description": "Magnetohydrodynamic Recirculation Manifold",
+    "partIds": [
+      "ME-041"
+    ]
+  },
+  {
+    "id": "ME-1700",
+    "order": 17,
+    "name": "Topological Soliton Retention Lattice",
+    "shortName": "Topological Soliton Retention Lattice",
+    "description": "Topological Soliton Retention Lattice",
+    "partIds": [
+      "ME-042"
+    ]
+  },
+  {
+    "id": "ME-1800",
+    "order": 18,
+    "name": "Ferrohydrodynamic Instability Governor",
+    "shortName": "Ferrohydrodynamic Instability Governor",
+    "description": "Ferrohydrodynamic Instability Governor",
+    "partIds": [
+      "ME-043"
+    ]
+  },
+  {
+    "id": "ME-1900",
+    "order": 19,
+    "name": "Nonreciprocal Phononic Detraction Array",
+    "shortName": "Nonreciprocal Phononic Detraction Array",
+    "description": "Nonreciprocal Phononic Detraction Array",
+    "partIds": [
+      "ME-044"
+    ]
+  },
+  {
+    "id": "ME-2000",
+    "order": 20,
+    "name": "Chronometric Hysteresis Governor",
+    "shortName": "Chronometric Hysteresis Governor",
+    "description": "Chronometric Hysteresis Governor",
+    "partIds": [
+      "ME-045"
+    ]
+  },
+  {
+    "id": "ME-2100",
+    "order": 21,
+    "name": "Biaxial Nutation Arrestor",
+    "shortName": "Biaxial Nutation Arrestor",
+    "description": "Biaxial Nutation Arrestor",
+    "partIds": [
+      "ME-046"
+    ]
+  },
+  {
+    "id": "ME-2200",
+    "order": 22,
+    "name": "Helicoidal Flux Inverter",
+    "shortName": "Helicoidal Flux Inverter",
+    "description": "Helicoidal Flux Inverter",
+    "partIds": [
+      "ME-047"
+    ]
+  },
+  {
+    "id": "ME-2300",
+    "order": 23,
+    "name": "Quasiperiodic Precession Engine",
+    "shortName": "Quasiperiodic Precession Engine",
+    "description": "Quasiperiodic Precession Engine",
+    "partIds": [
+      "ME-048"
+    ]
+  },
+  {
+    "id": "ME-2400",
+    "order": 24,
+    "name": "Anisotropic Impedance Lattice",
+    "shortName": "Anisotropic Impedance Lattice",
+    "description": "Anisotropic Impedance Lattice",
+    "partIds": [
+      "ME-049"
+    ]
+  },
+  {
+    "id": "ME-2500",
+    "order": 25,
+    "name": "Hyperboloidal Phase Conjugator",
+    "shortName": "Hyperboloidal Phase Conjugator",
+    "description": "Hyperboloidal Phase Conjugator",
+    "partIds": [
+      "ME-050"
+    ]
+  },
+  {
+    "id": "ME-2600",
+    "order": 26,
+    "name": "Stochastic Resonance Exciter",
+    "shortName": "Stochastic Resonance Exciter",
+    "description": "Stochastic Resonance Exciter",
+    "partIds": [
+      "ME-051"
+    ]
+  },
+  {
+    "id": "ME-2700",
+    "order": 27,
+    "name": "Toroidal Vorticity Separator",
+    "shortName": "Toroidal Vorticity Separator",
+    "description": "Toroidal Vorticity Separator",
+    "partIds": [
+      "ME-052"
+    ]
+  },
+  {
+    "id": "ME-2800",
+    "order": 28,
+    "name": "Metastable Bifurcation Governor",
+    "shortName": "Metastable Bifurcation Governor",
+    "description": "Metastable Bifurcation Governor",
+    "partIds": [
+      "ME-053"
+    ]
+  },
+  {
+    "id": "ME-2900",
+    "order": 29,
+    "name": "Pseudoadiabatic Entropy Compensator",
+    "shortName": "Pseudoadiabatic Entropy Compensator",
+    "description": "Pseudoadiabatic Entropy Compensator",
+    "partIds": [
+      "ME-054"
+    ]
+  },
+  {
+    "id": "ME-3000",
+    "order": 30,
+    "name": "Gyroscopic Holonomy Resolver",
+    "shortName": "Gyroscopic Holonomy Resolver",
+    "description": "Gyroscopic Holonomy Resolver",
+    "partIds": [
+      "ME-055"
+    ]
+  },
+  {
+    "id": "ME-3100",
+    "order": 31,
+    "name": "Non-Abelian Phase Manifold",
+    "shortName": "Non-Abelian Phase Manifold",
+    "description": "Non-Abelian Phase Manifold",
+    "partIds": [
+      "ME-056"
+    ]
+  },
+  {
+    "id": "ME-3200",
+    "order": 32,
+    "name": "Pseudocausal Inversion Chamber",
+    "shortName": "Pseudocausal Inversion Chamber",
+    "description": "Pseudocausal Inversion Chamber",
+    "partIds": [
+      "ME-057"
+    ]
+  },
+  {
+    "id": "ME-3300",
+    "order": 33,
+    "name": "Toroidal Antiprecession Coupler",
+    "shortName": "Toroidal Antiprecession Coupler",
+    "description": "Toroidal Antiprecession Coupler",
+    "partIds": [
+      "ME-058"
+    ]
+  },
+  {
+    "id": "ME-3400",
+    "order": 34,
+    "name": "Polychronous Eigenmode Discriminator",
+    "shortName": "Polychronous Eigenmode Discriminator",
+    "description": "Polychronous Eigenmode Discriminator",
+    "partIds": [
+      "ME-059"
+    ]
+  },
+  {
+    "id": "ME-3500",
+    "order": 35,
+    "name": "Recursive Bifurcation Stabilizer",
+    "shortName": "Recursive Bifurcation Stabilizer",
+    "description": "Recursive Bifurcation Stabilizer",
+    "partIds": [
+      "ME-060"
+    ]
+  }
+]

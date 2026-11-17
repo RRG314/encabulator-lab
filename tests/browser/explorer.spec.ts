@@ -66,7 +66,7 @@ test('loads CAD mesh, changes study inputs and replays a guard fault', async ({ 
 
 test('checks principal pages for WCAG A and AA violations', async ({ page }) => {
   const { AxeBuilder } = await import('@axe-core/playwright')
-  for (const route of ['explorer','component/TE-009','simulation','engineering/downloads','bom','re01/explorer','re01/component/RE-031','comparison']) {
+  for (const route of ['explorer','component/TE-009','simulation','engineering/downloads','bom','re01/explorer','re01/component/RE-031','comparison','me01/explorer','me01/systems/ME-040','me01/simulation']) {
     await page.goto(`/#/${route}`)
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
     const result = await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze()
@@ -114,5 +114,31 @@ test('switches to independent RE-01 geometry, retains parts and drives the water
   await page.getByRole('link',{name:'Test bench'}).click()
   await page.getByRole('button',{name:'Reciprocating water circuit'}).click()
   await expect(page.getByRole('img',{name:/plot of Crosshead stroke/})).toBeVisible()
+  expect(errors).toEqual([])
+})
+
+test('inspects Metachronic physical and computational stations and runs the coupled laboratory',async({page})=>{
+  const errors:string[]=[]
+  page.on('pageerror',error=>errors.push(error.message))
+  await page.goto('/#/me01/explorer')
+  await expect(page.getByRole('heading',{name:'Metachronic Encabulator ME-01',level:1})).toBeVisible()
+  await expect(page.getByText('CAD SCHEMATIC',{exact:true})).toBeVisible({timeout:16000})
+  await page.getByRole('searchbox',{name:'Search components'}).fill('ME-040')
+  await page.getByRole('button',{name:'Quadrupolar Flux Confinement Chamber',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'Quadrupolar Flux Confinement Chamber',level:3})).toBeVisible()
+  await page.getByRole('link',{name:'Engineering record'}).click()
+  await page.getByRole('link',{name:'Run subsystem study'}).click()
+  await expect(page.getByRole('img',{name:/Quadrupole calibration field/})).toBeVisible()
+  await page.getByRole('link',{name:'Subsystem register',exact:true}).click()
+  await page.getByRole('link',{name:'Non-Abelian Phase Manifold',exact:true}).click()
+  await expect(page.getByRole('img',{name:/Ordered rotation commutator/})).toBeVisible()
+  await page.getByRole('link',{name:'Test bench'}).click()
+  await expect(page.getByRole('heading',{name:'Polychronous Operating Laboratory'})).toBeVisible()
+  await page.getByRole('combobox',{name:'Fault scenario'}).selectOption('Guard open')
+  await page.getByRole('slider',{name:'Time',exact:true}).press('End')
+  await expect(page.getByText('Active condition · Guard chain open')).toBeVisible()
+  await page.getByRole('button',{name:'Motion replay'}).click()
+  await expect(page.getByText('CAD SCHEMATIC',{exact:true})).toBeVisible({timeout:16000})
+  await expect(page.getByText(/^SIMULATION · .* rpm ·/)).toBeVisible()
   expect(errors).toEqual([])
 })

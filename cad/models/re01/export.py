@@ -93,7 +93,7 @@ def export():
     shapes={p.id:p.finish_parts for p in bodies}
     write_glb(OUT/'re01.glb',shapes,layout)
     with (OUT/'bom.csv').open('w',newline='') as stream:
-        writer=csv.writer(stream)
+        writer=csv.writer(stream,lineterminator="\n")
         writer.writerow(['part_id','component','assembly','quantity','material_basis','schematic_unit_mass_kg','tool_candidate'])
         for p in parts: writer.writerow([p['id'],p['name'],p['assemblyId'],p['quantity'],p['material'],p['massKg'],service[p['id']]['tool']])
     world={}

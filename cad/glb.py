@@ -48,8 +48,17 @@ def write_glb(path, components, placements, fraction=0):
                     triangles.extend((base+i,) for face in faces for i in face)
             if not coords or not triangles:
                 continue
+            if len(coords) > 50_000:
+                import MeshPart
+                coords, triangles = [], []
+                for shape in shapes:
+                    vertices, faces = MeshPart.meshFromShape(Shape=shape, LinearDeflection=.22,
+                                                             AngularDeflection=.23, Relative=False).Topology
+                    base = len(coords)
+                    coords.extend(vector(tuple(p)) for p in vertices)
+                    triangles.extend((base + i,) for face in faces for i in face)
             positions = store(coords,'VEC3',5126,'fff',34962)
-            indices = store(triangles,'SCALAR',5125,'I',34963)
+            indices = store(triangles,'SCALAR',5123,'H',34963) if len(coords) < 65_536 else store(triangles,'SCALAR',5125,'I',34963)
             primitives.append(dict(attributes={'POSITION':positions},indices=indices,
                                    material=list(MATERIALS).index(finish),extras={'finish':finish}))
         mesh_index[id] = len(document['meshes'])
