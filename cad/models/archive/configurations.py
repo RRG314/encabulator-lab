@@ -59,23 +59,30 @@ def plate_with_holes(size, holes, diameter, axis=(0, 0, 1)):
     return plate
 
 
+GE62_RADIUS_MM = 66
+GE62_BASE_THICKNESS_MM = 56
+GE62_STANDOFF_MM = 30
+GE62_SHAFT_HEIGHT_MM = GE62_RADIUS_MM + GE62_STANDOFF_MM
+
+
 def ge_instrument():
     """Exterior reconstructed from HBK-8359, figure 1, with nominal dimensions."""
-    height, radius = 125, 66
+    radius, thickness, stand_off = GE62_RADIUS_MM, GE62_BASE_THICKNESS_MM, GE62_STANDOFF_MM
+    bottom = -thickness/2
     meter_x = (88, 122)
     contour = Part.BSplineCurve()
-    front = [V(x,y,-12) for x,y in [
+    front = [V(x,y,bottom) for x,y in [
         (-182,-99),(-126,-92),(-74,-57),(-13,-54),(49,-74),(108,-79),(150,-55),(182,-77),
     ]]
     contour.interpolate(front)
-    rear_l, rear_r = V(-182,100,-12), V(182,100,-12)
+    rear_l, rear_r = V(-182,100,bottom), V(182,100,bottom)
     base = Part.Face(Part.Wire([
         Part.makeLine(rear_l,front[0]), contour.toShape(),
         Part.makeLine(front[-1],rear_r), Part.makeLine(rear_r,rear_l),
-    ])).extrude(V(0,0,24))
+    ])).extrude(V(0,0,thickness))
     for x in (-153,153):
         for y in (-28,72):
-            base=base.cut(cylinder(3.4,28,(x,y,0),(0,0,1)))
+            base=base.cut(cylinder(3.4,thickness+4,(x,y,0),(0,0,1)))
     case=annulus(radius,63,322)
     for x in meter_x:
         case=case.cut(cylinder(12.1,20,(x,-65,4),(0,1,0)))
@@ -83,10 +90,10 @@ def ge_instrument():
     bearing=box(16,32,44,(0,0,-33)).fuse(cylinder(17,16)).cut(cylinder(8.15,22))
     fan=annulus(15,8.1,10)
     outline=[(-4,9),(5,10),(15,25),(23,43),(13,51),(-1,36),(-4,9)]
-    for index in range(6):
+    for index in range(5):
         blade=Part.Face(Part.makePolygon([V(-1.6,y,h) for y,h in outline])).extrude(V(3.2,0,0))
         blade.rotate(V(),V(0,0,1),14)
-        blade.rotate(V(),V(1,0,0),index*60)
+        blade.rotate(V(),V(1,0,0),index*72)
         fan=fan.fuse(blade)
     grille=annulus(65,18,10)
     for index in range(24):
@@ -105,9 +112,9 @@ def ge_instrument():
         mark=box(.46,.4,1.25,(0,0,7.3))
         mark.rotate(V(),V(0,1,0),angle)
         dial_marks.append(mark)
-    z=height
+    z=GE62_SHAFT_HEIGHT_MM
     return [
-        item('Prefabulated Amulite baseplate',0,'enamel',base,(0,0,-12),(0,0,-45),0,'Scalloped front edge. Upper plane establishes datum A.','6 mm hex key candidate','G62A'),
+        item('Prefabulated Amulite baseplate',0,'enamel',base,(0,0,bottom),(0,0,-45),0,'Scalloped front edge. Upper plane establishes datum A.','6 mm hex key candidate','G62A'),
         item('Logarithmic case',0,'enamel',case,(0,0,z),(0,270,170),16,'Removable cylindrical shell, Ø132 mm nominal.','PH2 screwdriver candidate','G62A',cover=True),
         item('Dual-meter fascia',0,'plate',panel,(105,-69,z+4),(78,-145,10),2,'Two Ø24.2 mm openings at 34 mm pitch.','PH2 screwdriver candidate','G62A',cover=True),
         item('Inrush and realization panel meter',1,'black',cylinder(11.8,17,axis=(0,1,0)),[(x,-65,z+4) for x in meter_x],(32,-120,58),3,'Meter bodies aligned to the casing apertures.','Panel retaining-ring spanner','G62B',multiple=True),
@@ -115,14 +122,14 @@ def ge_instrument():
         item('Rotor spindle',2,'steel',cylinder(8,366),(-5,0,z),(-330,-235,152),5,'Ø16 mm journal along datum X.','Dial indicator and soft-jaw fixture',rotates=True),
         item('Semi-boloid stator carrier',2,'cast',annulus(48,33,74),(-5,0,z),(0,131,112),5,'Stator ring between the bearing planes.','4 mm hex key candidate','G62B'),
         item('Rotor sleeve',2,'plate',annulus(27,8.2,68),(-5,0,z),(0,-100,54),6,'Radial clearance to stator and spindle.','3 mm hex key candidate',rotates=True),
-        item('Pentametric fan',2,'enamel',fan.removeSplitter(),(-182,0,z),(-170,-72,40),6,'Exposed six-blade fan at the left end of the reference view.','3 mm hex key candidate','G62A',rotates=True),
+        item('Pentametric fan',2,'enamel',fan.removeSplitter(),(-182,0,z),(-170,-72,40),6,'Five external blades visible in figure 1. The text separately describes six marzel-vanes.','3 mm hex key candidate','G62A',rotates=True),
         item('Meter excitation and load board',1,'board',plate_with_holes((85,22,2),[(x,y,0) for x in (-34,34) for y in (-7,7)],3.2),(109,-40,z-21),(61,-110,-32),4,'Low-voltage demonstration circuit beneath the meter plane.','PH1 screwdriver candidate'),
         item('Input protection module',1,'black',box(28,23,25),(126,-30,z+27),(107,-83,-6),10,'Isolated reference feed at the board input.','Insulated terminal driver','G62B'),
         item('Perforated fan-end grille',0,'steel',grille.removeSplitter(),(-166,0,z),(-135,29,103),2,'Circular end grille with perforated perimeter.','PH2 screwdriver candidate','G62A',cover=True),
         item('Rear end closure',0,'enamel',annulus(65,11,10),(166,0,z),(102,100,121),2,'Concentric shell closure and shaft opening.','PH2 screwdriver candidate','G62A',cover=True),
         item('Upper tremie rail',2,'steel',rail,(0,-7,z+83),(0,25,193),2,'External rail above the shell crown.','8 mm flare nut spanner candidate','G62A'),
         item('Tremie return loop',2,'gold',loop,[(x,-7,z+83) for x in range(-125,126,25)],(22,-157,122),14,'Repeated takeoff toward the crown.','8 mm flare nut spanner candidate','G62A',multiple=True),
-        item('Twin mounting stanchions',0,'steel',cylinder(7.5,z-radius,axis=(0,0,1)),[(x,0,(z-radius)/2) for x in (-106,92)],(61,63,-12),1,'Two stand-offs under the shell.','13 mm spanner candidate','G62A',multiple=True),
+        item('Twin mounting stanchions',0,'steel',cylinder(7.5,stand_off,axis=(0,0,1)),[(x,0,stand_off/2) for x in (-106,92)],(61,63,-12),1,'Two exposed stand-offs under the shell.','13 mm spanner candidate','G62A',multiple=True),
         item('Analog meter dial',1,'enamel',cylinder(9.1,2,axis=(0,1,0)),[(x,-74.7,z+4) for x in meter_x],(99,-150,61),4,'Two light readout faces visible in figure 1.','Panel retaining-ring spanner','G62A',multiple=True),
         item('Panel indicator bezel',1,'blue',annulus(4,2,3,(0,1,0)),[(66,-73.5,z+h) for h in (-5,5,15)],(54,-185,-5),3,'Three visible pilot positions. Electrical assignments remain open.','Panel retaining-ring spanner','G62A',multiple=True),
         item('Nameplate strip',0,'steel',box(70,2,9),(-70,-67,z-4),(0,-141,-35),2,'Side identification strip located from figure 1.','PH1 screwdriver candidate','G62A',cover=True),
@@ -249,9 +256,9 @@ def chrysler():
 
 
 CONFIGURATIONS = {
-    'chrysler': ('CH-88', (346,285,238), 125, ('Fixture and transaxle castings','Fluid torque stage','Service outputs'), chrysler),
-    'ge-1962': ('GE-62', (378,200,238), 125, ('Case and base','Metering and protection','Coaxial train'), ge_instrument),
-    'magneto-2022': ('MT-22', (352,190,167), 98, ('Outboard support','Magnet carrier train','Indicator stack'), magneto),
-    'micro-2016': ('MI-16', (272,158,215), 0, ('Transport enclosure','Lid instrumentation','Base instrumentation'), micro),
-    'electro-2021': ('ET-21', (266,202,92), 0, ('Measurement chassis','Panel instruments','Acquisition circuit'), electro),
+    'chrysler': ('CH-88', 125, ('Fixture and transaxle castings','Fluid torque stage','Service outputs'), chrysler),
+    'ge-1962': ('GE-62', GE62_SHAFT_HEIGHT_MM, ('Case and base','Metering and protection','Coaxial train'), ge_instrument),
+    'magneto-2022': ('MT-22', 98, ('Outboard support','Magnet carrier train','Indicator stack'), magneto),
+    'micro-2016': ('MI-16', 0, ('Transport enclosure','Lid instrumentation','Base instrumentation'), micro),
+    'electro-2021': ('ET-21', 0, ('Measurement chassis','Panel instruments','Acquisition circuit'), electro),
 }

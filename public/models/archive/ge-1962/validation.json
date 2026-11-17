@@ -1,6 +1,6 @@
 {
   "code": "GE-62",
-  "revision": "0.2",
+  "revision": "0.3",
   "checks": [
     {
       "check": "Valid positive-volume part definitions",
@@ -27,8 +27,15 @@
       "expected": [],
       "observed": [],
       "unit": "mm³"
+    },
+    {
+      "check": "STEP envelope round-trip across both assemblies and every part",
+      "expected": "Maximum error ≤ 0.02 mm",
+      "observed": 0.0,
+      "unit": "mm",
+      "status": "PASS"
     }
   ],
-  "estimatedMassKg": 9.011160595921904,
+  "estimatedMassKg": 14.304377821161033,
   "fabricationRelease": false
 }

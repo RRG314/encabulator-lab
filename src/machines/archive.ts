@@ -27,7 +27,8 @@ const placement = z.strictObject({
   key:text, partId:text, origin:vector, offset:vector, stage:z.number().int().min(0).max(8), rotation:z.number(),
 })
 const cad = z.strictObject({
-  code:text, slug:id, revision:text, assetFolder:text, mesh:text, boundsMm:vector, shaftHeight:z.number(),
+  code:text, slug:id, revision:text, assetFolder:text, mesh:text, boundsMm:vector,
+  baseMm:z.tuple([z.number(),z.number()]).optional(),shaftHeight:z.number(),
   rotating:z.array(text), inputParts:z.array(text), guard:z.array(text), defaultPart:text, assets:z.array(asset), placements:z.array(placement),
   parts:z.unknown(), assemblies:z.unknown(), connections:z.unknown(),
   service:z.record(text,z.strictObject({failureMode:text,tool:text,originSource:text.nullable(),envelopeMm:vector,classification:text})),
@@ -59,7 +60,7 @@ export function archiveProfile(entry:ArchiveEntry, model:ArchiveCad):DisplayProf
     placements:model.placements as Placement[], shaftHeight:model.shaftHeight,
     isoDirection:entry.id==='ge-1962'?[-.7,-1,.52]:undefined,
     shaftY:model.placements.find(row=>model.rotating.includes(row.partId))?.origin[1],
-    baseMm:[x,y], boundsMm:model.boundsMm, mesh:model.mesh, assetFolder:model.assetFolder,
+    baseMm:model.baseMm??[x,y], boundsMm:model.boundsMm, mesh:model.mesh, assetFolder:model.assetFolder,
     defaultPart:model.defaultPart, voltage:null, speed:null, guard:model.guard, rotating:model.rotating, inputParts:model.inputParts,
     motor:'', fan:'', harness:'', fanAt:[0,0,0], sensorAt:[0,0,0], wireAt:[0,0,0],
     service:model.service, href:path=>archiveHref(entry.id,path==='explorer'?'assembly':path),

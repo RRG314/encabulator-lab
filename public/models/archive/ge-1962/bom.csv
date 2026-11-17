@@ -1,5 +1,5 @@
 part_id,name,quantity,assembly,material,mass_kg,source_id
-GE-001,Prefabulated Amulite baseplate,1,GE-A1,Enamel-coated aluminum candidate,4.033908567372638,G62A
+GE-001,Prefabulated Amulite baseplate,1,GE-A1,Enamel-coated aluminum candidate,9.412453323869492,G62A
 GE-002,Logarithmic case,1,GE-A1,Enamel-coated aluminum candidate,1.0495140140413433,G62A
 GE-003,Dual-meter fascia,1,GE-A1,Machined aluminum candidate,0.03803887719464856,G62A
 GE-004,Inrush and realization panel meter,2,GE-A2,Insulating polymer candidate,0.009295501423074158,G62B
@@ -7,14 +7,14 @@ GE-005,Coaxial bearing pedestal,2,GE-A3,Steel candidate,0.25110444636002693,G62B
 GE-006,Rotor spindle,1,GE-A3,Steel candidate,0.5776710305938454,
 GE-007,Semi-boloid stator carrier,1,GE-A3,Cast aluminum candidate,0.7626436078074976,G62B
 GE-008,Rotor sleeve,1,GE-A3,Machined aluminum candidate,0.38170079307510724,
-GE-009,Pentametric fan,1,GE-A3,Enamel-coated aluminum candidate,0.042736217650576544,G62A
+GE-009,Pentametric fan,1,GE-A3,Enamel-coated aluminum candidate,0.03786683774669537,G62A
 GE-010,Meter excitation and load board,1,GE-A2,FR-4 laminate candidate,0.0067999713375407915,
 GE-011,Input protection module,1,GE-A2,Insulating polymer candidate,0.020125,G62B
 GE-012,Perforated fan-end grille,1,GE-A1,Steel candidate,0.9577295169443426,G62A
 GE-013,Rear end closure,1,GE-A1,Enamel-coated aluminum candidate,0.3481135987589778,G62A
 GE-014,Upper tremie rail,1,GE-A3,Steel candidate,0.07664967554891625,G62A
 GE-015,Tremie return loop,11,GE-A3,Copper alloy candidate,0.0015831138896398923,G62A
-GE-016,Twin mounting stanchions,2,GE-A1,Steel candidate,0.08184536085994386,G62A
+GE-016,Twin mounting stanchions,2,GE-A1,Steel candidate,0.0416162851830223,G62A
 GE-017,Analog meter dial,2,GE-A2,Enamel-coated aluminum candidate,0.0014048385532763623,G62A
 GE-018,Panel indicator bezel,3,GE-A2,Anodized aluminum candidate,0.00030536280592892786,G62A
 GE-019,Nameplate strip,1,GE-A1,Steel candidate,0.009891,G62A

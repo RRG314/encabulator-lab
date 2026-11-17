@@ -1,15 +1,19 @@
 {
   "code": "GE-62",
   "slug": "ge-1962",
-  "revision": "0.2",
+  "revision": "0.3",
   "assetFolder": "models/archive/ge-1962",
   "mesh": "models/archive/ge-1962/assembly.glb",
   "boundsMm": [
-    378,
-    200,
-    238
+    371.117,
+    202.393,
+    240.0
   ],
-  "shaftHeight": 125,
+  "baseMm": [
+    364.0,
+    202.393
+  ],
+  "shaftHeight": 96,
   "rotating": [
     "GE-006",
     "GE-008",
@@ -77,7 +81,7 @@
       "origin": [
         0,
         0,
-        -12
+        -28.0
       ],
       "offset": [
         0,
@@ -93,7 +97,7 @@
       "origin": [
         0,
         0,
-        125
+        96
       ],
       "offset": [
         0,
@@ -109,7 +113,7 @@
       "origin": [
         105,
         -69,
-        129
+        100
       ],
       "offset": [
         78,
@@ -125,7 +129,7 @@
       "origin": [
         88,
         -65,
-        129
+        100
       ],
       "offset": [
         32,
@@ -141,7 +145,7 @@
       "origin": [
         122,
         -65,
-        129
+        100
       ],
       "offset": [
         32,
@@ -157,7 +161,7 @@
       "origin": [
         -110,
         0,
-        125
+        96
       ],
       "offset": [
         0,
@@ -173,7 +177,7 @@
       "origin": [
         78,
         0,
-        125
+        96
       ],
       "offset": [
         0,
@@ -189,7 +193,7 @@
       "origin": [
         -5,
         0,
-        125
+        96
       ],
       "offset": [
         -330,
@@ -205,7 +209,7 @@
       "origin": [
         -5,
         0,
-        125
+        96
       ],
       "offset": [
         0,
@@ -221,7 +225,7 @@
       "origin": [
         -5,
         0,
-        125
+        96
       ],
       "offset": [
         0,
@@ -237,7 +241,7 @@
       "origin": [
         -182,
         0,
-        125
+        96
       ],
       "offset": [
         -170,
@@ -253,7 +257,7 @@
       "origin": [
         109,
         -40,
-        104
+        75
       ],
       "offset": [
         61,
@@ -269,7 +273,7 @@
       "origin": [
         126,
         -30,
-        152
+        123
       ],
       "offset": [
         107,
@@ -285,7 +289,7 @@
       "origin": [
         -166,
         0,
-        125
+        96
       ],
       "offset": [
         -135,
@@ -301,7 +305,7 @@
       "origin": [
         166,
         0,
-        125
+        96
       ],
       "offset": [
         102,
@@ -317,7 +321,7 @@
       "origin": [
         0,
         -7,
-        208
+        179
       ],
       "offset": [
         0,
@@ -333,7 +337,7 @@
       "origin": [
         -125,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -349,7 +353,7 @@
       "origin": [
         -100,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -365,7 +369,7 @@
       "origin": [
         -75,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -381,7 +385,7 @@
       "origin": [
         -50,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -397,7 +401,7 @@
       "origin": [
         -25,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -413,7 +417,7 @@
       "origin": [
         0,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -429,7 +433,7 @@
       "origin": [
         25,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -445,7 +449,7 @@
       "origin": [
         50,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -461,7 +465,7 @@
       "origin": [
         75,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -477,7 +481,7 @@
       "origin": [
         100,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -493,7 +497,7 @@
       "origin": [
         125,
         -7,
-        208
+        179
       ],
       "offset": [
         22,
@@ -509,7 +513,7 @@
       "origin": [
         -106,
         0,
-        29.5
+        15.0
       ],
       "offset": [
         61,
@@ -525,7 +529,7 @@
       "origin": [
         92,
         0,
-        29.5
+        15.0
       ],
       "offset": [
         61,
@@ -541,7 +545,7 @@
       "origin": [
         88,
         -74.7,
-        129
+        100
       ],
       "offset": [
         99,
@@ -557,7 +561,7 @@
       "origin": [
         122,
         -74.7,
-        129
+        100
       ],
       "offset": [
         99,
@@ -573,7 +577,7 @@
       "origin": [
         66,
         -73.5,
-        120
+        91
       ],
       "offset": [
         54,
@@ -589,7 +593,7 @@
       "origin": [
         66,
         -73.5,
-        130
+        101
       ],
       "offset": [
         54,
@@ -605,7 +609,7 @@
       "origin": [
         66,
         -73.5,
-        140
+        111
       ],
       "offset": [
         54,
@@ -621,7 +625,7 @@
       "origin": [
         -70,
         -67,
-        121
+        92
       ],
       "offset": [
         0,
@@ -637,7 +641,7 @@
       "origin": [
         88,
         -76,
-        129
+        100
       ],
       "offset": [
         119,
@@ -653,7 +657,7 @@
       "origin": [
         122,
         -76,
-        129
+        100
       ],
       "offset": [
         119,
@@ -669,16 +673,16 @@
       "id": "GE-001",
       "name": "Prefabulated Amulite baseplate",
       "assemblyId": "GE-A1",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Scalloped front edge. Upper plane establishes datum A.",
       "function": "Scalloped front edge. Upper plane establishes datum A.",
       "material": "Enamel-coated aluminum candidate",
       "quantity": 1,
-      "massKg": 4.033908567372638,
+      "massKg": 9.412453323869492,
       "dimensionsMm": {
         "length": 364.0,
-        "width": 203.927,
-        "height": 24.0
+        "width": 202.393,
+        "height": 56.0
       },
       "mounting": "Scalloped front edge. Upper plane establishes datum A.",
       "matingPartIds": [
@@ -710,7 +714,7 @@
       "id": "GE-002",
       "name": "Logarithmic case",
       "assemblyId": "GE-A1",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Removable cylindrical shell, Ø132 mm nominal.",
       "function": "Removable cylindrical shell, Ø132 mm nominal.",
       "material": "Enamel-coated aluminum candidate",
@@ -718,7 +722,7 @@
       "massKg": 1.0495140140413433,
       "dimensionsMm": {
         "length": 322.0,
-        "width": 132.012,
+        "width": 132.0,
         "height": 132.0
       },
       "mounting": "Removable cylindrical shell, Ø132 mm nominal.",
@@ -756,7 +760,7 @@
       "id": "GE-003",
       "name": "Dual-meter fascia",
       "assemblyId": "GE-A1",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Two Ø24.2 mm openings at 34 mm pitch.",
       "function": "Two Ø24.2 mm openings at 34 mm pitch.",
       "material": "Machined aluminum candidate",
@@ -799,7 +803,7 @@
       "id": "GE-004",
       "name": "Inrush and realization panel meter",
       "assemblyId": "GE-A2",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Meter bodies aligned to the casing apertures.",
       "function": "Meter bodies aligned to the casing apertures.",
       "material": "Insulating polymer candidate",
@@ -842,7 +846,7 @@
       "id": "GE-005",
       "name": "Coaxial bearing pedestal",
       "assemblyId": "GE-A3",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Two coaxial supports within the shell.",
       "function": "Two coaxial supports within the shell.",
       "material": "Steel candidate",
@@ -885,7 +889,7 @@
       "id": "GE-006",
       "name": "Rotor spindle",
       "assemblyId": "GE-A3",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Ø16 mm journal along datum X.",
       "function": "Ø16 mm journal along datum X.",
       "material": "Steel candidate",
@@ -928,7 +932,7 @@
       "id": "GE-007",
       "name": "Semi-boloid stator carrier",
       "assemblyId": "GE-A3",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Stator ring between the bearing planes.",
       "function": "Stator ring between the bearing planes.",
       "material": "Cast aluminum candidate",
@@ -969,7 +973,7 @@
       "id": "GE-008",
       "name": "Rotor sleeve",
       "assemblyId": "GE-A3",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Radial clearance to stator and spindle.",
       "function": "Radial clearance to stator and spindle.",
       "material": "Machined aluminum candidate",
@@ -1010,18 +1014,18 @@
       "id": "GE-009",
       "name": "Pentametric fan",
       "assemblyId": "GE-A3",
-      "revision": "0.2",
-      "description": "Exposed six-blade fan at the left end of the reference view.",
-      "function": "Exposed six-blade fan at the left end of the reference view.",
+      "revision": "0.3",
+      "description": "Five external blades visible in figure 1. The text separately describes six marzel-vanes.",
+      "function": "Five external blades visible in figure 1. The text separately describes six marzel-vanes.",
       "material": "Enamel-coated aluminum candidate",
       "quantity": 1,
-      "massKg": 0.042736217650576544,
+      "massKg": 0.03786683774669537,
       "dimensionsMm": {
         "length": 12.117,
-        "width": 101.336,
-        "height": 102.0
+        "width": 97.247,
+        "height": 99.902
       },
-      "mounting": "Exposed six-blade fan at the left end of the reference view.",
+      "mounting": "Five external blades visible in figure 1. The text separately describes six marzel-vanes.",
       "matingPartIds": [
         "GE-006"
       ],
@@ -1051,7 +1055,7 @@
       "id": "GE-010",
       "name": "Meter excitation and load board",
       "assemblyId": "GE-A2",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Low-voltage demonstration circuit beneath the meter plane.",
       "function": "Low-voltage demonstration circuit beneath the meter plane.",
       "material": "FR-4 laminate candidate",
@@ -1093,7 +1097,7 @@
       "id": "GE-011",
       "name": "Input protection module",
       "assemblyId": "GE-A2",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Isolated reference feed at the board input.",
       "function": "Isolated reference feed at the board input.",
       "material": "Insulating polymer candidate",
@@ -1134,7 +1138,7 @@
       "id": "GE-012",
       "name": "Perforated fan-end grille",
       "assemblyId": "GE-A1",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Circular end grille with perforated perimeter.",
       "function": "Circular end grille with perforated perimeter.",
       "material": "Steel candidate",
@@ -1175,7 +1179,7 @@
       "id": "GE-013",
       "name": "Rear end closure",
       "assemblyId": "GE-A1",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Concentric shell closure and shaft opening.",
       "function": "Concentric shell closure and shaft opening.",
       "material": "Enamel-coated aluminum candidate",
@@ -1216,7 +1220,7 @@
       "id": "GE-014",
       "name": "Upper tremie rail",
       "assemblyId": "GE-A3",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "External rail above the shell crown.",
       "function": "External rail above the shell crown.",
       "material": "Steel candidate",
@@ -1258,7 +1262,7 @@
       "id": "GE-015",
       "name": "Tremie return loop",
       "assemblyId": "GE-A3",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Repeated takeoff toward the crown.",
       "function": "Repeated takeoff toward the crown.",
       "material": "Copper alloy candidate",
@@ -1299,18 +1303,18 @@
       "id": "GE-016",
       "name": "Twin mounting stanchions",
       "assemblyId": "GE-A1",
-      "revision": "0.2",
-      "description": "Two stand-offs under the shell.",
-      "function": "Two stand-offs under the shell.",
+      "revision": "0.3",
+      "description": "Two exposed stand-offs under the shell.",
+      "function": "Two exposed stand-offs under the shell.",
       "material": "Steel candidate",
       "quantity": 2,
-      "massKg": 0.08184536085994386,
+      "massKg": 0.0416162851830223,
       "dimensionsMm": {
         "length": 15.0,
         "width": 15.0,
-        "height": 59.0
+        "height": 30.0
       },
-      "mounting": "Two stand-offs under the shell.",
+      "mounting": "Two exposed stand-offs under the shell.",
       "matingPartIds": [
         "GE-002",
         "GE-005",
@@ -1342,7 +1346,7 @@
       "id": "GE-017",
       "name": "Analog meter dial",
       "assemblyId": "GE-A2",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Two light readout faces visible in figure 1.",
       "function": "Two light readout faces visible in figure 1.",
       "material": "Enamel-coated aluminum candidate",
@@ -1384,7 +1388,7 @@
       "id": "GE-018",
       "name": "Panel indicator bezel",
       "assemblyId": "GE-A2",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Three visible pilot positions. Electrical assignments remain open.",
       "function": "Three visible pilot positions. Electrical assignments remain open.",
       "material": "Anodized aluminum candidate",
@@ -1425,7 +1429,7 @@
       "id": "GE-019",
       "name": "Nameplate strip",
       "assemblyId": "GE-A1",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Side identification strip located from figure 1.",
       "function": "Side identification strip located from figure 1.",
       "material": "Steel candidate",
@@ -1466,7 +1470,7 @@
       "id": "GE-020",
       "name": "Meter scale and pointer",
       "assemblyId": "GE-A2",
-      "revision": "0.2",
+      "revision": "0.3",
       "description": "Nominal analog scale marks and pointer. Calibration remains open.",
       "function": "Nominal analog scale marks and pointer. Calibration remains open.",
       "material": "Insulating polymer candidate",
@@ -1608,7 +1612,7 @@
       "kind": "mechanical",
       "from": "GE-009",
       "to": "GE-006",
-      "label": "Exposed six-blade fan at the left end of the reference view."
+      "label": "Five external blades visible in figure 1. The text separately describes six marzel-vanes."
     },
     {
       "id": "GE-IF-010",
@@ -1657,7 +1661,7 @@
       "kind": "mechanical",
       "from": "GE-016",
       "to": "GE-001",
-      "label": "Two stand-offs under the shell."
+      "label": "Two exposed stand-offs under the shell."
     },
     {
       "id": "GE-IF-017",
@@ -1695,8 +1699,8 @@
       "originSource": "G62A",
       "envelopeMm": [
         364.0,
-        203.927,
-        24.0
+        202.393,
+        56.0
       ],
       "classification": "Nominal B-rep reconstruction"
     },
@@ -1706,7 +1710,7 @@
       "originSource": "G62A",
       "envelopeMm": [
         322.0,
-        132.012,
+        132.0,
         132.0
       ],
       "classification": "Nominal B-rep reconstruction"
@@ -1783,8 +1787,8 @@
       "originSource": "G62A",
       "envelopeMm": [
         12.117,
-        101.336,
-        102.0
+        97.247,
+        99.902
       ],
       "classification": "Nominal B-rep reconstruction"
     },
@@ -1861,7 +1865,7 @@
       "envelopeMm": [
         15.0,
         15.0,
-        59.0
+        30.0
       ],
       "classification": "Nominal B-rep reconstruction"
     },

@@ -58,6 +58,44 @@ describe('historical machine and source register',()=>{
       }
     }
   })
+  it('matches the GE-62 SVG dimensions, mesh scale and revision to the solid register',()=>{
+    const model=archiveCad['ge-1962']
+    const profile=archiveProfile(archiveById.get('ge-1962')!,model)
+    const base=profile.registry.partById.get('GE-001')!.dimensionsMm!
+    expect(profile.baseMm).toEqual([base.length,base.width])
+    expect(base.height).toBe(56)
+    expect(profile.registry.partById.get('GE-016')?.dimensionsMm?.height).toBe(30)
+
+    function checkDrawing(path:string,dimensions:number[]) {
+      const source=readFileSync(publicPath(path),'utf8')
+      expect(source).toContain(`Revision ${model.revision} · Nominal CAD · Historical scale unverified`)
+      const dimensionsText=source.match(/Reference envelope \(X × Y × Z\) ([\d.]+) × ([\d.]+) × ([\d.]+) mm/)
+      expect(dimensionsText).not.toBeNull()
+      dimensionsText!.slice(1).forEach((value,i)=>expect(Math.abs(Number(value)-dimensions[i])).toBeLessThanOrEqual(.011))
+    }
+    checkDrawing(model.assetFolder+'/drawings/assembled.svg',model.boundsMm)
+    for(const part of profile.registry.parts) {
+      const {length,width,height}=part.dimensionsMm!
+      checkDrawing(part.diagramRefs[0],[length,width,height])
+    }
+
+    const glb=readFileSync(publicPath(model.mesh))
+    const header=JSON.parse(glb.subarray(20,20+glb.readUInt32LE(12)).toString()) as {
+      nodes:{mesh:number;translation:number[]}[]
+      meshes:{primitives:{attributes:{POSITION:number}}[]}[]
+      accessors:{min:number[];max:number[]}[]
+    }
+    const bounds=Array.from({length:3},(_,i)=>{
+      const values=header.nodes.flatMap(node=>header.meshes[node.mesh].primitives.flatMap(primitive=>{
+        const accessor=header.accessors[primitive.attributes.POSITION]
+        return [accessor.min[i]+node.translation[i],accessor.max[i]+node.translation[i]]
+      }))
+      return (Math.max(...values)-Math.min(...values))*1000
+    })
+    const [x,z,y]=bounds
+    const cadBounds=[x,y,z]
+    cadBounds.forEach((extent,i)=>expect(Math.abs(extent-model.boundsMm[i])).toBeLessThan(.3))
+  })
 })
 
 describe('bounded model-specific studies',()=>{

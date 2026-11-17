@@ -93,6 +93,15 @@ function RecordSummary({record,model}:{record:ArchiveEntry;model?:ArchiveCad}){
       {model&&<section className="panel article-panel doc-prose"><h2>Data and CAD publications</h2>
         <ul className="archive-downloads">{model.assets.map(file=><li key={file.path}><a href={downloadUrl(file)} download>{file.name}</a></li>)}</ul>
       </section>}
+      {record.id==='ge-1962'&&model&&<section className="panel article-panel full-reference doc-prose">
+        <h2>Nominal dimensions and evidence</h2>
+        <p>HBK-8359 supplies an unscaled perspective photograph. Page 802 lists dimension drawings and external wiring as furnished on delivery. Historical millimetre dimensions remain unverified.</p>
+        <dl>
+          <dt>Assembled CAD envelope (X × Y × Z)</dt><dd>{model.boundsMm.map(value=>value.toFixed(2)).join(' × ')} mm</dd>
+          <dt>Baseplate footprint (X × Y)</dt><dd>{model.baseMm?.map(value=>value.toFixed(2)).join(' × ')} mm</dd>
+          <dt>Shaft height above the baseplate</dt><dd>{model.shaftHeight} mm</dd>
+        </dl>
+      </section>}
       {record.components.length>0&&<section className="panel article-panel full-reference doc-prose"><h2>Source-level component evidence</h2>
         <div className="table-scroll"><table><thead><tr><th scope="col">Source term</th><th scope="col">Evidence</th><th scope="col">Relationship</th></tr></thead>
           <tbody>{record.components.map(([term,source,description])=><tr key={term}><th scope="row">{term}</th>
@@ -116,7 +125,10 @@ function ArchiveRecord({record,view,detail}:{record:ArchiveEntry;view?:string;de
   const links=<nav className="document-tabs" aria-label="Configuration documents">
     <a href={archiveHref()}>Configuration index</a>
     <a href={archiveHref(record.id)} aria-current={!view?'page':undefined}>Technical record</a>
-    {record.id==='ge-1962'&&<a href={sourceById.get('G62A')!.url}>1962 catalog photograph · Figure 1</a>}
+    {record.id==='ge-1962'&&<>
+      <a href={sourceById.get('G62A')!.url}>1962 catalog photograph · Figure 1</a>
+      <a href="https://github.com/RRG314/turbo-encabulator/blob/main/engineering/GE62_DIMENSION_AUDIT.md">Dimension audit</a>
+    </>}
     {assembly&&<a href={assembly} aria-current={view==='assembly'?'page':undefined}>Assembly workbench</a>}
     {testBench&&<a href={testBench} aria-current={view==='study'?'page':undefined}>Operating study</a>}
     {model&&<a href={archiveHref(record.id,'bom')} aria-current={view==='bom'?'page':undefined}>Component register</a>}

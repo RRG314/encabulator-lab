@@ -38,9 +38,16 @@ def add_asset(assets, output, name, filename):
     assets.append(dict(name=name,path=path.relative_to(ROOT/'public').as_posix()))
 
 
+def envelope(shape):
+    b=shape.optimalBoundingBox(False,False)
+    return [b.XLength,b.YLength,b.ZLength]
+
+
 def export(slug, entry):
-    code, bounds, axis, groups, build = entry
-    revision='0.2' if slug=='ge-1962' else '0.1'
+    code, axis, groups, build = entry
+    nominal=slug=='ge-1962'
+    revision='0.3' if nominal else '0.1'
+    sheet_options=dict(model=code,edge_only=True,revision=revision,nominal=nominal)
     items = build()
     prefix = code.split('-')[0]
     out = OUTPUT/slug
@@ -65,15 +72,14 @@ def export(slug, entry):
                 **{'from':id,'to':id_for(item.host)},label=item.interface))
     for id,item in by_id.items():
         shape=item.shape
-        bb=shape.BoundBox
-        dims=dict(length=round(bb.XLength,3),width=round(bb.YLength,3),height=round(bb.ZLength,3))
+        dims=dict(zip(('length','width','height'),(round(v,3) for v in envelope(shape))))
         material,density=FINISH_MATERIAL.get(item.finish,(MATERIALS[item.finish][0],MATERIALS[item.finish][-1]))
         mass=shape.Volume*density*1e-9
         linked=[x['from'] if x['to']==id else x['to'] for x in links if id in (x['from'],x['to'])]
         drawing=drawings/f'{id}.svg'
         step=part_dir/f'{id}.step'
         shape.exportStep(str(step))
-        drawing.write_text(sheet(id,item.name,shape,item.interface,material,model=code,edge_only=True))
+        drawing.write_text(sheet(id,item.name,shape,item.interface,material,**sheet_options))
         parts.append(dict(id=id,name=item.name,assemblyId=group_for(item.group),revision=revision,
             description=item.interface,function=item.interface,material=material,quantity=len(item.stations),massKg=mass,
             dimensionsMm=dims,mounting=item.interface,matingPartIds=linked,fastenerIds=[],sensors=[],ports=[],equations=[],
@@ -117,13 +123,25 @@ def export(slug, entry):
         dict(check='Separated finite-volume contacts',status='REVIEW' if separated_contacts else 'PASS',expected=[],observed=separated_contacts,unit='mm³'),
     ]
     assets=[]
+    assembly_envelope=[]
+    export_paths={part_dir/f'{id}.step':envelope(item.shape) for id,item in by_id.items()}
     for label, state in zip(('assembled','exploded'),states):
         model=Part.makeCompound([shape for _,shape in state])
-        model.exportStep(str(out/f'{label}.step'))
+        step=out/f'{label}.step'
+        model.exportStep(str(step))
+        export_paths[step]=envelope(model)
+        if label=='assembled':
+            assembly_envelope=export_paths[step]
         add_asset(assets,out,f'{label.title()} STEP',f'{label}.step')
         (drawings/f'{label}.svg').write_text(sheet(f'{code}-{label.upper()}',f'{label.title()} assembly',model,
-            'Source-constrained nominal reconstruction • Datum A on the main equipment base', 'Candidate materials',model=code,edge_only=True))
+            'Source-constrained nominal reconstruction • Datum A on the main equipment base', 'Candidate materials',**sheet_options))
         add_asset(assets,out,f'{label.title()} engineering drawing',f'drawings/{label}.svg')
+    if nominal:
+        errors={path.name:max(abs(a-b) for a,b in zip(extents,envelope(Part.read(str(path)))))
+                for path,extents in export_paths.items()}
+        max_error=max(errors.values())
+        checks.append(dict(check='STEP envelope round-trip across both assemblies and every part',
+            expected='Maximum error ≤ 0.02 mm',observed=round(max_error,6),unit='mm',status='PASS' if max_error<=.02 else 'FAIL'))
     document=App.newDocument(f'{prefix}Assembly')
     for name,shape in states[0]:
         obj=document.addObject('Part::Feature',name.replace('-','_').replace(':','_'))
@@ -165,9 +183,13 @@ def export(slug, entry):
         record=next(entry for entry in json.loads((DATA/'records.json').read_text()) if entry['id']==slug)
         sources=[source for source in json.loads((DATA/'sources.json').read_text()) if source['id'] in record['sourceIds']]
         archive.writestr('source-traceability.json',json.dumps(dict(record=record,sources=sources),indent=2,ensure_ascii=False))
+        if nominal:
+            archive.write(ROOT/'engineering/GE62_DIMENSION_AUDIT.md','dimensional-evidence.md')
     add_asset(assets,out,'Complete engineering package',package)
+    base=parts[0]['dimensionsMm']
     scene=dict(code=code,slug=slug,revision=revision,assetFolder=f'models/archive/{slug}',
-        mesh=f'models/archive/{slug}/assembly.glb',boundsMm=list(bounds),shaftHeight=axis,
+        mesh=f'models/archive/{slug}/assembly.glb',boundsMm=[round(value,3) for value in assembly_envelope],
+        baseMm=[base['length'],base['width']],shaftHeight=axis,
         rotating=[id for id,item in by_id.items() if item.rotates],
         inputParts=[id for id,item in by_id.items() if item.input_drive],
         guard=[id for id,item in by_id.items() if item.cover],

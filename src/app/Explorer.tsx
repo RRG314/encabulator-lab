@@ -200,7 +200,7 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
           {measuring && <div className="measurement-readout" aria-live="polite">{points.length === 2
             ? `Schematic distance · ${Math.hypot(...points[0].map((value,i) => value-points[1][i])).toFixed(1)} mm`
             : `Select ${points.length ? 'the second point' : 'two surface points'}`}</div>}
-          {dimensioning && <div className="dimension-readout">Baseplate target · {machine.baseMm.join(' × ')} mm</div>}
+          {dimensioning && <div className="dimension-readout">Nominal CAD baseplate · {machine.baseMm.map(value=>Number(value.toFixed(2))).join(' × ')} mm</div>}
           {telemetry && <div className="diagnostic-readout">SIMULATION · {Math.round(telemetry.speedRpm ?? 0)} rpm · {telemetry.motorTemperature?.toFixed(1) ?? '—'} °C</div>}
           <div className="camera-presets" role="group" aria-label="Camera presets">
             {presets.map(value => <button key={value} aria-pressed={preset === value} type="button" onClick={() => focusCamera(value)}>{value}</button>)}

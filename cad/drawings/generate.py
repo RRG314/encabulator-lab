@@ -53,9 +53,10 @@ def projected_silhouette(solid, direction):
     return (bound.XMin,bound.XMax,bound.YMin,bound.YMax),TechDraw.projectToSVG(local,V(0,0,1))
 
 
-def sheet(identifier, title, solid, note, material, model="TE-01", edge_only=False):
+def sheet(identifier, title, solid, note, material, model="TE-01", edge_only=False, revision="0.1", nominal=False):
     art = []
-    b = solid.BoundBox
+    b = solid.optimalBoundingBox(False,False) if nominal else solid.BoundBox
+    basis = 'Nominal CAD · Historical scale unverified' if nominal else 'Schematic reference'
     extents = [(b.XMin,b.XMax,b.YMin,b.YMax), (b.XMin,b.XMax,b.ZMin,b.ZMax), (b.YMin,b.YMax,b.ZMin,b.ZMax)]
     for i,(label,direction) in enumerate(VIEWS):
         x,y = 190+(i%2)*365,177+(i//2)*200
@@ -83,7 +84,7 @@ text{{fill:#182431;font:12px sans-serif}}.label{{font:700 11px monospace;fill:#2
 <rect x="12" y="12" width="736" height="516" fill="none" stroke="#405a70"/>
 <rect x="12" y="12" width="736" height="63" fill="#edf2f5" stroke="#405a70"/>
 <text x="26" y="36" style="font-size:19px;font-weight:bold">{escape(identifier)} / {escape(title)}</text>
-<text x="26" y="59">{model} · Revision 0.1 · Schematic reference · Fabrication release pending</text>
+<text x="26" y="59">{model} · Revision {escape(revision)} · {basis} · Fabrication release pending</text>
 <path d="M380 75V466 M12 278H748 M12 466H748" fill="none" stroke="#9daebc"/>
 {''.join(art)}
 <text x="26" y="483">{escape(note)}</text>
