@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "from": {
+        "type": "string",
+        "pattern": "^TE-0(?:0[1-9]|[12][0-9]|30)$"
+      },
+      "to": {
+        "type": "string",
+        "pattern": "^TE-0(?:0[1-9]|[12][0-9]|30)$"
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "mechanical",
+          "power",
+          "signal",
+          "airflow",
+          "thermal"
+        ]
+      },
+      "label": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": [
+      "id",
+      "from",
+      "to",
+      "kind",
+      "label"
+    ],
+    "additionalProperties": false
+  }
+}

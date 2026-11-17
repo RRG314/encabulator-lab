@@ -1,0 +1,31 @@
+id,quantity,component,proposed_specification,assembly,validation_required
+TE-001,1,Amulite baseplate,300 x 200 x 6 mm aluminum plate; composite overlay optional,ABA,"deflection, mounting"
+TE-002,4,Isolating feet,"elastomer, selected by measured mass",ABA,transmissibility
+TE-003,1,BLDC motor,"24 V, ~50 W, compatible driver, rated to 3000 rpm",drive,torque-speed curve
+TE-004,1,Motor controller,24 V BLDC ESC with speed control and current limiting,CSC,"interface, protections"
+TE-005,1,Main shaft,"8 mm nominal steel, shoulders/retention as engineered",SBA,"critical speed, stress"
+TE-006,2,Spurving bearings,"8 mm bore radial bearings, e.g. 608-series where fit permits",SBA,load/life/fit
+TE-007,2,Bearing housings,"aligned, bolted housings",SBA,coaxiality
+TE-008,1,Marzelvane hub,machined aluminum hub with positive shaft retention,HMA,torque transfer
+TE-009,6,Hydrocoptic vanes,"identical, guarded, balanced vane inserts",HMA,"fatigue, balance"
+TE-010,1,Rotor retaining system,locking hardware specified to rotor geometry,HMA,retention
+TE-011,1,Girdle spring isolator,replaceable elastomer/spring-damper mount,DGS,stiffness/damping
+TE-012,1,Panametric fan,24 V guarded axial fan,PFA,cooling capacity
+TE-013,1,Air duct/filter,removable intake and exhaust duct,PFA,pressure loss
+TE-014,1,Logarithmic casing,rigid transparent guard + opaque service panels,LCA,impact containment
+TE-015,1,Spiral-channel insert,optional nonstructural removable duct,LCA,flow effects
+TE-016,1,ESP32 controller,3.3 V logic microcontroller,CSC,electrical compatibility
+TE-017,1,IMU,"3-axis accelerometer, suitable sampling bandwidth",CGM,calibration
+TE-018,1,Tachometer,Hall/optical sensor plus target,CGM,pulses/rev
+TE-019,2,Temperature probes,motor/bearing temperature,CGM,calibration
+TE-020,1,Bus monitor,"voltage and current sensing, isolated as needed",CGM,accuracy
+TE-021,1,Emergency stop,latching switch interrupting motor-enable/power safely,CSC,fault tests
+TE-022,1,DC power supply,"certified 24 V, appropriately rated and fused",CSC,"load, fault current"
+TE-023,1,Main fuse and disconnect,sized after measured current and wire rating,CSC,protection
+TE-024,1,Interlock switch,prevents motor run with guard open,CSC,fail-safe behavior
+TE-025,1,Controller enclosure,"insulated, ventilated, strain-relieved",CSC,ingress/wiring
+TE-026,1,Harness,"keyed connectors, labeled conductors, cable restraint",CSC,continuity
+TE-027,1,Phase-analysis firmware,"digital filters, phase estimator, bounded controller",UPD,phase uncertainty
+TE-028,1,Optional torque sensor,"inline rated torque transducer, later revision",CGM,calibration
+TE-029,set,Fasteners,"graded, torque-specified, locking as required",all,retention
+TE-030,1,Shaft coupling,rated flexible coupling between motor and supported shaft,drive,"misalignment, torque"

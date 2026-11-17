@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "enum": [
+          "ABA",
+          "SBA",
+          "HMA",
+          "DGS",
+          "PFA",
+          "LCA",
+          "CGM",
+          "UPD",
+          "CSC"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "shortName": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1
+      },
+      "order": {
+        "type": "integer",
+        "exclusiveMinimum": 0,
+        "maximum": 9007199254740991
+      },
+      "partIds": {
+        "minItems": 1,
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^TE-0(?:0[1-9]|[12][0-9]|30)$"
+        }
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "shortName",
+      "description",
+      "order",
+      "partIds"
+    ],
+    "additionalProperties": false
+  }
+}

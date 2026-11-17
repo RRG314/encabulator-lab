@@ -1,0 +1,113 @@
+[
+  {
+    "id": "ABA",
+    "name": "Amulite Baseplate Assembly",
+    "shortName": "Baseplate",
+    "description": "Datum, mounting surface and isolation feet.",
+    "order": 1,
+    "partIds": [
+      "TE-001",
+      "TE-002",
+      "TE-029"
+    ]
+  },
+  {
+    "id": "SBA",
+    "name": "Spurving Bearing Assembly",
+    "shortName": "Shaft & bearings",
+    "description": "Supported main shaft and two journal assemblies.",
+    "order": 2,
+    "partIds": [
+      "TE-005",
+      "TE-006",
+      "TE-007"
+    ]
+  },
+  {
+    "id": "HMA",
+    "name": "Hydrocoptic Marzelvane Assembly",
+    "shortName": "Rotor assembly",
+    "description": "Six individually indexed vanes, hub and retention.",
+    "order": 3,
+    "partIds": [
+      "TE-008",
+      "TE-009",
+      "TE-010"
+    ]
+  },
+  {
+    "id": "DGS",
+    "name": "Differential Girdle Spring Assembly",
+    "shortName": "Motor isolation",
+    "description": "Compliant stationary support under the drive motor.",
+    "order": 4,
+    "partIds": [
+      "TE-011"
+    ]
+  },
+  {
+    "id": "PFA",
+    "name": "Panametric Fan Assembly",
+    "shortName": "Cooling & airflow",
+    "description": "Independent axial fan, duct and intake filter.",
+    "order": 5,
+    "partIds": [
+      "TE-012",
+      "TE-013"
+    ]
+  },
+  {
+    "id": "LCA",
+    "name": "Logarithmic Casing Assembly",
+    "shortName": "Guard & casing",
+    "description": "Casing, removable channel and guard interlock.",
+    "order": 6,
+    "partIds": [
+      "TE-014",
+      "TE-015"
+    ]
+  },
+  {
+    "id": "CGM",
+    "name": "Cardinal Gram-Meter Assembly",
+    "shortName": "Instrumentation",
+    "description": "Speed, acceleration, temperature and bus sensing.",
+    "order": 7,
+    "partIds": [
+      "TE-017",
+      "TE-018",
+      "TE-019",
+      "TE-020",
+      "TE-028"
+    ]
+  },
+  {
+    "id": "UPD",
+    "name": "Unilateral Phase Detractor Assembly",
+    "shortName": "Phase analysis",
+    "description": "Synchronous phase estimation and qualified control output.",
+    "order": 8,
+    "partIds": [
+      "TE-027"
+    ]
+  },
+  {
+    "id": "CSC",
+    "name": "Control and Safety Core",
+    "shortName": "Drive & controls",
+    "description": "Drive train, motor driver, power path and supervisory electronics.",
+    "order": 9,
+    "partIds": [
+      "TE-003",
+      "TE-004",
+      "TE-016",
+      "TE-021",
+      "TE-022",
+      "TE-023",
+      "TE-024",
+      "TE-025",
+      "TE-026",
+      "TE-030"
+    ]
+  }
+]

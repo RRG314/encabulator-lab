@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^TE-0(?:0[1-9]|[12][0-9]|30)$"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "assemblyId": {
+        "type": "string",
+        "enum": [
+          "ABA",
+          "SBA",
+          "HMA",
+          "DGS",
+          "PFA",
+          "LCA",
+          "CGM",
+          "UPD",
+          "CSC"
+        ]
+      },
+      "revision": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1
+      },
+      "function": {
+        "type": "string",
+        "minLength": 1
+      },
+      "material": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "quantity": {
+        "anyOf": [
+          {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          {
+            "type": "string",
+            "const": "set"
+          }
+        ]
+      },
+      "massKg": {
+        "anyOf": [
+          {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "dimensionsMm": {
+        "anyOf": [
+          {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additionalProperties": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "mounting": {
+        "type": "string",
+        "minLength": 1
+      },
+      "matingPartIds": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^TE-0(?:0[1-9]|[12][0-9]|30)$"
+        }
+      },
+      "fastenerIds": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^TE-0(?:0[1-9]|[12][0-9]|30)$"
+        }
+      },
+      "sensors": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^TE-0(?:0[1-9]|[12][0-9]|30)$"
+        }
+      },
+      "ports": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "equations": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "limits": {
+        "type": "string",
+        "minLength": 1
+      },
+      "safetyFlags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "maintenance": {
+        "type": "string",
+        "minLength": 1
+      },
+      "cadAssetPath": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "diagramRefs": {
+        "minItems": 1,
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "testEvidence": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "sourcing": {
+        "type": "string",
+        "minLength": 1
+      },
+      "readiness": {
+        "type": "string",
+        "const": "Preliminary"
+      },
+      "evidence": {
+        "type": "string",
+        "enum": [
+          "target",
+          "assumption",
+          "simulation",
+          "calculation",
+          "measurement"
+        ]
+      },
+      "proposedSpecification": {
+        "type": "string",
+        "minLength": 1
+      },
+      "sourceAssembly": {
+        "type": "string",
+        "minLength": 1
+      },
+      "verification": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "physical",
+          "logical",
+          "optional"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "assemblyId",
+      "revision",
+      "description",
+      "function",
+      "material",
+      "quantity",
+      "massKg",
+      "dimensionsMm",
+      "mounting",
+      "matingPartIds",
+      "fastenerIds",
+      "sensors",
+      "ports",
+      "equations",
+      "limits",
+      "safetyFlags",
+      "maintenance",
+      "cadAssetPath",
+      "diagramRefs",
+      "testEvidence",
+      "sourcing",
+      "readiness",
+      "evidence",
+      "proposedSpecification",
+      "sourceAssembly",
+      "verification",
+      "kind"
+    ],
+    "additionalProperties": false
+  }
+}

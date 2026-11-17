@@ -1,0 +1,1260 @@
+[
+  {
+    "id": "TE-001",
+    "name": "Amulite baseplate",
+    "assemblyId": "ABA",
+    "revision": "0.1",
+    "description": "Supports the motor mount, journal housings and service modules on a common datum.",
+    "function": "Establishes the machine reference plane and transfers reaction loads into four feet.",
+    "material": "Aluminum plate",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": {
+      "length": 300,
+      "width": 200,
+      "thickness": 6
+    },
+    "mounting": "Top datum at Z = 0 mm. Mount patterns are pending drawing release.",
+    "matingPartIds": [
+      "TE-002",
+      "TE-007",
+      "TE-011",
+      "TE-014",
+      "TE-025",
+      "TE-029"
+    ],
+    "fastenerIds": [
+      "TE-029"
+    ],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Verify flatness and deflection under combined static and dynamic loads.",
+    "safetyFlags": [],
+    "maintenance": "Check for distortion, looseness and damage at the mounting points.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-001",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "300 x 200 x 6 mm aluminum plate; composite overlay optional",
+    "sourceAssembly": "ABA",
+    "verification": "deflection, mounting",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-002",
+    "name": "Isolating feet",
+    "assemblyId": "ABA",
+    "revision": "0.1",
+    "description": "Four compliant feet support the baseplate at its corners.",
+    "function": "Reduce transmission to the bench over a characterized frequency range.",
+    "material": "Elastomer candidate",
+    "quantity": 4,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Four corner positions on the underside of TE-001.",
+    "matingPartIds": [
+      "TE-001"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "fₙ = √(K/M) / (2π)"
+    ],
+    "limits": "Measure mounted mass, compression, stiffness and damping before selection.",
+    "safetyFlags": [],
+    "maintenance": "Inspect loaded height, damage and aging.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-002",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "elastomer, selected by measured mass",
+    "sourceAssembly": "ABA",
+    "verification": "transmissibility",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-003",
+    "name": "BLDC motor",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Brushless DC drive at the negative-X end of the shaft line.",
+    "function": "Applies torque through the flexible coupling to the supported rotor shaft.",
+    "material": "Vendor construction TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Motor feet attach via the stationary isolation mount.",
+    "matingPartIds": [
+      "TE-011",
+      "TE-030"
+    ],
+    "fastenerIds": [],
+    "sensors": [
+      "TE-019"
+    ],
+    "ports": [
+      "Three-phase motor output"
+    ],
+    "equations": [
+      "J dΩ/dt = τₘ − τₐ − bΩ − τd",
+      "Pshaft = τ Ω"
+    ],
+    "limits": "Obtain the torque–speed curve, current limits and stall behavior.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Review motor temperature history and inspect connection strain relief.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-003",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "24 V, ~50 W, compatible driver, rated to 3000 rpm",
+    "sourceAssembly": "drive",
+    "verification": "torque-speed curve",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-004",
+    "name": "Motor controller",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Electronic speed controller for the brushless motor.",
+    "function": "Commutates the motor and enforces configured electrical limits.",
+    "material": "Vendor construction TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Mount on an electrically suitable, thermally characterized tray.",
+    "matingPartIds": [
+      "TE-025"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Independent motor energy or safe-enable path",
+      "Three-phase motor output",
+      "Bounded speed request and driver status",
+      "Motor driver connector"
+    ],
+    "equations": [],
+    "limits": "Verify controller limits and separate hardware enable behavior.",
+    "safetyFlags": [],
+    "maintenance": "Review recorded faults and inspect terminals after de-energizing.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-004",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "24 V BLDC ESC with speed control and current limiting",
+    "sourceAssembly": "CSC",
+    "verification": "interface, protections",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-005",
+    "name": "Main shaft",
+    "assemblyId": "SBA",
+    "revision": "0.1",
+    "description": "Steel shaft centered on the X axis and spanning two radial bearing stations.",
+    "function": "Transfers drive torque while locating the rotor between the bearings.",
+    "material": "Steel grade TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": {
+      "nominalJournalDiameter": 8
+    },
+    "mounting": "Nominal Ø8 mm journals. Shoulder, fit and end retention details pending.",
+    "matingPartIds": [
+      "TE-030",
+      "TE-006",
+      "TE-008",
+      "TE-010",
+      "TE-018",
+      "TE-028"
+    ],
+    "fastenerIds": [],
+    "sensors": [
+      "TE-018",
+      "TE-028"
+    ],
+    "ports": [],
+    "equations": [
+      "I = πd⁴/64",
+      "kshaft = 48EI/L³ (ideal centered load)"
+    ],
+    "limits": "Critical speed, fatigue, deflection and fits require verification.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Inspect journals and retention features during isolated service.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-005",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "8 mm nominal steel, shoulders/retention as engineered",
+    "sourceAssembly": "SBA",
+    "verification": "critical speed, stress",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-006",
+    "name": "Spurving bearings",
+    "assemblyId": "SBA",
+    "revision": "0.1",
+    "description": "Two rolling-element bearings support the shaft at the journal stations.",
+    "function": "Transmit rotor and shaft reaction loads to aligned stationary housings.",
+    "material": "Bearing steel candidate",
+    "quantity": 2,
+    "massKg": null,
+    "dimensionsMm": {
+      "nominalBore": 8
+    },
+    "mounting": "Nominal Ø8 mm bore. A 608-series bearing is a candidate.",
+    "matingPartIds": [
+      "TE-005",
+      "TE-007"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "L₁₀ = (C/P)³ million revolutions"
+    ],
+    "limits": "Check equivalent load, life, contamination and locating/floating arrangement.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Trend temperature and vibration and inspect seals during isolated service.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-006",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "8 mm bore radial bearings, e.g. 608-series where fit permits",
+    "sourceAssembly": "SBA",
+    "verification": "load/life/fit",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-007",
+    "name": "Bearing housings",
+    "assemblyId": "SBA",
+    "revision": "0.1",
+    "description": "Two rigid pedestals locate the bearing outer rings above the base datum.",
+    "function": "Constrain the shaft axis through repeatable mounting and alignment.",
+    "material": "Housing alloy TBD",
+    "quantity": 2,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Bolted pedestal to base. Coaxiality is pending a fit and tolerance study.",
+    "matingPartIds": [
+      "TE-001",
+      "TE-006",
+      "TE-017",
+      "TE-029"
+    ],
+    "fastenerIds": [
+      "TE-029"
+    ],
+    "sensors": [
+      "TE-017",
+      "TE-019"
+    ],
+    "ports": [],
+    "equations": [],
+    "limits": "Check housing stiffness, alignment and outer-ring retention.",
+    "safetyFlags": [],
+    "maintenance": "Check movement, mounting preload and alignment after any removal.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-007",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "aligned, bolted housings",
+    "sourceAssembly": "SBA",
+    "verification": "coaxiality",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-008",
+    "name": "Marzelvane hub",
+    "assemblyId": "HMA",
+    "revision": "0.1",
+    "description": "Central hub with six equally spaced vane seats and positive shaft retention.",
+    "function": "Distributes shaft torque and provides a common radial datum for the vane set.",
+    "material": "Aluminum candidate",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Concentric on TE-005 with retention through TE-010.",
+    "matingPartIds": [
+      "TE-005",
+      "TE-009",
+      "TE-010",
+      "TE-029"
+    ],
+    "fastenerIds": [
+      "TE-029"
+    ],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "Fᵤ = mᵤrᵤΩ²"
+    ],
+    "limits": "Verify interface torque capacity, stress concentration and balance.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Inspect seating surfaces and retention after isolated disassembly.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-008",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "machined aluminum hub with positive shaft retention",
+    "sourceAssembly": "HMA",
+    "verification": "torque transfer",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-009",
+    "name": "Hydrocoptic vanes",
+    "assemblyId": "HMA",
+    "revision": "0.1",
+    "description": "Six identical radial inserts indexed around the Marzelvane hub.",
+    "function": "Sweep the unpressurized air volume and contribute to rotor inertia and aerodynamic drag.",
+    "material": null,
+    "quantity": 6,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Six indexed seats on TE-008. Final joint and retention geometry are pending.",
+    "matingPartIds": [
+      "TE-008"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "vtip = rΩ",
+      "Fᵤ = mᵤrᵤΩ²"
+    ],
+    "limits": "Establish fatigue, retention, balance and containment evidence before operation.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Inspect for root damage and fretting with the drive isolated. Balance the installed set after replacement.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-009",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "identical, guarded, balanced vane inserts",
+    "sourceAssembly": "HMA",
+    "verification": "fatigue, balance",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-010",
+    "name": "Rotor retaining system",
+    "assemblyId": "HMA",
+    "revision": "0.1",
+    "description": "Shaft and hub retention hardware at the rotor interface.",
+    "function": "Constrains relative axial motion and maintains positive rotor retention.",
+    "material": "Hardware specification TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Located at the hub face concentric with the shaft.",
+    "matingPartIds": [
+      "TE-005",
+      "TE-008"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Verify preload, anti-loosening method and dynamic retention.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Check witness marks and replace locking hardware per the selected component specification.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-010",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "locking hardware specified to rotor geometry",
+    "sourceAssembly": "HMA",
+    "verification": "retention",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-011",
+    "name": "Girdle spring isolator",
+    "assemblyId": "DGS",
+    "revision": "0.1",
+    "description": "Compliant stationary motor mount beneath the drive.",
+    "function": "Provides a characterized motor support outside the rotating torque path.",
+    "material": "Elastomer or spring–damper candidate",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Between drive motor and base. Maintain acceptable coupling alignment under load.",
+    "matingPartIds": [
+      "TE-001",
+      "TE-003"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "ζ = C/(2√(KM))"
+    ],
+    "limits": "Measure stiffness, damping and run-up transmissibility.",
+    "safetyFlags": [],
+    "maintenance": "Inspect compression, alignment drift and signs of contact.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-011",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "replaceable elastomer/spring-damper mount",
+    "sourceAssembly": "DGS",
+    "verification": "stiffness/damping",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-012",
+    "name": "Panametric fan",
+    "assemblyId": "PFA",
+    "revision": "0.1",
+    "description": "Independently powered axial cooling fan with guard.",
+    "function": "Moves ambient air through the service duct independently of rotor speed.",
+    "material": "Vendor construction TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Fan frame registers to the duct interface.",
+    "matingPartIds": [
+      "TE-013"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Protected fan branch",
+      "Fan PWM or enable"
+    ],
+    "equations": [
+      "Δp_fan(Q) = Δp_system(Q)"
+    ],
+    "limits": "Verify operating point against fan curve and measured duct loss.",
+    "safetyFlags": [],
+    "maintenance": "Inspect fan guard and dust accumulation with power isolated.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-012",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "24 V guarded axial fan",
+    "sourceAssembly": "PFA",
+    "verification": "cooling capacity",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-013",
+    "name": "Air duct/filter",
+    "assemblyId": "PFA",
+    "revision": "0.1",
+    "description": "Removable cooling duct and filter service section.",
+    "function": "Guides cooling flow and provides access to the filter.",
+    "material": "Duct and media TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Duct mates to TE-012 and the casing air interface.",
+    "matingPartIds": [
+      "TE-012",
+      "TE-014"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [
+      "Δp_system ≈ kQ² (fitted relation)"
+    ],
+    "limits": "Measure restriction with clean and loaded filter states.",
+    "safetyFlags": [],
+    "maintenance": "Track pressure loss and clean or replace filter media as qualified.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-013",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "removable intake and exhaust duct",
+    "sourceAssembly": "PFA",
+    "verification": "pressure loss",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-014",
+    "name": "Logarithmic casing",
+    "assemblyId": "LCA",
+    "revision": "0.1",
+    "description": "Segmented protective casing with an inspection window and service panels.",
+    "function": "Separates rotating components from access and supports the guard interlock.",
+    "material": "Transparent and opaque panels, grades TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Mounts to the baseplate around the swept volume.",
+    "matingPartIds": [
+      "TE-001",
+      "TE-013",
+      "TE-015",
+      "TE-024",
+      "TE-029"
+    ],
+    "fastenerIds": [
+      "TE-029"
+    ],
+    "sensors": [
+      "TE-024"
+    ],
+    "ports": [],
+    "equations": [],
+    "limits": "Containment, panel joints, clearances and interlock performance require verification.",
+    "safetyFlags": [
+      "Safety-related interface"
+    ],
+    "maintenance": "Inspect windows, seams, fasteners and interlock alignment before service release.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-014",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "rigid transparent guard + opaque service panels",
+    "sourceAssembly": "LCA",
+    "verification": "impact containment",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-015",
+    "name": "Spiral-channel insert",
+    "assemblyId": "LCA",
+    "revision": "0.1",
+    "description": "Optional removable spiral-profile channel insert.",
+    "function": "Provides a testable airflow path within the casing.",
+    "material": "Material TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Nonstructural insert registers to the guard inner interface.",
+    "matingPartIds": [
+      "TE-014"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Verify clearance and characterize pressure loss and flow distribution.",
+    "safetyFlags": [],
+    "maintenance": "Inspect seating, wear and contamination with the drive isolated.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-015",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "optional nonstructural removable duct",
+    "sourceAssembly": "LCA",
+    "verification": "flow effects",
+    "kind": "optional"
+  },
+  {
+    "id": "TE-016",
+    "name": "ESP32 controller",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Microcontroller for measurement, telemetry and supervisory state.",
+    "function": "Timestamps sensor observations and enforces quality gates for phase analysis.",
+    "material": "Vendor module TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Mounts within the service enclosure on insulated supports.",
+    "matingPartIds": [
+      "TE-025"
+    ],
+    "fastenerIds": [],
+    "sensors": [
+      "TE-017",
+      "TE-018",
+      "TE-019",
+      "TE-020"
+    ],
+    "ports": [
+      "Separately protected DC/DC logic branch",
+      "Bus voltage and current",
+      "Indexed speed pulses",
+      "Housing acceleration",
+      "Paired temperature channels",
+      "Optional torque channel",
+      "Guard state feedback",
+      "Latched fault feedback",
+      "Bounded speed request and driver status",
+      "Time-aligned measurement stream",
+      "Phase quality and request eligibility",
+      "Keyed signal and power harness",
+      "Fan PWM or enable"
+    ],
+    "equations": [],
+    "limits": "Verify logic levels, timing, watchdog and independent motor inhibit.",
+    "safetyFlags": [],
+    "maintenance": "Review fault history and verify firmware revision and configuration.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-016",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "3.3 V logic microcontroller",
+    "sourceAssembly": "CSC",
+    "verification": "electrical compatibility",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-017",
+    "name": "IMU",
+    "assemblyId": "CGM",
+    "revision": "0.1",
+    "description": "Three-axis accelerometer with a local rigid mounting interface.",
+    "function": "Observes housing acceleration for transverse vibration analysis.",
+    "material": "Vendor module TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Couple rigidly to a bearing housing and document sensor orientation.",
+    "matingPartIds": [
+      "TE-007"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Housing acceleration"
+    ],
+    "equations": [
+      "M ÿ + C ẏ + Ky = Fᵧ"
+    ],
+    "limits": "Verify sensitivity, bandwidth, anti-alias filtering and saturation detection.",
+    "safetyFlags": [],
+    "maintenance": "Inspect mounting rigidity and verify channel calibration.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-017",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "3-axis accelerometer, suitable sampling bandwidth",
+    "sourceAssembly": "CGM",
+    "verification": "calibration",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-018",
+    "name": "Tachometer",
+    "assemblyId": "CGM",
+    "revision": "0.1",
+    "description": "Speed pickup and rotating target provide one indexed timing reference per calibrated pulse count.",
+    "function": "Converts edge intervals to speed and anchors synchronous phase.",
+    "material": "Vendor module and target TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Fixed pickup near the shaft. Target placement and clearance require verification.",
+    "matingPartIds": [
+      "TE-005"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Indexed speed pulses"
+    ],
+    "equations": [
+      "rpm = 60 f_pulse / pulses per revolution"
+    ],
+    "limits": "Check pulses per revolution, edge jitter and dropout detection.",
+    "safetyFlags": [],
+    "maintenance": "Inspect pickup clearance, alignment and pulse stability.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-018",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "Hall/optical sensor plus target",
+    "sourceAssembly": "CGM",
+    "verification": "pulses/rev",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-019",
+    "name": "Temperature probes",
+    "assemblyId": "CGM",
+    "revision": "0.1",
+    "description": "Two thermal probes observe motor and bearing temperature.",
+    "function": "Provide trend and overtemperature inputs at defined mounting points.",
+    "material": "Probe construction TBD",
+    "quantity": 2,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Thermally coupled to motor case and one bearing housing.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Paired temperature channels"
+    ],
+    "equations": [
+      "Cₜₕ dT/dt = P_loss − G(T − Tₐ)"
+    ],
+    "limits": "Calibrate response and verify thermal lag and channel assignment.",
+    "safetyFlags": [],
+    "maintenance": "Check attachment, lead damage and calibration drift.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-019",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "motor/bearing temperature",
+    "sourceAssembly": "CGM",
+    "verification": "calibration",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-020",
+    "name": "Bus monitor",
+    "assemblyId": "CGM",
+    "revision": "0.1",
+    "description": "Voltage and current measurement at the DC bus.",
+    "function": "Supplies synchronized bus measurements for input power estimates.",
+    "material": "Vendor module TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Observe the protected bus at a documented measurement boundary.",
+    "matingPartIds": [
+      "TE-025"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Bus voltage and current",
+      "Protected bus measurement"
+    ],
+    "equations": [
+      "Pdc = Vbus Ibus"
+    ],
+    "limits": "Verify scale, offset, bandwidth and fault isolation.",
+    "safetyFlags": [],
+    "maintenance": "Review zero offset and inspect measurement connection integrity.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-020",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "voltage and current sensing, isolated as needed",
+    "sourceAssembly": "CGM",
+    "verification": "accuracy",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-021",
+    "name": "Emergency stop",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Latching emergency stop at the operator-accessible edge.",
+    "function": "Requests independent motor energy removal or safe disable through the hardware path.",
+    "material": "Vendor device TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Accessible outside the rotor guard.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Motor energy isolation chain",
+      "Independent motor energy or safe-enable path",
+      "Independent guard inhibit",
+      "Latched fault feedback"
+    ],
+    "equations": [],
+    "limits": "Verify stop behavior, latching, power restoration and restart inhibition.",
+    "safetyFlags": [
+      "Safety-related interface"
+    ],
+    "maintenance": "Function-test at commissioning and at the interval established by risk assessment.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-021",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "latching switch interrupting motor-enable/power safely",
+    "sourceAssembly": "CSC",
+    "verification": "fault tests",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-022",
+    "name": "DC power supply",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Certified supply candidate within the 24 V DC system boundary.",
+    "function": "Supplies the protected DC distribution path.",
+    "material": "Vendor supply TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Service bay location with reserved airflow and wiring clearance.",
+    "matingPartIds": [
+      "TE-025"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "24 V nominal protected supply input"
+    ],
+    "equations": [],
+    "limits": "Verify loading, inrush, fault current and thermal conditions.",
+    "safetyFlags": [
+      "Safety-related interface"
+    ],
+    "maintenance": "Inspect connectors and ventilation and review supply fault history.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-022",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "certified 24 V, appropriately rated and fused",
+    "sourceAssembly": "CSC",
+    "verification": "load, fault current",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-023",
+    "name": "Main fuse and disconnect",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Service disconnect and main fuse in the DC distribution path.",
+    "function": "Provides isolation and overcurrent protection at a defined boundary.",
+    "material": "Vendor devices TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Located upstream of motor and logic branches.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "24 V nominal protected supply input",
+      "Motor energy isolation chain",
+      "Protected fan branch",
+      "Separately protected DC/DC logic branch",
+      "Protected bus measurement"
+    ],
+    "equations": [],
+    "limits": "Select fuse and disconnect against source fault current and conductor ratings.",
+    "safetyFlags": [
+      "Safety-related interface"
+    ],
+    "maintenance": "Verify fuse labeling and isolate supply before inspection.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-023",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "sized after measured current and wire rating",
+    "sourceAssembly": "CSC",
+    "verification": "protection",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-024",
+    "name": "Interlock switch",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Fixed guard-position switch at the service opening.",
+    "function": "Inhibits drive enable when the guard condition falls outside its qualified state.",
+    "material": "Vendor switch TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Actuated at the mating guard edge.",
+    "matingPartIds": [
+      "TE-014"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Independent guard inhibit",
+      "Guard state feedback"
+    ],
+    "equations": [],
+    "limits": "Verify fail-safe response, alignment tolerance and restart inhibit.",
+    "safetyFlags": [
+      "Safety-related interface"
+    ],
+    "maintenance": "Inspect actuator alignment and verify open-guard response.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-024",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "prevents motor run with guard open",
+    "sourceAssembly": "CSC",
+    "verification": "fail-safe behavior",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-025",
+    "name": "Controller enclosure",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Ventilated service enclosure around the control electronics.",
+    "function": "Protects boards and provides guided wiring and strain relief.",
+    "material": "Enclosure material TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Bolts to base with accessible protected cable exits.",
+    "matingPartIds": [
+      "TE-001",
+      "TE-004",
+      "TE-016",
+      "TE-020",
+      "TE-022",
+      "TE-026",
+      "TE-029"
+    ],
+    "fastenerIds": [
+      "TE-029"
+    ],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Verify ingress, service access and component temperatures.",
+    "safetyFlags": [],
+    "maintenance": "Inspect vents, cover and strain relief.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-025",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "insulated, ventilated, strain-relieved",
+    "sourceAssembly": "CSC",
+    "verification": "ingress/wiring",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-026",
+    "name": "Harness",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Harness routes motor power, sensor signals and supervision wiring.",
+    "function": "Provides labeled, keyed interconnects with controlled return paths.",
+    "material": "Insulated copper conductors and jacket TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Clamped to stationary routed interfaces outside the swept rotor volume.",
+    "matingPartIds": [
+      "TE-025"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Keyed signal and power harness",
+      "Motor driver connector"
+    ],
+    "equations": [],
+    "limits": "Check continuity, voltage drop, EMC and wire strain.",
+    "safetyFlags": [],
+    "maintenance": "Inspect rubbing, retention and connector seating after isolation.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-026",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "keyed connectors, labeled conductors, cable restraint",
+    "sourceAssembly": "CSC",
+    "verification": "continuity",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-027",
+    "name": "Phase-analysis firmware",
+    "assemblyId": "UPD",
+    "revision": "0.1",
+    "description": "Firmware module that estimates phase from paired synchronous observations.",
+    "function": "Reports band-specific phase and coherence and qualifies any bounded speed request.",
+    "material": "Logical component",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Executes on TE-016. The highlighted module denotes logical ownership.",
+    "matingPartIds": [],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Time-aligned measurement stream",
+      "Phase quality and request eligibility"
+    ],
+    "equations": [
+      "Δφ = arg(Σ X Y*)",
+      "γ² = |Σ X Y*|² / (Σ |X|² Σ |Y|²)"
+    ],
+    "limits": "Verify frequency observability, channel delay, uncertainty and invalid-signal behavior.",
+    "safetyFlags": [],
+    "maintenance": "Record revision and repeat deterministic and hardware-in-loop checks after changes.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-027",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Firmware definition; release evidence pending.",
+    "readiness": "Preliminary",
+    "evidence": "assumption",
+    "proposedSpecification": "digital filters, phase estimator, bounded controller",
+    "sourceAssembly": "UPD",
+    "verification": "phase uncertainty",
+    "kind": "logical"
+  },
+  {
+    "id": "TE-028",
+    "name": "Optional torque sensor",
+    "assemblyId": "CGM",
+    "revision": "0.1",
+    "description": "Optional future inline transducer represented at its reserved shaft station.",
+    "function": "Would measure shaft torque for a common-boundary power audit.",
+    "material": "Vendor construction TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Reference location only. Shaft adaptation, axial stack and calibration remain open.",
+    "matingPartIds": [
+      "TE-005"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [
+      "Optional torque channel"
+    ],
+    "equations": [
+      "Pshaft = τ Ω"
+    ],
+    "limits": "Verify range, uncertainty, bandwidth and parasitic alignment loads.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Inspect and calibrate per the selected transducer instructions.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-028",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "inline rated torque transducer, later revision",
+    "sourceAssembly": "CGM",
+    "verification": "calibration",
+    "kind": "optional"
+  },
+  {
+    "id": "TE-029",
+    "name": "Fasteners",
+    "assemblyId": "ABA",
+    "revision": "0.1",
+    "description": "Representative fastener set for mounted hardware and casing joints.",
+    "function": "Transfers joint loads and maintains component retention.",
+    "material": "Grade and finish TBD",
+    "quantity": "set",
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Mounting positions are schematic. Joint-specific schedules are pending.",
+    "matingPartIds": [
+      "TE-001",
+      "TE-007",
+      "TE-008",
+      "TE-014",
+      "TE-025"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Verify preload, thread engagement and locking for each joint.",
+    "safetyFlags": [],
+    "maintenance": "Inspect witness marks and check joints against the released torque schedule.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-029",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "graded, torque-specified, locking as required",
+    "sourceAssembly": "all",
+    "verification": "retention",
+    "kind": "physical"
+  },
+  {
+    "id": "TE-030",
+    "name": "Shaft coupling",
+    "assemblyId": "CSC",
+    "revision": "0.1",
+    "description": "Flexible drive coupling at the motor-to-main-shaft interface.",
+    "function": "Transfers torque while accommodating qualified alignment error.",
+    "material": "Vendor construction TBD",
+    "quantity": 1,
+    "massKg": null,
+    "dimensionsMm": null,
+    "mounting": "Coaxial hubs at the negative-X end of the main shaft.",
+    "matingPartIds": [
+      "TE-003",
+      "TE-005"
+    ],
+    "fastenerIds": [],
+    "sensors": [],
+    "ports": [],
+    "equations": [],
+    "limits": "Verify speed, torque, misalignment and clamp retention under startup load.",
+    "safetyFlags": [
+      "Rotating load path"
+    ],
+    "maintenance": "Inspect alignment, hub position and elastomer condition.",
+    "cadAssetPath": null,
+    "diagramRefs": [
+      "#/component/TE-030",
+      "#/engineering"
+    ],
+    "testEvidence": [],
+    "sourcing": "Candidate definition; supplier and part number pending.",
+    "readiness": "Preliminary",
+    "evidence": "target",
+    "proposedSpecification": "rated flexible coupling between motor and supported shaft",
+    "sourceAssembly": "drive",
+    "verification": "misalignment, torque",
+    "kind": "physical"
+  }
+]

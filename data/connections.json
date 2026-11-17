@@ -1,0 +1,401 @@
+[
+  {
+    "id": "IF-001",
+    "kind": "mechanical",
+    "from": "TE-001",
+    "to": "TE-002",
+    "label": "Four compliant support points"
+  },
+  {
+    "id": "IF-002",
+    "kind": "mechanical",
+    "from": "TE-001",
+    "to": "TE-007",
+    "label": "Pedestal mounting and datum"
+  },
+  {
+    "id": "IF-003",
+    "kind": "mechanical",
+    "from": "TE-001",
+    "to": "TE-011",
+    "label": "Stationary motor support"
+  },
+  {
+    "id": "IF-004",
+    "kind": "mechanical",
+    "from": "TE-001",
+    "to": "TE-014",
+    "label": "Guard perimeter attachment"
+  },
+  {
+    "id": "IF-005",
+    "kind": "mechanical",
+    "from": "TE-001",
+    "to": "TE-025",
+    "label": "Electronics service bay"
+  },
+  {
+    "id": "IF-006",
+    "kind": "mechanical",
+    "from": "TE-001",
+    "to": "TE-029",
+    "label": "Base and hardware mounting"
+  },
+  {
+    "id": "IF-007",
+    "kind": "mechanical",
+    "from": "TE-003",
+    "to": "TE-011",
+    "label": "Motor foot interface"
+  },
+  {
+    "id": "IF-008",
+    "kind": "mechanical",
+    "from": "TE-003",
+    "to": "TE-030",
+    "label": "Coaxial drive shaft"
+  },
+  {
+    "id": "IF-009",
+    "kind": "mechanical",
+    "from": "TE-005",
+    "to": "TE-030",
+    "label": "Driven coupling hub"
+  },
+  {
+    "id": "IF-010",
+    "kind": "mechanical",
+    "from": "TE-005",
+    "to": "TE-006",
+    "label": "Two radial journal fits"
+  },
+  {
+    "id": "IF-011",
+    "kind": "mechanical",
+    "from": "TE-005",
+    "to": "TE-008",
+    "label": "Rotor hub seat"
+  },
+  {
+    "id": "IF-012",
+    "kind": "mechanical",
+    "from": "TE-005",
+    "to": "TE-010",
+    "label": "Positive rotor retention"
+  },
+  {
+    "id": "IF-013",
+    "kind": "mechanical",
+    "from": "TE-005",
+    "to": "TE-018",
+    "label": "Rotating timing target"
+  },
+  {
+    "id": "IF-014",
+    "kind": "mechanical",
+    "from": "TE-005",
+    "to": "TE-028",
+    "label": "Optional inline measurement station"
+  },
+  {
+    "id": "IF-015",
+    "kind": "mechanical",
+    "from": "TE-006",
+    "to": "TE-007",
+    "label": "Outer ring and housing"
+  },
+  {
+    "id": "IF-016",
+    "kind": "mechanical",
+    "from": "TE-007",
+    "to": "TE-017",
+    "label": "Rigid acceleration pickup"
+  },
+  {
+    "id": "IF-017",
+    "kind": "mechanical",
+    "from": "TE-007",
+    "to": "TE-029",
+    "label": "Pedestal joints"
+  },
+  {
+    "id": "IF-018",
+    "kind": "mechanical",
+    "from": "TE-008",
+    "to": "TE-009",
+    "label": "Six indexed vane seats"
+  },
+  {
+    "id": "IF-019",
+    "kind": "mechanical",
+    "from": "TE-008",
+    "to": "TE-010",
+    "label": "Rotor retention interface"
+  },
+  {
+    "id": "IF-020",
+    "kind": "mechanical",
+    "from": "TE-008",
+    "to": "TE-029",
+    "label": "Vane joint hardware"
+  },
+  {
+    "id": "IF-021",
+    "kind": "mechanical",
+    "from": "TE-012",
+    "to": "TE-013",
+    "label": "Fan frame and duct flange"
+  },
+  {
+    "id": "IF-022",
+    "kind": "mechanical",
+    "from": "TE-013",
+    "to": "TE-014",
+    "label": "Casing duct interface"
+  },
+  {
+    "id": "IF-023",
+    "kind": "mechanical",
+    "from": "TE-014",
+    "to": "TE-015",
+    "label": "Removable nonstructural channel"
+  },
+  {
+    "id": "IF-024",
+    "kind": "mechanical",
+    "from": "TE-014",
+    "to": "TE-024",
+    "label": "Guard position actuator"
+  },
+  {
+    "id": "IF-025",
+    "kind": "mechanical",
+    "from": "TE-014",
+    "to": "TE-029",
+    "label": "Guard frame joints"
+  },
+  {
+    "id": "IF-026",
+    "kind": "mechanical",
+    "from": "TE-025",
+    "to": "TE-004",
+    "label": "Motor driver mounting"
+  },
+  {
+    "id": "IF-027",
+    "kind": "mechanical",
+    "from": "TE-025",
+    "to": "TE-016",
+    "label": "Logic board mounting"
+  },
+  {
+    "id": "IF-028",
+    "kind": "mechanical",
+    "from": "TE-025",
+    "to": "TE-020",
+    "label": "Bus monitor mounting"
+  },
+  {
+    "id": "IF-029",
+    "kind": "mechanical",
+    "from": "TE-025",
+    "to": "TE-022",
+    "label": "Supply service bay"
+  },
+  {
+    "id": "IF-030",
+    "kind": "mechanical",
+    "from": "TE-025",
+    "to": "TE-026",
+    "label": "Cable restraint and strain relief"
+  },
+  {
+    "id": "IF-031",
+    "kind": "mechanical",
+    "from": "TE-025",
+    "to": "TE-029",
+    "label": "Enclosure joints"
+  },
+  {
+    "id": "IF-032",
+    "kind": "thermal",
+    "from": "TE-003",
+    "to": "TE-019",
+    "label": "Motor case temperature"
+  },
+  {
+    "id": "IF-033",
+    "kind": "thermal",
+    "from": "TE-007",
+    "to": "TE-019",
+    "label": "Housing temperature"
+  },
+  {
+    "id": "IF-034",
+    "kind": "airflow",
+    "from": "TE-012",
+    "to": "TE-013",
+    "label": "Forced cooling flow"
+  },
+  {
+    "id": "IF-035",
+    "kind": "airflow",
+    "from": "TE-013",
+    "to": "TE-015",
+    "label": "Casing airflow path"
+  },
+  {
+    "id": "IF-036",
+    "kind": "airflow",
+    "from": "TE-015",
+    "to": "TE-009",
+    "label": "Air in the rotor housing"
+  },
+  {
+    "id": "IF-037",
+    "kind": "power",
+    "from": "TE-022",
+    "to": "TE-023",
+    "label": "24 V nominal protected supply input"
+  },
+  {
+    "id": "IF-038",
+    "kind": "power",
+    "from": "TE-023",
+    "to": "TE-021",
+    "label": "Motor energy isolation chain"
+  },
+  {
+    "id": "IF-039",
+    "kind": "power",
+    "from": "TE-021",
+    "to": "TE-004",
+    "label": "Independent motor energy or safe-enable path"
+  },
+  {
+    "id": "IF-040",
+    "kind": "power",
+    "from": "TE-004",
+    "to": "TE-003",
+    "label": "Three-phase motor output"
+  },
+  {
+    "id": "IF-041",
+    "kind": "power",
+    "from": "TE-023",
+    "to": "TE-012",
+    "label": "Protected fan branch"
+  },
+  {
+    "id": "IF-042",
+    "kind": "power",
+    "from": "TE-023",
+    "to": "TE-016",
+    "label": "Separately protected DC/DC logic branch"
+  },
+  {
+    "id": "IF-043",
+    "kind": "signal",
+    "from": "TE-020",
+    "to": "TE-016",
+    "label": "Bus voltage and current"
+  },
+  {
+    "id": "IF-044",
+    "kind": "signal",
+    "from": "TE-023",
+    "to": "TE-020",
+    "label": "Protected bus measurement"
+  },
+  {
+    "id": "IF-045",
+    "kind": "signal",
+    "from": "TE-018",
+    "to": "TE-016",
+    "label": "Indexed speed pulses"
+  },
+  {
+    "id": "IF-046",
+    "kind": "signal",
+    "from": "TE-017",
+    "to": "TE-016",
+    "label": "Housing acceleration"
+  },
+  {
+    "id": "IF-047",
+    "kind": "signal",
+    "from": "TE-019",
+    "to": "TE-016",
+    "label": "Paired temperature channels"
+  },
+  {
+    "id": "IF-048",
+    "kind": "signal",
+    "from": "TE-028",
+    "to": "TE-016",
+    "label": "Optional torque channel"
+  },
+  {
+    "id": "IF-049",
+    "kind": "signal",
+    "from": "TE-024",
+    "to": "TE-021",
+    "label": "Independent guard inhibit"
+  },
+  {
+    "id": "IF-050",
+    "kind": "signal",
+    "from": "TE-024",
+    "to": "TE-016",
+    "label": "Guard state feedback"
+  },
+  {
+    "id": "IF-051",
+    "kind": "signal",
+    "from": "TE-021",
+    "to": "TE-016",
+    "label": "Latched fault feedback"
+  },
+  {
+    "id": "IF-052",
+    "kind": "signal",
+    "from": "TE-016",
+    "to": "TE-004",
+    "label": "Bounded speed request and driver status"
+  },
+  {
+    "id": "IF-053",
+    "kind": "signal",
+    "from": "TE-016",
+    "to": "TE-027",
+    "label": "Time-aligned measurement stream"
+  },
+  {
+    "id": "IF-054",
+    "kind": "signal",
+    "from": "TE-027",
+    "to": "TE-016",
+    "label": "Phase quality and request eligibility"
+  },
+  {
+    "id": "IF-055",
+    "kind": "signal",
+    "from": "TE-026",
+    "to": "TE-016",
+    "label": "Keyed signal and power harness"
+  },
+  {
+    "id": "IF-056",
+    "kind": "signal",
+    "from": "TE-026",
+    "to": "TE-004",
+    "label": "Motor driver connector"
+  },
+  {
+    "id": "IF-057",
+    "kind": "signal",
+    "from": "TE-016",
+    "to": "TE-012",
+    "label": "Fan PWM or enable"
+  }
+]
