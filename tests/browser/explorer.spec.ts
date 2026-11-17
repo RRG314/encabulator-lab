@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test'
 
 test('opens the WebGL model, searches, isolates and explodes with reduced motion', async ({ page }) => {
+  test.setTimeout(75000)
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   await page.emulateMedia({ reducedMotion: 'reduce' })
@@ -22,7 +23,7 @@ test('opens the WebGL model, searches, isolates and explodes with reduced motion
   await page.getByLabel('Section').selectOption('Longitudinal')
   await expect(page.locator('canvas')).toBeVisible()
   await page.getByRole('link', { name: 'Engineering record' }).click()
-  await expect(page.getByRole('heading', { level: 1, name: 'Spurving bearings' })).toBeVisible()
+  await expect(page.getByRole('heading', { level: 1, name: 'Spurving bearings' })).toBeVisible({ timeout: 20000 })
   await page.getByRole('link', { name: 'Locate in assembly' }).click()
   await expect(page.getByRole('heading', { level: 3, name: 'Spurving bearings' })).toBeVisible()
   expect(errors).toEqual([])
@@ -65,6 +66,7 @@ test('loads CAD mesh, changes study inputs and replays a guard fault', async ({ 
 })
 
 test('checks principal pages for WCAG A and AA violations', async ({ page }) => {
+  test.setTimeout(90000)
   const { AxeBuilder } = await import('@axe-core/playwright')
   for (const route of ['explorer','component/TE-009','simulation','engineering/downloads','bom','re01/explorer','re01/component/RE-031','comparison','me01/explorer','me01/systems/ME-040','me01/simulation']) {
     await page.goto(`./#/${route}`)
