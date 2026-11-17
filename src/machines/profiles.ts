@@ -21,6 +21,7 @@ export interface ServiceRecord {
   failureMode: string
   tool: string
   source?: string | null
+  originSource?: string | null
   massBasis?: string
   envelopeMm?: number[]
   classification?: string
@@ -34,6 +35,10 @@ export type MachineProfile = {
   mesh: string, assetFolder: string, defaultPart: string, voltage: number, speed: [number, number],
   guard: readonly string[], rotating: readonly string[], motor: string, fan: string, harness: string,
   fanAt: Vec3, sensorAt: Vec3, wireAt: Vec3, service: Record<string, ServiceRecord>,
+}
+export type DisplayProfile = Omit<MachineProfile,'key'|'speed'|'voltage'> & {
+  key:string, speed:MachineProfile['speed'] | null, voltage:number | null,
+  description?:string, shaftY?:number, inputParts?:string[], href:(path:string)=>string,
 }
 const candidateTools: Record<string, string> = {
   'TE-001': '5 mm hex key · candidate M6 attachment', 'TE-002': '13 mm spanner · candidate foot locknut',
@@ -75,12 +80,15 @@ export const machines: Record<MachineKey, MachineProfile> = {
 export function machineRoute(model: MachineKey, path: string) {
   return model === 'te01' ? `#/${path}` : `#/${model}/${path}`
 }
+export function isMachineKey(value:string):value is MachineKey {
+  return Object.hasOwn(machines,value)
+}
 export function readRoute(hash: string) {
   const segments=hash.replace(/^#\/?/, '').split('/')
   const model: MachineKey = segments[0] === 're01' ? 're01' : segments[0]==='me01'?'me01':'te01'
   if (segments[0] === model) segments.shift()
-  const [page,param]=segments
-  return { model, page:page || 'explorer', param }
+  const [page,param,view,detail]=segments
+  return { model, page:page || 'explorer', param,view,detail }
 }
 export function assetUrl(file: string) { return `${import.meta.env.BASE_URL}${file}` }
 export const dimensionText = (part: Part, service?:ServiceRecord) => part.dimensionsMm

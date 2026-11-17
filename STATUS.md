@@ -10,6 +10,12 @@
 
 The simulated Retro drive couples a reduced-speed crank-slider to a low-head water-loop load. The geometric package provides crank, linkage, guide, valve and manifold reference solids. Final reduction mechanism, complete swept service checks, and supplier-specific electrical details remain open.
 
+## Historical technical archive
+
+The archive retains historical records and project configurations under distinct IDs. Nominal CAD reconstructions are available for General Electric GE-62, Chrysler CH-88, Micro MI-16, Electro ET-21 and Magneto MT-22. Each package includes selectable tessellations, FreeCAD and STEP assemblies, STEP/STL components, SVG sheets, a BOM and provenance. The static interference reports address the nominal assembled and separated endpoints. Swept service paths, historical dimensions, fits, wiring and physical qualification remain open.
+
+The Maryland, SANS and Macquarie records have browser-based process studies. Other presentations remain indexed with their available source-level component records. Strategic Learning is retained as a research lead pending an attributable source. The ME-01 installation laboratory compares defined load boundaries against a separately calculated direct-drive reference. Host couplers, mounts and containment are outside the current physical CAD definition.
+
 ## Metachronic configuration
 
 ME-01 includes 52 register entries in 35 assemblies. The physical placement tree contains 41 solid part definitions and 48 instances. The 11 computational records use controller and instrumentation interfaces. The subsystem register provides 21 independent studies and the coupled laboratory uses both shaft states, active radial forces, pitch, fluid delivery, temperature, and regenerative electrical power. The geometry report lists 23 assembled contact dispositions requiring review.

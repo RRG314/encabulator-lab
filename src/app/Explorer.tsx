@@ -1,6 +1,7 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 import { Box, Camera, Crosshair, Eye, Grid2X2, Layers, Maximize, Move, Ruler, ScanLine, Settings2 } from 'lucide-react'
-import { useMachine } from '../machines/context'
+import { useAssembly, useMachine } from '../machines/context'
 import { BenchControls, useBench } from '../components/BenchControls'
 import type { AssemblyId } from '../schemas/part'
 import { PartsTree } from '../components/PartsTree'
@@ -25,11 +26,26 @@ function useMedia(query: string) {
   return matches
 }
 
-export function Explorer({ selected, onSelect, telemetry }: { selected: string, onSelect: (id: string) => void,
-  telemetry?: Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm' | 'secondaryRpm' | 'bladePitch' | 'fanRpm' | 'shaftPhaseRad'> }) {
+type AssemblyTelemetry = Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm' | 'secondaryRpm' | 'bladePitch' | 'fanRpm' | 'shaftPhaseRad' | 'primaryAngleRad' | 'inputAngleRad'>
+type Selection = {selected:string;onSelect:(id:string)=>void}
+
+export function Explorer({ selected, onSelect, telemetry }: Selection & {telemetry?:AssemblyTelemetry}) {
   const machine=useMachine()
-  const { assemblies,partById,parts }=machine.registry
   const bench=useBench()
+  const simulated=bench.reading
+  const live=bench.requested.run||simulated.rpm>=1
+  return <AssemblyWorkbench selected={selected} onSelect={onSelect} telemetry={telemetry} liveTelemetry={live?{
+    speedRpm:simulated.rpm,fanRunning:simulated.flow>0,motorTemperature:simulated.motor,vibrationUm:simulated.vibrationUm}:undefined}
+    controls={telemetry?undefined:reset=>machine.key==='me01'?
+      <div className="assembly-actions"><a className="primary-button" href={machine.href('simulation')}>Operate coupled test rig</a>
+        <a href={machine.href('systems')}>Scientific subsystem register</a></div>:<BenchControls bench={bench} onStart={reset} />} />
+}
+
+export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,controls }:Selection & {
+  telemetry?:AssemblyTelemetry;liveTelemetry?:AssemblyTelemetry;controls?:(reset:()=>void)=>ReactNode
+}) {
+  const machine=useAssembly()
+  const { assemblies,partById,parts }=machine.registry
   const [explodeScope,setExplodeScope]=useState('all')
   const [amount, setAmount] = useState(0)
   const [layer, setLayer] = useState<Layer>('Model')
@@ -110,20 +126,18 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
   }
   const scopedParts=useMemo(()=>explodeScope==='all'?null:explodeScope==='selected'?new Set([part.id]):new Set(machine.registry.assemblyById.get(explodeScope)?.partIds ?? []),
     [explodeScope,machine.registry,part.id])
-  const simulated=bench.reading
   const viewerProps: ViewerProps = {
     machine, explosionParts:scopedParts,
     selected: part.id, onSelect: select, visible, fraction: amount / 100, isolate: Boolean(assembly || isolatePart),
     cutaway, layer, preset, cameraTick, cameraFocus, snapshot, recalled, measure: measuring ? position => setPoints(prev => prev.length < 2 ? [...prev,position] : [position]) : null, wireframe, opacity, perspective, labels, reducedMotion, compact,
     onFailure, dimensioning, cadDetail: true, onCadStatus: setCadStatus,
-    ...(telemetry ?? ((!bench.requested.run&&simulated.rpm<1)?{}:{speedRpm:simulated.rpm,
-      fanRunning:simulated.flow>0,motorTemperature:simulated.motor,vibrationUm:simulated.vibrationUm})),
+    ...(telemetry??liveTelemetry),
   }
   const fallback = <ViewerFallback {...viewerProps} />
   return <>
     <header className="page-header">
       <div><div className="eyebrow">ASSEMBLY &amp; KINEMATICS / {machine.code}</div><h1>{machine.name} <span>{machine.code}</span></h1>
-        <p>{machine.configuration ? `${machine.configuration} Configuration.` : machine.key==='re01'?'Industrial control, rotor dynamics and reciprocating fluid delivery.':'Instrumented rotor, vibration isolation and phase estimation.'}</p></div>
+        <p>{('description' in machine&&machine.description) || (machine.configuration ? `${machine.configuration} Configuration.` : machine.key==='re01'?'Industrial control, rotor dynamics and reciprocating fluid delivery.':'Instrumented rotor, vibration isolation and phase estimation.')}</p></div>
       <div className="revision-mark"><span><i /> Preliminary design</span><small>REV 0.1</small></div>
     </header>
     <div className="workspace">
@@ -136,9 +150,9 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
         })} />
       <section className="viewer panel" aria-label="Assembly viewport" ref={viewport} data-expanded={expanded}>
         <div className="viewer-top"><div><Box size={16} /><h2>Assembly &amp; Kinematics</h2></div><span className="model-status"><i /> {cadStatus === 'cad' ? 'CAD SCHEMATIC' : failure?'STATION DIAGRAM': machine.key!=='te01'?'LOADING CAD':'SCHEMATIC GEOMETRY'}</span></div>
-        <div className="viewport-tabs" role="group" aria-label="Model layers">
+        {machine.fan && <div className="viewport-tabs" role="group" aria-label="Model layers">
           {layers.map(value => <button key={value} type="button" aria-pressed={layer === value} onClick={() => setLayer(value)}>{value}</button>)}
-        </div>
+        </div>}
         <div className="viewport-content">
           <div className="viewport-caption" aria-hidden="true">{assembly ? `${assembly} / ISOLATED` : isolatePart ? `${part.id} / ISOLATED` : `${machine.code} / ${amount > 0 ? 'EXPLODED' : 'ASSEMBLED'}`}</div>
           {failure ? fallback : <GraphicsBoundary fallback={fallback}>
@@ -156,7 +170,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           {options && <div className="view-options">
             <label><ScanLine size={15} /> Section
               <select value={cutaway} onChange={event => setCutaway(event.target.value as Cutaway)}>
-                {(['Full','Guard off','Longitudinal','Transverse'] as Cutaway[]).map(mode => <option key={mode}>{mode}</option>)}
+                {(['Full','Guard off','Longitudinal','Transverse'] as Cutaway[]).filter(mode=>mode!=='Guard off'||machine.guard.length>0).map(mode => <option key={mode}>{mode}</option>)}
               </select>
             </label>
             <label><Eye size={15} /> X-ray opacity<input type="range" min="0.2" max="1" step="0.05" value={opacity} onChange={event => setOpacity(Number(event.target.value))} /></label>
@@ -194,9 +208,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           <small>{[...visible].filter(id=>machine.key!=='me01'||partById.get(id)?.kind!=='logical').length} / {parts.filter(item=>machine.key!=='me01'||item.kind!=='logical').length} records visible</small>
         </div>
         <ExplodeSlider amount={amount} change={change} running={Boolean(animation)} toggle={toggleAnimation} reset={reset} />
-        {!telemetry && (machine.key==='me01' ?
-          <div className="assembly-actions"><a className="primary-button" href={machine.href('simulation')}>Operate coupled test rig</a>
-            <a href={machine.href('systems')}>Scientific subsystem register</a></div> : <BenchControls bench={bench} onStart={reset} />)}
+        {controls?.(reset)}
         <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Arrow keys to pan'}</div>
       </section>
       <PartInspector part={part} onFocus={()=>{
@@ -210,8 +222,8 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
     <div className="system-cards" role="group" aria-label="Assembly design targets">
       <div><Layers /><span>Canonical assemblies</span><strong>{String(assemblies.length).padStart(2, '0')}</strong></div>
       <div><Box /><span>Component records</span><strong>{parts.length}</strong></div>
-      <div><Crosshair /><span>Rotor speed target</span><strong>{machine.speed.map(value=>value.toLocaleString('en-US')).join('–')} <small>rpm</small></strong></div>
-      <div><Ruler /><span>Supply target</span><strong>{machine.voltage} <small>V DC</small></strong></div>
+      {machine.speed && <div><Crosshair /><span>Rotor speed target</span><strong>{machine.speed.map(value=>value.toLocaleString('en-US')).join('–')} <small>rpm</small></strong></div>}
+      {machine.voltage!==null && <div><Ruler /><span>Supply target</span><strong>{machine.voltage} <small>V DC</small></strong></div>}
     </div>
   </>
 }

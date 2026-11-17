@@ -7,7 +7,7 @@ import {
 } from 'three'
 import type { OrthographicCamera, PerspectiveCamera } from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import type { MachineProfile } from '../machines/profiles'
+import type { DisplayProfile } from '../machines/profiles'
 import { crankPosition, reduction } from '../simulation/automation'
 import { applySurface } from '../model/surface'
 import { finishes, makeGeometries } from '../model/geometry'
@@ -22,7 +22,7 @@ export type Cutaway = 'Full' | 'Guard off' | 'Longitudinal' | 'Transverse'
 export type Layer = 'Model' | 'Wiring' | 'Airflow' | 'Vibration'
 export type ViewBookmark = { position: Vec3, target: Vec3, zoom: number, perspective: boolean }
 export type ViewerProps = {
-  machine: MachineProfile
+  machine: DisplayProfile
   selected: string
   explosionParts: ReadonlySet<string> | null
   onSelect: (id: string) => void
@@ -52,6 +52,10 @@ export type ViewerProps = {
   bladePitch?:number
   fanRpm?:number
   shaftPhaseRad?:number
+  primaryAngleRad?:number
+  inputAngleRad?:number
+  linkedDirection?:Vec3
+  onOrientation?: (direction:Vec3)=>void
   motorTemperature?: number
   fanRunning?: boolean
   vibrationUm?: number
@@ -64,7 +68,7 @@ const presets: Record<Preset, Vec3> = {
   Iso: homeDirection, Front: [0, -1, 0], Side: [1, 0, 0], Top: [0, -0.0001, 1],
 }
 
-function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, visible, isolate, cameraTick, reducedMotion, geometries, scale, snapshot, recalled, perspective }: ViewerProps & {
+function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, visible, isolate, cameraTick, reducedMotion, geometries, scale, snapshot, recalled, perspective, linkedDirection, onOrientation }: ViewerProps & {
   geometries: ReturnType<typeof makeGeometries>, scale: RefObject<HTMLDivElement | null>
 }) {
   const { camera, gl, size, invalidate } = useThree()
@@ -81,28 +85,31 @@ function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, vis
   }, [camera, reducedMotion])
   useEffect(() => {
     const change = () => invalidate()
+    const publish = () => onOrientation?.(camera.position.clone().sub(controls.target).normalize().toArray())
     gl.domElement.tabIndex = 0
     gl.domElement.setAttribute('aria-label',`${machine.name} ${machine.code}. Use arrow keys to pan, and Shift plus arrow keys to orbit.`)
     controls.connect(gl.domElement)
     controls.listenToKeyEvents(gl.domElement)
     controls.addEventListener('change', change)
+    controls.addEventListener('end', publish)
     return () => {
       controls.removeEventListener('change', change)
+      controls.removeEventListener('end', publish)
       controls.stopListenToKeyEvents()
       controls.disconnect()
     }
-  }, [controls, gl, invalidate, machine])
+  }, [camera, controls, gl, invalidate, machine, onOrientation])
   const initial = useRef(true)
   useLayoutEffect(() => {
     initial.current = true
-  }, [preset, cameraTick, isolate, visible, camera])
+  }, [preset, cameraTick, isolate, visible, camera, linkedDirection])
   useLayoutEffect(() => {
     const boxes = machine.placements.filter(p => visible.has(p.partId) && (!cameraFocus || p.partId===cameraFocus)).map(p => placementBounds(p, fractionFor(p.partId,{fraction,explosionParts}), geometries))
     const bounds = boxes.reduce((overall, box) => overall.union(box), new Box3())
     if (bounds.isEmpty()) return
     const target = bounds.getCenter(new Vector3())
     const oldDirection = camera.position.clone().sub(controls.target).normalize()
-    const direction = initial.current ? new Vector3(...presets[preset]).normalize() : oldDirection
+    const direction = initial.current ? new Vector3(...(linkedDirection??presets[preset])).normalize() : oldDirection
     const distance = Math.max(bounds.getSize(new Vector3()).length(), 45)
     const fitDepth = camera.type === 'PerspectiveCamera'
       ? distance * Math.max(1.45, size.height / size.width * 1.38)
@@ -133,7 +140,7 @@ function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, vis
     controls.update()
     initial.current = false
     invalidate()
-  }, [camera, controls, fraction, geometries, invalidate, preset, size, visible, cameraTick, isolate, recalled, perspective, machine, explosionParts, cameraFocus])
+  }, [camera, controls, fraction, geometries, invalidate, preset, size, visible, cameraTick, isolate, recalled, perspective, machine, explosionParts, cameraFocus, linkedDirection])
   useFrame(() => {
     controls.update()
     snapshot.current = { position:camera.position.toArray(), target:controls.target.toArray(),
@@ -165,7 +172,7 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
   const finishStyle = finishes[finish]
   const glass = finish === 'glass'
   const opacity = glass ? finishes.glass.opacity : options.opacity
-  const { motor, rotating, shaftHeight } = options.machine
+  const { motor, rotating, shaftHeight, shaftY=0 } = options.machine
   const material = useMemo(() => {
     const mat = new MeshStandardMaterial({
       ...finishStyle, wireframe: options.wireframe, transparent: opacity < 1,
@@ -216,9 +223,10 @@ function ModelBatch({ id, items, finish, geometry, options, onHover, angle, cran
       ref.current.instanceMatrix.needsUpdate=true
     }
     if(spinning || variablePitch) {
-      const transform=spinning?new Matrix4().makeTranslation(0,0,shaftHeight)
-        .multiply(new Matrix4().makeRotationX(extraAngle.current))
-        .multiply(new Matrix4().makeTranslation(0,0,-shaftHeight)):undefined
+      const rotation=options.machine.inputParts?.includes(id)?options.inputAngleRad:options.primaryAngleRad
+      const transform=spinning?new Matrix4().makeTranslation(0,shaftY,shaftHeight)
+        .multiply(new Matrix4().makeRotationX(rotation??extraAngle.current))
+        .multiply(new Matrix4().makeTranslation(0,-shaftY,-shaftHeight)):undefined
       if(variablePitch && ref.current) {
         const pitch=new Matrix4().makeRotationZ(((options.bladePitch??14)-14)*Math.PI/180)
         matrices.forEach((matrix,i)=>{
@@ -349,7 +357,7 @@ function Scene({ props, callout, scale, onHover }: {
   const anchor = calloutPart && explodePosition(calloutPart, fractionFor(props.selected,props))
   const target: Vec3 | undefined = anchor && [anchor[0], anchor[1], anchor[2] + (props.selected === machine.defaultPart ? 18 : 0)]
   useFrame((_, delta) => {
-    if ((props.speedRpm || props.secondaryRpm || props.fanRpm) && props.fraction === 0 && !props.reducedMotion) {
+    if (props.primaryAngleRad===undefined && (props.speedRpm || props.secondaryRpm || props.fanRpm) && props.fraction === 0 && !props.reducedMotion) {
       const deltaAngle=(props.speedRpm??0)*(Math.PI/30)*Math.min(delta,.05)
       angle.current = (angle.current+deltaAngle)%(2*Math.PI)
       crank.current = (crank.current+deltaAngle/reduction)%(2*Math.PI)

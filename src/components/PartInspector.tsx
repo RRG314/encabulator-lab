@@ -1,10 +1,10 @@
 import { ArrowUpRight, Box, Crosshair, FileText, Layers } from 'lucide-react'
-import { useMachine } from '../machines/context'
+import { useAssembly } from '../machines/context'
 import { dimensionText } from '../machines/profiles'
 import type { Part } from '../schemas/part'
 
 export function PartInspector({ part, isolated, onIsolate, onFocus }: { part: Part, isolated: boolean, onIsolate: () => void, onFocus: () => void }) {
-  const machine=useMachine()
+  const machine=useAssembly()
   const {assemblyById}=machine.registry
   const service=machine.service[part.id]
   return <aside className="inspector panel" aria-label="Component inspector">

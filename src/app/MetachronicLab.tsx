@@ -55,7 +55,7 @@ export default function MetachronicLab({view}:{view:(telemetry:DisplayTelemetry)
   return <>
     <header className="page-header"><div><div className="eyebrow">{machine.name} {machine.code} / COUPLED STATE MODEL</div>
       <h1>Polychronous Operating Laboratory</h1><p>Dual-shaft response, hydrocoptic loading, signed DC power and orthogonal stabilization.</p></div></header>
-    <div className="document-tabs"><a href={machine.href('systems')}>Scientific subsystem register</a><a href={machine.href('engineering/physics')}>Model equations</a></div>
+    <div className="document-tabs"><a href={machine.href('systems')}>Scientific subsystem register</a><a href={machine.href('engineering/physics')}>Model equations</a><a href={machine.href('installation')}>Host installation laboratory</a></div>
     <div className="study-layout">
       <aside className="panel study-parameters">
         <div className="panel-title"><FlaskConical size={16}/><h2>Test conditions</h2></div>

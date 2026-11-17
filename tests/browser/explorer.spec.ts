@@ -4,7 +4,7 @@ test('opens the WebGL model, searches, isolates and explodes with reduced motion
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  await page.goto('/')
+  await page.goto('./')
   await expect(page.locator('canvas')).toBeVisible()
   await expect(page.getByText('Schematic elevation')).toHaveCount(0)
   await page.getByRole('searchbox', { name: 'Search components' }).fill('TE-006')
@@ -36,7 +36,7 @@ test('keeps mobile parts navigation when WebGL is unavailable', async ({ page })
       return args[0].startsWith('webgl') ? null : getContext.apply(this, args)
     } as typeof getContext
   })
-  await page.goto('/')
+  await page.goto('./')
   await expect(page.getByText('Schematic elevation')).toBeVisible()
   await page.getByRole('searchbox', { name: 'Search components' }).fill('main shaft')
   await page.getByRole('button', { name: 'Main shaft', exact: true }).click()
@@ -45,7 +45,7 @@ test('keeps mobile parts navigation when WebGL is unavailable', async ({ page })
 })
 
 test('loads CAD mesh, changes study inputs and replays a guard fault', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('./')
   await expect(page.getByText('CAD SCHEMATIC', { exact: true })).toBeVisible()
   await page.getByRole('link', { name: 'Test bench' }).click()
   await expect(page.getByRole('heading', { name: 'Dynamic Test Bench' })).toBeVisible()
@@ -67,7 +67,7 @@ test('loads CAD mesh, changes study inputs and replays a guard fault', async ({ 
 test('checks principal pages for WCAG A and AA violations', async ({ page }) => {
   const { AxeBuilder } = await import('@axe-core/playwright')
   for (const route of ['explorer','component/TE-009','simulation','engineering/downloads','bom','re01/explorer','re01/component/RE-031','comparison','me01/explorer','me01/systems/ME-040','me01/simulation']) {
-    await page.goto(`/#/${route}`)
+    await page.goto(`./#/${route}`)
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
     const result = await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze()
     expect(result.violations.map(item => ({ id:item.id, description:item.description, nodes:item.nodes.map(n=>n.target) }))).toEqual([])
@@ -77,7 +77,7 @@ test('checks principal pages for WCAG A and AA violations', async ({ page }) => 
 test('keeps the touch layout within narrow mobile viewports', async ({ browser }) => {
   const context = await browser.newContext({ hasTouch:true,isMobile:true,viewport:{width:320,height:720} })
   const page = await context.newPage()
-  await page.goto('/')
+  await page.goto('./')
   await expect(page.locator('canvas')).toBeVisible()
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320)
   await page.getByRole('button', { name: '100% · Exploded' }).tap()
@@ -89,7 +89,7 @@ test('switches to independent RE-01 geometry, retains parts and drives the water
   test.setTimeout(60000)
   const errors: string[]=[]
   page.on('pageerror',error=>errors.push(error.message))
-  await page.goto('/')
+  await page.goto('./')
   await expect(page.getByRole('heading',{name:'Turbo Encabulator TE-01',level:1})).toBeVisible()
   await page.getByRole('navigation',{name:'Machine model'}).getByRole('link',{name:/Retro Encabulator/}).click()
   await expect(page.getByRole('heading',{name:'Retro Encabulator RE-01',level:1})).toBeVisible()
@@ -124,7 +124,7 @@ test('switches to independent RE-01 geometry, retains parts and drives the water
 test('inspects Metachronic physical and computational stations and runs the coupled laboratory',async({page})=>{
   const errors:string[]=[]
   page.on('pageerror',error=>errors.push(error.message))
-  await page.goto('/#/me01/explorer')
+  await page.goto('./#/me01/explorer')
   await expect(page.getByRole('heading',{name:'Metachronic Encabulator ME-01',level:1})).toBeVisible()
   await expect(page.getByText('CAD SCHEMATIC',{exact:true})).toBeVisible({timeout:16000})
   await page.getByRole('searchbox',{name:'Search components'}).fill('ME-040')

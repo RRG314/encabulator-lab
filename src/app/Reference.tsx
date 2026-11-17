@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Box, ClipboardCheck, Download, Fil
 import { useEffect, useMemo, useState } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { useMachine } from '../machines/context'
+import { useAssembly, useMachine } from '../machines/context'
 import { assetUrl, dimensionText } from '../machines/profiles'
 import { functionalGroups } from '../schemas/reference'
 import type { Part } from '../schemas/part'
@@ -31,6 +31,7 @@ import reSources from '../../engineering/re01/SOURCE_TRACEABILITY.md?raw'
 import references from '../../engineering/REFERENCES.md?raw'
 import interchangeability from '../../engineering/INTERCHANGEABILITY.md?raw'
 import sourceTrace from '../../data/re01/source-traceability.json'
+import { sourceById } from "../machines/archive"
 import { baseline, screening } from '../simulation/calculations'
 
 const teBom = new URL('../../docs/engineering/bom.csv',import.meta.url).href
@@ -108,18 +109,19 @@ const meReports = [
 ]
 
 function PageHeader({ type,title,description }: { type:string,title:string,description?:string }) {
-  const machine=useMachine()
+  const machine=useAssembly()
   return <header className="page-header"><div><div className="eyebrow">{machine.name} {machine.code} / {type}</div><h1>{title}</h1><p>{description}</p></div></header>
 }
 
 export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>void }) {
-  const machine=useMachine()
+  const machine=useAssembly()
   const { assemblyById,partById,linksFor }=machine.registry
   const detail=machine.service[part.id]
   const dimensions=dimensionText(part,detail)
   const links=linksFor(part.id)
   const host=part.kind==='logical'&&machine.key==='me01'?links.find(link=>link.from===part.id)?.to:undefined
   const source=detail?.source ? sourceTrace.terms[detail.source as keyof typeof sourceTrace.terms] : undefined
+  const archivalSource=detail?.originSource ? sourceById.get(detail.originSource) : undefined
   return <>
     <PageHeader type={`COMPONENT RECORD / ${part.id}`} title={part.name} description={part.description} />
     <div className="document-tabs"><a href={machine.href('bom')}><ArrowLeft size={14} /> Component register</a>
@@ -158,6 +160,7 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
           <dt>CAD reference</dt><dd>{part.kind === 'logical' ? 'Controller computation' : <a href={assetUrl(part.cadAssetPath ?? 'models/te01-part-solids.zip')} download>{part.id} · CAD download</a>}</dd>
           <dt>Revision history</dt><dd><a href={machine.href('engineering/revisions')}>0.1 · Baseline definition</a></dd>
           {machine.key!=='te01' && part.kind!=='logical' && <><dt>Technical drawing</dt><dd><a href={assetUrl(part.diagramRefs[0])} download>Dimensioned schematic SVG</a></dd></>}
+          {archivalSource && <><dt>Reconstruction evidence</dt><dd><a href={archivalSource.url}>{archivalSource.id} · {archivalSource.title}</a>. {archivalSource.relevance}</dd></>}
           {source && <><dt>Terminology source</dt><dd><a href={sourceTrace.url}>Rockwell transcript, p. {sourceTrace.page}, ¶{source.paragraph}</a></dd></>}
         </dl>
         {part.equations.length > 0 && <><h3>Governing relations</h3><ul className="equation-list">{part.equations.map(eq => <li key={eq}>{eq}</li>)}</ul><a href={machine.href('simulation')}>Related simulations</a></>}
@@ -175,7 +178,7 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
 }
 
 export function Catalog() {
-  const machine=useMachine()
+  const machine=useAssembly()
   const {parts,assemblies}=machine.registry
   const bomUrl=machine.key==='te01'?teBom:assetUrl(`${machine.assetFolder}/bom.csv`)
   const [query, setQuery] = useState('')

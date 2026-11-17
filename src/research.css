@@ -110,3 +110,34 @@ tr:hover td { background: #eff4f7; }
 .science-control { display:grid; gap:7px; margin:15px 0; }
 .article-panel .document-tabs { padding-top:12px; }
 #main:focus { outline:none; }
+
+.archive-index { margin-bottom: 1rem; }
+.archive-index .panel-title a { margin-left: auto; font-size: .9rem; }
+.archive-index td a { display: inline-flex; align-items: center; gap: .25rem; }
+.archive-index td small, .doc-prose td small { display: block; margin-top: .3rem; }
+.archive-filters { display: grid; grid-template-columns: 2fr repeat(3, minmax(0, 1fr)); gap: .8rem; padding: 1rem; }
+.archive-filters label { display: grid; gap: .3rem; align-content: start; font-weight: 600; min-width: 0; }
+.archive-filters label svg { display: none; }
+.archive-filters input:not([type=range]), .archive-filters select { min-width: 0; width: 100%; min-height: 2.55rem; padding: .4rem .55rem; }
+.archive-empty, .comparison-controls, .comparison-record { padding: .8rem 1rem; }
+.archive-actions, .comparison-controls, .comparison-record { display: flex; gap: .65rem; flex-wrap: wrap; align-items: center; }
+.archive-downloads { display: grid; gap: .4rem; }
+.archive-drawing img { display: block; width: 100%; border: 1px solid #bdc8d3; background: white; }
+.signal-path { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: .65rem 0; }
+.signal-path li { padding: .4rem .55rem; border: 1px solid #a9bac7; border-radius: 2px; }
+.signal-path li + li::before { content: "→ "; margin-right: .25rem; }
+.comparison-viewports { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; margin-bottom: 1rem; }
+.comparison-viewports[data-columns="3"] { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.comparison-model { min-width: 0; }
+.comparison-model .panel-title h3 { font-size: 1rem; line-height: 1.15; margin: 0; }
+.comparison-model .panel-title .data-tag { margin-left: auto; white-space: nowrap; }
+.comparison-model .viewport-content { height: 280px; min-height: 0; }
+.comparison-record { justify-content: space-between; font-size: .92rem; }
+@media(max-width: 780px) {
+  .archive-filters { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .comparison-viewports[data-columns="3"] { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width: 550px) {
+  .comparison-viewports, .comparison-viewports[data-columns="3"] { grid-template-columns: minmax(0,1fr); }
+  .archive-filters { padding: .75rem; gap: .55rem; }
+}

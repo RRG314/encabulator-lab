@@ -16,6 +16,8 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    env:
+      PAGES_BASE_PATH: /turbo-encabulator
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -84,3 +86,9 @@ jobs:
           node -e "const me=require('/tmp/me01-geometry.json'); if(me.checks.some(c=>c.status==='FAIL')) process.exit(1)"
           node -e "const re=require('/tmp/re01-geometry.json'); if(re.checks.some(c=>c.status==='FAIL')) process.exit(1)"
           node -e "const r=require('/tmp/te01-geometry.json'); if(r.checks.some(c=>c.status==='FAIL')) process.exit(1)"
+          for model in ge-1962 chrysler micro-2016 electro-2021 magneto-2022; do
+            root="$site/models/archive/$model"
+            curl -fsSL --retry 5 --retry-all-errors "$root/manifest.json" -o /tmp/archive-manifest.json
+            curl -fsSL --retry 3 --range 0-3 "$root/assembly.glb" -o /tmp/archive.glb
+            python3 -c 'from pathlib import Path; import json; assert json.loads(Path("/tmp/archive-manifest.json").read_text())["placements"]; assert Path("/tmp/archive.glb").open("rb").read(4)==b"glTF"'
+          done

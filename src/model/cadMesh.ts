@@ -5,7 +5,7 @@ import type { Finish, makeGeometries } from './geometry'
 import type { MachineProfile } from '../machines/profiles'
 import { assetUrl } from '../machines/profiles'
 
-export async function loadCadMeshes(machine: MachineProfile) {
+export async function loadCadMeshes(machine: Pick<MachineProfile,'mesh'|'placements'>) {
   const model = await new GLTFLoader().loadAsync(assetUrl(machine.mesh))
   const result: ReturnType<typeof makeGeometries> = {}
   for (const node of model.scene.children) {

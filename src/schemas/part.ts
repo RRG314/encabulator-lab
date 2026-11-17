@@ -1,8 +1,8 @@
 import { z } from 'zod'
 
 const text = z.string().min(1)
-export const partId = z.string().regex(/^(?:TE-0(?:0[1-9]|[12][0-9]|30)|(?:RE|ME)-0(?:0[1-9]|[1-9][0-9]))$/)
-export const assemblyId = z.string().regex(/^(?:ABA|SBA|HMA|DGS|PFA|LCA|CGM|UPD|CSC|RE-(?:[1-9]|1[0-5])00|ME-(?:[1-9]|[12][0-9]|3[0-5])00)$/)
+export const partId = z.string().regex(/^(?:TE-0(?:0[1-9]|[12][0-9]|30)|(?:RE|ME|GE|MT|MI|ET|CH)-0(?:0[1-9]|[1-9][0-9]))$/)
+export const assemblyId = z.string().regex(/^(?:ABA|SBA|HMA|DGS|PFA|LCA|CGM|UPD|CSC|RE-(?:[1-9]|1[0-5])00|ME-(?:[1-9]|[12][0-9]|3[0-5])00|(?:GE|MT|MI|ET|CH)-A[1-9])$/)
 export const evidence = z.enum(['target', 'assumption', 'simulation', 'calculation', 'measurement'])
 export const partSchema = z.strictObject({
   id: partId, name: text, assemblyId, revision: text, description: text, function: text,

@@ -1,3 +1,4 @@
+import AssemblyComparison from "./AssemblyComparison"
 import { useEffect, useState } from 'react'
 import { assetUrl, machineRoute, machines } from '../machines/profiles'
 import { me01Simulation, defaultOptions } from '../simulation/metachronic/plant'
@@ -35,7 +36,9 @@ export default function Comparison() {
   },[])
   return <>
     <header className="page-header"><div><div className="eyebrow">CONFIGURATION CONTROL</div>
-      <h1>Machine Configuration Comparison</h1><p>Common engineering principles, independent hardware definitions.</p></div></header>
+      <h1>Machine Configuration Comparison</h1><p>Common engineering principles, independent hardware definitions.</p></div>
+      <a className="secondary-button" href={machineRoute('me01','installation')}>Host installation laboratory</a></header>
+    <AssemblyComparison />
     <article className="panel article-panel doc-prose">
       <div className="table-scroll"><table aria-label="Machine design comparison">
         <thead><tr><th scope="col">Interface</th>{Object.values(machines).map(machine=><th scope="col" key={machine.key}>

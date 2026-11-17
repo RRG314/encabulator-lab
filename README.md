@@ -1,5 +1,7 @@
 # Encabulator Systems
 
+[Historical technical archive](https://rrg314.github.io/turbo-encabulator/#/archive) · [Assembly comparison](https://rrg314.github.io/turbo-encabulator/#/comparison) · [ME-01 host installation laboratory](https://rrg314.github.io/turbo-encabulator/#/me01/installation)
+
 **Integrated Electromechanical Systems Engineering**
 
 [![Build and Pages](https://github.com/RRG314/turbo-encabulator/actions/workflows/deploy.yml/badge.svg)](https://github.com/RRG314/turbo-encabulator/actions/workflows/deploy.yml) [![Release](https://img.shields.io/github/v/release/RRG314/turbo-encabulator?label=Technical%20release&color=285674)](https://github.com/RRG314/turbo-encabulator/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-536975)](LICENSE)
@@ -36,6 +38,8 @@ npm run dev
 Vite prints the local URL. WebGL 2 enables the CAD views. The parts hierarchy and schematic elevation remain available if graphics initialization fails.
 
 ## Layout and regeneration
+
+The [historical register](data/archive/records.json) indexes source configurations separately from project CAD and numerical studies. The [source register](data/archive/sources.json) records publishers, dates, access and evidence scope. GE-62, CH-88, MI-16, ET-21 and MT-22 export from the shared [FreeCAD archive pipeline](cad/models/archive/). Generate the complete set with `python -m cad.models.archive.export` using a Python environment that can import FreeCAD and TechDraw. Pass a record ID to regenerate one configuration.
 
 | Path | Role |
 |---|---|

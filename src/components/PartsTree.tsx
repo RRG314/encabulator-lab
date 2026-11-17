@@ -1,13 +1,13 @@
 import { Box, ChevronDown, ChevronRight, Eye, EyeOff, Layers, Search, X } from 'lucide-react'
 import { useState } from 'react'
-import { useMachine } from '../machines/context'
+import { useAssembly } from '../machines/context'
 import type { AssemblyId } from '../schemas/part'
 
 export function PartsTree({ selected, onSelect, scope, onScope, hidden, toggleHidden }: {
   selected: string, onSelect: (id: string) => void, scope: AssemblyId | null,
   onScope: (id: AssemblyId | null) => void, hidden: ReadonlySet<string>, toggleHidden: (id: string) => void,
 }) {
-  const machine=useMachine()
+  const machine=useAssembly()
   const {assemblies,partById}=machine.registry
   const [query, setQuery] = useState('')
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
