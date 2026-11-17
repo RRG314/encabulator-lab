@@ -1,0 +1,281 @@
+{
+  "revision": "0.1",
+  "basis": "OpenCascade schematic design geometry",
+  "fabricationRelease": false,
+  "dimensions": {
+    "base_length": 300,
+    "base_width": 200,
+    "base_thickness": 6,
+    "shaft_z": 58,
+    "shaft_diameter": 8,
+    "shaft_length": 136,
+    "shaft_center_x": 6,
+    "bearing_span": 96,
+    "bearing_outer": 22,
+    "bearing_width": 7,
+    "hub_radius": 16,
+    "hub_length": 38,
+    "vane_count": 6,
+    "vane_span": 28,
+    "vane_chord": 32,
+    "vane_thickness": 4,
+    "vane_pitch": 12,
+    "guard_aperture": 49,
+    "guard_half_length": 35,
+    "coupling_length": 20,
+    "motor_body_length": 58
+  },
+  "checks": [
+    {
+      "check": "Registry coverage",
+      "expected": 30,
+      "observed": 30,
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Unique instance keys",
+      "expected": 60,
+      "observed": 60,
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Finish assignments",
+      "expected": [],
+      "observed": [],
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Valid positive-volume closed solids",
+      "expected": [],
+      "observed": [],
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Journal coaxiality",
+      "expected": 0,
+      "observed": 0,
+      "status": "PASS",
+      "unit": "mm"
+    },
+    {
+      "check": "Conservative rotor to guard aperture clearance",
+      "expected": "> 0",
+      "observed": 5,
+      "status": "PASS",
+      "unit": "mm"
+    },
+    {
+      "check": "Baseplate machined envelope",
+      "expected": [
+        300,
+        200,
+        6
+      ],
+      "observed": [
+        300.0,
+        200.0,
+        6.0
+      ],
+      "status": "PASS",
+      "unit": "mm"
+    },
+    {
+      "check": "Critical rotor/journal envelope interference",
+      "expected": [],
+      "observed": [],
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Exploded bounding boxes",
+      "expected": [],
+      "observed": [],
+      "status": "PASS",
+      "unit": null
+    },
+    {
+      "check": "Full assembly contact review",
+      "expected": "Engineering disposition for each pair",
+      "observed": [
+        {
+          "a": "TE-001:1",
+          "b": "TE-002:1",
+          "volumeMm3": 67.1987
+        },
+        {
+          "a": "TE-001:1",
+          "b": "TE-002:2",
+          "volumeMm3": 67.1987
+        },
+        {
+          "a": "TE-001:1",
+          "b": "TE-002:3",
+          "volumeMm3": 67.1987
+        },
+        {
+          "a": "TE-001:1",
+          "b": "TE-002:4",
+          "volumeMm3": 67.1987
+        },
+        {
+          "a": "TE-003:1",
+          "b": "TE-019:1",
+          "volumeMm3": 2.155
+        },
+        {
+          "a": "TE-003:1",
+          "b": "TE-029:9",
+          "volumeMm3": 3.5126
+        },
+        {
+          "a": "TE-003:1",
+          "b": "TE-029:10",
+          "volumeMm3": 3.5126
+        },
+        {
+          "a": "TE-003:1",
+          "b": "TE-029:11",
+          "volumeMm3": 3.5126
+        },
+        {
+          "a": "TE-003:1",
+          "b": "TE-029:12",
+          "volumeMm3": 3.5126
+        },
+        {
+          "a": "TE-010:1",
+          "b": "TE-018:1",
+          "volumeMm3": 3.2076
+        },
+        {
+          "a": "TE-011:1",
+          "b": "TE-026:1",
+          "volumeMm3": 59.778
+        },
+        {
+          "a": "TE-011:1",
+          "b": "TE-029:9",
+          "volumeMm3": 3.927
+        },
+        {
+          "a": "TE-011:1",
+          "b": "TE-029:10",
+          "volumeMm3": 3.927
+        },
+        {
+          "a": "TE-011:1",
+          "b": "TE-029:11",
+          "volumeMm3": 3.927
+        },
+        {
+          "a": "TE-011:1",
+          "b": "TE-029:12",
+          "volumeMm3": 3.927
+        },
+        {
+          "a": "TE-014:1",
+          "b": "TE-029:13",
+          "volumeMm3": 0.2839
+        },
+        {
+          "a": "TE-014:1",
+          "b": "TE-029:14",
+          "volumeMm3": 0.2839
+        },
+        {
+          "a": "TE-014:1",
+          "b": "TE-029:15",
+          "volumeMm3": 0.2839
+        },
+        {
+          "a": "TE-014:1",
+          "b": "TE-029:16",
+          "volumeMm3": 0.2839
+        },
+        {
+          "a": "TE-016:1",
+          "b": "TE-026:1",
+          "volumeMm3": 8.3797
+        },
+        {
+          "a": "TE-020:1",
+          "b": "TE-025:1",
+          "volumeMm3": 39.1211
+        },
+        {
+          "a": "TE-020:1",
+          "b": "TE-026:1",
+          "volumeMm3": 6.0115
+        },
+        {
+          "a": "TE-021:1",
+          "b": "TE-026:1",
+          "volumeMm3": 0.1257
+        },
+        {
+          "a": "TE-025:1",
+          "b": "TE-026:1",
+          "volumeMm3": 99.3054
+        },
+        {
+          "a": "TE-025:1",
+          "b": "TE-029:17",
+          "volumeMm3": 0.7664
+        },
+        {
+          "a": "TE-025:1",
+          "b": "TE-029:18",
+          "volumeMm3": 0.7664
+        },
+        {
+          "a": "TE-025:1",
+          "b": "TE-029:19",
+          "volumeMm3": 0.7664
+        },
+        {
+          "a": "TE-025:1",
+          "b": "TE-029:20",
+          "volumeMm3": 0.7664
+        }
+      ],
+      "status": "REVIEW",
+      "unit": "mm\u00b3"
+    }
+  ],
+  "volumeMm3ByPart": {
+    "TE-001": 358766.79211,
+    "TE-002": 2478.43386,
+    "TE-003": 77641.6156,
+    "TE-004": 1685.52358,
+    "TE-005": 6836.10561,
+    "TE-006": 1292.00433,
+    "TE-007": 24232.22296,
+    "TE-008": 29120.77162,
+    "TE-009": 2844.85,
+    "TE-010": 1287.22361,
+    "TE-011": 26425.40906,
+    "TE-012": 20536.8163,
+    "TE-013": 12429.333,
+    "TE-014": 63993.31226,
+    "TE-015": 381.72541,
+    "TE-016": 924.66758,
+    "TE-017": 167.39658,
+    "TE-018": 1182.76608,
+    "TE-019": 97.17535,
+    "TE-020": 866.73298,
+    "TE-021": 10288.14954,
+    "TE-022": 10164.37743,
+    "TE-023": 5994.0,
+    "TE-024": 804.0,
+    "TE-025": 18807.377,
+    "TE-026": 4031.5608,
+    "TE-027": 95.64,
+    "TE-028": 1950.30072,
+    "TE-029": 62.20053,
+    "TE-030": 5179.35531
+  }
+}

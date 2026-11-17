@@ -1,0 +1,10 @@
+{
+  "status": "schematic design variant",
+  "allowedAngleDeg": 4.672145955260068,
+  "pinRadiusMm": 1.5,
+  "stopHoleRadiusMm": 2.25,
+  "pitchRadiusMm": 9.2,
+  "torqueRating": null,
+  "stiffness": null,
+  "damping": null
+}

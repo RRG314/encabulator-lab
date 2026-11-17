@@ -1,0 +1,3 @@
+*.step -diff
+*.FCStd binary
+*.glb binary

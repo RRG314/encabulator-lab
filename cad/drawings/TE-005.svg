@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540">
+<title>TE-005 Main shaft Engineering review drawing</title>
+<style>
+text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d52}.value{font:10px monospace;fill:#335b78}.dim{stroke:#466b86;stroke-width:0.8;fill:none}g :is(path,circle,ellipse,line,polyline,polygon){vector-effect:non-scaling-stroke;stroke-width:.65px}
+</style>
+<rect width="760" height="540" fill="white"/>
+<rect x="12" y="12" width="736" height="516" fill="none" stroke="#405a70"/>
+<rect x="12" y="12" width="736" height="63" fill="#edf2f5" stroke="#405a70"/>
+<text x="26" y="36" style="font-size:19px;font-weight:bold">TE-005 / Main shaft</text>
+<text x="26" y="59">TE-01 · Revision 0.1 · Schematic reference · Fabrication release pending</text>
+<path d="M380 75V466 M12 278H748 M12 466H748" fill="none" stroke="#9daebc"/>
+<text class="label" x="30" y="89">TOP / XY</text><g transform="translate(190.0 177.0) scale(2.0220588235294117)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -68 -4 L 68 -4 " />
+<path id= "2" d=" M -68 4 L 68 4 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path d="M68, 0 L68, -0.447858  L68, -0.890084  L68, -1.32112  L68, -1.73553  L68, -2.12813  L68, -2.49396  L68, -2.82843  L68, -3.12733  L68, -3.3869  L68, -3.60388  L68, -3.77553  L68, -3.89971  L68, -3.97485  L68, -4 " /><path d="M68, 4 Q68, 3.98742 68, 3.97485  Q68, 3.93728 68, 3.89971  Q68, 3.83762 68, 3.77553  Q68, 3.6897 68, 3.60388  Q68, 3.49539 68, 3.3869  Q68, 3.25711 68, 3.12733  Q68, 2.97788 68, 2.82843  Q68, 2.66119 68, 2.49396  Q68, 2.31104 68, 2.12813  Q68, 1.93183 68, 1.73553  Q68, 1.52833 68, 1.32112  Q68, 1.1056 68, 0.890084  Q68, 0.449437 68, 9.99201e-16 " /><path d="M-68, 0 L-68, -0.447858  L-68, -0.890084  L-68, -1.32112  L-68, -1.73553  L-68, -2.12813  L-68, -2.49396  L-68, -2.82843  L-68, -3.12733  L-68, -3.3869  L-68, -3.60388  L-68, -3.77553  L-68, -3.89971  L-68, -3.97485  L-68, -4 " /><path d="M-68, 4 Q-68, 3.98742 -68, 3.97485  Q-68, 3.93728 -68, 3.89971  Q-68, 3.83762 -68, 3.77553  Q-68, 3.6897 -68, 3.60388  Q-68, 3.49539 -68, 3.3869  Q-68, 3.25711 -68, 3.12733  Q-68, 2.97788 -68, 2.82843  Q-68, 2.66119 -68, 2.49396  Q-68, 2.31104 -68, 2.12813  Q-68, 1.93183 -68, 1.73553  Q-68, 1.52833 -68, 1.32112  Q-68, 1.1056 -68, 0.890084  Q-68, 0.449437 -68, 9.99201e-16 " /></g>
+</g><path class="dim" d="M52.5 190.08823529411765v12 M327.5 190.08823529411765v12 M52.5 196.08823529411765H327.5"/><text text-anchor="middle" class="value" x="190" y="210.08823529411765">136.00 mm REF</text><text class="label" x="395" y="89">FRONT / XZ</text><g transform="translate(555.0 177.0) scale(2.0220588235294117)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -68 -4 L 68 -4 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path d="M68, 4 L68, 3.89971  L68, 3.60388  L68, 3.12733  L68, 2.49396  L68, 1.73553  L68, 0.890084  L68, 2.22045e-16  L68, -0.890084  L68, -1.73553  L68, -2.49396  L68, -3.12733  L68, -3.60388  L68, -3.89971  L68, -4 " /><path id= "2" d=" M -68 4 L 68 4 " />
+<path d="M-68, 4 L-68, 3.89971  L-68, 3.60388  L-68, 3.12733  L-68, 2.49396  L-68, 1.73553  L-68, 0.890084  L-68, 2.22045e-16  L-68, -0.890084  L-68, -1.73553  L-68, -2.49396  L-68, -3.12733  L-68, -3.60388  L-68, -3.89971  L-68, -4 " /></g>
+</g><path class="dim" d="M417.5 190.08823529411765v12 M692.5 190.08823529411765v12 M417.5 196.08823529411765H692.5"/><text text-anchor="middle" class="value" x="555" y="210.08823529411765">136.00 mm REF</text><text class="label" x="30" y="289">END / YZ</text><g transform="translate(190.0 377.0) scale(15.375)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<circle cx ="0" cy ="0" r ="4" /></g>
+</g><path class="dim" d="M128.5 443.5v12 M251.5 443.5v12 M128.5 449.5H251.5"/><text text-anchor="middle" class="value" x="190" y="463.5">8.00 mm REF</text><text class="label" x="395" y="289">ISOMETRIC</text><g transform="translate(555.0 377.0) scale(2.260435241507433)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -59.9506 13.4601 L 57.6936 -21.1351 " />
+<path id= "2" d=" M -57.6936 21.1351 L 59.9506 -13.4601 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path d="M58.8221 -13.8499 A4 1.7298 -106.387 0 1 57.6936 -21.1351" />
+<path d="M57.6936 -21.1351 A4 1.7298 -106.387 0 1 59.9506 -13.4601" />
+<path d="M59.9506 -13.4601 A4 1.7298 -106.387 0 1 58.8221 -13.8499" />
+<path d="M-58.8221 20.7454 A4 1.7298 -106.387 0 1 -59.9506 13.4601" />
+<path d="M-57.6936 21.1351 A4 1.7298 -106.387 0 1 -58.8221 20.7454" />
+</g>
+</g>
+<text x="26" y="483">BORE INTERFACE  •  Ø8 NOMINAL JOURNAL    /    AXIAL LOCATION AND FIT PENDING</text>
+<text x="26" y="501">Reference envelope (X × Y × Z) 136.00 × 8.00 × 8.00 mm · Views fit to sheet</text>
+<text x="26" y="518">Material / Steel grade TBD · Dimensional and geometric tolerances pending</text>
+</svg>

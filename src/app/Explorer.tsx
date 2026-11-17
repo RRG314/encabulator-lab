@@ -6,9 +6,10 @@ import { PartsTree } from '../components/PartsTree'
 import { PartInspector } from '../components/PartInspector'
 import { ExplodeSlider } from '../components/ExplodeSlider'
 import { GraphicsBoundary, supportsWebGL, ViewerFallback } from '../components/ViewerFallback'
-import type { Cutaway, Layer, Preset, ViewerProps } from '../components/Viewer3D'
+import type { Cutaway, Layer, Preset, ViewBookmark, ViewerProps } from '../components/Viewer3D'
 
 const Viewer3D = lazy(() => import('../components/Viewer3D'))
+type Point = [number,number,number]
 const layers: Layer[] = ['Model', 'Wiring', 'Airflow', 'Vibration']
 const presets: Preset[] = ['Iso', 'Front', 'Side', 'Top']
 
@@ -24,11 +25,12 @@ function useMedia(query: string) {
 }
 
 export function Explorer({ selected, onSelect, telemetry }: { selected: string, onSelect: (id: string) => void,
-  telemetry?: Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning'> }) {
+  telemetry?: Pick<ViewerProps, 'speedRpm' | 'motorTemperature' | 'fanRunning' | 'vibrationUm'> }) {
   const [amount, setAmount] = useState(0)
   const [layer, setLayer] = useState<Layer>('Model')
   const [preset, setPreset] = useState<Preset>('Iso')
-  const [savedPreset, setSavedPreset] = useState<Preset>('Iso')
+  const snapshot = useRef<ViewBookmark>(null)
+  const [recalled, setRecalled] = useState<ViewBookmark | null>(null)
   const [cameraTick, setCameraTick] = useState(0)
   const [cutaway, setCutaway] = useState<Cutaway>('Full')
   const [wireframe, setWireframe] = useState(false)
@@ -36,10 +38,14 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
   const [perspective, setPerspective] = useState(false)
   const [labels, setLabels] = useState(true)
   const [dimensioning, setDimensioning] = useState(false)
+  const [measuring, setMeasuring] = useState(false)
+  const [points, setPoints] = useState<Point[]>([])
   const [options, showOptions] = useState(false)
   const [assembly, setAssembly] = useState<AssemblyId | null>(null)
   const [isolatePart, setIsolatePart] = useState(false)
   const [hidden, setHidden] = useState<Set<string>>(new Set())
+  const [cadStatus, setCadStatus] = useState<'schematic' | 'cad'>('schematic')
+  const [cadPreference, setCadPreference] = useState<boolean | null>(null)
   const [failure, setFailure] = useState(() => !supportsWebGL())
   const [animation, setAnimation] = useState<{ from: number, to: number } | null>(null)
   const [notice, setNotice] = useState('')
@@ -57,10 +63,10 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
   }
   const onFailure = useCallback(() => setFailure(true), [])
   const change = (distance: number) => { setAnimation(null); setAmount(distance) }
-  const focusCamera = (value: Preset) => { setPreset(value); setCameraTick(tick => tick + 1) }
+  const focusCamera = (value: Preset) => { setPreset(value); setRecalled(null); setCameraTick(tick => tick + 1) }
   const reset = () => {
     change(0); setAssembly(null); setIsolatePart(false); setHidden(new Set()); setCutaway('Full')
-    setLayer('Model'); setWireframe(false); setOpacity(1); setDimensioning(false); focusCamera('Iso')
+    setLayer('Model'); setWireframe(false); setOpacity(1); setDimensioning(false); setMeasuring(false); setPoints([]); focusCamera('Iso')
   }
   const toggleAnimation = () => {
     if (animation) return setAnimation(null)
@@ -97,8 +103,8 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
   }
   const viewerProps: ViewerProps = {
     selected: part.id, onSelect: select, visible, fraction: amount / 100, isolate: Boolean(assembly || isolatePart),
-    cutaway, layer, preset, cameraTick, wireframe, opacity, perspective, labels, reducedMotion, compact,
-    onFailure, dimensioning, ...telemetry,
+    cutaway, layer, preset, cameraTick, snapshot, recalled, measure: measuring ? position => setPoints(prev => prev.length < 2 ? [...prev,position] : [position]) : null, wireframe, opacity, perspective, labels, reducedMotion, compact,
+    onFailure, dimensioning, cadDetail: cadPreference ?? !compact, onCadStatus: setCadStatus, ...telemetry,
   }
   const fallback = <ViewerFallback {...viewerProps} />
   return <>
@@ -116,7 +122,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           return next
         })} />
       <section className="viewer panel" aria-label="Assembly viewport" ref={viewport} data-expanded={expanded}>
-        <div className="viewer-top"><div><Box size={16} /><h2>TE-01 Digital Twin</h2></div><span className="model-status"><i /> SCHEMATIC GEOMETRY</span></div>
+        <div className="viewer-top"><div><Box size={16} /><h2>TE-01 Digital Twin</h2></div><span className="model-status"><i /> {cadStatus === 'cad' ? 'CAD SCHEMATIC' : 'SCHEMATIC GEOMETRY'}</span></div>
         <div className="viewport-tabs" aria-label="Model layers">
           {layers.map(value => <button key={value} type="button" aria-pressed={layer === value} onClick={() => setLayer(value)}>{value}</button>)}
         </div>
@@ -141,11 +147,25 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
             </label>
             <label><Eye size={15} /> X-ray opacity<input type="range" min="0.2" max="1" step="0.05" value={opacity} onChange={event => setOpacity(Number(event.target.value))} /></label>
             <label><Camera size={15} /> Perspective<input type="checkbox" checked={perspective} onChange={event => setPerspective(event.target.checked)} /></label>
+            <label><Layers size={15} /> CAD mesh<input type="checkbox" checked={viewerProps.cadDetail} onChange={event => setCadPreference(event.target.checked)} /></label>
             <label><Box size={15} /> Callouts<input type="checkbox" checked={labels} onChange={event => setLabels(event.target.checked)} /></label>
-            <div className="bookmark"><button type="button" onClick={() => { setSavedPreset(preset); setNotice(`${preset} preset saved`) }}>Save preset</button>
-              <button type="button" onClick={() => { focusCamera(savedPreset); setNotice(`${savedPreset} preset recalled`) }}>Recall</button></div>
+            <label><Ruler size={15} /> Point measurement<input type="checkbox" checked={measuring} onChange={event => { setMeasuring(event.target.checked); setPoints([]) }} /></label>
+            <div className="bookmark"><button type="button" onClick={() => {
+              if (!snapshot.current) return
+              localStorage.setItem('te01.camera',JSON.stringify(snapshot.current)); setNotice('Camera position saved')
+            }}>Save view</button>
+              <button type="button" onClick={() => {
+                try {
+                  const saved = JSON.parse(localStorage.getItem('te01.camera') ?? 'null') as ViewBookmark | null
+                  if (!saved || ![...saved.position,...saved.target,saved.zoom].every(Number.isFinite)) return
+                  setPerspective(saved.perspective); setRecalled(saved); setCameraTick(tick => tick+1); setNotice('Camera position recalled')
+                } catch { setNotice('Camera position unavailable') }
+              }}>Recall view</button></div>
             <span className="sr-only" role="status">{notice}</span>
           </div>}
+          {measuring && <div className="measurement-readout" aria-live="polite">{points.length === 2
+            ? `Schematic distance · ${Math.hypot(...points[0].map((value,i) => value-points[1][i])).toFixed(1)} mm`
+            : `Select ${points.length ? 'the second point' : 'two surface points'}`}</div>}
           {dimensioning && <div className="dimension-readout">Baseplate target · 300 × 200 mm</div>}
           {telemetry && <div className="diagnostic-readout">SIMULATION · {Math.round(telemetry.speedRpm ?? 0)} rpm · {telemetry.motorTemperature?.toFixed(1) ?? '—'} °C</div>}
           <div className="camera-presets" aria-label="Camera presets">
@@ -154,7 +174,7 @@ export function Explorer({ selected, onSelect, telemetry }: { selected: string, 
           <div className="axes" aria-label="Machine axes, X shaft, Y transverse, Z up"><b>Z</b><i /><b>Y</b><i /><b>X</b><i /></div>
         </div>
         <ExplodeSlider amount={amount} change={change} running={Boolean(animation)} toggle={toggleAnimation} reset={reset} />
-        <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Right-drag to pan'}</div>
+        <div className="viewport-help"><Move size={13} />{compact ? 'Drag to orbit · Pinch to zoom · Two fingers to pan' : 'Drag to orbit · Scroll to zoom · Arrow keys to pan'}</div>
       </section>
       <PartInspector part={part} isolated={isolatePart} onIsolate={() => {
         setIsolatePart(!isolatePart); setAssembly(null)

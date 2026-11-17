@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540">
+<title>TE-009 Hydrocoptic vanes Engineering review drawing</title>
+<style>
+text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d52}.value{font:10px monospace;fill:#335b78}.dim{stroke:#466b86;stroke-width:0.8;fill:none}g :is(path,circle,ellipse,line,polyline,polygon){vector-effect:non-scaling-stroke;stroke-width:.65px}
+</style>
+<rect width="760" height="540" fill="white"/>
+<rect x="12" y="12" width="736" height="516" fill="none" stroke="#405a70"/>
+<rect x="12" y="12" width="736" height="63" fill="#edf2f5" stroke="#405a70"/>
+<text x="26" y="36" style="font-size:19px;font-weight:bold">TE-009 / Hydrocoptic vanes</text>
+<text x="26" y="59">TE-01 · Revision 0.1 · Schematic reference · Fabrication release pending</text>
+<path d="M380 75V466 M12 278H748 M12 466H748" fill="none" stroke="#9daebc"/>
+<text class="label" x="30" y="89">TOP / XY</text><g transform="translate(189.44833826061546 173.48519933833666) scale(8.844488048663706)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -15.484 -4.10911 L -13.2782 -4.86706 " />
+<path id= "2" d=" M -13.2782 -4.86706 L 13.0486 1.13782 " />
+<path id= "3" d=" M 13.0486 1.13782 L 15.6088 3.52222 " />
+<path id= "4" d=" M 15.6088 3.52222 L 12.4248 4.07226 " />
+<path id= "5" d=" M 12.4248 4.07226 L -13.1317 -0.746557 " />
+<path id= "6" d=" M -13.1317 -0.746557 L -15.484 -4.10911 " />
+<path id= "7" d=" M -14 -1.98771 L -14 2.2 " />
+<path id= "8" d=" M 14 -2.2 L 14 2.02391 " />
+<path id= "9" d=" M -1.58521 -2.2 L 14 -2.2 " />
+<path id= "10" d=" M -14 2.2 L 2.49532 2.2 " />
+</g>
+</g><path class="dim" d="M52.5 221.531843371987v12 M327.5 221.531843371987v12 M52.5 227.531843371987H327.5"/><text text-anchor="middle" class="value" x="190" y="241.531843371987">31.09 mm REF</text><text class="label" x="395" y="89">FRONT / XZ</text><g transform="translate(554.7210203130481 229.55454545454546) scale(4.472727272727273)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -15.484 1.21628e-16 L -15.484 25.5 " />
+<path id= "2" d=" M -13.2782 -7.38109e-17 L -13.2782 25.5 " />
+<path id= "3" d=" M -15.484 1.21628e-16 L -13.2782 1.55193e-16 " />
+<path id= "4" d=" M -15.484 25.5 L -13.2782 25.5 " />
+<path id= "5" d=" M 13.0486 2.19594e-16 L 13.0486 25.5 " />
+<path id= "6" d=" M -13.2782 -7.38109e-17 L 13.0486 -1.25898e-16 " />
+<path id= "7" d=" M -13.2782 25.5 L 13.0486 25.5 " />
+<path id= "8" d=" M 15.6088 -2.57665e-16 L 15.6088 25.5 " />
+<path id= "9" d=" M 14 2.33276e-16 L 15.6088 2.5641e-16 " />
+<path id= "10" d=" M 13.0486 25.5 L 15.6088 25.5 " />
+<path id= "11" d=" M -14 -2 L -14 0 " />
+<path id= "12" d=" M 14 -2 L 14 0 " />
+<path id= "13" d=" M -14 -2 L 14 -2 " />
+<path id= "14" d=" M -13.2782 0 L 14 0 " />
+</g>
+</g><path class="dim" d="M485.4651669360423 243.5v12 M624.5348330639578 243.5v12 M485.4651669360423 249.5H624.5348330639578"/><text text-anchor="middle" class="value" x="555" y="263.5">31.09 mm REF</text><text class="label" x="30" y="289">END / YZ</text><g transform="translate(191.77746238008618 429.55454545454546) scale(4.472727272727273)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -4.86706 -7.63574e-17 L -4.86706 25.5 " />
+<path id= "2" d=" M 1.13782 1.08581e-17 L 1.13782 25.5 " />
+<path id= "3" d=" M -4.86706 -7.63574e-17 L -2.2 1.76663e-17 " />
+<path id= "4" d=" M -4.86706 25.5 L 1.13782 25.5 " />
+<path id= "5" d=" M 3.52222 6.80963e-17 L 3.52222 25.5 " />
+<path id= "6" d=" M 1.13782 1.08581e-17 L 3.52222 5.14819e-18 " />
+<path id= "7" d=" M 1.13782 25.5 L 3.52222 25.5 " />
+<path id= "8" d=" M 4.07226 6.03931e-17 L 4.07226 25.5 " />
+<path id= "9" d=" M 3.52222 6.80963e-17 L 4.07226 3.42716e-17 " />
+<path id= "10" d=" M 3.52222 25.5 L 4.07226 25.5 " />
+<path id= "11" d=" M -2.2 -2 L -2.2 0 " />
+<path id= "12" d=" M -2.2 0 L 2.2 0 " />
+<path id= "13" d=" M 2.2 -2 L 2.2 0 " />
+<path id= "14" d=" M -2.2 -2 L 2.2 -2 " />
+</g>
+</g><path class="dim" d="M170.00843542122442 443.5v12 M209.99156457877558 443.5v12 M170.00843542122442 449.5H209.99156457877558"/><text text-anchor="middle" class="value" x="190" y="463.5">8.94 mm REF</text><text class="label" x="395" y="289">ISOMETRIC</text><g transform="translate(555.3672042172396 413.8939569191258) scale(3.9369486362245794)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -15.4558 2.1366 L -15.4558 24.1161 " />
+<path id= "2" d=" M -13.928 1.24308 L -13.928 23.2225 " />
+<path id= "3" d=" M -15.4558 2.1366 L -13.928 1.24308 " />
+<path id= "4" d=" M -15.4558 24.1161 L -13.928 23.2225 " />
+<path id= "5" d=" M 11.8583 -2.82023 L 11.8583 19.1592 " />
+<path id= "6" d=" M -13.928 1.24308 L 11.8583 -2.82023 " />
+<path id= "7" d=" M -13.928 23.2225 L 11.8583 19.1592 " />
+<path id= "8" d=" M 15.2692 -2.42573 L 15.2692 19.5537 " />
+<path id= "9" d=" M 11.8583 -2.82023 L 15.2692 -2.42573 " />
+<path id= "10" d=" M 11.8583 19.1592 L 15.2692 19.5537 " />
+<path id= "11" d=" M 15.2692 19.5537 L 12.791 20.6049 " />
+<path id= "12" d=" M 12.791 20.6049 L -11.7339 24.9924 " />
+<path id= "13" d=" M -11.7339 24.9924 L -15.4558 24.1161 " />
+<path id= "14" d=" M -13.2142 0.872517 L -13.2142 1.1306 " />
+<path id= "15" d=" M 11.0067 -6.25003 L 11.0067 -4.52615 " />
+<path id= "16" d=" M 11.0067 -4.52615 L 13.1259 -2.67363 " />
+<path id= "17" d=" M 13.2142 -4.32028 L 13.2142 -2.66341 " />
+<path id= "18" d=" M 11.0067 -6.25003 L 13.2142 -4.32028 " />
+<path id= "19" d=" M -13.2142 0.872517 L 11.0067 -6.25003 " />
+<path id= "20" d=" M -2.47504 -0.561636 L 11.0067 -4.52615 " />
+</g>
+</g>
+<text x="26" y="483">INDEX  •  60° REPEATED SIX TIMES    /    SCHEMATIC PITCH 12°</text>
+<text x="26" y="501">Reference envelope (X × Y × Z) 31.09 × 8.94 × 27.50 mm · Views fit to sheet</text>
+<text x="26" y="518">Material / Selection pending · Dimensional and geometric tolerances pending</text>
+</svg>

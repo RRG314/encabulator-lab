@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540">
+<title>TE-007 Bearing housings Engineering review drawing</title>
+<style>
+text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d52}.value{font:10px monospace;fill:#335b78}.dim{stroke:#466b86;stroke-width:0.8;fill:none}g :is(path,circle,ellipse,line,polyline,polygon){vector-effect:non-scaling-stroke;stroke-width:.65px}
+</style>
+<rect width="760" height="540" fill="white"/>
+<rect x="12" y="12" width="736" height="516" fill="none" stroke="#405a70"/>
+<rect x="12" y="12" width="736" height="63" fill="#edf2f5" stroke="#405a70"/>
+<text x="26" y="36" style="font-size:19px;font-weight:bold">TE-007 / Bearing housings</text>
+<text x="26" y="59">TE-01 · Revision 0.1 · Schematic reference · Fabrication release pending</text>
+<path d="M380 75V466 M12 278H748 M12 466H748" fill="none" stroke="#9daebc"/>
+<text class="label" x="30" y="89">TOP / XY</text><g transform="translate(190.0 177.0) scale(2.86046511627907)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -5.75 -14 L 5.75 -14 " />
+<path id= "2" d=" M -5.75 -17 L 5.75 -17 " />
+<path id= "3" d=" M -5.75 -14 L -5.75 -17 " />
+<path id= "4" d=" M 5.75 -14 L 5.75 -17 " />
+<path id= "5" d=" M -5.75 14 L 5.75 14 " />
+<path id= "6" d=" M -5.75 14 L -5.75 -14 " />
+<path id= "7" d=" M 5.75 14 L 5.75 -14 " />
+<path id= "8" d=" M -5.75 17 L -5.75 14 " />
+<path id= "9" d=" M 5.75 17 L 5.75 14 " />
+<path id= "10" d=" M -5.75 17 L 5.75 17 " />
+<path id= "11" d=" M -6.5 -12 L -6.5 12 " />
+<path id= "12" d=" M 6.5 -12 L 6.5 12 " />
+<path id= "13" d=" M -6.5 -12 L -5.75 -12 " />
+<path id= "14" d=" M 5.75 -12 L 6.5 -12 " />
+<path id= "15" d=" M -6.5 12 L -5.75 12 " />
+<path id= "16" d=" M 5.75 12 L 6.5 12 " />
+<path id= "17" d=" M -12 -21.5 L -12 21.5 " />
+<path id= "18" d=" M -12 -21.5 L 12 -21.5 " />
+<path id= "19" d=" M -12 21.5 L 12 21.5 " />
+<path id= "20" d=" M 12 -21.5 L 12 21.5 " />
+<path d="M-1.11803 -17 A1.5 1.5 0 0 1 1.11803 -17" /><path d="M1.11803 17 A1.5 1.5 0 0 1 -1.11803 17" /></g>
+</g><path class="dim" d="M155.67441860465115 243.5v12 M224.32558139534885 243.5v12 M155.67441860465115 249.5H224.32558139534885"/><text text-anchor="middle" class="value" x="190" y="263.5">24.00 mm REF</text><text class="label" x="395" y="89">FRONT / XZ</text><g transform="translate(555.0 142.74161073825502) scale(1.651006711409396)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -5.75 16.5 L 5.75 16.5 " />
+<path id= "2" d=" M -5.75 13.5 L 5.75 13.5 " />
+<path id= "3" d=" M -5.75 16.5 L -5.75 13.5 " />
+<path id= "4" d=" M 5.75 16.5 L 5.75 13.5 " />
+<path id= "5" d=" M -5.75 -13.5 L 5.75 -13.5 " />
+<path id= "6" d=" M -5.75 13.5 L -5.75 -13.5 " />
+<path id= "7" d=" M 5.75 13.5 L 5.75 -13.5 " />
+<path id= "8" d=" M -5.75 -13.5 L -5.75 -16.5 " />
+<path id= "9" d=" M 5.75 -13.5 L 5.75 -16.5 " />
+<path id= "10" d=" M -5.75 -16.5 L 5.75 -16.5 " />
+<path id= "11" d=" M -6.5 -54 L -6.5 -17 " />
+<path id= "12" d=" M 6.5 -54 L 6.5 -17 " />
+<path id= "13" d=" M -6.5 -17 L 6.5 -17 " />
+<path id= "14" d=" M -12 -58 L -12 -54 " />
+<path id= "15" d=" M -12 -58 L 12 -58 " />
+<path id= "16" d=" M 12 -58 L 12 -54 " />
+<path id= "17" d=" M -12 -54 L 12 -54 " />
+</g>
+</g><path class="dim" d="M535.1879194630873 243.5v12 M574.8120805369127 243.5v12 M535.1879194630873 249.5H574.8120805369127"/><text text-anchor="middle" class="value" x="555" y="263.5">24.00 mm REF</text><text class="label" x="30" y="289">END / YZ</text><g transform="translate(190.0 342.741610738255) scale(1.651006711409396)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -14 16.5 L -17 13.5 " />
+<path id= "2" d=" M 14 16.5 L -14 16.5 " />
+<path id= "3" d=" M -17 13.5 L -17 -13.5 " />
+<path id= "4" d=" M 17 13.5 L 14 16.5 " />
+<path id= "5" d=" M -17 -13.5 L -14 -16.5 " />
+<path id= "6" d=" M 17 -13.5 L 17 13.5 " />
+<path id= "7" d=" M -14 -16.5 L 14 -16.5 " />
+<path id= "8" d=" M 14 -16.5 L 17 -13.5 " />
+<circle cx ="-12.5" cy ="12" r ="1.45" /><circle cx ="-12.5" cy ="-12" r ="1.45" /><circle cx ="12.5" cy ="12" r ="1.45" /><circle cx ="0" cy ="0" r ="11.035" /><circle cx ="12.5" cy ="-12" r ="1.45" /><path id= "14" d=" M -12 -54 L -12 -17 " />
+<path id= "15" d=" M -12 -17 L 12 -17 " />
+<path id= "16" d=" M 12 -54 L 12 -17 " />
+<path id= "17" d=" M -21.5 -58 L -21.5 -54 " />
+<path id= "18" d=" M -21.5 -54 L 21.5 -54 " />
+<path id= "19" d=" M 21.5 -58 L 21.5 -54 " />
+<path id= "20" d=" M -21.5 -58 L 21.5 -58 " />
+</g>
+</g><path class="dim" d="M154.50335570469798 443.5v12 M225.49664429530202 443.5v12 M154.50335570469798 449.5H225.49664429530202"/><text text-anchor="middle" class="value" x="190" y="463.5">43.00 mm REF</text><text class="label" x="395" y="289">ISOMETRIC</text><g transform="translate(555.0 347.34427523901627) scale(1.4590871142601545)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -11.998 9.54454 L -2.05012 6.61921 " />
+<path id= "2" d=" M -13.5031 5.64298 L -3.55528 2.71765 " />
+<path id= "3" d=" M -11.998 9.54454 L -13.5031 5.64298 " />
+<path id= "4" d=" M -2.05012 6.61921 L -3.55528 2.71765 " />
+<path id= "5" d=" M 2.05012 21.8248 L 11.998 18.8995 " />
+<path id= "6" d=" M 2.05012 21.8248 L -11.998 9.54454 " />
+<path id= "7" d=" M 11.998 18.8995 L -2.05012 6.61921 " />
+<path id= "8" d=" M -13.5031 -17.6294 L -3.55528 -20.5547 " />
+<path id= "9" d=" M -13.5031 5.64298 L -13.5031 -17.6294 " />
+<path id= "10" d=" M -3.55528 2.71765 L -3.55528 -20.5547 " />
+<path id= "11" d=" M -13.5031 -17.6294 L -11.998 -18.8995 " />
+<path id= "12" d=" M 13.5031 17.6294 L 11.998 18.8995 " />
+<path id= "13" d=" M -3.55528 -20.5547 L -2.05012 -21.8248 " />
+<path id= "14" d=" M 13.5031 -5.64298 L 13.5031 17.6294 " />
+<path id= "15" d=" M -2.05012 -21.8248 L 11.998 -9.54454 " />
+<path id= "16" d=" M 11.998 -9.54454 L 13.5031 -5.64298 " />
+<path d="M-1.29755 4.64817 A1.45 0.627053 -106.387 0 1 -1.70662 2.00725" />
+<path d="M-1.70662 2.00725 A1.45 0.627053 -106.387 0 1 -0.888471 4.78945" />
+<path d="M-0.888471 4.78945 A1.45 0.627053 -106.387 0 1 -1.29755 4.64817" />
+<path d="M-1.29755 -16.0384 A1.45 0.627053 -106.387 0 1 -1.70662 -18.6793" />
+<path d="M-1.70662 -18.6793 A1.45 0.627053 -106.387 0 1 -0.888471 -15.8971" />
+<path d="M-0.888471 -15.8971 A1.45 0.627053 -106.387 0 1 -1.29755 -16.0384" />
+<path d="M11.2454 15.6127 A1.45 0.627053 -106.387 0 1 10.8363 12.9718" />
+<path d="M10.8363 12.9718 A1.45 0.627053 -106.387 0 1 11.6545 15.754" />
+<path d="M11.6545 15.754 A1.45 0.627053 -106.387 0 1 11.2454 15.6127" />
+<path d="M4.97393 8.04884 A11.035 4.77209 -106.387 0 1 1.86072 -12.0494" />
+<path d="M1.86072 -12.0494 A11.035 4.77209 -106.387 0 1 8.08714 9.12408" />
+<path d="M8.08714 9.12408 A11.035 4.77209 -106.387 0 1 4.97393 8.04884" />
+<path d="M11.2454 -5.07387 A1.45 0.627053 -106.387 0 1 10.8363 -7.71478" />
+<path d="M10.8363 -7.71478 A1.45 0.627053 -106.387 0 1 11.6545 -4.93259" />
+<path d="M11.6545 -4.93259 A1.45 0.627053 -106.387 0 1 11.2454 -5.07387" />
+<path id= "32" d=" M -11.998 -18.8995 L -2.05012 -21.8248 " />
+<path id= "33" d=" M -11.6433 -51.8781 L -11.6433 -19.0038 " />
+<path id= "34" d=" M -0.397914 -55.185 L -0.397914 -21.5694 " />
+<path id= "35" d=" M -0.397914 -21.5694 L 11.6433 -11.0435 " />
+<path id= "36" d=" M 11.6433 -44.6591 L 11.6433 -11.0435 " />
+<path id= "37" d=" M -1.4156 -21.2701 L -0.397914 -21.5694 " />
+<path id= "38" d=" M 10.6256 -10.7442 L 11.6433 -11.0435 " />
+<path id= "39" d=" M -21.1673 -56.3695 L -21.1673 -52.9217 " />
+<path id= "40" d=" M -21.1673 -52.9217 L -11.6433 -44.5962 " />
+<path id= "41" d=" M -21.1673 -56.3695 L -0.406565 -62.4745 " />
+<path id= "42" d=" M -0.406565 -62.4745 L -0.406565 -59.0267 " />
+<path id= "43" d=" M -21.1673 -52.9217 L -0.406565 -59.0267 " />
+<path id= "44" d=" M 11.6433 -37.3671 L 21.1673 -40.1678 " />
+<path id= "45" d=" M -0.406565 -59.0267 L 21.1673 -40.1678 " />
+<path d="M-6.72994 -53.9436 A1.5 0.760517 5.47255e-16 0 1 -6.52749 -53.562" />
+<path d="M-6.52749 -53.562 A1.5 0.760517 5.47255e-16 0 1 -9.52749 -53.562" />
+<path d="M-9.52749 -53.562 A1.5 0.760517 5.47255e-16 0 1 -6.72994 -53.9436" />
+<path id= "49" d=" M 21.1673 -43.6155 L 21.1673 -40.1678 " />
+<path id= "50" d=" M -0.406565 -62.4745 L 21.1673 -43.6155 " />
+</g>
+</g>
+<text x="26" y="483">BEARING ENVELOPE  •  Ø22 CANDIDATE    /    FIT AND COAXIALITY REQUIRE REVIEW</text>
+<text x="26" y="501">Reference envelope (X × Y × Z) 24.00 × 43.00 × 74.50 mm · Views fit to sheet</text>
+<text x="26" y="518">Material / Housing alloy TBD · Dimensional and geometric tolerances pending</text>
+</svg>

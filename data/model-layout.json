@@ -1,0 +1,969 @@
+{
+  "shaftHeight": 58,
+  "journalStations": [
+    -48.0,
+    48.0
+  ],
+  "placements": [
+    {
+      "key": "TE-001:1",
+      "partId": "TE-001",
+      "origin": [
+        0,
+        0,
+        -3.0
+      ],
+      "offset": [
+        0,
+        0,
+        -55
+      ],
+      "stage": 8,
+      "rotation": 0
+    },
+    {
+      "key": "TE-002:1",
+      "partId": "TE-002",
+      "origin": [
+        -134.0,
+        -84.0,
+        -10.5
+      ],
+      "offset": [
+        -11,
+        -10,
+        -71.5
+      ],
+      "stage": 8,
+      "rotation": 0
+    },
+    {
+      "key": "TE-002:2",
+      "partId": "TE-002",
+      "origin": [
+        -134.0,
+        84.0,
+        -10.5
+      ],
+      "offset": [
+        -11,
+        10,
+        -71.5
+      ],
+      "stage": 8,
+      "rotation": 0
+    },
+    {
+      "key": "TE-002:3",
+      "partId": "TE-002",
+      "origin": [
+        134.0,
+        -84.0,
+        -10.5
+      ],
+      "offset": [
+        11,
+        -10,
+        -71.5
+      ],
+      "stage": 8,
+      "rotation": 0
+    },
+    {
+      "key": "TE-002:4",
+      "partId": "TE-002",
+      "origin": [
+        134.0,
+        84.0,
+        -10.5
+      ],
+      "offset": [
+        11,
+        10,
+        -71.5
+      ],
+      "stage": 8,
+      "rotation": 0
+    },
+    {
+      "key": "TE-003:1",
+      "partId": "TE-003",
+      "origin": [
+        -110.0,
+        0,
+        58
+      ],
+      "offset": [
+        -97,
+        0,
+        11
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-004:1",
+      "partId": "TE-004",
+      "origin": [
+        -55,
+        -73,
+        6.5
+      ],
+      "offset": [
+        -20,
+        -99,
+        52.5
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-005:1",
+      "partId": "TE-005",
+      "origin": [
+        6,
+        0,
+        58
+      ],
+      "offset": [
+        -6,
+        0,
+        11
+      ],
+      "stage": 5,
+      "rotation": 0
+    },
+    {
+      "key": "TE-006:1",
+      "partId": "TE-006",
+      "origin": [
+        -48.0,
+        0,
+        58
+      ],
+      "offset": [
+        -50.39999999999999,
+        0,
+        47
+      ],
+      "stage": 6,
+      "rotation": 0
+    },
+    {
+      "key": "TE-006:2",
+      "partId": "TE-006",
+      "origin": [
+        48.0,
+        0,
+        58
+      ],
+      "offset": [
+        50.39999999999999,
+        0,
+        47
+      ],
+      "stage": 6,
+      "rotation": 0
+    },
+    {
+      "key": "TE-007:1",
+      "partId": "TE-007",
+      "origin": [
+        -48.0,
+        0,
+        58
+      ],
+      "offset": [
+        -69.60000000000001,
+        0,
+        -4
+      ],
+      "stage": 6,
+      "rotation": 0
+    },
+    {
+      "key": "TE-007:2",
+      "partId": "TE-007",
+      "origin": [
+        48.0,
+        0,
+        58
+      ],
+      "offset": [
+        69.60000000000001,
+        0,
+        -4
+      ],
+      "stage": 6,
+      "rotation": 0
+    },
+    {
+      "key": "TE-008:1",
+      "partId": "TE-008",
+      "origin": [
+        0,
+        0,
+        58
+      ],
+      "offset": [
+        0,
+        0,
+        91
+      ],
+      "stage": 4,
+      "rotation": 0
+    },
+    {
+      "key": "TE-009:1",
+      "partId": "TE-009",
+      "origin": [
+        0,
+        -0.0,
+        74.0
+      ],
+      "offset": [
+        0,
+        0,
+        176
+      ],
+      "stage": 4,
+      "rotation": 0.0
+    },
+    {
+      "key": "TE-009:2",
+      "partId": "TE-009",
+      "origin": [
+        0,
+        -13.856406460551018,
+        66.0
+      ],
+      "offset": [
+        0,
+        -84.00446416709055,
+        133.5
+      ],
+      "stage": 4,
+      "rotation": 1.0471975511965976
+    },
+    {
+      "key": "TE-009:3",
+      "partId": "TE-009",
+      "origin": [
+        0,
+        -13.85640646055102,
+        50.0
+      ],
+      "offset": [
+        0,
+        -84.00446416709056,
+        48.50000000000003
+      ],
+      "stage": 4,
+      "rotation": 2.0943951023931953
+    },
+    {
+      "key": "TE-009:4",
+      "partId": "TE-009",
+      "origin": [
+        0,
+        -1.959434878635765e-15,
+        42.0
+      ],
+      "offset": [
+        0,
+        -1.1879073951729325e-14,
+        6
+      ],
+      "stage": 4,
+      "rotation": 3.141592653589793
+    },
+    {
+      "key": "TE-009:5",
+      "partId": "TE-009",
+      "origin": [
+        0,
+        13.856406460551014,
+        49.99999999999999
+      ],
+      "offset": [
+        0,
+        84.00446416709053,
+        48.499999999999964
+      ],
+      "stage": 4,
+      "rotation": 4.1887902047863905
+    },
+    {
+      "key": "TE-009:6",
+      "partId": "TE-009",
+      "origin": [
+        0,
+        13.856406460551018,
+        66.0
+      ],
+      "offset": [
+        0,
+        84.00446416709055,
+        133.5
+      ],
+      "stage": 4,
+      "rotation": 5.235987755982989
+    },
+    {
+      "key": "TE-010:1",
+      "partId": "TE-010",
+      "origin": [
+        24.0,
+        0,
+        58
+      ],
+      "offset": [
+        22,
+        0,
+        90
+      ],
+      "stage": 5,
+      "rotation": 0
+    },
+    {
+      "key": "TE-011:1",
+      "partId": "TE-011",
+      "origin": [
+        -110.0,
+        0,
+        3.5
+      ],
+      "offset": [
+        -98,
+        0,
+        -16.5
+      ],
+      "stage": 8,
+      "rotation": 0
+    },
+    {
+      "key": "TE-012:1",
+      "partId": "TE-012",
+      "origin": [
+        110,
+        0,
+        44
+      ],
+      "offset": [
+        114,
+        -2,
+        91
+      ],
+      "stage": 1,
+      "rotation": 0
+    },
+    {
+      "key": "TE-013:1",
+      "partId": "TE-013",
+      "origin": [
+        85,
+        0,
+        44
+      ],
+      "offset": [
+        78,
+        0,
+        70
+      ],
+      "stage": 1,
+      "rotation": 0
+    },
+    {
+      "key": "TE-014:1",
+      "partId": "TE-014",
+      "origin": [
+        0,
+        0,
+        58
+      ],
+      "offset": [
+        0,
+        0,
+        287
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "TE-015:1",
+      "partId": "TE-015",
+      "origin": [
+        0,
+        0,
+        58
+      ],
+      "offset": [
+        0,
+        113,
+        201
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "TE-016:1",
+      "partId": "TE-016",
+      "origin": [
+        -26,
+        -73,
+        6.5
+      ],
+      "offset": [
+        -16,
+        -100,
+        52.5
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-017:1",
+      "partId": "TE-017",
+      "origin": [
+        48.0,
+        0,
+        76
+      ],
+      "offset": [
+        74,
+        -32,
+        40
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-018:1",
+      "partId": "TE-018",
+      "origin": [
+        30.0,
+        -14,
+        58
+      ],
+      "offset": [
+        43,
+        -36,
+        53
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "TE-019:1",
+      "partId": "TE-019",
+      "origin": [
+        -89.0,
+        0,
+        79.45
+      ],
+      "offset": [
+        -96,
+        -29,
+        27
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-019:2",
+      "partId": "TE-019",
+      "origin": [
+        48.0,
+        11,
+        76.75
+      ],
+      "offset": [
+        77,
+        20,
+        22
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-020:1",
+      "partId": "TE-020",
+      "origin": [
+        -3,
+        -73,
+        6.5
+      ],
+      "offset": [
+        -11,
+        -100,
+        52.5
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-021:1",
+      "partId": "TE-021",
+      "origin": [
+        48,
+        -78,
+        18
+      ],
+      "offset": [
+        6,
+        -87,
+        77
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-022:1",
+      "partId": "TE-022",
+      "origin": [
+        -99,
+        66,
+        12
+      ],
+      "offset": [
+        -36,
+        83,
+        46
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-023:1",
+      "partId": "TE-023",
+      "origin": [
+        -50,
+        72,
+        11
+      ],
+      "offset": [
+        -37,
+        81,
+        45
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-024:1",
+      "partId": "TE-024",
+      "origin": [
+        -33,
+        -60,
+        68
+      ],
+      "offset": [
+        -21,
+        5,
+        186
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "TE-025:1",
+      "partId": "TE-025",
+      "origin": [
+        -39,
+        -76,
+        6
+      ],
+      "offset": [
+        -1,
+        -81,
+        12
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-026:1",
+      "partId": "TE-026",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "offset": [
+        0,
+        265,
+        90
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-027:1",
+      "partId": "TE-027",
+      "origin": [
+        -26,
+        -77,
+        8.2
+      ],
+      "offset": [
+        40,
+        -93,
+        51.8
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "TE-028:1",
+      "partId": "TE-028",
+      "origin": [
+        63.0,
+        0,
+        58
+      ],
+      "offset": [
+        16,
+        0,
+        86
+      ],
+      "stage": 5,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:1",
+      "partId": "TE-029",
+      "origin": [
+        -134.0,
+        -84.0,
+        -1
+      ],
+      "offset": [
+        -1,
+        -61,
+        -42
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:2",
+      "partId": "TE-029",
+      "origin": [
+        -134.0,
+        84.0,
+        -1
+      ],
+      "offset": [
+        28,
+        -229,
+        -42
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:3",
+      "partId": "TE-029",
+      "origin": [
+        134.0,
+        -84.0,
+        -1
+      ],
+      "offset": [
+        -211,
+        -61,
+        -42
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:4",
+      "partId": "TE-029",
+      "origin": [
+        134.0,
+        84.0,
+        -1
+      ],
+      "offset": [
+        -182,
+        -229,
+        -42
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:5",
+      "partId": "TE-029",
+      "origin": [
+        -48.0,
+        -16,
+        4
+      ],
+      "offset": [
+        29,
+        -129,
+        -47
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:6",
+      "partId": "TE-029",
+      "origin": [
+        -48.0,
+        16,
+        4
+      ],
+      "offset": [
+        58,
+        -161,
+        -47
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:7",
+      "partId": "TE-029",
+      "origin": [
+        48.0,
+        -16,
+        4
+      ],
+      "offset": [
+        -9,
+        -129,
+        -47
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:8",
+      "partId": "TE-029",
+      "origin": [
+        48.0,
+        16,
+        4
+      ],
+      "offset": [
+        20,
+        -161,
+        -47
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:9",
+      "partId": "TE-029",
+      "origin": [
+        -129.0,
+        -17,
+        30.2
+      ],
+      "offset": [
+        227,
+        -128,
+        -71
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:10",
+      "partId": "TE-029",
+      "origin": [
+        -129.0,
+        17,
+        30.2
+      ],
+      "offset": [
+        256,
+        -162,
+        -71
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:11",
+      "partId": "TE-029",
+      "origin": [
+        -91.0,
+        -17,
+        30.2
+      ],
+      "offset": [
+        -43,
+        -141,
+        -71
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:12",
+      "partId": "TE-029",
+      "origin": [
+        -91.0,
+        17,
+        30.2
+      ],
+      "offset": [
+        -14,
+        -175,
+        -71
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:13",
+      "partId": "TE-029",
+      "origin": [
+        -35.0,
+        -49,
+        5
+      ],
+      "offset": [
+        -45,
+        -109,
+        -48
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:14",
+      "partId": "TE-029",
+      "origin": [
+        -35.0,
+        49,
+        5
+      ],
+      "offset": [
+        -16,
+        -207,
+        -48
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:15",
+      "partId": "TE-029",
+      "origin": [
+        35.0,
+        -49,
+        5
+      ],
+      "offset": [
+        -51,
+        -109,
+        -48
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:16",
+      "partId": "TE-029",
+      "origin": [
+        35.0,
+        49,
+        5
+      ],
+      "offset": [
+        -22,
+        -207,
+        -48
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:17",
+      "partId": "TE-029",
+      "origin": [
+        -78,
+        -93.0,
+        16
+      ],
+      "offset": [
+        117,
+        -67,
+        -59
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:18",
+      "partId": "TE-029",
+      "origin": [
+        -78,
+        -59.0,
+        16
+      ],
+      "offset": [
+        146,
+        -109,
+        -59
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:19",
+      "partId": "TE-029",
+      "origin": [
+        0,
+        -93.0,
+        16
+      ],
+      "offset": [
+        97,
+        -67,
+        -59
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-029:20",
+      "partId": "TE-029",
+      "origin": [
+        0,
+        -59.0,
+        16
+      ],
+      "offset": [
+        126,
+        -109,
+        -59
+      ],
+      "stage": 7,
+      "rotation": 0
+    },
+    {
+      "key": "TE-030:1",
+      "partId": "TE-030",
+      "origin": [
+        -71.0,
+        0,
+        58
+      ],
+      "offset": [
+        -60,
+        0,
+        47
+      ],
+      "stage": 7,
+      "rotation": 0
+    }
+  ]
+}

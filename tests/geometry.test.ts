@@ -1,8 +1,9 @@
 import { Box3, Euler, Matrix4, Vector3 } from 'three'
 import { describe, expect, it } from 'vitest'
 import { parts } from '../src/data'
+import { placementBounds } from '../src/model/transforms'
 import { makeGeometries } from '../src/model/geometry'
-import { explodePosition, journalStations, placementBounds, placements, shaftHeight } from '../src/model/layout'
+import { explodePosition, journalStations, placements, shaftHeight } from '../src/model/layout'
 
 const geometry = makeGeometries()
 describe('schematic model', () => {

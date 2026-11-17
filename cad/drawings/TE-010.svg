@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540">
+<title>TE-010 Rotor retaining system Engineering review drawing</title>
+<style>
+text{fill:#182431;font:12px sans-serif}.label{font:700 11px monospace;fill:#263d52}.value{font:10px monospace;fill:#335b78}.dim{stroke:#466b86;stroke-width:0.8;fill:none}g :is(path,circle,ellipse,line,polyline,polygon){vector-effect:non-scaling-stroke;stroke-width:.65px}
+</style>
+<rect width="760" height="540" fill="white"/>
+<rect x="12" y="12" width="736" height="516" fill="none" stroke="#405a70"/>
+<rect x="12" y="12" width="736" height="63" fill="#edf2f5" stroke="#405a70"/>
+<text x="26" y="36" style="font-size:19px;font-weight:bold">TE-010 / Rotor retaining system</text>
+<text x="26" y="59">TE-01 · Revision 0.1 · Schematic reference · Fabrication release pending</text>
+<path d="M380 75V466 M12 278H748 M12 466H748" fill="none" stroke="#9daebc"/>
+<text class="label" x="30" y="89">TOP / XY</text><g transform="translate(188.24285714285713 177.0) scale(5.857142857142857)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -2 -10.5 L 2 -10.5 " />
+<path id= "2" d=" M -2 10.5 L 2 10.5 " />
+<path id= "3" d=" M 2 -8.4 L 2.6 -8.4 " />
+<path id= "4" d=" M 2 8.4 L 2.6 8.4 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path d="M2, 0 L2, -1.17563  L2, -2.33647  L2, -3.46793  L2, -4.55578  L2, -5.58634  L2, -6.54664  L2, -7.42462  L2, -8.20923  L2, -8.8906  L2, -9.46017  L2, -9.91077  L2, -10.2367  L2, -10.434  L2, -10.5 " /><path d="M2, 10.5 L2, 10.434  L2, 10.2367  L2, 9.91077  L2, 9.46017  L2, 8.8906  L2, 8.20923  L2, 7.42462  L2, 6.54664  L2, 5.58634  L2, 4.55578  L2, 3.46793  L2, 2.33647  L2, 1.17563  L2, 2.55351e-15 " /><path d="M-2, 0 L-2, -1.17563  L-2, -2.33647  L-2, -3.46793  L-2, -4.55578  L-2, -5.58634  L-2, -6.54664  L-2, -7.42462  L-2, -8.20923  L-2, -8.8906  L-2, -9.46017  L-2, -9.91077  L-2, -10.2367  L-2, -10.434  L-2, -10.5 " /><path d="M-2, 10.5 L-2, 10.434  L-2, 10.2367  L-2, 9.91077  L-2, 9.46017  L-2, 8.8906  L-2, 8.20923  L-2, 7.42462  L-2, 6.54664  L-2, 5.58634  L-2, 4.55578  L-2, 3.46793  L-2, 2.33647  L-2, 1.17563  L-2, 2.55351e-15 " /><path d="M2.6, 0 L2.6, -0.940502  L2.6, -1.86918  L2.6, -2.77434  L2.6, -3.64462  L2.6, -4.46907  L2.6, -5.23731  L2.6, -5.9397  L2.6, -6.56738  L2.6, -7.11248  L2.6, -7.56814  L2.6, -7.92862  L2.6, -8.18939  L2.6, -8.34718  L2.6, -8.4 " /><path d="M2.6, 8.4 L2.6, 8.34718  L2.6, 8.18939  L2.6, 7.92862  L2.6, 7.56814  L2.6, 7.11248  L2.6, 6.56738  L2.6, 5.9397  L2.6, 5.23731  L2.6, 4.46907  L2.6, 3.64462  L2.6, 2.77434  L2.6, 1.86918  L2.6, 0.940502  L2.6, 2.05391e-15 " /></g>
+</g><path class="dim" d="M176.52857142857144 243.5v12 M203.47142857142856 243.5v12 M176.52857142857144 249.5H203.47142857142856"/><text text-anchor="middle" class="value" x="190" y="263.5">4.60 mm REF</text><text class="label" x="395" y="89">FRONT / XZ</text><g transform="translate(553.2428571428571 177.0) scale(5.857142857142857)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -2 -10.5 L 2 -10.5 " />
+<path id= "2" d=" M 2 -8.4 L 2.6 -8.4 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path d="M2, 10.5 L2, 10.2367  L2, 9.46017  L2, 8.20923  L2, 6.54664  L2, 4.55578  L2, 2.33647  L2, 4.44089e-16  L2, -2.33647  L2, -4.55578  L2, -6.54664  L2, -8.20923  L2, -9.46017  L2, -10.2367  L2, -10.5 " /><path id= "2" d=" M -2 10.5 L 2 10.5 " />
+<path d="M-2, 10.5 L-2, 10.2367  L-2, 9.46017  L-2, 8.20923  L-2, 6.54664  L-2, 4.55578  L-2, 2.33647  L-2, 4.44089e-16  L-2, -2.33647  L-2, -4.55578  L-2, -6.54664  L-2, -8.20923  L-2, -9.46017  L-2, -10.2367  L-2, -10.5 " /><path d="M2.6, 8.4 L2.6, 8.18939  L2.6, 7.56814  L2.6, 6.56738  L2.6, 5.23731  L2.6, 3.64462  L2.6, 1.86918  L2.6, 4.44089e-16  L2.6, -1.86918  L2.6, -3.64462  L2.6, -5.23731  L2.6, -6.56738  L2.6, -7.56814  L2.6, -8.18939  L2.6, -8.4 " /><path id= "5" d=" M 2 8.4 L 2.6 8.4 " />
+</g>
+</g><path class="dim" d="M541.5285714285715 243.5v12 M568.4714285714285 243.5v12 M541.5285714285715 249.5H568.4714285714285"/><text text-anchor="middle" class="value" x="555" y="263.5">4.60 mm REF</text><text class="label" x="30" y="289">END / YZ</text><g transform="translate(190.0 377.0) scale(5.857142857142857)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<circle cx ="0" cy ="0" r ="10.5" /><circle cx ="0" cy ="0" r ="8.4" /><circle cx ="0" cy ="0" r ="4" /></g>
+</g><path class="dim" d="M128.5 443.5v12 M251.5 443.5v12 M128.5 449.5H251.5"/><text text-anchor="middle" class="value" x="190" y="463.5">21.00 mm REF</text><text class="label" x="395" y="289">ISOMETRIC</text><g transform="translate(555.0 377.0) scale(5.767413878455509)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -4.69233 -9.56472 L -1.23221 -10.5822 " />
+<path id= "2" d=" M 1.23221 10.5822 L 4.69233 9.56472 " />
+<path id= "3" d=" M -0.639755 -8.56754 L -0.120736 -8.72016 " />
+<path id= "4" d=" M 4.09988 7.55003 L 4.6189 7.3974 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path d="M1.73006 8.54161 A10.5 4.54073 -106.387 0 1 -1.23221 -10.5822" />
+<path d="M-1.23221 -10.5822 A10.5 4.54073 -106.387 0 1 4.69233 9.56472" />
+<path d="M4.69233 9.56472 A10.5 4.54073 -106.387 0 1 1.73006 8.54161" />
+<path d="M-1.73006 9.55912 A10.5 4.54073 -106.387 0 1 -4.69233 -9.56472" />
+<path d="M1.23221 10.5822 A10.5 4.54073 -106.387 0 1 -1.73006 9.55912" />
+<path d="M0.87497 -4.37537 A4 1.7298 -106.387 0 1 3.10417 3.20524" />
+<path d="M2.24908 6.57891 A8.4 3.63259 -106.387 0 1 -0.120736 -8.72016" />
+<path d="M-0.120736 -8.72016 A8.4 3.63259 -106.387 0 1 4.6189 7.3974" />
+<path d="M4.6189 7.3974 A8.4 3.63259 -106.387 0 1 2.24908 6.57891" />
+<path d="M1.73006 6.73154 A8.4 3.63259 -106.387 0 1 -0.639755 -8.56754" />
+<path d="M4.09988 7.55003 A8.4 3.63259 -106.387 0 1 1.73006 6.73154" />
+<path d="M2.24908 2.78638 A4 1.7298 -106.387 0 1 1.1206 -4.49889" />
+<path d="M1.1206 -4.49889 A4 1.7298 -106.387 0 1 3.37757 3.17614" />
+<path d="M3.37757 3.17614 A4 1.7298 -106.387 0 1 2.24908 2.78638" />
+<path d="M0.87497 -4.37537 A4 1.7298 -106.387 0 1 3.10417 3.20524" />
+</g>
+</g>
+<text x="26" y="483">GEOMETRIC REFERENCE  •  INTERFACE AND TOLERANCE RELEASE PENDING</text>
+<text x="26" y="501">Reference envelope (X × Y × Z) 4.60 × 21.00 × 21.00 mm · Views fit to sheet</text>
+<text x="26" y="518">Material / Hardware specification TBD · Dimensional and geometric tolerances pending</text>
+</svg>
