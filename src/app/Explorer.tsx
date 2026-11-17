@@ -137,9 +137,16 @@ export function AssemblyWorkbench({ selected,onSelect,telemetry,liveTelemetry,co
   return <>
     <header className="page-header">
       <div><div className="eyebrow">ASSEMBLY &amp; KINEMATICS / {machine.code}</div><h1>{machine.name} <span>{machine.code}</span></h1>
-        <p>{('description' in machine&&machine.description) || (machine.configuration ? `${machine.configuration} Configuration.` : machine.key==='re01'?'Industrial control, rotor dynamics and reciprocating fluid delivery.':'Instrumented rotor, vibration isolation and phase estimation.')}</p></div>
-      <div className="revision-mark"><span><i /> Preliminary design</span><small>REV 0.1</small></div>
+        <p>{machine.description ?? (machine.configuration ? `${machine.configuration} Configuration.` : 'Industrial control, rotor dynamics and reciprocating fluid delivery.')}</p></div>
+      <div className="revision-mark"><span><i /> Preliminary design</span><small>REV {part.revision}</small></div>
     </header>
+    {machine.key==='te01' && <nav className="document-tabs turbo-references" aria-label="Historical Turbo Encabulator configurations">
+      <span>Historical references</span>
+      <a href="#/archive/quick-1944">Quick · 1944 publication</a>
+      <a href="#/archive/ge-1962/assembly">General Electric · 1962 catalog model</a>
+      <a href="#/archive/haggart">Bud Haggart · studio presentation</a>
+      <a href="#/archive/chrysler/assembly">Chrysler · filmed transmission</a>
+    </nav>}
     <div className="workspace">
       <PartsTree selected={part.id} onSelect={select} scope={assembly} onScope={id => { setAssembly(id); setIsolatePart(false) }}
         hidden={hidden} toggleHidden={id => setHidden(previous => {

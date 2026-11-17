@@ -158,7 +158,7 @@ export function PartRecord({ part,onSelect }: { part:Part,onSelect:(id:string)=>
           <dt>Inspection and maintenance</dt><dd>{part.maintenance}</dd>
           <dt>Installation and removal</dt><dd><a href={machine.href('engineering/service')}>Assembly and service sequence</a>. Released procedure pending.</dd>
           <dt>CAD reference</dt><dd>{part.kind === 'logical' ? 'Controller computation' : <a href={assetUrl(part.cadAssetPath ?? 'models/te01-part-solids.zip')} download>{part.id} · CAD download</a>}</dd>
-          <dt>Revision history</dt><dd><a href={machine.href('engineering/revisions')}>0.1 · Baseline definition</a></dd>
+          <dt>Revision history</dt><dd><a href={machine.href('engineering/revisions')}>{part.revision} · Revision record</a></dd>
           {machine.key!=='te01' && part.kind!=='logical' && <><dt>Technical drawing</dt><dd><a href={assetUrl(part.diagramRefs[0])} download>Dimensioned schematic SVG</a></dd></>}
           {archivalSource && <><dt>Reconstruction evidence</dt><dd><a href={archivalSource.url}>{archivalSource.id} · {archivalSource.title}</a>. {archivalSource.relevance}</dd></>}
           {source && <><dt>Terminology source</dt><dd><a href={sourceTrace.url}>Rockwell transcript, p. {sourceTrace.page}, ¶{source.paragraph}</a></dd></>}

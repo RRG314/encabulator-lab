@@ -40,6 +40,7 @@ def add_asset(assets, output, name, filename):
 
 def export(slug, entry):
     code, bounds, axis, groups, build = entry
+    revision='0.2' if slug=='ge-1962' else '0.1'
     items = build()
     prefix = code.split('-')[0]
     out = OUTPUT/slug
@@ -73,7 +74,7 @@ def export(slug, entry):
         step=part_dir/f'{id}.step'
         shape.exportStep(str(step))
         drawing.write_text(sheet(id,item.name,shape,item.interface,material,model=code,edge_only=True))
-        parts.append(dict(id=id,name=item.name,assemblyId=group_for(item.group),revision='0.1',
+        parts.append(dict(id=id,name=item.name,assemblyId=group_for(item.group),revision=revision,
             description=item.interface,function=item.interface,material=material,quantity=len(item.stations),massKg=mass,
             dimensionsMm=dims,mounting=item.interface,matingPartIds=linked,fastenerIds=[],sensors=[],ports=[],equations=[],
             limits='Nominal reconstruction dimensions. Operating limits require qualification.',
@@ -153,7 +154,7 @@ def export(slug, entry):
         for p in parts:
             writer.writerow([p[k] for k in ('id','name','quantity','assemblyId','material','massKg')]+[by_id[p['id']].source])
     add_asset(assets,out,'Bill of materials · CSV','bom.csv')
-    write_json(out/'validation.json',dict(code=code,revision='0.1',checks=checks,
+    write_json(out/'validation.json',dict(code=code,revision=revision,checks=checks,
         estimatedMassKg=sum(p['quantity']*p['massKg'] for p in parts),fabricationRelease=False))
     add_asset(assets,out,'CAD validation report','validation.json')
     package='engineering-package.zip'
@@ -165,12 +166,12 @@ def export(slug, entry):
         sources=[source for source in json.loads((DATA/'sources.json').read_text()) if source['id'] in record['sourceIds']]
         archive.writestr('source-traceability.json',json.dumps(dict(record=record,sources=sources),indent=2,ensure_ascii=False))
     add_asset(assets,out,'Complete engineering package',package)
-    scene=dict(code=code,slug=slug,revision='0.1',assetFolder=f'models/archive/{slug}',
+    scene=dict(code=code,slug=slug,revision=revision,assetFolder=f'models/archive/{slug}',
         mesh=f'models/archive/{slug}/assembly.glb',boundsMm=list(bounds),shaftHeight=axis,
         rotating=[id for id,item in by_id.items() if item.rotates],
         inputParts=[id for id,item in by_id.items() if item.input_drive],
         guard=[id for id,item in by_id.items() if item.cover],
-        defaultPart=next((id for id,item in by_id.items() if item.rotates),parts[0]['id']),
+        defaultPart='GE-009' if slug=='ge-1962' else next((id for id,item in by_id.items() if item.rotates),parts[0]['id']),
         assets=assets,placements=layout,parts=parts,assemblies=assembly,connections=links,service=service)
     write_json(out/'manifest.json',scene)
     print(code,len(parts),'part definitions,',len(layout),'placements,',len(contacts),'assembled contact reviews,',

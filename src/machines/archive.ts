@@ -57,6 +57,7 @@ export function archiveProfile(entry:ArchiveEntry, model:ArchiveCad):DisplayProf
     key:entry.id, code:entry.code, name:entry.name, description:entry.configuration,
     registry:registry(model.parts,model.assemblies,model.connections),
     placements:model.placements as Placement[], shaftHeight:model.shaftHeight,
+    isoDirection:entry.id==='ge-1962'?[-.7,-1,.52]:undefined,
     shaftY:model.placements.find(row=>model.rotating.includes(row.partId))?.origin[1],
     baseMm:[x,y], boundsMm:model.boundsMm, mesh:model.mesh, assetFolder:model.assetFolder,
     defaultPart:model.defaultPart, voltage:null, speed:null, guard:model.guard, rotating:model.rotating, inputParts:model.inputParts,

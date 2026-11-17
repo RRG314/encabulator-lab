@@ -23,6 +23,7 @@ export const finishes = {
   red: { color: '#ce483c', metalness: 0.16, roughness: 0.41 },
   blue: { color: '#457e93', metalness: 0.2, roughness: 0.44 },
   sensor: { color: '#73bab9', metalness: 0.23, roughness: 0.43 },
+  enamel: { color: '#e1dfd6', metalness: 0.08, roughness: 0.43 },
 } as const
 
 type Piece = [Finish, BufferGeometry]

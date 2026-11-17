@@ -109,7 +109,8 @@ function CameraRig({ machine, cameraFocus, explosionParts, preset, fraction, vis
     if (bounds.isEmpty()) return
     const target = bounds.getCenter(new Vector3())
     const oldDirection = camera.position.clone().sub(controls.target).normalize()
-    const direction = initial.current ? new Vector3(...(linkedDirection??presets[preset])).normalize() : oldDirection
+    const nominalDirection=preset==='Iso'&&machine.isoDirection?machine.isoDirection:presets[preset]
+    const direction = initial.current ? new Vector3(...(linkedDirection??nominalDirection)).normalize() : oldDirection
     const distance = Math.max(bounds.getSize(new Vector3()).length(), 45)
     const fitDepth = camera.type === 'PerspectiveCamera'
       ? distance * Math.max(1.45, size.height / size.width * 1.38)

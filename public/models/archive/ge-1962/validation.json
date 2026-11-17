@@ -1,18 +1,18 @@
 {
   "code": "GE-62",
-  "revision": "0.1",
+  "revision": "0.2",
   "checks": [
     {
       "check": "Valid positive-volume part definitions",
       "status": "PASS",
-      "expected": 11,
-      "observed": 11
+      "expected": 20,
+      "observed": 20
     },
     {
       "check": "Unique instance placements",
       "status": "PASS",
-      "expected": 13,
-      "observed": 13
+      "expected": 37,
+      "observed": 37
     },
     {
       "check": "Assembled finite-volume contacts",
@@ -29,6 +29,6 @@
       "unit": "mm³"
     }
   ],
-  "estimatedMassKg": 8.251184400127523,
+  "estimatedMassKg": 9.011160595921904,
   "fabricationRelease": false
 }

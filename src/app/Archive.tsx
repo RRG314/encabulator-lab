@@ -116,6 +116,7 @@ function ArchiveRecord({record,view,detail}:{record:ArchiveEntry;view?:string;de
   const links=<nav className="document-tabs" aria-label="Configuration documents">
     <a href={archiveHref()}>Configuration index</a>
     <a href={archiveHref(record.id)} aria-current={!view?'page':undefined}>Technical record</a>
+    {record.id==='ge-1962'&&<a href={sourceById.get('G62A')!.url}>1962 catalog photograph · Figure 1</a>}
     {assembly&&<a href={assembly} aria-current={view==='assembly'?'page':undefined}>Assembly workbench</a>}
     {testBench&&<a href={testBench} aria-current={view==='study'?'page':undefined}>Operating study</a>}
     {model&&<a href={archiveHref(record.id,'bom')} aria-current={view==='bom'?'page':undefined}>Component register</a>}

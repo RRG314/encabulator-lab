@@ -14,6 +14,8 @@ The simulated Retro drive couples a reduced-speed crank-slider to a low-head wat
 
 The archive retains historical records and project configurations under distinct IDs. Nominal CAD reconstructions are available for General Electric GE-62, Chrysler CH-88, Micro MI-16, Electro ET-21 and Magneto MT-22. Each package includes selectable tessellations, FreeCAD and STEP assemblies, STEP/STL components, SVG sheets, a BOM and provenance. The static interference reports address the nominal assembled and separated endpoints. Swept service paths, historical dimensions, fits, wiring and physical qualification remain open.
 
+GE-62 revision 0.2 follows HBK-8359 figure 1 for the external cylinder, scalloped base, exposed fan, crown tubing and dual side meters. The catalog view establishes form and relative layout. Scale, hidden geometry and materials remain nominal.
+
 The Maryland, SANS and Macquarie records have browser-based process studies. Other presentations remain indexed with their available source-level component records. Strategic Learning is retained as a research lead pending an attributable source. The ME-01 installation laboratory compares defined load boundaries against a separately calculated direct-drive reference. Host couplers, mounts and containment are outside the current physical CAD definition.
 
 ## Metachronic configuration

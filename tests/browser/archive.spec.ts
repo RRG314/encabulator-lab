@@ -1,5 +1,17 @@
 import { expect, test } from '@playwright/test'
 
+test('distinguishes the TE-01 bench from the photographed GE configuration',async({page})=>{
+  await page.goto('./#/explorer')
+  await expect(page.getByText(/Bench-scale engineering design/)).toBeVisible()
+  const references=page.getByRole('navigation',{name:'Historical Turbo Encabulator configurations'})
+  await expect(references.getByRole('link',{name:/Quick/})).toHaveAttribute('href','#/archive/quick-1944')
+  await references.getByRole('link',{name:/General Electric/}).click()
+  await expect(page.getByRole('heading',{name:'General Electric Turboencabulator GE-62'})).toBeVisible()
+  await expect(page.getByRole('link',{name:/1962 catalog photograph/})).toHaveAttribute('href',/GE_Turboencabulator_pg_1/)
+  await expect(page.getByText('CAD SCHEMATIC',{exact:true})).toBeVisible({timeout:15000})
+  await expect(page.getByRole('heading',{name:'Pentametric fan',level:3})).toBeVisible()
+})
+
 test('filters the archive, opens independent Magneto CAD, and traces parts to drawings',async({page})=>{
   test.setTimeout(60000)
   await page.goto('./#/archive')

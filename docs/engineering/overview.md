@@ -2,6 +2,8 @@
 
 The TE-01 is a bench-scale electromechanical design study with a nominal 24 V DC drive, supported shaft and six indexed vanes. Its instrumentation tracks speed, vibration, temperature, and bus voltage and current. The phase estimator compares paired signals at a specified frequency.
 
+The historical archive records the [1944 Quick publication](#/archive/quick-1944), the [1962 General Electric configuration](#/archive/ge-1962), the [Bud Haggart studio presentation](#/archive/haggart), and the [Chrysler service configuration](#/archive/chrysler) separately. TE-01 dimensions and packaging originate in the current engineering series.
+
 | Target | Value | Qualification |
 |---|---|---|
 | Package envelope | Approximately 300 × 200 × 200 mm | Preliminary |

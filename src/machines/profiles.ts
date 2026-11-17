@@ -30,7 +30,7 @@ export interface ServiceRecord {
   centroidAxisInertiaKgM2?: number[]
 }
 export type MachineProfile = {
-  key: MachineKey, code: string, name: string, configuration?:string, registry: ReturnType<typeof registry>,
+  key: MachineKey, code: string, name: string, configuration?:string, description?:string, registry: ReturnType<typeof registry>,
   placements: Placement[], shaftHeight: number, baseMm: [number, number], boundsMm: [number, number, number],
   mesh: string, assetFolder: string, defaultPart: string, voltage: number, speed: [number, number],
   guard: readonly string[], rotating: readonly string[], motor: string, fan: string, harness: string,
@@ -38,7 +38,7 @@ export type MachineProfile = {
 }
 export type DisplayProfile = Omit<MachineProfile,'key'|'speed'|'voltage'> & {
   key:string, speed:MachineProfile['speed'] | null, voltage:number | null,
-  description?:string, shaftY?:number, inputParts?:string[], href:(path:string)=>string,
+  shaftY?:number, inputParts?:string[], isoDirection?:Vec3, href:(path:string)=>string,
 }
 const candidateTools: Record<string, string> = {
   'TE-001': '5 mm hex key · candidate M6 attachment', 'TE-002': '13 mm spanner · candidate foot locknut',
@@ -59,7 +59,9 @@ const candidateTools: Record<string, string> = {
 }
 
 export const machines: Record<MachineKey, MachineProfile> = {
-  te01: {key:'te01',code:'TE-01',name:'Turbo Encabulator',registry:teRegistry,placements,shaftHeight,
+  te01: {key:'te01',code:'TE-01',name:'Turbo Encabulator',
+    description:'Bench-scale engineering design with an instrumented six-vane rotor, independent cooling, and phase estimation.',
+    registry:teRegistry,placements,shaftHeight,
     baseMm:[300,200],boundsMm:[300,200,200],mesh:'models/te01.glb',assetFolder:'models',defaultPart:'TE-009',voltage:24,speed:[300,3000],
     guard:['TE-014'],rotating:['TE-005','TE-008','TE-009','TE-010','TE-030'],motor:'TE-003',fan:'TE-012',harness:'TE-026',
     fanAt:[148,0,44],sensorAt:[48,0,78],wireAt:[-99,57,24],

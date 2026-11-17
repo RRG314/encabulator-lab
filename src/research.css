@@ -141,3 +141,10 @@ tr:hover td { background: #eff4f7; }
   .comparison-viewports, .comparison-viewports[data-columns="3"] { grid-template-columns: minmax(0,1fr); }
   .archive-filters { padding: .75rem; gap: .55rem; }
 }
+
+.turbo-references > span {
+  align-self: center;
+  font-size: .85rem;
+  font-weight: 600;
+  padding-inline: .4rem;
+}
