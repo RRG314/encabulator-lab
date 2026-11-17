@@ -24,8 +24,9 @@
   },
   "ge-1962":{
     "references":[
-      {"label":"HBK-8359 p. 801 · catalog photograph","kind":"Original catalog photograph · Figure 1","source":"G62A","localImage":"reference/ge-1962/hbk-8359-p801.jpg","alt":"General Electric handbook page 801 with a perspective photograph of the Turboencabulator"},
-      {"label":"HBK-8359 p. 802 · specifications","kind":"Original handbook · Operation and ratings","source":"G62B","localImage":"reference/ge-1962/hbk-8359-p802.jpg","alt":"General Electric handbook page 802 with the operation description and dimensional and wiring availability notes"}
+      {"label":"HBK-8359 p. 801 · catalog photograph","kind":"Original catalog photograph · Figure 1","source":"G62A","localImage":"reference/ge-1962/hbk-8359-p801.jpg","focus":"ge-figure","alt":"Figure 1 from General Electric handbook page 801, a perspective photograph of the Turboencabulator"},
+      {"label":"HBK-8359 p. 802 · specifications","kind":"Original handbook · Operation and ratings","source":"G62B","localImage":"reference/ge-1962/hbk-8359-p802.jpg","alt":"General Electric handbook page 802 with the operation description and dimensional and wiring availability notes"},
+      {"label":"HBK-8359 p. 801 · full page","kind":"Original handbook · Full catalog page","source":"G62A","localImage":"reference/ge-1962/hbk-8359-p801.jpg","alt":"Complete General Electric handbook page 801"}
     ],
     "matches":"Figure 1 shows the scalloped base, two exterior supports, cylindrical case, exposed fan, crown rail and meters. Page 802 specifies two aligned bearings, six internal vanes, forty-seven brushes with individual feeds, and two meters.",
     "limits":"The surviving handbook lists the dimension drawing and external wiring as supplied on delivery. The CAD dimensions, hidden contours, brush spacing and feed routing remain nominal."

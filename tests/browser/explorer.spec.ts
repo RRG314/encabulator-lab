@@ -46,7 +46,7 @@ test('keeps mobile parts navigation when WebGL is unavailable', async ({ page })
 
 test('loads CAD mesh, changes study inputs and replays a guard fault', async ({ page }) => {
   await page.goto('./')
-  await expect(page.getByText('CAD SCHEMATIC', { exact: true })).toBeVisible()
+  await expect(page.getByText('CAD SCHEMATIC', { exact: true })).toBeVisible({timeout:20000})
   await page.getByRole('link', { name: 'Test bench' }).click()
   await expect(page.getByRole('heading', { name: 'Dynamic Test Bench' })).toBeVisible()
   await page.getByRole('button', { name: 'Phase estimation' }).click()

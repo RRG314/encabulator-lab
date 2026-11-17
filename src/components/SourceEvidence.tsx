@@ -7,7 +7,7 @@ import verification from '../../public/models/source-conformance.json'
 
 type Reference = {
   label: string; kind: string; source?: string; href?: string
-  localImage?: string; preview?: string; imagePreview?: string; alt?: string
+  localImage?: string; preview?: string; imagePreview?: string; alt?: string; focus?: string
 }
 type Evidence = { references: Reference[]; matches: string; limits: string }
 const entries: Record<string,Evidence> = evidence
@@ -40,7 +40,7 @@ export function SourceEvidence({id,drawing}:{id:string;drawing?:string}) {
         {references.map((item,i)=><option key={item.label} value={i}>{item.label}</option>)}
         {drawing&&<option value="drawing">Project CAD drawing</option>}
       </select></label>}
-      {local&&<a className="source-preview" href={assetUrl(local)} target="_blank" rel="noreferrer">
+      {local&&<a className="source-preview" data-focus={reference?.focus} href={assetUrl(local)} target="_blank" rel="noreferrer">
         <img src={assetUrl(local)} alt={reference?.alt??record?.code+' project CAD drawing'} loading="lazy"/>
       </a>}
       {external&&<iframe className="source-preview external-preview" src={external} title={reference!.label} referrerPolicy="no-referrer" loading="lazy" allowFullScreen />}
