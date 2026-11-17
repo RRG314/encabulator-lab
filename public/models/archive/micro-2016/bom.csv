@@ -1,0 +1,11 @@
+part_id,name,quantity,assembly,material,mass_kg,source_id
+MI-001,Portable enclosure tray,1,MI-A1,Cast aluminum candidate,0.8965080000000004,P16
+MI-002,Hinged lid,1,MI-A1,Machined aluminum candidate,0.42852011100482584,P16
+MI-003,Hinge knuckle,2,MI-A1,Steel candidate,0.013285644535583865,P16
+MI-004,Lid backplane,1,MI-A2,FR-4 laminate candidate,0.09773857133754077,P16
+MI-005,Interface terminal strip,1,MI-A2,Insulating polymer candidate,0.024,P16
+MI-006,Lid relay module,2,MI-A2,Anodized aluminum candidate,0.0455544,P16
+MI-007,Control compartment plate,1,MI-A3,Machined aluminum candidate,0.22971343383028847,
+MI-008,Instrument input module,1,MI-A3,FR-4 laminate candidate,0.11904307971708368,
+MI-009,Shielded discharge module,1,MI-A3,Anodized aluminum candidate,0.24261120000000003,
+MI-010,Lid services harness,1,MI-A2,Red nylon candidate,0.007166315445664522,P16

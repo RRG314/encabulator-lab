@@ -1,0 +1,34 @@
+{
+  "code": "GE-62",
+  "revision": "0.1",
+  "checks": [
+    {
+      "check": "Valid positive-volume part definitions",
+      "status": "PASS",
+      "expected": 11,
+      "observed": 11
+    },
+    {
+      "check": "Unique instance placements",
+      "status": "PASS",
+      "expected": 13,
+      "observed": 13
+    },
+    {
+      "check": "Assembled finite-volume contacts",
+      "status": "PASS",
+      "expected": "Documented interface disposition",
+      "observed": [],
+      "unit": "mm³"
+    },
+    {
+      "check": "Separated finite-volume contacts",
+      "status": "PASS",
+      "expected": [],
+      "observed": [],
+      "unit": "mm³"
+    }
+  ],
+  "estimatedMassKg": 8.251184400127523,
+  "fabricationRelease": false
+}

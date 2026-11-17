@@ -1,0 +1,13 @@
+part_id,name,quantity,assembly,material,mass_kg,source_id
+CH-001,Bench mounting tray,1,CH-A1,Machined aluminum candidate,3.186719204239918,
+CH-002,Ribbed bell casting,1,CH-A1,Cast aluminum candidate,0.8194330089548968,CHV
+CH-003,Bell flange,1,CH-A1,Steel candidate,2.4018034411867797,CHV
+CH-004,End case,1,CH-A1,Cast aluminum candidate,1.4137232534988042,CHV
+CH-005,Drive input shaft,1,CH-A2,Steel candidate,0.41567159470379583,
+CH-006,Drive impeller,1,CH-A2,Aluminum alloy candidate,0.25710425997472053,
+CH-007,Driven turbine,1,CH-A2,Machined aluminum candidate,0.25177874363076924,
+CH-008,Driven hub and shaft,1,CH-A2,Steel candidate,0.593282748029259,
+CH-009,Output seal carrier,1,CH-A3,Anodized aluminum candidate,0.03766141273123445,
+CH-010,Service cover,1,CH-A3,Coated aluminum candidate,0.20986907067482047,CHV
+CH-011,Lower case stand,1,CH-A1,Machined aluminum candidate,2.3924160000000003,
+CH-012,Case transition ring,1,CH-A1,Cast aluminum candidate,0.16970537939500172,

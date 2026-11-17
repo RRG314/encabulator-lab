@@ -1,0 +1,1028 @@
+{
+  "code": "CH-88",
+  "slug": "chrysler",
+  "revision": "0.1",
+  "assetFolder": "models/archive/chrysler",
+  "mesh": "models/archive/chrysler/assembly.glb",
+  "boundsMm": [
+    346,
+    285,
+    238
+  ],
+  "shaftHeight": 125,
+  "rotating": [
+    "CH-005",
+    "CH-006",
+    "CH-007",
+    "CH-008"
+  ],
+  "inputParts": [
+    "CH-005",
+    "CH-006"
+  ],
+  "guard": [
+    "CH-002",
+    "CH-003",
+    "CH-004",
+    "CH-010"
+  ],
+  "defaultPart": "CH-005",
+  "assets": [
+    {
+      "name": "Assembled STEP",
+      "path": "models/archive/chrysler/assembled.step"
+    },
+    {
+      "name": "Assembled engineering drawing",
+      "path": "models/archive/chrysler/drawings/assembled.svg"
+    },
+    {
+      "name": "Exploded STEP",
+      "path": "models/archive/chrysler/exploded.step"
+    },
+    {
+      "name": "Exploded engineering drawing",
+      "path": "models/archive/chrysler/drawings/exploded.svg"
+    },
+    {
+      "name": "Editable FreeCAD assembly",
+      "path": "models/archive/chrysler/assembly.FCStd"
+    },
+    {
+      "name": "CAD-derived GLB",
+      "path": "models/archive/chrysler/assembly.glb"
+    },
+    {
+      "name": "Component solids · STEP and STL",
+      "path": "models/archive/chrysler/solids.zip"
+    },
+    {
+      "name": "Drawing set · SVG",
+      "path": "models/archive/chrysler/drawings.zip"
+    },
+    {
+      "name": "Bill of materials · CSV",
+      "path": "models/archive/chrysler/bom.csv"
+    },
+    {
+      "name": "CAD validation report",
+      "path": "models/archive/chrysler/validation.json"
+    },
+    {
+      "name": "Complete engineering package",
+      "path": "models/archive/chrysler/engineering-package.zip"
+    }
+  ],
+  "placements": [
+    {
+      "key": "CH-001:1",
+      "partId": "CH-001",
+      "origin": [
+        0,
+        0,
+        -6
+      ],
+      "offset": [
+        0,
+        0,
+        -28
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "CH-002:1",
+      "partId": "CH-002",
+      "origin": [
+        -58,
+        0,
+        125
+      ],
+      "offset": [
+        -185,
+        140,
+        205
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "CH-003:1",
+      "partId": "CH-003",
+      "origin": [
+        0.5,
+        0,
+        125
+      ],
+      "offset": [
+        0,
+        95,
+        148
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "CH-004:1",
+      "partId": "CH-004",
+      "origin": [
+        84,
+        0,
+        125
+      ],
+      "offset": [
+        130,
+        0,
+        140
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "CH-005:1",
+      "partId": "CH-005",
+      "origin": [
+        -89,
+        0,
+        125
+      ],
+      "offset": [
+        -225,
+        0,
+        0
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "CH-006:1",
+      "partId": "CH-006",
+      "origin": [
+        -30,
+        0,
+        125
+      ],
+      "offset": [
+        0,
+        -105,
+        69
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "CH-007:1",
+      "partId": "CH-007",
+      "origin": [
+        6,
+        0,
+        125
+      ],
+      "offset": [
+        12,
+        -138,
+        130
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "CH-008:1",
+      "partId": "CH-008",
+      "origin": [
+        69,
+        0,
+        125
+      ],
+      "offset": [
+        180,
+        30,
+        45
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "CH-009:1",
+      "partId": "CH-009",
+      "origin": [
+        145,
+        0,
+        125
+      ],
+      "offset": [
+        63,
+        -101,
+        83
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "CH-010:1",
+      "partId": "CH-010",
+      "origin": [
+        -115,
+        0,
+        125
+      ],
+      "offset": [
+        -107,
+        60,
+        70
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "CH-011:1",
+      "partId": "CH-011",
+      "origin": [
+        86,
+        0,
+        30
+      ],
+      "offset": [
+        34,
+        105,
+        -18
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "CH-012:1",
+      "partId": "CH-012",
+      "origin": [
+        16.5,
+        0,
+        125
+      ],
+      "offset": [
+        45,
+        139,
+        103
+      ],
+      "stage": 2,
+      "rotation": 0
+    }
+  ],
+  "parts": [
+    {
+      "id": "CH-001",
+      "name": "Bench mounting tray",
+      "assemblyId": "CH-A1",
+      "revision": "0.1",
+      "description": "Datum A at the nominal service fixture",
+      "function": "Datum A at the nominal service fixture",
+      "material": "Machined aluminum candidate",
+      "quantity": 1,
+      "massKg": 3.186719204239918,
+      "dimensionsMm": {
+        "length": 346.0,
+        "width": 285.0,
+        "height": 12.0
+      },
+      "mounting": "Datum A at the nominal service fixture",
+      "matingPartIds": [
+        "CH-002",
+        "CH-004",
+        "CH-011"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the bench mounting tray and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-001.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-001.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "CH-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-002",
+      "name": "Ribbed bell casting",
+      "assemblyId": "CH-A1",
+      "revision": "0.1",
+      "description": "Open wide flange toward positive X",
+      "function": "Open wide flange toward positive X",
+      "material": "Cast aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.8194330089548968,
+      "dimensionsMm": {
+        "length": 104.0,
+        "width": 204.0,
+        "height": 204.0
+      },
+      "mounting": "Open wide flange toward positive X",
+      "matingPartIds": [
+        "CH-001",
+        "CH-003",
+        "CH-006",
+        "CH-010"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the ribbed bell casting and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-002.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-002.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Cast aluminum candidate",
+      "sourceAssembly": "CH-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-003",
+      "name": "Bell flange",
+      "assemblyId": "CH-A1",
+      "revision": "0.1",
+      "description": "Nominal ten-position service split",
+      "function": "Nominal ten-position service split",
+      "material": "Steel candidate",
+      "quantity": 1,
+      "massKg": 2.4018034411867797,
+      "dimensionsMm": {
+        "length": 13.0,
+        "width": 212.0,
+        "height": 212.0
+      },
+      "mounting": "Nominal ten-position service split",
+      "matingPartIds": [
+        "CH-002",
+        "CH-012"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the bell flange and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-003.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-003.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "CH-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-004",
+      "name": "End case",
+      "assemblyId": "CH-A1",
+      "revision": "0.1",
+      "description": "Rear opposed end case and output journal",
+      "function": "Rear opposed end case and output journal",
+      "material": "Cast aluminum candidate",
+      "quantity": 1,
+      "massKg": 1.4137232534988042,
+      "dimensionsMm": {
+        "length": 116.0,
+        "width": 144.0,
+        "height": 130.0
+      },
+      "mounting": "Rear opposed end case and output journal",
+      "matingPartIds": [
+        "CH-001",
+        "CH-008",
+        "CH-009"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the end case and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-004.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-004.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Cast aluminum candidate",
+      "sourceAssembly": "CH-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-005",
+      "name": "Drive input shaft",
+      "assemblyId": "CH-A2",
+      "revision": "0.1",
+      "description": "Coaxial input datum within the drive element",
+      "function": "Coaxial input datum within the drive element",
+      "material": "Steel candidate",
+      "quantity": 1,
+      "massKg": 0.41567159470379583,
+      "dimensionsMm": {
+        "length": 132.0,
+        "width": 22.6,
+        "height": 22.6
+      },
+      "mounting": "Coaxial input datum within the drive element",
+      "matingPartIds": [
+        "CH-006"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the drive input shaft and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-005.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-005.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "CH-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-006",
+      "name": "Drive impeller",
+      "assemblyId": "CH-A2",
+      "revision": "0.1",
+      "description": "Input member of fluid-coupling analogue",
+      "function": "Input member of fluid-coupling analogue",
+      "material": "Aluminum alloy candidate",
+      "quantity": 1,
+      "massKg": 0.25710425997472053,
+      "dimensionsMm": {
+        "length": 17.0,
+        "width": 96.0,
+        "height": 96.0
+      },
+      "mounting": "Input member of fluid-coupling analogue",
+      "matingPartIds": [
+        "CH-005",
+        "CH-002"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the drive impeller and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-006.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-006.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Aluminum alloy candidate",
+      "sourceAssembly": "CH-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-007",
+      "name": "Driven turbine",
+      "assemblyId": "CH-A2",
+      "revision": "0.1",
+      "description": "Output member opposite the impeller with unsteady-fluid clearance",
+      "function": "Output member opposite the impeller with unsteady-fluid clearance",
+      "material": "Machined aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.25177874363076924,
+      "dimensionsMm": {
+        "length": 17.0,
+        "width": 96.0,
+        "height": 96.0
+      },
+      "mounting": "Output member opposite the impeller with unsteady-fluid clearance",
+      "matingPartIds": [
+        "CH-008"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the driven turbine and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-007.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-007.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "CH-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-008",
+      "name": "Driven hub and shaft",
+      "assemblyId": "CH-A2",
+      "revision": "0.1",
+      "description": "Coaxial shaft to the outboard output datum",
+      "function": "Coaxial shaft to the outboard output datum",
+      "material": "Steel candidate",
+      "quantity": 1,
+      "massKg": 0.593282748029259,
+      "dimensionsMm": {
+        "length": 136.0,
+        "width": 26.6,
+        "height": 26.6
+      },
+      "mounting": "Coaxial shaft to the outboard output datum",
+      "matingPartIds": [
+        "CH-007",
+        "CH-004"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the driven hub and shaft and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-008.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-008.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "CH-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-009",
+      "name": "Output seal carrier",
+      "assemblyId": "CH-A3",
+      "revision": "0.1",
+      "description": "Seal reference inside nominal end-case opening",
+      "function": "Seal reference inside nominal end-case opening",
+      "material": "Anodized aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.03766141273123445,
+      "dimensionsMm": {
+        "length": 12.0,
+        "width": 47.0,
+        "height": 47.0
+      },
+      "mounting": "Seal reference inside nominal end-case opening",
+      "matingPartIds": [
+        "CH-004"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the output seal carrier and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-009.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-009.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Anodized aluminum candidate",
+      "sourceAssembly": "CH-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-010",
+      "name": "Service cover",
+      "assemblyId": "CH-A3",
+      "revision": "0.1",
+      "description": "Dark removable service end plate",
+      "function": "Dark removable service end plate",
+      "material": "Coated aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.20986907067482047,
+      "dimensionsMm": {
+        "length": 8.0,
+        "width": 114.0,
+        "height": 114.0
+      },
+      "mounting": "Dark removable service end plate",
+      "matingPartIds": [
+        "CH-002"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the service cover and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-010.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-010.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Coated aluminum candidate",
+      "sourceAssembly": "CH-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-011",
+      "name": "Lower case stand",
+      "assemblyId": "CH-A1",
+      "revision": "0.1",
+      "description": "Load path from the case to fixture over lower mounting plane",
+      "function": "Load path from the case to fixture over lower mounting plane",
+      "material": "Machined aluminum candidate",
+      "quantity": 1,
+      "massKg": 2.3924160000000003,
+      "dimensionsMm": {
+        "length": 104.0,
+        "width": 142.0,
+        "height": 60.0
+      },
+      "mounting": "Load path from the case to fixture over lower mounting plane",
+      "matingPartIds": [
+        "CH-001"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the lower case stand and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-011.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-011.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "CH-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "CH-012",
+      "name": "Case transition ring",
+      "assemblyId": "CH-A1",
+      "revision": "0.1",
+      "description": "Annular locating step between bell flange and end case",
+      "function": "Annular locating step between bell flange and end case",
+      "material": "Cast aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.16970537939500172,
+      "dimensionsMm": {
+        "length": 19.0,
+        "width": 126.0,
+        "height": 126.0
+      },
+      "mounting": "Annular locating step between bell flange and end case",
+      "matingPartIds": [
+        "CH-003"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the case transition ring and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/chrysler/parts/CH-012.step",
+      "diagramRefs": [
+        "models/archive/chrysler/drawings/CH-012.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Cast aluminum candidate",
+      "sourceAssembly": "CH-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "CH-A1",
+      "name": "Fixture and transaxle castings",
+      "shortName": "Fixture and transaxle castings",
+      "description": "Fixture and transaxle castings",
+      "order": 1,
+      "partIds": [
+        "CH-001",
+        "CH-002",
+        "CH-003",
+        "CH-004",
+        "CH-011",
+        "CH-012"
+      ]
+    },
+    {
+      "id": "CH-A2",
+      "name": "Fluid torque stage",
+      "shortName": "Fluid torque stage",
+      "description": "Fluid torque stage",
+      "order": 2,
+      "partIds": [
+        "CH-005",
+        "CH-006",
+        "CH-007",
+        "CH-008"
+      ]
+    },
+    {
+      "id": "CH-A3",
+      "name": "Service outputs",
+      "shortName": "Service outputs",
+      "description": "Service outputs",
+      "order": 3,
+      "partIds": [
+        "CH-009",
+        "CH-010"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "CH-IF-002",
+      "kind": "mechanical",
+      "from": "CH-002",
+      "to": "CH-001",
+      "label": "Open wide flange toward positive X"
+    },
+    {
+      "id": "CH-IF-003",
+      "kind": "mechanical",
+      "from": "CH-003",
+      "to": "CH-002",
+      "label": "Nominal ten-position service split"
+    },
+    {
+      "id": "CH-IF-004",
+      "kind": "mechanical",
+      "from": "CH-004",
+      "to": "CH-001",
+      "label": "Rear opposed end case and output journal"
+    },
+    {
+      "id": "CH-IF-005",
+      "kind": "mechanical",
+      "from": "CH-005",
+      "to": "CH-006",
+      "label": "Coaxial input datum within the drive element"
+    },
+    {
+      "id": "CH-IF-006",
+      "kind": "mechanical",
+      "from": "CH-006",
+      "to": "CH-002",
+      "label": "Input member of fluid-coupling analogue"
+    },
+    {
+      "id": "CH-IF-007",
+      "kind": "mechanical",
+      "from": "CH-007",
+      "to": "CH-008",
+      "label": "Output member opposite the impeller with unsteady-fluid clearance"
+    },
+    {
+      "id": "CH-IF-008",
+      "kind": "mechanical",
+      "from": "CH-008",
+      "to": "CH-004",
+      "label": "Coaxial shaft to the outboard output datum"
+    },
+    {
+      "id": "CH-IF-009",
+      "kind": "mechanical",
+      "from": "CH-009",
+      "to": "CH-004",
+      "label": "Seal reference inside nominal end-case opening"
+    },
+    {
+      "id": "CH-IF-010",
+      "kind": "mechanical",
+      "from": "CH-010",
+      "to": "CH-002",
+      "label": "Dark removable service end plate"
+    },
+    {
+      "id": "CH-IF-011",
+      "kind": "mechanical",
+      "from": "CH-011",
+      "to": "CH-001",
+      "label": "Load path from the case to fixture over lower mounting plane"
+    },
+    {
+      "id": "CH-IF-012",
+      "kind": "mechanical",
+      "from": "CH-012",
+      "to": "CH-003",
+      "label": "Annular locating step between bell flange and end case"
+    }
+  ],
+  "service": {
+    "CH-001": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "6 mm hex key candidate",
+      "originSource": null,
+      "envelopeMm": [
+        346.0,
+        285.0,
+        12.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-002": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "13 mm socket candidate",
+      "originSource": "CHV",
+      "envelopeMm": [
+        104.0,
+        204.0,
+        204.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-003": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "13 mm socket candidate",
+      "originSource": "CHV",
+      "envelopeMm": [
+        13.0,
+        212.0,
+        212.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-004": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "13 mm socket candidate",
+      "originSource": "CHV",
+      "envelopeMm": [
+        116.0,
+        144.0,
+        130.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-005": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Soft-jaw shaft fixture",
+      "originSource": null,
+      "envelopeMm": [
+        132.0,
+        22.6,
+        22.6
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-006": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Retaining ring pliers",
+      "originSource": null,
+      "envelopeMm": [
+        17.0,
+        96.0,
+        96.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-007": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Retaining ring pliers",
+      "originSource": null,
+      "envelopeMm": [
+        17.0,
+        96.0,
+        96.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-008": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Soft-jaw shaft fixture",
+      "originSource": null,
+      "envelopeMm": [
+        136.0,
+        26.6,
+        26.6
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-009": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Hook spanner candidate",
+      "originSource": null,
+      "envelopeMm": [
+        12.0,
+        47.0,
+        47.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-010": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "10 mm socket candidate",
+      "originSource": "CHV",
+      "envelopeMm": [
+        8.0,
+        114.0,
+        114.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-011": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "6 mm hex key candidate",
+      "originSource": null,
+      "envelopeMm": [
+        104.0,
+        142.0,
+        60.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "CH-012": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "13 mm socket candidate",
+      "originSource": null,
+      "envelopeMm": [
+        19.0,
+        126.0,
+        126.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    }
+  }
+}

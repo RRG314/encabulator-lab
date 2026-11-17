@@ -1,0 +1,12 @@
+part_id,name,quantity,assembly,material,mass_kg,source_id
+MT-001,Fixture base rail,1,MT-A1,Machined aluminum candidate,1.621858599043434,A22
+MT-002,Outboard shaft support,2,MT-A1,Cast aluminum candidate,0.18983723719789694,A22
+MT-003,Through input shaft,1,MT-A2,Steel candidate,0.37061305702545716,A22
+MT-004,Lobed magnetic carrier,4,MT-A2,Machined aluminum candidate,0.11133968237226426,A22
+MT-005,Satellite magnet disk,20,MT-A2,Anodized aluminum candidate,0.011264494618711571,A22
+MT-006,Satellite pivot,20,MT-A2,Steel candidate,0.00373325822281832,
+MT-007,Outboard indicator disk,2,MT-A3,Red nylon candidate,0.04837581447630244,A22
+MT-008,Optical sensor stand,1,MT-A3,Anodized aluminum candidate,0.1042875,A22
+MT-009,Optical pickup,1,MT-A3,Insulating polymer candidate,0.01008,
+MT-010,Carrier torque sleeve,1,MT-A2,Steel candidate,0.21176930697364144,
+MT-011,Input magnetic coupling disk,1,MT-A2,Aluminum alloy candidate,0.10600839453826029,

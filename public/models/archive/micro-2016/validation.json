@@ -1,0 +1,34 @@
+{
+  "code": "MI-16",
+  "revision": "0.1",
+  "checks": [
+    {
+      "check": "Valid positive-volume part definitions",
+      "status": "PASS",
+      "expected": 10,
+      "observed": 10
+    },
+    {
+      "check": "Unique instance placements",
+      "status": "PASS",
+      "expected": 12,
+      "observed": 12
+    },
+    {
+      "check": "Assembled finite-volume contacts",
+      "status": "PASS",
+      "expected": "Documented interface disposition",
+      "observed": [],
+      "unit": "mm³"
+    },
+    {
+      "check": "Separated finite-volume contacts",
+      "status": "PASS",
+      "expected": [],
+      "observed": [],
+      "unit": "mm³"
+    }
+  ],
+  "estimatedMassKg": 2.1629808004065714,
+  "fabricationRelease": false
+}

@@ -1,0 +1,10 @@
+part_id,name,quantity,assembly,material,mass_kg,source_id
+ET-001,Measurement chassis,1,ET-A1,Cast aluminum candidate,1.1783637862604865,B21
+ET-002,Removable chassis cover,1,ET-A1,Machined aluminum candidate,0.4075744237389408,B21
+ET-003,Instrument fascia,1,ET-A1,Coated aluminum candidate,0.19531811501398066,B21
+ET-004,Readout module,1,ET-A2,Anodized aluminum candidate,0.17577000000000004,B21
+ET-005,Coaxial acquisition port,4,ET-A2,Copper alloy candidate,0.009865932967557075,K21
+ET-006,Acquisition printed circuit board,1,ET-A3,FR-4 laminate candidate,0.06266861707003264,B21
+ET-007,Spurving resonator package,2,ET-A3,Anodized aluminum candidate,0.0137376,K21
+ET-008,Panametric phase noise depositer,1,ET-A3,Insulating polymer candidate,0.00429,K21
+ET-009,Quantized entanglement realizer footprint,1,ET-A3,Copper alloy candidate,0.00016127999999999997,B21

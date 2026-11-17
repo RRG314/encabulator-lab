@@ -1,0 +1,12 @@
+part_id,name,quantity,assembly,material,mass_kg,source_id
+GE-001,Prefabulated Amulite baseplate,1,GE-A1,Machined aluminum candidate,2.3482211100482595,G62A
+GE-002,Logarithmic case,1,GE-A1,Coated aluminum candidate,2.8693224,G62A
+GE-003,Inrush and realization meter fascia,1,GE-A1,Cast aluminum candidate,0.49025501336704896,G62A
+GE-004,Inrush and realization panel meter,2,GE-A2,Anodized aluminum candidate,0.05936660097666265,G62A
+GE-005,Coaxial bearing pedestal,2,GE-A3,Steel candidate,0.5887385712408114,G62A
+GE-006,Rotor spindle,1,GE-A3,Steel candidate,0.4056323903350225,G62A
+GE-007,Semi-boloid stator carrier,1,GE-A3,Cast aluminum candidate,0.5021691343501218,G62A
+GE-008,Rotor sleeve,1,GE-A3,Machined aluminum candidate,0.23500721544290287,G62A
+GE-009,Pentametric fan,1,GE-A3,Aluminum alloy candidate,0.04212622081167964,G62A
+GE-010,Meter excitation and load board,1,GE-A2,FR-4 laminate candidate,0.023738571337540797,
+GE-011,Input protection module,1,GE-A2,Red nylon candidate,0.038502,G62A

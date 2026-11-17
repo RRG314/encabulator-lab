@@ -1,0 +1,977 @@
+{
+  "code": "GE-62",
+  "slug": "ge-1962",
+  "revision": "0.1",
+  "assetFolder": "models/archive/ge-1962",
+  "mesh": "models/archive/ge-1962/assembly.glb",
+  "boundsMm": [
+    366,
+    238,
+    158
+  ],
+  "shaftHeight": 65,
+  "rotating": [
+    "GE-006",
+    "GE-008",
+    "GE-009"
+  ],
+  "inputParts": [],
+  "guard": [
+    "GE-002",
+    "GE-003"
+  ],
+  "defaultPart": "GE-006",
+  "assets": [
+    {
+      "name": "Assembled STEP",
+      "path": "models/archive/ge-1962/assembled.step"
+    },
+    {
+      "name": "Assembled engineering drawing",
+      "path": "models/archive/ge-1962/drawings/assembled.svg"
+    },
+    {
+      "name": "Exploded STEP",
+      "path": "models/archive/ge-1962/exploded.step"
+    },
+    {
+      "name": "Exploded engineering drawing",
+      "path": "models/archive/ge-1962/drawings/exploded.svg"
+    },
+    {
+      "name": "Editable FreeCAD assembly",
+      "path": "models/archive/ge-1962/assembly.FCStd"
+    },
+    {
+      "name": "CAD-derived GLB",
+      "path": "models/archive/ge-1962/assembly.glb"
+    },
+    {
+      "name": "Component solids · STEP and STL",
+      "path": "models/archive/ge-1962/solids.zip"
+    },
+    {
+      "name": "Drawing set · SVG",
+      "path": "models/archive/ge-1962/drawings.zip"
+    },
+    {
+      "name": "Bill of materials · CSV",
+      "path": "models/archive/ge-1962/bom.csv"
+    },
+    {
+      "name": "CAD validation report",
+      "path": "models/archive/ge-1962/validation.json"
+    },
+    {
+      "name": "Complete engineering package",
+      "path": "models/archive/ge-1962/engineering-package.zip"
+    }
+  ],
+  "placements": [
+    {
+      "key": "GE-001:1",
+      "partId": "GE-001",
+      "origin": [
+        0,
+        0,
+        -5
+      ],
+      "offset": [
+        0,
+        0,
+        -23
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-002:1",
+      "partId": "GE-002",
+      "origin": [
+        0,
+        3,
+        73
+      ],
+      "offset": [
+        0,
+        100,
+        170
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "GE-003:1",
+      "partId": "GE-003",
+      "origin": [
+        0,
+        -111,
+        74
+      ],
+      "offset": [
+        0,
+        -155,
+        0
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "GE-004:1",
+      "partId": "GE-004",
+      "origin": [
+        -56,
+        -108,
+        104
+      ],
+      "offset": [
+        0,
+        -100,
+        52
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-004:2",
+      "partId": "GE-004",
+      "origin": [
+        56,
+        -108,
+        104
+      ],
+      "offset": [
+        0,
+        -100,
+        52
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-005:1",
+      "partId": "GE-005",
+      "origin": [
+        -85,
+        25,
+        65
+      ],
+      "offset": [
+        0,
+        25,
+        85
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-005:2",
+      "partId": "GE-005",
+      "origin": [
+        65,
+        25,
+        65
+      ],
+      "offset": [
+        0,
+        25,
+        85
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-006:1",
+      "partId": "GE-006",
+      "origin": [
+        0,
+        25,
+        65
+      ],
+      "offset": [
+        -280,
+        0,
+        72
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "GE-007:1",
+      "partId": "GE-007",
+      "origin": [
+        -4,
+        25,
+        65
+      ],
+      "offset": [
+        0,
+        100,
+        128
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-008:1",
+      "partId": "GE-008",
+      "origin": [
+        -4,
+        25,
+        65
+      ],
+      "offset": [
+        -40,
+        -87,
+        45
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "GE-009:1",
+      "partId": "GE-009",
+      "origin": [
+        112,
+        25,
+        65
+      ],
+      "offset": [
+        90,
+        30,
+        74
+      ],
+      "stage": 3,
+      "rotation": 0
+    },
+    {
+      "key": "GE-010:1",
+      "partId": "GE-010",
+      "origin": [
+        9,
+        -62,
+        14
+      ],
+      "offset": [
+        0,
+        -115,
+        -25
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "GE-011:1",
+      "partId": "GE-011",
+      "origin": [
+        128,
+        -61,
+        18
+      ],
+      "offset": [
+        75,
+        -70,
+        0
+      ],
+      "stage": 2,
+      "rotation": 0
+    }
+  ],
+  "parts": [
+    {
+      "id": "GE-001",
+      "name": "Prefabulated Amulite baseplate",
+      "assemblyId": "GE-A1",
+      "revision": "0.1",
+      "description": "Datum A · upper mounting plane",
+      "function": "Datum A · upper mounting plane",
+      "material": "Machined aluminum candidate",
+      "quantity": 1,
+      "massKg": 2.3482211100482595,
+      "dimensionsMm": {
+        "length": 366.0,
+        "width": 238.0,
+        "height": 10.0
+      },
+      "mounting": "Datum A · upper mounting plane",
+      "matingPartIds": [
+        "GE-002",
+        "GE-003",
+        "GE-005",
+        "GE-007",
+        "GE-010",
+        "GE-011"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the prefabulated amulite baseplate and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-001.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-001.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "GE-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-002",
+      "name": "Logarithmic case",
+      "assemblyId": "GE-A1",
+      "revision": "0.1",
+      "description": "Removable case above datum A",
+      "function": "Removable case above datum A",
+      "material": "Coated aluminum candidate",
+      "quantity": 1,
+      "massKg": 2.8693224,
+      "dimensionsMm": {
+        "length": 340.0,
+        "width": 218.0,
+        "height": 146.0
+      },
+      "mounting": "Removable case above datum A",
+      "matingPartIds": [
+        "GE-001"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the logarithmic case and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-002.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-002.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Coated aluminum candidate",
+      "sourceAssembly": "GE-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-003",
+      "name": "Inrush and realization meter fascia",
+      "assemblyId": "GE-A1",
+      "revision": "0.1",
+      "description": "Front-panel flange",
+      "function": "Front-panel flange",
+      "material": "Cast aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.49025501336704896,
+      "dimensionsMm": {
+        "length": 340.0,
+        "width": 4.0,
+        "height": 148.0
+      },
+      "mounting": "Front-panel flange",
+      "matingPartIds": [
+        "GE-001",
+        "GE-004"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the inrush and realization meter fascia and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-003.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-003.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Cast aluminum candidate",
+      "sourceAssembly": "GE-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-004",
+      "name": "Inrush and realization panel meter",
+      "assemblyId": "GE-A2",
+      "revision": "0.1",
+      "description": "Ø56 mm fascia opening, two independent indications",
+      "function": "Ø56 mm fascia opening, two independent indications",
+      "material": "Anodized aluminum candidate",
+      "quantity": 2,
+      "massKg": 0.05936660097666265,
+      "dimensionsMm": {
+        "length": 55.2,
+        "width": 13.0,
+        "height": 55.2
+      },
+      "mounting": "Ø56 mm fascia opening, two independent indications",
+      "matingPartIds": [
+        "GE-003"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the inrush and realization panel meter and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-004.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-004.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Anodized aluminum candidate",
+      "sourceAssembly": "GE-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-005",
+      "name": "Coaxial bearing pedestal",
+      "assemblyId": "GE-A3",
+      "revision": "0.1",
+      "description": "Common shaft datum X. Two station envelopes",
+      "function": "Common shaft datum X. Two station envelopes",
+      "material": "Steel candidate",
+      "quantity": 2,
+      "massKg": 0.5887385712408114,
+      "dimensionsMm": {
+        "length": 22.0,
+        "width": 44.0,
+        "height": 87.0
+      },
+      "mounting": "Common shaft datum X. Two station envelopes",
+      "matingPartIds": [
+        "GE-001",
+        "GE-006"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the coaxial bearing pedestal and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-005.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-005.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "GE-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-006",
+      "name": "Rotor spindle",
+      "assemblyId": "GE-A3",
+      "revision": "0.1",
+      "description": "Ø16 mm journal envelope",
+      "function": "Ø16 mm journal envelope",
+      "material": "Steel candidate",
+      "quantity": 1,
+      "massKg": 0.4056323903350225,
+      "dimensionsMm": {
+        "length": 257.0,
+        "width": 16.0,
+        "height": 16.0
+      },
+      "mounting": "Ø16 mm journal envelope",
+      "matingPartIds": [
+        "GE-005",
+        "GE-008",
+        "GE-009"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the rotor spindle and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-006.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-006.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "GE-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-007",
+      "name": "Semi-boloid stator carrier",
+      "assemblyId": "GE-A3",
+      "revision": "0.1",
+      "description": "Station between the bearing planes",
+      "function": "Station between the bearing planes",
+      "material": "Cast aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.5021691343501218,
+      "dimensionsMm": {
+        "length": 66.0,
+        "width": 82.0,
+        "height": 82.0
+      },
+      "mounting": "Station between the bearing planes",
+      "matingPartIds": [
+        "GE-001"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the semi-boloid stator carrier and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-007.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-007.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Cast aluminum candidate",
+      "sourceAssembly": "GE-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-008",
+      "name": "Rotor sleeve",
+      "assemblyId": "GE-A3",
+      "revision": "0.1",
+      "description": "Bore over spindle, radial air clearance to stator",
+      "function": "Bore over spindle, radial air clearance to stator",
+      "material": "Machined aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.23500721544290287,
+      "dimensionsMm": {
+        "length": 60.0,
+        "width": 46.0,
+        "height": 46.0
+      },
+      "mounting": "Bore over spindle, radial air clearance to stator",
+      "matingPartIds": [
+        "GE-006"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the rotor sleeve and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-008.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-008.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "GE-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-009",
+      "name": "Pentametric fan",
+      "assemblyId": "GE-A3",
+      "revision": "0.1",
+      "description": "Coaxial fan bore",
+      "function": "Coaxial fan bore",
+      "material": "Aluminum alloy candidate",
+      "quantity": 1,
+      "massKg": 0.04212622081167964,
+      "dimensionsMm": {
+        "length": 14.0,
+        "width": 61.158,
+        "height": 66.0
+      },
+      "mounting": "Coaxial fan bore",
+      "matingPartIds": [
+        "GE-006"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the pentametric fan and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-009.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-009.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Aluminum alloy candidate",
+      "sourceAssembly": "GE-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-010",
+      "name": "Meter excitation and load board",
+      "assemblyId": "GE-A2",
+      "revision": "0.1",
+      "description": "Low-voltage demonstration circuit, independent of handbook ratings",
+      "function": "Low-voltage demonstration circuit, independent of handbook ratings",
+      "material": "FR-4 laminate candidate",
+      "quantity": 1,
+      "massKg": 0.023738571337540797,
+      "dimensionsMm": {
+        "length": 124.0,
+        "width": 52.0,
+        "height": 2.0
+      },
+      "mounting": "Low-voltage demonstration circuit, independent of handbook ratings",
+      "matingPartIds": [
+        "GE-001"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the meter excitation and load board and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-010.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-010.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "FR-4 laminate candidate",
+      "sourceAssembly": "GE-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "GE-011",
+      "name": "Input protection module",
+      "assemblyId": "GE-A2",
+      "revision": "0.1",
+      "description": "Isolated reference feed at the board input",
+      "function": "Isolated reference feed at the board input",
+      "material": "Red nylon candidate",
+      "quantity": 1,
+      "massKg": 0.038502,
+      "dimensionsMm": {
+        "length": 31.0,
+        "width": 30.0,
+        "height": 36.0
+      },
+      "mounting": "Isolated reference feed at the board input",
+      "matingPartIds": [
+        "GE-001"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the input protection module and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/ge-1962/parts/GE-011.step",
+      "diagramRefs": [
+        "models/archive/ge-1962/drawings/GE-011.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Red nylon candidate",
+      "sourceAssembly": "GE-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "GE-A1",
+      "name": "Case and base",
+      "shortName": "Case and base",
+      "description": "Case and base",
+      "order": 1,
+      "partIds": [
+        "GE-001",
+        "GE-002",
+        "GE-003"
+      ]
+    },
+    {
+      "id": "GE-A2",
+      "name": "Metering and protection",
+      "shortName": "Metering and protection",
+      "description": "Metering and protection",
+      "order": 2,
+      "partIds": [
+        "GE-004",
+        "GE-010",
+        "GE-011"
+      ]
+    },
+    {
+      "id": "GE-A3",
+      "name": "Coaxial train",
+      "shortName": "Coaxial train",
+      "description": "Coaxial train",
+      "order": 3,
+      "partIds": [
+        "GE-005",
+        "GE-006",
+        "GE-007",
+        "GE-008",
+        "GE-009"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "GE-IF-002",
+      "kind": "mechanical",
+      "from": "GE-002",
+      "to": "GE-001",
+      "label": "Removable case above datum A"
+    },
+    {
+      "id": "GE-IF-003",
+      "kind": "mechanical",
+      "from": "GE-003",
+      "to": "GE-001",
+      "label": "Front-panel flange"
+    },
+    {
+      "id": "GE-IF-004",
+      "kind": "mechanical",
+      "from": "GE-004",
+      "to": "GE-003",
+      "label": "Ø56 mm fascia opening, two independent indications"
+    },
+    {
+      "id": "GE-IF-005",
+      "kind": "mechanical",
+      "from": "GE-005",
+      "to": "GE-001",
+      "label": "Common shaft datum X. Two station envelopes"
+    },
+    {
+      "id": "GE-IF-006",
+      "kind": "mechanical",
+      "from": "GE-006",
+      "to": "GE-005",
+      "label": "Ø16 mm journal envelope"
+    },
+    {
+      "id": "GE-IF-007",
+      "kind": "mechanical",
+      "from": "GE-007",
+      "to": "GE-001",
+      "label": "Station between the bearing planes"
+    },
+    {
+      "id": "GE-IF-008",
+      "kind": "mechanical",
+      "from": "GE-008",
+      "to": "GE-006",
+      "label": "Bore over spindle, radial air clearance to stator"
+    },
+    {
+      "id": "GE-IF-009",
+      "kind": "mechanical",
+      "from": "GE-009",
+      "to": "GE-006",
+      "label": "Coaxial fan bore"
+    },
+    {
+      "id": "GE-IF-010",
+      "kind": "mechanical",
+      "from": "GE-010",
+      "to": "GE-001",
+      "label": "Low-voltage demonstration circuit, independent of handbook ratings"
+    },
+    {
+      "id": "GE-IF-011",
+      "kind": "mechanical",
+      "from": "GE-011",
+      "to": "GE-001",
+      "label": "Isolated reference feed at the board input"
+    }
+  ],
+  "service": {
+    "GE-001": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "5 mm hex key candidate",
+      "originSource": "G62A",
+      "envelopeMm": [
+        366.0,
+        238.0,
+        10.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-002": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH2 screwdriver candidate",
+      "originSource": "G62A",
+      "envelopeMm": [
+        340.0,
+        218.0,
+        146.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-003": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH2 screwdriver candidate",
+      "originSource": "G62A",
+      "envelopeMm": [
+        340.0,
+        4.0,
+        148.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-004": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Panel retaining-ring spanner",
+      "originSource": "G62A",
+      "envelopeMm": [
+        55.2,
+        13.0,
+        55.2
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-005": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Bearing puller candidate",
+      "originSource": "G62A",
+      "envelopeMm": [
+        22.0,
+        44.0,
+        87.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-006": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Dial indicator and soft-jaw fixture",
+      "originSource": "G62A",
+      "envelopeMm": [
+        257.0,
+        16.0,
+        16.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-007": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "4 mm hex key candidate",
+      "originSource": "G62A",
+      "envelopeMm": [
+        66.0,
+        82.0,
+        82.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-008": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "3 mm hex key candidate",
+      "originSource": "G62A",
+      "envelopeMm": [
+        60.0,
+        46.0,
+        46.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-009": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "3 mm hex key candidate",
+      "originSource": "G62A",
+      "envelopeMm": [
+        14.0,
+        61.158,
+        66.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-010": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH1 screwdriver candidate",
+      "originSource": null,
+      "envelopeMm": [
+        124.0,
+        52.0,
+        2.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "GE-011": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Insulated terminal driver",
+      "originSource": "G62A",
+      "envelopeMm": [
+        31.0,
+        30.0,
+        36.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    }
+  }
+}

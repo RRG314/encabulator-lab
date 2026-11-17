@@ -1,0 +1,895 @@
+{
+  "code": "MI-16",
+  "slug": "micro-2016",
+  "revision": "0.1",
+  "assetFolder": "models/archive/micro-2016",
+  "mesh": "models/archive/micro-2016/assembly.glb",
+  "boundsMm": [
+    272,
+    158,
+    215
+  ],
+  "shaftHeight": 0,
+  "rotating": [],
+  "inputParts": [],
+  "guard": [
+    "MI-002"
+  ],
+  "defaultPart": "MI-001",
+  "assets": [
+    {
+      "name": "Assembled STEP",
+      "path": "models/archive/micro-2016/assembled.step"
+    },
+    {
+      "name": "Assembled engineering drawing",
+      "path": "models/archive/micro-2016/drawings/assembled.svg"
+    },
+    {
+      "name": "Exploded STEP",
+      "path": "models/archive/micro-2016/exploded.step"
+    },
+    {
+      "name": "Exploded engineering drawing",
+      "path": "models/archive/micro-2016/drawings/exploded.svg"
+    },
+    {
+      "name": "Editable FreeCAD assembly",
+      "path": "models/archive/micro-2016/assembly.FCStd"
+    },
+    {
+      "name": "CAD-derived GLB",
+      "path": "models/archive/micro-2016/assembly.glb"
+    },
+    {
+      "name": "Component solids · STEP and STL",
+      "path": "models/archive/micro-2016/solids.zip"
+    },
+    {
+      "name": "Drawing set · SVG",
+      "path": "models/archive/micro-2016/drawings.zip"
+    },
+    {
+      "name": "Bill of materials · CSV",
+      "path": "models/archive/micro-2016/bom.csv"
+    },
+    {
+      "name": "CAD validation report",
+      "path": "models/archive/micro-2016/validation.json"
+    },
+    {
+      "name": "Complete engineering package",
+      "path": "models/archive/micro-2016/engineering-package.zip"
+    }
+  ],
+  "placements": [
+    {
+      "key": "MI-001:1",
+      "partId": "MI-001",
+      "origin": [
+        0,
+        0,
+        29.5
+      ],
+      "offset": [
+        0,
+        0,
+        -35
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-002:1",
+      "partId": "MI-002",
+      "origin": [
+        0,
+        77,
+        133
+      ],
+      "offset": [
+        0,
+        118,
+        73
+      ],
+      "stage": 0,
+      "rotation": 0
+    },
+    {
+      "key": "MI-003:1",
+      "partId": "MI-003",
+      "origin": [
+        -105,
+        84,
+        60
+      ],
+      "offset": [
+        45,
+        85,
+        14
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-003:2",
+      "partId": "MI-003",
+      "origin": [
+        105,
+        84,
+        60
+      ],
+      "offset": [
+        45,
+        85,
+        14
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-004:1",
+      "partId": "MI-004",
+      "origin": [
+        0,
+        72,
+        133
+      ],
+      "offset": [
+        0,
+        -83,
+        70
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-005:1",
+      "partId": "MI-005",
+      "origin": [
+        0,
+        64,
+        109
+      ],
+      "offset": [
+        0,
+        -132,
+        8
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-006:1",
+      "partId": "MI-006",
+      "origin": [
+        -53,
+        64,
+        151
+      ],
+      "offset": [
+        0,
+        -146,
+        84
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-006:2",
+      "partId": "MI-006",
+      "origin": [
+        52,
+        64,
+        151
+      ],
+      "offset": [
+        0,
+        -146,
+        84
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-007:1",
+      "partId": "MI-007",
+      "origin": [
+        0,
+        0,
+        13
+      ],
+      "offset": [
+        0,
+        -76,
+        85
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-008:1",
+      "partId": "MI-008",
+      "origin": [
+        57,
+        -8,
+        25
+      ],
+      "offset": [
+        73,
+        -90,
+        29
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-009:1",
+      "partId": "MI-009",
+      "origin": [
+        -56,
+        -8,
+        28
+      ],
+      "offset": [
+        -75,
+        -84,
+        42
+      ],
+      "stage": 2,
+      "rotation": 0
+    },
+    {
+      "key": "MI-010:1",
+      "partId": "MI-010",
+      "origin": [
+        81,
+        61,
+        70
+      ],
+      "offset": [
+        55,
+        -90,
+        58
+      ],
+      "stage": 2,
+      "rotation": 0
+    }
+  ],
+  "parts": [
+    {
+      "id": "MI-001",
+      "name": "Portable enclosure tray",
+      "assemblyId": "MI-A1",
+      "revision": "0.1",
+      "description": "Equipment floor, nominal carry-case envelope",
+      "function": "Equipment floor, nominal carry-case envelope",
+      "material": "Cast aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.8965080000000004,
+      "dimensionsMm": {
+        "length": 272.0,
+        "width": 158.0,
+        "height": 59.0
+      },
+      "mounting": "Equipment floor, nominal carry-case envelope",
+      "matingPartIds": [
+        "MI-002",
+        "MI-003",
+        "MI-007"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the portable enclosure tray and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-001.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-001.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Cast aluminum candidate",
+      "sourceAssembly": "MI-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-002",
+      "name": "Hinged lid",
+      "assemblyId": "MI-A1",
+      "revision": "0.1",
+      "description": "Lid in service pose about rear hinge datum",
+      "function": "Lid in service pose about rear hinge datum",
+      "material": "Machined aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.42852011100482584,
+      "dimensionsMm": {
+        "length": 272.0,
+        "width": 4.0,
+        "height": 146.0
+      },
+      "mounting": "Lid in service pose about rear hinge datum",
+      "matingPartIds": [
+        "MI-001",
+        "MI-004"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the hinged lid and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-002.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-002.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "MI-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-003",
+      "name": "Hinge knuckle",
+      "assemblyId": "MI-A1",
+      "revision": "0.1",
+      "description": "Twin X-axis parallel hinge supports",
+      "function": "Twin X-axis parallel hinge supports",
+      "material": "Steel candidate",
+      "quantity": 2,
+      "massKg": 0.013285644535583865,
+      "dimensionsMm": {
+        "length": 28.0,
+        "width": 10.0,
+        "height": 10.0
+      },
+      "mounting": "Twin X-axis parallel hinge supports",
+      "matingPartIds": [
+        "MI-001"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the hinge knuckle and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-003.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-003.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Steel candidate",
+      "sourceAssembly": "MI-A1",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-004",
+      "name": "Lid backplane",
+      "assemblyId": "MI-A2",
+      "revision": "0.1",
+      "description": "Stand-off plane 5 mm forward of lid",
+      "function": "Stand-off plane 5 mm forward of lid",
+      "material": "FR-4 laminate candidate",
+      "quantity": 1,
+      "massKg": 0.09773857133754077,
+      "dimensionsMm": {
+        "length": 228.0,
+        "width": 2.0,
+        "height": 116.0
+      },
+      "mounting": "Stand-off plane 5 mm forward of lid",
+      "matingPartIds": [
+        "MI-002",
+        "MI-005",
+        "MI-006"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the lid backplane and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-004.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-004.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "FR-4 laminate candidate",
+      "sourceAssembly": "MI-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-005",
+      "name": "Interface terminal strip",
+      "assemblyId": "MI-A2",
+      "revision": "0.1",
+      "description": "Numbered terminal positions. Pin assignment pending",
+      "function": "Numbered terminal positions. Pin assignment pending",
+      "material": "Insulating polymer candidate",
+      "quantity": 1,
+      "massKg": 0.024,
+      "dimensionsMm": {
+        "length": 128.0,
+        "width": 10.0,
+        "height": 15.0
+      },
+      "mounting": "Numbered terminal positions. Pin assignment pending",
+      "matingPartIds": [
+        "MI-004",
+        "MI-010"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the interface terminal strip and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-005.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-005.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Insulating polymer candidate",
+      "sourceAssembly": "MI-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-006",
+      "name": "Lid relay module",
+      "assemblyId": "MI-A2",
+      "revision": "0.1",
+      "description": "Dual relay envelopes on shared backplane",
+      "function": "Dual relay envelopes on shared backplane",
+      "material": "Anodized aluminum candidate",
+      "quantity": 2,
+      "massKg": 0.0455544,
+      "dimensionsMm": {
+        "length": 37.0,
+        "width": 12.0,
+        "height": 38.0
+      },
+      "mounting": "Dual relay envelopes on shared backplane",
+      "matingPartIds": [
+        "MI-004"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the lid relay module and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-006.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-006.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Anodized aluminum candidate",
+      "sourceAssembly": "MI-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-007",
+      "name": "Control compartment plate",
+      "assemblyId": "MI-A3",
+      "revision": "0.1",
+      "description": "Removable floor insert and equipment datum",
+      "function": "Removable floor insert and equipment datum",
+      "material": "Machined aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.22971343383028847,
+      "dimensionsMm": {
+        "length": 229.0,
+        "width": 124.0,
+        "height": 3.0
+      },
+      "mounting": "Removable floor insert and equipment datum",
+      "matingPartIds": [
+        "MI-001",
+        "MI-008",
+        "MI-009"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the control compartment plate and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-007.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-007.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Machined aluminum candidate",
+      "sourceAssembly": "MI-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-008",
+      "name": "Instrument input module",
+      "assemblyId": "MI-A3",
+      "revision": "0.1",
+      "description": "Charge-assay fixture. Low-voltage input definition",
+      "function": "Charge-assay fixture. Low-voltage input definition",
+      "material": "FR-4 laminate candidate",
+      "quantity": 1,
+      "massKg": 0.11904307971708368,
+      "dimensionsMm": {
+        "length": 75.0,
+        "width": 54.0,
+        "height": 16.0
+      },
+      "mounting": "Charge-assay fixture. Low-voltage input definition",
+      "matingPartIds": [
+        "MI-007"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the instrument input module and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-008.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-008.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "FR-4 laminate candidate",
+      "sourceAssembly": "MI-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-009",
+      "name": "Shielded discharge module",
+      "assemblyId": "MI-A3",
+      "revision": "0.1",
+      "description": "Resistance network heat-transfer interface",
+      "function": "Resistance network heat-transfer interface",
+      "material": "Anodized aluminum candidate",
+      "quantity": 1,
+      "massKg": 0.24261120000000003,
+      "dimensionsMm": {
+        "length": 64.0,
+        "width": 54.0,
+        "height": 26.0
+      },
+      "mounting": "Resistance network heat-transfer interface",
+      "matingPartIds": [
+        "MI-007"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the shielded discharge module and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-009.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-009.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Anodized aluminum candidate",
+      "sourceAssembly": "MI-A3",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    },
+    {
+      "id": "MI-010",
+      "name": "Lid services harness",
+      "assemblyId": "MI-A2",
+      "revision": "0.1",
+      "description": "Flexible service loop between lid and tray",
+      "function": "Flexible service loop between lid and tray",
+      "material": "Red nylon candidate",
+      "quantity": 1,
+      "massKg": 0.007166315445664522,
+      "dimensionsMm": {
+        "length": 22.4,
+        "width": 27.2,
+        "height": 79.7
+      },
+      "mounting": "Flexible service loop between lid and tray",
+      "matingPartIds": [
+        "MI-005"
+      ],
+      "fastenerIds": [],
+      "sensors": [],
+      "ports": [],
+      "equations": [],
+      "limits": "Nominal reconstruction dimensions. Operating limits require qualification.",
+      "safetyFlags": [
+        "Isolate before access"
+      ],
+      "maintenance": "Inspect the lid services harness and its mating datum for movement, abrasion or damage before reassembly.",
+      "cadAssetPath": "models/archive/micro-2016/parts/MI-010.step",
+      "diagramRefs": [
+        "models/archive/micro-2016/drawings/MI-010.svg"
+      ],
+      "testEvidence": [],
+      "sourcing": "Project-defined reconstruction",
+      "readiness": "Preliminary",
+      "evidence": "calculation",
+      "proposedSpecification": "Red nylon candidate",
+      "sourceAssembly": "MI-A2",
+      "verification": "Solid geometry verified. Physical qualification pending.",
+      "kind": "physical"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "MI-A1",
+      "name": "Transport enclosure",
+      "shortName": "Transport enclosure",
+      "description": "Transport enclosure",
+      "order": 1,
+      "partIds": [
+        "MI-001",
+        "MI-002",
+        "MI-003"
+      ]
+    },
+    {
+      "id": "MI-A2",
+      "name": "Lid instrumentation",
+      "shortName": "Lid instrumentation",
+      "description": "Lid instrumentation",
+      "order": 2,
+      "partIds": [
+        "MI-004",
+        "MI-005",
+        "MI-006",
+        "MI-010"
+      ]
+    },
+    {
+      "id": "MI-A3",
+      "name": "Base instrumentation",
+      "shortName": "Base instrumentation",
+      "description": "Base instrumentation",
+      "order": 3,
+      "partIds": [
+        "MI-007",
+        "MI-008",
+        "MI-009"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "MI-IF-002",
+      "kind": "mechanical",
+      "from": "MI-002",
+      "to": "MI-001",
+      "label": "Lid in service pose about rear hinge datum"
+    },
+    {
+      "id": "MI-IF-003",
+      "kind": "mechanical",
+      "from": "MI-003",
+      "to": "MI-001",
+      "label": "Twin X-axis parallel hinge supports"
+    },
+    {
+      "id": "MI-IF-004",
+      "kind": "mechanical",
+      "from": "MI-004",
+      "to": "MI-002",
+      "label": "Stand-off plane 5 mm forward of lid"
+    },
+    {
+      "id": "MI-IF-005",
+      "kind": "mechanical",
+      "from": "MI-005",
+      "to": "MI-004",
+      "label": "Numbered terminal positions. Pin assignment pending"
+    },
+    {
+      "id": "MI-IF-006",
+      "kind": "mechanical",
+      "from": "MI-006",
+      "to": "MI-004",
+      "label": "Dual relay envelopes on shared backplane"
+    },
+    {
+      "id": "MI-IF-007",
+      "kind": "mechanical",
+      "from": "MI-007",
+      "to": "MI-001",
+      "label": "Removable floor insert and equipment datum"
+    },
+    {
+      "id": "MI-IF-008",
+      "kind": "mechanical",
+      "from": "MI-008",
+      "to": "MI-007",
+      "label": "Charge-assay fixture. Low-voltage input definition"
+    },
+    {
+      "id": "MI-IF-009",
+      "kind": "mechanical",
+      "from": "MI-009",
+      "to": "MI-007",
+      "label": "Resistance network heat-transfer interface"
+    },
+    {
+      "id": "MI-IF-010",
+      "kind": "mechanical",
+      "from": "MI-010",
+      "to": "MI-005",
+      "label": "Flexible service loop between lid and tray"
+    }
+  ],
+  "service": {
+    "MI-001": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH2 screwdriver candidate",
+      "originSource": "P16",
+      "envelopeMm": [
+        272.0,
+        158.0,
+        59.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-002": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH2 screwdriver candidate",
+      "originSource": "P16",
+      "envelopeMm": [
+        272.0,
+        4.0,
+        146.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-003": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "2.5 mm hex key candidate",
+      "originSource": "P16",
+      "envelopeMm": [
+        28.0,
+        10.0,
+        10.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-004": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH1 screwdriver candidate",
+      "originSource": "P16",
+      "envelopeMm": [
+        228.0,
+        2.0,
+        116.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-005": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Insulated terminal driver",
+      "originSource": "P16",
+      "envelopeMm": [
+        128.0,
+        10.0,
+        15.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-006": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH1 screwdriver candidate",
+      "originSource": "P16",
+      "envelopeMm": [
+        37.0,
+        12.0,
+        38.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-007": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "4 mm hex key candidate",
+      "originSource": null,
+      "envelopeMm": [
+        229.0,
+        124.0,
+        3.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-008": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "PH1 screwdriver candidate",
+      "originSource": null,
+      "envelopeMm": [
+        75.0,
+        54.0,
+        16.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-009": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "3 mm hex key candidate",
+      "originSource": null,
+      "envelopeMm": [
+        64.0,
+        54.0,
+        26.0
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    },
+    "MI-010": {
+      "failureMode": "Loss of alignment, retention or electrical continuity at the specified interface.",
+      "tool": "Continuity meter and terminal driver",
+      "originSource": "P16",
+      "envelopeMm": [
+        22.4,
+        27.2,
+        79.7
+      ],
+      "classification": "Nominal B-rep reconstruction"
+    }
+  }
+}
